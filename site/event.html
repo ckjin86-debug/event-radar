@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이벤트 상세 분석 - Event Radar</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div class="container" id="detailContainer">
+    <header>
+      <div>
+        <a href="index.html" class="row-link" style="font-size: 0.9rem; margin-bottom: 6px; display: inline-block;">← 목록으로 돌아가기</a>
+        <h1 id="eventTitle">이벤트 상세 정보</h1>
+      </div>
+      <div>
+        <a href="https://forms.google.com" target="_blank" rel="noopener noreferrer" class="btn-manual">
+          + 수동 일정 수정 요청
+        </a>
+      </div>
+    </header>
+
+    <!-- Top Grid: Basic Info & Score Breakdown -->
+    <div class="detail-grid">
+      <div class="card">
+        <h2>📌 이벤트 기본정보</h2>
+        <div id="basicInfo">로딩 중...</div>
+      </div>
+
+      <div class="card">
+        <h2>⭐ Event Score 세부 내역</h2>
+        <div id="scoreBreakdown">로딩 중...</div>
+      </div>
+    </div>
+
+    <!-- Middle: Backtest Curve & Performance Stats -->
+    <div class="card" style="margin-bottom: 24px;">
+      <h2>📈 D-60 ~ D+20 과거 이벤트 반응 백테스트 (Event Study)</h2>
+      
+      <!-- Key Statistics -->
+      <div class="stat-grid" id="backtestStats">
+        <div class="stat-box">로딩 중...</div>
+      </div>
+
+      <!-- Canvas Chart Container -->
+      <div class="chart-container">
+        <canvas id="curveChartCanvas"></canvas>
+      </div>
+      <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 10px; text-align: center;">
+        * 파란선: 절대수익률 / 초록선: 벤치마크 대비 초과수익률 (CAR) / D0: 시장 반응 기준일
+      </div>
+    </div>
+
+    <!-- 9 Predefined Strategies -->
+    <div class="card" style="margin-bottom: 24px;">
+      <h2>🎯 9대 사전 정의 매매 전략 성과 비교</h2>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>전략명</th>
+              <th>표본 (N)</th>
+              <th>평균 수익률</th>
+              <th>평균 초과수익률</th>
+              <th>승률</th>
+              <th>최대 낙폭 (MDD)</th>
+              <th>Robustness 점수</th>
+            </tr>
+          </thead>
+          <tbody id="strategiesTableBody">
+            <tr><td colspan="7" style="text-align:center;">로딩 중...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Related Securities (A/B) -->
+    <div class="card" style="margin-bottom: 24px;">
+      <h2>🔗 A/B급 관련주 및 관계 근거</h2>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>티커</th>
+              <th>등급</th>
+              <th>Relation Score</th>
+              <th>공식 근거 및 관계 유형</th>
+            </tr>
+          </thead>
+          <tbody id="relatedSecuritiesBody">
+            <tr><td colspan="4" style="text-align:center;">로딩 중...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Revision History -->
+    <div class="card" style="margin-bottom: 24px;">
+      <h2>🕒 일정 변경 및 리비전 이력 (Revision History)</h2>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>변경 일시</th>
+              <th>변경된 필드</th>
+              <th>변경 내역 (이전 → 변경)</th>
+              <th>변경 사유 / 근거</th>
+            </tr>
+          </thead>
+          <tbody id="revisionsTableBody">
+            <tr><td colspan="5" style="text-align:center;">로딩 중...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/charts.js"></script>
+  <script src="js/event-detail.js"></script>
+</body>
+</html>

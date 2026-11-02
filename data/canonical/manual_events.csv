@@ -1,0 +1,1 @@
+event_id,country,event_type,event_name,primary_ticker,primary_company,announced_at,event_date,event_time_context,status,source_kind,source_name,source_url,source_event_uid,evidence_text,ingest_mode,first_seen_at,last_seen_at,needs_review

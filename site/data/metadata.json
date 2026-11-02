@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-11-02T23:58:39.191804",
+  "total_events": 5,
+  "kr_events": 3,
+  "us_events": 2,
+  "version": "1.0.0",
+  "collector_status": {
+    "DART": "SUCCESS",
+    "SEC": "SUCCESS",
+    "FDA_PDUFA": "SUCCESS",
+    "ENTER_KR": "SUCCESS",
+    "GAMES_RELEASE": "SUCCESS",
+    "INDEX_KR": "SUCCESS"
+  }
+}

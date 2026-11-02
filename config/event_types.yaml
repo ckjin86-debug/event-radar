@@ -1,0 +1,51 @@
+event_types:
+  BONUS_ISSUE:
+    name: "무상증자"
+    category: "증자"
+    country: ["KR", "US"]
+    description: "무상증자 신주배정기준일 및 신주상장"
+  RIGHTS_ISSUE:
+    name: "유상증자"
+    category: "증자"
+    country: ["KR", "US"]
+    description: "유상증자 신주배정기준일 및 신주상장"
+  STOCK_SPLIT:
+    name: "주식분할/역분할"
+    category: "분할"
+    country: ["KR", "US"]
+    description: "액면분할, 주식병합/역분할 효력발생일"
+  CONVERTIBLE_LISTING:
+    name: "CB/BW/신주상장"
+    category: "상장"
+    country: ["KR", "US"]
+    description: "전환사채(CB), 신주인수권부사채(BW) 권리행사 추가상장"
+  LOCKUP_EXPIRY:
+    name: "보호예수/락업 해제"
+    category: "락업"
+    country: ["KR", "US"]
+    description: "의무보유등록(보호예수) 해제 또는 IPO 락업 만료"
+  EARNINGS:
+    name: "실적발표"
+    category: "실적"
+    country: ["KR", "US"]
+    description: "분기/반기/연간 실적 공식 발표일"
+  FDA_APPROVAL:
+    name: "FDA/PDUFA/주요임상"
+    category: "FDA"
+    country: ["KR", "US"]
+    description: "FDA PDUFA target date, 자문위 회의, 주요 임상 3상 데이터 발표"
+  INDEX_REBALANCE:
+    name: "지수 편입/편출"
+    category: "지수"
+    country: ["KR", "US"]
+    description: "MSCI, KOSPI200, S&P500 등 주요 지수 정기변경 및 리밸런싱"
+  ENTERTAINMENT:
+    name: "엔터테인먼트 일정"
+    category: "엔터"
+    country: ["KR", "US"]
+    description: "주요 아티스트 음원/앨범 컴백, 월드투어 시작"
+  GAME_RELEASE:
+    name: "게임 출시/업데이트"
+    category: "게임"
+    country: ["KR", "US"]
+    description: "대형 신작 게임 글로벌 출시, 정식 론칭, 대형 확장팩"

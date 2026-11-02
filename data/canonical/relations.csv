@@ -1,0 +1,4 @@
+relation_id,from_entity,to_ticker,relation_type,relation_grade,relation_score,relation_known_date,relation_start_date,relation_end_date,evidence_source,source_url,ingest_mode
+REL_KR_001,005930,000660,INDUSTRY_PEER,B,75,2020-01-01,2020-01-01,,메모리 반도체 대표 경쟁/동조주,https://dart.fss.or.kr,AUTO
+REL_KR_002,하이브,352820,DIRECT,A,100,2020-10-15,2020-10-15,,하이브 직속 상장사,https://dart.fss.or.kr,AUTO
+REL_US_001,AAPL,TSM,FOUNDRY_SUPPLIER,B,85,2020-01-01,2020-01-01,,애플 실리콘 파운드리 독점 공급사,https://www.sec.gov,AUTO

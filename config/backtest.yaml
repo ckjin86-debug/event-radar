@@ -1,0 +1,33 @@
+predefined_strategies:
+  - name: "D-30 to D0"
+    entry_offset: -30
+    exit_offset: 0
+  - name: "D-30 to D-5"
+    entry_offset: -30
+    exit_offset: -5
+  - name: "D-20 to D0"
+    entry_offset: -20
+    exit_offset: 0
+  - name: "D-20 to D-5"
+    entry_offset: -20
+    exit_offset: -5
+  - name: "D-10 to D0"
+    entry_offset: -10
+    exit_offset: 0
+  - name: "D-10 to D-1"
+    entry_offset: -10
+    exit_offset: -1
+  - name: "D-5 to D0"
+    entry_offset: -5
+    exit_offset: 0
+  - name: "D-5 to D+3"
+    entry_offset: -5
+    exit_offset: 3
+  - name: "D0 to D+5"
+    entry_offset: 0
+    exit_offset: 5
+
+sample_thresholds:
+  low_penalty: 3
+  medium_threshold: 8
+  high_threshold: 15

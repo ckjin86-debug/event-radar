@@ -1,0 +1,30 @@
+weights:
+  schedule_certainty: 20
+  relation_directness: 20
+  historical_edge: 30
+  robustness: 15
+  current_setup: 15
+
+schedule_scores:
+  CONFIRMED: 20
+  EXPECTED: 10
+  RUMORED: 0
+  CANCELLED: 0
+
+sample_penalty_caps:
+  min_n_3: 5
+  min_n_8: 15
+  min_n_15: 24
+  full_cap: 30
+
+edge_components:
+  max_return_points: 15
+  target_return: 0.10  # 10% abnormal return gets full 15 points
+  max_win_rate_points: 10
+  baseline_win_rate: 0.50
+  max_sample_points: 5
+
+setup_components:
+  base_points: 10
+  max_points: 15
+  runup_penalty_threshold: 0.20  # +20% runup prior to event penalizes setup

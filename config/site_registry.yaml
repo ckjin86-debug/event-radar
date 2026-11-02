@@ -1,0 +1,55 @@
+sources:
+  fda_pdufa:
+    name: "FDA_PDUFA"
+    country: "US"
+    event_type: "FDA_APPROVAL"
+    url: "https://www.fda.gov/drugs/news-events-human-drugs"
+    container_selector: ".view-content .views-row"
+    title_selector: ".views-field-title a"
+    date_regex: '(\d{4})-(\d{2})-(\d{2})'
+    timezone: "America/New_York"
+    default_status: "CONFIRMED"
+
+  entertainment_kr:
+    name: "ENTER_KR"
+    country: "KR"
+    event_type: "ENTERTAINMENT"
+    url: "https://weverse.io/notice"
+    container_selector: ".notice-item"
+    title_selector: ".title"
+    date_regex: '(\d{4})[./-](\d{2})[./-](\d{2})'
+    timezone: "Asia/Seoul"
+    artist_map:
+      방탄소년단: {ticker: "352820", company: "하이브"}
+      BTS: {ticker: "352820", company: "하이브"}
+      뉴진스: {ticker: "352820", company: "하이브"}
+      NewJeans: {ticker: "352820", company: "하이브"}
+      에스파: {ticker: "041510", company: "에스엠"}
+      aespa: {ticker: "041510", company: "에스엠"}
+      아이브: {ticker: "041510", company: "카카오"}
+
+  games_kr:
+    name: "GAMES_RELEASE"
+    country: "KR"
+    event_type: "GAME_RELEASE"
+    url: "https://www.inven.co.kr/schedule"
+    container_selector: ".game-item"
+    title_selector: ".game-name"
+    date_regex: '(\d{4})[./-](\d{2})[./-](\d{2})'
+    timezone: "Asia/Seoul"
+    game_map:
+      inZOI: {ticker: "259960", company: "크래프톤"}
+      인조이: {ticker: "259960", company: "크래프톤"}
+      붉은사막: {ticker: "263750", company: "펄어비스"}
+      Crimson Desert: {ticker: "263750", company: "펄어비스"}
+      TL: {ticker: "036570", company: "엔씨소프트"}
+
+  index_rebalance:
+    name: "INDEX_KR"
+    country: "KR"
+    event_type: "INDEX_REBALANCE"
+    url: "https://global.krx.co.kr"
+    container_selector: ".notice-board tr"
+    title_selector: "td.subject a"
+    date_regex: '(\d{4})[./-](\d{2})[./-](\d{2})'
+    timezone: "Asia/Seoul"

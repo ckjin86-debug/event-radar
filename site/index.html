@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Radar - 한국·미국 주가 이벤트 레이더</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>🎯 Event Radar</h1>
+        <div class="header-meta">
+          <span>한국·미국 날짜 확정형 주가 이벤트 및 A/B 관련주 백테스트 레이더</span>
+          <span>마지막 업데이트: <strong id="lastUpdated">-</strong></span>
+        </div>
+      </div>
+      <div>
+        <a href="https://forms.google.com" target="_blank" rel="noopener noreferrer" class="btn-manual">
+          + 수동 일정 추가 (Google Form)
+        </a>
+      </div>
+    </header>
+
+    <!-- Filters -->
+    <section class="filters-container">
+      <!-- Horizon -->
+      <div class="filter-row">
+        <span class="filter-label">기간</span>
+        <button class="btn-pill active" data-filter-key="horizon" data-filter-value="all">전체</button>
+        <button class="btn-pill" data-filter-key="horizon" data-filter-value="today">오늘</button>
+        <button class="btn-pill" data-filter-key="horizon" data-filter-value="7d">7일 이내</button>
+        <button class="btn-pill" data-filter-key="horizon" data-filter-value="30d">30일 이내</button>
+        <button class="btn-pill" data-filter-key="horizon" data-filter-value="90d">90일 이내</button>
+      </div>
+
+      <!-- Country -->
+      <div class="filter-row">
+        <span class="filter-label">국가</span>
+        <button class="btn-pill active" data-filter-key="country" data-filter-value="all">전체</button>
+        <button class="btn-pill" data-filter-key="country" data-filter-value="KR">한국 (KR)</button>
+        <button class="btn-pill" data-filter-key="country" data-filter-value="US">미국 (US)</button>
+      </div>
+
+      <!-- Category -->
+      <div class="filter-row">
+        <span class="filter-label">유형</span>
+        <button class="btn-pill active" data-filter-key="category" data-filter-value="all">전체</button>
+        <button class="btn-pill" data-filter-key="category" data-filter-value="증자">증자 (무상/유상)</button>
+        <button class="btn-pill" data-filter-key="category" data-filter-value="분할">주식분할/병합</button>
+        <button class="btn-pill" data-filter-key="category" data-filter-value="락업">락업/보호예수</button>
+        <button class="btn-pill" data-filter-key="category" data-filter-value="실적">실적발표</button>
+        <button class="btn-pill" data-filter-key="category" data-filter-value="FDA">FDA/PDUFA/임상</button>
+        <button class="btn-pill" data-filter-key="category" data-filter-value="지수">지수 편입/편출</button>
+        <button class="btn-pill" data-filter-key="category" data-filter-value="엔터">엔터 컴백</button>
+        <button class="btn-pill" data-filter-key="category" data-filter-value="게임">게임 출시</button>
+      </div>
+
+      <!-- Grade & Status -->
+      <div class="filter-row">
+        <span class="filter-label">관련 등급</span>
+        <button class="btn-pill active" data-filter-key="grade" data-filter-value="all">전체</button>
+        <button class="btn-pill" data-filter-key="grade" data-filter-value="A">A급 (직접 당사자)</button>
+        <button class="btn-pill" data-filter-key="grade" data-filter-value="B">B급 (경제적 관련주)</button>
+
+        <span class="filter-label" style="margin-left: 16px;">확정도</span>
+        <button class="btn-pill active" data-filter-key="status" data-filter-value="all">전체</button>
+        <button class="btn-pill" data-filter-key="status" data-filter-value="CONFIRMED">CONFIRMED</button>
+        <button class="btn-pill" data-filter-key="status" data-filter-value="EXPECTED">EXPECTED</button>
+      </div>
+
+      <!-- Search & Sort -->
+      <div class="filter-row" style="margin-top: 4px;">
+        <span class="filter-label">검색/정렬</span>
+        <input type="text" id="searchInput" class="search-input" placeholder="종목명, 티커, 이벤트명 검색...">
+        <select id="sortSelect" class="btn-pill" style="border-radius: var(--radius); padding: 8px 12px; background: var(--bg-primary);">
+          <option value="score_desc">Event Score 높은순</option>
+          <option value="dday_asc">D-Day 가까운순</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Table -->
+    <main class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>D-Day</th>
+            <th>국가</th>
+            <th>종목</th>
+            <th>Ticker</th>
+            <th>이벤트</th>
+            <th>이벤트 날짜</th>
+            <th>관련등급</th>
+            <th>Event Score</th>
+            <th>상태</th>
+            <th>공식 출처</th>
+          </tr>
+        </thead>
+        <tbody id="eventsTableBody">
+          <tr>
+            <td colspan="10" style="text-align: center; padding: 24px;">이벤트 데이터를 로딩 중입니다...</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </div>
+
+  <script src="js/filters.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

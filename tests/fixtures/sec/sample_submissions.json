@@ -1,0 +1,37 @@
+{
+  "cik": "0000320193",
+  "entityType": "operating",
+  "sic": "3571",
+  "sicDescription": "ELECTRONIC COMPUTERS",
+  "name": "Apple Inc.",
+  "tickers": ["AAPL"],
+  "exchanges": ["Nasdaq"],
+  "filings": {
+    "recent": {
+      "accessionNumber": [
+        "0000320193-26-000101",
+        "0000320193-26-000102"
+      ],
+      "filingDate": [
+        "2026-10-31",
+        "2026-10-25"
+      ],
+      "reportDate": [
+        "2026-10-31",
+        "2026-10-25"
+      ],
+      "acceptanceDateTime": [
+        "2026-10-31T16:30:00.000Z",
+        "2026-10-25T16:30:00.000Z"
+      ],
+      "act": ["34", "34"],
+      "form": ["8-K", "8-K"],
+      "fileNumber": ["001-36743", "001-36743"],
+      "filmNumber": ["26111222", "26111223"],
+      "items": ["Item 2.02", "Item 3.03"],
+      "primaryDocument": ["aapl-20261031.htm", "aapl-20261025.htm"],
+      "primaryDocDescription": ["Q4 EARNINGS RELEASE", "NOTICE OF 4-FOR-1 STOCK SPLIT EFFECTIVE 2026-11-20"],
+      "event_date": ["2026-10-31", "2026-11-20"]
+    }
+  }
+}
