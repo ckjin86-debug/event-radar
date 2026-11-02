@@ -1,6 +1,7 @@
 from datetime import datetime, date
 from pathlib import Path
 import json
+import pandas as pd
 import pytest
 from event_radar.models import RawEvent
 from event_radar.pipeline import run_pipeline, PipelineConfig
@@ -34,6 +35,50 @@ class MockSuccessfulCollector:
                 status="CONFIRMED",
             )
         ]
+
+
+class MockHistoricalCollector:
+    source_name = "HISTORICAL_COLLECTOR"
+
+    def collect(self, since: datetime) -> list[RawEvent]:
+        return [
+            RawEvent(
+                source_name="HISTORICAL_COLLECTOR",
+                source_kind="COMPANY",
+                source_event_uid="HIST_01",
+                source_url="https://example.com/notice/hist-1",
+                country="KR",
+                primary_ticker="005930",
+                primary_company="삼성전자",
+                event_type="BONUS_ISSUE",
+                event_name="삼성전자 과거 무상증자",
+                announced_at=datetime(2026, 8, 1),
+                event_date=date(2026, 9, 15),
+                status="CONFIRMED",
+            )
+        ]
+
+
+class DeterministicPriceProvider:
+    def __init__(self):
+        self.calls: list[tuple[str, date, date]] = []
+
+    def history(self, ticker: str, start: date, end: date) -> pd.DataFrame:
+        self.calls.append((ticker, start, end))
+        dates = pd.bdate_range(start="2026-05-01", end="2026-10-30")
+        base = 300.0 if ticker.startswith("^") else 200.0
+        step = 0.25 if ticker.startswith("^") else 1.0
+        values = [base + (i * step) for i in range(len(dates))]
+        df = pd.DataFrame({
+            "date": dates.date,
+            "open": values,
+            "high": values,
+            "low": values,
+            "close": values,
+            "adj_close": values,
+            "volume": [1_000_000 + i for i in range(len(dates))],
+        })
+        return df[(df["date"] >= start) & (df["date"] <= end)].reset_index(drop=True)
 
 
 def test_pipeline_graceful_degradation_when_collector_fails(tmp_path):
@@ -84,3 +129,42 @@ def test_pipeline_graceful_degradation_when_collector_fails(tmp_path):
     assert "secret" not in content.lower()
     assert "token" not in content.lower()
     assert "password" not in content.lower()
+
+
+def test_pipeline_uses_configured_price_provider_for_real_backtest(tmp_path):
+    data_dir = tmp_path / "data"
+    site_dir = tmp_path / "site"
+    config_dir = tmp_path / "config"
+    (data_dir / "canonical").mkdir(parents=True)
+    (data_dir / "derived").mkdir(parents=True)
+    (site_dir / "data").mkdir(parents=True)
+    config_dir.mkdir(parents=True)
+
+    provider = DeterministicPriceProvider()
+    cfg = PipelineConfig(
+        data_dir=data_dir,
+        site_dir=site_dir,
+        config_dir=config_dir,
+        price_provider=provider,
+    )
+
+    run_pipeline(
+        collectors=[MockHistoricalCollector()],
+        config=cfg,
+        now=datetime(2026, 11, 2, 10, 0),
+        skip_price_fetch=False,
+    )
+
+    assert any(call[0] == "005930" for call in provider.calls)
+    assert any(call[0] == "^KS11" for call in provider.calls)
+
+    returns_csv = data_dir / "derived" / "backtest_event_returns.csv"
+    assert returns_csv.exists()
+    returns_df = pd.read_csv(returns_csv)
+    d0 = returns_df[returns_df["offset"] == 0].iloc[0]
+
+    expected_stock = provider.history(
+        "005930", date(2026, 9, 15), date(2026, 9, 15)
+    ).iloc[0]["adj_close"]
+    assert d0["price"] == pytest.approx(expected_stock)
+    assert d0["return_from_d0"] == pytest.approx(0.0)
