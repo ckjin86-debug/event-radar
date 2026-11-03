@@ -18,6 +18,7 @@ def test_build_collectors_uses_live_core_and_v2_sources(tmp_path):
 
     assert by_name["DART"].fixture_path is None
     assert by_name["SEC"].fixture_path is None
+    assert "HISTORICAL_SEED" in by_name
     assert "NEWS_FUTURE" in by_name
     assert "FDA_ADVISORY" in by_name
     assert "KIND_IPO" in by_name
