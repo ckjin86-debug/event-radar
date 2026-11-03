@@ -121,6 +121,20 @@ def test_collector_rejects_unrelated_future_date_and_catalyst():
     assert collector.collect(since=datetime(2026, 11, 1)) == []
 
 
+def test_collector_rejects_description_only_future_catalyst():
+    mod = _news_module()
+    payload = {
+        "items": [
+            _item(
+                "LG엔솔, 분기 최대 매출 기록",
+                "회사는 내년 8월 신규 공장 상업 가동을 계획하고 있다.",
+            )
+        ]
+    }
+    collector = mod.NewsFutureCollector(api_key_id="id", api_key="key", mock_payloads=[payload])
+    assert collector.collect(since=datetime(2026, 11, 1)) == []
+
+
 def test_collector_rejects_broad_product_launch_but_keeps_broad_clinical_result():
     mod = _news_module()
     payload = {
@@ -134,6 +148,22 @@ def test_collector_rejects_broad_product_launch_but_keeps_broad_clinical_result(
     assert len(events) == 1
     assert events[0].event_type == "CLINICAL_RESULT"
     assert events[0].date_precision == "QUARTER"
+
+
+def test_collector_keeps_only_exact_date_product_launch():
+    mod = _news_module()
+    payload = {
+        "items": [
+            _item("엔씨, 다음달 신작 글로벌 정식 출시 예정", url="https://example.com/month-launch"),
+            _item("엘리멘타, 12월 14일 신작 글로벌 정식 출시", url="https://example.com/exact-launch"),
+        ]
+    }
+    collector = mod.NewsFutureCollector(api_key_id="id", api_key="key", mock_payloads=[payload])
+    events = collector.collect(since=datetime(2026, 11, 1))
+    assert len(events) == 1
+    assert events[0].event_type == "PRODUCT_LAUNCH"
+    assert events[0].date_precision == "EXACT_DATE"
+    assert events[0].event_date == date(2026, 12, 14)
 
 
 def test_collector_clusters_same_company_event_window_across_articles():
