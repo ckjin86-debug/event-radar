@@ -32,6 +32,52 @@
       </div>
     </div>
 
+    <div class="card relation-overview-card" style="margin-bottom: 24px;">
+      <div class="section-heading-row">
+        <div>
+          <h2>🔗 관련주 판단</h2>
+          <p class="section-subtitle">프로그램 후보와 bb-invest 검증 관계를 분리해서 보여줍니다.</p>
+        </div>
+      </div>
+      <div id="relationSummary" class="relation-summary">관련주 상태를 계산 중입니다...</div>
+
+      <section class="relation-group relation-group-verified">
+        <div class="relation-group-heading">
+          <div>
+            <h3>검증 A/B</h3>
+            <p>A는 직접 당사자, B는 공급·계약·지분 등 확인된 경제관계입니다.</p>
+          </div>
+        </div>
+        <div id="verifiedRelations" class="relation-grid">
+          <div class="relation-empty">검증 관계를 불러오는 중입니다...</div>
+        </div>
+      </section>
+
+      <section class="relation-group">
+        <div class="relation-group-heading">
+          <div>
+            <h3>후보 / THEME</h3>
+            <p>테마성·추정 관계입니다. 검증 전에는 영구 관계로 저장하지 않습니다.</p>
+          </div>
+        </div>
+        <div id="candidateRelations" class="relation-grid">
+          <div class="relation-empty">후보 관계를 불러오는 중입니다...</div>
+        </div>
+      </section>
+
+      <section class="relation-group">
+        <div class="relation-group-heading">
+          <div>
+            <h3>참고 / 미매핑</h3>
+            <p>지수·ETF 프록시 또는 아직 상장사 연결이 확인되지 않은 이벤트입니다.</p>
+          </div>
+        </div>
+        <div id="referenceRelations" class="relation-grid">
+          <div class="relation-empty">참고 관계를 불러오는 중입니다...</div>
+        </div>
+      </section>
+    </div>
+
     <div class="card" style="margin-bottom: 24px;">
       <h2>📈 과거 비슷한 이벤트에서 주가는 어떻게 움직였나</h2>
       <div id="backtestVerdict" class="backtest-verdict">분석 결과를 계산 중입니다...</div>
@@ -93,25 +139,6 @@
     </div>
 
     <div class="card" style="margin-bottom: 24px;">
-      <h2>🔗 현재 이벤트 관련주 및 관계 근거</h2>
-      <div class="table-responsive">
-        <table>
-          <thead>
-            <tr>
-              <th>티커</th>
-              <th>등급</th>
-              <th>Relation Score</th>
-              <th>공식 근거 및 관계 유형</th>
-            </tr>
-          </thead>
-          <tbody id="relatedSecuritiesBody">
-            <tr><td colspan="4" style="text-align:center;">로딩 중...</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div class="card" style="margin-bottom: 24px;">
       <h2>🕒 일정 변경 및 리비전 이력</h2>
       <div class="table-responsive">
         <table>
@@ -134,5 +161,6 @@
 
   <script src="js/charts.js"></script>
   <script src="js/event-detail.js"></script>
+  <script src="js/relation-ui.js"></script>
 </body>
 </html>
