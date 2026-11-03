@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Event Radar - 한국·미국 주가 이벤트 레이더</title>
+  <title>Event Radar - 한국·미국 미래 주가 이벤트 레이더</title>
   <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
       <div>
         <h1>🎯 Event Radar</h1>
         <div class="header-meta">
-          <span>한국·미국 날짜 확정형 주가 이벤트 및 A/B 관련주 백테스트 레이더</span>
+          <span>한국·미국 미래 주가 이벤트 및 A/B 관련주 백테스트 레이더</span>
           <span>마지막 업데이트: <strong id="lastUpdated">-</strong></span>
         </div>
       </div>
@@ -47,11 +47,15 @@
       <div class="filter-row">
         <span class="filter-label">유형</span>
         <button class="btn-pill active" data-filter-key="category" data-filter-value="all">전체</button>
-        <button class="btn-pill" data-filter-key="category" data-filter-value="증자">증자 (무상/유상)</button>
+        <button class="btn-pill" data-filter-key="category" data-filter-value="증자">증자</button>
+        <button class="btn-pill" data-filter-key="category" data-filter-value="CAPEX">CAPEX/시설투자</button>
         <button class="btn-pill" data-filter-key="category" data-filter-value="분할">주식분할/병합</button>
         <button class="btn-pill" data-filter-key="category" data-filter-value="락업">락업/보호예수</button>
         <button class="btn-pill" data-filter-key="category" data-filter-value="실적">실적발표</button>
-        <button class="btn-pill" data-filter-key="category" data-filter-value="FDA">FDA/PDUFA/임상</button>
+        <button class="btn-pill" data-filter-key="category" data-filter-value="FDA">FDA/임상</button>
+        <button class="btn-pill" data-filter-key="category" data-filter-value="IPO">IPO/상장</button>
+        <button class="btn-pill" data-filter-key="category" data-filter-value="FOMC">FOMC</button>
+        <button class="btn-pill" data-filter-key="category" data-filter-value="뉴스촉매">뉴스 미래촉매</button>
         <button class="btn-pill" data-filter-key="category" data-filter-value="지수">지수 편입/편출</button>
         <button class="btn-pill" data-filter-key="category" data-filter-value="엔터">엔터 컴백</button>
         <button class="btn-pill" data-filter-key="category" data-filter-value="게임">게임 출시</button>
