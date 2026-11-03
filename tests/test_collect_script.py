@@ -1,4 +1,5 @@
 import importlib.util
+import os
 from pathlib import Path
 
 
@@ -28,6 +29,22 @@ def test_build_collectors_uses_live_core_and_v2_sources(tmp_path):
 def test_fast_refresh_collectors_only_hit_future_news(tmp_path):
     collectors = collect_script.build_collectors(tmp_path, fast_refresh=True)
     assert [collector.source_name for collector in collectors] == ["NEWS_FUTURE"]
+
+
+def test_prepare_fast_refresh_captures_news_credentials_then_clears_mapping_credentials(monkeypatch, tmp_path):
+    monkeypatch.setenv("DART_API_KEY", "dart-secret")
+    monkeypatch.setenv("NAVER_API_HUB_KEY_ID", "naver-id")
+    monkeypatch.setenv("NAVER_API_HUB_KEY", "naver-secret")
+
+    collectors = collect_script.prepare_fast_refresh_collectors(tmp_path)
+    assert [collector.source_name for collector in collectors] == ["NEWS_FUTURE"]
+    news = collectors[0]
+    assert news.api_key_id == "naver-id"
+    assert news.api_key == "naver-secret"
+
+    assert "DART_API_KEY" not in os.environ
+    assert "NAVER_API_HUB_KEY_ID" not in os.environ
+    assert "NAVER_API_HUB_KEY" not in os.environ
 
 
 def test_production_news_queries_include_natural_phrasing_without_expected_word(tmp_path):
