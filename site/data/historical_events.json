@@ -1,0 +1,288 @@
+[
+  {
+    "event_id": "KR_HISTORICAL_SEED_HIST_ELECTION_KR_LOCAL_2026",
+    "country": "KR",
+    "event_type": "ELECTION",
+    "event_name": "제9회 전국동시지방선거 정치 이벤트 기준일",
+    "event_date": "2026-06-03",
+    "company": "대한민국 제9회 전국동시지방선거",
+    "source_url": "https://su.nec.go.kr/su/bbs/B0000263/view.do?category1=su&menuNo=100176&nttId=273718&pageIndex=1",
+    "evidence_text": "제9회 전국동시지방선거 공식 선거일",
+    "related_securities": [
+      {
+        "ticker": "",
+        "relation_grade": "UNMAPPED",
+        "relation_score": 0,
+        "relation_type": "UNMAPPED",
+        "evidence_text": "직접 또는 검증된 관련 종목 미매핑"
+      }
+    ]
+  },
+  {
+    "event_id": "KR_HISTORICAL_SEED_HIST_NUCLEAR_CZECH_CONTRACT_2025",
+    "country": "KR",
+    "event_type": "CONTRACT",
+    "event_name": "체코 Dukovany 원전 최종 EPC 계약 체결",
+    "event_date": "2025-06-04",
+    "company": "체코 Dukovany 원전",
+    "source_url": "https://mpo.gov.cz/en/guidepost/for-the-media/press-releases/epc-contract-for-completion-of-dukovany-has-been-signed--minister-of-industry-and-trade--lukas-vlcek-will-visit-korea-again-in-july--287912/",
+    "evidence_text": "EDU II와 KHNP가 Dukovany 신규 원전 2기 EPC 계약을 체결",
+    "related_securities": [
+      {
+        "ticker": "034020",
+        "relation_grade": "B",
+        "relation_score": 90,
+        "relation_type": "OFFICIAL_CONSORTIUM",
+        "evidence_text": "두산에너빌리티: 체코 원전 Team Korea 공식 참여사"
+      },
+      {
+        "ticker": "052690",
+        "relation_grade": "B",
+        "relation_score": 88,
+        "relation_type": "OFFICIAL_CONSORTIUM",
+        "evidence_text": "한국전력기술: 체코 원전 Team Korea 설계 참여사"
+      },
+      {
+        "ticker": "047040",
+        "relation_grade": "B",
+        "relation_score": 86,
+        "relation_type": "OFFICIAL_CONSORTIUM",
+        "evidence_text": "대우건설: 체코 원전 Team Korea 건설 참여사"
+      },
+      {
+        "ticker": "051600",
+        "relation_grade": "B",
+        "relation_score": 84,
+        "relation_type": "OFFICIAL_CONSORTIUM",
+        "evidence_text": "한전KPS: 체코 원전 Team Korea 시운전 유지보수 참여사"
+      }
+    ]
+  },
+  {
+    "event_id": "KR_HISTORICAL_SEED_HIST_ELECTION_KR_2025",
+    "country": "KR",
+    "event_type": "ELECTION",
+    "event_name": "제21대 대통령선거 이재명 김문수 정치 테마주 재료 소멸 기준일",
+    "event_date": "2025-06-03",
+    "company": "대한민국 제21대 대통령선거",
+    "source_url": "https://museum.nec.go.kr/museum2018/bbs/2/2/1/20170912155756377100_view.do?article_category=2&article_id=20260219152313385100&bbs_id=20170912155756377100&imgNum=%EB%8C%80%ED%86%B5%EB%A0%B9%EC%84%A0%EA%B1%B0%EC%82%AC",
+    "evidence_text": "제21대 대통령선거 공식 선거일",
+    "related_securities": [
+      {
+        "ticker": "093240",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "POLITICAL_THEME",
+        "evidence_text": "형지엘리트: 조기 대선 국면에서 이재명 테마주로 투자경고 종목에 포함"
+      },
+      {
+        "ticker": "042940",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "POLITICAL_THEME",
+        "evidence_text": "상지건설: 조기 대선 국면에서 이재명 테마주로 투자경고 종목에 포함"
+      },
+      {
+        "ticker": "308100",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "POLITICAL_THEME",
+        "evidence_text": "형지글로벌: 조기 대선 국면에서 이재명 테마주로 투자경고 종목에 포함"
+      },
+      {
+        "ticker": "010770",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "POLITICAL_THEME",
+        "evidence_text": "평화홀딩스: 조기 대선 국면에서 김문수 테마주로 투자경고 종목에 포함"
+      }
+    ]
+  },
+  {
+    "event_id": "KR_HISTORICAL_SEED_HIST_CONTROL_KOREAZINC_2024",
+    "country": "KR",
+    "event_type": "CONTROL_DISPUTE",
+    "event_name": "고려아연 경영권 분쟁 MBK 영풍 공개매수 개시",
+    "event_date": "2024-09-13",
+    "company": "고려아연",
+    "source_url": "https://www.reuters.com/markets/deals/private-equity-mbk-young-poong-launch-15-bln-tender-offer-korea-zinc-shares-2024-09-13/",
+    "evidence_text": "MBK와 영풍이 고려아연 지분 공개매수에 나서며 경영권 분쟁이 본격화",
+    "related_securities": [
+      {
+        "ticker": "010130",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자"
+      }
+    ]
+  },
+  {
+    "event_id": "KR_HISTORICAL_SEED_HIST_NUCLEAR_CZECH_2024",
+    "country": "KR",
+    "event_type": "TENDER",
+    "event_name": "체코 Dukovany 원전 KHNP 우선협상대상자 선정",
+    "event_date": "2024-07-17",
+    "company": "체코 Dukovany 원전",
+    "source_url": "https://vlada.gov.cz/en/media-centrum/aktualne/the-government-has-decided-on-a-preferred-supplier-for-the-new-nuclear-power-source--negotiations-on-the-construction-of-two-units-at-dukovany-will-be-214609/",
+    "evidence_text": "체코 정부가 KHNP를 신규 원전 우선협상대상자로 선정",
+    "related_securities": [
+      {
+        "ticker": "034020",
+        "relation_grade": "B",
+        "relation_score": 90,
+        "relation_type": "OFFICIAL_CONSORTIUM",
+        "evidence_text": "두산에너빌리티: 체코 원전 Team Korea 공식 참여사"
+      },
+      {
+        "ticker": "052690",
+        "relation_grade": "B",
+        "relation_score": 88,
+        "relation_type": "OFFICIAL_CONSORTIUM",
+        "evidence_text": "한국전력기술: 체코 원전 Team Korea 설계 참여사"
+      },
+      {
+        "ticker": "047040",
+        "relation_grade": "B",
+        "relation_score": 86,
+        "relation_type": "OFFICIAL_CONSORTIUM",
+        "evidence_text": "대우건설: 체코 원전 Team Korea 건설 참여사"
+      },
+      {
+        "ticker": "051600",
+        "relation_grade": "B",
+        "relation_score": 84,
+        "relation_type": "OFFICIAL_CONSORTIUM",
+        "evidence_text": "한전KPS: 체코 원전 Team Korea 시운전 유지보수 참여사"
+      }
+    ]
+  },
+  {
+    "event_id": "KR_HISTORICAL_SEED_HIST_ELECTION_KR_2024",
+    "country": "KR",
+    "event_type": "ELECTION",
+    "event_name": "제22대 총선 정치 테마주 재료 소멸 기준일",
+    "event_date": "2024-04-10",
+    "company": "대한민국 제22대 국회의원선거",
+    "source_url": "https://museum.nec.go.kr/museum2018/bbs/2/3/1/20170912155756377100_view.do?article_category=3&article_id=20250813161420182100&bbs_id=20170912155756377100",
+    "evidence_text": "제22대 국회의원선거 공식 선거일",
+    "related_securities": [
+      {
+        "ticker": "084690",
+        "relation_grade": "THEME",
+        "relation_score": 32,
+        "relation_type": "POLITICAL_THEME",
+        "evidence_text": "대상홀딩스: 언론에서 한동훈 테마주로 묶였으나 회사는 사업 관련성이 없다고 공시"
+      }
+    ]
+  },
+  {
+    "event_id": "KR_HISTORICAL_SEED_HIST_CONTROL_HANMI_2024",
+    "country": "KR",
+    "event_type": "CONTROL_DISPUTE",
+    "event_name": "한미사이언스 경영권 분쟁 주총 표대결 결과",
+    "event_date": "2024-03-28",
+    "company": "한미사이언스",
+    "source_url": "https://en.yna.co.kr/view/AEN20240328007700320",
+    "evidence_text": "창업주 장남과 차남 측 후보가 이사회 다수를 확보하며 표대결 승리",
+    "related_securities": [
+      {
+        "ticker": "008930",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자"
+      }
+    ]
+  },
+  {
+    "event_id": "KR_HISTORICAL_SEED_HIST_CONTROL_SM_2023",
+    "country": "KR",
+    "event_type": "CONTROL_DISPUTE",
+    "event_name": "SM 경영권 분쟁 HYBE 지분 인수 및 공개매수 발표",
+    "event_date": "2023-02-10",
+    "company": "에스엠",
+    "source_url": "https://www.investing.com/news/stock-market-news/bts-agency-hybe-seeks-to-take-over-kpop-rival-sm-entertainment-3000102",
+    "evidence_text": "HYBE의 SM 지분 인수와 공개매수로 경영권 경쟁이 본격화",
+    "related_securities": [
+      {
+        "ticker": "041510",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자"
+      }
+    ]
+  },
+  {
+    "event_id": "KR_HISTORICAL_SEED_HIST_ELECTION_KR_2022",
+    "country": "KR",
+    "event_type": "ELECTION",
+    "event_name": "제20대 대통령선거 윤석열 이재명 정치 테마주 재료 소멸 기준일",
+    "event_date": "2022-03-09",
+    "company": "대한민국 제20대 대통령선거",
+    "source_url": "https://museum.nec.go.kr/museum2018/bbs/2/1/1/20170912155756377100_view.do?article_category=1&article_id=20220415092608887100&bbs_id=20170912155756377100",
+    "evidence_text": "제20대 대통령선거 공식 선거일",
+    "related_securities": [
+      {
+        "ticker": "053290",
+        "relation_grade": "THEME",
+        "relation_score": 38,
+        "relation_type": "POLITICAL_THEME",
+        "evidence_text": "NE능률: 언론에서 윤석열 정치 테마주로 분류됐으나 기업가치와 직접 관련은 없음"
+      },
+      {
+        "ticker": "004830",
+        "relation_grade": "THEME",
+        "relation_score": 38,
+        "relation_type": "POLITICAL_THEME",
+        "evidence_text": "덕성: 언론에서 윤석열 정치 테마주로 거론"
+      },
+      {
+        "ticker": "015020",
+        "relation_grade": "THEME",
+        "relation_score": 38,
+        "relation_type": "POLITICAL_THEME",
+        "evidence_text": "이스타코: 언론에서 이재명 정책 테마주로 분류됐으나 직접 사업 연관은 제한적"
+      }
+    ]
+  },
+  {
+    "event_id": "KR_HISTORICAL_SEED_HIST_CONTROL_HANJIN_2020",
+    "country": "KR",
+    "event_type": "CONTROL_DISPUTE",
+    "event_name": "한진칼 경영권 분쟁 주총 표대결 결과",
+    "event_date": "2020-03-27",
+    "company": "한진칼",
+    "source_url": "https://en.yna.co.kr/view/AEN20200327006551320",
+    "evidence_text": "조원태 회장 측이 정기주총 표대결에서 경영권 방어에 성공",
+    "related_securities": [
+      {
+        "ticker": "180640",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자"
+      }
+    ]
+  },
+  {
+    "event_id": "KR_HISTORICAL_SEED_HIST_NUCLEAR_UAE_2009",
+    "country": "KR",
+    "event_type": "TENDER",
+    "event_name": "UAE Barakah 원전 한국 컨소시엄 수주 확정",
+    "event_date": "2009-12-27",
+    "company": "UAE Barakah 원전",
+    "source_url": "https://en.yna.co.kr/view/AEN20091227001800320",
+    "evidence_text": "한국전력 주도 컨소시엄이 UAE 원전 4기 건설 계약을 수주",
+    "related_securities": [
+      {
+        "ticker": "015760",
+        "relation_grade": "B",
+        "relation_score": 92,
+        "relation_type": "OFFICIAL_CONSORTIUM",
+        "evidence_text": "한국전력: UAE Barakah 원전 수주 컨소시엄 주도사"
+      }
+    ]
+  }
+]

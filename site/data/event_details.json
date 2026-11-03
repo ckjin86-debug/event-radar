@@ -35,6 +35,9 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 0,
+    "d5_sample_n": 0,
+    "historical_peers": [],
     "backtest_summary": {
       "sample_n": 0,
       "mean_return": 0.0,
@@ -165,7 +168,7 @@
     ],
     "event_curve": [],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   },
   "US_FED_FOMC_f58d532f7e3b63c6fa8f0b523ff171c240dd2348": {
     "event_id": "US_FED_FOMC_f58d532f7e3b63c6fa8f0b523ff171c240dd2348",
@@ -203,6 +206,32 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 1,
+    "d5_sample_n": 0,
+    "historical_peers": [
+      {
+        "event_id": "US_FED_FOMC_b3e6d8a21ccf92cf7373fe509ad6b5ef9b3c3548",
+        "country": "US",
+        "event_type": "FOMC_DECISION",
+        "event_name": "FOMC policy decision 2026-10-28",
+        "event_date": "2026-10-28",
+        "company": "Federal Reserve",
+        "source_name": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "evidence_text": "2026 October 27-28",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^GSPC",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      }
+    ],
     "backtest_summary": {
       "sample_n": 0,
       "mean_return": 0.0,
@@ -654,7 +683,7 @@
       }
     ],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   },
   "US_FED_FOMC_17c662e09879d52fe265843d376fb3c2fc83f128": {
     "event_id": "US_FED_FOMC_17c662e09879d52fe265843d376fb3c2fc83f128",
@@ -692,6 +721,32 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 1,
+    "d5_sample_n": 0,
+    "historical_peers": [
+      {
+        "event_id": "US_FED_FOMC_b3e6d8a21ccf92cf7373fe509ad6b5ef9b3c3548",
+        "country": "US",
+        "event_type": "FOMC_DECISION",
+        "event_name": "FOMC policy decision 2026-10-28",
+        "event_date": "2026-10-28",
+        "company": "Federal Reserve",
+        "source_name": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "evidence_text": "2026 October 27-28",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^GSPC",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      }
+    ],
     "backtest_summary": {
       "sample_n": 0,
       "mean_return": 0.0,
@@ -1143,7 +1198,7 @@
       }
     ],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   },
   "US_FED_FOMC_964b50a3c921583db1e4c714399e4344f4769177": {
     "event_id": "US_FED_FOMC_964b50a3c921583db1e4c714399e4344f4769177",
@@ -1181,6 +1236,32 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 1,
+    "d5_sample_n": 0,
+    "historical_peers": [
+      {
+        "event_id": "US_FED_FOMC_b3e6d8a21ccf92cf7373fe509ad6b5ef9b3c3548",
+        "country": "US",
+        "event_type": "FOMC_DECISION",
+        "event_name": "FOMC policy decision 2026-10-28",
+        "event_date": "2026-10-28",
+        "company": "Federal Reserve",
+        "source_name": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "evidence_text": "2026 October 27-28",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^GSPC",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      }
+    ],
     "backtest_summary": {
       "sample_n": 0,
       "mean_return": 0.0,
@@ -1632,7 +1713,7 @@
       }
     ],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   },
   "US_FED_FOMC_0ca8ec5ee389c69ca738f1ddfb01b815fa1af97f": {
     "event_id": "US_FED_FOMC_0ca8ec5ee389c69ca738f1ddfb01b815fa1af97f",
@@ -1670,6 +1751,32 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 1,
+    "d5_sample_n": 0,
+    "historical_peers": [
+      {
+        "event_id": "US_FED_FOMC_b3e6d8a21ccf92cf7373fe509ad6b5ef9b3c3548",
+        "country": "US",
+        "event_type": "FOMC_DECISION",
+        "event_name": "FOMC policy decision 2026-10-28",
+        "event_date": "2026-10-28",
+        "company": "Federal Reserve",
+        "source_name": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "evidence_text": "2026 October 27-28",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^GSPC",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      }
+    ],
     "backtest_summary": {
       "sample_n": 0,
       "mean_return": 0.0,
@@ -2121,7 +2228,7 @@
       }
     ],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   },
   "US_FED_FOMC_18ae6f6ec2fd0d0f72f330e0106c1e67abbd3c66": {
     "event_id": "US_FED_FOMC_18ae6f6ec2fd0d0f72f330e0106c1e67abbd3c66",
@@ -2159,6 +2266,32 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 1,
+    "d5_sample_n": 0,
+    "historical_peers": [
+      {
+        "event_id": "US_FED_FOMC_b3e6d8a21ccf92cf7373fe509ad6b5ef9b3c3548",
+        "country": "US",
+        "event_type": "FOMC_DECISION",
+        "event_name": "FOMC policy decision 2026-10-28",
+        "event_date": "2026-10-28",
+        "company": "Federal Reserve",
+        "source_name": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "evidence_text": "2026 October 27-28",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^GSPC",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      }
+    ],
     "backtest_summary": {
       "sample_n": 0,
       "mean_return": 0.0,
@@ -2610,7 +2743,7 @@
       }
     ],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   },
   "US_FED_FOMC_881541bb0fe02ba7a8dfbb308b847d8eee821f5f": {
     "event_id": "US_FED_FOMC_881541bb0fe02ba7a8dfbb308b847d8eee821f5f",
@@ -2648,6 +2781,32 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 1,
+    "d5_sample_n": 0,
+    "historical_peers": [
+      {
+        "event_id": "US_FED_FOMC_b3e6d8a21ccf92cf7373fe509ad6b5ef9b3c3548",
+        "country": "US",
+        "event_type": "FOMC_DECISION",
+        "event_name": "FOMC policy decision 2026-10-28",
+        "event_date": "2026-10-28",
+        "company": "Federal Reserve",
+        "source_name": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "evidence_text": "2026 October 27-28",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^GSPC",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      }
+    ],
     "backtest_summary": {
       "sample_n": 0,
       "mean_return": 0.0,
@@ -3099,7 +3258,7 @@
       }
     ],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   },
   "US_FED_FOMC_f78ce707fb49333ff657bde7b01bb68639da9be0": {
     "event_id": "US_FED_FOMC_f78ce707fb49333ff657bde7b01bb68639da9be0",
@@ -3137,6 +3296,32 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 1,
+    "d5_sample_n": 0,
+    "historical_peers": [
+      {
+        "event_id": "US_FED_FOMC_b3e6d8a21ccf92cf7373fe509ad6b5ef9b3c3548",
+        "country": "US",
+        "event_type": "FOMC_DECISION",
+        "event_name": "FOMC policy decision 2026-10-28",
+        "event_date": "2026-10-28",
+        "company": "Federal Reserve",
+        "source_name": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "evidence_text": "2026 October 27-28",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^GSPC",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      }
+    ],
     "backtest_summary": {
       "sample_n": 0,
       "mean_return": 0.0,
@@ -3588,7 +3773,7 @@
       }
     ],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   },
   "US_FED_FOMC_4be8cd079cb3a664de18b7e4ab3b0d571b7b557f": {
     "event_id": "US_FED_FOMC_4be8cd079cb3a664de18b7e4ab3b0d571b7b557f",
@@ -3626,6 +3811,32 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 1,
+    "d5_sample_n": 0,
+    "historical_peers": [
+      {
+        "event_id": "US_FED_FOMC_b3e6d8a21ccf92cf7373fe509ad6b5ef9b3c3548",
+        "country": "US",
+        "event_type": "FOMC_DECISION",
+        "event_name": "FOMC policy decision 2026-10-28",
+        "event_date": "2026-10-28",
+        "company": "Federal Reserve",
+        "source_name": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "evidence_text": "2026 October 27-28",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^GSPC",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      }
+    ],
     "backtest_summary": {
       "sample_n": 0,
       "mean_return": 0.0,
@@ -4077,7 +4288,7 @@
       }
     ],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   },
   "US_FED_FOMC_bd9946dcc990c3743eda9b9f21290415226c4d46": {
     "event_id": "US_FED_FOMC_bd9946dcc990c3743eda9b9f21290415226c4d46",
@@ -4115,6 +4326,32 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 1,
+    "d5_sample_n": 0,
+    "historical_peers": [
+      {
+        "event_id": "US_FED_FOMC_b3e6d8a21ccf92cf7373fe509ad6b5ef9b3c3548",
+        "country": "US",
+        "event_type": "FOMC_DECISION",
+        "event_name": "FOMC policy decision 2026-10-28",
+        "event_date": "2026-10-28",
+        "company": "Federal Reserve",
+        "source_name": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "evidence_text": "2026 October 27-28",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^GSPC",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      }
+    ],
     "backtest_summary": {
       "sample_n": 0,
       "mean_return": 0.0,
@@ -4566,7 +4803,7 @@
       }
     ],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   },
   "US_FDA_ADVISORY_federal-register:2026-19700": {
     "event_id": "US_FDA_ADVISORY_federal-register:2026-19700",
@@ -4604,6 +4841,9 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 0,
+    "d5_sample_n": 0,
+    "historical_peers": [],
     "backtest_summary": {
       "sample_n": 0,
       "mean_return": 0.0,
@@ -4734,7 +4974,7 @@
     ],
     "event_curve": [],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   },
   "US_FDA_ADVISORY_federal-register:2026-18920": {
     "event_id": "US_FDA_ADVISORY_federal-register:2026-18920",
@@ -4772,6 +5012,32 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 1,
+    "d5_sample_n": 0,
+    "historical_peers": [
+      {
+        "event_id": "US_FDA_ADVISORY_federal-register:2026-19700",
+        "country": "US",
+        "event_type": "FDA_ADVISORY_COMMITTEE",
+        "event_name": "Dermatologic and Ophthalmic Drugs Advisory Committee; Notice of Meeting; Establishment of a Public Docket; Request for Comments-New Drug Application (NDA) 219694 for Atropine Sulfate Ophthalmic Solution, 0.01%",
+        "event_date": "2026-10-30",
+        "company": "FDA Advisory Committee",
+        "source_name": "FDA_ADVISORY",
+        "source_url": "https://www.federalregister.gov/documents/2026/09/25/2026-19700/dermatologic-and-ophthalmic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public",
+        "evidence_text": "The meeting will be held on October 30, 2026, from 8:30 a.m. to 3 p.m. Eastern Time.",
+        "min_offset": -60,
+        "max_offset": 1,
+        "related_securities": [
+          {
+            "ticker": "XBI",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      }
+    ],
     "backtest_summary": {
       "sample_n": 0,
       "mean_return": 0.0,
@@ -5213,7 +5479,7 @@
       }
     ],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   },
   "KR_KIND_IPO_ad4821a8291ab1af54535a38d4482e46008cc2ae": {
     "event_id": "KR_KIND_IPO_ad4821a8291ab1af54535a38d4482e46008cc2ae",
@@ -5222,7 +5488,7 @@
     "company": "에스케이증권제14호기업인수목적",
     "event_type": "IPO_LISTING",
     "event_name": "에스케이증권제14호기업인수목적 상장예정일",
-    "announced_at": "2026-10-27T06:40:48.958312",
+    "announced_at": "2026-10-27T06:57:53.657521",
     "event_date": "2026-10-27",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-10-27",
@@ -5251,6 +5517,9 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 0,
+    "d5_sample_n": 0,
+    "historical_peers": [],
     "backtest_summary": {
       "sample_n": 0,
       "mean_return": 0.0,
@@ -5381,7 +5650,7 @@
     ],
     "event_curve": [],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   },
   "KR_KIND_IPO_7a94ec521b66d5a584d72ad5cf9304a8fca23281": {
     "event_id": "KR_KIND_IPO_7a94ec521b66d5a584d72ad5cf9304a8fca23281",
@@ -5390,7 +5659,7 @@
     "company": "크리에이츠",
     "event_type": "IPO_LISTING",
     "event_name": "크리에이츠 상장예정일",
-    "announced_at": "2026-10-27T06:40:48.958312",
+    "announced_at": "2026-10-27T06:57:53.657521",
     "event_date": "2026-10-29",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-10-29",
@@ -5419,6 +5688,32 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 1,
+    "d5_sample_n": 1,
+    "historical_peers": [
+      {
+        "event_id": "KR_KIND_IPO_ad4821a8291ab1af54535a38d4482e46008cc2ae",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "에스케이증권제14호기업인수목적 상장예정일",
+        "event_date": "2026-10-27",
+        "company": "에스케이증권제14호기업인수목적",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "에스케이증권제14호기업인수목적 | 2026-08-26 | 2026-10-12 ~ 2026-10-13 | 2026-10-15 ~ 2026-10-16 | 2026-10-20 | 2,000 | 13,000 | 2026-10-27 | SK증권(주)",
+        "min_offset": -60,
+        "max_offset": 5,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      }
+    ],
     "backtest_summary": {
       "sample_n": 1,
       "mean_return": -0.0549,
@@ -5880,7 +6175,7 @@
       }
     ],
     "sample_count": 1,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   },
   "KR_KIND_IPO_81bfec927fc30451d4700230ccffeb3194e205e4": {
     "event_id": "KR_KIND_IPO_81bfec927fc30451d4700230ccffeb3194e205e4",
@@ -5889,7 +6184,7 @@
     "company": "티앤이코리아",
     "event_type": "IPO_LISTING",
     "event_name": "티앤이코리아 상장예정일",
-    "announced_at": "2026-10-27T06:40:48.958312",
+    "announced_at": "2026-10-27T06:57:53.657521",
     "event_date": "2026-10-29",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-10-29",
@@ -5918,6 +6213,32 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 1,
+    "d5_sample_n": 1,
+    "historical_peers": [
+      {
+        "event_id": "KR_KIND_IPO_ad4821a8291ab1af54535a38d4482e46008cc2ae",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "에스케이증권제14호기업인수목적 상장예정일",
+        "event_date": "2026-10-27",
+        "company": "에스케이증권제14호기업인수목적",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "에스케이증권제14호기업인수목적 | 2026-08-26 | 2026-10-12 ~ 2026-10-13 | 2026-10-15 ~ 2026-10-16 | 2026-10-20 | 2,000 | 13,000 | 2026-10-27 | SK증권(주)",
+        "min_offset": -60,
+        "max_offset": 5,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      }
+    ],
     "backtest_summary": {
       "sample_n": 1,
       "mean_return": -0.0549,
@@ -6379,7 +6700,7 @@
       }
     ],
     "sample_count": 1,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   },
   "KR_KIND_IPO_22b1edbb2ea1b2abd5cabf9e7c2316a8b6b2f247": {
     "event_id": "KR_KIND_IPO_22b1edbb2ea1b2abd5cabf9e7c2316a8b6b2f247",
@@ -6388,7 +6709,7 @@
     "company": "한화플러스제6호스팩",
     "event_type": "IPO_LISTING",
     "event_name": "한화플러스제6호스팩 상장예정일",
-    "announced_at": "2026-10-27T06:40:48.958312",
+    "announced_at": "2026-10-27T06:57:53.657521",
     "event_date": "2026-10-30",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-10-30",
@@ -6417,6 +6738,76 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 3,
+    "d5_sample_n": 1,
+    "historical_peers": [
+      {
+        "event_id": "KR_KIND_IPO_ad4821a8291ab1af54535a38d4482e46008cc2ae",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "에스케이증권제14호기업인수목적 상장예정일",
+        "event_date": "2026-10-27",
+        "company": "에스케이증권제14호기업인수목적",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "에스케이증권제14호기업인수목적 | 2026-08-26 | 2026-10-12 ~ 2026-10-13 | 2026-10-15 ~ 2026-10-16 | 2026-10-20 | 2,000 | 13,000 | 2026-10-27 | SK증권(주)",
+        "min_offset": -60,
+        "max_offset": 5,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_7a94ec521b66d5a584d72ad5cf9304a8fca23281",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "크리에이츠 상장예정일",
+        "event_date": "2026-10-29",
+        "company": "크리에이츠",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "크리에이츠 | 2026-09-04 | 2026-10-12 ~ 2026-10-16 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 15,000 | 21,000 | 2026-10-29 | 삼성증권(주)",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_81bfec927fc30451d4700230ccffeb3194e205e4",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "티앤이코리아 상장예정일",
+        "event_date": "2026-10-29",
+        "company": "티앤이코리아",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "티앤이코리아 | 2026-09-03 | 2026-10-07 ~ 2026-10-14 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 15,300 | 36,720 | 2026-10-29 | 신한투자증권 주식회사",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      }
+    ],
     "backtest_summary": {
       "sample_n": 1,
       "mean_return": -0.0549,
@@ -6878,7 +7269,7 @@
       }
     ],
     "sample_count": 1,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   },
   "KR_KIND_IPO_832784cc1f6eb61b3b81a0e156cf38dcfca1b75e": {
     "event_id": "KR_KIND_IPO_832784cc1f6eb61b3b81a0e156cf38dcfca1b75e",
@@ -6887,7 +7278,7 @@
     "company": "인텔리빅스",
     "event_type": "IPO_LISTING",
     "event_name": "인텔리빅스 상장예정일",
-    "announced_at": "2026-10-27T06:40:48.958312",
+    "announced_at": "2026-10-27T06:57:53.657521",
     "event_date": "2026-10-31",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-10-31",
@@ -6916,6 +7307,98 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 4,
+    "d5_sample_n": 1,
+    "historical_peers": [
+      {
+        "event_id": "KR_KIND_IPO_ad4821a8291ab1af54535a38d4482e46008cc2ae",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "에스케이증권제14호기업인수목적 상장예정일",
+        "event_date": "2026-10-27",
+        "company": "에스케이증권제14호기업인수목적",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "에스케이증권제14호기업인수목적 | 2026-08-26 | 2026-10-12 ~ 2026-10-13 | 2026-10-15 ~ 2026-10-16 | 2026-10-20 | 2,000 | 13,000 | 2026-10-27 | SK증권(주)",
+        "min_offset": -60,
+        "max_offset": 5,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_7a94ec521b66d5a584d72ad5cf9304a8fca23281",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "크리에이츠 상장예정일",
+        "event_date": "2026-10-29",
+        "company": "크리에이츠",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "크리에이츠 | 2026-09-04 | 2026-10-12 ~ 2026-10-16 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 15,000 | 21,000 | 2026-10-29 | 삼성증권(주)",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_81bfec927fc30451d4700230ccffeb3194e205e4",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "티앤이코리아 상장예정일",
+        "event_date": "2026-10-29",
+        "company": "티앤이코리아",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "티앤이코리아 | 2026-09-03 | 2026-10-07 ~ 2026-10-14 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 15,300 | 36,720 | 2026-10-29 | 신한투자증권 주식회사",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_22b1edbb2ea1b2abd5cabf9e7c2316a8b6b2f247",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "한화플러스제6호스팩 상장예정일",
+        "event_date": "2026-10-30",
+        "company": "한화플러스제6호스팩",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "한화플러스제6호스팩 | 2026-09-17 | 2026-10-14 ~ 2026-10-15 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 2,000 | 12,000 | 2026-10-30 | 한화투자증권(주)",
+        "min_offset": -60,
+        "max_offset": 2,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      }
+    ],
     "backtest_summary": {
       "sample_n": 1,
       "mean_return": -0.0549,
@@ -7377,7 +7860,7 @@
       }
     ],
     "sample_count": 1,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   },
   "KR_KIND_IPO_5a3452ed7550c9d112a70cb1ad2e8756a6e4b71f": {
     "event_id": "KR_KIND_IPO_5a3452ed7550c9d112a70cb1ad2e8756a6e4b71f",
@@ -7386,7 +7869,7 @@
     "company": "영광",
     "event_type": "IPO_LISTING",
     "event_name": "영광 상장예정일",
-    "announced_at": "2026-10-27T06:40:48.958312",
+    "announced_at": "2026-10-27T06:57:53.657521",
     "event_date": "2026-11-02",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-11-02",
@@ -7415,6 +7898,120 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 5,
+    "d5_sample_n": 1,
+    "historical_peers": [
+      {
+        "event_id": "KR_KIND_IPO_ad4821a8291ab1af54535a38d4482e46008cc2ae",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "에스케이증권제14호기업인수목적 상장예정일",
+        "event_date": "2026-10-27",
+        "company": "에스케이증권제14호기업인수목적",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "에스케이증권제14호기업인수목적 | 2026-08-26 | 2026-10-12 ~ 2026-10-13 | 2026-10-15 ~ 2026-10-16 | 2026-10-20 | 2,000 | 13,000 | 2026-10-27 | SK증권(주)",
+        "min_offset": -60,
+        "max_offset": 5,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_7a94ec521b66d5a584d72ad5cf9304a8fca23281",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "크리에이츠 상장예정일",
+        "event_date": "2026-10-29",
+        "company": "크리에이츠",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "크리에이츠 | 2026-09-04 | 2026-10-12 ~ 2026-10-16 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 15,000 | 21,000 | 2026-10-29 | 삼성증권(주)",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_81bfec927fc30451d4700230ccffeb3194e205e4",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "티앤이코리아 상장예정일",
+        "event_date": "2026-10-29",
+        "company": "티앤이코리아",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "티앤이코리아 | 2026-09-03 | 2026-10-07 ~ 2026-10-14 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 15,300 | 36,720 | 2026-10-29 | 신한투자증권 주식회사",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_22b1edbb2ea1b2abd5cabf9e7c2316a8b6b2f247",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "한화플러스제6호스팩 상장예정일",
+        "event_date": "2026-10-30",
+        "company": "한화플러스제6호스팩",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "한화플러스제6호스팩 | 2026-09-17 | 2026-10-14 ~ 2026-10-15 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 2,000 | 12,000 | 2026-10-30 | 한화투자증권(주)",
+        "min_offset": -60,
+        "max_offset": 2,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_832784cc1f6eb61b3b81a0e156cf38dcfca1b75e",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "인텔리빅스 상장예정일",
+        "event_date": "2026-10-31",
+        "company": "인텔리빅스",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "인텔리빅스 | 2026-09-16 | 2026-10-12 ~ 2026-10-16 | 2026-10-21 ~ 2026-10-22 | 2026-10-26 | 9,000 | 22,500 | 2026-10-31 | 미래에셋증권 주식회사",
+        "min_offset": -60,
+        "max_offset": 1,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      }
+    ],
     "backtest_summary": {
       "sample_n": 1,
       "mean_return": -0.0549,
@@ -7876,7 +8473,7 @@
       }
     ],
     "sample_count": 1,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   },
   "KR_KIND_IPO_c36644468a48de410093c57ca68cf92dc10cdd85": {
     "event_id": "KR_KIND_IPO_c36644468a48de410093c57ca68cf92dc10cdd85",
@@ -7885,7 +8482,7 @@
     "company": "래블업",
     "event_type": "IPO_LISTING",
     "event_name": "래블업 상장예정일",
-    "announced_at": "2026-10-27T06:40:48.958312",
+    "announced_at": "2026-10-27T06:57:53.657521",
     "event_date": "2026-11-03",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-11-03",
@@ -7914,6 +8511,142 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 6,
+    "d5_sample_n": 1,
+    "historical_peers": [
+      {
+        "event_id": "KR_KIND_IPO_ad4821a8291ab1af54535a38d4482e46008cc2ae",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "에스케이증권제14호기업인수목적 상장예정일",
+        "event_date": "2026-10-27",
+        "company": "에스케이증권제14호기업인수목적",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "에스케이증권제14호기업인수목적 | 2026-08-26 | 2026-10-12 ~ 2026-10-13 | 2026-10-15 ~ 2026-10-16 | 2026-10-20 | 2,000 | 13,000 | 2026-10-27 | SK증권(주)",
+        "min_offset": -60,
+        "max_offset": 5,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_7a94ec521b66d5a584d72ad5cf9304a8fca23281",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "크리에이츠 상장예정일",
+        "event_date": "2026-10-29",
+        "company": "크리에이츠",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "크리에이츠 | 2026-09-04 | 2026-10-12 ~ 2026-10-16 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 15,000 | 21,000 | 2026-10-29 | 삼성증권(주)",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_81bfec927fc30451d4700230ccffeb3194e205e4",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "티앤이코리아 상장예정일",
+        "event_date": "2026-10-29",
+        "company": "티앤이코리아",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "티앤이코리아 | 2026-09-03 | 2026-10-07 ~ 2026-10-14 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 15,300 | 36,720 | 2026-10-29 | 신한투자증권 주식회사",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_22b1edbb2ea1b2abd5cabf9e7c2316a8b6b2f247",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "한화플러스제6호스팩 상장예정일",
+        "event_date": "2026-10-30",
+        "company": "한화플러스제6호스팩",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "한화플러스제6호스팩 | 2026-09-17 | 2026-10-14 ~ 2026-10-15 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 2,000 | 12,000 | 2026-10-30 | 한화투자증권(주)",
+        "min_offset": -60,
+        "max_offset": 2,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_832784cc1f6eb61b3b81a0e156cf38dcfca1b75e",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "인텔리빅스 상장예정일",
+        "event_date": "2026-10-31",
+        "company": "인텔리빅스",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "인텔리빅스 | 2026-09-16 | 2026-10-12 ~ 2026-10-16 | 2026-10-21 ~ 2026-10-22 | 2026-10-26 | 9,000 | 22,500 | 2026-10-31 | 미래에셋증권 주식회사",
+        "min_offset": -60,
+        "max_offset": 1,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_5a3452ed7550c9d112a70cb1ad2e8756a6e4b71f",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "영광 상장예정일",
+        "event_date": "2026-11-02",
+        "company": "영광",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "영광 | 2026-09-21 | 2026-10-13 ~ 2026-10-19 | 2026-10-22 ~ 2026-10-23 | 2026-10-27 | 17,000 | 38,420 | 2026-11-02 | 한국투자증권(주)",
+        "min_offset": -60,
+        "max_offset": 1,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      }
+    ],
     "backtest_summary": {
       "sample_n": 1,
       "mean_return": -0.0549,
@@ -8375,7 +9108,7 @@
       }
     ],
     "sample_count": 1,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   },
   "KR_KIND_IPO_561e48a87092e0fc9bbbb7ded749dfef7c92f18b": {
     "event_id": "KR_KIND_IPO_561e48a87092e0fc9bbbb7ded749dfef7c92f18b",
@@ -8384,7 +9117,7 @@
     "company": "아이엠스팩1호",
     "event_type": "IPO_LISTING",
     "event_name": "아이엠스팩1호 상장예정일",
-    "announced_at": "2026-10-27T06:40:48.958312",
+    "announced_at": "2026-10-27T06:57:53.657521",
     "event_date": "2026-11-04",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-11-04",
@@ -8413,6 +9146,164 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 7,
+    "d5_sample_n": 1,
+    "historical_peers": [
+      {
+        "event_id": "KR_KIND_IPO_ad4821a8291ab1af54535a38d4482e46008cc2ae",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "에스케이증권제14호기업인수목적 상장예정일",
+        "event_date": "2026-10-27",
+        "company": "에스케이증권제14호기업인수목적",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "에스케이증권제14호기업인수목적 | 2026-08-26 | 2026-10-12 ~ 2026-10-13 | 2026-10-15 ~ 2026-10-16 | 2026-10-20 | 2,000 | 13,000 | 2026-10-27 | SK증권(주)",
+        "min_offset": -60,
+        "max_offset": 5,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_7a94ec521b66d5a584d72ad5cf9304a8fca23281",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "크리에이츠 상장예정일",
+        "event_date": "2026-10-29",
+        "company": "크리에이츠",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "크리에이츠 | 2026-09-04 | 2026-10-12 ~ 2026-10-16 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 15,000 | 21,000 | 2026-10-29 | 삼성증권(주)",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_81bfec927fc30451d4700230ccffeb3194e205e4",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "티앤이코리아 상장예정일",
+        "event_date": "2026-10-29",
+        "company": "티앤이코리아",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "티앤이코리아 | 2026-09-03 | 2026-10-07 ~ 2026-10-14 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 15,300 | 36,720 | 2026-10-29 | 신한투자증권 주식회사",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_22b1edbb2ea1b2abd5cabf9e7c2316a8b6b2f247",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "한화플러스제6호스팩 상장예정일",
+        "event_date": "2026-10-30",
+        "company": "한화플러스제6호스팩",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "한화플러스제6호스팩 | 2026-09-17 | 2026-10-14 ~ 2026-10-15 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 2,000 | 12,000 | 2026-10-30 | 한화투자증권(주)",
+        "min_offset": -60,
+        "max_offset": 2,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_832784cc1f6eb61b3b81a0e156cf38dcfca1b75e",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "인텔리빅스 상장예정일",
+        "event_date": "2026-10-31",
+        "company": "인텔리빅스",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "인텔리빅스 | 2026-09-16 | 2026-10-12 ~ 2026-10-16 | 2026-10-21 ~ 2026-10-22 | 2026-10-26 | 9,000 | 22,500 | 2026-10-31 | 미래에셋증권 주식회사",
+        "min_offset": -60,
+        "max_offset": 1,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_5a3452ed7550c9d112a70cb1ad2e8756a6e4b71f",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "영광 상장예정일",
+        "event_date": "2026-11-02",
+        "company": "영광",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "영광 | 2026-09-21 | 2026-10-13 ~ 2026-10-19 | 2026-10-22 ~ 2026-10-23 | 2026-10-27 | 17,000 | 38,420 | 2026-11-02 | 한국투자증권(주)",
+        "min_offset": -60,
+        "max_offset": 1,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_c36644468a48de410093c57ca68cf92dc10cdd85",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "래블업 상장예정일",
+        "event_date": "2026-11-03",
+        "company": "래블업",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "래블업 | 2026-08-25 | 2026-10-13 ~ 2026-10-19 | 2026-10-22 ~ 2026-10-23 | 2026-10-27 | 19,000 | 41,420 | 2026-11-03 | 엔에이치투자증권(주)",
+        "min_offset": -60,
+        "max_offset": 0,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      }
+    ],
     "backtest_summary": {
       "sample_n": 1,
       "mean_return": -0.0549,
@@ -8874,7 +9765,7 @@
       }
     ],
     "sample_count": 1,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   },
   "KR_KIND_IPO_6c60d4cd8f1e8f43bb8d389d838e1d66c0f4f357": {
     "event_id": "KR_KIND_IPO_6c60d4cd8f1e8f43bb8d389d838e1d66c0f4f357",
@@ -8883,7 +9774,7 @@
     "company": "이에스티",
     "event_type": "IPO_LISTING",
     "event_name": "이에스티 상장예정일",
-    "announced_at": "2026-10-27T06:40:48.958312",
+    "announced_at": "2026-10-27T06:57:53.657521",
     "event_date": "2026-11-04",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-11-04",
@@ -8912,6 +9803,164 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 7,
+    "d5_sample_n": 1,
+    "historical_peers": [
+      {
+        "event_id": "KR_KIND_IPO_ad4821a8291ab1af54535a38d4482e46008cc2ae",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "에스케이증권제14호기업인수목적 상장예정일",
+        "event_date": "2026-10-27",
+        "company": "에스케이증권제14호기업인수목적",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "에스케이증권제14호기업인수목적 | 2026-08-26 | 2026-10-12 ~ 2026-10-13 | 2026-10-15 ~ 2026-10-16 | 2026-10-20 | 2,000 | 13,000 | 2026-10-27 | SK증권(주)",
+        "min_offset": -60,
+        "max_offset": 5,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_7a94ec521b66d5a584d72ad5cf9304a8fca23281",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "크리에이츠 상장예정일",
+        "event_date": "2026-10-29",
+        "company": "크리에이츠",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "크리에이츠 | 2026-09-04 | 2026-10-12 ~ 2026-10-16 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 15,000 | 21,000 | 2026-10-29 | 삼성증권(주)",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_81bfec927fc30451d4700230ccffeb3194e205e4",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "티앤이코리아 상장예정일",
+        "event_date": "2026-10-29",
+        "company": "티앤이코리아",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "티앤이코리아 | 2026-09-03 | 2026-10-07 ~ 2026-10-14 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 15,300 | 36,720 | 2026-10-29 | 신한투자증권 주식회사",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_22b1edbb2ea1b2abd5cabf9e7c2316a8b6b2f247",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "한화플러스제6호스팩 상장예정일",
+        "event_date": "2026-10-30",
+        "company": "한화플러스제6호스팩",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "한화플러스제6호스팩 | 2026-09-17 | 2026-10-14 ~ 2026-10-15 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 2,000 | 12,000 | 2026-10-30 | 한화투자증권(주)",
+        "min_offset": -60,
+        "max_offset": 2,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_832784cc1f6eb61b3b81a0e156cf38dcfca1b75e",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "인텔리빅스 상장예정일",
+        "event_date": "2026-10-31",
+        "company": "인텔리빅스",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "인텔리빅스 | 2026-09-16 | 2026-10-12 ~ 2026-10-16 | 2026-10-21 ~ 2026-10-22 | 2026-10-26 | 9,000 | 22,500 | 2026-10-31 | 미래에셋증권 주식회사",
+        "min_offset": -60,
+        "max_offset": 1,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_5a3452ed7550c9d112a70cb1ad2e8756a6e4b71f",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "영광 상장예정일",
+        "event_date": "2026-11-02",
+        "company": "영광",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "영광 | 2026-09-21 | 2026-10-13 ~ 2026-10-19 | 2026-10-22 ~ 2026-10-23 | 2026-10-27 | 17,000 | 38,420 | 2026-11-02 | 한국투자증권(주)",
+        "min_offset": -60,
+        "max_offset": 1,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_c36644468a48de410093c57ca68cf92dc10cdd85",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "래블업 상장예정일",
+        "event_date": "2026-11-03",
+        "company": "래블업",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "래블업 | 2026-08-25 | 2026-10-13 ~ 2026-10-19 | 2026-10-22 ~ 2026-10-23 | 2026-10-27 | 19,000 | 41,420 | 2026-11-03 | 엔에이치투자증권(주)",
+        "min_offset": -60,
+        "max_offset": 0,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      }
+    ],
     "backtest_summary": {
       "sample_n": 1,
       "mean_return": -0.0549,
@@ -9373,7 +10422,7 @@
       }
     ],
     "sample_count": 1,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   },
   "KR_KIND_IPO_36e9f8708575adda2a70afe5d5d3a7c40f4d272f": {
     "event_id": "KR_KIND_IPO_36e9f8708575adda2a70afe5d5d3a7c40f4d272f",
@@ -9382,7 +10431,7 @@
     "company": "동원파츠",
     "event_type": "IPO_LISTING",
     "event_name": "동원파츠 상장예정일",
-    "announced_at": "2026-10-27T06:40:48.958312",
+    "announced_at": "2026-10-27T06:57:53.657521",
     "event_date": "2026-11-10",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-11-10",
@@ -9411,6 +10460,164 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 7,
+    "d5_sample_n": 1,
+    "historical_peers": [
+      {
+        "event_id": "KR_KIND_IPO_ad4821a8291ab1af54535a38d4482e46008cc2ae",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "에스케이증권제14호기업인수목적 상장예정일",
+        "event_date": "2026-10-27",
+        "company": "에스케이증권제14호기업인수목적",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "에스케이증권제14호기업인수목적 | 2026-08-26 | 2026-10-12 ~ 2026-10-13 | 2026-10-15 ~ 2026-10-16 | 2026-10-20 | 2,000 | 13,000 | 2026-10-27 | SK증권(주)",
+        "min_offset": -60,
+        "max_offset": 5,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_7a94ec521b66d5a584d72ad5cf9304a8fca23281",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "크리에이츠 상장예정일",
+        "event_date": "2026-10-29",
+        "company": "크리에이츠",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "크리에이츠 | 2026-09-04 | 2026-10-12 ~ 2026-10-16 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 15,000 | 21,000 | 2026-10-29 | 삼성증권(주)",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_81bfec927fc30451d4700230ccffeb3194e205e4",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "티앤이코리아 상장예정일",
+        "event_date": "2026-10-29",
+        "company": "티앤이코리아",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "티앤이코리아 | 2026-09-03 | 2026-10-07 ~ 2026-10-14 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 15,300 | 36,720 | 2026-10-29 | 신한투자증권 주식회사",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_22b1edbb2ea1b2abd5cabf9e7c2316a8b6b2f247",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "한화플러스제6호스팩 상장예정일",
+        "event_date": "2026-10-30",
+        "company": "한화플러스제6호스팩",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "한화플러스제6호스팩 | 2026-09-17 | 2026-10-14 ~ 2026-10-15 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 2,000 | 12,000 | 2026-10-30 | 한화투자증권(주)",
+        "min_offset": -60,
+        "max_offset": 2,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_832784cc1f6eb61b3b81a0e156cf38dcfca1b75e",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "인텔리빅스 상장예정일",
+        "event_date": "2026-10-31",
+        "company": "인텔리빅스",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "인텔리빅스 | 2026-09-16 | 2026-10-12 ~ 2026-10-16 | 2026-10-21 ~ 2026-10-22 | 2026-10-26 | 9,000 | 22,500 | 2026-10-31 | 미래에셋증권 주식회사",
+        "min_offset": -60,
+        "max_offset": 1,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_5a3452ed7550c9d112a70cb1ad2e8756a6e4b71f",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "영광 상장예정일",
+        "event_date": "2026-11-02",
+        "company": "영광",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "영광 | 2026-09-21 | 2026-10-13 ~ 2026-10-19 | 2026-10-22 ~ 2026-10-23 | 2026-10-27 | 17,000 | 38,420 | 2026-11-02 | 한국투자증권(주)",
+        "min_offset": -60,
+        "max_offset": 1,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_c36644468a48de410093c57ca68cf92dc10cdd85",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "래블업 상장예정일",
+        "event_date": "2026-11-03",
+        "company": "래블업",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "래블업 | 2026-08-25 | 2026-10-13 ~ 2026-10-19 | 2026-10-22 ~ 2026-10-23 | 2026-10-27 | 19,000 | 41,420 | 2026-11-03 | 엔에이치투자증권(주)",
+        "min_offset": -60,
+        "max_offset": 0,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      }
+    ],
     "backtest_summary": {
       "sample_n": 1,
       "mean_return": -0.0549,
@@ -9872,7 +11079,7 @@
       }
     ],
     "sample_count": 1,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   },
   "KR_KIND_IPO_f720780dcb05cf82442eea023725dcb72a037487": {
     "event_id": "KR_KIND_IPO_f720780dcb05cf82442eea023725dcb72a037487",
@@ -9881,7 +11088,7 @@
     "company": "넥스아이",
     "event_type": "IPO_LISTING",
     "event_name": "넥스아이 상장예정일",
-    "announced_at": "2026-10-27T06:40:48.958312",
+    "announced_at": "2026-10-27T06:57:53.657521",
     "event_date": "2026-11-12",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-11-12",
@@ -9910,6 +11117,164 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 7,
+    "d5_sample_n": 1,
+    "historical_peers": [
+      {
+        "event_id": "KR_KIND_IPO_ad4821a8291ab1af54535a38d4482e46008cc2ae",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "에스케이증권제14호기업인수목적 상장예정일",
+        "event_date": "2026-10-27",
+        "company": "에스케이증권제14호기업인수목적",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "에스케이증권제14호기업인수목적 | 2026-08-26 | 2026-10-12 ~ 2026-10-13 | 2026-10-15 ~ 2026-10-16 | 2026-10-20 | 2,000 | 13,000 | 2026-10-27 | SK증권(주)",
+        "min_offset": -60,
+        "max_offset": 5,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_7a94ec521b66d5a584d72ad5cf9304a8fca23281",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "크리에이츠 상장예정일",
+        "event_date": "2026-10-29",
+        "company": "크리에이츠",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "크리에이츠 | 2026-09-04 | 2026-10-12 ~ 2026-10-16 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 15,000 | 21,000 | 2026-10-29 | 삼성증권(주)",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_81bfec927fc30451d4700230ccffeb3194e205e4",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "티앤이코리아 상장예정일",
+        "event_date": "2026-10-29",
+        "company": "티앤이코리아",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "티앤이코리아 | 2026-09-03 | 2026-10-07 ~ 2026-10-14 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 15,300 | 36,720 | 2026-10-29 | 신한투자증권 주식회사",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_22b1edbb2ea1b2abd5cabf9e7c2316a8b6b2f247",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "한화플러스제6호스팩 상장예정일",
+        "event_date": "2026-10-30",
+        "company": "한화플러스제6호스팩",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "한화플러스제6호스팩 | 2026-09-17 | 2026-10-14 ~ 2026-10-15 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 2,000 | 12,000 | 2026-10-30 | 한화투자증권(주)",
+        "min_offset": -60,
+        "max_offset": 2,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_832784cc1f6eb61b3b81a0e156cf38dcfca1b75e",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "인텔리빅스 상장예정일",
+        "event_date": "2026-10-31",
+        "company": "인텔리빅스",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "인텔리빅스 | 2026-09-16 | 2026-10-12 ~ 2026-10-16 | 2026-10-21 ~ 2026-10-22 | 2026-10-26 | 9,000 | 22,500 | 2026-10-31 | 미래에셋증권 주식회사",
+        "min_offset": -60,
+        "max_offset": 1,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_5a3452ed7550c9d112a70cb1ad2e8756a6e4b71f",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "영광 상장예정일",
+        "event_date": "2026-11-02",
+        "company": "영광",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "영광 | 2026-09-21 | 2026-10-13 ~ 2026-10-19 | 2026-10-22 ~ 2026-10-23 | 2026-10-27 | 17,000 | 38,420 | 2026-11-02 | 한국투자증권(주)",
+        "min_offset": -60,
+        "max_offset": 1,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_c36644468a48de410093c57ca68cf92dc10cdd85",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "래블업 상장예정일",
+        "event_date": "2026-11-03",
+        "company": "래블업",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "래블업 | 2026-08-25 | 2026-10-13 ~ 2026-10-19 | 2026-10-22 ~ 2026-10-23 | 2026-10-27 | 19,000 | 41,420 | 2026-11-03 | 엔에이치투자증권(주)",
+        "min_offset": -60,
+        "max_offset": 0,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      }
+    ],
     "backtest_summary": {
       "sample_n": 1,
       "mean_return": -0.0549,
@@ -10371,7 +11736,7 @@
       }
     ],
     "sample_count": 1,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   },
   "KR_KIND_IPO_3148cd5fac8929cee30beeb9b427599152f80244": {
     "event_id": "KR_KIND_IPO_3148cd5fac8929cee30beeb9b427599152f80244",
@@ -10380,7 +11745,7 @@
     "company": "에이엘로봇",
     "event_type": "IPO_LISTING",
     "event_name": "에이엘로봇 상장예정일",
-    "announced_at": "2026-10-27T06:40:48.958312",
+    "announced_at": "2026-10-27T06:57:53.657521",
     "event_date": "2026-11-18",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-11-18",
@@ -10409,6 +11774,164 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 7,
+    "d5_sample_n": 1,
+    "historical_peers": [
+      {
+        "event_id": "KR_KIND_IPO_ad4821a8291ab1af54535a38d4482e46008cc2ae",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "에스케이증권제14호기업인수목적 상장예정일",
+        "event_date": "2026-10-27",
+        "company": "에스케이증권제14호기업인수목적",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "에스케이증권제14호기업인수목적 | 2026-08-26 | 2026-10-12 ~ 2026-10-13 | 2026-10-15 ~ 2026-10-16 | 2026-10-20 | 2,000 | 13,000 | 2026-10-27 | SK증권(주)",
+        "min_offset": -60,
+        "max_offset": 5,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_7a94ec521b66d5a584d72ad5cf9304a8fca23281",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "크리에이츠 상장예정일",
+        "event_date": "2026-10-29",
+        "company": "크리에이츠",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "크리에이츠 | 2026-09-04 | 2026-10-12 ~ 2026-10-16 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 15,000 | 21,000 | 2026-10-29 | 삼성증권(주)",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_81bfec927fc30451d4700230ccffeb3194e205e4",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "티앤이코리아 상장예정일",
+        "event_date": "2026-10-29",
+        "company": "티앤이코리아",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "티앤이코리아 | 2026-09-03 | 2026-10-07 ~ 2026-10-14 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 15,300 | 36,720 | 2026-10-29 | 신한투자증권 주식회사",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_22b1edbb2ea1b2abd5cabf9e7c2316a8b6b2f247",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "한화플러스제6호스팩 상장예정일",
+        "event_date": "2026-10-30",
+        "company": "한화플러스제6호스팩",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "한화플러스제6호스팩 | 2026-09-17 | 2026-10-14 ~ 2026-10-15 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 2,000 | 12,000 | 2026-10-30 | 한화투자증권(주)",
+        "min_offset": -60,
+        "max_offset": 2,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_832784cc1f6eb61b3b81a0e156cf38dcfca1b75e",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "인텔리빅스 상장예정일",
+        "event_date": "2026-10-31",
+        "company": "인텔리빅스",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "인텔리빅스 | 2026-09-16 | 2026-10-12 ~ 2026-10-16 | 2026-10-21 ~ 2026-10-22 | 2026-10-26 | 9,000 | 22,500 | 2026-10-31 | 미래에셋증권 주식회사",
+        "min_offset": -60,
+        "max_offset": 1,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_5a3452ed7550c9d112a70cb1ad2e8756a6e4b71f",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "영광 상장예정일",
+        "event_date": "2026-11-02",
+        "company": "영광",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "영광 | 2026-09-21 | 2026-10-13 ~ 2026-10-19 | 2026-10-22 ~ 2026-10-23 | 2026-10-27 | 17,000 | 38,420 | 2026-11-02 | 한국투자증권(주)",
+        "min_offset": -60,
+        "max_offset": 1,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_c36644468a48de410093c57ca68cf92dc10cdd85",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "래블업 상장예정일",
+        "event_date": "2026-11-03",
+        "company": "래블업",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "래블업 | 2026-08-25 | 2026-10-13 ~ 2026-10-19 | 2026-10-22 ~ 2026-10-23 | 2026-10-27 | 19,000 | 41,420 | 2026-11-03 | 엔에이치투자증권(주)",
+        "min_offset": -60,
+        "max_offset": 0,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      }
+    ],
     "backtest_summary": {
       "sample_n": 1,
       "mean_return": -0.0549,
@@ -10870,7 +12393,7 @@
       }
     ],
     "sample_count": 1,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   },
   "KR_KIND_IPO_053ff0fde7b70d248fe0b2d388e8e37366b64306": {
     "event_id": "KR_KIND_IPO_053ff0fde7b70d248fe0b2d388e8e37366b64306",
@@ -10879,7 +12402,7 @@
     "company": "씨아이에스케미칼",
     "event_type": "IPO_LISTING",
     "event_name": "씨아이에스케미칼 상장예정일",
-    "announced_at": "2026-10-27T06:40:48.958312",
+    "announced_at": "2026-10-27T06:57:53.657521",
     "event_date": "2026-12-22",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-12-22",
@@ -10908,6 +12431,164 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 7,
+    "d5_sample_n": 1,
+    "historical_peers": [
+      {
+        "event_id": "KR_KIND_IPO_ad4821a8291ab1af54535a38d4482e46008cc2ae",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "에스케이증권제14호기업인수목적 상장예정일",
+        "event_date": "2026-10-27",
+        "company": "에스케이증권제14호기업인수목적",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "에스케이증권제14호기업인수목적 | 2026-08-26 | 2026-10-12 ~ 2026-10-13 | 2026-10-15 ~ 2026-10-16 | 2026-10-20 | 2,000 | 13,000 | 2026-10-27 | SK증권(주)",
+        "min_offset": -60,
+        "max_offset": 5,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_7a94ec521b66d5a584d72ad5cf9304a8fca23281",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "크리에이츠 상장예정일",
+        "event_date": "2026-10-29",
+        "company": "크리에이츠",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "크리에이츠 | 2026-09-04 | 2026-10-12 ~ 2026-10-16 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 15,000 | 21,000 | 2026-10-29 | 삼성증권(주)",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_81bfec927fc30451d4700230ccffeb3194e205e4",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "티앤이코리아 상장예정일",
+        "event_date": "2026-10-29",
+        "company": "티앤이코리아",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "티앤이코리아 | 2026-09-03 | 2026-10-07 ~ 2026-10-14 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 15,300 | 36,720 | 2026-10-29 | 신한투자증권 주식회사",
+        "min_offset": -60,
+        "max_offset": 3,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_22b1edbb2ea1b2abd5cabf9e7c2316a8b6b2f247",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "한화플러스제6호스팩 상장예정일",
+        "event_date": "2026-10-30",
+        "company": "한화플러스제6호스팩",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "한화플러스제6호스팩 | 2026-09-17 | 2026-10-14 ~ 2026-10-15 | 2026-10-20 ~ 2026-10-21 | 2026-10-23 | 2,000 | 12,000 | 2026-10-30 | 한화투자증권(주)",
+        "min_offset": -60,
+        "max_offset": 2,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_832784cc1f6eb61b3b81a0e156cf38dcfca1b75e",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "인텔리빅스 상장예정일",
+        "event_date": "2026-10-31",
+        "company": "인텔리빅스",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "인텔리빅스 | 2026-09-16 | 2026-10-12 ~ 2026-10-16 | 2026-10-21 ~ 2026-10-22 | 2026-10-26 | 9,000 | 22,500 | 2026-10-31 | 미래에셋증권 주식회사",
+        "min_offset": -60,
+        "max_offset": 1,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_5a3452ed7550c9d112a70cb1ad2e8756a6e4b71f",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "영광 상장예정일",
+        "event_date": "2026-11-02",
+        "company": "영광",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "영광 | 2026-09-21 | 2026-10-13 ~ 2026-10-19 | 2026-10-22 ~ 2026-10-23 | 2026-10-27 | 17,000 | 38,420 | 2026-11-02 | 한국투자증권(주)",
+        "min_offset": -60,
+        "max_offset": 1,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      },
+      {
+        "event_id": "KR_KIND_IPO_c36644468a48de410093c57ca68cf92dc10cdd85",
+        "country": "KR",
+        "event_type": "IPO_LISTING",
+        "event_name": "래블업 상장예정일",
+        "event_date": "2026-11-03",
+        "company": "래블업",
+        "source_name": "KIND_IPO",
+        "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
+        "evidence_text": "래블업 | 2026-08-25 | 2026-10-13 ~ 2026-10-19 | 2026-10-22 ~ 2026-10-23 | 2026-10-27 | 19,000 | 41,420 | 2026-11-03 | 엔에이치투자증권(주)",
+        "min_offset": -60,
+        "max_offset": 0,
+        "related_securities": [
+          {
+            "ticker": "^KQ11",
+            "relation_grade": "A",
+            "relation_score": 100,
+            "relation_type": "DIRECT",
+            "evidence_text": "직접 당사자"
+          }
+        ]
+      }
+    ],
     "backtest_summary": {
       "sample_n": 1,
       "mean_return": -0.0549,
@@ -11369,7 +13050,7 @@
       }
     ],
     "sample_count": 1,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   },
   "KR_NEWS_FUTURE_21eb95e47682ed2945480466048a8fcb0ccc2c1f": {
     "event_id": "KR_NEWS_FUTURE_21eb95e47682ed2945480466048a8fcb0ccc2c1f",
@@ -11407,6 +13088,9 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 0,
+    "d5_sample_n": 0,
+    "historical_peers": [],
     "backtest_summary": {
       "sample_n": 0,
       "mean_return": 0.0,
@@ -11537,7 +13221,7 @@
     ],
     "event_curve": [],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   },
   "KR_NEWS_FUTURE_e14ced3593303b033c128c86fb298f1297df4d25": {
     "event_id": "KR_NEWS_FUTURE_e14ced3593303b033c128c86fb298f1297df4d25",
@@ -11575,6 +13259,9 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 0,
+    "d5_sample_n": 0,
+    "historical_peers": [],
     "backtest_summary": {
       "sample_n": 0,
       "mean_return": 0.0,
@@ -11705,7 +13392,7 @@
     ],
     "event_curve": [],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   },
   "KR_NEWS_FUTURE_cd323c5e7af0a1895f0213115d0c206a1b12d88f": {
     "event_id": "KR_NEWS_FUTURE_cd323c5e7af0a1895f0213115d0c206a1b12d88f",
@@ -11743,6 +13430,9 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 0,
+    "d5_sample_n": 0,
+    "historical_peers": [],
     "backtest_summary": {
       "sample_n": 0,
       "mean_return": 0.0,
@@ -11873,7 +13563,7 @@
     ],
     "event_curve": [],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   },
   "KR_NEWS_FUTURE_ba8679eba27709df9e6a275294ddb5bd0bae02e7": {
     "event_id": "KR_NEWS_FUTURE_ba8679eba27709df9e6a275294ddb5bd0bae02e7",
@@ -11911,6 +13601,9 @@
       }
     ],
     "backtest_basis": "HISTORICAL_PEERS",
+    "peer_sample_n": 0,
+    "d5_sample_n": 0,
+    "historical_peers": [],
     "backtest_summary": {
       "sample_n": 0,
       "mean_return": 0.0,
@@ -12041,6 +13734,6 @@
     ],
     "event_curve": [],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:40:48.958312"
+    "latest_update": "2026-11-03T06:57:53.657521"
   }
 }
