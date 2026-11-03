@@ -29,7 +29,7 @@ def test_dart_collector_parses_fixtures():
     assert evt1.event_date == date(2026, 11, 20)
     assert evt1.status == "CONFIRMED"
 
-    # 2. CB 전환상장
+    # 2. CB 전환청구로 실제 신주상장
     evt2 = [e for e in events if e.primary_ticker == "000660"][0]
     assert evt2.event_type == "CONVERTIBLE_LISTING"
     assert evt2.event_date == date(2026, 11, 18)
@@ -38,6 +38,55 @@ def test_dart_collector_parses_fixtures():
     evt3 = [e for e in events if e.primary_ticker == "259960"][0]
     assert evt3.event_type == "STOCK_SPLIT"
     assert evt3.event_date == date(2026, 12, 5)
+
+
+def test_dart_collector_excludes_generic_convertible_financing_disclosures(tmp_path):
+    fixture = tmp_path / "convertibles.json"
+    fixture.write_text(
+        '''{
+          "status": "000",
+          "list": [
+            {"corp_code":"00000001","corp_name":"A사","stock_code":"111111","report_nm":"전환사채권발행결정","rcept_no":"1","rcept_dt":"20261103","details":"운영자금 조달"},
+            {"corp_code":"00000002","corp_name":"B사","stock_code":"222222","report_nm":"전환가액의조정","rcept_no":"2","rcept_dt":"20261103","details":"전환가액 조정"},
+            {"corp_code":"00000003","corp_name":"C사","stock_code":"333333","report_nm":"자기전환사채만기전취득결정","rcept_no":"3","rcept_dt":"20261103","details":"만기 전 취득"},
+            {"corp_code":"00000004","corp_name":"D사","stock_code":"444444","report_nm":"자기전환사채매도결정","rcept_no":"4","rcept_dt":"20261103","details":"매도 결정"},
+            {"corp_code":"00000005","corp_name":"E사","stock_code":"555555","report_nm":"신주인수권부사채권발행결정","rcept_no":"5","rcept_dt":"20261103","details":"운영자금 조달"}
+          ]
+        }''',
+        encoding="utf-8",
+    )
+
+    events = DartCollector(fixture_path=fixture).collect(since=datetime(2026, 11, 1))
+
+    assert events == []
+
+
+def test_dart_collector_keeps_explicit_convertible_new_share_listing(tmp_path):
+    fixture = tmp_path / "convertible_listing.json"
+    fixture.write_text(
+        '''{
+          "status": "000",
+          "list": [
+            {
+              "corp_code":"00000001",
+              "corp_name":"A사",
+              "stock_code":"111111",
+              "report_nm":"전환사채(CB)전환청구권행사(신주상장)",
+              "rcept_no":"20261103000011",
+              "rcept_dt":"20261103",
+              "event_date":"2026-11-18",
+              "details":"전환청구권 행사, 신주상장예정일: 2026-11-18"
+            }
+          ]
+        }''',
+        encoding="utf-8",
+    )
+
+    events = DartCollector(fixture_path=fixture).collect(since=datetime(2026, 11, 1))
+
+    assert len(events) == 1
+    assert events[0].event_type == "CONVERTIBLE_LISTING"
+    assert events[0].event_date == date(2026, 11, 18)
 
 
 def test_dart_collector_excludes_generic_rights_issue(monkeypatch):
