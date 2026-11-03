@@ -36,14 +36,49 @@ def _normalize_company_name(value: str, country: str) -> str:
     return re.sub(r"[^0-9a-z가-힣]", "", text)
 
 
-def _company_aliases(company_name: str, country: str) -> set[str]:
-    """Return conservative aliases commonly used in headlines."""
+def _company_aliases(company_name: str, country: str) -> list[tuple[str, bool]]:
+    """Return conservative headline aliases and whether a trailing '그룹' is allowed."""
     normalized = _normalize_company_name(company_name, country)
-    aliases = {normalized} if normalized else set()
+    aliases: list[tuple[str, bool]] = []
+    if normalized and len(normalized) >= 2:
+        aliases.append((normalized, False))
     if country == "KR" and normalized.endswith("자동차") and len(normalized) > len("자동차"):
-        # 현대자동차 -> 현대차. This also lets '현대차그룹' resolve to the listed issuer.
-        aliases.add(f"{normalized[:-len('자동차')]}차")
-    return {alias for alias in aliases if len(alias) >= 2}
+        # 현대자동차 -> 현대차. Only permit this short alias standalone or as 현대차그룹.
+        alias = f"{normalized[:-len('자동차')]}차"
+        if len(alias) >= 2:
+            aliases.append((alias, True))
+    return aliases
+
+
+def _contains_alias(
+    text: str,
+    normalized_text: str,
+    country: str,
+    alias: str,
+    allow_group_suffix: bool,
+) -> bool:
+    if country != "KR" or len(alias) >= 4:
+        return alias in normalized_text
+
+    # Very short Korean issuer names are common dictionary fragments (e.g. 레이, 한화,
+    # 흥국, 타이드). Require token boundaries so they do not match inside another word
+    # or a longer company name. Generated aliases such as 현대차 may also precede 그룹.
+    lowered = (text or "").lower()
+    boundary = r"0-9a-z가-힣"
+    standalone = re.search(
+        rf"(?<![{boundary}]){re.escape(alias)}(?![{boundary}])",
+        lowered,
+    )
+    if standalone:
+        return True
+    if allow_group_suffix:
+        return bool(
+            re.search(
+                rf"(?<![{boundary}]){re.escape(alias)}\s*그룹(?![{boundary}])",
+                lowered,
+            )
+        )
+    return False
 
 
 def parse_dart_corp_code_zip(content: bytes) -> list[SecurityMention]:
@@ -81,18 +116,18 @@ class EntityUniverse:
 
     def __init__(self, records: Iterable[SecurityMention] = ()) -> None:
         self.records = list(records)
-        self._indexed: dict[str, list[tuple[str, SecurityMention]]] = {"KR": [], "US": []}
+        self._indexed: dict[str, list[tuple[str, SecurityMention, bool]]] = {"KR": [], "US": []}
         for record in self.records:
             country = record.country.upper()
-            for alias in _company_aliases(record.company_name, country):
-                self._indexed.setdefault(country, []).append((alias, record))
+            for alias, allow_group_suffix in _company_aliases(record.company_name, country):
+                self._indexed.setdefault(country, []).append((alias, record, allow_group_suffix))
 
     def resolve_mentions(self, text: str, country: str) -> list[SecurityMention]:
         country = country.upper()
         normalized_text = _normalize_company_name(text, country)
         by_ticker: dict[str, SecurityMention] = {}
-        for normalized_company, record in self._indexed.get(country, []):
-            if normalized_company in normalized_text:
+        for alias, record, allow_group_suffix in self._indexed.get(country, []):
+            if _contains_alias(text, normalized_text, country, alias, allow_group_suffix):
                 by_ticker[record.ticker] = record
         return sorted(by_ticker.values(), key=lambda item: item.company_name)
 
