@@ -1,13 +1,16 @@
 {
-  "generated_at": "2026-11-03T00:47:01.786792",
-  "total_events": 45,
-  "kr_events": 45,
-  "us_events": 0,
+  "generated_at": "2026-11-03T01:53:11.717077",
+  "total_events": 31,
+  "kr_events": 21,
+  "us_events": 10,
   "version": "1.0.0",
   "collector_status": {
     "DART": "SUCCESS",
     "SEC": "SUCCESS",
-    "FDA_PDUFA": "SUCCESS",
+    "NEWS_FUTURE": "SUCCESS",
+    "FDA_ADVISORY": "SUCCESS",
+    "KIND_IPO": "SUCCESS",
+    "FED_FOMC": "SUCCESS",
     "ENTER_KR": "SUCCESS",
     "GAMES_RELEASE": "SUCCESS",
     "INDEX_KR": "SUCCESS"
