@@ -9,6 +9,7 @@ import time
 from typing import Optional
 import pandas as pd
 
+from event_radar.entities import EntityUniverse
 from event_radar.models import Event, EventRevision, Relation, EventSecurity, RawEvent
 from event_radar.normalize import normalize_event
 from event_radar.dedupe import merge_events
@@ -44,6 +45,7 @@ class PipelineConfig:
     site_dir: Path = Path("site")
     config_dir: Path = Path("config")
     price_provider: Optional[PriceProvider] = None
+    entity_universe: Optional[EntityUniverse] = None
 
 
 @dataclass
@@ -282,8 +284,20 @@ def run_pipeline(
     # 7. Resolve related securities
     event_securities: dict[str, list[EventSecurity]] = {}
     all_mapped_rows = []
+    entity_universe = config.entity_universe or EntityUniverse()
     for ev in current_events:
-        secs = resolve_related_securities(ev, all_relations)
+        mention_parts = (
+            (ev.primary_company, ev.event_name)
+            if ev.source_name == "NEWS_FUTURE"
+            else (ev.primary_company, ev.event_name, ev.evidence_text)
+        )
+        mention_text = " ".join(part for part in mention_parts if part)
+        direct_mentions = entity_universe.resolve_mentions(mention_text, ev.country)
+        secs = resolve_related_securities(
+            ev,
+            all_relations,
+            direct_mentions=direct_mentions,
+        )
         event_securities[ev.event_id] = secs
         for s in secs:
             all_mapped_rows.append({
@@ -355,7 +369,8 @@ def run_pipeline(
 
     for ev in current_events:
         ev_df = all_returns_df[all_returns_df["event_id"] == ev.event_id]
-        primary_sec = event_securities.get(ev.event_id, [None])[0]
+        sec_candidates = event_securities.get(ev.event_id, [])
+        primary_sec = sec_candidates[0] if sec_candidates else None
         rel_score = primary_sec.relation_score if primary_sec else 100
         primary_grade = primary_sec.relation_grade if primary_sec else "A"
 

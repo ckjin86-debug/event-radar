@@ -3,6 +3,7 @@ from pathlib import Path
 import json
 import pandas as pd
 import pytest
+from event_radar.entities import EntityUniverse, SecurityMention
 from event_radar.models import RawEvent
 from event_radar.pipeline import run_pipeline, PipelineConfig
 from event_radar.collectors.base import Collector
@@ -59,6 +60,73 @@ class MockHistoricalCollector:
         ]
 
 
+class MockNewsCollector:
+    source_name = "NEWS_FUTURE"
+
+    def collect(self, since: datetime) -> list[RawEvent]:
+        return [
+            RawEvent(
+                source_name="NEWS_FUTURE",
+                source_kind="SECONDARY",
+                source_event_uid="NEWS_01",
+                source_url="https://example.com/news/1",
+                country="KR",
+                primary_ticker="^KS11",
+                primary_company="현대차그룹",
+                event_type="CAPEX",
+                event_name="현대차그룹, 내년 3월 새만금 AI 밸리 착공",
+                announced_at=datetime(2026, 11, 2),
+                event_date=date(2027, 3, 1),
+                date_precision="MONTH",
+                window_start=date(2027, 3, 1),
+                window_end=date(2027, 3, 31),
+                status="EXPECTED",
+            )
+        ]
+
+
+class MockNoiseNewsCollector:
+    source_name = "NEWS_FUTURE"
+
+    def collect(self, since: datetime) -> list[RawEvent]:
+        return [
+            RawEvent(
+                source_name="NEWS_FUTURE",
+                source_kind="SECONDARY",
+                source_event_uid="NEWS_NOISE_01",
+                source_url="https://example.com/news/noise",
+                country="KR",
+                primary_ticker="^KS11",
+                primary_company="완도군",
+                event_type="CAPEX",
+                event_name="완도군, 복합문화도서관 2027년 8월 착공",
+                announced_at=datetime(2026, 11, 2),
+                event_date=date(2027, 8, 1),
+                date_precision="MONTH",
+                window_start=date(2027, 8, 1),
+                window_end=date(2027, 8, 31),
+                status="EXPECTED",
+            ),
+            RawEvent(
+                source_name="NEWS_FUTURE",
+                source_kind="SECONDARY",
+                source_event_uid="NEWS_POLICY_01",
+                source_url="https://example.com/news/policy",
+                country="KR",
+                primary_ticker="^KS11",
+                primary_company="Korea Market",
+                event_type="POLICY",
+                event_name="내년 1분기 반도체 수출 규제 시행 예정",
+                announced_at=datetime(2026, 11, 2),
+                event_date=date(2027, 1, 1),
+                date_precision="QUARTER",
+                window_start=date(2027, 1, 1),
+                window_end=date(2027, 3, 31),
+                status="EXPECTED",
+            ),
+        ]
+
+
 class DeterministicPriceProvider:
     def __init__(self):
         self.calls: list[tuple[str, date, date]] = []
@@ -82,7 +150,78 @@ class DeterministicPriceProvider:
 
 
 def test_pipeline_graceful_degradation_when_collector_fails(tmp_path):
-    # Setup temporary paths
+    data_dir = tmp_path / "data"
+    site_dir = tmp_path / "site"
+    config_dir = tmp_path / "config"
+    (data_dir / "canonical").mkdir(parents=True)
+    (data_dir / "derived").mkdir(parents=True)
+    (site_dir / "data").mkdir(parents=True)
+    config_dir.mkdir(parents=True)
+
+    cfg = PipelineConfig(data_dir=data_dir, site_dir=site_dir, config_dir=config_dir)
+    collectors: list[Collector] = [MockFailingCollector(), MockSuccessfulCollector()]
+
+    report = run_pipeline(
+        collectors=collectors,
+        config=cfg,
+        now=datetime(2026, 11, 2, 10, 0),
+        skip_price_fetch=True,
+    )
+
+    assert report.success is True
+    assert report.total_events_collected == 1
+    assert "FAILING_COLLECTOR" in report.failed_sources
+    assert "SUCCESS_COLLECTOR" in report.successful_sources
+
+    events_json = site_dir / "data" / "events.json"
+    assert events_json.exists()
+    data = json.loads(events_json.read_text(encoding="utf-8"))
+    assert len(data) >= 1
+    assert data[0]["ticker"] == "005930"
+    assert data[0]["d_day"] == (date(2026, 11, 20) - date(2026, 11, 2)).days
+
+    meta_json = site_dir / "data" / "metadata.json"
+    assert meta_json.exists()
+    content = meta_json.read_text(encoding="utf-8")
+    assert "secret" not in content.lower()
+    assert "token" not in content.lower()
+    assert "password" not in content.lower()
+
+
+def test_pipeline_maps_market_proxy_news_to_direct_listed_issuer(tmp_path):
+    data_dir = tmp_path / "data"
+    site_dir = tmp_path / "site"
+    config_dir = tmp_path / "config"
+    (data_dir / "canonical").mkdir(parents=True)
+    (data_dir / "derived").mkdir(parents=True)
+    (site_dir / "data").mkdir(parents=True)
+    config_dir.mkdir(parents=True)
+
+    universe = EntityUniverse([
+        SecurityMention(company_name="현대차", ticker="005380", country="KR"),
+    ])
+    cfg = PipelineConfig(
+        data_dir=data_dir,
+        site_dir=site_dir,
+        config_dir=config_dir,
+        entity_universe=universe,
+    )
+
+    run_pipeline(
+        collectors=[MockNewsCollector()],
+        config=cfg,
+        now=datetime(2026, 11, 2, 10, 0),
+        skip_price_fetch=True,
+    )
+
+    mapped = pd.read_csv(data_dir / "derived" / "event_security_map.csv", dtype={"ticker": str})
+    assert set(mapped["ticker"]) == {"005380"}
+    row = mapped.iloc[0]
+    assert row["relation_grade"] == "A"
+    assert row["relation_type"] == "DIRECT_MENTION"
+
+
+def test_pipeline_drops_company_specific_news_without_listed_issuer_but_keeps_market_policy(tmp_path):
     data_dir = tmp_path / "data"
     site_dir = tmp_path / "site"
     config_dir = tmp_path / "config"
@@ -95,40 +234,20 @@ def test_pipeline_graceful_degradation_when_collector_fails(tmp_path):
         data_dir=data_dir,
         site_dir=site_dir,
         config_dir=config_dir,
+        entity_universe=EntityUniverse([]),
     )
 
-    collectors: list[Collector] = [
-        MockFailingCollector(),
-        MockSuccessfulCollector(),
-    ]
-
-    report = run_pipeline(
-        collectors=collectors,
+    run_pipeline(
+        collectors=[MockNoiseNewsCollector()],
         config=cfg,
         now=datetime(2026, 11, 2, 10, 0),
-        skip_price_fetch=True,  # mock mode
+        skip_price_fetch=True,
     )
 
-    assert report.success is True
-    assert report.total_events_collected == 1
-    assert "FAILING_COLLECTOR" in report.failed_sources
-    assert "SUCCESS_COLLECTOR" in report.successful_sources
-
-    # Check site/data/events.json was exported
-    events_json = site_dir / "data" / "events.json"
-    assert events_json.exists()
-    data = json.loads(events_json.read_text(encoding="utf-8"))
-    assert len(data) >= 1
-    assert data[0]["ticker"] == "005930"
-    assert data[0]["d_day"] == (date(2026, 11, 20) - date(2026, 11, 2)).days
-
-    # Ensure no secrets in metadata or events
-    meta_json = site_dir / "data" / "metadata.json"
-    assert meta_json.exists()
-    content = meta_json.read_text(encoding="utf-8")
-    assert "secret" not in content.lower()
-    assert "token" not in content.lower()
-    assert "password" not in content.lower()
+    events = json.loads((site_dir / "data" / "events.json").read_text(encoding="utf-8"))
+    names = {row["event_name"] for row in events}
+    assert "완도군, 복합문화도서관 2027년 8월 착공" not in names
+    assert "내년 1분기 반도체 수출 규제 시행 예정" in names
 
 
 def test_pipeline_uses_configured_price_provider_for_real_backtest(tmp_path):
@@ -163,8 +282,6 @@ def test_pipeline_uses_configured_price_provider_for_real_backtest(tmp_path):
     returns_df = pd.read_csv(returns_csv)
     d0 = returns_df[returns_df["offset"] == 0].iloc[0]
 
-    expected_stock = provider.history(
-        "005930", date(2026, 9, 15), date(2026, 9, 15)
-    ).iloc[0]["adj_close"]
+    expected_stock = provider.history("005930", date(2026, 9, 15), date(2026, 9, 15)).iloc[0]["adj_close"]
     assert d0["price"] == pytest.approx(expected_stock)
     assert d0["return_from_d0"] == pytest.approx(0.0)

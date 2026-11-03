@@ -22,11 +22,27 @@ from event_radar.models import RawEvent
 NAVER_NEWS_URL = "https://naverapihub.apigw.ntruss.com/search/v1/news"
 DEFAULT_QUERIES = [
     "내달 가동",
+    "상업 가동 예정",
+    "공장 가동 예정",
+    "내년 양산",
+    "양산 시작 예정",
+    "착공 예정",
+    "증설 예정",
+    "준공 예정",
     "다음달 출시",
     "연내 승인",
+    "승인 결정 예정",
+    "FDA 결정 예정",
     "내년 1분기 가동",
-    "상장 예정",
     "임상 결과 예정",
+    "임상 결과 발표",
+    "톱라인 발표 예정",
+    "인수 완료 예정",
+    "인수 마무리 예정",
+    "합병 완료 예정",
+    "선고 예정",
+    "입찰 결과 예정",
+    "공급계약 예정",
     "정책 시행 예정",
     "수주 발표 예정",
 ]
@@ -46,8 +62,8 @@ BROAD_WINDOW_EVENT_TYPES = {
 MARKET_WIDE_EVENT_TYPES = {"POLICY", "COURT_RULING", "TENDER"}
 
 EVENT_PATTERNS: dict[str, str] = {
-    "PLANT_OPERATION": r"상업\s*가동|공장.{0,12}가동|라인.{0,12}가동|생산.{0,8}가동",
-    "APPROVAL": r"FDA.{0,12}(?:승인|허가)|승인\s*(?:예정|결정|심사)|허가\s*(?:예정|결정|심사)",
+    "PLANT_OPERATION": r"상업\s*가동|공장.{0,12}가동|라인.{0,12}가동|생산.{0,8}가동|양산(?:\s*시작)?",
+    "APPROVAL": r"FDA.{0,12}(?:승인|허가|결정|심사)|승인\s*(?:예정|결정|심사)|허가\s*(?:예정|결정|심사)",
     "PRODUCT_LAUNCH": (
         r"(?:신제품|신작|신규\s*(?:제품|서비스|플랫폼)).{0,40}(?:출시|공개)"
         r"|(?:정식|글로벌)\s*(?:정식\s*)?출시"
@@ -56,9 +72,9 @@ EVENT_PATTERNS: dict[str, str] = {
     "CONTRACT": r"수주|공급\s*계약|대형\s*계약",
     "TENDER": r"입찰|우선협상",
     "COURT_RULING": r"판결|선고",
-    "CLINICAL_RESULT": r"임상.{0,16}(?:결과|데이터|발표)",
+    "CLINICAL_RESULT": r"임상.{0,16}(?:결과|데이터|발표|톱라인)|톱라인.{0,12}(?:발표|결과)",
     "M_AND_A": r"합병|인수(?!권)|M&A",
-    "CAPEX": r"착공|시설투자|설비투자|증설",
+    "CAPEX": r"착공|준공|시설투자|설비투자|증설",
     "POLICY": r"(?:정책|규제).{0,16}(?:시행|발표|결정)",
     "CAPEX_FINANCING": r"유상증자|시설투자|설비투자|시설자금|공장|증설|CAPEX",
 }

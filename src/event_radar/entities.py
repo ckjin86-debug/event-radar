@@ -1,0 +1,171 @@
+"""Official listed-company universe used for evidence-first event/security mapping."""
+
+from __future__ import annotations
+
+import io
+import re
+import zipfile
+from dataclasses import dataclass
+from typing import Iterable
+from xml.etree import ElementTree
+
+import requests
+
+
+DART_CORP_CODE_URL = "https://opendart.fss.or.kr/api/corpCode.xml"
+SEC_COMPANY_TICKERS_URL = "https://www.sec.gov/files/company_tickers.json"
+
+
+@dataclass(frozen=True)
+class SecurityMention:
+    company_name: str
+    ticker: str
+    country: str
+
+
+def _normalize_company_name(value: str, country: str) -> str:
+    text = (value or "").strip().lower()
+    if country == "KR":
+        text = re.sub(r"(?:주식회사|㈜|\(주\))", "", text)
+    else:
+        text = re.sub(
+            r"\b(?:incorporated|inc|corporation|corp|company|co|limited|ltd|plc|llc)\b\.?,?",
+            "",
+            text,
+        )
+    return re.sub(r"[^0-9a-z가-힣]", "", text)
+
+
+def _company_aliases(company_name: str, country: str) -> list[tuple[str, bool]]:
+    """Return conservative headline aliases and whether a trailing '그룹' is allowed."""
+    normalized = _normalize_company_name(company_name, country)
+    aliases: list[tuple[str, bool]] = []
+    if normalized and len(normalized) >= 2:
+        # Korean headlines often refer to the corporate group by appending '그룹'.
+        # Allow that explicit suffix without relaxing short-name matching elsewhere.
+        aliases.append((normalized, country == "KR"))
+    if country == "KR" and normalized.endswith("자동차") and len(normalized) > len("자동차"):
+        # 현대자동차 -> 현대차. Only permit this short alias standalone or as 현대차그룹.
+        alias = f"{normalized[:-len('자동차')]}차"
+        if len(alias) >= 2:
+            aliases.append((alias, True))
+    return aliases
+
+
+def _contains_alias(
+    text: str,
+    normalized_text: str,
+    country: str,
+    alias: str,
+    allow_group_suffix: bool,
+) -> bool:
+    if country != "KR" or len(alias) >= 4:
+        return alias in normalized_text
+
+    # Very short Korean issuer names are common dictionary fragments (e.g. 레이, 한화,
+    # 흥국, 타이드, LG). Require token boundaries and reject a following word token so
+    # parents such as LG/SK do not become direct matches for subsidiaries like LG CNS.
+    lowered = (text or "").lower()
+    boundary = r"0-9a-z가-힣"
+    standalone = re.search(
+        rf"(?<![{boundary}]){re.escape(alias)}(?![{boundary}]|\s+[{boundary}])",
+        lowered,
+    )
+    if standalone:
+        return True
+    if allow_group_suffix:
+        return bool(
+            re.search(
+                rf"(?<![{boundary}]){re.escape(alias)}\s*그룹(?![{boundary}])",
+                lowered,
+            )
+        )
+    return False
+
+
+def parse_dart_corp_code_zip(content: bytes) -> list[SecurityMention]:
+    """Parse OpenDART corpCode.xml ZIP and keep listed issuers only."""
+    with zipfile.ZipFile(io.BytesIO(content)) as archive:
+        xml_name = next(name for name in archive.namelist() if name.lower().endswith(".xml"))
+        root = ElementTree.fromstring(archive.read(xml_name))
+
+    records: list[SecurityMention] = []
+    for row in root.findall(".//list"):
+        company = (row.findtext("corp_name") or "").strip()
+        ticker = (row.findtext("stock_code") or "").strip()
+        if not company or not re.fullmatch(r"\d{6}", ticker):
+            continue
+        records.append(SecurityMention(company_name=company, ticker=ticker, country="KR"))
+    return records
+
+
+def parse_sec_company_tickers(payload: dict) -> list[SecurityMention]:
+    """Parse SEC company_tickers.json into listed issuer records."""
+    records: list[SecurityMention] = []
+    for row in payload.values():
+        if not isinstance(row, dict):
+            continue
+        company = str(row.get("title", "")).strip()
+        ticker = str(row.get("ticker", "")).strip().upper()
+        if not company or not ticker:
+            continue
+        records.append(SecurityMention(company_name=company, ticker=ticker, country="US"))
+    return records
+
+
+class EntityUniverse:
+    """Resolve explicit listed-company mentions without theme inference."""
+
+    def __init__(self, records: Iterable[SecurityMention] = ()) -> None:
+        self.records = list(records)
+        self._indexed: dict[str, list[tuple[str, SecurityMention, bool]]] = {"KR": [], "US": []}
+        for record in self.records:
+            country = record.country.upper()
+            for alias, allow_group_suffix in _company_aliases(record.company_name, country):
+                self._indexed.setdefault(country, []).append((alias, record, allow_group_suffix))
+
+    def resolve_mentions(self, text: str, country: str) -> list[SecurityMention]:
+        country = country.upper()
+        normalized_text = _normalize_company_name(text, country)
+        by_ticker: dict[str, SecurityMention] = {}
+        for alias, record, allow_group_suffix in self._indexed.get(country, []):
+            if _contains_alias(text, normalized_text, country, alias, allow_group_suffix):
+                by_ticker[record.ticker] = record
+        return sorted(by_ticker.values(), key=lambda item: item.company_name)
+
+
+def load_entity_universe(
+    dart_api_key: str = "",
+    session=None,
+    timeout: int = 15,
+) -> EntityUniverse:
+    """Load KR/US official issuer universes; one source failure must not break the other."""
+    http = session or requests.Session()
+    records: list[SecurityMention] = []
+
+    if dart_api_key:
+        try:
+            # corpCode.xml is a multi-megabyte ZIP and is materially slower than SEC's JSON.
+            # Give it an independent floor so a healthy but slow DART response is not discarded.
+            response = http.get(
+                DART_CORP_CODE_URL,
+                params={"crtfc_key": dart_api_key},
+                timeout=max(timeout, 45),
+            )
+            if response.status_code == 200:
+                records.extend(parse_dart_corp_code_zip(response.content))
+        except Exception:
+            pass
+
+    try:
+        response = http.get(
+            SEC_COMPANY_TICKERS_URL,
+            headers={"User-Agent": "EventRadar/1.0 admin@eventradar.org"},
+            timeout=timeout,
+        )
+        if response.status_code == 200:
+            records.extend(parse_sec_company_tickers(response.json()))
+    except Exception:
+        pass
+
+    return EntityUniverse(records)
