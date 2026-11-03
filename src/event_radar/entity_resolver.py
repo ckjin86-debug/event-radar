@@ -18,6 +18,10 @@ from event_radar.models import Event, EventSecurity
 
 DART_CORP_CODE_URL = "https://opendart.fss.or.kr/api/corpCode.xml"
 MARKET_PROXY_TICKERS = {"^KS11", "^KQ11", "^GSPC", "XBI"}
+KOREAN_PARTICLES = (
+    "으로", "에서", "까지", "부터", "에게", "보다", "이랑", "라고", "라며",
+    "은", "는", "이", "가", "을", "를", "과", "와", "의", "에", "로", "도", "만", "랑",
+)
 
 
 def is_market_proxy(ticker: str) -> bool:
@@ -78,8 +82,12 @@ class ListedCompanyRegistry:
             # One compiled alternation is dramatically cheaper than compiling and
             # searching one regex for every listed company for every news event.
             alternatives = "|".join(re.escape(alias) for alias in self._aliases)
+            particles = "|".join(re.escape(particle) for particle in KOREAN_PARTICLES)
+            right_boundary = (
+                rf"(?=$|[^0-9A-Za-z가-힣]|(?:{particles})(?=$|[^0-9A-Za-z가-힣]))"
+            )
             self._mention_pattern = re.compile(
-                rf"(?<![0-9A-Za-z가-힣])(?:{alternatives})(?![0-9A-Za-z가-힣])",
+                rf"(?<![0-9A-Za-z가-힣])(?:{alternatives}){right_boundary}",
                 re.IGNORECASE,
             )
         else:
