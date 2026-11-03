@@ -51,6 +51,8 @@ def export_site_data(
         primary_rel = sec_list[0] if sec_list else None
         rel_grade = primary_rel.relation_grade if primary_rel else "A"
         rel_score = primary_rel.relation_score if primary_rel else 100
+        window_start = ev.window_start or ev.event_date
+        window_end = ev.window_end or ev.event_date
 
         events_list.append({
             "event_id": ev.event_id,
@@ -61,6 +63,9 @@ def export_site_data(
             "event_type": ev.event_type,
             "event_name": ev.event_name,
             "event_date": ev.event_date.isoformat(),
+            "date_precision": ev.date_precision,
+            "window_start": window_start.isoformat(),
+            "window_end": window_end.isoformat(),
             "relation_grade": rel_grade,
             "relation_score": rel_score,
             "event_score": total_score,
@@ -145,6 +150,8 @@ def export_site_data(
             "robustness": score_obj.robustness_points if score_obj else 5,
             "setup": score_obj.setup_points if score_obj else 0,
         }
+        window_start = ev.window_start or ev.event_date
+        window_end = ev.window_end or ev.event_date
 
         details_map[ev_id] = {
             "event_id": ev_id,
@@ -155,6 +162,9 @@ def export_site_data(
             "event_name": ev.event_name,
             "announced_at": ev.announced_at.isoformat(),
             "event_date": ev.event_date.isoformat(),
+            "date_precision": ev.date_precision,
+            "window_start": window_start.isoformat(),
+            "window_end": window_end.isoformat(),
             "event_time_context": ev.event_time_context,
             "status": ev.status,
             "source_name": ev.source_name,
