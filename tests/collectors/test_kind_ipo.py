@@ -23,6 +23,44 @@ SAMPLE_HTML = """
 </table>
 """
 
+CALENDAR_HTML = """
+<div id="calBig2">
+  <center><font>2026년 11월</font></center>
+  <table><tbody><tr>
+    <td>2
+      <ul>
+        <li><strong>청약</strong></li>
+        <li><img alt="코스닥"/>동원파츠</li>
+        <li><strong>상장</strong></li>
+        <li><img alt="코스닥"/>영광</li>
+        <li><strong>IR</strong></li>
+        <li><img alt="코스닥"/>무시할회사</li>
+      </ul>
+    </td>
+    <td>3
+      <ul>
+        <li><strong>청약</strong></li>
+        <li><img alt="코스닥"/>동원파츠</li>
+        <li><strong>수요예측</strong></li>
+        <li><img alt="유가증권"/>테스트홀딩스</li>
+      </ul>
+    </td>
+    <td>4
+      <ul>
+        <li><strong>수요예측</strong></li>
+        <li><img alt="유가증권"/>테스트홀딩스</li>
+      </ul>
+    </td>
+    <td>5
+      <ul>
+        <li><strong>납입</strong></li>
+        <li><img alt="코스닥"/>동원파츠</li>
+      </ul>
+    </td>
+  </tr></tbody></table>
+</div>
+"""
+
 
 def test_kind_ipo_emits_all_schedule_milestones():
     events = KindIpoCollector(mock_html=SAMPLE_HTML).collect(since=datetime(2026, 11, 1))
@@ -59,3 +97,24 @@ def test_kind_ipo_uses_kospi_proxy_for_kospi_rows():
 def test_kind_ipo_skips_milestones_before_since_but_keeps_future_ones():
     events = KindIpoCollector(mock_html=SAMPLE_HTML).collect(since=datetime(2026, 11, 22))
     assert [e.event_type for e in events] == ["IPO_PAYMENT", "IPO_LISTING"]
+
+
+def test_kind_calendar_markup_groups_multi_day_periods_and_ignores_ir():
+    events = KindIpoCollector(mock_html=CALENDAR_HTML).collect(since=datetime(2026, 11, 1))
+    by_key = {(e.primary_company, e.event_type): e for e in events}
+
+    assert by_key[("동원파츠", "IPO_SUBSCRIPTION_START")].event_date == date(2026, 11, 2)
+    assert by_key[("동원파츠", "IPO_SUBSCRIPTION_END")].event_date == date(2026, 11, 3)
+    assert by_key[("동원파츠", "IPO_PAYMENT")].event_date == date(2026, 11, 5)
+    assert by_key[("영광", "IPO_LISTING")].event_date == date(2026, 11, 2)
+    assert by_key[("테스트홀딩스", "IPO_BOOKBUILDING_START")].event_date == date(2026, 11, 3)
+    assert by_key[("테스트홀딩스", "IPO_BOOKBUILDING_END")].event_date == date(2026, 11, 4)
+    assert by_key[("테스트홀딩스", "IPO_BOOKBUILDING_START")].primary_ticker == "^KS11"
+    assert all(e.primary_company != "무시할회사" for e in events)
+
+
+def test_kind_calendar_uses_kosdaq_proxy_from_official_market_alt_text():
+    events = KindIpoCollector(mock_html=CALENDAR_HTML).collect(since=datetime(2026, 11, 1))
+    dongwon = [e for e in events if e.primary_company == "동원파츠"]
+    assert dongwon
+    assert all(e.primary_ticker == "^KQ11" for e in dongwon)
