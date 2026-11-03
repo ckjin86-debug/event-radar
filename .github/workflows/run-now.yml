@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: event-radar-targeted-refresh
+  group: event-radar-targeted-refresh-v3
   cancel-in-progress: true
 
 permissions:
