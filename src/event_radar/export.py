@@ -12,6 +12,9 @@ from event_radar.backtest.metrics import BacktestSummary, summarize_event_group
 from event_radar.backtest.historical import build_historical_peer_frame
 
 
+NEWS_RADAR_MAX = 30
+
+
 def _is_actual_convertible_listing(ev: Event) -> bool:
     """Return True only when a legacy DART convertible row reflects new-share listing."""
     combined = f"{ev.event_name} {ev.evidence_text}".replace(" ", "")
@@ -36,6 +39,88 @@ def _is_visible_radar_event(ev: Event) -> bool:
     ):
         return False
     return True
+
+
+def _news_relation_priority(securities: list[EventSecurity]) -> tuple[int, int]:
+    grade_points = {"A": 60, "B": 50, "THEME": 35, "C": 20, "PROXY": 0, "UNMAPPED": 0}
+    if not securities:
+        return 0, 0
+    best = max(
+        securities,
+        key=lambda row: (grade_points.get(row.relation_grade, 0), row.relation_score),
+    )
+    return grade_points.get(best.relation_grade, 0), best.relation_score
+
+
+def _news_visibility_rank(
+    ev: Event,
+    event_securities: dict[str, list[EventSecurity]],
+    today: date,
+) -> tuple[int, int, int, int]:
+    relation_points, relation_score = _news_relation_priority(event_securities.get(ev.event_id, []))
+    precision_points = {
+        "EXACT_DATE": 40,
+        "WEEK": 30,
+        "MONTH": 20,
+        "QUARTER": 12,
+        "HALF_YEAR": 6,
+        "YEAR": 4,
+    }.get(ev.date_precision, 0)
+    impact_points = {
+        "CONTROL_DISPUTE": 30,
+        "ELECTION": 30,
+        "COURT_RULING": 28,
+        "REGULATORY_DECISION": 28,
+        "M_AND_A": 24,
+        "CAPEX": 22,
+        "TENDER": 22,
+        "CONTRACT": 20,
+        "CLINICAL_RESULT": 20,
+        "PLANT_OPERATION": 18,
+        "PRODUCT_LAUNCH": 14,
+    }.get(ev.event_type, 8)
+    ticker_points = 15 if ev.primary_ticker else 0
+    days_until = max(0, ((ev.window_start or ev.event_date) - today).days)
+    proximity_points = max(0, 12 - min(days_until // 14, 12))
+    score = relation_points + precision_points + impact_points + ticker_points + proximity_points
+    return score, relation_score, -days_until, -len(ev.primary_company or "")
+
+
+def _select_visible_events(
+    analysis_events: list[Event],
+    event_securities: dict[str, list[EventSecurity]],
+    *,
+    today: date,
+    max_news: int = NEWS_RADAR_MAX,
+) -> list[Event]:
+    """Keep the radar broad internally but expose only actionable, ranked future news.
+
+    NEWS_FUTURE discovery is intentionally high-recall. Vague current-period rows are
+    retained canonically for audit/dedupe, but the public radar only shows a bounded
+    set of genuinely future windows, ranked by verified relation, date precision,
+    event impact, explicit ticker, and proximity.
+    """
+    non_news = [
+        ev for ev in analysis_events
+        if ev.source_name not in ("HISTORICAL_SEED", "NEWS_FUTURE")
+    ]
+    news_candidates: list[Event] = []
+    for ev in analysis_events:
+        if ev.source_name != "NEWS_FUTURE":
+            continue
+        window_start = ev.window_start or ev.event_date
+        window_end = ev.window_end or ev.event_date
+        if window_end < today:
+            continue
+        if ev.date_precision != "EXACT_DATE" and window_start <= today:
+            continue
+        news_candidates.append(ev)
+
+    news_candidates.sort(
+        key=lambda ev: _news_visibility_rank(ev, event_securities, today),
+        reverse=True,
+    )
+    return [*non_news, *news_candidates[:max(0, max_news)]]
 
 
 def _serialize_securities(securities: list[EventSecurity]) -> list[dict[str, Any]]:
@@ -126,7 +211,12 @@ def export_site_data(
 
     analysis_events = [ev for ev in events if _is_visible_radar_event(ev)]
     historical_seed_events = [ev for ev in analysis_events if ev.source_name == "HISTORICAL_SEED"]
-    visible_events = [ev for ev in analysis_events if ev.source_name != "HISTORICAL_SEED"]
+    visible_events = _select_visible_events(
+        analysis_events,
+        event_securities,
+        today=today,
+        max_news=NEWS_RADAR_MAX,
+    )
     historical_analysis = {
         ev.event_id: _analyze_historical_peers(
             event=ev,
@@ -332,6 +422,8 @@ def export_site_data(
         "total_events": len(visible_events),
         "kr_events": sum(1 for e in visible_events if e.country == "KR"),
         "us_events": sum(1 for e in visible_events if e.country == "US"),
+        "news_events_visible": sum(1 for e in visible_events if e.source_name == "NEWS_FUTURE"),
+        "news_events_available": sum(1 for e in analysis_events if e.source_name == "NEWS_FUTURE"),
         "historical_seed_events": len(historical_seed_events),
         "version": "1.0.0",
         "collector_status": collector_status or {},
