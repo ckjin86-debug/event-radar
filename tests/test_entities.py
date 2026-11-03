@@ -102,6 +102,33 @@ def test_entity_universe_recognizes_hyundai_motor_news_alias():
     assert [m.ticker for m in matches] == ["005380"]
 
 
+def test_short_korean_issuer_names_do_not_match_inside_longer_words_or_company_names():
+    universe = EntityUniverse(
+        [
+            SecurityMention(company_name="한화", ticker="000880", country="KR"),
+            SecurityMention(company_name="한화시스템", ticker="272210", country="KR"),
+            SecurityMention(company_name="흥국", ticker="010240", country="KR"),
+            SecurityMention(company_name="타이드", ticker="346010", country="KR"),
+            SecurityMention(company_name="레이", ticker="228670", country="KR"),
+            SecurityMention(company_name="샘표", ticker="007540", country="KR"),
+            SecurityMention(company_name="샘표식품", ticker="248170", country="KR"),
+        ]
+    )
+
+    court = universe.resolve_mentions("흥국생명·한화시스템 321억 맞소송", "KR")
+    peptide = universe.resolve_mentions("삼성바이오로직스, 폴리펩타이드 공개매수 성료", "KR")
+    game = universe.resolve_mentions("엘리멘타 신작 실버팰리스 글로벌 정식 출시", "KR")
+    merger = universe.resolve_mentions("샘표식품, 지주사 샘표 흡수 합병", "KR")
+
+    assert [(m.company_name, m.ticker) for m in court] == [("한화시스템", "272210")]
+    assert peptide == []
+    assert game == []
+    assert {(m.company_name, m.ticker) for m in merger} == {
+        ("샘표", "007540"),
+        ("샘표식품", "248170"),
+    }
+
+
 class _Response:
     def __init__(self, *, status_code=200, content=b"", payload=None):
         self.status_code = status_code
