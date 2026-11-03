@@ -57,6 +57,9 @@ class PipelineReport:
     failed_sources: list[str] = field(default_factory=list)
     new_revisions_count: int = 0
     duration_sec: float = 0.0
+    collection_duration_sec: float = 0.0
+    mapping_duration_sec: float = 0.0
+    backtest_duration_sec: float = 0.0
 
 
 def load_canonical_events(path: Path) -> list[Event]:
@@ -260,6 +263,7 @@ def run_pipeline(
     ipo_enricher = IpoRelationEnricher()
 
     # 2. Run collectors with graceful degradation
+    collection_started = time.time()
     successful_sources: list[str] = []
     failed_sources: list[str] = []
     incoming_raw: list[RawEvent] = []
@@ -275,6 +279,7 @@ def run_pipeline(
         except Exception:
             failed_sources.append(col.source_name)
             collector_status[col.source_name] = "FAILED"
+    collection_duration_sec = time.time() - collection_started
 
     # 3. Normalize raw events
     incoming_events = [normalize_event(r, now=now) for r in incoming_raw]
@@ -309,6 +314,12 @@ def run_pipeline(
     save_relations_csv(all_relations, relations_csv)
 
     # 7. Resolve direct/economic, text-mentioned, IPO, and theme securities.
+    mapping_started = time.time()
+    ipo_enricher.prefetch(
+        ev.primary_company
+        for ev in current_events
+        if ev.country == "KR" and ev.event_type == "IPO_LISTING" and ev.primary_company
+    )
     event_securities: dict[str, list[EventSecurity]] = {}
     all_mapped_rows = []
     for ev in current_events:
@@ -336,8 +347,10 @@ def run_pipeline(
         "event_id", "ticker", "relation_grade", "relation_score",
         "relation_type", "evidence_text",
     ]).to_csv(derived_dir / "event_security_map.csv", index=False)
+    mapping_duration_sec = time.time() - mapping_started
 
     # 8. Real-price backtest, Strategy, and Scoring
+    backtest_started = time.time()
     event_scores: dict[str, ScoreResult] = {}
     strategy_results: dict[str, list[StrategyResult]] = {}
     backtest_summaries: dict[str, BacktestSummary] = {}
@@ -423,6 +436,7 @@ def run_pipeline(
                 robustness_score=robustness,
             )
         )
+    backtest_duration_sec = time.time() - backtest_started
 
     # 9. Export Site Data
     export_site_data(
@@ -446,4 +460,7 @@ def run_pipeline(
         failed_sources=failed_sources,
         new_revisions_count=len(merge_res.new_revisions),
         duration_sec=duration,
+        collection_duration_sec=collection_duration_sec,
+        mapping_duration_sec=mapping_duration_sec,
+        backtest_duration_sec=backtest_duration_sec,
     )
