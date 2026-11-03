@@ -1,9 +1,11 @@
 {
-  "generated_at": "2026-11-03T09:08:51.797311",
-  "total_events": 534,
-  "kr_events": 522,
+  "generated_at": "2026-11-03T12:50:04.794538",
+  "total_events": 273,
+  "kr_events": 261,
   "us_events": 12,
   "historical_seed_events": 11,
+  "news_candidates": 583,
+  "news_visible": 248,
   "version": "1.0.0",
   "collector_status": {
     "NEWS_FUTURE": "SUCCESS"
