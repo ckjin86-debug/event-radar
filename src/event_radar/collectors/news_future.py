@@ -29,6 +29,11 @@ DEFAULT_QUERIES = [
     "임상 결과 예정",
     "정책 시행 예정",
     "수주 발표 예정",
+    "경영권 분쟁 예정",
+    "임시주총 예정",
+    "원전 입찰 예정",
+    "원전 수주 예정",
+    "대선 경선 예정",
 ]
 
 BROAD_WINDOW_EVENT_TYPES = {
@@ -41,9 +46,11 @@ BROAD_WINDOW_EVENT_TYPES = {
     "POLICY",
     "COURT_RULING",
     "TENDER",
+    "CONTROL_DISPUTE",
+    "ELECTION",
 }
 
-MARKET_WIDE_EVENT_TYPES = {"POLICY", "COURT_RULING", "TENDER"}
+MARKET_WIDE_EVENT_TYPES = {"POLICY", "COURT_RULING", "TENDER", "ELECTION"}
 
 EVENT_PATTERNS: dict[str, str] = {
     "PLANT_OPERATION": r"상업\s*가동|공장.{0,12}가동|라인.{0,12}가동|생산.{0,8}가동",
@@ -60,6 +67,8 @@ EVENT_PATTERNS: dict[str, str] = {
     "M_AND_A": r"합병|인수(?!권)|M&A",
     "CAPEX": r"착공|시설투자|설비투자|증설",
     "POLICY": r"(?:정책|규제).{0,16}(?:시행|발표|결정)",
+    "CONTROL_DISPUTE": r"경영권.{0,16}(?:분쟁|갈등|표대결|주총)|(?:임시)?주총.{0,16}(?:경영권|표대결)|가처분.{0,16}(?:경영권|의결권)",
+    "ELECTION": r"대선|총선|지방선거|경선|후보\s*(?:등록|확정|선출)",
     "CAPEX_FINANCING": r"유상증자|시설투자|설비투자|시설자금|공장|증설|CAPEX",
 }
 
@@ -202,13 +211,13 @@ def _clean_text(value: str) -> str:
 
 def _extract_ticker(text: str) -> str:
     match = re.search(r"\((\d{6})\)", text) or re.search(r"(?<!\d)(\d{6})(?!\d)", text)
-    return match.group(1) if match else "^KS11"
+    return match.group(1) if match else ""
 
 
 def _extract_company(title: str, ticker: str) -> str:
     clean = _clean_text(title)
     clean = re.sub(r"^\[[^\]]+\]\s*", "", clean)
-    if ticker != "^KS11":
+    if ticker:
         marker = clean.find(f"({ticker})")
         if marker > 0:
             return clean[:marker].strip(" ,:-")
@@ -368,7 +377,7 @@ class NewsFutureCollector:
                     existing["article_count"] += 1
                     if source_url and source_url not in existing["source_urls"]:
                         existing["source_urls"].append(source_url)
-                    if ticker != "^KS11" and existing["ticker"] == "^KS11":
+                    if ticker and not existing["ticker"]:
                         existing.update(
                             {
                                 "title": title,

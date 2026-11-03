@@ -11,7 +11,7 @@ EventTimeContext = Literal["PREMARKET", "INTRADAY", "AFTERHOURS", "DATE_ONLY"]
 EventStatus = Literal["CONFIRMED", "EXPECTED", "RUMORED", "CANCELLED"]
 SourceKind = Literal["REGULATOR", "EXCHANGE", "COMPANY", "ORGANIZER", "SECONDARY"]
 IngestMode = Literal["AUTO", "MANUAL", "AUTO+MANUAL"]
-RelationGrade = Literal["A", "B", "C"]
+RelationGrade = Literal["A", "B", "C", "UNMAPPED"]
 DatePrecision = Literal["EXACT_DATE", "WEEK", "MONTH", "QUARTER", "HALF_YEAR", "YEAR"]
 
 

@@ -9,10 +9,10 @@ from event_radar.models import Event, Relation, EventSecurity
 
 
 def resolve_related_securities(event: Event, relations: list[Relation]) -> list[EventSecurity]:
-    """Resolve A/B related securities for an event avoiding look-ahead bias and expired relations."""
+    """Resolve related securities for an event avoiding look-ahead bias and expired relations."""
     results: dict[str, EventSecurity] = {}
 
-    # 1. Primary entity is always Grade A
+    # 1. Primary entity is always Grade A when an actual ticker is known.
     primary_ticker = event.primary_ticker.strip().upper()
     if primary_ticker:
         results[primary_ticker] = EventSecurity(
@@ -27,7 +27,9 @@ def resolve_related_securities(event: Event, relations: list[Relation]) -> list[
     announced_date = event.announced_at.date() if hasattr(event.announced_at, "date") else event.announced_at
     event_date = event.event_date
 
-    # 2. Check candidate relations
+    # 2. Check candidate relations.
+    # Events without a direct ticker can still resolve verified B-grade names
+    # through a canonical relationship keyed by the event's primary entity.
     for rel in relations:
         from_entity = rel.from_entity.strip().upper()
         if from_entity not in (primary_ticker, event.primary_company.strip().upper()):
@@ -75,6 +77,18 @@ def resolve_related_securities(event: Event, relations: list[Relation]) -> list[
         else:
             results[ticker] = candidate
 
+    if not results:
+        return [
+            EventSecurity(
+                event_id=event.event_id,
+                ticker="",
+                relation_grade="UNMAPPED",
+                relation_score=0,
+                relation_type="UNMAPPED",
+                evidence_text="직접 또는 검증된 관련 종목 미매핑",
+            )
+        ]
+
     return list(results.values())
 
 
@@ -111,7 +125,7 @@ def load_relations_csv(path: Path | str) -> list[Relation]:
 
 
 def save_relations_csv(relations: list[Relation], path: Path | str) -> None:
-    """Save relations to canonical CSV."""
+    """Save relations to canonical CSV file."""
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     fieldnames = [
