@@ -6,13 +6,19 @@ from event_radar.backtest.historical import build_historical_peer_frame
 from event_radar.models import Event
 
 
-def _event(event_id: str, event_date: date, event_type: str = "TENDER") -> Event:
+def _event(
+    event_id: str,
+    event_date: date,
+    event_type: str = "TENDER",
+    event_name: str | None = None,
+    country: str = "KR",
+) -> Event:
     now = datetime(2026, 11, 3, 9, 0)
     return Event(
         event_id=event_id,
-        country="KR",
+        country=country,
         event_type=event_type,
-        event_name=event_id,
+        event_name=event_name or event_id,
         primary_ticker="005930",
         primary_company="테스트",
         announced_at=now,
@@ -86,3 +92,24 @@ def test_historical_peers_respect_relation_grade():
     )
 
     assert set(peers["event_id"].unique()) == {"old-b"}
+
+
+def test_nuclear_tender_does_not_mix_with_other_tenders_or_other_countries():
+    events = [
+        _event("old-nuclear", date(2024, 1, 10), event_name="체코 원전 입찰 결과"),
+        _event("old-defense", date(2025, 2, 1), event_name="폴란드 전차 입찰 결과"),
+        _event("old-us-nuclear", date(2025, 3, 1), event_name="미국 원전 입찰 결과", country="US"),
+        _event("target", date(2026, 12, 18), event_name="체코 원전 우선협상대상자 선정"),
+    ]
+    returns_df = pd.DataFrame(
+        _rows("old-nuclear") + _rows("old-defense") + _rows("old-us-nuclear")
+    )
+
+    peers = build_historical_peer_frame(
+        events=events,
+        returns_df=returns_df,
+        target_event=events[3],
+        relation_grade="A",
+    )
+
+    assert set(peers["event_id"].unique()) == {"old-nuclear"}
