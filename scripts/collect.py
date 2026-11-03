@@ -87,14 +87,15 @@ def build_collectors(root: Path, fast_refresh: bool = False):
 
 
 def prepare_fast_refresh_collectors(root: Path):
-    """Capture credentials in NEWS_FUTURE, then force later mapping to cache-only mode.
+    """Capture Naver credentials in NEWS_FUTURE but keep DART for name resolution.
 
-    The NewsFutureCollector stores its Naver credentials on construction. Clearing
-    the environment afterwards prevents ListedCompanyRegistry and IpoRelationEnricher
-    from making unrelated OpenDART/Naver network calls during the same fast refresh.
+    The NewsFutureCollector stores Naver credentials on construction. Clearing
+    only the Naver environment afterwards prevents IPO relation enrichment from
+    performing a second news-search pass, while DART remains available so the
+    listed-company registry can resolve company names into real stock tickers.
     """
     collectors = build_collectors(root, fast_refresh=True)
-    for key in ("DART_API_KEY", "NAVER_API_HUB_KEY_ID", "NAVER_API_HUB_KEY"):
+    for key in ("NAVER_API_HUB_KEY_ID", "NAVER_API_HUB_KEY"):
         os.environ.pop(key, None)
     return collectors
 

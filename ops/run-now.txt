@@ -1,1 +1,1 @@
-2026-11-03T18:03:00+09:00 credential-isolated-news-relation-refresh
+2026-11-03T21:28:00+09:00 quality-gated-news-live-validation

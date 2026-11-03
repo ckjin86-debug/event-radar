@@ -31,7 +31,7 @@ def test_fast_refresh_collectors_only_hit_future_news(tmp_path):
     assert [collector.source_name for collector in collectors] == ["NEWS_FUTURE"]
 
 
-def test_prepare_fast_refresh_captures_news_credentials_then_clears_mapping_credentials(monkeypatch, tmp_path):
+def test_prepare_fast_refresh_captures_news_credentials_but_keeps_dart_for_company_registry(monkeypatch, tmp_path):
     monkeypatch.setenv("DART_API_KEY", "dart-secret")
     monkeypatch.setenv("NAVER_API_HUB_KEY_ID", "naver-id")
     monkeypatch.setenv("NAVER_API_HUB_KEY", "naver-secret")
@@ -42,7 +42,10 @@ def test_prepare_fast_refresh_captures_news_credentials_then_clears_mapping_cred
     assert news.api_key_id == "naver-id"
     assert news.api_key == "naver-secret"
 
-    assert "DART_API_KEY" not in os.environ
+    # NEWS_FUTURE captures Naver credentials at construction time, then the env
+    # credentials are removed so IPO enrichment cannot make another Naver pass.
+    # DART stays available so the listed-company registry can map company names.
+    assert os.environ["DART_API_KEY"] == "dart-secret"
     assert "NAVER_API_HUB_KEY_ID" not in os.environ
     assert "NAVER_API_HUB_KEY" not in os.environ
 
