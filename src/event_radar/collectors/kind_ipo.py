@@ -17,7 +17,7 @@ from event_radar.collectors.base import CollectorRunLog, log_collector_run
 from event_radar.models import RawEvent
 
 
-KIND_IPO_URL = "https://kind.krx.co.kr/listinvstg/pubofrschdl.do?method=searchPubofrScholMain"
+KIND_IPO_URL = "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain"
 KIND_BASE_URL = "https://kind.krx.co.kr"
 
 _DATE_RE = re.compile(r"(20\d{2})[.\-/]\s*(\d{1,2})[.\-/]\s*(\d{1,2})")
@@ -55,8 +55,8 @@ class KindIpoCollector:
     def __init__(self, mock_html: Optional[str] = None, timeout: int = 10, months_ahead: int = 2) -> None:
         self.mock_html = mock_html
         self.timeout = timeout
-        # Kept for constructor compatibility. The public GET page reliably exposes the current month;
-        # future-month navigation can be added later when KIND's AJAX contract is stable.
+        # Retained for constructor compatibility. The server-rendered public-offering
+        # company page already includes upcoming bookbuilding/subscription/listing dates.
         self.months_ahead = max(0, months_ahead)
         self.session = requests.Session()
         self.session.headers.update({
@@ -107,7 +107,7 @@ class KindIpoCollector:
         )
 
     def _parse_table(self, html_text: str, since: datetime) -> list[RawEvent]:
-        """Legacy table parser retained for old fixtures and layout fallback."""
+        """Parse KIND's server-rendered public-offering company table."""
         soup = BeautifulSoup(html_text, "html.parser")
         events: list[RawEvent] = []
         for table in soup.find_all("table"):
@@ -133,7 +133,14 @@ class KindIpoCollector:
                     continue
                 link = company_cell.find("a", href=True)
                 source_url = urljoin(KIND_BASE_URL, link.get("href", "")) if link else KIND_IPO_URL
-                market_text = cells[market_idx].get_text(" ", strip=True) if market_idx is not None and market_idx < len(cells) else ""
+
+                if market_idx is not None and market_idx < len(cells):
+                    market_text = cells[market_idx].get_text(" ", strip=True)
+                else:
+                    # Current KIND markup puts the market badge inside the company cell,
+                    # e.g. <img alt="코스닥"> rather than exposing a market column.
+                    market_img = company_cell.find("img")
+                    market_text = market_img.get("alt", "") if market_img else ""
                 ticker = self._market_proxy(market_text)
                 evidence = " | ".join(cell.get_text(" ", strip=True) for cell in cells)
 
@@ -163,6 +170,7 @@ class KindIpoCollector:
         return sorted(events, key=lambda e: (e.event_date, e.primary_company, e.event_type))
 
     def _parse_calendar_entries(self, html_text: str) -> list[dict]:
+        """Retain calendar parsing for fixtures/backward compatibility."""
         soup = BeautifulSoup(html_text, "html.parser")
         calendar = soup.select_one("#calBig2") or soup
         month_match = _CALENDAR_MONTH_RE.search(calendar.get_text(" ", strip=True))
@@ -234,7 +242,7 @@ class KindIpoCollector:
         deduped = {(event.primary_company, event.event_type, event.event_date): event for event in events}
         return sorted(deduped.values(), key=lambda e: (e.event_date, e.primary_company, e.event_type))
 
-    def _fetch_current_calendar(self) -> str:
+    def _fetch_public_offering_table(self) -> str:
         response = self.session.get(KIND_IPO_URL, timeout=self.timeout)
         if response.status_code != 200:
             raise ConnectionError(f"KIND returned HTTP {response.status_code}")
@@ -248,10 +256,14 @@ class KindIpoCollector:
             if self.mock_html is not None:
                 html_text = self.mock_html
             else:
-                html_text = self._fetch_current_calendar()
+                html_text = self._fetch_public_offering_table()
 
-            calendar_entries = self._parse_calendar_entries(html_text)
-            events = self._events_from_calendar_entries(calendar_entries, since) if calendar_entries else self._parse_table(html_text, since)
+            # Production uses the public-offering company table because it contains
+            # bookbuilding, subscription, payment and listing dates in one stable page.
+            events = self._parse_table(html_text, since)
+            if not events:
+                calendar_entries = self._parse_calendar_entries(html_text)
+                events = self._events_from_calendar_entries(calendar_entries, since) if calendar_entries else []
 
             log_collector_run(CollectorRunLog(
                 source_name=self.source_name,
