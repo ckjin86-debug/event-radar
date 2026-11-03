@@ -1,7 +1,7 @@
 import json
 from datetime import date, datetime
 
-from event_radar.models import RawEvent
+from event_radar.models import EventSecurity, RawEvent
 from event_radar.normalize import normalize_event
 from event_radar.pipeline import load_canonical_events, save_canonical_events
 from event_radar.export import export_site_data
@@ -49,11 +49,20 @@ def test_month_window_survives_normalize_csv_and_site_export(tmp_path):
     assert loaded[0].window_start == date(2026, 12, 1)
     assert loaded[0].window_end == date(2026, 12, 31)
 
+    direct = EventSecurity(
+        event_id=loaded[0].event_id,
+        ticker="005930",
+        relation_grade="A",
+        relation_score=100,
+        relation_type="DIRECT",
+        evidence_text="직접 당사자",
+    )
+
     out = tmp_path / "site"
     export_site_data(
         events=loaded,
         revisions=[],
-        event_securities={},
+        event_securities={loaded[0].event_id: [direct]},
         event_scores={},
         event_returns_df=None,
         strategy_results={},
