@@ -1,0 +1,62 @@
+name: Verify Live Event Sources
+
+on:
+  push:
+    branches: [feature/trim-ipo-cb-noise]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+
+      - name: Verify NEWS, KIND, and DART collectors
+        env:
+          DART_API_KEY: ${{ secrets.DART_API_KEY }}
+          NAVER_API_HUB_KEY_ID: ${{ secrets.NAVER_API_HUB_KEY_ID }}
+          NAVER_API_HUB_KEY: ${{ secrets.NAVER_API_HUB_KEY }}
+        run: |
+          python - <<'PY'
+          from datetime import datetime, timedelta
+          from pathlib import Path
+          from event_radar.collectors.news_future import NewsFutureCollector
+          from event_radar.collectors.kind_ipo import KindIpoCollector
+          from event_radar.collectors.dart import DartCollector
+
+          since = datetime.now() - timedelta(days=7)
+          news = NewsFutureCollector().collect(since)
+          kind = KindIpoCollector().collect(since)
+          dart = DartCollector().collect(since)
+
+          print(f"NEWS_EVENT_COUNT={len(news)}")
+          print(f"KIND_EVENT_COUNT={len(kind)}")
+          print(f"KIND_EVENT_TYPES={sorted(set(e.event_type for e in kind))}")
+          print(f"DART_EVENT_COUNT={len(dart)}")
+          generic_cb = [e.event_name for e in dart if any(k in e.event_name for k in ('전환사채권발행결정','전환가액','만기전취득','전환사채매도','신주인수권부사채권발행결정'))]
+          convertible_listings = [e.event_name for e in dart if e.event_type == 'CONVERTIBLE_LISTING']
+          print(f"DART_GENERIC_CB_COUNT={len(generic_cb)}")
+          print(f"DART_CONVERTIBLE_LISTING_COUNT={len(convertible_listings)}")
+          print("DART_CONVERTIBLE_LISTINGS=" + " | ".join(convertible_listings[:10]))
+
+          log_path = Path('data/logs/collector_runs.csv')
+          if log_path.exists():
+              lines = log_path.read_text(encoding='utf-8-sig').splitlines()
+              print('LATEST_COLLECTOR_LOGS')
+              for line in lines[-3:]:
+                  print(line)
+          PY
