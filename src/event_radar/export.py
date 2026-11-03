@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 import json
+import re
 from datetime import date, datetime
 from pathlib import Path
 from typing import Any
@@ -10,6 +11,37 @@ from event_radar.scoring import ScoreInput, ScoreResult, calculate_event_score
 from event_radar.backtest.strategies import StrategyResult, evaluate_strategies
 from event_radar.backtest.metrics import BacktestSummary, summarize_event_group
 from event_radar.backtest.historical import build_historical_peer_frame
+
+
+PUBLIC_NEWS_RELATION_GRADES = {"A", "B", "THEME"}
+EVENT_FIRST_PUBLIC_TYPES = {"CONTROL_DISPUTE", "ELECTION", "COURT_RULING", "TENDER", "POLICY"}
+EVENT_FIRST_KEYWORDS = (
+    "원전",
+    "원자력",
+    "경영권",
+    "대선",
+    "총선",
+    "지방선거",
+    "경선",
+    "주총",
+    "판결",
+    "선고",
+    "입찰",
+    "우선협상",
+)
+GENERIC_EVENT_ENTITIES = {
+    "",
+    "cm",
+    "경기도",
+    "서울시",
+    "정부",
+    "원료",
+    "시장",
+    "업계",
+    "국내",
+    "관계자",
+    "koreamarket",
+}
 
 
 def _is_actual_convertible_listing(ev: Event) -> bool:
@@ -36,6 +68,106 @@ def _is_visible_radar_event(ev: Event) -> bool:
     ):
         return False
     return True
+
+
+def _public_relation_rows(securities: list[EventSecurity]) -> list[EventSecurity]:
+    return [
+        row
+        for row in securities
+        if row.ticker and row.relation_grade in PUBLIC_NEWS_RELATION_GRADES
+    ]
+
+
+def _news_window_is_publicly_actionable(ev: Event, today: date) -> bool:
+    """Require a genuinely future window instead of a vague current-period mention."""
+    window_start = ev.window_start or ev.event_date
+    window_end = ev.window_end or ev.event_date
+    if window_end < today:
+        return False
+    if ev.date_precision == "EXACT_DATE":
+        return ev.event_date >= today
+    if ev.date_precision == "WEEK":
+        return window_end >= today
+    if ev.date_precision in {"MONTH", "QUARTER", "HALF_YEAR", "YEAR"}:
+        return window_start > today
+    return ev.event_date >= today
+
+
+def _event_first_entity_is_plausible(ev: Event) -> bool:
+    company_key = re.sub(r"[^0-9A-Za-z가-힣]", "", ev.primary_company or "").lower()
+    if company_key in GENERIC_EVENT_ENTITIES or len(company_key) < 3 or len(company_key) > 40:
+        return False
+    combined = f"{ev.event_name} {ev.evidence_text}"
+    return any(keyword in combined for keyword in EVENT_FIRST_KEYWORDS)
+
+
+def _is_public_news_event(
+    ev: Event,
+    securities: list[EventSecurity],
+    today: date,
+) -> bool:
+    if ev.source_name != "NEWS_FUTURE":
+        return True
+    if not _news_window_is_publicly_actionable(ev, today):
+        return False
+    if _public_relation_rows(securities):
+        return True
+    return ev.event_type in EVENT_FIRST_PUBLIC_TYPES and _event_first_entity_is_plausible(ev)
+
+
+def _news_dedupe_key(ev: Event, securities: list[EventSecurity]) -> tuple[str, str, str, str]:
+    mapped = sorted({row.ticker for row in _public_relation_rows(securities)})
+    if mapped:
+        anchor = ",".join(mapped)
+    else:
+        anchor = re.sub(r"[^0-9A-Za-z가-힣]", "", ev.primary_company or "").lower()
+    window_start = (ev.window_start or ev.event_date).isoformat()
+    window_end = (ev.window_end or ev.event_date).isoformat()
+    return anchor, ev.event_type, window_start, window_end
+
+
+def _news_preference(ev: Event, securities: list[EventSecurity]) -> tuple[int, int, int, float]:
+    grade_rank = {"A": 4, "B": 3, "THEME": 2}
+    relation_rank = max((grade_rank.get(row.relation_grade, 0) for row in securities), default=0)
+    manual_rank = 1 if any(row.ingest_mode in {"MANUAL", "AUTO+MANUAL"} for row in securities) else 0
+    precision_rank = {
+        "EXACT_DATE": 5,
+        "WEEK": 4,
+        "MONTH": 3,
+        "QUARTER": 2,
+        "HALF_YEAR": 1,
+        "YEAR": 0,
+    }.get(ev.date_precision, 0)
+    return relation_rank, manual_rank, precision_rank, ev.announced_at.timestamp()
+
+
+def _select_public_visible_events(
+    events: list[Event],
+    event_securities: dict[str, list[EventSecurity]],
+    today: date,
+) -> list[Event]:
+    """Keep non-news events and semantically select/dedupe public future-news rows."""
+    non_news = [ev for ev in events if ev.source_name not in {"NEWS_FUTURE", "HISTORICAL_SEED"}]
+    news_by_key: dict[tuple[str, str, str, str], Event] = {}
+
+    for ev in events:
+        if ev.source_name != "NEWS_FUTURE":
+            continue
+        securities = event_securities.get(ev.event_id, [])
+        if not _is_public_news_event(ev, securities, today):
+            continue
+        key = _news_dedupe_key(ev, securities)
+        current = news_by_key.get(key)
+        if current is None:
+            news_by_key[key] = ev
+            continue
+        if _news_preference(ev, securities) > _news_preference(
+            current,
+            event_securities.get(current.event_id, []),
+        ):
+            news_by_key[key] = ev
+
+    return non_news + list(news_by_key.values())
 
 
 def _serialize_securities(securities: list[EventSecurity]) -> list[dict[str, Any]]:
@@ -126,7 +258,7 @@ def export_site_data(
 
     analysis_events = [ev for ev in events if _is_visible_radar_event(ev)]
     historical_seed_events = [ev for ev in analysis_events if ev.source_name == "HISTORICAL_SEED"]
-    visible_events = [ev for ev in analysis_events if ev.source_name != "HISTORICAL_SEED"]
+    visible_events = _select_public_visible_events(analysis_events, event_securities, today)
     historical_analysis = {
         ev.event_id: _analyze_historical_peers(
             event=ev,
@@ -327,12 +459,16 @@ def export_site_data(
         encoding="utf-8",
     )
 
+    news_candidates = sum(1 for ev in analysis_events if ev.source_name == "NEWS_FUTURE")
+    news_visible = sum(1 for ev in visible_events if ev.source_name == "NEWS_FUTURE")
     metadata = {
         "generated_at": now.isoformat(),
         "total_events": len(visible_events),
         "kr_events": sum(1 for e in visible_events if e.country == "KR"),
         "us_events": sum(1 for e in visible_events if e.country == "US"),
         "historical_seed_events": len(historical_seed_events),
+        "news_candidates": news_candidates,
+        "news_visible": news_visible,
         "version": "1.0.0",
         "collector_status": collector_status or {},
     }
