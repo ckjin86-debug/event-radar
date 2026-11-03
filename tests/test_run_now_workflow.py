@@ -16,6 +16,11 @@ def test_run_now_workflow_only_auto_triggers_from_sentinel_path():
     assert '[skip ci]' not in workflow.lower()
 
 
+def test_run_now_uses_fast_refresh_without_price_refetch():
+    workflow = _workflow("run-now.yml")
+    assert "python scripts/collect.py --skip-price-fetch" in workflow
+
+
 def test_collection_workflows_deploy_pages_in_same_run():
     for name in ("run-now.yml", "collect.yml"):
         workflow = _workflow(name)
