@@ -56,14 +56,26 @@ EXTRA_NEWS_QUERIES = [
 ]
 
 
-def build_collectors(root: Path):
-    """Build production collectors without test fixtures."""
+def _news_collector() -> NewsFutureCollector:
     news_queries = list(dict.fromkeys([*DEFAULT_QUERIES, *EXTRA_NEWS_QUERIES]))
+    return NewsFutureCollector(queries=news_queries)
+
+
+def build_collectors(root: Path, fast_refresh: bool = False):
+    """Build production collectors without test fixtures.
+
+    Fast refresh only re-queries future news. Existing canonical events from
+    regulators/calendars remain in the database and are re-exported, while
+    manual relations are merged on every pipeline run.
+    """
+    if fast_refresh:
+        return [_news_collector()]
+
     return [
         HistoricalSeedCollector(config_path=root / "config" / "historical_events.csv"),
         DartCollector(),
         SecCollector(),
-        NewsFutureCollector(queries=news_queries),
+        _news_collector(),
         FdaCollector(config_path=root / "config" / "site_registry.yaml"),
         KindIpoCollector(),
         FomcCollector(),
@@ -78,7 +90,7 @@ def main():
     parser.add_argument(
         "--skip-price-fetch",
         action="store_true",
-        help="Refresh events/relations/site data without refetching prices; preserve existing backtest returns.",
+        help="Fast refresh: collect future news, merge relations, and preserve existing backtest returns.",
     )
     args = parser.parse_args()
 
@@ -89,7 +101,7 @@ def main():
         config_dir=root / "config",
     )
 
-    collectors = build_collectors(root)
+    collectors = build_collectors(root, fast_refresh=args.skip_price_fetch)
 
     print("=== Starting Event Radar Collection Pipeline ===")
     report = run_pipeline(
