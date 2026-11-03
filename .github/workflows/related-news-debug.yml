@@ -31,11 +31,30 @@ jobs:
         run: |
           python - <<'PY'
           import os
+          import requests
+          from collections import Counter
           from datetime import datetime, timedelta
           from event_radar.collectors.news_future import NewsFutureCollector
-          from event_radar.entities import load_entity_universe
+          from event_radar.entities import DART_CORP_CODE_URL, load_entity_universe
 
-          universe = load_entity_universe(dart_api_key=os.getenv("DART_API_KEY", ""))
+          key = os.getenv("DART_API_KEY", "")
+          print("DART_KEY_PRESENT", bool(key), "LENGTH", len(key))
+          try:
+              response = requests.get(DART_CORP_CODE_URL, params={"crtfc_key": key}, timeout=20)
+              print("DART_HTTP", response.status_code)
+              print("DART_CONTENT_TYPE", response.headers.get("content-type", ""))
+              print("DART_CONTENT_LENGTH", len(response.content))
+              print("DART_MAGIC", response.content[:8].hex())
+          except Exception as exc:
+              print("DART_REQUEST_ERROR", type(exc).__name__, str(exc)[:200])
+
+          universe = load_entity_universe(dart_api_key=key)
+          counts = Counter(record.country for record in universe.records)
+          print("ENTITY_TOTAL", len(universe.records), "COUNTS", dict(counts))
+          for probe in ["삼성바이오로직스", "포스코인터내셔널", "샘표식품", "한화시스템", "현대차"]:
+              matches = universe.resolve_mentions(probe, "KR")
+              print("PROBE", probe, [(m.company_name, m.ticker) for m in matches])
+
           events = NewsFutureCollector().collect(since=datetime.now() - timedelta(days=7))
           resolved_events = 0
           resolved_securities = set()
@@ -49,17 +68,7 @@ jobs:
                   resolved_events += 1
                   resolved_securities.update((m.ticker, m.company_name) for m in mentions)
               mapped = ",".join(f"{m.company_name}:{m.ticker}" for m in mentions) or "-"
-              print(
-                  "EVENT",
-                  event.event_type,
-                  event.date_precision,
-                  event.event_date.isoformat(),
-                  event.primary_company,
-                  "=>",
-                  mapped,
-                  "|",
-                  event.event_name,
-              )
+              print("EVENT", event.event_type, event.date_precision, event.event_date.isoformat(), event.primary_company, "=>", mapped, "|", event.event_name)
           print("DIRECT_RESOLVED_EVENTS", resolved_events)
           print("DIRECT_SECURITY_COUNT", len(resolved_securities))
           for ticker, company in sorted(resolved_securities):
