@@ -129,12 +129,35 @@ def test_large_event_first_news_can_remain_without_a_stock_mapping(tmp_path):
     assert [row["event_id"] for row in rows] == ["nuclear-tender"]
 
 
+def test_unmapped_control_dispute_and_election_can_remain_event_first(tmp_path):
+    dispute = _news(
+        "control-dispute",
+        event_type="CONTROL_DISPUTE",
+        company="A사 경영권 분쟁",
+        event_name="A사 경영권 분쟁 12월 임시주총 표대결",
+        event_date=date(2026, 12, 10),
+        precision="EXACT_DATE",
+    )
+    election = _news(
+        "election",
+        event_type="ELECTION",
+        company="대선 경선",
+        event_name="대선 경선 12월 후보 확정",
+        event_date=date(2026, 12, 12),
+        precision="EXACT_DATE",
+    )
+
+    rows, _ = _visible(tmp_path, [dispute, election], {})
+
+    assert {row["event_id"] for row in rows} == {"control-dispute", "election"}
+
+
 def test_generic_unmapped_news_noise_is_hidden(tmp_path):
     event = _news(
         "generic-tender",
         event_type="TENDER",
-        company="CM",
-        event_name="CM·감리 대어 쏟아진다…기술용역 큰 장",
+        company="한국환경공단 기술형 입찰",
+        event_name="한국환경공단 12월 기술형 입찰 발주",
         event_date=date(2026, 12, 1),
         precision="MONTH",
         window_start=date(2026, 12, 1),
@@ -144,6 +167,36 @@ def test_generic_unmapped_news_noise_is_hidden(tmp_path):
     rows, _ = _visible(tmp_path, [event], {})
 
     assert rows == []
+
+
+def test_generic_political_court_news_is_hidden_without_listed_company(tmp_path):
+    event = _news(
+        "political-court",
+        event_type="COURT_RULING",
+        company="김용현",
+        event_name="김용현 11월 5일 최종변론",
+        event_date=date(2026, 11, 5),
+        precision="EXACT_DATE",
+    )
+
+    rows, _ = _visible(tmp_path, [event], {})
+
+    assert rows == []
+
+
+def test_company_court_event_survives_when_a_listed_party_is_mapped(tmp_path):
+    event = _news(
+        "company-court",
+        event_type="COURT_RULING",
+        company="한화시스템",
+        event_name="한화시스템 11월 6일 소송 선고",
+        event_date=date(2026, 11, 6),
+        precision="EXACT_DATE",
+    )
+
+    rows, _ = _visible(tmp_path, [event], {event.event_id: [_sec(event.event_id, "272210")]})
+
+    assert [row["event_id"] for row in rows] == ["company-court"]
 
 
 def test_duplicate_news_for_same_security_event_and_window_collapses_to_one(tmp_path):
