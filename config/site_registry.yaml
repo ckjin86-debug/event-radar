@@ -1,12 +1,9 @@
 sources:
   fda_pdufa:
-    name: "FDA_PDUFA"
+    name: "FDA_ADVISORY"
     country: "US"
-    event_type: "FDA_APPROVAL"
-    url: "https://www.fda.gov/drugs/news-events-human-drugs"
-    container_selector: ".view-content .views-row"
-    title_selector: ".views-field-title a"
-    date_regex: '(\d{4})-(\d{2})-(\d{2})'
+    event_type: "FDA_ADVISORY_COMMITTEE"
+    advisory_url: "https://www.fda.gov/advisory-committees/advisory-committee-calendar"
     timezone: "America/New_York"
     default_status: "CONFIRMED"
 
