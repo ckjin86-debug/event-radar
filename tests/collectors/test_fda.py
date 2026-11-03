@@ -1,5 +1,6 @@
 from datetime import date, datetime
 
+from bs4 import BeautifulSoup
 from event_radar.collectors.fda import FdaCollector
 
 
@@ -37,7 +38,11 @@ def test_fda_advisory_calendar_uses_explicit_ticker_when_present():
       </tr>
     </tbody></table>
     """
-    event = FdaCollector(mock_html=html).collect(since=datetime(2026, 11, 1))[0]
+    collector = FdaCollector(mock_html=html)
+    assert collector._ticker_and_company("Drug Advisory Meeting for BioCorp (NASDAQ: BCRP)") == ("BCRP", "BioCorp")
+    parsed = collector._parse_advisory_table(BeautifulSoup(html, "html.parser"), datetime(2026, 11, 1))
+    assert len(parsed) == 1
+    event = parsed[0]
     assert event.primary_ticker == "BCRP"
     assert event.primary_company == "BioCorp"
 
