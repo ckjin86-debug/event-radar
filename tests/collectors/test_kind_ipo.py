@@ -145,19 +145,19 @@ class KindAjaxSession:
         return FakeKindResponse(AJAX_FRAGMENT_HTML)
 
 
-def test_kind_ipo_emits_listing_only():
+def test_kind_ipo_emits_listing_only_without_market_proxy():
     events = KindIpoCollector(mock_html=SAMPLE_HTML).collect(since=datetime(2026, 11, 1))
     assert len(events) == 1
     assert events[0].event_type == "IPO_LISTING"
     assert events[0].event_date == date(2026, 12, 1)
     assert events[0].primary_company == "에이비씨"
-    assert events[0].primary_ticker == "^KQ11"
+    assert events[0].primary_ticker == ""
 
 
-def test_kind_ipo_uses_kospi_proxy_for_listing():
+def test_kind_ipo_kospi_listing_also_has_no_market_proxy():
     events = KindIpoCollector(mock_html=SAMPLE_HTML.replace("코스닥", "코스피")).collect(since=datetime(2026, 11, 1))
     assert len(events) == 1
-    assert events[0].primary_ticker == "^KS11"
+    assert events[0].primary_ticker == ""
 
 
 def test_kind_ipo_skips_company_after_listing_date():
@@ -171,14 +171,14 @@ def test_kind_calendar_emits_only_listing_entries():
     assert events[0].primary_company == "영광"
     assert events[0].event_type == "IPO_LISTING"
     assert events[0].event_date == date(2026, 11, 2)
-    assert events[0].primary_ticker == "^KQ11"
+    assert events[0].primary_ticker == ""
 
 
-def test_kind_program_table_reads_market_from_company_icon_for_listing():
+def test_kind_program_table_preserves_listing_without_proxy():
     events = KindIpoCollector(mock_html=PROGRAM_TABLE_HTML).collect(since=datetime(2026, 11, 1))
     assert len(events) == 1
     assert events[0].primary_company == "씨아이에스케미칼"
-    assert events[0].primary_ticker == "^KQ11"
+    assert events[0].primary_ticker == ""
     assert events[0].event_type == "IPO_LISTING"
     assert events[0].event_date == date(2026, 12, 22)
 
@@ -189,7 +189,7 @@ def test_kind_headerless_ajax_fragment_emits_one_listing_per_company():
         ("동원파츠", "IPO_LISTING", date(2026, 11, 10)),
         ("씨아이에스케미칼", "IPO_LISTING", date(2026, 12, 22)),
     ]
-    assert all(e.primary_ticker == "^KQ11" for e in events)
+    assert all(e.primary_ticker == "" for e in events)
 
 
 def test_live_kind_collection_gets_session_then_posts_ajax_search_and_returns_listings():
@@ -199,6 +199,7 @@ def test_live_kind_collection_gets_session_then_posts_ajax_search_and_returns_li
 
     assert len(events) == 2
     assert all(e.event_type == "IPO_LISTING" for e in events)
+    assert all(e.primary_ticker == "" for e in events)
     assert collector.session.get_calls
     assert collector.session.post_calls
     call = collector.session.post_calls[0]

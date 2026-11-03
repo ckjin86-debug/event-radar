@@ -84,6 +84,14 @@ def test_classify_rejects_promotion_only_launch_but_keeps_meaningful_launch():
     assert mod.classify_catalyst("삼성SDS, 11월 18일 신규 AI 플랫폼 정식 출시") == "PRODUCT_LAUNCH"
 
 
+def test_default_queries_cover_broad_future_catalysts():
+    mod = _news_module()
+    assert len(mod.DEFAULT_QUERIES) >= 25
+    joined = " ".join(mod.DEFAULT_QUERIES)
+    for keyword in ("선고", "인수", "착공", "정책", "입찰", "경영권", "대선", "임상", "승인", "가동"):
+        assert keyword in joined
+
+
 def test_collector_missing_credentials_is_nonfatal(monkeypatch):
     mod = _news_module()
     monkeypatch.delenv("NAVER_API_HUB_KEY_ID", raising=False)
@@ -136,13 +144,31 @@ def test_collector_rejects_unrelated_future_date_and_catalyst():
     assert collector.collect(since=datetime(2026, 11, 1)) == []
 
 
-def test_collector_rejects_description_only_future_catalyst():
+def test_collector_keeps_description_only_future_catalyst_when_same_clause():
     mod = _news_module()
     payload = {
         "items": [
             _item(
                 "LG엔솔, 분기 최대 매출 기록",
                 "회사는 내년 8월 신규 공장 상업 가동을 계획하고 있다.",
+            )
+        ]
+    }
+    collector = mod.NewsFutureCollector(api_key_id="id", api_key="key", mock_payloads=[payload])
+    events = collector.collect(since=datetime(2026, 11, 1))
+    assert len(events) == 1
+    assert events[0].event_type == "PLANT_OPERATION"
+    assert events[0].date_precision == "MONTH"
+    assert events[0].event_date == date(2027, 8, 1)
+
+
+def test_collector_rejects_description_date_when_catalyst_is_other_clause():
+    mod = _news_module()
+    payload = {
+        "items": [
+            _item(
+                "LG엔솔, 신규 공장 계획 검토",
+                "신규 공장은 검토 중이다. 임직원 행사는 내년 8월 열린다.",
             )
         ]
     }

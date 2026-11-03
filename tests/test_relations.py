@@ -39,6 +39,17 @@ def test_primary_ticker_automatically_added_as_grade_a():
     assert results[0].relation_type == "DIRECT"
 
 
+def test_market_proxy_is_not_promoted_to_direct_a_grade():
+    for ticker in ("^KS11", "^KQ11", "^GSPC", "XBI"):
+        event = make_test_event(ticker=ticker)
+        results = resolve_related_securities(event, relations=[])
+        assert len(results) == 1
+        assert results[0].ticker == ticker
+        assert results[0].relation_grade == "PROXY"
+        assert results[0].relation_score == 0
+        assert results[0].relation_type == "MARKET_PROXY"
+
+
 def test_future_known_relation_excluded_from_past_event():
     # Announced on 2026-05-01, but relation only became known on 2026-06-01
     event = make_test_event(ticker="005930", announced_at=datetime(2026, 5, 1))

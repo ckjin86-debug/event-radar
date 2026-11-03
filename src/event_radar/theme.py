@@ -98,7 +98,7 @@ def resolve_theme_securities(event: Event, mappings: list[ThemeMapping]) -> list
     Theme grade is never promoted to B merely because its score is high.
     """
     by_ticker: dict[str, EventSecurity] = {}
-    grade_rank = {"A": 4, "B": 3, "THEME": 2, "C": 1, "UNMAPPED": 0}
+    grade_rank = {"A": 5, "B": 4, "THEME": 3, "PROXY": 2, "C": 1, "UNMAPPED": 0}
 
     for mapping in mappings:
         if not _matches_event(mapping, event):
@@ -129,12 +129,11 @@ def merge_event_securities(
     direct_rows: list[EventSecurity],
     theme_rows: list[EventSecurity],
 ) -> list[EventSecurity]:
-    """Merge direct/economic and theme rows, preferring stronger evidence per ticker."""
-    grade_rank = {"A": 4, "B": 3, "THEME": 2, "C": 1, "UNMAPPED": 0}
+    """Merge event-security rows, preferring stronger evidence per ticker."""
+    grade_rank = {"A": 5, "B": 4, "THEME": 3, "PROXY": 2, "C": 1, "UNMAPPED": 0}
     merged: dict[str, EventSecurity] = {}
 
     for row in direct_rows + theme_rows:
-        # An empty UNMAPPED placeholder should disappear when any real ticker exists.
         key = row.ticker or "__UNMAPPED__"
         current = merged.get(key)
         if current is None:
