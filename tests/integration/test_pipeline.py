@@ -59,6 +59,28 @@ class MockHistoricalCollector:
         ]
 
 
+class MockLegacyNoiseCollector:
+    source_name = "DART"
+
+    def collect(self, since: datetime) -> list[RawEvent]:
+        return [
+            RawEvent(
+                source_name="DART",
+                source_kind="REGULATOR",
+                source_event_uid="LEGACY_RIGHTS_01",
+                source_url="https://example.com/dart/noise",
+                country="KR",
+                primary_ticker="123456",
+                primary_company="노이즈기업",
+                event_type="RIGHTS_ISSUE",
+                event_name="노이즈기업 유상증자결정",
+                announced_at=datetime(2026, 10, 1),
+                event_date=date(2026, 10, 1),
+                status="CONFIRMED",
+            )
+        ]
+
+
 class DeterministicPriceProvider:
     def __init__(self):
         self.calls: list[tuple[str, date, date]] = []
@@ -82,7 +104,6 @@ class DeterministicPriceProvider:
 
 
 def test_pipeline_graceful_degradation_when_collector_fails(tmp_path):
-    # Setup temporary paths
     data_dir = tmp_path / "data"
     site_dir = tmp_path / "site"
     config_dir = tmp_path / "config"
@@ -106,7 +127,7 @@ def test_pipeline_graceful_degradation_when_collector_fails(tmp_path):
         collectors=collectors,
         config=cfg,
         now=datetime(2026, 11, 2, 10, 0),
-        skip_price_fetch=True,  # mock mode
+        skip_price_fetch=True,
     )
 
     assert report.success is True
@@ -114,7 +135,6 @@ def test_pipeline_graceful_degradation_when_collector_fails(tmp_path):
     assert "FAILING_COLLECTOR" in report.failed_sources
     assert "SUCCESS_COLLECTOR" in report.successful_sources
 
-    # Check site/data/events.json was exported
     events_json = site_dir / "data" / "events.json"
     assert events_json.exists()
     data = json.loads(events_json.read_text(encoding="utf-8"))
@@ -122,7 +142,6 @@ def test_pipeline_graceful_degradation_when_collector_fails(tmp_path):
     assert data[0]["ticker"] == "005930"
     assert data[0]["d_day"] == (date(2026, 11, 20) - date(2026, 11, 2)).days
 
-    # Ensure no secrets in metadata or events
     meta_json = site_dir / "data" / "metadata.json"
     assert meta_json.exists()
     content = meta_json.read_text(encoding="utf-8")
@@ -168,3 +187,30 @@ def test_pipeline_uses_configured_price_provider_for_real_backtest(tmp_path):
     ).iloc[0]["adj_close"]
     assert d0["price"] == pytest.approx(expected_stock)
     assert d0["return_from_d0"] == pytest.approx(0.0)
+
+
+def test_pipeline_does_not_fetch_prices_for_legacy_hidden_dart_noise(tmp_path):
+    data_dir = tmp_path / "data"
+    site_dir = tmp_path / "site"
+    config_dir = tmp_path / "config"
+    (data_dir / "canonical").mkdir(parents=True)
+    (data_dir / "derived").mkdir(parents=True)
+    (site_dir / "data").mkdir(parents=True)
+    config_dir.mkdir(parents=True)
+
+    provider = DeterministicPriceProvider()
+    cfg = PipelineConfig(
+        data_dir=data_dir,
+        site_dir=site_dir,
+        config_dir=config_dir,
+        price_provider=provider,
+    )
+
+    run_pipeline(
+        collectors=[MockLegacyNoiseCollector()],
+        config=cfg,
+        now=datetime(2026, 11, 2, 10, 0),
+        skip_price_fetch=False,
+    )
+
+    assert not any(call[0] == "123456" for call in provider.calls)

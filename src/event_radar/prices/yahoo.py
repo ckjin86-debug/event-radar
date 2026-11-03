@@ -1,9 +1,10 @@
 """Yahoo Finance compatible price provider adapter."""
 
 from __future__ import annotations
-import io
+
 import time
-from datetime import date, datetime
+from datetime import date, datetime, timedelta, timezone
+
 import pandas as pd
 import requests
 
@@ -12,7 +13,11 @@ EMPTY_COLUMNS = ["date", "open", "high", "low", "close", "adj_close", "volume"]
 
 
 class YahooPriceProvider:
-    """Historical price provider using Yahoo Finance public query API."""
+    """Historical price provider using Yahoo Finance's chart endpoint.
+
+    The chart endpoint avoids the cookie/crumb flow required by the legacy CSV
+    download endpoint and is therefore more reliable in unattended GitHub Actions.
+    """
 
     def __init__(self, timeout: int = 10, max_retries: int = 2):
         self.timeout = timeout
@@ -29,32 +34,71 @@ class YahooPriceProvider:
             return [f"{ticker}.KS", f"{ticker}.KQ"]
         return [ticker]
 
-    def _parse_history(self, text: str) -> pd.DataFrame:
-        df = pd.read_csv(io.StringIO(text))
-        df.columns = [c.strip().lower().replace(" ", "_") for c in df.columns]
-        if "date" not in df.columns:
+    def _parse_chart(self, payload: dict) -> pd.DataFrame:
+        """Convert Yahoo chart JSON into the canonical price frame."""
+        chart = payload.get("chart") or {}
+        results = chart.get("result") or []
+        if not results:
             return pd.DataFrame(columns=EMPTY_COLUMNS)
 
-        df["date"] = pd.to_datetime(df["date"]).dt.date
-        for col in EMPTY_COLUMNS:
-            if col not in df.columns:
-                df[col] = df["close"] if "close" in df.columns else 0.0
-        return df[EMPTY_COLUMNS].sort_values("date").reset_index(drop=True)
+        result = results[0] or {}
+        timestamps = result.get("timestamp") or []
+        indicators = result.get("indicators") or {}
+        quote_list = indicators.get("quote") or []
+        quote = quote_list[0] if quote_list else {}
+        adj_list = indicators.get("adjclose") or []
+        adj = adj_list[0].get("adjclose", []) if adj_list else []
+
+        opens = quote.get("open") or []
+        highs = quote.get("high") or []
+        lows = quote.get("low") or []
+        closes = quote.get("close") or []
+        volumes = quote.get("volume") or []
+
+        rows: list[dict] = []
+        for idx, ts in enumerate(timestamps):
+            close = closes[idx] if idx < len(closes) else None
+            if close is None:
+                continue
+
+            def value(values: list, fallback: float | int | None = close):
+                item = values[idx] if idx < len(values) else None
+                return fallback if item is None else item
+
+            adj_close = value(adj, close)
+            rows.append({
+                "date": datetime.fromtimestamp(int(ts), tz=timezone.utc).date(),
+                "open": float(value(opens, close)),
+                "high": float(value(highs, close)),
+                "low": float(value(lows, close)),
+                "close": float(close),
+                "adj_close": float(adj_close),
+                "volume": int(value(volumes, 0) or 0),
+            })
+
+        if not rows:
+            return pd.DataFrame(columns=EMPTY_COLUMNS)
+        return pd.DataFrame(rows, columns=EMPTY_COLUMNS).sort_values("date").reset_index(drop=True)
 
     def history(self, ticker: str, start: date, end: date) -> pd.DataFrame:
         """Fetch historical price series."""
-        period1 = int(datetime.combine(start, datetime.min.time()).timestamp())
-        # add 1 day to end to make sure end date is included
-        period2 = int(datetime.combine(end, datetime.max.time()).timestamp()) + 86400
+        period1 = int(datetime.combine(start, datetime.min.time(), tzinfo=timezone.utc).timestamp())
+        period2 = int(
+            datetime.combine(end + timedelta(days=1), datetime.min.time(), tzinfo=timezone.utc).timestamp()
+        )
 
         for yf_ticker in self._ticker_candidates(ticker):
-            url = f"https://query1.finance.yahoo.com/v7/finance/download/{yf_ticker}?period1={period1}&period2={period2}&interval=1d&events=history&includeAdjustedClose=true"
+            url = (
+                f"https://query1.finance.yahoo.com/v8/finance/chart/{yf_ticker}"
+                f"?period1={period1}&period2={period2}&interval=1d"
+                "&events=history&includeAdjustedClose=true"
+            )
 
             for attempt in range(self.max_retries + 1):
                 try:
                     resp = self.session.get(url, timeout=self.timeout)
-                    if resp.status_code == 200 and "Date" in resp.text:
-                        df = self._parse_history(resp.text)
+                    if resp.status_code == 200:
+                        df = self._parse_chart(resp.json())
                         if not df.empty:
                             return df
                 except Exception:
@@ -63,5 +107,4 @@ class YahooPriceProvider:
                 if attempt < self.max_retries:
                     time.sleep(0.5)
 
-        # Empty fallback if offline or request fails for every candidate
         return pd.DataFrame(columns=EMPTY_COLUMNS)

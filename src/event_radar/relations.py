@@ -4,12 +4,46 @@ from __future__ import annotations
 import csv
 from datetime import date
 from pathlib import Path
-from typing import Optional
 from event_radar.models import Event, Relation, EventSecurity
+
+
+def _unmapped(event: Event, reason: str = "직접 또는 검증된 관련 종목 미매핑") -> list[EventSecurity]:
+    return [
+        EventSecurity(
+            event_id=event.event_id,
+            ticker="",
+            relation_grade="UNMAPPED",
+            relation_score=0,
+            relation_type="UNMAPPED",
+            evidence_text=reason,
+        )
+    ]
+
+
+def _is_legacy_hidden_noise(event: Event) -> bool:
+    """Match legacy canonical rows that the public radar intentionally hides."""
+    if event.source_name == "DART" and event.event_type == "RIGHTS_ISSUE":
+        return True
+    if event.source_name == "KIND_IPO" and event.event_type != "IPO_LISTING":
+        return True
+    if event.source_name == "DART" and event.event_type == "CONVERTIBLE_LISTING":
+        combined = f"{event.event_name} {event.evidence_text}".replace(" ", "")
+        has_exercise = any(
+            keyword in combined
+            for keyword in ("전환청구권행사", "전환권행사", "신주인수권행사")
+        )
+        has_listing = "신주상장" in combined or "상장예정" in combined
+        return not (has_exercise and has_listing)
+    return False
 
 
 def resolve_related_securities(event: Event, relations: list[Relation]) -> list[EventSecurity]:
     """Resolve related securities for an event avoiding look-ahead bias and expired relations."""
+    # Old canonical data can contain rows collected before today's signal policy.
+    # Keep those rows for audit history but never spend live price calls on them.
+    if _is_legacy_hidden_noise(event):
+        return _unmapped(event, "레이더 비노출 레거시 이벤트")
+
     results: dict[str, EventSecurity] = {}
 
     # 1. Primary entity is always Grade A when an actual ticker is known.
@@ -35,22 +69,16 @@ def resolve_related_securities(event: Event, relations: list[Relation]) -> list[
         if from_entity not in (primary_ticker, event.primary_company.strip().upper()):
             continue
 
-        # Look-ahead bias check: was relation known before or on announcement?
         if rel.relation_known_date > announced_date:
             continue
-
-        # Active period check
         if rel.relation_start_date > event_date:
             continue
         if rel.relation_end_date is not None and event_date > rel.relation_end_date:
             continue
-
-        # Score threshold: B-grade candidate requires >= 60
         if rel.relation_score < 60:
             continue
 
         ticker = rel.to_ticker.strip().upper()
-        grade = rel.relation_grade
         if rel.relation_score >= 90:
             grade = "A"
         elif rel.relation_score >= 60:
@@ -70,7 +98,6 @@ def resolve_related_securities(event: Event, relations: list[Relation]) -> list[
             evidence_text=rel.evidence_source,
         )
 
-        # If already present, keep the higher score
         if ticker in results:
             if candidate.relation_score > results[ticker].relation_score:
                 results[ticker] = candidate
@@ -78,16 +105,7 @@ def resolve_related_securities(event: Event, relations: list[Relation]) -> list[
             results[ticker] = candidate
 
     if not results:
-        return [
-            EventSecurity(
-                event_id=event.event_id,
-                ticker="",
-                relation_grade="UNMAPPED",
-                relation_score=0,
-                relation_type="UNMAPPED",
-                evidence_text="직접 또는 검증된 관련 종목 미매핑",
-            )
-        ]
+        return _unmapped(event)
 
     return list(results.values())
 
