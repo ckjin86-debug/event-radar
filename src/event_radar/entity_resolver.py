@@ -22,6 +22,7 @@ KOREAN_PARTICLES = (
     "으로", "에서", "까지", "부터", "에게", "보다", "이랑", "라고", "라며",
     "은", "는", "이", "가", "을", "를", "과", "와", "의", "에", "로", "도", "만", "랑",
 )
+_TRIE_TERMINAL = "\0"
 
 
 def is_market_proxy(ticker: str) -> bool:
@@ -40,6 +41,31 @@ def _safe_alias(value: str) -> str:
     alias = _clean_company_name(value)
     compact = re.sub(r"[^0-9A-Za-z가-힣]", "", alias)
     return alias if len(compact) >= 3 else ""
+
+
+def _is_token_char(char: str) -> bool:
+    if not char:
+        return False
+    return (
+        "0" <= char <= "9"
+        or "a" <= char.lower() <= "z"
+        or "가" <= char <= "힣"
+    )
+
+
+def _has_valid_right_boundary(text: str, end: int) -> bool:
+    if end >= len(text):
+        return True
+    if not _is_token_char(text[end]):
+        return True
+    for particle in KOREAN_PARTICLES:
+        folded_particle = particle.casefold()
+        if not text.startswith(folded_particle, end):
+            continue
+        after = end + len(folded_particle)
+        if after >= len(text) or not _is_token_char(text[after]):
+            return True
+    return False
 
 
 def parse_dart_corp_code_zip(payload: bytes) -> dict[str, str]:
@@ -78,20 +104,12 @@ class ListedCompanyRegistry:
             reverse=True,
         )
         self._alias_lookup = {alias.casefold(): alias for alias in self._aliases}
-        if self._aliases:
-            # One compiled alternation is dramatically cheaper than compiling and
-            # searching one regex for every listed company for every news event.
-            alternatives = "|".join(re.escape(alias) for alias in self._aliases)
-            particles = "|".join(re.escape(particle) for particle in KOREAN_PARTICLES)
-            right_boundary = (
-                rf"(?=$|[^0-9A-Za-z가-힣]|(?:{particles})(?=$|[^0-9A-Za-z가-힣]))"
-            )
-            self._mention_pattern = re.compile(
-                rf"(?<![0-9A-Za-z가-힣])(?:{alternatives}){right_boundary}",
-                re.IGNORECASE,
-            )
-        else:
-            self._mention_pattern = None
+        self._mention_trie: dict[str, dict] = {}
+        for alias in self._aliases:
+            node = self._mention_trie
+            for char in alias.casefold():
+                node = node.setdefault(char, {})
+            node.setdefault(_TRIE_TERMINAL, []).append(alias)
 
     @classmethod
     def from_mapping(cls, mapping: Mapping[str, str]) -> "ListedCompanyRegistry":
@@ -164,25 +182,41 @@ class ListedCompanyRegistry:
 
     def ticker_for_company(self, company: str) -> str:
         alias = _safe_alias(company)
-        return self._mapping.get(alias, "") if alias else ""
+        if not alias:
+            return ""
+        canonical = self._alias_lookup.get(alias.casefold())
+        return self._mapping.get(canonical, "") if canonical else ""
 
     def mentioned_companies(self, text: str) -> list[tuple[str, str]]:
-        """Return exact company-name mentions with Korean/Latin token boundaries."""
-        if self._mention_pattern is None:
+        """Return exact company-name mentions without scanning every listed alias."""
+        if not self._mention_trie:
             return []
 
-        haystack = text or ""
+        haystack = (text or "").casefold()
         rows: list[tuple[str, str]] = []
         seen_tickers: set[str] = set()
-        for match in self._mention_pattern.finditer(haystack):
-            company = self._alias_lookup.get(match.group(0).casefold())
-            if company is None:
+
+        for start in range(len(haystack)):
+            if start > 0 and _is_token_char(haystack[start - 1]):
                 continue
-            ticker = self._mapping[company]
-            if ticker in seen_tickers:
-                continue
-            seen_tickers.add(ticker)
-            rows.append((company, ticker))
+            node = self._mention_trie
+            pos = start
+            while pos < len(haystack):
+                child = node.get(haystack[pos])
+                if child is None:
+                    break
+                node = child
+                pos += 1
+                aliases = node.get(_TRIE_TERMINAL, ())
+                if not aliases or not _has_valid_right_boundary(haystack, pos):
+                    continue
+                for company in aliases:
+                    ticker = self._mapping[company]
+                    if ticker in seen_tickers:
+                        continue
+                    seen_tickers.add(ticker)
+                    rows.append((company, ticker))
+
         return rows
 
     def resolve_mentions(self, event: Event) -> list[EventSecurity]:
