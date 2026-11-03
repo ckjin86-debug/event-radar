@@ -12,35 +12,60 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install requests beautifulsoup4
-      - name: Inspect KIND response
+      - name: Inspect KIND AJAX response
         run: |
           python - <<'PY'
           import requests
           from bs4 import BeautifulSoup
 
-          url = "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain"
-          headers = {
+          main_url = "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain"
+          search_url = "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do"
+          s = requests.Session()
+          s.headers.update({
               "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) EventRadar/1.0",
-              "Referer": url,
+              "Referer": main_url,
+              "X-Requested-With": "XMLHttpRequest",
+          })
+
+          first = s.get(main_url, timeout=20)
+          print("GET_STATUS", first.status_code, "COOKIES", s.cookies.get_dict())
+
+          payload = {
+              "method": "searchPubofrProgComSub",
+              "forward": "pubofrprogcom_sub",
+              "marketType": "",
+              "searchCorpNameTmp": "",
+              "searchCorpName": "",
+              "repMajAgntDesignAdvserComp": "",
+              "repMajAgntComp": "",
+              "designAdvserComp": "",
+              "fromDate": "",
+              "toDate": "",
+              "currentPageSize": "100",
+              "pageIndex": "1",
+              "orderMode": "1",
+              "orderStat": "D",
+              "searchMode": "",
+              "isurCd": "",
+              "repIsuSrtCd": "",
           }
-          r = requests.get(url, headers=headers, timeout=20)
-          print("STATUS", r.status_code)
+          r = s.post(search_url, data=payload, timeout=20)
+          r.encoding = r.apparent_encoding or r.encoding
+          print("POST_STATUS", r.status_code)
           print("FINAL_URL", r.url)
           print("CONTENT_TYPE", r.headers.get("content-type"))
-          print("ENCODING", r.encoding, "APPARENT", r.apparent_encoding)
           print("BYTES", len(r.content), "CHARS", len(r.text))
-          print("HAS_COMPANY_HEADER", "회사명" in r.text)
-          print("HAS_BOOKBUILDING", "수요예측" in r.text)
+          print("HAS_BOOKBUILDING", "수요예측일정" in r.text)
           print("HAS_CIS_CHEM", "씨아이에스케미칼" in r.text)
+          print("HAS_DONGWON", "동원파츠" in r.text)
 
           soup = BeautifulSoup(r.text, "html.parser")
-          print("TITLE", soup.title.get_text(" ", strip=True) if soup.title else "")
           tables = soup.find_all("table")
           print("TABLE_COUNT", len(tables))
-          for i, table in enumerate(tables[:15]):
+          for i, table in enumerate(tables[:8]):
               headers = [th.get_text(" ", strip=True) for th in table.find_all("th")]
               rows = table.find_all("tr")
               print("TABLE", i, "HEADERS", headers[:12], "ROWS", len(rows))
-              if rows:
-                  print("FIRST_ROW", rows[-1].get_text(" | ", strip=True)[:500])
+              for row in rows[1:3]:
+                  print("ROW", row.get_text(" | ", strip=True)[:600])
           PY
