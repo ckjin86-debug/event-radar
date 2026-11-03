@@ -7,8 +7,9 @@ from pathlib import Path
 from typing import Any
 from event_radar.models import Event, EventRevision, EventSecurity
 from event_radar.scoring import ScoreResult
-from event_radar.backtest.strategies import StrategyResult
-from event_radar.backtest.metrics import BacktestSummary
+from event_radar.backtest.strategies import StrategyResult, evaluate_strategies
+from event_radar.backtest.metrics import BacktestSummary, summarize_event_group
+from event_radar.backtest.historical import build_historical_peer_frame
 
 
 def _is_actual_convertible_listing(ev: Event) -> bool:
@@ -115,6 +116,7 @@ def export_site_data(
         ]
         ev_revs.sort(key=lambda x: x["revision_no"])
 
+        event_sec_models = event_securities.get(ev_id, [])
         ev_secs = [
             {
                 "ticker": s.ticker,
@@ -123,10 +125,32 @@ def export_site_data(
                 "relation_type": s.relation_type,
                 "evidence_text": s.evidence_text,
             }
-            for s in event_securities.get(ev_id, [])
+            for s in event_sec_models
         ]
 
-        b_summary = backtest_summaries.get(ev_id, BacktestSummary())
+        primary_grade = event_sec_models[0].relation_grade if event_sec_models else "UNMAPPED"
+        has_return_data = event_returns_df is not None and not getattr(event_returns_df, "empty", True)
+        if has_return_data:
+            peer_df = build_historical_peer_frame(
+                events=visible_events,
+                returns_df=event_returns_df,
+                target_event=ev,
+                relation_grade=primary_grade,
+            )
+        else:
+            peer_df = event_returns_df.iloc[0:0].copy() if event_returns_df is not None else None
+
+        if peer_df is not None:
+            b_summary = summarize_event_group(peer_df, target_offset=5)
+            peer_strategies = evaluate_strategies(
+                peer_df,
+                event_type=ev.event_type,
+                relation_grade=primary_grade,
+            )
+        else:
+            b_summary = BacktestSummary()
+            peer_strategies = []
+
         strats = [
             {
                 "name": f"D{s.entry_offset} -> D{s.exit_offset:+d}" if s.exit_offset != 0 else f"D{s.entry_offset} -> D0",
@@ -141,20 +165,18 @@ def export_site_data(
                 "max_drawdown": s.max_drawdown,
                 "robustness_score": s.robustness_score,
             }
-            for s in strategy_results.get(ev_id, [])
+            for s in peer_strategies
         ]
 
         curve_points = []
-        if event_returns_df is not None and not getattr(event_returns_df, "empty", True):
-            ev_rets = event_returns_df[event_returns_df["event_id"] == ev_id]
-            if not ev_rets.empty:
-                grouped = ev_rets.groupby("offset")[["return_from_d0", "abnormal_return"]].mean().reset_index()
-                for _, r in grouped.iterrows():
-                    curve_points.append({
-                        "offset": int(r["offset"]),
-                        "return_from_d0": round(float(r["return_from_d0"]), 4),
-                        "abnormal_return": round(float(r["abnormal_return"]), 4),
-                    })
+        if peer_df is not None and not peer_df.empty:
+            grouped = peer_df.groupby("offset")[["return_from_d0", "abnormal_return"]].mean().reset_index()
+            for _, r in grouped.iterrows():
+                curve_points.append({
+                    "offset": int(r["offset"]),
+                    "return_from_d0": round(float(r["return_from_d0"]), 4),
+                    "abnormal_return": round(float(r["abnormal_return"]), 4),
+                })
 
         score_obj = event_scores.get(ev_id)
         score_breakdown = {
@@ -188,6 +210,7 @@ def export_site_data(
             "score_breakdown": score_breakdown,
             "revisions": ev_revs,
             "related_securities": ev_secs,
+            "backtest_basis": "HISTORICAL_PEERS",
             "backtest_summary": {
                 "sample_n": b_summary.sample_n,
                 "mean_return": b_summary.mean_return,
