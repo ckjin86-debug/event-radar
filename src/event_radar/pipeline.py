@@ -14,6 +14,8 @@ from event_radar.normalize import normalize_event
 from event_radar.dedupe import merge_events
 from event_radar.relations import resolve_related_securities, load_relations_csv, save_relations_csv
 from event_radar.theme import load_theme_mappings, merge_event_securities, resolve_theme_securities
+from event_radar.entity_resolver import ListedCompanyRegistry
+from event_radar.ipo_enrichment import IpoRelationEnricher
 from event_radar.manual.google_sheet import load_manual_rows, apply_manual_overrides, apply_manual_relations
 from event_radar.prices.base import PriceProvider, CachedPriceProvider
 from event_radar.prices.yahoo import YahooPriceProvider
@@ -201,6 +203,26 @@ def _resolve_price_provider(config: PipelineConfig) -> PriceProvider:
     )
 
 
+def resolve_event_stock_rows(
+    event: Event,
+    relations: list[Relation],
+    theme_mappings: list,
+    registry: ListedCompanyRegistry,
+    ipo_enricher: IpoRelationEnricher,
+    as_of: datetime,
+) -> list[EventSecurity]:
+    """Compose all stock-resolution layers for one event.
+
+    Strongest evidence wins per ticker: A direct mentions/economic relations,
+    evidence-backed B relations, THEME candidates, then informational PROXY rows.
+    """
+    rows = resolve_related_securities(event, relations)
+    rows = merge_event_securities(rows, registry.resolve_mentions(event))
+    rows = merge_event_securities(rows, ipo_enricher.enrich(event, registry, as_of=as_of))
+    rows = merge_event_securities(rows, resolve_theme_securities(event, theme_mappings))
+    return rows
+
+
 def run_pipeline(
     collectors: list[Collector],
     config: PipelineConfig,
@@ -227,11 +249,15 @@ def run_pipeline(
     manual_relations_csv = canonical_dir / "manual_relations.csv"
     theme_mappings_csv = config.config_dir / "theme_mappings.csv"
 
-    # 1. Load existing canonical data
+    # 1. Load existing canonical data and reusable entity resolution sources.
     existing_events = load_canonical_events(events_csv)
     existing_revisions = load_canonical_revisions(revisions_csv)
     existing_relations = load_relations_csv(relations_csv)
     theme_mappings = load_theme_mappings(theme_mappings_csv)
+    registry = ListedCompanyRegistry.load_korean(
+        cache_path=config.data_dir / "cache" / "listed_companies_kr.csv"
+    )
+    ipo_enricher = IpoRelationEnricher()
 
     # 2. Run collectors with graceful degradation
     successful_sources: list[str] = []
@@ -282,13 +308,18 @@ def run_pipeline(
     save_canonical_revisions(all_revisions, revisions_csv)
     save_relations_csv(all_relations, relations_csv)
 
-    # 7. Resolve direct/economic and evidence-backed theme securities.
+    # 7. Resolve direct/economic, text-mentioned, IPO, and theme securities.
     event_securities: dict[str, list[EventSecurity]] = {}
     all_mapped_rows = []
     for ev in current_events:
-        direct_secs = resolve_related_securities(ev, all_relations)
-        theme_secs = resolve_theme_securities(ev, theme_mappings)
-        secs = merge_event_securities(direct_secs, theme_secs)
+        secs = resolve_event_stock_rows(
+            ev,
+            relations=all_relations,
+            theme_mappings=theme_mappings,
+            registry=registry,
+            ipo_enricher=ipo_enricher,
+            as_of=now,
+        )
         event_securities[ev.event_id] = secs
         for s in secs:
             all_mapped_rows.append({
