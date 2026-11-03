@@ -1,10 +1,12 @@
 {
-  "generated_at": "2026-11-03T04:30:23.058069",
+  "generated_at": "2026-11-03T06:28:02.742754",
   "total_events": 29,
   "kr_events": 17,
   "us_events": 12,
+  "historical_seed_events": 11,
   "version": "1.0.0",
   "collector_status": {
+    "HISTORICAL_SEED": "SUCCESS",
     "DART": "SUCCESS",
     "SEC": "SUCCESS",
     "NEWS_FUTURE": "SUCCESS",
