@@ -31,9 +31,17 @@ def export_site_data(
     out_path = Path(output_dir)
     out_path.mkdir(parents=True, exist_ok=True)
 
+    # Generic Korean rights issues are retained in canonical history but are intentionally
+    # hidden from the public radar. Capex-backed issues are reclassified as CAPEX_FINANCING.
+    visible_events = [
+        ev
+        for ev in events
+        if not (ev.source_name == "DART" and ev.event_type == "RIGHTS_ISSUE")
+    ]
+
     # 1. site/data/events.json
     events_list = []
-    for ev in events:
+    for ev in visible_events:
         d_day = (ev.event_date - today).days
         score = event_scores.get(ev.event_id)
         total_score = score.total_score if score else 50
@@ -71,7 +79,7 @@ def export_site_data(
 
     # 2. site/data/event_details.json
     details_map = {}
-    for ev in events:
+    for ev in visible_events:
         ev_id = ev.event_id
         ev_revs = [
             {
@@ -178,9 +186,9 @@ def export_site_data(
     # 3. site/data/metadata.json
     metadata = {
         "generated_at": now.isoformat(),
-        "total_events": len(events),
-        "kr_events": sum(1 for e in events if e.country == "KR"),
-        "us_events": sum(1 for e in events if e.country == "US"),
+        "total_events": len(visible_events),
+        "kr_events": sum(1 for e in visible_events if e.country == "KR"),
+        "us_events": sum(1 for e in visible_events if e.country == "US"),
         "version": "1.0.0",
         "collector_status": collector_status or {},
     }
