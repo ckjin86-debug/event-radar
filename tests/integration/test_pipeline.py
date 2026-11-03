@@ -81,6 +81,31 @@ class MockLegacyNoiseCollector:
         ]
 
 
+class MockFutureHyundaiCollector:
+    source_name = "NEWS_FUTURE"
+
+    def collect(self, since: datetime) -> list[RawEvent]:
+        return [
+            RawEvent(
+                source_name="NEWS_FUTURE",
+                source_kind="SECONDARY",
+                source_event_uid="HYUNDAI_AI_VALLEY",
+                source_url="https://example.com/hyundai-ai-valley",
+                country="KR",
+                primary_ticker="",
+                primary_company="현대차그룹",
+                event_type="CAPEX",
+                event_name="현대차그룹 새만금 AI 밸리 내년 3월 착공",
+                announced_at=datetime(2026, 10, 30, 11, 38),
+                event_date=date(2027, 3, 1),
+                date_precision="MONTH",
+                window_start=date(2027, 3, 1),
+                window_end=date(2027, 3, 31),
+                status="EXPECTED",
+            )
+        ]
+
+
 class DeterministicPriceProvider:
     def __init__(self):
         self.calls: list[tuple[str, date, date]] = []
@@ -214,3 +239,55 @@ def test_pipeline_does_not_fetch_prices_for_legacy_hidden_dart_noise(tmp_path):
     )
 
     assert not any(call[0] == "123456" for call in provider.calls)
+
+
+def test_skip_price_fetch_preserves_existing_backtest_and_refreshes_manual_relations(tmp_path):
+    data_dir = tmp_path / "data"
+    site_dir = tmp_path / "site"
+    config_dir = tmp_path / "config"
+    canonical_dir = data_dir / "canonical"
+    derived_dir = data_dir / "derived"
+    canonical_dir.mkdir(parents=True)
+    derived_dir.mkdir(parents=True)
+    (site_dir / "data").mkdir(parents=True)
+    config_dir.mkdir(parents=True)
+
+    returns_csv = derived_dir / "backtest_event_returns.csv"
+    pd.DataFrame([
+        {
+            "event_id": "OLD_EVENT",
+            "ticker": "005930",
+            "relation_grade": "A",
+            "event_session_date": "2026-10-01",
+            "offset": 0,
+            "price": 100.0,
+            "return_from_d0": 0.0,
+            "benchmark_return": 0.0,
+            "abnormal_return": 0.0,
+            "volume_ratio_20d": 1.0,
+        }
+    ]).to_csv(returns_csv, index=False)
+
+    (canonical_dir / "manual_relations.csv").write_text(
+        "relation_id,from_entity,to_ticker,relation_type,relation_grade,relation_score,relation_known_date,relation_start_date,relation_end_date,evidence_source,source_url,ingest_mode\n"
+        "REL_HMG,현대차그룹,005380,PROJECT_INVESTOR,A,90,2026-10-30,2026-10-30,,공식 발표,https://example.com/source,MANUAL\n",
+        encoding="utf-8",
+    )
+
+    cfg = PipelineConfig(data_dir=data_dir, site_dir=site_dir, config_dir=config_dir)
+    run_pipeline(
+        collectors=[MockFutureHyundaiCollector()],
+        config=cfg,
+        now=datetime(2026, 11, 3, 10, 0),
+        skip_price_fetch=True,
+    )
+
+    preserved = pd.read_csv(returns_csv)
+    assert len(preserved) == 1
+    assert preserved.iloc[0]["event_id"] == "OLD_EVENT"
+
+    details = json.loads((site_dir / "data" / "event_details.json").read_text(encoding="utf-8"))
+    detail = next(value for value in details.values() if value["company"] == "현대차그룹")
+    relation = next(row for row in detail["related_securities"] if row["ticker"] == "005380")
+    assert relation["relation_grade"] == "A"
+    assert relation["ingest_mode"] == "MANUAL"
