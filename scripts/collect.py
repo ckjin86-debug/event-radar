@@ -1,6 +1,7 @@
 """Main scheduled collection script for Event Radar."""
 
 import argparse
+import os
 import sys
 from pathlib import Path
 
@@ -85,6 +86,19 @@ def build_collectors(root: Path, fast_refresh: bool = False):
     ]
 
 
+def prepare_fast_refresh_collectors(root: Path):
+    """Capture credentials in NEWS_FUTURE, then force later mapping to cache-only mode.
+
+    The NewsFutureCollector stores its Naver credentials on construction. Clearing
+    the environment afterwards prevents ListedCompanyRegistry and IpoRelationEnricher
+    from making unrelated OpenDART/Naver network calls during the same fast refresh.
+    """
+    collectors = build_collectors(root, fast_refresh=True)
+    for key in ("DART_API_KEY", "NAVER_API_HUB_KEY_ID", "NAVER_API_HUB_KEY"):
+        os.environ.pop(key, None)
+    return collectors
+
+
 def main():
     parser = argparse.ArgumentParser(description="Collect and export Event Radar data")
     parser.add_argument(
@@ -101,7 +115,11 @@ def main():
         config_dir=root / "config",
     )
 
-    collectors = build_collectors(root, fast_refresh=args.skip_price_fetch)
+    collectors = (
+        prepare_fast_refresh_collectors(root)
+        if args.skip_price_fetch
+        else build_collectors(root)
+    )
 
     print("=== Starting Event Radar Collection Pipeline ===")
     report = run_pipeline(
