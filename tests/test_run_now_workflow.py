@@ -49,7 +49,7 @@ def test_fast_refresh_has_independent_concurrency_from_full_collection():
     scheduled = _workflow("collect.yml")
 
     assert "concurrency:" in run_now
-    assert "group: event-radar-fast-refresh" in run_now
+    assert "group: event-radar-targeted-refresh" in run_now
     assert "cancel-in-progress: true" in run_now
 
     assert "concurrency:" in scheduled
