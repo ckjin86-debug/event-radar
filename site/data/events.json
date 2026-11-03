@@ -13,7 +13,7 @@
     "window_end": "2026-11-03",
     "relation_grade": "A",
     "relation_score": 100,
-    "event_score": 60,
+    "event_score": 63,
     "status": "CONFIRMED",
     "source_name": "KIND_IPO",
     "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain"
@@ -32,7 +32,7 @@
     "window_end": "2026-11-04",
     "relation_grade": "A",
     "relation_score": 100,
-    "event_score": 60,
+    "event_score": 63,
     "status": "CONFIRMED",
     "source_name": "KIND_IPO",
     "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain"
@@ -51,7 +51,7 @@
     "window_end": "2026-11-04",
     "relation_grade": "A",
     "relation_score": 100,
-    "event_score": 60,
+    "event_score": 63,
     "status": "CONFIRMED",
     "source_name": "KIND_IPO",
     "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain"
@@ -89,7 +89,7 @@
     "window_end": "2026-11-10",
     "relation_grade": "A",
     "relation_score": 100,
-    "event_score": 60,
+    "event_score": 63,
     "status": "CONFIRMED",
     "source_name": "KIND_IPO",
     "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain"
@@ -108,7 +108,7 @@
     "window_end": "2026-11-12",
     "relation_grade": "A",
     "relation_score": 100,
-    "event_score": 60,
+    "event_score": 63,
     "status": "CONFIRMED",
     "source_name": "KIND_IPO",
     "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain"
@@ -127,7 +127,7 @@
     "window_end": "2026-11-18",
     "relation_grade": "A",
     "relation_score": 100,
-    "event_score": 60,
+    "event_score": 63,
     "status": "CONFIRMED",
     "source_name": "KIND_IPO",
     "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain"
@@ -146,7 +146,7 @@
     "window_end": "2026-11-19",
     "relation_grade": "A",
     "relation_score": 100,
-    "event_score": 60,
+    "event_score": 62,
     "status": "CONFIRMED",
     "source_name": "FDA_ADVISORY",
     "source_url": "https://www.federalregister.gov/documents/2026/09/16/2026-18920/microbiology-devices-panel-of-the-medical-devices-advisory-committee-notice-of-meeting-establishment"
@@ -165,7 +165,7 @@
     "window_end": "2026-12-09",
     "relation_grade": "A",
     "relation_score": 100,
-    "event_score": 60,
+    "event_score": 67,
     "status": "CONFIRMED",
     "source_name": "FED_FOMC",
     "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
@@ -203,7 +203,7 @@
     "window_end": "2026-12-22",
     "relation_grade": "A",
     "relation_score": 100,
-    "event_score": 60,
+    "event_score": 63,
     "status": "CONFIRMED",
     "source_name": "KIND_IPO",
     "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain"
@@ -222,7 +222,7 @@
     "window_end": "2027-01-27",
     "relation_grade": "A",
     "relation_score": 100,
-    "event_score": 60,
+    "event_score": 67,
     "status": "CONFIRMED",
     "source_name": "FED_FOMC",
     "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
@@ -260,7 +260,7 @@
     "window_end": "2027-03-17",
     "relation_grade": "A",
     "relation_score": 100,
-    "event_score": 60,
+    "event_score": 67,
     "status": "CONFIRMED",
     "source_name": "FED_FOMC",
     "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
@@ -279,7 +279,7 @@
     "window_end": "2027-04-28",
     "relation_grade": "A",
     "relation_score": 100,
-    "event_score": 60,
+    "event_score": 67,
     "status": "CONFIRMED",
     "source_name": "FED_FOMC",
     "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
@@ -298,7 +298,7 @@
     "window_end": "2027-06-09",
     "relation_grade": "A",
     "relation_score": 100,
-    "event_score": 60,
+    "event_score": 67,
     "status": "CONFIRMED",
     "source_name": "FED_FOMC",
     "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
@@ -317,7 +317,7 @@
     "window_end": "2027-07-28",
     "relation_grade": "A",
     "relation_score": 100,
-    "event_score": 60,
+    "event_score": 67,
     "status": "CONFIRMED",
     "source_name": "FED_FOMC",
     "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
@@ -336,7 +336,7 @@
     "window_end": "2027-09-15",
     "relation_grade": "A",
     "relation_score": 100,
-    "event_score": 60,
+    "event_score": 67,
     "status": "CONFIRMED",
     "source_name": "FED_FOMC",
     "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
@@ -355,7 +355,7 @@
     "window_end": "2027-10-27",
     "relation_grade": "A",
     "relation_score": 100,
-    "event_score": 60,
+    "event_score": 67,
     "status": "CONFIRMED",
     "source_name": "FED_FOMC",
     "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
@@ -374,7 +374,7 @@
     "window_end": "2027-12-08",
     "relation_grade": "A",
     "relation_score": 100,
-    "event_score": 60,
+    "event_score": 67,
     "status": "CONFIRMED",
     "source_name": "FED_FOMC",
     "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
@@ -393,7 +393,7 @@
     "window_end": "2026-11-02",
     "relation_grade": "A",
     "relation_score": 100,
-    "event_score": 60,
+    "event_score": 63,
     "status": "CONFIRMED",
     "source_name": "KIND_IPO",
     "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain"
@@ -431,7 +431,7 @@
     "window_end": "2026-10-31",
     "relation_grade": "A",
     "relation_score": 100,
-    "event_score": 60,
+    "event_score": 63,
     "status": "CONFIRMED",
     "source_name": "KIND_IPO",
     "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain"
@@ -469,7 +469,7 @@
     "window_end": "2026-10-30",
     "relation_grade": "A",
     "relation_score": 100,
-    "event_score": 60,
+    "event_score": 63,
     "status": "CONFIRMED",
     "source_name": "KIND_IPO",
     "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain"
@@ -488,7 +488,7 @@
     "window_end": "2026-10-29",
     "relation_grade": "A",
     "relation_score": 100,
-    "event_score": 60,
+    "event_score": 63,
     "status": "CONFIRMED",
     "source_name": "KIND_IPO",
     "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain"
@@ -507,7 +507,7 @@
     "window_end": "2026-10-29",
     "relation_grade": "A",
     "relation_score": 100,
-    "event_score": 60,
+    "event_score": 63,
     "status": "CONFIRMED",
     "source_name": "KIND_IPO",
     "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain"
