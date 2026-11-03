@@ -14,6 +14,8 @@
   --accent-purple: #c084fc;
   --badge-a: #10b981;
   --badge-b: #3b82f6;
+  --badge-theme: #c084fc;
+  --badge-unmapped: #94a3b8;
   --radius: 8px;
 }
 
@@ -81,7 +83,6 @@ header h1 {
   background-color: #1d4ed8;
 }
 
-/* Filter Section */
 .filters-container {
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
@@ -146,7 +147,6 @@ header h1 {
   border-color: var(--accent-blue);
 }
 
-/* Table */
 .table-responsive {
   width: 100%;
   overflow-x: auto;
@@ -181,7 +181,6 @@ tr:hover {
   background-color: var(--bg-card-hover);
 }
 
-/* Badges */
 .badge {
   display: inline-block;
   padding: 2px 8px;
@@ -221,6 +220,18 @@ tr:hover {
   border: 1px solid var(--badge-b);
 }
 
+.badge-theme {
+  background-color: rgba(192, 132, 252, 0.16);
+  color: var(--badge-theme);
+  border: 1px solid var(--badge-theme);
+}
+
+.badge-unmapped {
+  background-color: rgba(148, 163, 184, 0.12);
+  color: var(--badge-unmapped);
+  border: 1px solid #475569;
+}
+
 .badge-confirmed {
   background-color: rgba(34, 197, 94, 0.15);
   color: #4ade80;
@@ -251,7 +262,6 @@ tr:hover {
   background-color: var(--accent-green);
 }
 
-/* Link */
 a.row-link {
   color: var(--accent-blue);
   text-decoration: none;
@@ -266,7 +276,6 @@ a.row-link:hover {
   color: var(--text-muted);
 }
 
-/* Detail Page Specific */
 .detail-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
