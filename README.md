@@ -1,143 +1,139 @@
 # 🎯 Event Radar
 
-> **한국·미국 날짜 확정형 주가 이벤트 및 A/B 관련주 백테스트 레이더**
+> **한국·미국 미래 주가 이벤트 및 A/B 관련주 백테스트 레이더**
 
-Event Radar는 한국(DART, 엔터, 게임, 거래소)과 미국(SEC EDGAR, FDA PDUFA)의 날짜 확정형 주가 이벤트를 자동 수집하고, 경제적 인과관계가 확인된 A/B급 관련주를 연결하여 과거 이벤트 반응과 매매 전략을 백테스트한 뒤, GitHub Pages 정적 대시보드 및 Google Drive 백업으로 제공하는 개인용 Event-Driven Trading 시스템입니다.
-
----
-
-## 🌟 핵심 특징
-
-1. **규제기관 및 공식 일정 중심 자동 수집 (Milestone 2)**
-   - **한국**: DART 무상증자, 유상증자, 주식분할, 전환사채(CB) 상장, 보호예수 해제
-   - **미국**: SEC EDGAR 일별 공시 인덱스에서 미국 전체 발행사의 Form 8-K / 8-K/A를 자동 발견하고 실적 발표, 주식분할, 유상증자 후보만 선별
-   - **비정형 공식 일정**: FDA PDUFA 승인일, 엔터테인먼트 컴백, 게임 신작 출시, 주요 지수 정기변경
-
-2. **철저한 시계열 분리와 Look-ahead Bias 방지**
-   - 불변 고유 식별자 (`event_id`): 일정 변경 시 복제하지 않고 revision으로 이력 보존
-   - A/B 관련주 타임스탬프 검증: 이벤트 발표 시점(`announced_at`) 이전에 공식 확인된 관계만 인정
-   - 시장 반응일(`D0`) 정렬: 장후 공시(AFTERHOURS) 및 비거래일 이벤트의 다음 거래일 반응 엄격 반영
-
-3. **거래일 기준 이벤트 스터디 & 9대 사전 정의 전략 백테스트**
-   - D-60 ~ D+20 거래일 기준 개별 종목 누적수익률 및 벤치마크(KOSPI / S&P500) 대비 초과수익률(CAR) 산출
-   - 과최적화 방지용 9대 전략 비교 (D-30→D0, D-20→D-5, D-10→D-1, D-5→D+3, D0→D+5 등)
-   - 인접 윈도우 방향 일치성 기반 Robustness Score 산출
-
-4. **100점 만점 Event Score V1**
-   - **일정 확정도 (20점)**: CONFIRMED(20) / EXPECTED(10) / RUMORED(0)
-   - **관계 직접성 (20점)**: 직접 당사자(A급, 20점) / 경제적 관련주(B급, 12~18점)
-   - **과거 통계적 Edge (30점)**: 중앙 초과수익률, 승률, 표본 수 패널티 (N<3건 시 최대 5점 엄격 제한)
-   - **Robustness (15점)**: 인접 전략 방향 일치성 및 평균/중앙값 괴리 패널티
-   - **현재 Setup (15점)**: 이벤트 전 선반영 급등 및 최근 거래량 추세 반영
-
-5. **완전 자동화 및 제로 서버 비용 (GitHub Actions + Pages)**
-   - GitHub Actions가 하루 2회 (06:00 KST, 18:00 KST) 파이프라인 자동 실행
-   - GitHub Pages 정적 대시보드 (Chart.js / Canvas 기반 반응형 차트)
-   - 구글 드라이브(Google Drive API) CSV 자동 백업
-   - 민감정보(API Key, Secret, Token) 공개 산출물 배포 100% 차단
+Event Radar는 한국과 미국의 공식 일정·공시와 미래 시점을 명시한 뉴스를 자동 수집하고, 관련 종목을 연결해 이벤트 전후 반응과 매매 전략을 분석하는 개인용 Event-Driven Trading 시스템입니다. 데이터는 GitHub에 저장되고 GitHub Pages 대시보드로 표시됩니다.
 
 ---
 
-## 📁 저장소 디렉터리 구조
+## 🌟 수집 원천
 
-```text
-event-radar/
-├─ .github/workflows/         # CI/CD 및 하루 2회 스케줄 수집 워크플로우
-├─ config/                    # 이벤트 유형, 사이트 레지스트리, 점수 및 백테스트 설정
-│  ├─ event_types.yaml
-│  ├─ site_registry.yaml
-│  ├─ score.yaml
-│  └─ backtest.yaml
-├─ data/
-│  ├─ canonical/              # 표준 마스터 CSV (events, revisions, relations, securities)
-│  ├─ derived/                # 백테스트 수익률, 전략 성과, 점수 결과
-│  ├─ cache/prices/           # 일봉 가격 데이터 로컬 캐시
-│  └─ logs/                   # Collector 실행 이력 및 상태 로그
-├─ src/event_radar/           # 코어 파이프라인 모듈
-│  ├─ models.py               # Pydantic 도메인 모델
-│  ├─ ids.py                  # 불변 event_id 생성기
-│  ├─ normalize.py            # 정규화 및 데이터 파싱
-│  ├─ dedupe.py               # 중복 제거 및 소스 우선순위 병합
-│  ├─ revisions.py            # 변경 이력 추적
-│  ├─ relations.py            # A/B 관련주 연결 및 시계열 필터
-│  ├─ scoring.py              # 100점 만점 Event Score 엔진
-│  ├─ pipeline.py             # E2E 파이프라인 오케스트레이터
-│  ├─ export.py               # GitHub Pages용 정적 JSON 생성
-│  ├─ collectors/             # DART, SEC, FDA, 엔터, 게임, 지수 수집기
-│  ├─ prices/                 # Yahoo/거래소 가격 어댑터 및 거래일 달력
-│  ├─ backtest/               # 세션 정렬, 이벤트 스터디, 전략 비교
-│  ├─ manual/                 # Google Form / Sheet 수동 입력 통합
-│  └─ integrations/           # Google Drive OAuth 백업 클라이언트
-├─ site/                      # GitHub Pages 정적 대시보드
-│  ├─ index.html              # 대시보드 메인 (필터, 정렬, 목록)
-│  ├─ event.html              # 이벤트 상세 및 백테스트 차트
-│  ├─ css/app.css             # 다크 모드 스타일시트
-│  └─ js/                     # 차트, 필터, 상세 렌더링 스크립트
-├─ tests/                     # TDD 기반 유닛/통합 테스트 스위트
-├─ scripts/                   # 실행용 CLI 엔트리포인트 (collect, rebuild, backup)
-├─ docs/                      # 운영 가이드, 데이터 사전
-└─ pyproject.toml             # 프로젝트 설정 및 의존성
-```
+### 한국
+- **DART**: 무상증자, 분할, CB 등 주요 공시. 일반 유상증자는 제외하고 OpenDART 구조화 데이터에서 **시설자금이 확인되는 경우만 `CAPEX_FINANCING`**으로 유지합니다.
+- **KIND IPO**: 수요예측 시작·종료, 공모청약 시작·종료, 납입일, 상장예정일.
+- **NEWS_FUTURE**: `내달`, `다음달`, `11월`, `연내`, `내년 1분기`처럼 미래 시점을 명시하면서 가동·출시·승인·수주·임상결과·정책·상장·CAPEX 같은 촉매를 함께 포함한 뉴스만 후보로 수집합니다.
+- 기존 엔터테인먼트·게임·지수변경 수집기도 함께 동작합니다.
+
+### 미국
+- **SEC EDGAR**: 미국 전체 발행사의 최근 8-K / 8-K/A를 자동 발견합니다. 별도 CIK watchlist는 필요하지 않습니다.
+- **FDA Advisory Committee**: FDA 공식 자문위원회 일정. 직접 종목을 식별할 수 없으면 바이오 섹터 프록시 `XBI`에 연결합니다.
+- **FOMC**: Federal Reserve 공식 회의 캘린더에서 정책결정일(회의 마지막 날)을 `FOMC_DECISION`으로 수집합니다.
 
 ---
 
-## 🚀 빠른 시작 (Quick Start)
+## 🗓️ 정확한 날짜와 기간형 일정
 
-### 1. 환경 설정 및 의존성 설치
+공식 일정처럼 하루가 확정된 이벤트는 `EXACT_DATE / CONFIRMED`로 저장합니다.
+
+뉴스에서 발견한 `내달`, `1분기`, `연내` 같은 표현은 특정 하루로 조작하지 않고 아래 정보를 함께 저장합니다.
+
+- `date_precision`: `EXACT_DATE`, `WEEK`, `MONTH`, `QUARTER`, `HALF_YEAR`, `YEAR`
+- `window_start`
+- `window_end`
+- 뉴스 단독 후보는 기본적으로 `EXPECTED`
+
+기존 파이프라인 호환성을 위해 `event_date`에는 기간의 시작일이 들어가지만, Pages 화면에서는 실제 정밀도에 맞춰 `2026년 12월`, `2027년 1분기`, `2026년 내`처럼 표시합니다.
+
+---
+
+## 📊 분석 구조
+
+1. 독립 Collector들이 이벤트를 수집
+2. 표준 Event 모델로 정규화
+3. 동일 이벤트 중복 제거 및 revision 추적
+4. A/B 관련 종목 연결
+5. Yahoo 가격 데이터 기반 이벤트 윈도우 수익률·초과수익률 계산
+6. 사전 정의 전략 및 Event Score 계산
+7. `site/data/*.json`으로 내보내 GitHub Pages 갱신
+
+한 Collector가 실패해도 다른 원천의 수집은 계속 진행하는 graceful-degradation 구조입니다.
+
+---
+
+## 🚀 빠른 시작
+
 ```bash
-# 가상환경 생성 및 활성화 (Python 3.12+)
 python -m venv .venv
-.\.venv\Scripts\activate   # Windows
-
-# 의존성 설치
+.\.venv\Scripts\activate
 pip install -e ".[dev]"
-```
-
-### 2. 테스트 스위트 실행
-```bash
 pytest -p no:cacheprovider -v
-```
-
-### 3. 수집 파이프라인 1회 실행
-```bash
-# DART 실수집에는 DART_API_KEY가 필요합니다.
-# SEC는 API 키나 CIK watchlist 없이 EDGAR 일별 인덱스에서 자동 발견합니다.
 python scripts/collect.py
 ```
 
-### 4. 로컬 대시보드 확인
+로컬 대시보드:
+
 ```bash
 cd site
 python -m http.server 8080
-# 웹 브라우저에서 http://localhost:8080 접속
 ```
 
 ---
 
-## ⚙️ GitHub Actions Secrets 설정
+## ⚙️ GitHub Actions Secrets
 
-GitHub Actions 자동 수집 및 배포를 위해 저장소의 `Settings` → `Secrets and variables` → `Actions`에서 필요한 시크릿을 설정합니다.
+저장소의 `Settings` → `Secrets and variables` → `Actions` → `Secrets`에서 등록합니다.
 
-| Secret 이름 | 설명 | 필수 여부 |
+| Secret | 용도 | 필수 여부 |
 |---|---|---|
-| `DART_API_KEY` | OpenDART API 인증키 | 한국 DART 실수집 시 |
-| `GOOGLE_CLIENT_ID` | Google Cloud OAuth 클라이언트 ID | 드라이브 백업 시 |
-| `GOOGLE_CLIENT_SECRET` | Google Cloud OAuth 클라이언트 시크릿 | 드라이브 백업 시 |
-| `GOOGLE_REFRESH_TOKEN` | 오프라인 접근용 Refresh Token | 드라이브 백업 시 |
-| `GOOGLE_DRIVE_FOLDER_ID` | 백업 대상 구글 드라이브 폴더 ID | 드라이브 백업 시 |
+| `DART_API_KEY` | OpenDART 실수집 | DART 사용 시 필요 |
+| `NAVER_API_HUB_KEY_ID` | NAVER API HUB Key ID | 뉴스 미래 이벤트 수집 시 필요 |
+| `NAVER_API_HUB_KEY` | NAVER API HUB Key | 뉴스 미래 이벤트 수집 시 필요 |
 
-미국 SEC 수집에는 별도 API 키, Secret, `SEC_CIKS` Variable이 필요하지 않습니다. 수집기는 최근 최대 3일의 EDGAR daily master index를 겹쳐 읽고 8-K / 8-K/A 후보를 자동 발견한 뒤, 필요한 회사만 SEC submissions 데이터로 확인합니다. 테스트 fixture는 테스트 코드에서 명시적으로 전달할 때만 사용합니다.
+`NAVER_API_HUB_KEY_ID`와 `NAVER_API_HUB_KEY`가 없으면 **NEWS_FUTURE만 0건으로 건너뛰고**, DART·SEC·FDA·KIND·FOMC 등 나머지 수집은 계속됩니다.
 
-*구글 드라이브 토큰 최초 발급은 `python scripts/oauth_bootstrap.py`를 실행하세요.*
+SEC에는 별도 API Key나 `SEC_CIKS` Variable이 필요하지 않습니다.
 
----
-
-## 📖 문서 링크
-- [운영 및 장애 복구 가이드 (docs/operations.md)](docs/operations.md)
-- [데이터 명세서 (docs/data-dictionary.md)](docs/data-dictionary.md)
-- [구현 계획서 (docs/superpowers/plans/2026-11-02-event-radar-implementation-plan.md)](docs/superpowers/plans/2026-11-02-event-radar-implementation-plan.md)
+Google Drive 백업은 사용하지 않습니다. GitHub 저장소가 데이터 원본 및 변경 이력 저장소 역할을 합니다.
 
 ---
 
-## 📜 라이선스
+## ⏰ 자동 실행
+
+GitHub Actions가 하루 두 번 실행됩니다.
+
+- 06:00 KST
+- 18:00 KST
+
+수집 후 `data/`와 `site/data/`의 변경사항을 자동 커밋합니다.
+
+---
+
+## 📁 주요 경로
+
+```text
+src/event_radar/collectors/   # DART, SEC, NEWS, FDA, KIND, FOMC 등
+src/event_radar/pipeline.py   # 전체 파이프라인
+src/event_radar/export.py     # Pages JSON 생성
+data/canonical/               # 이벤트·관계 원본
+site/data/                    # 대시보드 공개 데이터
+site/js/                      # 목록/상세 렌더링
+.github/workflows/collect.yml # 하루 2회 자동 수집
+```
+
+---
+
+## 현재 범위 밖
+
+이번 Event Sources v2에는 아래 항목을 아직 포함하지 않습니다.
+
+- 모든 기업의 PDUFA 목표일 완전 자동 재구성
+- CPI / 고용 / PPI 등 FOMC 이외의 매크로 일정
+- 뉴스 회사명을 전체 상장사 종목코드로 자동 매핑하는 완전한 엔티티 사전
+- 과거 동일 유형 이벤트의 대규모 백필
+
+이 항목들은 이후 단계에서 확장할 수 있습니다.
+
+---
+
+## 📖 문서
+
+- `docs/operations.md`
+- `docs/data-dictionary.md`
+- `docs/superpowers/specs/2026-11-03-event-sources-v2.md`
+- `docs/superpowers/plans/2026-11-03-event-sources-v2.md`
+
+---
+
+## 📜 License
+
 MIT License

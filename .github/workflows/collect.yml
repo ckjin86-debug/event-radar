@@ -35,17 +35,10 @@ jobs:
       - name: Run Event Collection Pipeline
         env:
           DART_API_KEY: ${{ secrets.DART_API_KEY }}
+          NAVER_API_HUB_KEY_ID: ${{ secrets.NAVER_API_HUB_KEY_ID }}
+          NAVER_API_HUB_KEY: ${{ secrets.NAVER_API_HUB_KEY }}
         run: |
           python scripts/collect.py
-
-      - name: Run Google Drive Backup (Non-Fatal)
-        env:
-          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
-          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
-          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
-          GOOGLE_DRIVE_FOLDER_ID: ${{ secrets.GOOGLE_DRIVE_FOLDER_ID }}
-        run: |
-          python scripts/backup_drive.py || true
 
       - name: Commit and push updated data
         run: |

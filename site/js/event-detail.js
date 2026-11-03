@@ -44,20 +44,39 @@ async function initEventDetail() {
   }
 }
 
+function formatEventDate(d) {
+  const precision = d.date_precision || "EXACT_DATE";
+  const start = d.window_start || d.event_date;
+  const end = d.window_end || d.event_date;
+
+  if (precision === "EXACT_DATE" || !start || !end) return d.event_date || start || "-";
+
+  const startDate = new Date(`${start}T00:00:00`);
+  const year = startDate.getFullYear();
+  const month = startDate.getMonth() + 1;
+
+  if (precision === "MONTH") return `${year}년 ${month}월 (${start} ~ ${end})`;
+  if (precision === "QUARTER") return `${year}년 ${Math.floor((month - 1) / 3) + 1}분기 (${start} ~ ${end})`;
+  if (precision === "HALF_YEAR") return `${year}년 ${month <= 6 ? "상반기" : "하반기"} (${start} ~ ${end})`;
+  if (precision === "YEAR") return `${year}년 내 (${start} ~ ${end})`;
+  return start === end ? start : `${start} ~ ${end}`;
+}
+
 function renderDetail(d) {
-  // Page Title & Header
   document.title = `${d.company} (${d.ticker}) - ${d.event_name} | Event Radar`;
   document.getElementById("eventTitle").textContent = `${d.company} (${d.ticker}) - ${d.event_name}`;
 
-  // Basic Info Box
   const basicInfoElem = document.getElementById("basicInfo");
   if (basicInfoElem) {
+    const scheduleContext = (d.date_precision || "EXACT_DATE") === "EXACT_DATE"
+      ? d.event_time_context
+      : d.date_precision;
     basicInfoElem.innerHTML = `
       <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
         <div><span class="text-muted">국가 / 티커:</span> <strong>${d.country} / ${d.ticker}</strong></div>
         <div><span class="text-muted">이벤트 유형:</span> <strong>${d.event_type}</strong></div>
         <div><span class="text-muted">최초 발표일:</span> <strong>${d.announced_at ? d.announced_at.slice(0, 10) : "-"}</strong></div>
-        <div><span class="text-muted">이벤트 예정일:</span> <strong style="color:var(--accent-blue);">${d.event_date} (${d.event_time_context})</strong></div>
+        <div><span class="text-muted">이벤트 예정일:</span> <strong style="color:var(--accent-blue);">${escapeHtml(formatEventDate(d))} (${escapeHtml(scheduleContext)})</strong></div>
         <div><span class="text-muted">확정 상태:</span> <span class="badge ${d.status === 'CONFIRMED' ? 'badge-confirmed' : 'badge-expected'}">${d.status}</span></div>
         <div>
           <span class="text-muted">공식 출처:</span> 
@@ -68,7 +87,6 @@ function renderDetail(d) {
     `;
   }
 
-  // Score Breakdown
   const scoreElem = document.getElementById("scoreBreakdown");
   if (scoreElem && d.score_breakdown) {
     const sb = d.score_breakdown;
@@ -97,7 +115,6 @@ function renderDetail(d) {
     `;
   }
 
-  // Backtest Stats Box
   const bs = d.backtest_summary || {};
   const statsElem = document.getElementById("backtestStats");
   if (statsElem) {
@@ -131,12 +148,10 @@ function renderDetail(d) {
     `;
   }
 
-  // Render Curve Chart
   if (d.event_curve && d.event_curve.length > 0) {
     renderEventCurveChart("curveChartCanvas", d.event_curve);
   }
 
-  // Related Securities Table
   const relElem = document.getElementById("relatedSecuritiesBody");
   if (relElem) {
     const list = d.related_securities || [];
@@ -154,7 +169,6 @@ function renderDetail(d) {
     }
   }
 
-  // Predefined Strategies Table
   const stratElem = document.getElementById("strategiesTableBody");
   if (stratElem) {
     const list = d.strategy_summary || [];
@@ -179,7 +193,6 @@ function renderDetail(d) {
     }
   }
 
-  // Revisions History Table
   const revElem = document.getElementById("revisionsTableBody");
   if (revElem) {
     const revs = d.revisions || [];

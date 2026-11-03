@@ -12,6 +12,7 @@ EventStatus = Literal["CONFIRMED", "EXPECTED", "RUMORED", "CANCELLED"]
 SourceKind = Literal["REGULATOR", "EXCHANGE", "COMPANY", "ORGANIZER", "SECONDARY"]
 IngestMode = Literal["AUTO", "MANUAL", "AUTO+MANUAL"]
 RelationGrade = Literal["A", "B", "C"]
+DatePrecision = Literal["EXACT_DATE", "WEEK", "MONTH", "QUARTER", "HALF_YEAR", "YEAR"]
 
 
 class RawEvent(BaseModel):
@@ -28,6 +29,9 @@ class RawEvent(BaseModel):
     event_name: str
     announced_at: datetime | date | str
     event_date: date | str
+    date_precision: DatePrecision = "EXACT_DATE"
+    window_start: date | str | None = None
+    window_end: date | str | None = None
     event_time_context: EventTimeContext = "DATE_ONLY"
     status: EventStatus = "CONFIRMED"
     evidence_text: str = ""
@@ -65,6 +69,9 @@ class Event(BaseModel):
     primary_company: str
     announced_at: datetime
     event_date: date
+    date_precision: DatePrecision = "EXACT_DATE"
+    window_start: Optional[date] = None
+    window_end: Optional[date] = None
     event_time_context: EventTimeContext = "DATE_ONLY"
     status: EventStatus = "CONFIRMED"
     source_kind: SourceKind = "REGULATOR"
