@@ -7,6 +7,10 @@ on:
       - "ops/run-now.txt"
   workflow_dispatch:
 
+concurrency:
+  group: event-radar-collection
+  cancel-in-progress: true
+
 permissions:
   contents: write
   pages: write
@@ -15,9 +19,6 @@ permissions:
 jobs:
   collect-and-update:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -50,7 +51,8 @@ jobs:
             echo "No data changes to commit."
           else
             git commit -m "chore(data): live validation run"
-            git push
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
 
       - name: Setup Pages
@@ -61,6 +63,13 @@ jobs:
         with:
           path: "site/"
 
+  deploy-pages:
+    needs: collect-and-update
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
