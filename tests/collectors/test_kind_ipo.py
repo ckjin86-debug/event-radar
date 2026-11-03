@@ -61,10 +61,43 @@ CALENDAR_HTML = """
 </div>
 """
 
+# Matches the current server-rendered KIND 공모기업현황 table: market is an
+# image alt inside the company cell rather than a separate market column.
+PROGRAM_TABLE_HTML = """
+<table class="list type-00">
+  <thead>
+    <tr>
+      <th title="회사명">회사명</th>
+      <th title="신고서제출일">신고서제출일</th>
+      <th title="수요예측일정">수요예측일정</th>
+      <th title="청약일정">청약일정</th>
+      <th title="납입일">납입일</th>
+      <th title="확정공모가">확정공모가</th>
+      <th title="공모금액(백만원)">공모금액(백만원)</th>
+      <th title="상장예정일">상장예정일</th>
+      <th title="상장주선인/지정자문인">상장주선인/지정자문인</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="first" title="씨아이에스케미칼"><img alt="코스닥"/>씨아이에스케미칼</td>
+      <td>2026-10-19</td>
+      <td>2026-11-30<br/> ~ 2026-12-04</td>
+      <td>2026-12-10<br/> ~ 2026-12-11</td>
+      <td>2026-12-15</td>
+      <td>-</td>
+      <td>-</td>
+      <td>2026-12-22</td>
+      <td>KB증권(주)</td>
+    </tr>
+  </tbody>
+</table>
+"""
+
 
 class FakeKindResponse:
     status_code = 200
-    text = CALENDAR_HTML
+    text = PROGRAM_TABLE_HTML
     encoding = "utf-8"
     apparent_encoding = "utf-8"
 
@@ -79,7 +112,7 @@ class KindGetOnlySession:
         return FakeKindResponse()
 
     def post(self, *args, **kwargs):
-        raise AssertionError("live KIND schedule should use the public GET calendar page")
+        raise AssertionError("live KIND collection should use the public GET page")
 
 
 def test_kind_ipo_emits_all_schedule_milestones():
@@ -125,10 +158,20 @@ def test_kind_calendar_uses_kosdaq_proxy_from_official_market_alt_text():
     assert dongwon and all(e.primary_ticker == "^KQ11" for e in dongwon)
 
 
-def test_live_kind_collection_uses_public_current_calendar_get():
+def test_kind_program_table_reads_market_from_company_icon():
+    events = KindIpoCollector(mock_html=PROGRAM_TABLE_HTML).collect(since=datetime(2026, 11, 1))
+    assert len(events) == 6
+    assert all(e.primary_company == "씨아이에스케미칼" for e in events)
+    assert all(e.primary_ticker == "^KQ11" for e in events)
+    assert events[-1].event_type == "IPO_LISTING"
+    assert events[-1].event_date == date(2026, 12, 22)
+
+
+def test_live_kind_collection_uses_public_offering_company_get():
     collector = KindIpoCollector()
     collector.session = KindGetOnlySession()
     events = collector.collect(since=datetime(2026, 11, 1))
     assert events
     assert collector.session.get_calls
-    assert any(e.primary_company == "동원파츠" for e in events)
+    assert "pubofrprogcom.do" in collector.session.get_calls[0]
+    assert all(e.primary_ticker == "^KQ11" for e in events)
