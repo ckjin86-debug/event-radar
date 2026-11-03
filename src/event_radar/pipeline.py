@@ -15,6 +15,7 @@ from event_radar.dedupe import merge_events
 from event_radar.relations import resolve_related_securities, load_relations_csv, save_relations_csv
 from event_radar.manual.google_sheet import load_manual_rows, apply_manual_overrides, apply_manual_relations
 from event_radar.prices.base import PriceProvider, CachedPriceProvider
+from event_radar.prices.yahoo import YahooPriceProvider
 from event_radar.prices.calendar import get_trading_calendar
 from event_radar.backtest.align import resolve_event_session
 from event_radar.backtest.returns import calculate_event_window_returns
@@ -23,6 +24,18 @@ from event_radar.backtest.strategies import evaluate_strategies, StrategyResult
 from event_radar.scoring import ScoreInput, ScoreResult, calculate_event_score
 from event_radar.export import export_site_data
 from event_radar.collectors.base import Collector
+
+
+RETURN_COLUMNS = [
+    "event_id", "ticker", "relation_grade", "event_session_date", "offset",
+    "price", "return_from_d0", "benchmark_return", "abnormal_return",
+    "volume_ratio_20d",
+]
+
+BENCHMARK_BY_COUNTRY = {
+    "KR": "^KS11",
+    "US": "^GSPC",
+}
 
 
 @dataclass
@@ -162,6 +175,16 @@ def save_canonical_revisions(revisions: list[EventRevision], path: Path) -> None
             })
 
 
+def _resolve_price_provider(config: PipelineConfig) -> PriceProvider:
+    """Return the explicitly configured provider or the cached Yahoo adapter."""
+    if config.price_provider is not None:
+        return config.price_provider
+    return CachedPriceProvider(
+        YahooPriceProvider(),
+        cache_dir=config.data_dir / "cache" / "prices",
+    )
+
+
 def run_pipeline(
     collectors: list[Collector],
     config: PipelineConfig,
@@ -257,65 +280,96 @@ def run_pipeline(
                 "evidence_text": s.evidence_text,
             })
 
-    # Save event_security_map.csv
-    if all_mapped_rows:
-        pd.DataFrame(all_mapped_rows).to_csv(derived_dir / "event_security_map.csv", index=False)
+    # Always refresh the map so stale rows cannot survive an empty run.
+    pd.DataFrame(all_mapped_rows, columns=[
+        "event_id", "ticker", "relation_grade", "relation_score",
+        "relation_type", "evidence_text",
+    ]).to_csv(derived_dir / "event_security_map.csv", index=False)
 
-    # 8. Backtest, Strategy, and Scoring
+    # 8. Real-price backtest, Strategy, and Scoring
     event_scores: dict[str, ScoreResult] = {}
     strategy_results: dict[str, list[StrategyResult]] = {}
     backtest_summaries: dict[str, BacktestSummary] = {}
-    all_returns_df: pd.DataFrame = pd.DataFrame()
 
-    calendar_kr = get_trading_calendar("KR", now.date() - timedelta(days=180), now.date() + timedelta(days=90))
-    calendar_us = get_trading_calendar("US", now.date() - timedelta(days=180), now.date() + timedelta(days=90))
+    if current_events:
+        calendar_start = min(ev.event_date for ev in current_events) - timedelta(days=10)
+    else:
+        calendar_start = now.date() - timedelta(days=180)
+    calendar_end = now.date() + timedelta(days=90)
+    calendar_kr = get_trading_calendar("KR", calendar_start, calendar_end)
+    calendar_us = get_trading_calendar("US", calendar_start, calendar_end)
 
-    returns_list = []
+    return_frames: list[pd.DataFrame] = []
+    price_provider = None if skip_price_fetch else _resolve_price_provider(config)
+
     for ev in current_events:
         trading_days = calendar_us if ev.country == "US" else calendar_kr
-        session_date, conf = resolve_event_session(ev.event_date, ev.event_time_context, trading_days)
+        session_date, _ = resolve_event_session(ev.event_date, ev.event_time_context, trading_days)
 
+        # Future events do not have realized D0/D+ returns yet. Never synthesize them.
+        if price_provider is None or session_date > now.date():
+            continue
+
+        benchmark_ticker = BENCHMARK_BY_COUNTRY.get(ev.country, "^GSPC")
+        start_date = session_date - timedelta(days=120)
+        end_date = min(now.date(), session_date + timedelta(days=45))
+
+        for sec in event_securities.get(ev.event_id, []):
+            try:
+                stock_prices = price_provider.history(sec.ticker, start_date, end_date)
+                benchmark_prices = price_provider.history(benchmark_ticker, start_date, end_date)
+                frame = calculate_event_window_returns(
+                    event_id=ev.event_id,
+                    ticker=sec.ticker,
+                    relation_grade=sec.relation_grade,
+                    event_session_date=session_date,
+                    stock_prices=stock_prices,
+                    benchmark_prices=benchmark_prices,
+                )
+                if not frame.empty:
+                    return_frames.append(frame)
+            except Exception:
+                # A price-provider failure for one security must not stop collection/export.
+                continue
+
+    if return_frames:
+        all_returns_df = pd.concat(return_frames, ignore_index=True)
+    else:
+        all_returns_df = pd.DataFrame(columns=RETURN_COLUMNS)
+    all_returns_df.to_csv(derived_dir / "backtest_event_returns.csv", index=False)
+
+    for ev in current_events:
+        ev_df = all_returns_df[all_returns_df["event_id"] == ev.event_id]
         primary_sec = event_securities.get(ev.event_id, [None])[0]
         rel_score = primary_sec.relation_score if primary_sec else 100
+        primary_grade = primary_sec.relation_grade if primary_sec else "A"
 
-        # Calculate scores
-        score_res = calculate_event_score(
+        # D+5 is a realized post-event outcome; unlike D0 it is not identically zero.
+        b_sum = summarize_event_group(ev_df, target_offset=5)
+        backtest_summaries[ev.event_id] = b_sum
+
+        strats = evaluate_strategies(
+            ev_df,
+            event_type=ev.event_type,
+            relation_grade=primary_grade,
+        )
+        strategy_results[ev.event_id] = strats
+        sampled_strats = [s for s in strats if s.sample_n > 0]
+        robustness = (
+            sum(s.robustness_score for s in sampled_strats) / len(sampled_strats)
+            if sampled_strats else 0.5
+        )
+
+        event_scores[ev.event_id] = calculate_event_score(
             ScoreInput(
                 status=ev.status,
                 relation_score=rel_score,
-                sample_n=5,
-                median_abnormal_return=0.04,
-                win_rate=0.65,
-                robustness_score=0.75,
+                sample_n=b_sum.sample_n,
+                median_abnormal_return=b_sum.median_abnormal_return,
+                win_rate=b_sum.win_rate,
+                robustness_score=robustness,
             )
         )
-        event_scores[ev.event_id] = score_res
-
-        # Synthetic/pre-cached returns for offline and mock pipeline safety
-        for off in range(-60, 21):
-            returns_list.append({
-                "event_id": ev.event_id,
-                "ticker": ev.primary_ticker,
-                "relation_grade": "A",
-                "event_session_date": str(session_date),
-                "offset": off,
-                "price": 100.0 * (1.0 + off * 0.003),
-                "return_from_d0": off * 0.003,
-                "benchmark_return": off * 0.001,
-                "abnormal_return": off * 0.002,
-                "volume_ratio_20d": 1.1,
-            })
-
-    if returns_list:
-        all_returns_df = pd.DataFrame(returns_list)
-        all_returns_df.to_csv(derived_dir / "backtest_event_returns.csv", index=False)
-
-        for ev in current_events:
-            ev_df = all_returns_df[all_returns_df["event_id"] == ev.event_id]
-            b_sum = summarize_event_group(ev_df, target_offset=0)
-            backtest_summaries[ev.event_id] = b_sum
-            strats = evaluate_strategies(ev_df, event_type=ev.event_type, relation_grade="A")
-            strategy_results[ev.event_id] = strats
 
     # 9. Export Site Data
     export_site_data(

@@ -8,6 +8,9 @@ import pandas as pd
 import requests
 
 
+EMPTY_COLUMNS = ["date", "open", "high", "low", "close", "adj_close", "volume"]
+
+
 class YahooPriceProvider:
     """Historical price provider using Yahoo Finance public query API."""
 
@@ -19,40 +22,46 @@ class YahooPriceProvider:
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
         })
 
-    def _normalize_ticker(self, ticker: str) -> str:
+    def _ticker_candidates(self, ticker: str) -> list[str]:
+        """Return Yahoo symbols to try, including KOSPI/KOSDAQ fallback."""
         ticker = ticker.strip().upper()
-        # If Korean 6-digit ticker, default to KOSPI .KS or check
         if len(ticker) == 6 and ticker.isdigit():
-            return f"{ticker}.KS"
-        return ticker
+            return [f"{ticker}.KS", f"{ticker}.KQ"]
+        return [ticker]
+
+    def _parse_history(self, text: str) -> pd.DataFrame:
+        df = pd.read_csv(io.StringIO(text))
+        df.columns = [c.strip().lower().replace(" ", "_") for c in df.columns]
+        if "date" not in df.columns:
+            return pd.DataFrame(columns=EMPTY_COLUMNS)
+
+        df["date"] = pd.to_datetime(df["date"]).dt.date
+        for col in EMPTY_COLUMNS:
+            if col not in df.columns:
+                df[col] = df["close"] if "close" in df.columns else 0.0
+        return df[EMPTY_COLUMNS].sort_values("date").reset_index(drop=True)
 
     def history(self, ticker: str, start: date, end: date) -> pd.DataFrame:
         """Fetch historical price series."""
-        yf_ticker = self._normalize_ticker(ticker)
         period1 = int(datetime.combine(start, datetime.min.time()).timestamp())
         # add 1 day to end to make sure end date is included
         period2 = int(datetime.combine(end, datetime.max.time()).timestamp()) + 86400
 
-        url = f"https://query1.finance.yahoo.com/v7/finance/download/{yf_ticker}?period1={period1}&period2={period2}&interval=1d&events=history&includeAdjustedClose=true"
+        for yf_ticker in self._ticker_candidates(ticker):
+            url = f"https://query1.finance.yahoo.com/v7/finance/download/{yf_ticker}?period1={period1}&period2={period2}&interval=1d&events=history&includeAdjustedClose=true"
 
-        for attempt in range(self.max_retries + 1):
-            try:
-                resp = self.session.get(url, timeout=self.timeout)
-                if resp.status_code == 200 and "Date" in resp.text:
-                    df = pd.read_csv(io.StringIO(resp.text))
-                    df.columns = [c.strip().lower().replace(" ", "_") for c in df.columns]
-                    # Rename Date -> date, Adj Close -> adj_close
-                    if "adj_close**" in df.columns:
-                        df = df.rename(columns={"adj_close**": "adj_close"})
-                    df["date"] = pd.to_datetime(df["date"]).dt.date
-                    cols = ["date", "open", "high", "low", "close", "adj_close", "volume"]
-                    for c in cols:
-                        if c not in df.columns:
-                            df[c] = df["close"] if "close" in df.columns else 0.0
-                    return df[cols].sort_values("date").reset_index(drop=True)
-            except Exception:
-                pass
-            time.sleep(0.5)
+            for attempt in range(self.max_retries + 1):
+                try:
+                    resp = self.session.get(url, timeout=self.timeout)
+                    if resp.status_code == 200 and "Date" in resp.text:
+                        df = self._parse_history(resp.text)
+                        if not df.empty:
+                            return df
+                except Exception:
+                    pass
 
-        # Empty fallback if offline or request fails
-        return pd.DataFrame(columns=["date", "open", "high", "low", "close", "adj_close", "volume"])
+                if attempt < self.max_retries:
+                    time.sleep(0.5)
+
+        # Empty fallback if offline or request fails for every candidate
+        return pd.DataFrame(columns=EMPTY_COLUMNS)

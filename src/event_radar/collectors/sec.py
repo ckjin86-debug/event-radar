@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 import json
+import os
 import re
 import time
 from datetime import date, datetime
@@ -13,6 +14,7 @@ from event_radar.collectors.base import CollectorRunLog, log_collector_run
 
 
 SEC_DEFAULT_USER_AGENT = "EventRadarAdmin admin@eventradar.org"
+SEC_SUBMISSIONS_URL = "https://data.sec.gov/submissions/CIK{cik}.json"
 
 
 class SecCollector:
@@ -25,9 +27,15 @@ class SecCollector:
         fixture_path: Optional[Path | str] = None,
         user_agent: str = SEC_DEFAULT_USER_AGENT,
         timeout: int = 10,
+        ciks: Optional[list[str]] = None,
     ):
         self.fixture_path = Path(fixture_path) if fixture_path else None
         self.timeout = timeout
+
+        if ciks is None:
+            ciks = [part.strip() for part in os.getenv("SEC_CIKS", "").split(",") if part.strip()]
+        self.ciks = [str(cik).strip().zfill(10) for cik in ciks if str(cik).strip()]
+
         self.session = requests.Session()
         self.session.headers.update({
             "User-Agent": user_agent,
@@ -50,7 +58,7 @@ class SecCollector:
             if "T" in accept_str:
                 time_part = accept_str.split("T")[1][:5]
                 hh, mm = map(int, time_part.split(":"))
-                # Post 16:00 ET is after-hours
+                # Post 16:00 is treated as after-hours by the current schema.
                 if hh >= 16 or (hh == 16 and mm > 0):
                     return "AFTERHOURS"
                 if hh < 9 or (hh == 9 and mm < 30):
@@ -69,20 +77,27 @@ class SecCollector:
                 pass
         return default_date
 
+    def _load_payloads(self) -> list[dict]:
+        if self.fixture_path and self.fixture_path.exists():
+            with open(self.fixture_path, mode="r", encoding="utf-8") as f:
+                return [json.load(f)]
+
+        payloads: list[dict] = []
+        for cik in self.ciks:
+            url = SEC_SUBMISSIONS_URL.format(cik=cik)
+            resp = self.session.get(url, timeout=self.timeout)
+            if resp.status_code != 200:
+                raise ConnectionError(f"SEC submissions HTTP {resp.status_code} for CIK {cik}")
+            payloads.append(resp.json())
+        return payloads
+
     def collect(self, since: datetime) -> list[RawEvent]:
-        """Collect recent SEC corporate events."""
+        """Collect recent SEC corporate events for the configured CIK watchlist."""
         start_time = time.time()
         events: list[RawEvent] = []
 
         try:
-            if self.fixture_path and self.fixture_path.exists():
-                with open(self.fixture_path, mode="r", encoding="utf-8") as f:
-                    data = json.load(f)
-                payloads = [data]
-            else:
-                # Live SEC submissions API could query target watchlist CIKs
-                # In default unconfigured environment, return empty gracefully
-                payloads = []
+            payloads = self._load_payloads()
 
             for data in payloads:
                 cik = str(data.get("cik", "")).zfill(10)
@@ -116,11 +131,12 @@ class SecCollector:
                         ann_date = datetime.fromisoformat(f_date_str) if f_date_str else since
                     except ValueError:
                         ann_date = since
+                    if ann_date < since:
+                        continue
 
                     accept_str = acceptance_datetimes[i] if i < len(acceptance_datetimes) else ""
                     time_ctx = self._determine_time_context(accept_str)
 
-                    # Extract event_date
                     if i < len(event_dates) and event_dates[i]:
                         ev_date = date.fromisoformat(str(event_dates[i])[:10])
                     else:

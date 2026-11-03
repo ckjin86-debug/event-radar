@@ -100,6 +100,9 @@ pytest -p no:cacheprovider -v
 
 ### 3. 수집 파이프라인 1회 실행
 ```bash
+# DART 실수집에는 DART_API_KEY가 필요합니다.
+# SEC 실수집은 감시할 CIK를 쉼표로 구분해 SEC_CIKS에 지정합니다.
+# 예: SEC_CIKS=0000320193,0000789019
 python scripts/collect.py
 ```
 
@@ -112,17 +115,27 @@ python -m http.server 8080
 
 ---
 
-## ⚙️ GitHub Actions & Secrets 설정
+## ⚙️ GitHub Actions Secrets & Variables 설정
 
-GitHub Actions 자동 수집 및 배포를 위해 저장소의 `Settings` → `Secrets and variables` → `Actions`에 다음 시크릿을 등록합니다:
+GitHub Actions 자동 수집 및 배포를 위해 저장소의 `Settings` → `Secrets and variables` → `Actions`에서 아래 값을 설정합니다.
+
+### Secrets
 
 | Secret 이름 | 설명 | 필수 여부 |
 |---|---|---|
-| `DART_API_KEY` | OpenDART API 인증키 | 권장 |
+| `DART_API_KEY` | OpenDART API 인증키 | 한국 DART 실수집 시 |
 | `GOOGLE_CLIENT_ID` | Google Cloud OAuth 클라이언트 ID | 드라이브 백업 시 |
 | `GOOGLE_CLIENT_SECRET` | Google Cloud OAuth 클라이언트 시크릿 | 드라이브 백업 시 |
 | `GOOGLE_REFRESH_TOKEN` | 오프라인 접근용 Refresh Token | 드라이브 백업 시 |
 | `GOOGLE_DRIVE_FOLDER_ID` | 백업 대상 구글 드라이브 폴더 ID | 드라이브 백업 시 |
+
+### Variables
+
+| Variable 이름 | 설명 | 필수 여부 |
+|---|---|---|
+| `SEC_CIKS` | SEC EDGAR에서 감시할 미국 기업 CIK 목록. 쉼표로 구분 (예: `0000320193,0000789019`) | 미국 SEC 실수집 시 |
+
+`SEC_CIKS`가 비어 있으면 SEC 수집기는 실패시키지 않고 빈 결과를 반환합니다. 테스트 fixture는 테스트 코드에서 명시적으로 전달할 때만 사용하며, 정기 수집 파이프라인에는 사용하지 않습니다.
 
 *구글 드라이브 토큰 최초 발급은 `python scripts/oauth_bootstrap.py`를 실행하세요.*
 
