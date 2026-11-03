@@ -68,6 +68,117 @@ function relationBadgeClass(grade) {
   return "badge-unmapped";
 }
 
+function pct(value, digits = 1) {
+  return `${((value || 0) * 100).toFixed(digits)}%`;
+}
+
+function renderBacktestVerdict(d) {
+  const elem = document.getElementById("backtestVerdict");
+  if (!elem) return;
+
+  const peerN = d.peer_sample_n || 0;
+  const d5N = d.d5_sample_n || 0;
+  const bs = d.backtest_summary || {};
+
+  if (peerN === 0) {
+    elem.className = "backtest-verdict neutral";
+    elem.innerHTML = `<strong>비교 가능한 과거 사례가 아직 없습니다.</strong><span>동일 조건의 과거 이벤트가 쌓이면 자동으로 비교됩니다.</span>`;
+    return;
+  }
+
+  if (d5N === 0) {
+    elem.className = "backtest-verdict caution";
+    elem.innerHTML = `<strong>과거 비교 사례 ${peerN}건 · D+5 완료 표본 없음</strong><span>비교 사례는 있지만 아직 이벤트 후 5거래일까지 데이터가 완성되지 않아 D+5 성과는 판단하지 않습니다.</span>`;
+    return;
+  }
+
+  const edge = bs.mean_abnormal_return || 0;
+  elem.className = `backtest-verdict ${edge >= 0 ? "positive-verdict" : "negative-verdict"}`;
+  elem.innerHTML = `<strong>과거 비교 사례 ${peerN}건 · D+5 종목표본 ${d5N}개</strong><span>D+5 평균 초과수익률 ${pct(edge)} · 승률 ${pct(bs.win_rate, 0)}</span>`;
+}
+
+function renderBacktestStats(d) {
+  const statsElem = document.getElementById("backtestStats");
+  if (!statsElem) return;
+
+  const bs = d.backtest_summary || {};
+  const peerN = d.peer_sample_n || 0;
+  const d5N = d.d5_sample_n || 0;
+  const noD5 = d5N === 0;
+
+  statsElem.innerHTML = `
+    <div class="stat-box"><div class="stat-val">${peerN}건</div><div class="stat-label">비교 가능한 과거 사건</div></div>
+    <div class="stat-box"><div class="stat-val">${d5N}개</div><div class="stat-label">D+5 완료 종목 표본</div></div>
+    <div class="stat-box"><div class="stat-val ${noD5 ? "muted-value" : ((bs.mean_abnormal_return || 0) >= 0 ? "positive" : "negative")}">${noD5 ? "데이터 없음" : pct(bs.mean_abnormal_return)}</div><div class="stat-label">D+5 평균 초과수익률</div></div>
+    <div class="stat-box"><div class="stat-val ${noD5 ? "muted-value" : ((bs.win_rate || 0) >= 0.5 ? "positive" : "negative")}">${noD5 ? "데이터 없음" : pct(bs.win_rate, 0)}</div><div class="stat-label">D+5 초과수익 승률</div></div>
+  `;
+}
+
+function renderHistoricalPeers(d) {
+  const container = document.getElementById("historicalPeers");
+  if (!container) return;
+
+  const peers = d.historical_peers || [];
+  if (peers.length === 0) {
+    container.innerHTML = `<div class="history-empty">현재 조건과 일치하는 과거 비교 사례가 없습니다.</div>`;
+    return;
+  }
+
+  container.innerHTML = peers.map(peer => {
+    const securities = peer.related_securities || [];
+    const securitiesHtml = securities.length
+      ? securities.map(sec => `
+          <span class="history-security">
+            <code>${escapeHtml(sec.ticker || "-")}</code>
+            <span class="badge ${relationBadgeClass(sec.relation_grade)}">${escapeHtml(sec.relation_grade)}</span>
+          </span>
+        `).join("")
+      : `<span class="text-muted">관련주 미매핑</span>`;
+    const progress = peer.max_offset >= 5
+      ? "D+5 완료"
+      : `현재 D${peer.max_offset >= 0 ? "+" : ""}${peer.max_offset}까지`;
+
+    return `
+      <article class="history-card peer-card">
+        <div class="history-card-top">
+          <span class="history-date">${escapeHtml(peer.event_date)}</span>
+          <span class="badge badge-country">${escapeHtml(peer.country)}</span>
+          <span class="history-progress">${escapeHtml(progress)}</span>
+        </div>
+        <h3>${escapeHtml(peer.event_name)}</h3>
+        <p>${escapeHtml(peer.evidence_text || peer.company || "")}</p>
+        <div class="history-securities">${securitiesHtml}</div>
+        ${peer.source_url ? `<a href="${escapeHtml(peer.source_url)}" target="_blank" rel="noopener noreferrer" class="row-link history-source">사례 근거 ↗</a>` : ""}
+      </article>
+    `;
+  }).join("");
+}
+
+function renderBestStrategy(d) {
+  const elem = document.getElementById("bestStrategy");
+  if (!elem) return;
+
+  const sampled = (d.strategy_summary || []).filter(s => s.sample_n > 0);
+  if (sampled.length === 0) {
+    elem.innerHTML = `<strong>전략 비교 데이터가 없습니다.</strong><span>과거 표본이 쌓이면 구간별 성과를 비교합니다.</span>`;
+    return;
+  }
+
+  const best = sampled.reduce((a, b) => b.mean_abnormal_return > a.mean_abnormal_return ? b : a);
+  const caution = best.sample_n < 3 ? ` · 표본 ${best.sample_n}개라 참고용` : ` · 표본 ${best.sample_n}개`;
+  elem.innerHTML = `
+    <div>
+      <span class="best-label">가장 좋았던 구간</span>
+      <strong>${escapeHtml(best.name)}</strong>
+    </div>
+    <div class="best-numbers">
+      <span>평균 수익률 <strong class="${best.mean_return >= 0 ? "positive" : "negative"}">${pct(best.mean_return)}</strong></span>
+      <span>시장 대비 <strong class="${best.mean_abnormal_return >= 0 ? "positive" : "negative"}">${pct(best.mean_abnormal_return)}</strong></span>
+      <span class="text-muted">${escapeHtml(caution)}</span>
+    </div>
+  `;
+}
+
 function renderDetail(d) {
   const tickerLabel = d.ticker || "미매핑";
   document.title = `${d.company} (${tickerLabel}) - ${d.event_name} | Event Radar`;
@@ -86,7 +197,7 @@ function renderDetail(d) {
         <div><span class="text-muted">이벤트 예정일:</span> <strong style="color:var(--accent-blue);">${escapeHtml(formatEventDate(d))} (${escapeHtml(scheduleContext)})</strong></div>
         <div><span class="text-muted">확정 상태:</span> <span class="badge ${d.status === 'CONFIRMED' ? 'badge-confirmed' : 'badge-expected'}">${d.status}</span></div>
         <div>
-          <span class="text-muted">공식 출처:</span> 
+          <span class="text-muted">공식 출처:</span>
           ${d.source_url ? `<a href="${escapeHtml(d.source_url)}" target="_blank" rel="noopener noreferrer" class="row-link">${escapeHtml(d.source_name)} ↗</a>` : escapeHtml(d.source_name)}
         </div>
       </div>
@@ -112,17 +223,10 @@ function renderDetail(d) {
     `;
   }
 
-  const bs = d.backtest_summary || {};
-  const statsElem = document.getElementById("backtestStats");
-  if (statsElem) {
-    statsElem.innerHTML = `
-      <div class="stat-box"><div class="stat-val">${bs.sample_n || 0}건</div><div class="stat-label">과거 동일 이벤트 표본 (N)</div></div>
-      <div class="stat-box"><div class="stat-val ${(bs.mean_return || 0) >= 0 ? 'positive' : 'negative'}">${((bs.mean_return || 0) * 100).toFixed(1)}%</div><div class="stat-label">D+5 평균 수익률</div></div>
-      <div class="stat-box"><div class="stat-val ${(bs.mean_abnormal_return || 0) >= 0 ? 'positive' : 'negative'}">${((bs.mean_abnormal_return || 0) * 100).toFixed(1)}%</div><div class="stat-label">D+5 평균 초과수익률</div></div>
-      <div class="stat-box"><div class="stat-val ${((bs.win_rate || 0) >= 0.5) ? 'positive' : 'negative'}">${((bs.win_rate || 0) * 100).toFixed(0)}%</div><div class="stat-label">D+5 초과수익 승률</div></div>
-      <div class="stat-box"><div class="stat-val negative">-${((bs.max_drawdown || 0) * 100).toFixed(1)}%</div><div class="stat-label">표본 최대 낙폭 (MDD)</div></div>
-    `;
-  }
+  renderBacktestVerdict(d);
+  renderBacktestStats(d);
+  renderHistoricalPeers(d);
+  renderBestStrategy(d);
 
   if (d.event_curve && d.event_curve.length > 0) {
     renderEventCurveChart("curveChartCanvas", d.event_curve);
@@ -155,10 +259,10 @@ function renderDetail(d) {
         <tr>
           <td><strong>${escapeHtml(s.name)}</strong></td>
           <td>${s.sample_n}</td>
-          <td class="${s.mean_return >= 0 ? 'stat-val positive' : 'stat-val negative'}" style="font-size:0.9rem;">${(s.mean_return * 100).toFixed(1)}%</td>
-          <td class="${s.mean_abnormal_return >= 0 ? 'stat-val positive' : 'stat-val negative'}" style="font-size:0.9rem;">${(s.mean_abnormal_return * 100).toFixed(1)}%</td>
-          <td>${(s.win_rate * 100).toFixed(0)}%</td>
-          <td style="color:var(--accent-red); font-size:0.9rem;">-${(s.max_drawdown * 100).toFixed(1)}%</td>
+          <td class="${s.mean_return >= 0 ? 'stat-val positive' : 'stat-val negative'}" style="font-size:0.9rem;">${pct(s.mean_return)}</td>
+          <td class="${s.mean_abnormal_return >= 0 ? 'stat-val positive' : 'stat-val negative'}" style="font-size:0.9rem;">${pct(s.mean_abnormal_return)}</td>
+          <td>${pct(s.win_rate, 0)}</td>
+          <td style="color:var(--accent-red); font-size:0.9rem;">-${((s.max_drawdown || 0) * 100).toFixed(1)}%</td>
           <td><span class="badge" style="background:#334155;">${s.robustness_score}</span></td>
         </tr>
       `).join("");

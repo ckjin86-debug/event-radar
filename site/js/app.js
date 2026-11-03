@@ -22,6 +22,7 @@ async function initDashboard() {
     filterEngine = new EventFilter(events);
     renderTable(filterEngine.apply());
     setupEventListeners();
+    loadHistoricalLibrary();
   } catch (err) {
     console.error("Dashboard init error:", err);
     const tbody = document.getElementById("eventsTableBody");
@@ -29,6 +30,57 @@ async function initDashboard() {
       tbody.innerHTML = `<tr><td colspan="10" style="text-align:center; padding: 24px; color:#f87171;">데이터를 불러오는 중 오류가 발생했습니다: ${err.message}</td></tr>`;
     }
   }
+}
+
+async function loadHistoricalLibrary() {
+  const container = document.getElementById("historicalLibrary");
+  if (!container) return;
+
+  try {
+    const resp = await fetch("data/historical_events.json");
+    if (!resp.ok) throw new Error("historical_events.json not found");
+    const history = await resp.json();
+    renderHistoricalLibrary(history);
+  } catch (err) {
+    console.warn("Historical library error:", err);
+    container.innerHTML = `<div class="history-empty">과거 사례 데이터가 아직 생성되지 않았습니다.</div>`;
+  }
+}
+
+function renderHistoricalLibrary(history) {
+  const container = document.getElementById("historicalLibrary");
+  if (!container) return;
+
+  if (!history || history.length === 0) {
+    container.innerHTML = `<div class="history-empty">등록된 과거 사례가 없습니다.</div>`;
+    return;
+  }
+
+  container.innerHTML = history.map(item => {
+    const related_securities = item.related_securities || [];
+    const securitiesHtml = related_securities.length
+      ? related_securities.map(sec => `
+          <span class="history-security">
+            <code>${escapeHtml(sec.ticker || "-")}</code>
+            <span class="badge ${gradeClass(sec.relation_grade)}">${escapeHtml(sec.relation_grade)}</span>
+          </span>
+        `).join("")
+      : `<span class="text-muted">관련주 미매핑</span>`;
+
+    return `
+      <article class="history-card">
+        <div class="history-card-top">
+          <span class="history-date">${escapeHtml(item.event_date)}</span>
+          <span class="badge badge-country">${escapeHtml(item.country)}</span>
+          <span class="history-type">${escapeHtml(item.event_type)}</span>
+        </div>
+        <h3>${escapeHtml(item.event_name)}</h3>
+        <p>${escapeHtml(item.evidence_text || item.company || "")}</p>
+        <div class="history-securities">${securitiesHtml}</div>
+        ${item.source_url ? `<a href="${escapeHtml(item.source_url)}" target="_blank" rel="noopener noreferrer" class="row-link history-source">근거 출처 ↗</a>` : ""}
+      </article>
+    `;
+  }).join("");
 }
 
 function formatEventDate(ev) {
