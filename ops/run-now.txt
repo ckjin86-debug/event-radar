@@ -1,1 +1,1 @@
-2026-11-03T21:55:00+09:00 trie-quality-gated-news-live-validation
+2026-11-03T22:03:00+09:00 directness-gated-news-live-validation
