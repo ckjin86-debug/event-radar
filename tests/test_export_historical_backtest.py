@@ -7,7 +7,7 @@ from event_radar.export import export_site_data
 from event_radar.models import Event, EventSecurity
 
 
-def _event(event_id: str, when: date) -> Event:
+def _event(event_id: str, when: date, source_name: str = "TEST") -> Event:
     now = datetime(2026, 11, 3, 9, 0)
     return Event(
         event_id=event_id,
@@ -20,7 +20,7 @@ def _event(event_id: str, when: date) -> Event:
         event_date=when,
         status="CONFIRMED",
         source_kind="SECONDARY",
-        source_name="TEST",
+        source_name=source_name,
         first_seen_at=now,
         last_seen_at=now,
     )
@@ -44,13 +44,8 @@ def _return_rows(event_id: str, d5: float) -> list[dict]:
     ]
 
 
-def test_export_uses_prior_same_type_events_for_backtest(tmp_path):
-    events = [
-        _event("old-1", date(2024, 1, 10)),
-        _event("old-2", date(2025, 4, 20)),
-        _event("target", date(2026, 12, 18)),
-    ]
-    securities = {
+def _securities(events: list[Event]) -> dict[str, list[EventSecurity]]:
+    return {
         event.event_id: [
             EventSecurity(
                 event_id=event.event_id,
@@ -62,12 +57,20 @@ def test_export_uses_prior_same_type_events_for_backtest(tmp_path):
         ]
         for event in events
     }
+
+
+def test_export_uses_prior_same_type_events_for_backtest(tmp_path):
+    events = [
+        _event("old-1", date(2024, 1, 10)),
+        _event("old-2", date(2025, 4, 20)),
+        _event("target", date(2026, 12, 18)),
+    ]
     returns_df = pd.DataFrame(_return_rows("old-1", 0.10) + _return_rows("old-2", -0.02))
 
     export_site_data(
         events=events,
         revisions=[],
-        event_securities=securities,
+        event_securities=_securities(events),
         event_scores={},
         event_returns_df=returns_df,
         strategy_results={},
@@ -82,3 +85,31 @@ def test_export_uses_prior_same_type_events_for_backtest(tmp_path):
     assert target["backtest_summary"]["sample_n"] == 2
     assert target["backtest_summary"]["mean_return"] == 0.04
     assert target["event_curve"]
+
+
+def test_historical_seed_is_hidden_from_radar_but_used_as_backtest_peer(tmp_path):
+    events = [
+        _event("seed-old", date(2025, 4, 20), source_name="HISTORICAL_SEED"),
+        _event("target", date(2026, 12, 18)),
+    ]
+    returns_df = pd.DataFrame(_return_rows("seed-old", 0.07))
+
+    export_site_data(
+        events=events,
+        revisions=[],
+        event_securities=_securities(events),
+        event_scores={},
+        event_returns_df=returns_df,
+        strategy_results={},
+        backtest_summaries={},
+        output_dir=tmp_path,
+        now=datetime(2026, 11, 3, 10, 0),
+    )
+
+    dashboard = json.loads((tmp_path / "events.json").read_text(encoding="utf-8"))
+    details = json.loads((tmp_path / "event_details.json").read_text(encoding="utf-8"))
+
+    assert [row["event_id"] for row in dashboard] == ["target"]
+    assert "seed-old" not in details
+    assert details["target"]["backtest_summary"]["sample_n"] == 1
+    assert details["target"]["backtest_summary"]["mean_return"] == 0.07
