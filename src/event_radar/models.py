@@ -137,3 +137,8 @@ class EventSecurity(BaseModel):
     relation_score: int
     relation_type: str
     evidence_text: str = ""
+    evidence_source: str = ""
+    source_url: str = ""
+    relation_known_date: Optional[date] = None
+    ingest_mode: IngestMode = "AUTO"
+    from_entity: str = ""
