@@ -23,7 +23,19 @@ def resolve_related_securities(
 
     # A broad market proxy is only a fallback. Once a listed issuer is directly named,
     # use the issuer(s) as the Grade-A securities instead of the proxy index.
-    if primary_ticker and not (mentions and primary_ticker.startswith("^")):
+    # Company-specific NEWS_FUTURE rows without a listed issuer are not investable
+    # securities; only market-wide POLICY news may retain the index proxy.
+    suppress_news_proxy = (
+        event.source_name == "NEWS_FUTURE"
+        and primary_ticker.startswith("^")
+        and not mentions
+        and event.event_type != "POLICY"
+    )
+    if (
+        primary_ticker
+        and not suppress_news_proxy
+        and not (mentions and primary_ticker.startswith("^"))
+    ):
         results[primary_ticker] = EventSecurity(
             event_id=event.event_id,
             ticker=primary_ticker,
