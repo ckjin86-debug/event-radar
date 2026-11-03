@@ -168,6 +168,27 @@ th, td {
   white-space: nowrap;
 }
 
+/* Long article titles must not push dates/relations off desktop screens. */
+.radar-table { table-layout: fixed; min-width: 1100px; }
+.radar-table th, .radar-table td { padding: 12px 10px; }
+.radar-table th { white-space: normal; line-height: 1.5; }
+.radar-table th:nth-child(1) { width: 70px; }
+.radar-table th:nth-child(2) { width: 54px; }
+.radar-table th:nth-child(3) { width: 14%; }
+.radar-table th:nth-child(4) { width: 112px; }
+.radar-table th:nth-child(5) { width: 25%; }
+.radar-table th:nth-child(6) { width: 106px; }
+.radar-table th:nth-child(7) { width: 114px; }
+.radar-table th:nth-child(8) { width: 80px; }
+.radar-table th:nth-child(9) { width: 100px; }
+.radar-table th:nth-child(10) { width: 112px; }
+.radar-table td:nth-child(3), .radar-table td:nth-child(5) {
+  white-space: normal; overflow-wrap: anywhere; line-height: 1.6;
+}
+.listed-security { line-height: 1.7; }
+.listed-security small { color: var(--text-secondary); }
+.security-name { white-space: normal; overflow-wrap: anywhere; color: var(--text-secondary); font-size: 0.72rem; }
+
 th {
   background-color: #172236;
   color: var(--text-secondary);

@@ -11,6 +11,8 @@ from event_radar.scoring import ScoreInput, ScoreResult, calculate_event_score
 from event_radar.backtest.strategies import StrategyResult, evaluate_strategies
 from event_radar.backtest.metrics import BacktestSummary, summarize_event_group
 from event_radar.backtest.historical import build_historical_peer_frame
+from event_radar.collectors.news_future import extract_future_catalyst, is_news_digest
+from event_radar.entity_resolver import is_market_proxy
 
 
 PUBLIC_NEWS_RELATION_GRADES = {"A", "B", "THEME"}
@@ -108,11 +110,25 @@ def _is_public_news_event(
 ) -> bool:
     if ev.source_name != "NEWS_FUTURE":
         return True
+    if ev.ingest_mode == "AUTO" and (ev.needs_review or is_news_digest(ev.event_name)):
+        return False
+    if ev.ingest_mode == "AUTO" and ev.evidence_text and extract_future_catalyst(ev.evidence_text, ev.announced_at.date()) is None:
+        return False
     if not _news_window_is_publicly_actionable(ev, today):
         return False
     if _public_relation_rows(securities):
         return True
-    return ev.event_type in EVENT_FIRST_PUBLIC_TYPES and _event_first_entity_is_plausible(ev)
+    market_context = re.search(r"원전|원자력|반도체|전력|금리|관세|수출|에너지|경영권|주총|우선협상|대통령선거|전국동시지방선거|총선\s*(?:일정|예정)", ev.event_name)
+    return bool(market_context) and ev.event_type in EVENT_FIRST_PUBLIC_TYPES and _event_first_entity_is_plausible(ev)
+
+
+def _display_ticker(event: Event, securities: list[EventSecurity]) -> str:
+    if event.primary_ticker and not is_market_proxy(event.primary_ticker):
+        return event.primary_ticker
+    listed = _public_relation_rows(securities)
+    if listed:
+        return listed[0].ticker
+    return "" if event.event_type == "IPO_LISTING" else event.primary_ticker
 
 
 def _news_dedupe_key(ev: Event, securities: list[EventSecurity]) -> tuple[str, str, str, str]:
@@ -193,6 +209,7 @@ def _analyze_historical_peers(
     analysis_events: list[Event],
     event_securities: dict[str, list[EventSecurity]],
     event_returns_df: Any,
+    as_of: date | None = None,
 ) -> tuple[Any, BacktestSummary, list[StrategyResult], ScoreResult]:
     """Build one no-lookahead historical study and its score for an event."""
     securities = event_securities.get(event.event_id, [])
@@ -206,6 +223,7 @@ def _analyze_historical_peers(
             returns_df=event_returns_df,
             target_event=event,
             relation_grade=relation_grade,
+            as_of=as_of,
         )
         summary = summarize_event_group(peer_df, target_offset=5)
         strategies = evaluate_strategies(
@@ -265,6 +283,7 @@ def export_site_data(
             analysis_events=analysis_events,
             event_securities=event_securities,
             event_returns_df=event_returns_df,
+            as_of=today,
         )
         for ev in visible_events
     }
@@ -287,7 +306,9 @@ def export_site_data(
             "event_id": ev.event_id,
             "d_day": d_day,
             "country": ev.country,
-            "ticker": ev.primary_ticker,
+            "ticker": _display_ticker(ev, sec_list),
+            "primary_ticker": ev.primary_ticker,
+            "related_securities": _serialize_securities(sec_list),
             "company": ev.primary_company,
             "event_type": ev.event_type,
             "event_name": ev.event_name,
@@ -418,7 +439,8 @@ def export_site_data(
         details_map[ev_id] = {
             "event_id": ev_id,
             "country": ev.country,
-            "ticker": ev.primary_ticker,
+            "ticker": _display_ticker(ev, event_securities.get(ev_id, [])),
+            "primary_ticker": ev.primary_ticker,
             "company": ev.primary_company,
             "event_type": ev.event_type,
             "event_name": ev.event_name,

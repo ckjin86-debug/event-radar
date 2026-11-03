@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import re
+from datetime import date
 
 import pandas as pd
 
@@ -35,6 +36,7 @@ def build_historical_peer_frame(
     returns_df: pd.DataFrame,
     target_event: Event,
     relation_grade: str,
+    as_of: date | None = None,
 ) -> pd.DataFrame:
     """Return prior comparable event rows without look-ahead bias.
 
@@ -53,6 +55,10 @@ def build_historical_peer_frame(
         and ev.event_type == target_event.event_type
         and event_family_key(ev) == target_family
         and ev.event_date < target_event.event_date
+        and ev.date_precision == "EXACT_DATE"
+        and ev.status != "CANCELLED"
+        and not ev.needs_review
+        and (as_of is None or ev.event_date < as_of)
     }
     if not peer_ids:
         return returns_df.iloc[0:0].copy()
@@ -60,4 +66,18 @@ def build_historical_peer_frame(
     mask = returns_df["event_id"].isin(peer_ids)
     if "relation_grade" in returns_df.columns and relation_grade:
         mask &= returns_df["relation_grade"] == relation_grade
-    return returns_df.loc[mask].copy()
+    frame = returns_df.loc[mask].copy()
+    cutoff = min(target_event.event_date, as_of) if as_of else target_event.event_date
+    if "event_session_date" in frame.columns:
+        # New frames carry the actual quote date; legacy frames use business-day
+        # alignment until their cached prices are rebuilt.
+        sessions = pd.to_datetime(frame["event_session_date"], errors="coerce")
+        if "price_date" in frame.columns:
+            observed = pd.to_datetime(frame["price_date"], errors="coerce")
+        else:
+            observed = pd.Series(pd.NaT, index=frame.index, dtype="datetime64[ns]")
+        inferred = pd.Series([session + pd.offsets.BDay(int(offset)) if pd.notna(session) else pd.NaT
+                              for session, offset in zip(sessions, frame["offset"])], index=frame.index)
+        observed = observed.fillna(inferred)
+        frame = frame.loc[(observed < pd.Timestamp(cutoff)) & (sessions < pd.Timestamp(cutoff))]
+    return frame

@@ -66,7 +66,8 @@ class EventFilter {
 
       if (this.criteria.search) {
         const q = this.criteria.search.toLowerCase().trim();
-        const combined = `${ev.ticker} ${ev.company} ${ev.event_name} ${ev.event_type} ${ev.source_name}`.toLowerCase();
+        const related = (ev.related_securities || []).map(s => `${s.ticker || ""} ${s.from_entity || ""} ${s.evidence_text || ""}`).join(" ");
+        const combined = `${ev.ticker} ${ev.company} ${ev.event_name} ${ev.event_type} ${ev.source_name} ${related}`.toLowerCase();
         if (!combined.includes(q)) return false;
       }
 

@@ -132,7 +132,7 @@ function renderTable(events) {
   tbody.innerHTML = events.map(ev => {
     let ddayClass = "badge-dday";
     const periodLabel = periodBadgeText(ev);
-    let ddayText = periodLabel || `D${ev.d_day >= 0 ? "+" + ev.d_day : ev.d_day}`;
+    let ddayText = periodLabel || `D${ev.d_day > 0 ? "-" + ev.d_day : "+" + Math.abs(ev.d_day)}`;
 
     if (!periodLabel) {
       if (ev.d_day === 0) {
@@ -148,13 +148,15 @@ function renderTable(events) {
     const statusClass = ev.status === "CONFIRMED" ? "badge-confirmed" : "badge-expected";
     const score = Math.max(0, Math.min(100, ev.event_score || 0));
     const tickerLabel = ev.ticker || "미매핑";
+    const related = (ev.related_securities || []).filter(s => s.ticker);
+    const tickersHtml = related.length ? related.map(s => `<div class="listed-security"><code>${escapeHtml(s.ticker)}</code> <small>${escapeHtml(s.relation_grade)}</small>${s.from_entity ? `<div class="security-name">${escapeHtml(s.from_entity)}</div>` : ""}</div>`).join("") : `<code>${escapeHtml(tickerLabel)}</code>`;
 
     return `
       <tr>
         <td><span class="badge ${ddayClass}">${ddayText}</span></td>
         <td><span class="badge badge-country">${ev.country}</span></td>
         <td><strong>${escapeHtml(ev.company)}</strong></td>
-        <td><code>${escapeHtml(tickerLabel)}</code></td>
+        <td>${tickersHtml}</td>
         <td><a href="event.html?id=${encodeURIComponent(ev.event_id)}" class="row-link">${escapeHtml(ev.event_name)}</a></td>
         <td>${escapeHtml(formatEventDate(ev))}</td>
         <td><span class="badge ${gradeClass(ev.relation_grade)}">${escapeHtml(ev.relation_grade)} (${ev.relation_score})</span></td>

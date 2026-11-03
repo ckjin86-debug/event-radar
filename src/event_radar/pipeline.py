@@ -27,12 +27,14 @@ from event_radar.backtest.strategies import evaluate_strategies, StrategyResult
 from event_radar.scoring import ScoreInput, ScoreResult, calculate_event_score
 from event_radar.export import export_site_data
 from event_radar.collectors.base import Collector
+from event_radar.collectors.news_future import extract_future_catalyst
+from event_radar.revisions import detect_revisions
 
 
 RETURN_COLUMNS = [
     "event_id", "ticker", "relation_grade", "event_session_date", "offset",
     "price", "return_from_d0", "benchmark_return", "abnormal_return",
-    "volume_ratio_20d",
+    "volume_ratio_20d", "price_date",
 ]
 
 BENCHMARK_BY_COUNTRY = {
@@ -223,6 +225,11 @@ def resolve_event_stock_rows(
     rows = merge_event_securities(rows, registry.resolve_mentions(event))
     rows = merge_event_securities(rows, ipo_enricher.enrich(event, registry, as_of=as_of))
     rows = merge_event_securities(rows, resolve_theme_securities(event, theme_mappings))
+    if event.event_type == "IPO_LISTING":
+        rows = [row for row in rows if row.relation_grade != "PROXY"]
+        if not rows:
+            rows = [EventSecurity(event_id=event.event_id, ticker="", relation_grade="UNMAPPED", relation_score=0,
+                relation_type="UNMAPPED", evidence_text="IPO 종목코드 또는 검증된 상장 관련주 미확인")]
     return rows
 
 
@@ -308,6 +315,23 @@ def run_pipeline(
 
     all_relations = apply_manual_relations(existing_relations, manual_input.relations)
 
+    # Repair old automatic news dates with the same parser used for new items.
+    # Preserve identity/history and manual overrides; rejected evidence stays in
+    # canonical storage for inspection but cannot reappear on the public radar.
+    for index, ev in enumerate(current_events):
+        if ev.source_name != "NEWS_FUTURE" or ev.ingest_mode != "AUTO" or not ev.evidence_text:
+            continue
+        candidate = extract_future_catalyst(ev.evidence_text, ev.announced_at.date())
+        if candidate is None:
+            current_events[index] = ev.model_copy(update={"needs_review": True})
+            continue
+        window, event_type = candidate
+        repaired = ev.model_copy(update={"event_date": window.start, "window_start": window.start,
+            "window_end": window.end, "date_precision": window.precision, "event_type": event_type, "needs_review": False})
+        all_revisions.extend(detect_revisions(ev, repaired, all_revisions, now=now,
+            change_reason="뉴스 원문 날짜의 연도·미래 촉매 연결 재검증"))
+        current_events[index] = repaired
+
     # 6. Save updated canonical data
     save_canonical_events(current_events, events_csv)
     save_canonical_revisions(all_revisions, revisions_csv)
@@ -384,6 +408,8 @@ def run_pipeline(
         price_provider = _resolve_price_provider(config)
 
         for ev in current_events:
+            if ev.date_precision != "EXACT_DATE" or ev.status == "CANCELLED" or ev.needs_review:
+                continue
             trading_days = calendar_us if ev.country == "US" else calendar_kr
             session_date, _ = resolve_event_session(ev.event_date, ev.event_time_context, trading_days)
 

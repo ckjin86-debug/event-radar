@@ -75,6 +75,8 @@ def _matches_event(mapping: ThemeMapping, event: Event) -> bool:
         return False
     if not mapping.event_pattern:
         return False
+    if mapping.relation_type == "OFFICIAL_CONSORTIUM" and not re.search(r"원전|원자력|nuclear|dukovany|barakah", f"{event.event_name} {event.evidence_text}", re.IGNORECASE):
+        return False
 
     haystack = " ".join(
         part
@@ -112,6 +114,10 @@ def resolve_theme_securities(event: Event, mappings: list[ThemeMapping]) -> list
             evidence_text=(
                 f"{mapping.company}: {mapping.evidence_text}" if mapping.company else mapping.evidence_text
             ),
+            evidence_source="THEME_MAPPING",
+            source_url=mapping.source_url,
+            relation_known_date=mapping.valid_from,
+            from_entity=mapping.company,
         )
         current = by_ticker.get(mapping.ticker)
         if current is None:

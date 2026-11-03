@@ -94,6 +94,36 @@ def test_historical_peers_respect_relation_grade():
     assert set(peers["event_id"].unique()) == {"old-b"}
 
 
+def test_period_only_and_cancelled_events_are_not_exact_date_peers():
+    broad = _event("broad", date(2025, 1, 1))
+    broad.date_precision = "MONTH"
+    cancelled = _event("cancelled", date(2025, 2, 1))
+    cancelled.status = "CANCELLED"
+    target = _event("target", date(2026, 12, 1))
+    frame = build_historical_peer_frame([broad, cancelled, target], pd.DataFrame(_rows('broad') + _rows('cancelled')), target, 'A')
+    assert frame.empty
+
+
+def test_peer_outcomes_after_target_cutoff_are_not_used():
+    old = _event('old', date(2026, 11, 2))
+    target = _event('target', date(2026, 11, 3))
+    rows = _rows('old')
+    for row in rows:
+        row['event_session_date'] = '2026-11-02'
+    frame = build_historical_peer_frame([old, target], pd.DataFrame(rows), target, 'A')
+    assert 5 not in frame['offset'].tolist()
+
+
+def test_peer_baseline_on_target_day_cannot_leak_into_prior_offsets():
+    old = _event('old', date(2026, 11, 1))
+    target = _event('target', date(2026, 11, 2))
+    rows = _rows('old')
+    for row in rows:
+        row['event_session_date'] = '2026-11-02'
+    frame = build_historical_peer_frame([old, target], pd.DataFrame(rows), target, 'A')
+    assert frame.empty
+
+
 def test_nuclear_tender_does_not_mix_with_other_tenders_or_other_countries():
     events = [
         _event("old-nuclear", date(2024, 1, 10), event_name="체코 원전 입찰 결과"),

@@ -82,7 +82,7 @@ function renderBacktestVerdict(d) {
 
   if (peerN === 0) {
     elem.className = "backtest-verdict neutral";
-    elem.innerHTML = `<strong>비교 가능한 과거 사례가 아직 없습니다.</strong><span>동일 조건의 과거 이벤트가 쌓이면 자동으로 비교됩니다.</span>`;
+    elem.innerHTML = `<strong>비교 가능한 과거 사례가 아직 없습니다.</strong><span>동일 국가·유형·관계등급의 정확한 날짜와 실제 주가가 있는 사례만 비교합니다. 데이터 없음은 수익률 0%를 뜻하지 않습니다.</span>`;
     return;
   }
 
@@ -181,8 +181,8 @@ function renderBestStrategy(d) {
 
 function renderDetail(d) {
   const tickerLabel = d.ticker || "미매핑";
-  document.title = `${d.company} (${tickerLabel}) - ${d.event_name} | Event Radar`;
-  document.getElementById("eventTitle").textContent = `${d.company} (${tickerLabel}) - ${d.event_name}`;
+  document.title = `${d.event_name} | Event Radar`;
+  document.getElementById("eventTitle").textContent = d.event_name;
 
   const basicInfoElem = document.getElementById("basicInfo");
   if (basicInfoElem) {
@@ -191,13 +191,13 @@ function renderDetail(d) {
       : d.date_precision;
     basicInfoElem.innerHTML = `
       <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
-        <div><span class="text-muted">국가 / 티커:</span> <strong>${d.country} / ${escapeHtml(tickerLabel)}</strong></div>
+        <div><span class="text-muted">국가 / 관련 티커:</span> <strong>${d.country} / ${escapeHtml(tickerLabel)}</strong></div>
         <div><span class="text-muted">이벤트 유형:</span> <strong>${d.event_type}</strong></div>
         <div><span class="text-muted">최초 발표일:</span> <strong>${d.announced_at ? d.announced_at.slice(0, 10) : "-"}</strong></div>
         <div><span class="text-muted">이벤트 예정일:</span> <strong style="color:var(--accent-blue);">${escapeHtml(formatEventDate(d))} (${escapeHtml(scheduleContext)})</strong></div>
         <div><span class="text-muted">확정 상태:</span> <span class="badge ${d.status === 'CONFIRMED' ? 'badge-confirmed' : 'badge-expected'}">${d.status}</span></div>
         <div>
-          <span class="text-muted">공식 출처:</span>
+          <span class="text-muted">이벤트 출처:</span>
           ${d.source_url ? `<a href="${escapeHtml(d.source_url)}" target="_blank" rel="noopener noreferrer" class="row-link">${escapeHtml(d.source_name)} ↗</a>` : escapeHtml(d.source_name)}
         </div>
       </div>
@@ -259,11 +259,11 @@ function renderDetail(d) {
         <tr>
           <td><strong>${escapeHtml(s.name)}</strong></td>
           <td>${s.sample_n}</td>
-          <td class="${s.mean_return >= 0 ? 'stat-val positive' : 'stat-val negative'}" style="font-size:0.9rem;">${pct(s.mean_return)}</td>
-          <td class="${s.mean_abnormal_return >= 0 ? 'stat-val positive' : 'stat-val negative'}" style="font-size:0.9rem;">${pct(s.mean_abnormal_return)}</td>
-          <td>${pct(s.win_rate, 0)}</td>
-          <td style="color:var(--accent-red); font-size:0.9rem;">-${((s.max_drawdown || 0) * 100).toFixed(1)}%</td>
-          <td><span class="badge" style="background:#334155;">${s.robustness_score}</span></td>
+          <td class="${s.sample_n ? (s.mean_return >= 0 ? 'stat-val positive' : 'stat-val negative') : 'muted-value'}" style="font-size:0.9rem;">${s.sample_n ? pct(s.mean_return) : '데이터 없음'}</td>
+          <td class="${s.sample_n ? (s.mean_abnormal_return >= 0 ? 'stat-val positive' : 'stat-val negative') : 'muted-value'}" style="font-size:0.9rem;">${s.sample_n ? pct(s.mean_abnormal_return) : '데이터 없음'}</td>
+          <td>${s.sample_n ? pct(s.win_rate, 0) : '—'}</td>
+          <td style="color:var(--accent-red); font-size:0.9rem;">${s.sample_n ? '-' + ((s.max_drawdown || 0) * 100).toFixed(1) + '%' : '—'}</td>
+          <td><span class="badge" style="background:#334155;">${s.sample_n ? s.robustness_score : '—'}</span></td>
         </tr>
       `).join("");
     }

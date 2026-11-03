@@ -100,35 +100,40 @@ def evaluate_strategies(
     if "relation_grade" in df.columns and relation_grade != "ALL":
         df = df[df["relation_grade"] == relation_grade]
 
-    # Pre-index by (event_id, offset)
-    indexed = df.set_index(["event_id", "offset"])
-
-    events = df["event_id"].unique()
+    # Each security is an independent price series within an event.
+    sample_columns = ["event_id", "ticker"] if "ticker" in df.columns else ["event_id"]
+    samples = [frame.set_index("offset") for _, frame in df.groupby(sample_columns)]
 
     for entry, exit_off in PREDEFINED_STRATEGIES:
         strat_returns = []
         strat_abnormal = []
+        strat_drawdowns = []
 
-        for ev_id in events:
+        for indexed in samples:
             try:
-                row_in = indexed.loc[(ev_id, entry)]
-                row_out = indexed.loc[(ev_id, exit_off)]
+                row_in = indexed.loc[entry]
+                row_out = indexed.loc[exit_off]
             except KeyError:
                 continue
 
             p_in = float(row_in["price"])
             p_out = float(row_out["price"])
-            if p_in <= 0:
+            if not np.isfinite(p_in) or not np.isfinite(p_out) or p_in <= 0 or p_out <= 0:
                 continue
 
             ret = (p_out - p_in) / p_in
             bm_ret_in = float(row_in["benchmark_return"])
             bm_ret_out = float(row_out["benchmark_return"])
-            bm_period_ret = bm_ret_out - bm_ret_in
+            if not np.isfinite(bm_ret_in) or not np.isfinite(bm_ret_out) or bm_ret_in <= -1:
+                continue
+            bm_period_ret = (1 + bm_ret_out) / (1 + bm_ret_in) - 1
             abnormal_ret = ret - bm_period_ret
 
             strat_returns.append(ret)
             strat_abnormal.append(abnormal_ret)
+            path = indexed.loc[(indexed.index >= entry) & (indexed.index <= exit_off), "price"].sort_index().astype(float)
+            path = path[np.isfinite(path) & (path > 0)]
+            strat_drawdowns.append(float((1 - path / path.cummax()).max()))
 
         n = len(strat_returns)
         if n == 0:
@@ -161,7 +166,7 @@ def evaluate_strategies(
                 median_abnormal_return=round(float(ab_series.median()), 4),
                 stdev=round(float(ret_series.std(ddof=1)) if n > 1 else 0.0, 4),
                 max_loss=round(float(ret_series.min()), 4),
-                max_drawdown=round(float(abs(min(0.0, ret_series.min()))), 4),
+                max_drawdown=round(max(strat_drawdowns), 4),
             )
         )
 

@@ -111,3 +111,11 @@ def test_market_proxy_classifier_is_explicit():
     for ticker in ("^KS11", "^KQ11", "^GSPC", "XBI"):
         assert is_market_proxy(ticker)
     assert not is_market_proxy("272210")
+
+
+def test_ipo_underwriter_mention_is_not_promoted_to_direct_issuer():
+    event = _event('테스트IPO 상장예정일', '테스트IPO')
+    event.event_type = 'IPO_LISTING'
+    event.source_name = 'KIND_IPO'
+    event.evidence_text = '주관사: 대신증권'
+    assert ListedCompanyRegistry({'대신증권':'003540'}).resolve_mentions(event) == []

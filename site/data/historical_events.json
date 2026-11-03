@@ -39,11 +39,11 @@
         "relation_score": 90,
         "relation_type": "OFFICIAL_CONSORTIUM",
         "evidence_text": "두산에너빌리티: 체코 원전 Team Korea 공식 참여사",
-        "evidence_source": "",
-        "source_url": "",
-        "relation_known_date": "",
+        "evidence_source": "THEME_MAPPING",
+        "source_url": "https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=7508&type=O",
+        "relation_known_date": "2024-01-01",
         "ingest_mode": "AUTO",
-        "from_entity": ""
+        "from_entity": "두산에너빌리티"
       },
       {
         "ticker": "052690",
@@ -51,11 +51,11 @@
         "relation_score": 88,
         "relation_type": "OFFICIAL_CONSORTIUM",
         "evidence_text": "한국전력기술: 체코 원전 Team Korea 설계 참여사",
-        "evidence_source": "",
-        "source_url": "",
-        "relation_known_date": "",
+        "evidence_source": "THEME_MAPPING",
+        "source_url": "https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=7508&type=O",
+        "relation_known_date": "2024-01-01",
         "ingest_mode": "AUTO",
-        "from_entity": ""
+        "from_entity": "한국전력기술"
       },
       {
         "ticker": "047040",
@@ -63,11 +63,11 @@
         "relation_score": 86,
         "relation_type": "OFFICIAL_CONSORTIUM",
         "evidence_text": "대우건설: 체코 원전 Team Korea 건설 참여사",
-        "evidence_source": "",
-        "source_url": "",
-        "relation_known_date": "",
+        "evidence_source": "THEME_MAPPING",
+        "source_url": "https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=7508&type=O",
+        "relation_known_date": "2024-01-01",
         "ingest_mode": "AUTO",
-        "from_entity": ""
+        "from_entity": "대우건설"
       },
       {
         "ticker": "051600",
@@ -75,11 +75,11 @@
         "relation_score": 84,
         "relation_type": "OFFICIAL_CONSORTIUM",
         "evidence_text": "한전KPS: 체코 원전 Team Korea 시운전 유지보수 참여사",
-        "evidence_source": "",
-        "source_url": "",
-        "relation_known_date": "",
+        "evidence_source": "THEME_MAPPING",
+        "source_url": "https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=7508&type=O",
+        "relation_known_date": "2024-01-01",
         "ingest_mode": "AUTO",
-        "from_entity": ""
+        "from_entity": "한전KPS"
       }
     ]
   },
@@ -99,11 +99,11 @@
         "relation_score": 35,
         "relation_type": "POLITICAL_THEME",
         "evidence_text": "형지엘리트: 조기 대선 국면에서 이재명 테마주로 투자경고 종목에 포함",
-        "evidence_source": "",
-        "source_url": "",
-        "relation_known_date": "",
+        "evidence_source": "THEME_MAPPING",
+        "source_url": "https://www.yna.co.kr/amp/view/AKR20250503040000008",
+        "relation_known_date": "2025-04-04",
         "ingest_mode": "AUTO",
-        "from_entity": ""
+        "from_entity": "형지엘리트"
       },
       {
         "ticker": "042940",
@@ -111,11 +111,11 @@
         "relation_score": 35,
         "relation_type": "POLITICAL_THEME",
         "evidence_text": "상지건설: 조기 대선 국면에서 이재명 테마주로 투자경고 종목에 포함",
-        "evidence_source": "",
-        "source_url": "",
-        "relation_known_date": "",
+        "evidence_source": "THEME_MAPPING",
+        "source_url": "https://www.yna.co.kr/amp/view/AKR20250503040000008",
+        "relation_known_date": "2025-04-04",
         "ingest_mode": "AUTO",
-        "from_entity": ""
+        "from_entity": "상지건설"
       },
       {
         "ticker": "308100",
@@ -123,11 +123,11 @@
         "relation_score": 35,
         "relation_type": "POLITICAL_THEME",
         "evidence_text": "형지글로벌: 조기 대선 국면에서 이재명 테마주로 투자경고 종목에 포함",
-        "evidence_source": "",
-        "source_url": "",
-        "relation_known_date": "",
+        "evidence_source": "THEME_MAPPING",
+        "source_url": "https://www.yna.co.kr/amp/view/AKR20250503040000008",
+        "relation_known_date": "2025-04-04",
         "ingest_mode": "AUTO",
-        "from_entity": ""
+        "from_entity": "형지글로벌"
       },
       {
         "ticker": "010770",
@@ -135,11 +135,11 @@
         "relation_score": 35,
         "relation_type": "POLITICAL_THEME",
         "evidence_text": "평화홀딩스: 조기 대선 국면에서 김문수 테마주로 투자경고 종목에 포함",
-        "evidence_source": "",
-        "source_url": "",
-        "relation_known_date": "",
+        "evidence_source": "THEME_MAPPING",
+        "source_url": "https://www.yna.co.kr/amp/view/AKR20250503040000008",
+        "relation_known_date": "2025-04-04",
         "ingest_mode": "AUTO",
-        "from_entity": ""
+        "from_entity": "평화홀딩스"
       }
     ]
   },
@@ -183,11 +183,11 @@
         "relation_score": 90,
         "relation_type": "OFFICIAL_CONSORTIUM",
         "evidence_text": "두산에너빌리티: 체코 원전 Team Korea 공식 참여사",
-        "evidence_source": "",
-        "source_url": "",
-        "relation_known_date": "",
+        "evidence_source": "THEME_MAPPING",
+        "source_url": "https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=7508&type=O",
+        "relation_known_date": "2024-01-01",
         "ingest_mode": "AUTO",
-        "from_entity": ""
+        "from_entity": "두산에너빌리티"
       },
       {
         "ticker": "052690",
@@ -195,11 +195,11 @@
         "relation_score": 88,
         "relation_type": "OFFICIAL_CONSORTIUM",
         "evidence_text": "한국전력기술: 체코 원전 Team Korea 설계 참여사",
-        "evidence_source": "",
-        "source_url": "",
-        "relation_known_date": "",
+        "evidence_source": "THEME_MAPPING",
+        "source_url": "https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=7508&type=O",
+        "relation_known_date": "2024-01-01",
         "ingest_mode": "AUTO",
-        "from_entity": ""
+        "from_entity": "한국전력기술"
       },
       {
         "ticker": "047040",
@@ -207,11 +207,11 @@
         "relation_score": 86,
         "relation_type": "OFFICIAL_CONSORTIUM",
         "evidence_text": "대우건설: 체코 원전 Team Korea 건설 참여사",
-        "evidence_source": "",
-        "source_url": "",
-        "relation_known_date": "",
+        "evidence_source": "THEME_MAPPING",
+        "source_url": "https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=7508&type=O",
+        "relation_known_date": "2024-01-01",
         "ingest_mode": "AUTO",
-        "from_entity": ""
+        "from_entity": "대우건설"
       },
       {
         "ticker": "051600",
@@ -219,11 +219,11 @@
         "relation_score": 84,
         "relation_type": "OFFICIAL_CONSORTIUM",
         "evidence_text": "한전KPS: 체코 원전 Team Korea 시운전 유지보수 참여사",
-        "evidence_source": "",
-        "source_url": "",
-        "relation_known_date": "",
+        "evidence_source": "THEME_MAPPING",
+        "source_url": "https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=7508&type=O",
+        "relation_known_date": "2024-01-01",
         "ingest_mode": "AUTO",
-        "from_entity": ""
+        "from_entity": "한전KPS"
       }
     ]
   },
@@ -243,11 +243,11 @@
         "relation_score": 32,
         "relation_type": "POLITICAL_THEME",
         "evidence_text": "대상홀딩스: 언론에서 한동훈 테마주로 묶였으나 회사는 사업 관련성이 없다고 공시",
-        "evidence_source": "",
-        "source_url": "",
-        "relation_known_date": "",
+        "evidence_source": "THEME_MAPPING",
+        "source_url": "https://www.yna.co.kr/view/AKR20231214084751002",
+        "relation_known_date": "2023-11-26",
         "ingest_mode": "AUTO",
-        "from_entity": ""
+        "from_entity": "대상홀딩스"
       }
     ]
   },
@@ -315,11 +315,11 @@
         "relation_score": 38,
         "relation_type": "POLITICAL_THEME",
         "evidence_text": "NE능률: 언론에서 윤석열 정치 테마주로 분류됐으나 기업가치와 직접 관련은 없음",
-        "evidence_source": "",
-        "source_url": "",
-        "relation_known_date": "",
+        "evidence_source": "THEME_MAPPING",
+        "source_url": "https://www.yna.co.kr/view/AKR20231214084751002",
+        "relation_known_date": "2021-01-01",
         "ingest_mode": "AUTO",
-        "from_entity": ""
+        "from_entity": "NE능률"
       },
       {
         "ticker": "004830",
@@ -327,11 +327,11 @@
         "relation_score": 38,
         "relation_type": "POLITICAL_THEME",
         "evidence_text": "덕성: 언론에서 윤석열 정치 테마주로 거론",
-        "evidence_source": "",
-        "source_url": "",
-        "relation_known_date": "",
+        "evidence_source": "THEME_MAPPING",
+        "source_url": "https://www.yna.co.kr/view/AKR20220303050551002",
+        "relation_known_date": "2021-01-01",
         "ingest_mode": "AUTO",
-        "from_entity": ""
+        "from_entity": "덕성"
       },
       {
         "ticker": "015020",
@@ -339,11 +339,11 @@
         "relation_score": 38,
         "relation_type": "POLITICAL_THEME",
         "evidence_text": "이스타코: 언론에서 이재명 정책 테마주로 분류됐으나 직접 사업 연관은 제한적",
-        "evidence_source": "",
-        "source_url": "",
-        "relation_known_date": "",
+        "evidence_source": "THEME_MAPPING",
+        "source_url": "https://www.yna.co.kr/view/AKR20231214084751002",
+        "relation_known_date": "2021-01-01",
         "ingest_mode": "AUTO",
-        "from_entity": ""
+        "from_entity": "이스타코"
       }
     ]
   },
@@ -387,11 +387,11 @@
         "relation_score": 92,
         "relation_type": "OFFICIAL_CONSORTIUM",
         "evidence_text": "한국전력: UAE Barakah 원전 수주 컨소시엄 주도사",
-        "evidence_source": "",
-        "source_url": "",
-        "relation_known_date": "",
+        "evidence_source": "THEME_MAPPING",
+        "source_url": "https://en.yna.co.kr/view/AEN20091227001800320",
+        "relation_known_date": "2009-01-01",
         "ingest_mode": "AUTO",
-        "from_entity": ""
+        "from_entity": "한국전력"
       }
     ]
   }

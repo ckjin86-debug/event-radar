@@ -146,6 +146,30 @@ def test_generic_unmapped_news_noise_is_hidden(tmp_path):
     assert rows == []
 
 
+def test_historical_court_news_is_hidden_even_with_a_plausible_entity(tmp_path):
+    event = _news('past-court', event_type='COURT_RULING', company='세무사회',
+        event_name='세무사회 2024년 10월 25일 판결 근거로 조례 개정 촉구',
+        event_date=date(2027, 10, 25), precision='EXACT_DATE')
+    rows, _ = _visible(tmp_path, [event], {})
+    assert rows == []
+
+
+def test_incidental_court_story_does_not_become_a_market_event(tmp_path):
+    event = _news('crime', event_type='COURT_RULING', company='피고인 변호사',
+        event_name='피고인 변호사 12월 18일 폭행 혐의 선고 예정',
+        event_date=date(2026, 12, 18), precision='EXACT_DATE')
+    rows, _ = _visible(tmp_path, [event], {})
+    assert rows == []
+
+
+def test_explicit_manual_schedule_survives_old_news_evidence(tmp_path):
+    event = _news('manual', event_type='CAPEX', company='LG화학',
+        event_name='LG화학 신규 공장 일정 수동 확인', event_date=date(2026, 12, 18), precision='EXACT_DATE')
+    event.ingest_mode = 'AUTO+MANUAL'
+    rows, _ = _visible(tmp_path, [event], {event.event_id: [_sec(event.event_id, '051910')]})
+    assert len(rows) == 1
+
+
 def test_duplicate_news_for_same_security_event_and_window_collapses_to_one(tmp_path):
     first = _news("dup-1", company="포스코퓨처엠", event_name="포스코퓨처엠 내년 7월 공급계약")
     second = _news("dup-2", company="포스코퓨처엠-현대차그룹", event_name="포스코퓨처엠 현대차그룹 내년 7월 공급계약")

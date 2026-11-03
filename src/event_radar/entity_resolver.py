@@ -225,6 +225,12 @@ class ListedCompanyRegistry:
         text = " ".join(
             part for part in (event.primary_company, event.event_name, event.evidence_text) if part
         )
+        mentions = self.mentioned_companies(text)
+        if event.event_type == "IPO_LISTING":
+            # KIND includes brokers/underwriters in the listing row. Their name
+            # alone is not proof that they are the company being listed.
+            ticker = self.ticker_for_company(event.primary_company)
+            mentions = [(event.primary_company, ticker)] if ticker else []
         return [
             EventSecurity(
                 event_id=event.event_id,
@@ -233,6 +239,10 @@ class ListedCompanyRegistry:
                 relation_score=100,
                 relation_type="DIRECT_MENTION",
                 evidence_text=f"이벤트 원문에 상장사명 명시: {company}",
+                evidence_source=event.source_name,
+                source_url=event.source_url,
+                relation_known_date=event.announced_at.date(),
+                from_entity=company,
             )
-            for company, ticker in self.mentioned_companies(text)
+            for company, ticker in mentions
         ]

@@ -41,18 +41,10 @@ def calculate_event_window_returns(
     if exact_match:
         d0_idx = exact_match[0]
     else:
-        # Find closest date
-        future_candidates = stk.index[stk["date"] > event_session_date].tolist()
-        if future_candidates:
-            d0_idx = future_candidates[0]
-        else:
-            past_candidates = stk.index[stk["date"] <= event_session_date].tolist()
-            if not past_candidates:
-                return pd.DataFrame()
-            d0_idx = past_candidates[-1]
+        return pd.DataFrame()
 
     d0_stock_price = float(stk.iloc[d0_idx].get("adj_close", stk.iloc[d0_idx]["close"]))
-    if d0_stock_price <= 0:
+    if not np.isfinite(d0_stock_price) or d0_stock_price <= 0:
         return pd.DataFrame()
 
     # Benchmark D0 price
@@ -60,10 +52,9 @@ def calculate_event_window_returns(
     if not bm_d0_matches.empty:
         bm_d0_price = float(bm_d0_matches.iloc[0].get("adj_close", bm_d0_matches.iloc[0]["close"]))
     else:
-        # Fallback closest benchmark
-        bm_d0_price = float(bm.iloc[-1].get("adj_close", bm.iloc[-1]["close"]))
-    if bm_d0_price <= 0:
-        bm_d0_price = 1.0
+        return pd.DataFrame()
+    if not np.isfinite(bm_d0_price) or bm_d0_price <= 0:
+        return pd.DataFrame()
 
     bm_price_map = dict(zip(
         bm["date"],
@@ -82,7 +73,9 @@ def calculate_event_window_returns(
             ret = (price - d0_stock_price) / d0_stock_price
 
             # Benchmark return from D0
-            bm_price = bm_price_map.get(t_date, bm_d0_price)
+            bm_price = bm_price_map.get(t_date)
+            if bm_price is None or not np.isfinite(bm_price) or bm_price <= 0 or not np.isfinite(price) or price <= 0:
+                continue
             bm_ret = (bm_price - bm_d0_price) / bm_d0_price
 
             abnormal_ret = ret - bm_ret
@@ -100,6 +93,7 @@ def calculate_event_window_returns(
                 "ticker": ticker,
                 "relation_grade": relation_grade,
                 "event_session_date": str(event_session_date),
+                "price_date": str(t_date),
                 "offset": offset,
                 "price": round(price, 4),
                 "return_from_d0": round(ret, 6),

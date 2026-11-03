@@ -111,3 +111,9 @@ def test_market_proxy_remains_proxy_not_direct_candidate():
     assert rows[0].ticker == "^GSPC"
     assert rows[0].relation_grade == "PROXY"
     assert rows[0].relation_score == 0
+
+
+def test_legacy_ipo_index_is_not_listed_as_the_ipo_stock():
+    event = _event(event_type='IPO_LISTING', ticker='^KQ11', source_name='KIND_IPO')
+    rows = resolve_event_stock_rows(event, [], [], ListedCompanyRegistry({}), FakeIpoEnricher(), datetime(2026, 11, 3))
+    assert all(row.ticker != '^KQ11' for row in rows)

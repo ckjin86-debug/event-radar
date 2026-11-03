@@ -77,7 +77,7 @@ BROAD_WINDOW_EVENT_TYPES = {
 MARKET_WIDE_EVENT_TYPES = {"POLICY", "COURT_RULING", "TENDER", "ELECTION"}
 
 EVENT_PATTERNS: dict[str, str] = {
-    "PLANT_OPERATION": r"상업\s*가동|공장.{0,12}가동|라인.{0,12}가동|생산.{0,8}가동",
+    "PLANT_OPERATION": r"(?:상업\s*가동|공장.{0,12}가동|라인.{0,12}가동|생산.{0,8}가동)(?!\s*(?:률|율|물량))",
     "APPROVAL": r"FDA.{0,12}(?:승인|허가)|승인\s*(?:예정|결정|심사)|허가\s*(?:예정|결정|심사)",
     "PRODUCT_LAUNCH": (
         r"(?:신제품|신작|신규\s*(?:제품|서비스|플랫폼)).{0,40}(?:출시|공개)"
@@ -131,91 +131,82 @@ def parse_future_window(text: str, reference_date: date) -> Optional[FutureWindo
     """Parse a Korean future-time expression into a bounded date window."""
     normalized = html.unescape(re.sub(r"<[^>]+>", " ", text))
 
-    m = re.search(r"내년\s*([1-4])\s*분기", normalized)
-    if m:
-        quarter = int(m.group(1))
-        year = reference_date.year + 1
-        start_month = (quarter - 1) * 3 + 1
-        start = date(year, start_month, 1)
-        end_month = start_month + 2
-        end = date(year, end_month, calendar.monthrange(year, end_month)[1])
-        return FutureWindow("QUARTER", start, end, m.group(0))
-
-    m = re.search(r"(?<!\d)(1[0-2]|0?[1-9])\s*월\s*(3[01]|[12]?\d)\s*일", normalized)
-    if m:
-        month = int(m.group(1))
-        day = int(m.group(2))
+    # Match the complete expression, including its year/relative context. A past
+    # month is historical evidence, never an implicit appointment for next year.
+    pattern = re.compile(
+        r"(?P<context>20\d{2}\s*년|내년|올해|금년|작년|지난해|지난|오는)?\s*"
+        r"(?:(?P<month>1[0-2]|0?[1-9])\s*월(?:\s*(?P<day>3[01]|[12]?\d)\s*일)?"
+        r"|(?P<relative>내달|다음달|이달|이번\s*달)(?:\s*(?P<rday>3[01]|[12]?\d)\s*일)?"
+        r"|(?P<quarter>[1-4])\s*분기|(?P<half>상반기|하반기)"
+        r"|(?P<cday>3[01]|[12]?\d)\s*일)"
+    )
+    for m in pattern.finditer(normalized):
+        if m.start() > 0 and normalized[m.start()].isdigit() and normalized[m.start() - 1].isdigit():
+            continue
+        context = (m.group("context") or "").strip()
+        if context in {"작년", "지난해", "지난"}:
+            continue
+        year = reference_date.year
+        if context == "내년":
+            year += 1
+        elif context.startswith("20"):
+            year = int(context[:4])
+        # Do not interpret a bare day (clinical phase counts etc.) as a date.
+        if m.group("cday") and context != "오는":
+            continue
         try:
-            candidate = date(reference_date.year, month, day)
+            if m.group("month"):
+                month = int(m.group("month"))
+                if m.group("day"):
+                    start = end = date(year, month, int(m.group("day")))
+                    precision = "EXACT_DATE"
+                else:
+                    start, end = _month_bounds(year, month)
+                    precision = "MONTH"
+            elif m.group("relative"):
+                relative = m.group("relative").replace(" ", "")
+                year, month = _next_month(reference_date) if relative in {"내달", "다음달"} else (year, reference_date.month)
+                if m.group("rday"):
+                    start = end = date(year, month, int(m.group("rday")))
+                    precision = "EXACT_DATE"
+                else:
+                    start, end = _month_bounds(year, month)
+                    start = max(start, reference_date)
+                    precision = "MONTH"
+            elif m.group("quarter"):
+                month = (int(m.group("quarter")) - 1) * 3 + 1
+                start = date(year, month, 1)
+                end = _month_bounds(year, month + 2)[1]
+                precision = "QUARTER"
+            elif m.group("half"):
+                month = 1 if m.group("half") == "상반기" else 7
+                start = date(year, month, 1)
+                end = _month_bounds(year, month + 5)[1]
+                precision = "HALF_YEAR"
+            else:
+                day = int(m.group("cday"))
+                year, month = reference_date.year, reference_date.month
+                start = date(year, month, day)
+                if start < reference_date:
+                    year, month = _next_month(reference_date)
+                    start = date(year, month, day)
+                end = start
+                precision = "EXACT_DATE"
         except ValueError:
-            return None
-        if candidate < reference_date:
-            try:
-                candidate = date(reference_date.year + 1, month, day)
-            except ValueError:
-                return None
-        return FutureWindow("EXACT_DATE", candidate, candidate, m.group(0))
+            continue
+        if end >= reference_date:
+            return FutureWindow(precision, start, end, m.group(0).strip())
 
-    m = re.search(r"(?:내달|다음달)\s*(3[01]|[12]?\d)\s*일", normalized)
+    # A year-only expression must not override a more specific historical date.
+    if re.search(r"\d\s*월|분기|상반기|하반기", normalized):
+        return None
+    m = re.search(r"내년|연내|20\d{2}\s*년", normalized)
     if m:
-        day = int(m.group(1))
-        year, month = _next_month(reference_date)
-        try:
-            candidate = date(year, month, day)
-        except ValueError:
-            return None
-        return FutureWindow("EXACT_DATE", candidate, candidate, m.group(0))
-
-    m = re.search(r"오는\s*(3[01]|[12]?\d)\s*일", normalized)
-    if m:
-        day = int(m.group(1))
-        year, month = reference_date.year, reference_date.month
-        try:
-            candidate = date(year, month, day)
-        except ValueError:
-            candidate = reference_date
-        if candidate < reference_date:
-            year, month = _next_month(reference_date)
-            try:
-                candidate = date(year, month, day)
-            except ValueError:
-                return None
-        return FutureWindow("EXACT_DATE", candidate, candidate, m.group(0))
-
-    m = re.search(r"(?:내달|다음달)", normalized)
-    if m:
-        year, month = _next_month(reference_date)
-        start, end = _month_bounds(year, month)
-        return FutureWindow("MONTH", start, end, m.group(0))
-
-    m = re.search(r"(?:이달|이번\s*달)", normalized)
-    if m:
-        _, end = _month_bounds(reference_date.year, reference_date.month)
-        return FutureWindow("MONTH", reference_date, end, m.group(0))
-
-    m = re.search(r"(?<!\d)(1[0-2]|0?[1-9])\s*월(?!\s*\d+\s*일)", normalized)
-    if m:
-        month = int(m.group(1))
-        year = reference_date.year + (1 if month < reference_date.month else 0)
-        start, end = _month_bounds(year, month)
-        return FutureWindow("MONTH", start, end, m.group(0))
-
-    m = re.search(r"내년\s*(상반기|하반기)", normalized)
-    if m:
-        year = reference_date.year + 1
-        if m.group(1) == "상반기":
-            return FutureWindow("HALF_YEAR", date(year, 1, 1), date(year, 6, 30), m.group(0))
-        return FutureWindow("HALF_YEAR", date(year, 7, 1), date(year, 12, 31), m.group(0))
-
-    m = re.search(r"내년", normalized)
-    if m:
-        year = reference_date.year + 1
-        return FutureWindow("YEAR", date(year, 1, 1), date(year, 12, 31), m.group(0))
-
-    m = re.search(r"연내", normalized)
-    if m:
-        return FutureWindow("YEAR", reference_date, date(reference_date.year, 12, 31), m.group(0))
-
+        year = reference_date.year + 1 if m.group(0) == "내년" else reference_date.year
+        if m.group(0).startswith("20"):
+            year = int(m.group(0)[:4])
+        if year >= reference_date.year:
+            return FutureWindow("YEAR", max(date(year, 1, 1), reference_date), date(year, 12, 31), m.group(0))
     return None
 
 
@@ -287,6 +278,56 @@ def _is_temporally_linked(text: str, window: FutureWindow, event_type: str) -> b
         if matched in clause and re.search(pattern, clause, re.IGNORECASE):
             return True
     return False
+
+
+def extract_future_catalyst(text: str, reference_date: date) -> tuple[FutureWindow, str] | None:
+    """Select a dated catalyst in the same clause, ignoring historical background."""
+    clauses = re.split(r"(?<!\d)[.!?。！？]+(?!\d)", _clean_text(text))
+    for clause in clauses:
+        if re.search(r"일정\s*미정|날짜\s*미정|시기\s*미정", clause):
+            continue
+        # Retrospective reports and conditional commentary are not future schedules.
+        if re.search(r"(?:체결|선고|출시|가동|발표|시행|착공|완료|개최|공개|인수)(?:했|했다|됐다|한 바|한 것으로|한 뒤|한 데)|이미.{0,12}(?:가동|출시)|가능성|검토 중|계획\s*없", clause):
+            continue
+        if classify_catalyst(clause) is None:
+            continue
+        # Enumerate every future expression rather than assigning the first date
+        # to an unrelated action later in the sentence.
+        remaining = clause
+        windows = []
+        while True:
+            window = parse_future_window(remaining, reference_date)
+            if window is None:
+                break
+            start = remaining.find(window.matched_text)
+            if start < 0:
+                break
+            end = start + len(window.matched_text)
+            windows.append((start, end, window))
+            remaining = remaining[:start] + " " * (end - start) + remaining[end:]
+        candidates = []
+        for kind, pattern in EVENT_PATTERNS.items():
+            if kind == "CAPEX_FINANCING" and "유상증자" not in clause:
+                continue
+            for catalyst in re.finditer(pattern, clause, re.IGNORECASE):
+                for start, end, window in windows:
+                    if not _is_actionable_window(window, kind):
+                        continue
+                    gap = max(0, catalyst.start() - end, start - catalyst.end())
+                    if gap > 48:
+                        continue
+                    left, right = sorted((end, catalyst.start()))
+                    if any(left <= other_start < right for other_start, _, other_window in windows if other_window is not window):
+                        continue
+                    candidates.append((gap, start, kind, window))
+        if candidates:
+            _, _, kind, window = min(candidates, key=lambda item: (item[0], item[1]))
+            return window, kind
+    return None
+
+
+def is_news_digest(title: str) -> bool:
+    return bool(re.search(r"사설|칼럼|기고|브리프|브리핑|알공|인물탐구|Who Is", title, re.IGNORECASE))
 
 
 def _is_low_quality_company(company: str, event_type: str) -> bool:
@@ -388,18 +429,16 @@ class NewsFutureCollector:
                     combined = f"{title}. {description}".strip()
                     if not title:
                         continue
+                    if is_news_digest(title):
+                        continue
 
                     published = _parse_pubdate(item.get("pubDate", ""), fallback=since)
-                    window = parse_future_window(combined, published.date())
-                    event_type = classify_catalyst(combined)
-                    if window is None or event_type is None:
+                    if published < since:
                         continue
-                    if window.end < published.date():
+                    candidate = extract_future_catalyst(combined, published.date())
+                    if candidate is None:
                         continue
-                    if not _is_actionable_window(window, event_type):
-                        continue
-                    if not _is_temporally_linked(combined, window, event_type):
-                        continue
+                    window, event_type = candidate
 
                     ticker = _extract_ticker(combined)
                     company = _extract_company(title, ticker)
