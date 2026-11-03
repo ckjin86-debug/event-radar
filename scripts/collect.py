@@ -10,7 +10,10 @@ sys.path.insert(0, str(src_dir))
 from event_radar.pipeline import run_pipeline, PipelineConfig
 from event_radar.collectors.dart import DartCollector
 from event_radar.collectors.sec import SecCollector
+from event_radar.collectors.news_future import NewsFutureCollector
 from event_radar.collectors.fda import FdaCollector
+from event_radar.collectors.kind_ipo import KindIpoCollector
+from event_radar.collectors.fomc import FomcCollector
 from event_radar.collectors.entertainment import EntertainmentCollector
 from event_radar.collectors.games import GamesCollector
 from event_radar.collectors.index_changes import IndexChangesCollector
@@ -21,7 +24,10 @@ def build_collectors(root: Path):
     return [
         DartCollector(),
         SecCollector(),
+        NewsFutureCollector(),
         FdaCollector(config_path=root / "config" / "site_registry.yaml"),
+        KindIpoCollector(),
+        FomcCollector(),
         EntertainmentCollector(config_path=root / "config" / "site_registry.yaml"),
         GamesCollector(config_path=root / "config" / "site_registry.yaml"),
         IndexChangesCollector(config_path=root / "config" / "site_registry.yaml"),
