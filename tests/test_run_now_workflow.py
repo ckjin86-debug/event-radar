@@ -37,3 +37,11 @@ def test_collection_job_does_not_hold_pages_environment_while_collecting():
         assert "environment:" in deploy_block
         assert "name: github-pages" in deploy_block
         assert "actions/deploy-pages@v4" in deploy_block
+
+
+def test_scheduled_and_manual_collection_share_latest_run_concurrency_group():
+    for name in ("run-now.yml", "collect.yml"):
+        workflow = _workflow(name)
+        assert "concurrency:" in workflow
+        assert "group: event-radar-collection" in workflow
+        assert "cancel-in-progress: true" in workflow
