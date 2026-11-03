@@ -9,3 +9,4 @@ build/
 .env
 .DS_Store
 Thumbs.db
+data/cache/listed_companies_kr.csv
