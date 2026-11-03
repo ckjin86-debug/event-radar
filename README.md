@@ -10,7 +10,7 @@ Event Radar는 한국(DART, 엔터, 게임, 거래소)과 미국(SEC EDGAR, FDA 
 
 1. **규제기관 및 공식 일정 중심 자동 수집 (Milestone 2)**
    - **한국**: DART 무상증자, 유상증자, 주식분할, 전환사채(CB) 상장, 보호예수 해제
-   - **미국**: SEC EDGAR Form 8-K (실적 발표, 주식분할, 유상증자)
+   - **미국**: SEC EDGAR 일별 공시 인덱스에서 미국 전체 발행사의 Form 8-K / 8-K/A를 자동 발견하고 실적 발표, 주식분할, 유상증자 후보만 선별
    - **비정형 공식 일정**: FDA PDUFA 승인일, 엔터테인먼트 컴백, 게임 신작 출시, 주요 지수 정기변경
 
 2. **철저한 시계열 분리와 Look-ahead Bias 방지**
@@ -101,8 +101,7 @@ pytest -p no:cacheprovider -v
 ### 3. 수집 파이프라인 1회 실행
 ```bash
 # DART 실수집에는 DART_API_KEY가 필요합니다.
-# SEC 실수집은 감시할 CIK를 쉼표로 구분해 SEC_CIKS에 지정합니다.
-# 예: SEC_CIKS=0000320193,0000789019
+# SEC는 API 키나 CIK watchlist 없이 EDGAR 일별 인덱스에서 자동 발견합니다.
 python scripts/collect.py
 ```
 
@@ -115,11 +114,9 @@ python -m http.server 8080
 
 ---
 
-## ⚙️ GitHub Actions Secrets & Variables 설정
+## ⚙️ GitHub Actions Secrets 설정
 
-GitHub Actions 자동 수집 및 배포를 위해 저장소의 `Settings` → `Secrets and variables` → `Actions`에서 아래 값을 설정합니다.
-
-### Secrets
+GitHub Actions 자동 수집 및 배포를 위해 저장소의 `Settings` → `Secrets and variables` → `Actions`에서 필요한 시크릿을 설정합니다.
 
 | Secret 이름 | 설명 | 필수 여부 |
 |---|---|---|
@@ -129,13 +126,7 @@ GitHub Actions 자동 수집 및 배포를 위해 저장소의 `Settings` → `S
 | `GOOGLE_REFRESH_TOKEN` | 오프라인 접근용 Refresh Token | 드라이브 백업 시 |
 | `GOOGLE_DRIVE_FOLDER_ID` | 백업 대상 구글 드라이브 폴더 ID | 드라이브 백업 시 |
 
-### Variables
-
-| Variable 이름 | 설명 | 필수 여부 |
-|---|---|---|
-| `SEC_CIKS` | SEC EDGAR에서 감시할 미국 기업 CIK 목록. 쉼표로 구분 (예: `0000320193,0000789019`) | 미국 SEC 실수집 시 |
-
-`SEC_CIKS`가 비어 있으면 SEC 수집기는 실패시키지 않고 빈 결과를 반환합니다. 테스트 fixture는 테스트 코드에서 명시적으로 전달할 때만 사용하며, 정기 수집 파이프라인에는 사용하지 않습니다.
+미국 SEC 수집에는 별도 API 키, Secret, `SEC_CIKS` Variable이 필요하지 않습니다. 수집기는 최근 최대 3일의 EDGAR daily master index를 겹쳐 읽고 8-K / 8-K/A 후보를 자동 발견한 뒤, 필요한 회사만 SEC submissions 데이터로 확인합니다. 테스트 fixture는 테스트 코드에서 명시적으로 전달할 때만 사용합니다.
 
 *구글 드라이브 토큰 최초 발급은 `python scripts/oauth_bootstrap.py`를 실행하세요.*
 
