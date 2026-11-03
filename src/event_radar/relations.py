@@ -40,15 +40,15 @@ def _is_legacy_hidden_noise(event: Event) -> bool:
 
 def resolve_related_securities(event: Event, relations: list[Relation]) -> list[EventSecurity]:
     """Resolve related securities for an event avoiding look-ahead bias and expired relations."""
-    # Old canonical data can contain rows collected before today's signal policy.
-    # Keep those rows for audit history but never spend live price calls on them.
     if _is_legacy_hidden_noise(event):
         return _unmapped(event, "레이더 비노출 레거시 이벤트")
 
     results: dict[str, EventSecurity] = {}
+    announced_date = event.announced_at.date() if hasattr(event.announced_at, "date") else event.announced_at
+    event_date = event.event_date
 
-    # 1. A real primary security is Grade A. Index/sector ETF placeholders are
-    # informational proxies and must never pass downstream A/B stock filters.
+    # A real primary security is Grade A. Direct event rows are automatic event
+    # evidence, not manual relation writeback, even when the event itself was edited.
     primary_ticker = event.primary_ticker.strip().upper()
     if primary_ticker:
         if is_market_proxy(primary_ticker):
@@ -59,6 +59,11 @@ def resolve_related_securities(event: Event, relations: list[Relation]) -> list[
                 relation_score=0,
                 relation_type="MARKET_PROXY",
                 evidence_text="시장/섹터 반응 참고용 프록시",
+                evidence_source=event.source_name,
+                source_url=event.source_url,
+                relation_known_date=announced_date,
+                ingest_mode="AUTO",
+                from_entity=event.primary_company,
             )
         else:
             results[primary_ticker] = EventSecurity(
@@ -68,14 +73,14 @@ def resolve_related_securities(event: Event, relations: list[Relation]) -> list[
                 relation_score=100,
                 relation_type="DIRECT",
                 evidence_text="직접 당사자",
+                evidence_source=event.source_name,
+                source_url=event.source_url,
+                relation_known_date=announced_date,
+                ingest_mode="AUTO",
+                from_entity=event.primary_company,
             )
 
-    announced_date = event.announced_at.date() if hasattr(event.announced_at, "date") else event.announced_at
-    event_date = event.event_date
-
-    # 2. Check candidate relations. A/B grade is an evidence classification, not
-    # a score bucket. A high-confidence B relation must never become A merely
-    # because relation_score is 90+.
+    # A/B grade is an evidence classification, not a score bucket.
     for rel in relations:
         from_entity = rel.from_entity.strip().upper()
         if from_entity not in (primary_ticker, event.primary_company.strip().upper()):
@@ -107,6 +112,11 @@ def resolve_related_securities(event: Event, relations: list[Relation]) -> list[
             relation_score=rel.relation_score,
             relation_type=rel.relation_type,
             evidence_text=rel.evidence_source,
+            evidence_source=rel.evidence_source,
+            source_url=rel.source_url,
+            relation_known_date=rel.relation_known_date,
+            ingest_mode=rel.ingest_mode,
+            from_entity=rel.from_entity,
         )
 
         if ticker in results:
