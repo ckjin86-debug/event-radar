@@ -50,6 +50,12 @@ def main():
     report = run_pipeline(collectors=collectors, config=config)
 
     print(f"Pipeline Completed in {report.duration_sec:.2f}s")
+    print(
+        "Phase timings: "
+        f"collect={report.collection_duration_sec:.2f}s, "
+        f"map={report.mapping_duration_sec:.2f}s, "
+        f"backtest={report.backtest_duration_sec:.2f}s"
+    )
     print(f"Total events collected: {report.total_events_collected}")
     print(f"Successful sources: {', '.join(report.successful_sources)}")
     if report.failed_sources:
