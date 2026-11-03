@@ -61,8 +61,6 @@ CALENDAR_HTML = """
 </div>
 """
 
-# Matches the current server-rendered KIND 공모기업현황 table: market is an
-# image alt inside the company cell rather than a separate market column.
 PROGRAM_TABLE_HTML = """
 <table class="list type-00">
   <thead>
@@ -94,25 +92,58 @@ PROGRAM_TABLE_HTML = """
 </table>
 """
 
+# KIND's AJAX search response contains the result rows without a header row.
+AJAX_FRAGMENT_HTML = """
+<table class="list type-00">
+  <tbody>
+    <tr>
+      <td class="first" title="씨아이에스케미칼"><img alt="코스닥"/>씨아이에스케미칼</td>
+      <td>2026-10-19</td>
+      <td>2026-11-30<br/> ~ 2026-12-04</td>
+      <td>2026-12-10<br/> ~ 2026-12-11</td>
+      <td>2026-12-15</td>
+      <td>-</td>
+      <td>-</td>
+      <td>2026-12-22</td>
+      <td>KB증권(주)</td>
+    </tr>
+    <tr>
+      <td class="first" title="동원파츠"><img alt="코스닥"/>동원파츠</td>
+      <td>2026-10-01</td>
+      <td>2026-10-22<br/> ~ 2026-10-28</td>
+      <td>2026-11-02<br/> ~ 2026-11-03</td>
+      <td>2026-11-05</td>
+      <td>26,500</td>
+      <td>53,795</td>
+      <td>2026-11-10</td>
+      <td>삼성증권(주)</td>
+    </tr>
+  </tbody>
+</table>
+"""
+
 
 class FakeKindResponse:
-    status_code = 200
-    text = PROGRAM_TABLE_HTML
-    encoding = "utf-8"
-    apparent_encoding = "utf-8"
+    def __init__(self, text, status_code=200):
+        self.status_code = status_code
+        self.text = text
+        self.encoding = "utf-8"
+        self.apparent_encoding = "utf-8"
 
 
-class KindGetOnlySession:
+class KindAjaxSession:
     def __init__(self):
         self.headers = {}
         self.get_calls = []
+        self.post_calls = []
 
     def get(self, url, timeout=None):
         self.get_calls.append(url)
-        return FakeKindResponse()
+        return FakeKindResponse("<html><form id='searchForm'></form></html>")
 
-    def post(self, *args, **kwargs):
-        raise AssertionError("live KIND collection should use the public GET page")
+    def post(self, url, data=None, timeout=None, headers=None):
+        self.post_calls.append({"url": url, "data": data or {}, "headers": headers or {}})
+        return FakeKindResponse(AJAX_FRAGMENT_HTML)
 
 
 def test_kind_ipo_emits_all_schedule_milestones():
@@ -167,11 +198,28 @@ def test_kind_program_table_reads_market_from_company_icon():
     assert events[-1].event_date == date(2026, 12, 22)
 
 
-def test_live_kind_collection_uses_public_offering_company_get():
+def test_kind_headerless_ajax_fragment_uses_fixed_offering_columns():
+    events = KindIpoCollector(mock_html=AJAX_FRAGMENT_HTML).collect(since=datetime(2026, 11, 3))
+    cis = [e for e in events if e.primary_company == "씨아이에스케미칼"]
+    dongwon = [e for e in events if e.primary_company == "동원파츠"]
+    assert len(cis) == 6
+    assert {e.event_type for e in dongwon} == {"IPO_SUBSCRIPTION_END", "IPO_PAYMENT", "IPO_LISTING"}
+    assert all(e.primary_ticker == "^KQ11" for e in events)
+
+
+def test_live_kind_collection_gets_session_then_posts_ajax_search():
     collector = KindIpoCollector()
-    collector.session = KindGetOnlySession()
-    events = collector.collect(since=datetime(2026, 11, 1))
+    collector.session = KindAjaxSession()
+    events = collector.collect(since=datetime(2026, 11, 3))
+
     assert events
     assert collector.session.get_calls
-    assert "pubofrprogcom.do" in collector.session.get_calls[0]
-    assert all(e.primary_ticker == "^KQ11" for e in events)
+    assert collector.session.post_calls
+    call = collector.session.post_calls[0]
+    assert call["url"].endswith("/listinvstg/pubofrprogcom.do")
+    assert call["data"]["method"] == "searchPubofrProgComSub"
+    assert call["data"]["forward"] == "pubofrprogcom_sub"
+    assert call["data"]["currentPageSize"] == "100"
+    assert call["data"]["pageIndex"] == "1"
+    assert call["data"]["orderMode"] == "1"
+    assert call["data"]["orderStat"] == "D"
