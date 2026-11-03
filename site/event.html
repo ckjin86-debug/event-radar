@@ -33,43 +33,67 @@
     </div>
 
     <div class="card" style="margin-bottom: 24px;">
-      <h2>📈 과거 동일 이벤트군 반응 백테스트 (Event Study)</h2>
+      <h2>📈 과거 비슷한 이벤트에서 주가는 어떻게 움직였나</h2>
+      <div id="backtestVerdict" class="backtest-verdict">분석 결과를 계산 중입니다...</div>
+
       <div class="stat-grid" id="backtestStats">
         <div class="stat-box">로딩 중...</div>
       </div>
 
+      <div class="peer-block">
+        <div class="section-heading-row compact">
+          <div>
+            <h3>비교에 사용된 과거 사례</h3>
+            <p class="section-subtitle">실제로 어떤 사건과 종목을 표본으로 썼는지 확인할 수 있습니다.</p>
+          </div>
+        </div>
+        <div id="historicalPeers" class="history-grid compact-grid">
+          <div class="history-empty">과거 비교 사례를 불러오는 중입니다...</div>
+        </div>
+      </div>
+
+      <div class="chart-title-row">
+        <div>
+          <strong>평균 주가 반응</strong>
+          <span class="text-muted"> · D0는 이벤트 기준일</span>
+        </div>
+      </div>
       <div class="chart-container">
         <canvas id="curveChartCanvas"></canvas>
       </div>
-      <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 10px; text-align: center;">
-        * 현재 이벤트보다 이전에 발생한 동일 국가·이벤트 유형·이벤트 패밀리·관계등급만 사용 / 파란선: 절대수익률 / 초록선: 벤치마크 대비 초과수익률 / D0: 이벤트 기준일
+      <div class="chart-note">
+        파란선: 절대수익률 · 초록선: 벤치마크 대비 초과수익률 · 현재 이벤트보다 이전의 동일 국가·이벤트 유형·이벤트 패밀리·관계등급만 사용
       </div>
     </div>
 
     <div class="card" style="margin-bottom: 24px;">
-      <h2>🎯 과거 동일 이벤트군 9대 매매 전략 성과 비교</h2>
-      <div class="table-responsive">
-        <table>
-          <thead>
-            <tr>
-              <th>전략명</th>
-              <th>표본 (N)</th>
-              <th>평균 수익률</th>
-              <th>평균 초과수익률</th>
-              <th>승률</th>
-              <th>최대 낙폭 (MDD)</th>
-              <th>Robustness 점수</th>
-            </tr>
-          </thead>
-          <tbody id="strategiesTableBody">
-            <tr><td colspan="7" style="text-align:center;">로딩 중...</td></tr>
-          </tbody>
-        </table>
-      </div>
+      <h2>🎯 매매 구간 요약</h2>
+      <div id="bestStrategy" class="best-strategy">계산 중...</div>
+      <details class="strategy-details">
+        <summary>9개 전략 전체보기</summary>
+        <div class="table-responsive" style="margin-top: 12px;">
+          <table>
+            <thead>
+              <tr>
+                <th>전략명</th>
+                <th>종목 표본 (N)</th>
+                <th>평균 수익률</th>
+                <th>평균 초과수익률</th>
+                <th>승률</th>
+                <th>최대 낙폭 (MDD)</th>
+                <th>Robustness</th>
+              </tr>
+            </thead>
+            <tbody id="strategiesTableBody">
+              <tr><td colspan="7" style="text-align:center;">로딩 중...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
     </div>
 
     <div class="card" style="margin-bottom: 24px;">
-      <h2>🔗 관련주 및 관계 근거</h2>
+      <h2>🔗 현재 이벤트 관련주 및 관계 근거</h2>
       <div class="table-responsive">
         <table>
           <thead>
@@ -88,7 +112,7 @@
     </div>
 
     <div class="card" style="margin-bottom: 24px;">
-      <h2>🕒 일정 변경 및 리비전 이력 (Revision History)</h2>
+      <h2>🕒 일정 변경 및 리비전 이력</h2>
       <div class="table-responsive">
         <table>
           <thead>
