@@ -20,6 +20,7 @@ def test_event_detail_separates_peer_count_from_d5_complete_count():
 
     assert 'id="backtestVerdict"' in html
     assert 'id="historicalPeers"' in html
+    assert "과거 사례 수와 D+5 완료 표본은 서로 다른 기준입니다." in html
     assert "peer_sample_n" in js
     assert "d5_sample_n" in js
     assert "D+5 완료 표본 없음" in js
