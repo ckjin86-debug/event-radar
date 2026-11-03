@@ -63,8 +63,9 @@ function formatEventDate(d) {
 }
 
 function renderDetail(d) {
-  document.title = `${d.company} (${d.ticker}) - ${d.event_name} | Event Radar`;
-  document.getElementById("eventTitle").textContent = `${d.company} (${d.ticker}) - ${d.event_name}`;
+  const tickerLabel = d.ticker || "미매핑";
+  document.title = `${d.company} (${tickerLabel}) - ${d.event_name} | Event Radar`;
+  document.getElementById("eventTitle").textContent = `${d.company} (${tickerLabel}) - ${d.event_name}`;
 
   const basicInfoElem = document.getElementById("basicInfo");
   if (basicInfoElem) {
@@ -73,7 +74,7 @@ function renderDetail(d) {
       : d.date_precision;
     basicInfoElem.innerHTML = `
       <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
-        <div><span class="text-muted">국가 / 티커:</span> <strong>${d.country} / ${d.ticker}</strong></div>
+        <div><span class="text-muted">국가 / 티커:</span> <strong>${d.country} / ${escapeHtml(tickerLabel)}</strong></div>
         <div><span class="text-muted">이벤트 유형:</span> <strong>${d.event_type}</strong></div>
         <div><span class="text-muted">최초 발표일:</span> <strong>${d.announced_at ? d.announced_at.slice(0, 10) : "-"}</strong></div>
         <div><span class="text-muted">이벤트 예정일:</span> <strong style="color:var(--accent-blue);">${escapeHtml(formatEventDate(d))} (${escapeHtml(scheduleContext)})</strong></div>
@@ -121,29 +122,29 @@ function renderDetail(d) {
     statsElem.innerHTML = `
       <div class="stat-box">
         <div class="stat-val">${bs.sample_n || 0}건</div>
-        <div class="stat-label">표본 수 (N)</div>
+        <div class="stat-label">과거 동일 이벤트 표본 (N)</div>
       </div>
       <div class="stat-box">
         <div class="stat-val ${(bs.mean_return || 0) >= 0 ? 'positive' : 'negative'}">
           ${((bs.mean_return || 0) * 100).toFixed(1)}%
         </div>
-        <div class="stat-label">D0 절대수익률</div>
+        <div class="stat-label">D+5 평균 수익률</div>
       </div>
       <div class="stat-box">
         <div class="stat-val ${(bs.mean_abnormal_return || 0) >= 0 ? 'positive' : 'negative'}">
           ${((bs.mean_abnormal_return || 0) * 100).toFixed(1)}%
         </div>
-        <div class="stat-label">평균 초과수익률</div>
+        <div class="stat-label">D+5 평균 초과수익률</div>
       </div>
       <div class="stat-box">
         <div class="stat-val ${((bs.win_rate || 0) >= 0.5) ? 'positive' : 'negative'}">
           ${((bs.win_rate || 0) * 100).toFixed(0)}%
         </div>
-        <div class="stat-label">승률 (Win Rate)</div>
+        <div class="stat-label">D+5 초과수익 승률</div>
       </div>
       <div class="stat-box">
         <div class="stat-val negative">-${((bs.max_drawdown || 0) * 100).toFixed(1)}%</div>
-        <div class="stat-label">최대 낙폭 (MDD)</div>
+        <div class="stat-label">표본 최대 낙폭 (MDD)</div>
       </div>
     `;
   }
@@ -160,8 +161,8 @@ function renderDetail(d) {
     } else {
       relElem.innerHTML = list.map(s => `
         <tr>
-          <td><code>${escapeHtml(s.ticker)}</code></td>
-          <td><span class="badge ${s.relation_grade === 'A' ? 'badge-a' : 'badge-b'}">${s.relation_grade}</span></td>
+          <td><code>${escapeHtml(s.ticker || '미매핑')}</code></td>
+          <td><span class="badge ${s.relation_grade === 'A' ? 'badge-a' : (s.relation_grade === 'B' ? 'badge-b' : '')}">${s.relation_grade}</span></td>
           <td>${s.relation_score}점 (${escapeHtml(s.relation_type)})</td>
           <td style="font-size:0.8rem; color:#cbd5e1;">${escapeHtml(s.evidence_text || '-')}</td>
         </tr>
@@ -173,7 +174,7 @@ function renderDetail(d) {
   if (stratElem) {
     const list = d.strategy_summary || [];
     if (list.length === 0) {
-      stratElem.innerHTML = `<tr><td colspan="7" class="text-muted" style="text-align:center;">사전 정의 전략 결과가 없습니다.</td></tr>`;
+      stratElem.innerHTML = `<tr><td colspan="7" class="text-muted" style="text-align:center;">과거 동일 이벤트 표본이 없습니다.</td></tr>`;
     } else {
       stratElem.innerHTML = list.map(s => `
         <tr>
