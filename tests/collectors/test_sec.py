@@ -1,4 +1,5 @@
 from datetime import datetime, date
+import json
 from pathlib import Path
 import pytest
 from event_radar.collectors.sec import SecCollector
@@ -30,6 +31,32 @@ def test_sec_collector_user_agent_format():
     ua = collector.session.headers.get("User-Agent", "")
     assert "@" in ua  # SEC strictly requires contact email in User-Agent
     assert len(ua.split()) >= 2
+
+
+def test_sec_collector_collects_live_watchlist_from_env(monkeypatch):
+    fixture_path = Path(__file__).parent.parent / "fixtures" / "sec" / "sample_submissions.json"
+    payload = json.loads(fixture_path.read_text(encoding="utf-8"))
+    called_urls: list[str] = []
+
+    class MockResponse:
+        status_code = 200
+
+        def json(self):
+            return payload
+
+    def mock_get(url, timeout=10):
+        called_urls.append(url)
+        return MockResponse()
+
+    monkeypatch.setenv("SEC_CIKS", "0000320193")
+    collector = SecCollector()
+    monkeypatch.setattr(collector.session, "get", mock_get)
+
+    events = collector.collect(since=datetime(2026, 10, 1))
+
+    assert called_urls == ["https://data.sec.gov/submissions/CIK0000320193.json"]
+    assert len(events) == 2
+    assert {e.event_type for e in events} == {"EARNINGS", "STOCK_SPLIT"}
 
 
 def test_sec_collector_graceful_on_error(monkeypatch):
