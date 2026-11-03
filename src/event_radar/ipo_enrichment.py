@@ -5,9 +5,10 @@ from __future__ import annotations
 import html
 import os
 import re
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from email.utils import parsedate_to_datetime
-from typing import Optional
+from typing import Iterable, Optional
 
 import requests
 
@@ -54,20 +55,22 @@ class IpoRelationEnricher:
         api_key: Optional[str] = None,
         mock_payloads: Optional[list[dict]] = None,
         timeout: int = 10,
+        max_workers: int = 6,
     ) -> None:
         self.api_key_id = api_key_id or os.getenv("NAVER_API_HUB_KEY_ID", "")
         self.api_key = api_key or os.getenv("NAVER_API_HUB_KEY", "")
         self.mock_payloads = mock_payloads
         self.timeout = timeout
-        self.session = requests.Session()
+        self.max_workers = max(1, min(10, int(max_workers)))
+        self._payload_cache: dict[str, list[dict]] = {}
 
-    def _fetch_payloads(self, company: str) -> list[dict]:
+    def _fetch_company(self, company: str) -> list[dict]:
         if self.mock_payloads is not None:
             return self.mock_payloads
         if not self.api_key_id or not self.api_key:
             return []
         try:
-            response = self.session.get(
+            response = requests.get(
                 NAVER_NEWS_URL,
                 headers={
                     "X-NCP-APIGW-API-KEY-ID": self.api_key_id,
@@ -81,6 +84,39 @@ class IpoRelationEnricher:
             return [response.json()]
         except Exception:
             return []
+
+    def prefetch(self, companies: Iterable[str]) -> None:
+        """Fetch unique IPO-company searches concurrently and cache the payloads."""
+        unique = []
+        seen = set()
+        for raw in companies:
+            company = (raw or "").strip()
+            if not company or company in seen or company in self._payload_cache:
+                continue
+            seen.add(company)
+            unique.append(company)
+        if not unique:
+            return
+
+        workers = min(self.max_workers, len(unique))
+        with ThreadPoolExecutor(max_workers=workers) as executor:
+            future_map = {
+                executor.submit(self._fetch_company, company): company for company in unique
+            }
+            for future in as_completed(future_map):
+                company = future_map[future]
+                try:
+                    self._payload_cache[company] = future.result()
+                except Exception:
+                    self._payload_cache[company] = []
+
+    def _fetch_payloads(self, company: str) -> list[dict]:
+        company = (company or "").strip()
+        if not company:
+            return []
+        if company not in self._payload_cache:
+            self._payload_cache[company] = self._fetch_company(company)
+        return self._payload_cache[company]
 
     def enrich(
         self,

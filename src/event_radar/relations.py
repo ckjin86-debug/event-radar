@@ -73,9 +73,9 @@ def resolve_related_securities(event: Event, relations: list[Relation]) -> list[
     announced_date = event.announced_at.date() if hasattr(event.announced_at, "date") else event.announced_at
     event_date = event.event_date
 
-    # 2. Check candidate relations.
-    # Events without a direct ticker can still resolve verified B-grade names
-    # through a canonical relationship keyed by the event's primary entity.
+    # 2. Check candidate relations. A/B grade is an evidence classification, not
+    # a score bucket. A high-confidence B relation must never become A merely
+    # because relation_score is 90+.
     for rel in relations:
         from_entity = rel.from_entity.strip().upper()
         if from_entity not in (primary_ticker, event.primary_company.strip().upper()):
@@ -87,20 +87,17 @@ def resolve_related_securities(event: Event, relations: list[Relation]) -> list[
             continue
         if rel.relation_end_date is not None and event_date > rel.relation_end_date:
             continue
-        if rel.relation_score < 60:
+
+        grade = rel.relation_grade
+        if grade not in {"A", "B"}:
+            continue
+        if grade == "A" and rel.relation_score < 90:
+            continue
+        if grade == "B" and rel.relation_score < 60:
             continue
 
         ticker = rel.to_ticker.strip().upper()
         if not ticker or is_market_proxy(ticker):
-            continue
-        if rel.relation_score >= 90:
-            grade = "A"
-        elif rel.relation_score >= 60:
-            grade = "B"
-        else:
-            grade = "C"
-
-        if grade == "C":
             continue
 
         candidate = EventSecurity(
