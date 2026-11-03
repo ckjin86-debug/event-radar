@@ -36,6 +36,16 @@ def _normalize_company_name(value: str, country: str) -> str:
     return re.sub(r"[^0-9a-z가-힣]", "", text)
 
 
+def _company_aliases(company_name: str, country: str) -> set[str]:
+    """Return conservative aliases commonly used in headlines."""
+    normalized = _normalize_company_name(company_name, country)
+    aliases = {normalized} if normalized else set()
+    if country == "KR" and normalized.endswith("자동차") and len(normalized) > len("자동차"):
+        # 현대자동차 -> 현대차. This also lets '현대차그룹' resolve to the listed issuer.
+        aliases.add(f"{normalized[:-len('자동차')]}차")
+    return {alias for alias in aliases if len(alias) >= 2}
+
+
 def parse_dart_corp_code_zip(content: bytes) -> list[SecurityMention]:
     """Parse OpenDART corpCode.xml ZIP and keep listed issuers only."""
     with zipfile.ZipFile(io.BytesIO(content)) as archive:
@@ -74,10 +84,8 @@ class EntityUniverse:
         self._indexed: dict[str, list[tuple[str, SecurityMention]]] = {"KR": [], "US": []}
         for record in self.records:
             country = record.country.upper()
-            normalized = _normalize_company_name(record.company_name, country)
-            if len(normalized) < 2:
-                continue
-            self._indexed.setdefault(country, []).append((normalized, record))
+            for alias in _company_aliases(record.company_name, country):
+                self._indexed.setdefault(country, []).append((alias, record))
 
     def resolve_mentions(self, text: str, country: str) -> list[SecurityMention]:
         country = country.upper()
@@ -100,10 +108,12 @@ def load_entity_universe(
 
     if dart_api_key:
         try:
+            # corpCode.xml is a multi-megabyte ZIP and is materially slower than SEC's JSON.
+            # Give it an independent floor so a healthy but slow DART response is not discarded.
             response = http.get(
                 DART_CORP_CODE_URL,
                 params={"crtfc_key": dart_api_key},
-                timeout=timeout,
+                timeout=max(timeout, 45),
             )
             if response.status_code == 200:
                 records.extend(parse_dart_corp_code_zip(response.content))
