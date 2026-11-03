@@ -1,3 +1,10 @@
+if (!document.querySelector('link[href="css/relation-ui.css"]')) {
+  const relationStyle = document.createElement("link");
+  relationStyle.rel = "stylesheet";
+  relationStyle.href = "css/relation-ui.css";
+  document.head.appendChild(relationStyle);
+}
+
 function mappingStatusText(event) {
   const grade = event.relation_grade || "UNMAPPED";
   if ((grade === "A" || grade === "B") && event.relation_ingest_mode === "MANUAL") {
