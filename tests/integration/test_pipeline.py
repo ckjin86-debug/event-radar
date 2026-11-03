@@ -183,7 +183,10 @@ def test_pipeline_maps_market_proxy_news_to_direct_listed_issuer(tmp_path):
         skip_price_fetch=True,
     )
 
-    mapped = pd.read_csv(data_dir / "derived" / "event_security_map.csv")
+    mapped = pd.read_csv(
+        data_dir / "derived" / "event_security_map.csv",
+        dtype={"ticker": str},
+    )
     assert set(mapped["ticker"]) == {"005380"}
     row = mapped.iloc[0]
     assert row["relation_grade"] == "A"
