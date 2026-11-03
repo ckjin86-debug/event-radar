@@ -63,12 +63,12 @@ def _contains_alias(
         return alias in normalized_text
 
     # Very short Korean issuer names are common dictionary fragments (e.g. 레이, 한화,
-    # 흥국, 타이드). Require token boundaries so they do not match inside another word
-    # or a longer company name. Explicit group references such as 현대차그룹 are allowed.
+    # 흥국, 타이드, LG). Require token boundaries and reject a following word token so
+    # parents such as LG/SK do not become direct matches for subsidiaries like LG CNS.
     lowered = (text or "").lower()
     boundary = r"0-9a-z가-힣"
     standalone = re.search(
-        rf"(?<![{boundary}]){re.escape(alias)}(?![{boundary}])",
+        rf"(?<![{boundary}]){re.escape(alias)}(?![{boundary}]|\s+[{boundary}])",
         lowered,
     )
     if standalone:
