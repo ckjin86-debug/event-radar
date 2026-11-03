@@ -366,7 +366,8 @@ def run_pipeline(
 
     for ev in current_events:
         ev_df = all_returns_df[all_returns_df["event_id"] == ev.event_id]
-        primary_sec = event_securities.get(ev.event_id, [None])[0]
+        sec_candidates = event_securities.get(ev.event_id, [])
+        primary_sec = sec_candidates[0] if sec_candidates else None
         rel_score = primary_sec.relation_score if primary_sec else 100
         primary_grade = primary_sec.relation_grade if primary_sec else "A"
 
