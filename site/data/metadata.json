@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-03T02:19:09.316499",
-  "total_events": 34,
-  "kr_events": 22,
-  "us_events": 12,
+  "generated_at": "2026-11-03T01:53:11.717077",
+  "total_events": 31,
+  "kr_events": 21,
+  "us_events": 10,
   "version": "1.0.0",
   "collector_status": {
     "DART": "SUCCESS",
