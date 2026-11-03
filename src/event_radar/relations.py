@@ -5,16 +5,25 @@ import csv
 from datetime import date
 from pathlib import Path
 from typing import Optional
+from event_radar.entities import SecurityMention
 from event_radar.models import Event, Relation, EventSecurity
 
 
-def resolve_related_securities(event: Event, relations: list[Relation]) -> list[EventSecurity]:
-    """Resolve A/B related securities for an event avoiding look-ahead bias and expired relations."""
+def resolve_related_securities(
+    event: Event,
+    relations: list[Relation],
+    direct_mentions: Optional[list[SecurityMention]] = None,
+) -> list[EventSecurity]:
+    """Resolve A/B related securities without look-ahead bias or theme guessing."""
     results: dict[str, EventSecurity] = {}
+    mentions = direct_mentions or []
 
-    # 1. Primary entity is always Grade A
     primary_ticker = event.primary_ticker.strip().upper()
-    if primary_ticker:
+    primary_company = event.primary_company.strip().upper()
+
+    # A broad market proxy is only a fallback. Once a listed issuer is directly named,
+    # use the issuer(s) as the Grade-A securities instead of the proxy index.
+    if primary_ticker and not (mentions and primary_ticker.startswith("^")):
         results[primary_ticker] = EventSecurity(
             event_id=event.event_id,
             ticker=primary_ticker,
@@ -24,13 +33,31 @@ def resolve_related_securities(event: Event, relations: list[Relation]) -> list[
             evidence_text="직접 당사자",
         )
 
+    relation_origins = {value for value in (primary_ticker, primary_company) if value}
+    for mention in mentions:
+        ticker = mention.ticker.strip().upper()
+        company = mention.company_name.strip()
+        if not ticker:
+            continue
+        results[ticker] = EventSecurity(
+            event_id=event.event_id,
+            ticker=ticker,
+            relation_grade="A",
+            relation_score=100,
+            relation_type="DIRECT_MENTION",
+            evidence_text=f"직접 언급: {company}",
+        )
+        relation_origins.add(ticker)
+        if company:
+            relation_origins.add(company.upper())
+
     announced_date = event.announced_at.date() if hasattr(event.announced_at, "date") else event.announced_at
     event_date = event.event_date
 
-    # 2. Check candidate relations
+    # Expand only from explicit primary/direct entities through stored evidence relations.
     for rel in relations:
         from_entity = rel.from_entity.strip().upper()
-        if from_entity not in (primary_ticker, event.primary_company.strip().upper()):
+        if from_entity not in relation_origins:
             continue
 
         # Look-ahead bias check: was relation known before or on announcement?
@@ -48,7 +75,6 @@ def resolve_related_securities(event: Event, relations: list[Relation]) -> list[
             continue
 
         ticker = rel.to_ticker.strip().upper()
-        grade = rel.relation_grade
         if rel.relation_score >= 90:
             grade = "A"
         elif rel.relation_score >= 60:
@@ -68,7 +94,7 @@ def resolve_related_securities(event: Event, relations: list[Relation]) -> list[
             evidence_text=rel.evidence_source,
         )
 
-        # If already present, keep the higher score
+        # If already present, keep the higher score.
         if ticker in results:
             if candidate.relation_score > results[ticker].relation_score:
                 results[ticker] = candidate
