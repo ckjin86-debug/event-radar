@@ -41,7 +41,9 @@ def _company_aliases(company_name: str, country: str) -> list[tuple[str, bool]]:
     normalized = _normalize_company_name(company_name, country)
     aliases: list[tuple[str, bool]] = []
     if normalized and len(normalized) >= 2:
-        aliases.append((normalized, False))
+        # Korean headlines often refer to the corporate group by appending '그룹'.
+        # Allow that explicit suffix without relaxing short-name matching elsewhere.
+        aliases.append((normalized, country == "KR"))
     if country == "KR" and normalized.endswith("자동차") and len(normalized) > len("자동차"):
         # 현대자동차 -> 현대차. Only permit this short alias standalone or as 현대차그룹.
         alias = f"{normalized[:-len('자동차')]}차"
@@ -62,7 +64,7 @@ def _contains_alias(
 
     # Very short Korean issuer names are common dictionary fragments (e.g. 레이, 한화,
     # 흥국, 타이드). Require token boundaries so they do not match inside another word
-    # or a longer company name. Generated aliases such as 현대차 may also precede 그룹.
+    # or a longer company name. Explicit group references such as 현대차그룹 are allowed.
     lowered = (text or "").lower()
     boundary = r"0-9a-z가-힣"
     standalone = re.search(
