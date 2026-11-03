@@ -46,6 +46,15 @@ def test_parse_next_month_day_is_exact_date():
     assert window.end == date(2026, 12, 6)
 
 
+def test_parse_this_month_day_is_exact_date():
+    mod = _news_module()
+    window = mod.parse_future_window("이달 9일 매각 공고 예정", date(2026, 11, 3))
+    assert window is not None
+    assert window.precision == "EXACT_DATE"
+    assert window.start == date(2026, 11, 9)
+    assert window.end == date(2026, 11, 9)
+
+
 def test_parse_next_year_quarter():
     mod = _news_module()
     window = mod.parse_future_window("내년 1분기 공장 상업가동 예정", date(2026, 11, 3))
