@@ -1,11 +1,22 @@
 {
-  "generated_at": "2026-11-03T23:28:18.146094",
-  "total_events": 80,
-  "kr_events": 68,
+  "generated_at": "2026-11-03T16:47:28.079871",
+  "total_events": 106,
+  "kr_events": 94,
   "us_events": 12,
   "historical_seed_events": 11,
-  "news_candidates": 583,
-  "news_visible": 55,
+  "news_candidates": 797,
+  "news_visible": 81,
   "version": "1.0.0",
-  "collector_status": {}
+  "collector_status": {
+    "HISTORICAL_SEED": "SUCCESS",
+    "DART": "SUCCESS",
+    "SEC": "SUCCESS",
+    "NEWS_FUTURE": "SUCCESS",
+    "FDA_ADVISORY": "SUCCESS",
+    "KIND_IPO": "SUCCESS",
+    "FED_FOMC": "SUCCESS",
+    "ENTER_KR": "SUCCESS",
+    "GAMES_RELEASE": "SUCCESS",
+    "INDEX_KR": "SUCCESS"
+  }
 }
