@@ -1,0 +1,221 @@
+.relation-overview-card {
+  background: linear-gradient(180deg, rgba(30, 41, 59, 0.98), rgba(23, 34, 54, 0.98));
+}
+
+.relation-summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  background: #0f172a;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.relation-summary-main {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.relation-summary-main strong {
+  font-size: 1.05rem;
+  color: #fff;
+}
+
+.relation-summary-main span,
+.relation-summary-note {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+.relation-summary-note {
+  max-width: 620px;
+  line-height: 1.45;
+}
+
+.relation-group {
+  padding-top: 16px;
+  margin-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+.relation-group-verified {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.relation-group-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.relation-group-heading h3 {
+  font-size: 0.98rem;
+  margin-bottom: 3px;
+}
+
+.relation-group-heading p {
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+}
+
+.relation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 10px;
+}
+
+.relation-item {
+  min-width: 0;
+  padding: 14px;
+  background: #172236;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.relation-item-top,
+.relation-ticker-wrap,
+.relation-type-line,
+.relation-meta {
+  display: flex;
+  align-items: center;
+}
+
+.relation-item-top {
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.relation-ticker-wrap {
+  gap: 7px;
+}
+
+.relation-ticker {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.relation-type-line {
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.82rem;
+}
+
+.relation-type-line span {
+  color: var(--accent-blue);
+  font-weight: 700;
+}
+
+.relation-state {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 3px 8px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.relation-state-persistent {
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.09);
+  border: 1px solid rgba(74, 222, 128, 0.45);
+}
+
+.relation-state-auto {
+  color: #7dd3fc;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+}
+
+.relation-state-candidate {
+  color: #d8b4fe;
+  background: rgba(192, 132, 252, 0.08);
+  border: 1px solid rgba(192, 132, 252, 0.4);
+}
+
+.relation-state-reference {
+  color: #94a3b8;
+  background: rgba(148, 163, 184, 0.07);
+  border: 1px solid #475569;
+}
+
+.relation-state-description {
+  margin-top: 5px;
+  color: var(--text-secondary);
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.relation-meta {
+  flex-wrap: wrap;
+  gap: 5px 12px;
+  margin-top: 10px;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+}
+
+.relation-meta strong {
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+.relation-evidence {
+  margin-top: 9px;
+  color: #cbd5e1;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.relation-source-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.76rem !important;
+}
+
+.relation-empty {
+  grid-column: 1 / -1;
+  padding: 14px;
+  color: var(--text-secondary);
+  border: 1px dashed var(--border-color);
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.5);
+  font-size: 0.8rem;
+}
+
+.mapping-status {
+  margin-top: 5px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.mapping-status-verified { color: #4ade80; }
+.mapping-status-auto { color: #7dd3fc; }
+.mapping-status-candidate { color: #d8b4fe; }
+.mapping-status-reference { color: #94a3b8; }
+
+@media (max-width: 640px) {
+  .relation-summary,
+  .relation-item-top {
+    align-items: flex-start;
+  }
+
+  .relation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .relation-summary-note {
+    width: 100%;
+  }
+}
