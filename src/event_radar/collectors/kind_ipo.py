@@ -23,7 +23,7 @@ KIND_BASE_URL = "https://kind.krx.co.kr"
 
 _DATE_RE = re.compile(r"(20\d{2})[.\-/]\s*(\d{1,2})[.\-/]\s*(\d{1,2})")
 _CALENDAR_MONTH_RE = re.compile(r"(20\d{2})\s*년\s*(\d{1,2})\s*월")
-_ALLOWED_CALENDAR_LABELS = {"수요예측", "청약", "납입", "상장"}
+_ALLOWED_CALENDAR_LABELS = {"상장"}
 
 
 def _parse_dates(text: str) -> list[date]:
@@ -106,12 +106,11 @@ class KindIpoCollector:
         )
 
     def _parse_table(self, html_text: str, since: datetime) -> list[RawEvent]:
-        """Parse KIND public-offering rows from either full-page or AJAX HTML.
+        """Parse KIND public-offering rows and emit listing dates only.
 
         The full page may include column headers. KIND's AJAX result fragment omits
-        those headers, but its offering columns have a stable order:
-        company, filing date, bookbuilding, subscription, payment, price, amount,
-        listing date, underwriter.
+        those headers, but its offering columns have a stable order where listing
+        date is column 7 (zero-based).
         """
         soup = BeautifulSoup(html_text, "html.parser")
         events: list[RawEvent] = []
@@ -121,28 +120,19 @@ class KindIpoCollector:
             if headers:
                 company_idx = _find_index(headers, "회사명", "종목명", "기업명")
                 market_idx = _find_index(headers, "시장구분", "시장")
-                book_idx = _find_index(headers, "수요예측")
-                subscription_idx = _find_index(headers, "청약")
-                payment_idx = _find_index(headers, "납입")
                 listing_idx = _find_index(headers, "상장예정", "상장일", "상장")
-                if company_idx is None or not any(
-                    idx is not None for idx in (book_idx, subscription_idx, payment_idx, listing_idx)
-                ):
+                if company_idx is None or listing_idx is None:
                     continue
             else:
                 # Official AJAX response has no header row. These positions were
                 # verified against the live KIND response used by the web page.
                 company_idx = 0
                 market_idx = None
-                book_idx = 2
-                subscription_idx = 3
-                payment_idx = 4
                 listing_idx = 7
 
             for row in table.find_all("tr"):
                 cells = row.find_all("td")
-                required = [idx for idx in (company_idx, book_idx, subscription_idx, payment_idx, listing_idx) if idx is not None]
-                if not cells or not required or max(required) >= len(cells):
+                if not cells or max(company_idx, listing_idx) >= len(cells):
                     continue
 
                 company_cell = cells[company_idx]
@@ -160,34 +150,26 @@ class KindIpoCollector:
                 ticker = self._market_proxy(market_text)
                 evidence = " | ".join(cell.get_text(" ", strip=True) for cell in cells)
 
-                def add_range(idx: Optional[int], start_type: str, start_label: str, end_type: str, end_label: str) -> None:
-                    if idx is None or idx >= len(cells):
-                        return
-                    parsed = _parse_dates(cells[idx].get_text(" ", strip=True))
-                    if not parsed:
-                        return
-                    if parsed[0] >= since.date():
-                        events.append(self._make_event(company, ticker, start_type, start_label, parsed[0], source_url, evidence, since))
-                    if parsed[-1] >= since.date():
-                        events.append(self._make_event(company, ticker, end_type, end_label, parsed[-1], source_url, evidence, since))
-
-                def add_single(idx: Optional[int], event_type: str, label: str) -> None:
-                    if idx is None or idx >= len(cells):
-                        return
-                    parsed = _parse_dates(cells[idx].get_text(" ", strip=True))
-                    if parsed and parsed[-1] >= since.date():
-                        events.append(self._make_event(company, ticker, event_type, label, parsed[-1], source_url, evidence, since))
-
-                add_range(book_idx, "IPO_BOOKBUILDING_START", "수요예측 시작", "IPO_BOOKBUILDING_END", "수요예측 종료")
-                add_range(subscription_idx, "IPO_SUBSCRIPTION_START", "공모청약 시작", "IPO_SUBSCRIPTION_END", "공모청약 종료")
-                add_single(payment_idx, "IPO_PAYMENT", "납입일")
-                add_single(listing_idx, "IPO_LISTING", "상장예정일")
+                parsed = _parse_dates(cells[listing_idx].get_text(" ", strip=True))
+                if parsed and parsed[-1] >= since.date():
+                    events.append(
+                        self._make_event(
+                            company,
+                            ticker,
+                            "IPO_LISTING",
+                            "상장예정일",
+                            parsed[-1],
+                            source_url,
+                            evidence,
+                            since,
+                        )
+                    )
 
         deduped = {(event.primary_company, event.event_type, event.event_date): event for event in events}
         return sorted(deduped.values(), key=lambda e: (e.event_date, e.primary_company, e.event_type))
 
     def _parse_calendar_entries(self, html_text: str) -> list[dict]:
-        """Retain calendar parsing for fixtures/backward compatibility."""
+        """Retain calendar parsing for listing-date fallback only."""
         soup = BeautifulSoup(html_text, "html.parser")
         calendar = soup.select_one("#calBig2") or soup
         month_match = _CALENDAR_MONTH_RE.search(calendar.get_text(" ", strip=True))
@@ -234,27 +216,28 @@ class KindIpoCollector:
     def _events_from_calendar_entries(self, entries: list[dict], since: datetime) -> list[RawEvent]:
         grouped: dict[tuple[str, str, str], list[dict]] = defaultdict(list)
         for entry in entries:
-            if entry["date"] >= since.date():
+            if entry["category"] == "상장" and entry["date"] >= since.date():
                 grouped[(entry["company"], entry["category"], entry["market"])].append(entry)
 
         events: list[RawEvent] = []
-        for (company, category, market), rows in grouped.items():
+        for (company, _category, market), rows in grouped.items():
             rows.sort(key=lambda row: row["date"])
             ticker = self._market_proxy(market)
             source_url = rows[0]["source_url"] or KIND_IPO_URL
-            dates = sorted({row["date"] for row in rows})
-            evidence = f"KIND 공모일정: {category} {dates[0].isoformat()}" + (f"~{dates[-1].isoformat()}" if dates[-1] != dates[0] else "")
-
-            if category == "수요예측":
-                events.append(self._make_event(company, ticker, "IPO_BOOKBUILDING_START", "수요예측 시작", dates[0], source_url, evidence, since))
-                events.append(self._make_event(company, ticker, "IPO_BOOKBUILDING_END", "수요예측 종료", dates[-1], source_url, evidence, since))
-            elif category == "청약":
-                events.append(self._make_event(company, ticker, "IPO_SUBSCRIPTION_START", "공모청약 시작", dates[0], source_url, evidence, since))
-                events.append(self._make_event(company, ticker, "IPO_SUBSCRIPTION_END", "공모청약 종료", dates[-1], source_url, evidence, since))
-            elif category == "납입":
-                events.append(self._make_event(company, ticker, "IPO_PAYMENT", "납입일", dates[-1], source_url, evidence, since))
-            elif category == "상장":
-                events.append(self._make_event(company, ticker, "IPO_LISTING", "상장예정일", dates[-1], source_url, evidence, since))
+            listing_date = rows[-1]["date"]
+            evidence = f"KIND 공모일정: 상장 {listing_date.isoformat()}"
+            events.append(
+                self._make_event(
+                    company,
+                    ticker,
+                    "IPO_LISTING",
+                    "상장예정일",
+                    listing_date,
+                    source_url,
+                    evidence,
+                    since,
+                )
+            )
 
         deduped = {(event.primary_company, event.event_type, event.event_date): event for event in events}
         return sorted(deduped.values(), key=lambda e: (e.event_date, e.primary_company, e.event_type))

@@ -11,6 +11,41 @@ from event_radar.backtest.strategies import StrategyResult
 from event_radar.backtest.metrics import BacktestSummary
 
 
+def _is_actual_convertible_listing(ev: Event) -> bool:
+    """Return True only when a legacy DART convertible row reflects new-share listing."""
+    combined = f"{ev.event_name} {ev.evidence_text}".replace(" ", "")
+    has_exercise = any(
+        keyword in combined
+        for keyword in ("전환청구권행사", "전환권행사", "신주인수권행사")
+    )
+    has_listing = "신주상장" in combined or "상장예정" in combined
+    return has_exercise and has_listing
+
+
+def _is_visible_radar_event(ev: Event) -> bool:
+    """Hide historical rows that no longer meet the radar's signal policy."""
+    # Generic Korean rights issues are retained in canonical history but hidden.
+    # Capex-backed issues are reclassified as CAPEX_FINANCING at collection time.
+    if ev.source_name == "DART" and ev.event_type == "RIGHTS_ISSUE":
+        return False
+
+    # Older KIND runs emitted every IPO process milestone. The radar now treats
+    # listing day as the only primary IPO event.
+    if ev.source_name == "KIND_IPO" and ev.event_type != "IPO_LISTING":
+        return False
+
+    # Older DART runs broadly labelled CB/BW financing notices as listings.
+    # Preserve them in canonical history, but expose only actual exercise/listing rows.
+    if (
+        ev.source_name == "DART"
+        and ev.event_type == "CONVERTIBLE_LISTING"
+        and not _is_actual_convertible_listing(ev)
+    ):
+        return False
+
+    return True
+
+
 def export_site_data(
     events: list[Event],
     revisions: list[EventRevision],
@@ -31,13 +66,7 @@ def export_site_data(
     out_path = Path(output_dir)
     out_path.mkdir(parents=True, exist_ok=True)
 
-    # Generic Korean rights issues are retained in canonical history but are intentionally
-    # hidden from the public radar. Capex-backed issues are reclassified as CAPEX_FINANCING.
-    visible_events = [
-        ev
-        for ev in events
-        if not (ev.source_name == "DART" and ev.event_type == "RIGHTS_ISSUE")
-    ]
+    visible_events = [ev for ev in events if _is_visible_radar_event(ev)]
 
     # 1. site/data/events.json
     events_list = []

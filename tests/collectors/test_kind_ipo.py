@@ -92,7 +92,6 @@ PROGRAM_TABLE_HTML = """
 </table>
 """
 
-# KIND's AJAX search response contains the result rows without a header row.
 AJAX_FRAGMENT_HTML = """
 <table class="list type-00">
   <tbody>
@@ -146,73 +145,60 @@ class KindAjaxSession:
         return FakeKindResponse(AJAX_FRAGMENT_HTML)
 
 
-def test_kind_ipo_emits_all_schedule_milestones():
+def test_kind_ipo_emits_listing_only():
     events = KindIpoCollector(mock_html=SAMPLE_HTML).collect(since=datetime(2026, 11, 1))
-    assert [e.event_type for e in events] == [
-        "IPO_BOOKBUILDING_START", "IPO_BOOKBUILDING_END", "IPO_SUBSCRIPTION_START",
-        "IPO_SUBSCRIPTION_END", "IPO_PAYMENT", "IPO_LISTING",
-    ]
-    assert [e.event_date for e in events] == [
-        date(2026, 11, 10), date(2026, 11, 11), date(2026, 11, 20),
-        date(2026, 11, 21), date(2026, 11, 25), date(2026, 12, 1),
-    ]
-    assert all(e.primary_company == "에이비씨" for e in events)
-    assert all(e.primary_ticker == "^KQ11" for e in events)
+    assert len(events) == 1
+    assert events[0].event_type == "IPO_LISTING"
+    assert events[0].event_date == date(2026, 12, 1)
+    assert events[0].primary_company == "에이비씨"
+    assert events[0].primary_ticker == "^KQ11"
 
 
-def test_kind_ipo_uses_kospi_proxy_for_kospi_rows():
+def test_kind_ipo_uses_kospi_proxy_for_listing():
     events = KindIpoCollector(mock_html=SAMPLE_HTML.replace("코스닥", "코스피")).collect(since=datetime(2026, 11, 1))
-    assert events and all(e.primary_ticker == "^KS11" for e in events)
+    assert len(events) == 1
+    assert events[0].primary_ticker == "^KS11"
 
 
-def test_kind_ipo_skips_milestones_before_since_but_keeps_future_ones():
-    events = KindIpoCollector(mock_html=SAMPLE_HTML).collect(since=datetime(2026, 11, 22))
-    assert [e.event_type for e in events] == ["IPO_PAYMENT", "IPO_LISTING"]
+def test_kind_ipo_skips_company_after_listing_date():
+    events = KindIpoCollector(mock_html=SAMPLE_HTML).collect(since=datetime(2026, 12, 2))
+    assert events == []
 
 
-def test_kind_calendar_markup_groups_multi_day_periods_and_ignores_ir():
+def test_kind_calendar_emits_only_listing_entries():
     events = KindIpoCollector(mock_html=CALENDAR_HTML).collect(since=datetime(2026, 11, 1))
-    by_key = {(e.primary_company, e.event_type): e for e in events}
-    assert by_key[("동원파츠", "IPO_SUBSCRIPTION_START")].event_date == date(2026, 11, 2)
-    assert by_key[("동원파츠", "IPO_SUBSCRIPTION_END")].event_date == date(2026, 11, 3)
-    assert by_key[("동원파츠", "IPO_PAYMENT")].event_date == date(2026, 11, 5)
-    assert by_key[("영광", "IPO_LISTING")].event_date == date(2026, 11, 2)
-    assert by_key[("테스트홀딩스", "IPO_BOOKBUILDING_START")].event_date == date(2026, 11, 3)
-    assert by_key[("테스트홀딩스", "IPO_BOOKBUILDING_END")].event_date == date(2026, 11, 4)
-    assert by_key[("테스트홀딩스", "IPO_BOOKBUILDING_START")].primary_ticker == "^KS11"
-    assert all(e.primary_company != "무시할회사" for e in events)
+    assert len(events) == 1
+    assert events[0].primary_company == "영광"
+    assert events[0].event_type == "IPO_LISTING"
+    assert events[0].event_date == date(2026, 11, 2)
+    assert events[0].primary_ticker == "^KQ11"
 
 
-def test_kind_calendar_uses_kosdaq_proxy_from_official_market_alt_text():
-    events = KindIpoCollector(mock_html=CALENDAR_HTML).collect(since=datetime(2026, 11, 1))
-    dongwon = [e for e in events if e.primary_company == "동원파츠"]
-    assert dongwon and all(e.primary_ticker == "^KQ11" for e in dongwon)
-
-
-def test_kind_program_table_reads_market_from_company_icon():
+def test_kind_program_table_reads_market_from_company_icon_for_listing():
     events = KindIpoCollector(mock_html=PROGRAM_TABLE_HTML).collect(since=datetime(2026, 11, 1))
-    assert len(events) == 6
-    assert all(e.primary_company == "씨아이에스케미칼" for e in events)
-    assert all(e.primary_ticker == "^KQ11" for e in events)
-    assert events[-1].event_type == "IPO_LISTING"
-    assert events[-1].event_date == date(2026, 12, 22)
+    assert len(events) == 1
+    assert events[0].primary_company == "씨아이에스케미칼"
+    assert events[0].primary_ticker == "^KQ11"
+    assert events[0].event_type == "IPO_LISTING"
+    assert events[0].event_date == date(2026, 12, 22)
 
 
-def test_kind_headerless_ajax_fragment_uses_fixed_offering_columns():
+def test_kind_headerless_ajax_fragment_emits_one_listing_per_company():
     events = KindIpoCollector(mock_html=AJAX_FRAGMENT_HTML).collect(since=datetime(2026, 11, 3))
-    cis = [e for e in events if e.primary_company == "씨아이에스케미칼"]
-    dongwon = [e for e in events if e.primary_company == "동원파츠"]
-    assert len(cis) == 6
-    assert {e.event_type for e in dongwon} == {"IPO_SUBSCRIPTION_END", "IPO_PAYMENT", "IPO_LISTING"}
+    assert [(e.primary_company, e.event_type, e.event_date) for e in events] == [
+        ("동원파츠", "IPO_LISTING", date(2026, 11, 10)),
+        ("씨아이에스케미칼", "IPO_LISTING", date(2026, 12, 22)),
+    ]
     assert all(e.primary_ticker == "^KQ11" for e in events)
 
 
-def test_live_kind_collection_gets_session_then_posts_ajax_search():
+def test_live_kind_collection_gets_session_then_posts_ajax_search_and_returns_listings():
     collector = KindIpoCollector()
     collector.session = KindAjaxSession()
     events = collector.collect(since=datetime(2026, 11, 3))
 
-    assert events
+    assert len(events) == 2
+    assert all(e.event_type == "IPO_LISTING" for e in events)
     assert collector.session.get_calls
     assert collector.session.post_calls
     call = collector.session.post_calls[0]
