@@ -1,4 +1,4 @@
-"""FDA scheduled regulatory event collector based on the official advisory calendar."""
+"""FDA scheduled regulatory event collector based on official government sources."""
 
 from __future__ import annotations
 
@@ -19,13 +19,23 @@ from event_radar.collectors.base import CollectorRunLog, log_collector_run
 
 
 FDA_ADVISORY_URL = "https://www.fda.gov/advisory-committees/advisory-committee-calendar"
+FEDERAL_REGISTER_API_URL = "https://www.federalregister.gov/api/v1/documents.json"
+FEDERAL_REGISTER_DETAIL_URL = "https://www.federalregister.gov/api/v1/documents/{document_number}.json"
+
+_MONTHS = {
+    "january": 1, "february": 2, "march": 3, "april": 4,
+    "may": 5, "june": 6, "july": 7, "august": 8,
+    "september": 9, "october": 10, "november": 11, "december": 12,
+}
 
 
 class FdaCollector:
     """Collect scheduled FDA advisory committee meetings.
 
-    A small legacy parser is retained for existing fixtures, but production collection uses
-    the official FDA Advisory Committee Calendar instead of the old news-events page.
+    Production first tries FDA's advisory calendar. If that page is unavailable from
+    a cloud runner, the collector uses the Federal Register search API and then reads
+    each candidate notice's detail JSON, whose ``dates`` field contains the meeting
+    date published by FDA.
     """
 
     source_name: str = "FDA_ADVISORY"
@@ -41,7 +51,9 @@ class FdaCollector:
         self.timeout = timeout
         self.session = requests.Session()
         self.session.headers.update({
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) EventRadar/1.0"
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) EventRadar/1.0",
+            "Accept": "text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8",
+            "Accept-Language": "en-US,en;q=0.9",
         })
 
     @staticmethod
@@ -51,6 +63,17 @@ class FdaCollector:
             return None
         try:
             return date(int(match.group(3)), int(match.group(1)), int(match.group(2)))
+        except ValueError:
+            return None
+
+    @staticmethod
+    def _parse_written_date(text: str) -> Optional[date]:
+        pattern = r"\b(" + "|".join(_MONTHS.keys()) + r")\s+(3[01]|[12]\d|0?[1-9]),\s*(20\d{2})\b"
+        match = re.search(pattern, text or "", re.IGNORECASE)
+        if not match:
+            return None
+        try:
+            return date(int(match.group(3)), _MONTHS[match.group(1).lower()], int(match.group(2)))
         except ValueError:
             return None
 
@@ -82,34 +105,111 @@ class FdaCollector:
                 continue
             item_url = urljoin("https://www.fda.gov", link.get("href", "")) if link else FDA_ADVISORY_URL
             ticker, company = self._ticker_and_company(title)
-            uid = hashlib.sha1(f"{ev_date.isoformat()}|{title}|{item_url}".encode("utf-8")).hexdigest()
-
-            events.append(
-                RawEvent(
-                    source_name=self.source_name,
-                    source_kind="REGULATOR",
-                    source_event_uid=uid,
-                    source_url=item_url,
-                    country="US",
-                    primary_ticker=ticker,
-                    primary_company=company,
-                    event_type="FDA_ADVISORY_COMMITTEE",
-                    event_name=title,
-                    announced_at=since,
-                    event_date=ev_date,
-                    date_precision="EXACT_DATE",
-                    window_start=ev_date,
-                    window_end=ev_date,
-                    event_time_context="DATE_ONLY",
-                    status="CONFIRMED",
-                    evidence_text=title,
-                    ingest_mode="AUTO",
-                )
-            )
+            uid = hashlib.sha1(f"{title}|{item_url}".encode("utf-8")).hexdigest()
+            events.append(self._make_event(title, item_url, uid, ticker, company, since, ev_date, title))
         return events
 
+    def _make_event(
+        self,
+        title: str,
+        source_url: str,
+        source_uid: str,
+        ticker: str,
+        company: str,
+        announced_at: datetime,
+        ev_date: date,
+        evidence: str,
+    ) -> RawEvent:
+        return RawEvent(
+            source_name=self.source_name,
+            source_kind="REGULATOR",
+            source_event_uid=source_uid,
+            source_url=source_url,
+            country="US",
+            primary_ticker=ticker,
+            primary_company=company,
+            event_type="FDA_ADVISORY_COMMITTEE",
+            event_name=title,
+            announced_at=announced_at,
+            event_date=ev_date,
+            date_precision="EXACT_DATE",
+            window_start=ev_date,
+            window_end=ev_date,
+            event_time_context="DATE_ONLY",
+            status="CONFIRMED",
+            evidence_text=evidence,
+            ingest_mode="AUTO",
+        )
+
+    def _event_from_federal_register_detail(self, item: dict, since: datetime) -> Optional[RawEvent]:
+        title = str(item.get("title") or "").strip()
+        title_lower = title.lower()
+        if "meeting" not in title_lower or "advisory" not in title_lower:
+            return None
+
+        dates_text = str(item.get("dates") or "").strip()
+        ev_date = self._parse_written_date(dates_text)
+        if ev_date is None or ev_date < since.date():
+            return None
+
+        publication_raw = str(item.get("publication_date") or "")
+        try:
+            announced_at = datetime.combine(date.fromisoformat(publication_raw), datetime.min.time())
+        except ValueError:
+            announced_at = since
+
+        source_url = str(item.get("html_url") or "https://www.federalregister.gov/")
+        doc_no = str(item.get("document_number") or "").strip()
+        source_uid = f"federal-register:{doc_no}" if doc_no else hashlib.sha1(source_url.encode("utf-8")).hexdigest()
+        ticker, company = self._ticker_and_company(title)
+        evidence = dates_text or str(item.get("abstract") or "") or title
+        return self._make_event(title, source_url, source_uid, ticker, company, announced_at, ev_date, evidence)
+
+    def _parse_federal_register_payload(self, payload: dict, since: datetime) -> list[RawEvent]:
+        """Parse detail-like payloads; retained for tests and defensive compatibility."""
+        candidates = payload.get("results", []) if isinstance(payload, dict) else []
+        events = [self._event_from_federal_register_detail(item, since) for item in candidates]
+        return sorted((event for event in events if event is not None), key=lambda e: (e.event_date, e.event_name))
+
+    def _fetch_federal_register_events(self, since: datetime) -> list[RawEvent]:
+        response = self.session.get(
+            FEDERAL_REGISTER_API_URL,
+            params={
+                "per_page": 100,
+                "order": "newest",
+                "conditions[agencies][]": "food-and-drug-administration",
+                "conditions[term]": "advisory committee meeting",
+            },
+            timeout=self.timeout,
+        )
+        if response.status_code != 200:
+            raise ConnectionError(f"Federal Register returned HTTP {response.status_code}")
+
+        events: list[RawEvent] = []
+        for summary in response.json().get("results", []) or []:
+            title = str(summary.get("title") or "").strip()
+            title_lower = title.lower()
+            if "meeting" not in title_lower or "advisory" not in title_lower:
+                continue
+            doc_no = str(summary.get("document_number") or "").strip()
+            if not doc_no:
+                continue
+
+            detail_response = self.session.get(
+                FEDERAL_REGISTER_DETAIL_URL.format(document_number=doc_no),
+                timeout=self.timeout,
+            )
+            if detail_response.status_code != 200:
+                continue
+            detail = detail_response.json()
+            event = self._event_from_federal_register_detail(detail, since)
+            if event is not None:
+                events.append(event)
+
+        deduped = {event.source_event_uid or event.source_url: event for event in events}
+        return sorted(deduped.values(), key=lambda e: (e.event_date, e.event_name))
+
     def _parse_legacy_fixture(self, soup: BeautifulSoup, since: datetime, cfg: dict) -> list[RawEvent]:
-        """Keep the old test/fixture contract without using it for production discovery."""
         events: list[RawEvent] = []
         container_sel = cfg.get("container_selector", ".view-content .views-row")
         title_sel = cfg.get("title_selector", ".views-field-title a")
@@ -119,31 +219,27 @@ class FdaCollector:
                 continue
             title_text = title_elem.get_text(strip=True)
             item_url = urljoin("https://www.fda.gov", title_elem.get("href", ""))
-            ticker_match = re.search(r"Ticker:\s*([A-Z0-9.\-]+)", title_text, re.IGNORECASE)
-            if not ticker_match:
-                ticker_match = re.search(r"\(([A-Z]{1,5})\)", title_text)
+            ticker_match = re.search(r"Ticker:\s*([A-Z0-9.\-]+)", title_text, re.IGNORECASE) or re.search(r"\(([A-Z]{1,5})\)", title_text)
             date_match = re.search(r"(20\d{2})-(\d{2})-(\d{2})", title_text)
             if not ticker_match or not date_match:
                 continue
             ev_date = date(int(date_match.group(1)), int(date_match.group(2)), int(date_match.group(3)))
-            events.append(
-                RawEvent(
-                    source_name=self.source_name,
-                    source_kind="REGULATOR",
-                    source_url=item_url,
-                    country="US",
-                    primary_ticker=ticker_match.group(1).upper(),
-                    primary_company="FDA Applicant",
-                    event_type="FDA_APPROVAL",
-                    event_name=title_text,
-                    announced_at=since,
-                    event_date=ev_date,
-                    event_time_context="DATE_ONLY",
-                    status="CONFIRMED",
-                    evidence_text=title_text,
-                    ingest_mode="AUTO",
-                )
-            )
+            events.append(RawEvent(
+                source_name=self.source_name,
+                source_kind="REGULATOR",
+                source_url=item_url,
+                country="US",
+                primary_ticker=ticker_match.group(1).upper(),
+                primary_company="FDA Applicant",
+                event_type="FDA_APPROVAL",
+                event_name=title_text,
+                announced_at=since,
+                event_date=ev_date,
+                event_time_context="DATE_ONLY",
+                status="CONFIRMED",
+                evidence_text=title_text,
+                ingest_mode="AUTO",
+            ))
         return events
 
     def collect(self, since: datetime) -> list[RawEvent]:
@@ -155,37 +251,46 @@ class FdaCollector:
                     all_cfg = yaml.safe_load(f) or {}
                     cfg = all_cfg.get("sources", {}).get("fda_pdufa", {})
 
-            url = cfg.get("advisory_url", FDA_ADVISORY_URL)
             if self.mock_html is not None:
-                html_text = self.mock_html
+                soup = BeautifulSoup(self.mock_html, "html.parser")
+                events = self._parse_advisory_table(soup, since)
+                if not events:
+                    events = self._parse_legacy_fixture(soup, since, cfg)
             else:
-                resp = self.session.get(url, timeout=self.timeout)
-                if resp.status_code != 200:
-                    raise ConnectionError(f"FDA returned HTTP {resp.status_code}")
-                html_text = resp.text
+                url = cfg.get("advisory_url", FDA_ADVISORY_URL)
+                events: list[RawEvent] = []
+                primary_error: Optional[Exception] = None
+                try:
+                    resp = self.session.get(url, timeout=self.timeout)
+                    if resp.status_code != 200:
+                        raise ConnectionError(f"FDA returned HTTP {resp.status_code}")
+                    events = self._parse_advisory_table(BeautifulSoup(resp.text, "html.parser"), since)
+                except Exception as exc:
+                    primary_error = exc
 
-            soup = BeautifulSoup(html_text, "html.parser")
-            events = self._parse_advisory_table(soup, since)
-            if not events:
-                events = self._parse_legacy_fixture(soup, since, cfg)
+                if not events:
+                    try:
+                        events = self._fetch_federal_register_events(since)
+                    except Exception as fallback_exc:
+                        if primary_error is not None:
+                            raise ConnectionError(
+                                f"FDA primary failed ({primary_error}); Federal Register fallback failed ({fallback_exc})"
+                            ) from fallback_exc
+                        raise
 
-            log_collector_run(
-                CollectorRunLog(
-                    source_name=self.source_name,
-                    status="SUCCESS",
-                    items_count=len(events),
-                    duration_sec=time.time() - start_time,
-                )
-            )
+            log_collector_run(CollectorRunLog(
+                source_name=self.source_name,
+                status="SUCCESS",
+                items_count=len(events),
+                duration_sec=time.time() - start_time,
+            ))
             return events
         except Exception as exc:
-            log_collector_run(
-                CollectorRunLog(
-                    source_name=self.source_name,
-                    status="FAILED",
-                    items_count=0,
-                    duration_sec=time.time() - start_time,
-                    error_message=str(exc),
-                )
-            )
+            log_collector_run(CollectorRunLog(
+                source_name=self.source_name,
+                status="FAILED",
+                items_count=0,
+                duration_sec=time.time() - start_time,
+                error_message=str(exc),
+            ))
             return []
