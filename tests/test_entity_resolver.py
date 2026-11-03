@@ -2,6 +2,7 @@ import io
 import zipfile
 from datetime import date, datetime
 
+import event_radar.entity_resolver as entity_resolver
 from event_radar.models import Event
 from event_radar.entity_resolver import ListedCompanyRegistry, is_market_proxy, parse_dart_corp_code_zip
 
@@ -43,6 +44,46 @@ def test_registry_resolves_explicit_listed_company_mentions():
     assert [(row.ticker, row.relation_grade, row.relation_type) for row in samsung] == [
         ("207940", "A", "DIRECT_MENTION")
     ]
+
+
+def test_registry_resolves_multiple_mentions_and_prefers_long_alias_boundary():
+    registry = ListedCompanyRegistry.from_mapping(
+        {
+            "현대차": "005380",
+            "현대차증권": "001500",
+            "포스코퓨처엠": "003670",
+        }
+    )
+
+    rows = registry.resolve_mentions(
+        _event("현대차증권과 포스코퓨처엠이 협력하고 현대차도 투자 검토")
+    )
+
+    assert [(row.ticker, row.evidence_text) for row in rows] == [
+        ("001500", "이벤트 원문에 상장사명 명시: 현대차증권"),
+        ("003670", "이벤트 원문에 상장사명 명시: 포스코퓨처엠"),
+        ("005380", "이벤트 원문에 상장사명 명시: 현대차"),
+    ]
+
+
+def test_registry_does_not_scan_one_regex_per_alias(monkeypatch):
+    mapping = {f"테스트기업{index:04d}": f"{100000 + index:06d}" for index in range(500)}
+    mapping["한화시스템"] = "272210"
+    registry = ListedCompanyRegistry.from_mapping(mapping)
+
+    calls = 0
+    original_search = entity_resolver.re.search
+
+    def counted_search(*args, **kwargs):
+        nonlocal calls
+        calls += 1
+        return original_search(*args, **kwargs)
+
+    monkeypatch.setattr(entity_resolver.re, "search", counted_search)
+    rows = registry.mentioned_companies("한화시스템 11월 6일 선고")
+
+    assert rows == [("한화시스템", "272210")]
+    assert calls <= 2
 
 
 def test_registry_rejects_short_or_partial_company_names():
