@@ -38,6 +38,19 @@ def _is_visible_radar_event(ev: Event) -> bool:
     return True
 
 
+def _serialize_securities(securities: list[EventSecurity]) -> list[dict[str, Any]]:
+    return [
+        {
+            "ticker": s.ticker,
+            "relation_grade": s.relation_grade,
+            "relation_score": s.relation_score,
+            "relation_type": s.relation_type,
+            "evidence_text": s.evidence_text,
+        }
+        for s in securities
+    ]
+
+
 def _analyze_historical_peers(
     event: Event,
     analysis_events: list[Event],
@@ -98,7 +111,7 @@ def export_site_data(
     collector_status: dict[str, str] | None = None,
     now: datetime | None = None,
 ) -> None:
-    """Generate public JSON files for static GitHub Pages without exposing seed rows."""
+    """Generate public JSON files for static GitHub Pages."""
     if now is None:
         now = datetime.now()
     today = now.date()
@@ -106,9 +119,8 @@ def export_site_data(
     out_path = Path(output_dir)
     out_path.mkdir(parents=True, exist_ok=True)
 
-    # Historical seeds remain part of the analysis universe so future/current events
-    # can use them for peer backtests, but they are not user-facing radar rows.
     analysis_events = [ev for ev in events if _is_visible_radar_event(ev)]
+    historical_seed_events = [ev for ev in analysis_events if ev.source_name == "HISTORICAL_SEED"]
     visible_events = [ev for ev in analysis_events if ev.source_name != "HISTORICAL_SEED"]
     historical_analysis = {
         ev.event_id: _analyze_historical_peers(
@@ -153,12 +165,31 @@ def export_site_data(
         })
 
     events_list.sort(key=lambda x: (x["d_day"] < 0, abs(x["d_day"])))
-
     (out_path / "events.json").write_text(
         json.dumps(events_list, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
 
+    historical_library = [
+        {
+            "event_id": ev.event_id,
+            "country": ev.country,
+            "event_type": ev.event_type,
+            "event_name": ev.event_name,
+            "event_date": ev.event_date.isoformat(),
+            "company": ev.primary_company,
+            "source_url": ev.source_url,
+            "evidence_text": ev.evidence_text,
+            "related_securities": _serialize_securities(event_securities.get(ev.event_id, [])),
+        }
+        for ev in sorted(historical_seed_events, key=lambda item: item.event_date, reverse=True)
+    ]
+    (out_path / "historical_events.json").write_text(
+        json.dumps(historical_library, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+
+    event_lookup = {ev.event_id: ev for ev in analysis_events}
     details_map = {}
     for ev in visible_events:
         ev_id = ev.event_id
@@ -175,19 +206,36 @@ def export_site_data(
         ]
         ev_revs.sort(key=lambda x: x["revision_no"])
 
-        event_sec_models = event_securities.get(ev_id, [])
-        ev_secs = [
-            {
-                "ticker": s.ticker,
-                "relation_grade": s.relation_grade,
-                "relation_score": s.relation_score,
-                "relation_type": s.relation_type,
-                "evidence_text": s.evidence_text,
-            }
-            for s in event_sec_models
-        ]
-
+        ev_secs = _serialize_securities(event_securities.get(ev_id, []))
         peer_df, b_summary, peer_strategies, score_obj = historical_analysis[ev_id]
+
+        peer_ids: list[str] = []
+        historical_peers: list[dict[str, Any]] = []
+        if peer_df is not None and not peer_df.empty:
+            peer_ids = sorted(
+                {str(peer_id) for peer_id in peer_df["event_id"].dropna().unique()},
+                key=lambda peer_id: event_lookup[peer_id].event_date if peer_id in event_lookup else date.min,
+            )
+            for peer_id in peer_ids:
+                peer_event = event_lookup.get(peer_id)
+                if peer_event is None:
+                    continue
+                peer_rows = peer_df[peer_df["event_id"] == peer_id]
+                historical_peers.append({
+                    "event_id": peer_id,
+                    "country": peer_event.country,
+                    "event_type": peer_event.event_type,
+                    "event_name": peer_event.event_name,
+                    "event_date": peer_event.event_date.isoformat(),
+                    "company": peer_event.primary_company,
+                    "source_name": peer_event.source_name,
+                    "source_url": peer_event.source_url,
+                    "evidence_text": peer_event.evidence_text,
+                    "min_offset": int(peer_rows["offset"].min()),
+                    "max_offset": int(peer_rows["offset"].max()),
+                    "related_securities": _serialize_securities(event_securities.get(peer_id, [])),
+                })
+
         strats = [
             {
                 "name": f"D{s.entry_offset} -> D{s.exit_offset:+d}" if s.exit_offset != 0 else f"D{s.entry_offset} -> D0",
@@ -247,6 +295,9 @@ def export_site_data(
             "revisions": ev_revs,
             "related_securities": ev_secs,
             "backtest_basis": "HISTORICAL_PEERS",
+            "peer_sample_n": len(historical_peers),
+            "d5_sample_n": b_summary.sample_n,
+            "historical_peers": historical_peers,
             "backtest_summary": {
                 "sample_n": b_summary.sample_n,
                 "mean_return": b_summary.mean_return,
@@ -272,7 +323,7 @@ def export_site_data(
         "total_events": len(visible_events),
         "kr_events": sum(1 for e in visible_events if e.country == "KR"),
         "us_events": sum(1 for e in visible_events if e.country == "US"),
-        "historical_seed_events": sum(1 for e in analysis_events if e.source_name == "HISTORICAL_SEED"),
+        "historical_seed_events": len(historical_seed_events),
         "version": "1.0.0",
         "collector_status": collector_status or {},
     }
