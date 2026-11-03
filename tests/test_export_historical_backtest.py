@@ -118,12 +118,17 @@ def test_historical_seed_is_hidden_from_radar_but_used_as_backtest_peer(tmp_path
 
     dashboard = json.loads((tmp_path / "events.json").read_text(encoding="utf-8"))
     details = json.loads((tmp_path / "event_details.json").read_text(encoding="utf-8"))
+    history = json.loads((tmp_path / "historical_events.json").read_text(encoding="utf-8"))
 
     assert [row["event_id"] for row in dashboard] == ["target"]
     assert "seed-old" not in details
     assert details["target"]["backtest_summary"]["sample_n"] == 1
     assert details["target"]["backtest_summary"]["mean_return"] == 0.07
     assert details["target"]["historical_peers"][0]["event_id"] == "seed-old"
+    assert history[0]["event_id"] == "seed-old"
+    assert history[0]["event_name"] == "seed-old"
+    assert history[0]["event_date"] == "2025-04-20"
+    assert history[0]["related_securities"][0]["relation_grade"] == "A"
 
 
 def test_peer_count_can_be_positive_when_d5_summary_is_not_complete(tmp_path):
