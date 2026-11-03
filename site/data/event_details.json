@@ -165,7 +165,7 @@
     ],
     "event_curve": [],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   },
   "US_FED_FOMC_f58d532f7e3b63c6fa8f0b523ff171c240dd2348": {
     "event_id": "US_FED_FOMC_f58d532f7e3b63c6fa8f0b523ff171c240dd2348",
@@ -654,7 +654,7 @@
       }
     ],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   },
   "US_FED_FOMC_17c662e09879d52fe265843d376fb3c2fc83f128": {
     "event_id": "US_FED_FOMC_17c662e09879d52fe265843d376fb3c2fc83f128",
@@ -1143,7 +1143,7 @@
       }
     ],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   },
   "US_FED_FOMC_964b50a3c921583db1e4c714399e4344f4769177": {
     "event_id": "US_FED_FOMC_964b50a3c921583db1e4c714399e4344f4769177",
@@ -1632,7 +1632,7 @@
       }
     ],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   },
   "US_FED_FOMC_0ca8ec5ee389c69ca738f1ddfb01b815fa1af97f": {
     "event_id": "US_FED_FOMC_0ca8ec5ee389c69ca738f1ddfb01b815fa1af97f",
@@ -2121,7 +2121,7 @@
       }
     ],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   },
   "US_FED_FOMC_18ae6f6ec2fd0d0f72f330e0106c1e67abbd3c66": {
     "event_id": "US_FED_FOMC_18ae6f6ec2fd0d0f72f330e0106c1e67abbd3c66",
@@ -2610,7 +2610,7 @@
       }
     ],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   },
   "US_FED_FOMC_881541bb0fe02ba7a8dfbb308b847d8eee821f5f": {
     "event_id": "US_FED_FOMC_881541bb0fe02ba7a8dfbb308b847d8eee821f5f",
@@ -3099,7 +3099,7 @@
       }
     ],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   },
   "US_FED_FOMC_f78ce707fb49333ff657bde7b01bb68639da9be0": {
     "event_id": "US_FED_FOMC_f78ce707fb49333ff657bde7b01bb68639da9be0",
@@ -3588,7 +3588,7 @@
       }
     ],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   },
   "US_FED_FOMC_4be8cd079cb3a664de18b7e4ab3b0d571b7b557f": {
     "event_id": "US_FED_FOMC_4be8cd079cb3a664de18b7e4ab3b0d571b7b557f",
@@ -4077,7 +4077,7 @@
       }
     ],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   },
   "US_FED_FOMC_bd9946dcc990c3743eda9b9f21290415226c4d46": {
     "event_id": "US_FED_FOMC_bd9946dcc990c3743eda9b9f21290415226c4d46",
@@ -4566,7 +4566,7 @@
       }
     ],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   },
   "US_FDA_ADVISORY_federal-register:2026-19700": {
     "event_id": "US_FDA_ADVISORY_federal-register:2026-19700",
@@ -4734,7 +4734,7 @@
     ],
     "event_curve": [],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   },
   "US_FDA_ADVISORY_federal-register:2026-18920": {
     "event_id": "US_FDA_ADVISORY_federal-register:2026-18920",
@@ -5213,7 +5213,7 @@
       }
     ],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   },
   "KR_KIND_IPO_ad4821a8291ab1af54535a38d4482e46008cc2ae": {
     "event_id": "KR_KIND_IPO_ad4821a8291ab1af54535a38d4482e46008cc2ae",
@@ -5222,7 +5222,7 @@
     "company": "에스케이증권제14호기업인수목적",
     "event_type": "IPO_LISTING",
     "event_name": "에스케이증권제14호기업인수목적 상장예정일",
-    "announced_at": "2026-10-27T06:35:29.972573",
+    "announced_at": "2026-10-27T06:40:48.958312",
     "event_date": "2026-10-27",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-10-27",
@@ -5381,7 +5381,7 @@
     ],
     "event_curve": [],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   },
   "KR_KIND_IPO_7a94ec521b66d5a584d72ad5cf9304a8fca23281": {
     "event_id": "KR_KIND_IPO_7a94ec521b66d5a584d72ad5cf9304a8fca23281",
@@ -5390,7 +5390,7 @@
     "company": "크리에이츠",
     "event_type": "IPO_LISTING",
     "event_name": "크리에이츠 상장예정일",
-    "announced_at": "2026-10-27T06:35:29.972573",
+    "announced_at": "2026-10-27T06:40:48.958312",
     "event_date": "2026-10-29",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-10-29",
@@ -5880,7 +5880,7 @@
       }
     ],
     "sample_count": 1,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   },
   "KR_KIND_IPO_81bfec927fc30451d4700230ccffeb3194e205e4": {
     "event_id": "KR_KIND_IPO_81bfec927fc30451d4700230ccffeb3194e205e4",
@@ -5889,7 +5889,7 @@
     "company": "티앤이코리아",
     "event_type": "IPO_LISTING",
     "event_name": "티앤이코리아 상장예정일",
-    "announced_at": "2026-10-27T06:35:29.972573",
+    "announced_at": "2026-10-27T06:40:48.958312",
     "event_date": "2026-10-29",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-10-29",
@@ -6379,7 +6379,7 @@
       }
     ],
     "sample_count": 1,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   },
   "KR_KIND_IPO_22b1edbb2ea1b2abd5cabf9e7c2316a8b6b2f247": {
     "event_id": "KR_KIND_IPO_22b1edbb2ea1b2abd5cabf9e7c2316a8b6b2f247",
@@ -6388,7 +6388,7 @@
     "company": "한화플러스제6호스팩",
     "event_type": "IPO_LISTING",
     "event_name": "한화플러스제6호스팩 상장예정일",
-    "announced_at": "2026-10-27T06:35:29.972573",
+    "announced_at": "2026-10-27T06:40:48.958312",
     "event_date": "2026-10-30",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-10-30",
@@ -6878,7 +6878,7 @@
       }
     ],
     "sample_count": 1,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   },
   "KR_KIND_IPO_832784cc1f6eb61b3b81a0e156cf38dcfca1b75e": {
     "event_id": "KR_KIND_IPO_832784cc1f6eb61b3b81a0e156cf38dcfca1b75e",
@@ -6887,7 +6887,7 @@
     "company": "인텔리빅스",
     "event_type": "IPO_LISTING",
     "event_name": "인텔리빅스 상장예정일",
-    "announced_at": "2026-10-27T06:35:29.972573",
+    "announced_at": "2026-10-27T06:40:48.958312",
     "event_date": "2026-10-31",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-10-31",
@@ -7377,7 +7377,7 @@
       }
     ],
     "sample_count": 1,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   },
   "KR_KIND_IPO_5a3452ed7550c9d112a70cb1ad2e8756a6e4b71f": {
     "event_id": "KR_KIND_IPO_5a3452ed7550c9d112a70cb1ad2e8756a6e4b71f",
@@ -7386,7 +7386,7 @@
     "company": "영광",
     "event_type": "IPO_LISTING",
     "event_name": "영광 상장예정일",
-    "announced_at": "2026-10-27T06:35:29.972573",
+    "announced_at": "2026-10-27T06:40:48.958312",
     "event_date": "2026-11-02",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-11-02",
@@ -7876,7 +7876,7 @@
       }
     ],
     "sample_count": 1,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   },
   "KR_KIND_IPO_c36644468a48de410093c57ca68cf92dc10cdd85": {
     "event_id": "KR_KIND_IPO_c36644468a48de410093c57ca68cf92dc10cdd85",
@@ -7885,7 +7885,7 @@
     "company": "래블업",
     "event_type": "IPO_LISTING",
     "event_name": "래블업 상장예정일",
-    "announced_at": "2026-10-27T06:35:29.972573",
+    "announced_at": "2026-10-27T06:40:48.958312",
     "event_date": "2026-11-03",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-11-03",
@@ -8375,7 +8375,7 @@
       }
     ],
     "sample_count": 1,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   },
   "KR_KIND_IPO_561e48a87092e0fc9bbbb7ded749dfef7c92f18b": {
     "event_id": "KR_KIND_IPO_561e48a87092e0fc9bbbb7ded749dfef7c92f18b",
@@ -8384,7 +8384,7 @@
     "company": "아이엠스팩1호",
     "event_type": "IPO_LISTING",
     "event_name": "아이엠스팩1호 상장예정일",
-    "announced_at": "2026-10-27T06:35:29.972573",
+    "announced_at": "2026-10-27T06:40:48.958312",
     "event_date": "2026-11-04",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-11-04",
@@ -8874,7 +8874,7 @@
       }
     ],
     "sample_count": 1,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   },
   "KR_KIND_IPO_6c60d4cd8f1e8f43bb8d389d838e1d66c0f4f357": {
     "event_id": "KR_KIND_IPO_6c60d4cd8f1e8f43bb8d389d838e1d66c0f4f357",
@@ -8883,7 +8883,7 @@
     "company": "이에스티",
     "event_type": "IPO_LISTING",
     "event_name": "이에스티 상장예정일",
-    "announced_at": "2026-10-27T06:35:29.972573",
+    "announced_at": "2026-10-27T06:40:48.958312",
     "event_date": "2026-11-04",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-11-04",
@@ -9373,7 +9373,7 @@
       }
     ],
     "sample_count": 1,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   },
   "KR_KIND_IPO_36e9f8708575adda2a70afe5d5d3a7c40f4d272f": {
     "event_id": "KR_KIND_IPO_36e9f8708575adda2a70afe5d5d3a7c40f4d272f",
@@ -9382,7 +9382,7 @@
     "company": "동원파츠",
     "event_type": "IPO_LISTING",
     "event_name": "동원파츠 상장예정일",
-    "announced_at": "2026-10-27T06:35:29.972573",
+    "announced_at": "2026-10-27T06:40:48.958312",
     "event_date": "2026-11-10",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-11-10",
@@ -9872,7 +9872,7 @@
       }
     ],
     "sample_count": 1,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   },
   "KR_KIND_IPO_f720780dcb05cf82442eea023725dcb72a037487": {
     "event_id": "KR_KIND_IPO_f720780dcb05cf82442eea023725dcb72a037487",
@@ -9881,7 +9881,7 @@
     "company": "넥스아이",
     "event_type": "IPO_LISTING",
     "event_name": "넥스아이 상장예정일",
-    "announced_at": "2026-10-27T06:35:29.972573",
+    "announced_at": "2026-10-27T06:40:48.958312",
     "event_date": "2026-11-12",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-11-12",
@@ -10371,7 +10371,7 @@
       }
     ],
     "sample_count": 1,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   },
   "KR_KIND_IPO_3148cd5fac8929cee30beeb9b427599152f80244": {
     "event_id": "KR_KIND_IPO_3148cd5fac8929cee30beeb9b427599152f80244",
@@ -10380,7 +10380,7 @@
     "company": "에이엘로봇",
     "event_type": "IPO_LISTING",
     "event_name": "에이엘로봇 상장예정일",
-    "announced_at": "2026-10-27T06:35:29.972573",
+    "announced_at": "2026-10-27T06:40:48.958312",
     "event_date": "2026-11-18",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-11-18",
@@ -10870,7 +10870,7 @@
       }
     ],
     "sample_count": 1,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   },
   "KR_KIND_IPO_053ff0fde7b70d248fe0b2d388e8e37366b64306": {
     "event_id": "KR_KIND_IPO_053ff0fde7b70d248fe0b2d388e8e37366b64306",
@@ -10879,7 +10879,7 @@
     "company": "씨아이에스케미칼",
     "event_type": "IPO_LISTING",
     "event_name": "씨아이에스케미칼 상장예정일",
-    "announced_at": "2026-10-27T06:35:29.972573",
+    "announced_at": "2026-10-27T06:40:48.958312",
     "event_date": "2026-12-22",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-12-22",
@@ -11369,7 +11369,7 @@
       }
     ],
     "sample_count": 1,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   },
   "KR_NEWS_FUTURE_21eb95e47682ed2945480466048a8fcb0ccc2c1f": {
     "event_id": "KR_NEWS_FUTURE_21eb95e47682ed2945480466048a8fcb0ccc2c1f",
@@ -11537,7 +11537,7 @@
     ],
     "event_curve": [],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   },
   "KR_NEWS_FUTURE_e14ced3593303b033c128c86fb298f1297df4d25": {
     "event_id": "KR_NEWS_FUTURE_e14ced3593303b033c128c86fb298f1297df4d25",
@@ -11705,7 +11705,7 @@
     ],
     "event_curve": [],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   },
   "KR_NEWS_FUTURE_cd323c5e7af0a1895f0213115d0c206a1b12d88f": {
     "event_id": "KR_NEWS_FUTURE_cd323c5e7af0a1895f0213115d0c206a1b12d88f",
@@ -11873,7 +11873,7 @@
     ],
     "event_curve": [],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   },
   "KR_NEWS_FUTURE_ba8679eba27709df9e6a275294ddb5bd0bae02e7": {
     "event_id": "KR_NEWS_FUTURE_ba8679eba27709df9e6a275294ddb5bd0bae02e7",
@@ -12041,6 +12041,6 @@
     ],
     "event_curve": [],
     "sample_count": 0,
-    "latest_update": "2026-11-03T06:35:29.972573"
+    "latest_update": "2026-11-03T06:40:48.958312"
   }
 }
