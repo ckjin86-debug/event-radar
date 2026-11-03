@@ -7,12 +7,13 @@ def _read(path: str) -> str:
 
 def test_event_detail_exposes_relation_verification_groups():
     html = _read("site/event.html")
-    js = _read("site/js/event-detail.js")
+    js = _read("site/js/relation-ui.js")
 
     assert 'id="relationSummary"' in html
     assert 'id="verifiedRelations"' in html
     assert 'id="candidateRelations"' in html
     assert 'id="referenceRelations"' in html
+    assert 'js/relation-ui.js' in html
 
     assert "영구관계 등록됨" in js
     assert "자동 확인" in js
@@ -22,8 +23,10 @@ def test_event_detail_exposes_relation_verification_groups():
 
 
 def test_dashboard_shows_human_readable_mapping_status():
-    js = _read("site/js/app.js")
+    html = _read("site/index.html")
+    js = _read("site/js/dashboard-relation-ui.js")
 
+    assert 'js/dashboard-relation-ui.js' in html
     assert "mappingStatusText" in js
     assert "검증 관계" in js
     assert "자동 매핑" in js
