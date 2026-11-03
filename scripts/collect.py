@@ -17,11 +17,13 @@ from event_radar.collectors.fomc import FomcCollector
 from event_radar.collectors.entertainment import EntertainmentCollector
 from event_radar.collectors.games import GamesCollector
 from event_radar.collectors.index_changes import IndexChangesCollector
+from event_radar.collectors.historical_seed import HistoricalSeedCollector
 
 
 def build_collectors(root: Path):
     """Build production collectors without test fixtures."""
     return [
+        HistoricalSeedCollector(config_path=root / "config" / "historical_events.csv"),
         DartCollector(),
         SecCollector(),
         NewsFutureCollector(),
