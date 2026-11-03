@@ -20,6 +20,6 @@ def test_build_collectors_uses_live_dart_and_sec_sources(tmp_path):
     assert by_name["SEC"].fixture_path is None
 
 
-def test_collect_workflow_passes_sec_watchlist_variable():
+def test_collect_workflow_does_not_require_sec_watchlist_variable():
     workflow = (REPO_ROOT / ".github" / "workflows" / "collect.yml").read_text(encoding="utf-8")
-    assert "SEC_CIKS: ${{ vars.SEC_CIKS }}" in workflow
+    assert "SEC_CIKS" not in workflow
