@@ -44,9 +44,14 @@ def test_collection_job_does_not_hold_pages_environment_while_collecting():
         assert "actions/deploy-pages@v4" in deploy_block
 
 
-def test_scheduled_and_manual_collection_share_latest_run_concurrency_group():
-    for name in ("run-now.yml", "collect.yml"):
-        workflow = _workflow(name)
-        assert "concurrency:" in workflow
-        assert "group: event-radar-collection" in workflow
-        assert "cancel-in-progress: true" in workflow
+def test_fast_refresh_has_independent_concurrency_from_full_collection():
+    run_now = _workflow("run-now.yml")
+    scheduled = _workflow("collect.yml")
+
+    assert "concurrency:" in run_now
+    assert "group: event-radar-fast-refresh" in run_now
+    assert "cancel-in-progress: true" in run_now
+
+    assert "concurrency:" in scheduled
+    assert "group: event-radar-collection" in scheduled
+    assert "cancel-in-progress: true" in scheduled
