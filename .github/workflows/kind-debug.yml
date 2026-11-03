@@ -1,0 +1,46 @@
+name: KIND Source Diagnostic
+
+on:
+  push:
+    branches: [fix/fda-kind-live-sources]
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests beautifulsoup4
+      - name: Inspect KIND response
+        run: |
+          python - <<'PY'
+          import requests
+          from bs4 import BeautifulSoup
+
+          url = "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain"
+          headers = {
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) EventRadar/1.0",
+              "Referer": url,
+          }
+          r = requests.get(url, headers=headers, timeout=20)
+          print("STATUS", r.status_code)
+          print("FINAL_URL", r.url)
+          print("CONTENT_TYPE", r.headers.get("content-type"))
+          print("ENCODING", r.encoding, "APPARENT", r.apparent_encoding)
+          print("BYTES", len(r.content), "CHARS", len(r.text))
+          print("HAS_COMPANY_HEADER", "회사명" in r.text)
+          print("HAS_BOOKBUILDING", "수요예측" in r.text)
+          print("HAS_CIS_CHEM", "씨아이에스케미칼" in r.text)
+
+          soup = BeautifulSoup(r.text, "html.parser")
+          print("TITLE", soup.title.get_text(" ", strip=True) if soup.title else "")
+          tables = soup.find_all("table")
+          print("TABLE_COUNT", len(tables))
+          for i, table in enumerate(tables[:15]):
+              headers = [th.get_text(" ", strip=True) for th in table.find_all("th")]
+              rows = table.find_all("tr")
+              print("TABLE", i, "HEADERS", headers[:12], "ROWS", len(rows))
+              if rows:
+                  print("FIRST_ROW", rows[-1].get_text(" | ", strip=True)[:500])
+          PY
