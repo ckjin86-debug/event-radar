@@ -19,6 +19,25 @@
     "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261103000036"
   },
   {
+    "event_id": "KR_DART_20261103000081",
+    "d_day": 0,
+    "country": "KR",
+    "ticker": "172670",
+    "company": "에이엘티",
+    "event_type": "CONVERTIBLE_LISTING",
+    "event_name": "에이엘티 [기재정정]주요사항보고서(전환사채권발행결정)",
+    "event_date": "2026-11-03",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-03",
+    "window_end": "2026-11-03",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "event_score": 60,
+    "status": "CONFIRMED",
+    "source_name": "DART",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261103000081"
+  },
+  {
     "event_id": "US_FED_FOMC_f58d532f7e3b63c6fa8f0b523ff171c240dd2348",
     "d_day": 36,
     "country": "US",
