@@ -1,5 +1,6 @@
 """Main scheduled collection script for Event Radar."""
 
+import os
 import sys
 from pathlib import Path
 
@@ -7,6 +8,7 @@ from pathlib import Path
 src_dir = Path(__file__).resolve().parent.parent / "src"
 sys.path.insert(0, str(src_dir))
 
+from event_radar.entities import load_entity_universe
 from event_radar.pipeline import run_pipeline, PipelineConfig
 from event_radar.collectors.dart import DartCollector
 from event_radar.collectors.sec import SecCollector
@@ -36,10 +38,14 @@ def build_collectors(root: Path):
 
 def main():
     root = Path(__file__).resolve().parent.parent
+    entity_universe = load_entity_universe(
+        dart_api_key=os.getenv("DART_API_KEY", ""),
+    )
     config = PipelineConfig(
         data_dir=root / "data",
         site_dir=root / "site",
         config_dir=root / "config",
+        entity_universe=entity_universe,
     )
 
     collectors = build_collectors(root)
