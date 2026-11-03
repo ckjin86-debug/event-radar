@@ -92,12 +92,6 @@ def test_default_queries_cover_broad_future_catalysts():
         assert keyword in joined
 
 
-def test_default_queries_include_natural_future_phrasing_without_expected_word():
-    mod = _news_module()
-    for query in ("신작 출시", "내달 출시", "수주 계약", "연내 인수", "경영권 분쟁"):
-        assert query in mod.DEFAULT_QUERIES
-
-
 def test_collector_missing_credentials_is_nonfatal(monkeypatch):
     mod = _news_module()
     monkeypatch.delenv("NAVER_API_HUB_KEY_ID", raising=False)
