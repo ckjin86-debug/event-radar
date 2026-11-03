@@ -6,7 +6,7 @@ from datetime import date, datetime
 from pathlib import Path
 from typing import Any
 from event_radar.models import Event, EventRevision, EventSecurity
-from event_radar.scoring import ScoreResult
+from event_radar.scoring import ScoreInput, ScoreResult, calculate_event_score
 from event_radar.backtest.strategies import StrategyResult, evaluate_strategies
 from event_radar.backtest.metrics import BacktestSummary, summarize_event_group
 from event_radar.backtest.historical import build_historical_peer_frame
@@ -38,6 +38,54 @@ def _is_visible_radar_event(ev: Event) -> bool:
     return True
 
 
+def _analyze_historical_peers(
+    event: Event,
+    visible_events: list[Event],
+    event_securities: dict[str, list[EventSecurity]],
+    event_returns_df: Any,
+) -> tuple[Any, BacktestSummary, list[StrategyResult], ScoreResult]:
+    """Build one no-lookahead historical study and its score for an event."""
+    securities = event_securities.get(event.event_id, [])
+    primary = securities[0] if securities else None
+    relation_grade = primary.relation_grade if primary else "UNMAPPED"
+    relation_score = primary.relation_score if primary else 0
+
+    if event_returns_df is not None and not getattr(event_returns_df, "empty", True):
+        peer_df = build_historical_peer_frame(
+            events=visible_events,
+            returns_df=event_returns_df,
+            target_event=event,
+            relation_grade=relation_grade,
+        )
+        summary = summarize_event_group(peer_df, target_offset=5)
+        strategies = evaluate_strategies(
+            peer_df,
+            event_type=event.event_type,
+            relation_grade=relation_grade,
+        )
+    else:
+        peer_df = None
+        summary = BacktestSummary()
+        strategies = []
+
+    sampled = [strategy for strategy in strategies if strategy.sample_n > 0]
+    robustness = (
+        sum(strategy.robustness_score for strategy in sampled) / len(sampled)
+        if sampled else 0.5
+    )
+    score = calculate_event_score(
+        ScoreInput(
+            status=event.status,
+            relation_score=relation_score,
+            sample_n=summary.sample_n,
+            median_abnormal_return=summary.median_abnormal_return,
+            win_rate=summary.win_rate,
+            robustness_score=robustness,
+        )
+    )
+    return peer_df, summary, strategies, score
+
+
 def export_site_data(
     events: list[Event],
     revisions: list[EventRevision],
@@ -59,12 +107,20 @@ def export_site_data(
     out_path.mkdir(parents=True, exist_ok=True)
 
     visible_events = [ev for ev in events if _is_visible_radar_event(ev)]
+    historical_analysis = {
+        ev.event_id: _analyze_historical_peers(
+            event=ev,
+            visible_events=visible_events,
+            event_securities=event_securities,
+            event_returns_df=event_returns_df,
+        )
+        for ev in visible_events
+    }
 
     events_list = []
     for ev in visible_events:
         d_day = (ev.event_date - today).days
-        score = event_scores.get(ev.event_id)
-        total_score = score.total_score if score else 50
+        _, _, _, score = historical_analysis[ev.event_id]
 
         sec_list = event_securities.get(ev.event_id, [])
         primary_rel = sec_list[0] if sec_list else None
@@ -87,7 +143,7 @@ def export_site_data(
             "window_end": window_end.isoformat(),
             "relation_grade": rel_grade,
             "relation_score": rel_score,
-            "event_score": total_score,
+            "event_score": score.total_score,
             "status": ev.status,
             "source_name": ev.source_name,
             "source_url": ev.source_url,
@@ -128,29 +184,7 @@ def export_site_data(
             for s in event_sec_models
         ]
 
-        primary_grade = event_sec_models[0].relation_grade if event_sec_models else "UNMAPPED"
-        has_return_data = event_returns_df is not None and not getattr(event_returns_df, "empty", True)
-        if has_return_data:
-            peer_df = build_historical_peer_frame(
-                events=visible_events,
-                returns_df=event_returns_df,
-                target_event=ev,
-                relation_grade=primary_grade,
-            )
-        else:
-            peer_df = event_returns_df.iloc[0:0].copy() if event_returns_df is not None else None
-
-        if peer_df is not None:
-            b_summary = summarize_event_group(peer_df, target_offset=5)
-            peer_strategies = evaluate_strategies(
-                peer_df,
-                event_type=ev.event_type,
-                relation_grade=primary_grade,
-            )
-        else:
-            b_summary = BacktestSummary()
-            peer_strategies = []
-
+        peer_df, b_summary, peer_strategies, score_obj = historical_analysis[ev_id]
         strats = [
             {
                 "name": f"D{s.entry_offset} -> D{s.exit_offset:+d}" if s.exit_offset != 0 else f"D{s.entry_offset} -> D0",
@@ -178,14 +212,13 @@ def export_site_data(
                     "abnormal_return": round(float(r["abnormal_return"]), 4),
                 })
 
-        score_obj = event_scores.get(ev_id)
         score_breakdown = {
-            "total": score_obj.total_score if score_obj else 50,
-            "schedule": score_obj.schedule_points if score_obj else 20,
-            "relation": score_obj.relation_points if score_obj else 20,
-            "edge": score_obj.edge_points if score_obj else 5,
-            "robustness": score_obj.robustness_points if score_obj else 5,
-            "setup": score_obj.setup_points if score_obj else 0,
+            "total": score_obj.total_score,
+            "schedule": score_obj.schedule_points,
+            "relation": score_obj.relation_points,
+            "edge": score_obj.edge_points,
+            "robustness": score_obj.robustness_points,
+            "setup": score_obj.setup_points,
         }
         window_start = ev.window_start or ev.event_date
         window_end = ev.window_end or ev.event_date
