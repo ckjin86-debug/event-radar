@@ -40,7 +40,7 @@ def _is_visible_radar_event(ev: Event) -> bool:
 
 def _analyze_historical_peers(
     event: Event,
-    visible_events: list[Event],
+    analysis_events: list[Event],
     event_securities: dict[str, list[EventSecurity]],
     event_returns_df: Any,
 ) -> tuple[Any, BacktestSummary, list[StrategyResult], ScoreResult]:
@@ -52,7 +52,7 @@ def _analyze_historical_peers(
 
     if event_returns_df is not None and not getattr(event_returns_df, "empty", True):
         peer_df = build_historical_peer_frame(
-            events=visible_events,
+            events=analysis_events,
             returns_df=event_returns_df,
             target_event=event,
             relation_grade=relation_grade,
@@ -98,7 +98,7 @@ def export_site_data(
     collector_status: dict[str, str] | None = None,
     now: datetime | None = None,
 ) -> None:
-    """Generate public JSON files for static GitHub Pages dashboard without any sensitive data."""
+    """Generate public JSON files for static GitHub Pages without exposing seed rows."""
     if now is None:
         now = datetime.now()
     today = now.date()
@@ -106,11 +106,14 @@ def export_site_data(
     out_path = Path(output_dir)
     out_path.mkdir(parents=True, exist_ok=True)
 
-    visible_events = [ev for ev in events if _is_visible_radar_event(ev)]
+    # Historical seeds remain part of the analysis universe so future/current events
+    # can use them for peer backtests, but they are not user-facing radar rows.
+    analysis_events = [ev for ev in events if _is_visible_radar_event(ev)]
+    visible_events = [ev for ev in analysis_events if ev.source_name != "HISTORICAL_SEED"]
     historical_analysis = {
         ev.event_id: _analyze_historical_peers(
             event=ev,
-            visible_events=visible_events,
+            analysis_events=analysis_events,
             event_securities=event_securities,
             event_returns_df=event_returns_df,
         )
@@ -269,6 +272,7 @@ def export_site_data(
         "total_events": len(visible_events),
         "kr_events": sum(1 for e in visible_events if e.country == "KR"),
         "us_events": sum(1 for e in visible_events if e.country == "US"),
+        "historical_seed_events": sum(1 for e in analysis_events if e.source_name == "HISTORICAL_SEED"),
         "version": "1.0.0",
         "collector_status": collector_status or {},
     }
