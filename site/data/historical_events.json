@@ -14,7 +14,12 @@
         "relation_grade": "UNMAPPED",
         "relation_score": 0,
         "relation_type": "UNMAPPED",
-        "evidence_text": "직접 또는 검증된 관련 종목 미매핑"
+        "evidence_text": "직접 또는 검증된 관련 종목 미매핑",
+        "evidence_source": "",
+        "source_url": "",
+        "relation_known_date": "",
+        "ingest_mode": "AUTO",
+        "from_entity": ""
       }
     ]
   },
@@ -33,28 +38,48 @@
         "relation_grade": "B",
         "relation_score": 90,
         "relation_type": "OFFICIAL_CONSORTIUM",
-        "evidence_text": "두산에너빌리티: 체코 원전 Team Korea 공식 참여사"
+        "evidence_text": "두산에너빌리티: 체코 원전 Team Korea 공식 참여사",
+        "evidence_source": "",
+        "source_url": "",
+        "relation_known_date": "",
+        "ingest_mode": "AUTO",
+        "from_entity": ""
       },
       {
         "ticker": "052690",
         "relation_grade": "B",
         "relation_score": 88,
         "relation_type": "OFFICIAL_CONSORTIUM",
-        "evidence_text": "한국전력기술: 체코 원전 Team Korea 설계 참여사"
+        "evidence_text": "한국전력기술: 체코 원전 Team Korea 설계 참여사",
+        "evidence_source": "",
+        "source_url": "",
+        "relation_known_date": "",
+        "ingest_mode": "AUTO",
+        "from_entity": ""
       },
       {
         "ticker": "047040",
         "relation_grade": "B",
         "relation_score": 86,
         "relation_type": "OFFICIAL_CONSORTIUM",
-        "evidence_text": "대우건설: 체코 원전 Team Korea 건설 참여사"
+        "evidence_text": "대우건설: 체코 원전 Team Korea 건설 참여사",
+        "evidence_source": "",
+        "source_url": "",
+        "relation_known_date": "",
+        "ingest_mode": "AUTO",
+        "from_entity": ""
       },
       {
         "ticker": "051600",
         "relation_grade": "B",
         "relation_score": 84,
         "relation_type": "OFFICIAL_CONSORTIUM",
-        "evidence_text": "한전KPS: 체코 원전 Team Korea 시운전 유지보수 참여사"
+        "evidence_text": "한전KPS: 체코 원전 Team Korea 시운전 유지보수 참여사",
+        "evidence_source": "",
+        "source_url": "",
+        "relation_known_date": "",
+        "ingest_mode": "AUTO",
+        "from_entity": ""
       }
     ]
   },
@@ -73,28 +98,48 @@
         "relation_grade": "THEME",
         "relation_score": 35,
         "relation_type": "POLITICAL_THEME",
-        "evidence_text": "형지엘리트: 조기 대선 국면에서 이재명 테마주로 투자경고 종목에 포함"
+        "evidence_text": "형지엘리트: 조기 대선 국면에서 이재명 테마주로 투자경고 종목에 포함",
+        "evidence_source": "",
+        "source_url": "",
+        "relation_known_date": "",
+        "ingest_mode": "AUTO",
+        "from_entity": ""
       },
       {
         "ticker": "042940",
         "relation_grade": "THEME",
         "relation_score": 35,
         "relation_type": "POLITICAL_THEME",
-        "evidence_text": "상지건설: 조기 대선 국면에서 이재명 테마주로 투자경고 종목에 포함"
+        "evidence_text": "상지건설: 조기 대선 국면에서 이재명 테마주로 투자경고 종목에 포함",
+        "evidence_source": "",
+        "source_url": "",
+        "relation_known_date": "",
+        "ingest_mode": "AUTO",
+        "from_entity": ""
       },
       {
         "ticker": "308100",
         "relation_grade": "THEME",
         "relation_score": 35,
         "relation_type": "POLITICAL_THEME",
-        "evidence_text": "형지글로벌: 조기 대선 국면에서 이재명 테마주로 투자경고 종목에 포함"
+        "evidence_text": "형지글로벌: 조기 대선 국면에서 이재명 테마주로 투자경고 종목에 포함",
+        "evidence_source": "",
+        "source_url": "",
+        "relation_known_date": "",
+        "ingest_mode": "AUTO",
+        "from_entity": ""
       },
       {
         "ticker": "010770",
         "relation_grade": "THEME",
         "relation_score": 35,
         "relation_type": "POLITICAL_THEME",
-        "evidence_text": "평화홀딩스: 조기 대선 국면에서 김문수 테마주로 투자경고 종목에 포함"
+        "evidence_text": "평화홀딩스: 조기 대선 국면에서 김문수 테마주로 투자경고 종목에 포함",
+        "evidence_source": "",
+        "source_url": "",
+        "relation_known_date": "",
+        "ingest_mode": "AUTO",
+        "from_entity": ""
       }
     ]
   },
@@ -113,7 +158,12 @@
         "relation_grade": "A",
         "relation_score": 100,
         "relation_type": "DIRECT",
-        "evidence_text": "직접 당사자"
+        "evidence_text": "직접 당사자",
+        "evidence_source": "HISTORICAL_SEED",
+        "source_url": "https://www.reuters.com/markets/deals/private-equity-mbk-young-poong-launch-15-bln-tender-offer-korea-zinc-shares-2024-09-13/",
+        "relation_known_date": "2024-09-13",
+        "ingest_mode": "AUTO",
+        "from_entity": "고려아연"
       }
     ]
   },
@@ -132,28 +182,48 @@
         "relation_grade": "B",
         "relation_score": 90,
         "relation_type": "OFFICIAL_CONSORTIUM",
-        "evidence_text": "두산에너빌리티: 체코 원전 Team Korea 공식 참여사"
+        "evidence_text": "두산에너빌리티: 체코 원전 Team Korea 공식 참여사",
+        "evidence_source": "",
+        "source_url": "",
+        "relation_known_date": "",
+        "ingest_mode": "AUTO",
+        "from_entity": ""
       },
       {
         "ticker": "052690",
         "relation_grade": "B",
         "relation_score": 88,
         "relation_type": "OFFICIAL_CONSORTIUM",
-        "evidence_text": "한국전력기술: 체코 원전 Team Korea 설계 참여사"
+        "evidence_text": "한국전력기술: 체코 원전 Team Korea 설계 참여사",
+        "evidence_source": "",
+        "source_url": "",
+        "relation_known_date": "",
+        "ingest_mode": "AUTO",
+        "from_entity": ""
       },
       {
         "ticker": "047040",
         "relation_grade": "B",
         "relation_score": 86,
         "relation_type": "OFFICIAL_CONSORTIUM",
-        "evidence_text": "대우건설: 체코 원전 Team Korea 건설 참여사"
+        "evidence_text": "대우건설: 체코 원전 Team Korea 건설 참여사",
+        "evidence_source": "",
+        "source_url": "",
+        "relation_known_date": "",
+        "ingest_mode": "AUTO",
+        "from_entity": ""
       },
       {
         "ticker": "051600",
         "relation_grade": "B",
         "relation_score": 84,
         "relation_type": "OFFICIAL_CONSORTIUM",
-        "evidence_text": "한전KPS: 체코 원전 Team Korea 시운전 유지보수 참여사"
+        "evidence_text": "한전KPS: 체코 원전 Team Korea 시운전 유지보수 참여사",
+        "evidence_source": "",
+        "source_url": "",
+        "relation_known_date": "",
+        "ingest_mode": "AUTO",
+        "from_entity": ""
       }
     ]
   },
@@ -172,7 +242,12 @@
         "relation_grade": "THEME",
         "relation_score": 32,
         "relation_type": "POLITICAL_THEME",
-        "evidence_text": "대상홀딩스: 언론에서 한동훈 테마주로 묶였으나 회사는 사업 관련성이 없다고 공시"
+        "evidence_text": "대상홀딩스: 언론에서 한동훈 테마주로 묶였으나 회사는 사업 관련성이 없다고 공시",
+        "evidence_source": "",
+        "source_url": "",
+        "relation_known_date": "",
+        "ingest_mode": "AUTO",
+        "from_entity": ""
       }
     ]
   },
@@ -191,7 +266,12 @@
         "relation_grade": "A",
         "relation_score": 100,
         "relation_type": "DIRECT",
-        "evidence_text": "직접 당사자"
+        "evidence_text": "직접 당사자",
+        "evidence_source": "HISTORICAL_SEED",
+        "source_url": "https://en.yna.co.kr/view/AEN20240328007700320",
+        "relation_known_date": "2024-03-28",
+        "ingest_mode": "AUTO",
+        "from_entity": "한미사이언스"
       }
     ]
   },
@@ -210,7 +290,12 @@
         "relation_grade": "A",
         "relation_score": 100,
         "relation_type": "DIRECT",
-        "evidence_text": "직접 당사자"
+        "evidence_text": "직접 당사자",
+        "evidence_source": "HISTORICAL_SEED",
+        "source_url": "https://www.investing.com/news/stock-market-news/bts-agency-hybe-seeks-to-take-over-kpop-rival-sm-entertainment-3000102",
+        "relation_known_date": "2023-02-10",
+        "ingest_mode": "AUTO",
+        "from_entity": "에스엠"
       }
     ]
   },
@@ -229,21 +314,36 @@
         "relation_grade": "THEME",
         "relation_score": 38,
         "relation_type": "POLITICAL_THEME",
-        "evidence_text": "NE능률: 언론에서 윤석열 정치 테마주로 분류됐으나 기업가치와 직접 관련은 없음"
+        "evidence_text": "NE능률: 언론에서 윤석열 정치 테마주로 분류됐으나 기업가치와 직접 관련은 없음",
+        "evidence_source": "",
+        "source_url": "",
+        "relation_known_date": "",
+        "ingest_mode": "AUTO",
+        "from_entity": ""
       },
       {
         "ticker": "004830",
         "relation_grade": "THEME",
         "relation_score": 38,
         "relation_type": "POLITICAL_THEME",
-        "evidence_text": "덕성: 언론에서 윤석열 정치 테마주로 거론"
+        "evidence_text": "덕성: 언론에서 윤석열 정치 테마주로 거론",
+        "evidence_source": "",
+        "source_url": "",
+        "relation_known_date": "",
+        "ingest_mode": "AUTO",
+        "from_entity": ""
       },
       {
         "ticker": "015020",
         "relation_grade": "THEME",
         "relation_score": 38,
         "relation_type": "POLITICAL_THEME",
-        "evidence_text": "이스타코: 언론에서 이재명 정책 테마주로 분류됐으나 직접 사업 연관은 제한적"
+        "evidence_text": "이스타코: 언론에서 이재명 정책 테마주로 분류됐으나 직접 사업 연관은 제한적",
+        "evidence_source": "",
+        "source_url": "",
+        "relation_known_date": "",
+        "ingest_mode": "AUTO",
+        "from_entity": ""
       }
     ]
   },
@@ -262,7 +362,12 @@
         "relation_grade": "A",
         "relation_score": 100,
         "relation_type": "DIRECT",
-        "evidence_text": "직접 당사자"
+        "evidence_text": "직접 당사자",
+        "evidence_source": "HISTORICAL_SEED",
+        "source_url": "https://en.yna.co.kr/view/AEN20200327006551320",
+        "relation_known_date": "2020-03-27",
+        "ingest_mode": "AUTO",
+        "from_entity": "한진칼"
       }
     ]
   },
@@ -281,7 +386,12 @@
         "relation_grade": "B",
         "relation_score": 92,
         "relation_type": "OFFICIAL_CONSORTIUM",
-        "evidence_text": "한국전력: UAE Barakah 원전 수주 컨소시엄 주도사"
+        "evidence_text": "한국전력: UAE Barakah 원전 수주 컨소시엄 주도사",
+        "evidence_source": "",
+        "source_url": "",
+        "relation_known_date": "",
+        "ingest_mode": "AUTO",
+        "from_entity": ""
       }
     ]
   }
