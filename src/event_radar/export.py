@@ -46,6 +46,11 @@ def _serialize_securities(securities: list[EventSecurity]) -> list[dict[str, Any
             "relation_score": s.relation_score,
             "relation_type": s.relation_type,
             "evidence_text": s.evidence_text,
+            "evidence_source": s.evidence_source,
+            "source_url": s.source_url,
+            "relation_known_date": s.relation_known_date.isoformat() if s.relation_known_date else "",
+            "ingest_mode": s.ingest_mode,
+            "from_entity": s.from_entity,
         }
         for s in securities
     ]
@@ -141,6 +146,8 @@ def export_site_data(
         primary_rel = sec_list[0] if sec_list else None
         rel_grade = primary_rel.relation_grade if primary_rel else "UNMAPPED"
         rel_score = primary_rel.relation_score if primary_rel else 0
+        rel_type = primary_rel.relation_type if primary_rel else "UNMAPPED"
+        rel_ingest_mode = primary_rel.ingest_mode if primary_rel else "AUTO"
         window_start = ev.window_start or ev.event_date
         window_end = ev.window_end or ev.event_date
 
@@ -158,6 +165,8 @@ def export_site_data(
             "window_end": window_end.isoformat(),
             "relation_grade": rel_grade,
             "relation_score": rel_score,
+            "relation_type": rel_type,
+            "relation_ingest_mode": rel_ingest_mode,
             "event_score": score.total_score,
             "status": ev.status,
             "source_name": ev.source_name,
