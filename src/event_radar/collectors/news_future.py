@@ -22,11 +22,19 @@ from event_radar.models import RawEvent
 NAVER_NEWS_URL = "https://naverapihub.apigw.ntruss.com/search/v1/news"
 DEFAULT_QUERIES = [
     "내달 가동",
+    "상업 가동 예정",
+    "착공 예정",
     "다음달 출시",
     "연내 승인",
+    "승인 결정 예정",
     "내년 1분기 가동",
-    "상장 예정",
     "임상 결과 예정",
+    "임상 결과 발표",
+    "인수 완료 예정",
+    "합병 완료 예정",
+    "선고 예정",
+    "입찰 결과 예정",
+    "공급계약 예정",
     "정책 시행 예정",
     "수주 발표 예정",
 ]
