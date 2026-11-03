@@ -18,9 +18,6 @@ DART_EVENT_MAP = [
     ("유상증자", "RIGHTS_ISSUE"),
     ("주식분할", "STOCK_SPLIT"),
     ("액면분할", "STOCK_SPLIT"),
-    ("전환사채", "CONVERTIBLE_LISTING"),
-    ("신주인수권", "CONVERTIBLE_LISTING"),
-    ("CB", "CONVERTIBLE_LISTING"),
     ("보호예수", "LOCKUP_EXPIRY"),
     ("의무보유", "LOCKUP_EXPIRY"),
     ("잠정실적", "EARNINGS"),
@@ -49,7 +46,20 @@ class DartCollector:
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) EventRadar/1.0"
         })
 
-    def _classify_event_type(self, title: str) -> Optional[str]:
+    @staticmethod
+    def _is_convertible_listing(title: str, details: str = "") -> bool:
+        """Keep convertibles only when conversion/exercise leads to an actual listing."""
+        combined = f"{title} {details}".replace(" ", "")
+        has_exercise = any(
+            keyword in combined
+            for keyword in ("전환청구권행사", "전환권행사", "신주인수권행사")
+        )
+        has_listing = "신주상장" in combined or "상장예정" in combined
+        return has_exercise and has_listing
+
+    def _classify_event_type(self, title: str, details: str = "") -> Optional[str]:
+        if self._is_convertible_listing(title, details):
+            return "CONVERTIBLE_LISTING"
         for kw, ev_type in DART_EVENT_MAP:
             if kw in title:
                 return ev_type
@@ -155,7 +165,8 @@ class DartCollector:
 
             for item in items:
                 report_nm = item.get("report_nm", "")
-                ev_type = self._classify_event_type(report_nm)
+                details = item.get("details", "")
+                ev_type = self._classify_event_type(report_nm, details)
                 if not ev_type:
                     continue
 
@@ -171,7 +182,7 @@ class DartCollector:
                     ann_date = since
 
                 raw_payload = dict(item)
-                evidence_text = item.get("details", report_nm).strip()
+                evidence_text = details.strip() or report_nm
                 event_name = f"{item.get('corp_name', '')} {report_nm}".strip()
 
                 # Generic rights issues are noisy. Keep only those with explicit facility/capex funding.
@@ -189,7 +200,6 @@ class DartCollector:
                 if "event_date" in item:
                     ev_date = date.fromisoformat(item["event_date"].strip()[:10])
                 else:
-                    details = item.get("details", "")
                     ev_date = self._extract_date(details, default_date=ann_date.date())
 
                 url = f"https://dart.fss.or.kr/dsaf001/main.do?rcpNo={rcept_no}" if rcept_no else ""
