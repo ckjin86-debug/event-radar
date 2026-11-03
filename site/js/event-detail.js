@@ -33,7 +33,6 @@ async function initEventDetail() {
     }
 
     renderDetail(detail);
-
   } catch (err) {
     console.error("Detail error:", err);
     document.getElementById("detailContainer").innerHTML = `
@@ -60,6 +59,13 @@ function formatEventDate(d) {
   if (precision === "HALF_YEAR") return `${year}년 ${month <= 6 ? "상반기" : "하반기"} (${start} ~ ${end})`;
   if (precision === "YEAR") return `${year}년 내 (${start} ~ ${end})`;
   return start === end ? start : `${start} ~ ${end}`;
+}
+
+function relationBadgeClass(grade) {
+  if (grade === "A") return "badge-a";
+  if (grade === "B") return "badge-b";
+  if (grade === "THEME") return "badge-theme";
+  return "badge-unmapped";
 }
 
 function renderDetail(d) {
@@ -97,21 +103,11 @@ function renderDetail(d) {
         <span style="color: var(--text-secondary); font-size: 1rem;"> / 100점</span>
       </div>
       <div style="display:flex; flex-direction:column; gap:8px; font-size: 0.85rem;">
-        <div style="display:flex; justify-content:space-between;">
-          <span class="text-muted">일정 확정도 (20점):</span> <strong>${sb.schedule}점</strong>
-        </div>
-        <div style="display:flex; justify-content:space-between;">
-          <span class="text-muted">관계 직접성 (20점):</span> <strong>${sb.relation}점</strong>
-        </div>
-        <div style="display:flex; justify-content:space-between;">
-          <span class="text-muted">과거 Edge (30점):</span> <strong>${sb.edge}점</strong>
-        </div>
-        <div style="display:flex; justify-content:space-between;">
-          <span class="text-muted">Robustness (15점):</span> <strong>${sb.robustness}점</strong>
-        </div>
-        <div style="display:flex; justify-content:space-between;">
-          <span class="text-muted">현재 Setup (15점):</span> <strong>${sb.setup}점</strong>
-        </div>
+        <div style="display:flex; justify-content:space-between;"><span class="text-muted">일정 확정도 (20점):</span> <strong>${sb.schedule}점</strong></div>
+        <div style="display:flex; justify-content:space-between;"><span class="text-muted">관계 직접성 (20점):</span> <strong>${sb.relation}점</strong></div>
+        <div style="display:flex; justify-content:space-between;"><span class="text-muted">과거 Edge (30점):</span> <strong>${sb.edge}점</strong></div>
+        <div style="display:flex; justify-content:space-between;"><span class="text-muted">Robustness (15점):</span> <strong>${sb.robustness}점</strong></div>
+        <div style="display:flex; justify-content:space-between;"><span class="text-muted">현재 Setup (15점):</span> <strong>${sb.setup}점</strong></div>
       </div>
     `;
   }
@@ -120,32 +116,11 @@ function renderDetail(d) {
   const statsElem = document.getElementById("backtestStats");
   if (statsElem) {
     statsElem.innerHTML = `
-      <div class="stat-box">
-        <div class="stat-val">${bs.sample_n || 0}건</div>
-        <div class="stat-label">과거 동일 이벤트 표본 (N)</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-val ${(bs.mean_return || 0) >= 0 ? 'positive' : 'negative'}">
-          ${((bs.mean_return || 0) * 100).toFixed(1)}%
-        </div>
-        <div class="stat-label">D+5 평균 수익률</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-val ${(bs.mean_abnormal_return || 0) >= 0 ? 'positive' : 'negative'}">
-          ${((bs.mean_abnormal_return || 0) * 100).toFixed(1)}%
-        </div>
-        <div class="stat-label">D+5 평균 초과수익률</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-val ${((bs.win_rate || 0) >= 0.5) ? 'positive' : 'negative'}">
-          ${((bs.win_rate || 0) * 100).toFixed(0)}%
-        </div>
-        <div class="stat-label">D+5 초과수익 승률</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-val negative">-${((bs.max_drawdown || 0) * 100).toFixed(1)}%</div>
-        <div class="stat-label">표본 최대 낙폭 (MDD)</div>
-      </div>
+      <div class="stat-box"><div class="stat-val">${bs.sample_n || 0}건</div><div class="stat-label">과거 동일 이벤트 표본 (N)</div></div>
+      <div class="stat-box"><div class="stat-val ${(bs.mean_return || 0) >= 0 ? 'positive' : 'negative'}">${((bs.mean_return || 0) * 100).toFixed(1)}%</div><div class="stat-label">D+5 평균 수익률</div></div>
+      <div class="stat-box"><div class="stat-val ${(bs.mean_abnormal_return || 0) >= 0 ? 'positive' : 'negative'}">${((bs.mean_abnormal_return || 0) * 100).toFixed(1)}%</div><div class="stat-label">D+5 평균 초과수익률</div></div>
+      <div class="stat-box"><div class="stat-val ${((bs.win_rate || 0) >= 0.5) ? 'positive' : 'negative'}">${((bs.win_rate || 0) * 100).toFixed(0)}%</div><div class="stat-label">D+5 초과수익 승률</div></div>
+      <div class="stat-box"><div class="stat-val negative">-${((bs.max_drawdown || 0) * 100).toFixed(1)}%</div><div class="stat-label">표본 최대 낙폭 (MDD)</div></div>
     `;
   }
 
@@ -162,7 +137,7 @@ function renderDetail(d) {
       relElem.innerHTML = list.map(s => `
         <tr>
           <td><code>${escapeHtml(s.ticker || '미매핑')}</code></td>
-          <td><span class="badge ${s.relation_grade === 'A' ? 'badge-a' : (s.relation_grade === 'B' ? 'badge-b' : '')}">${s.relation_grade}</span></td>
+          <td><span class="badge ${relationBadgeClass(s.relation_grade)}">${escapeHtml(s.relation_grade)}</span></td>
           <td>${s.relation_score}점 (${escapeHtml(s.relation_type)})</td>
           <td style="font-size:0.8rem; color:#cbd5e1;">${escapeHtml(s.evidence_text || '-')}</td>
         </tr>
@@ -180,12 +155,8 @@ function renderDetail(d) {
         <tr>
           <td><strong>${escapeHtml(s.name)}</strong></td>
           <td>${s.sample_n}</td>
-          <td class="${s.mean_return >= 0 ? 'stat-val positive' : 'stat-val negative'}" style="font-size:0.9rem;">
-            ${(s.mean_return * 100).toFixed(1)}%
-          </td>
-          <td class="${s.mean_abnormal_return >= 0 ? 'stat-val positive' : 'stat-val negative'}" style="font-size:0.9rem;">
-            ${(s.mean_abnormal_return * 100).toFixed(1)}%
-          </td>
+          <td class="${s.mean_return >= 0 ? 'stat-val positive' : 'stat-val negative'}" style="font-size:0.9rem;">${(s.mean_return * 100).toFixed(1)}%</td>
+          <td class="${s.mean_abnormal_return >= 0 ? 'stat-val positive' : 'stat-val negative'}" style="font-size:0.9rem;">${(s.mean_abnormal_return * 100).toFixed(1)}%</td>
           <td>${(s.win_rate * 100).toFixed(0)}%</td>
           <td style="color:var(--accent-red); font-size:0.9rem;">-${(s.max_drawdown * 100).toFixed(1)}%</td>
           <td><span class="badge" style="background:#334155;">${s.robustness_score}</span></td>
