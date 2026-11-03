@@ -4,6 +4,7 @@ from __future__ import annotations
 import csv
 from datetime import date
 from pathlib import Path
+from event_radar.entity_resolver import is_market_proxy
 from event_radar.models import Event, Relation, EventSecurity
 
 
@@ -46,17 +47,28 @@ def resolve_related_securities(event: Event, relations: list[Relation]) -> list[
 
     results: dict[str, EventSecurity] = {}
 
-    # 1. Primary entity is always Grade A when an actual ticker is known.
+    # 1. A real primary security is Grade A. Index/sector ETF placeholders are
+    # informational proxies and must never pass downstream A/B stock filters.
     primary_ticker = event.primary_ticker.strip().upper()
     if primary_ticker:
-        results[primary_ticker] = EventSecurity(
-            event_id=event.event_id,
-            ticker=primary_ticker,
-            relation_grade="A",
-            relation_score=100,
-            relation_type="DIRECT",
-            evidence_text="직접 당사자",
-        )
+        if is_market_proxy(primary_ticker):
+            results[primary_ticker] = EventSecurity(
+                event_id=event.event_id,
+                ticker=primary_ticker,
+                relation_grade="PROXY",
+                relation_score=0,
+                relation_type="MARKET_PROXY",
+                evidence_text="시장/섹터 반응 참고용 프록시",
+            )
+        else:
+            results[primary_ticker] = EventSecurity(
+                event_id=event.event_id,
+                ticker=primary_ticker,
+                relation_grade="A",
+                relation_score=100,
+                relation_type="DIRECT",
+                evidence_text="직접 당사자",
+            )
 
     announced_date = event.announced_at.date() if hasattr(event.announced_at, "date") else event.announced_at
     event_date = event.event_date
@@ -79,6 +91,8 @@ def resolve_related_securities(event: Event, relations: list[Relation]) -> list[
             continue
 
         ticker = rel.to_ticker.strip().upper()
+        if not ticker or is_market_proxy(ticker):
+            continue
         if rel.relation_score >= 90:
             grade = "A"
         elif rel.relation_score >= 60:
