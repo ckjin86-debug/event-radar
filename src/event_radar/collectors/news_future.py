@@ -57,7 +57,7 @@ EVENT_PATTERNS: dict[str, str] = {
     "TENDER": r"입찰|우선협상",
     "COURT_RULING": r"판결|선고",
     "CLINICAL_RESULT": r"임상.{0,16}(?:결과|데이터|발표)",
-    "M_AND_A": r"합병|인수|M&A",
+    "M_AND_A": r"합병|인수(?!권)|M&A",
     "CAPEX": r"착공|시설투자|설비투자|증설",
     "POLICY": r"(?:정책|규제).{0,16}(?:시행|발표|결정)",
     "CAPEX_FINANCING": r"유상증자|시설투자|설비투자|시설자금|공장|증설|CAPEX",
@@ -121,6 +121,16 @@ def parse_future_window(text: str, reference_date: date) -> Optional[FutureWindo
                 candidate = date(reference_date.year + 1, month, day)
             except ValueError:
                 return None
+        return FutureWindow("EXACT_DATE", candidate, candidate, m.group(0))
+
+    m = re.search(r"(?:내달|다음달)\s*(3[01]|[12]?\d)\s*일", normalized)
+    if m:
+        day = int(m.group(1))
+        year, month = _next_month(reference_date)
+        try:
+            candidate = date(year, month, day)
+        except ValueError:
+            return None
         return FutureWindow("EXACT_DATE", candidate, candidate, m.group(0))
 
     m = re.search(r"오는\s*(3[01]|[12]?\d)\s*일", normalized)
