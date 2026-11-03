@@ -27,6 +27,8 @@ DART_EVENT_MAP = [
     ("영업실적", "EARNINGS"),
 ]
 
+DART_RIGHTS_ISSUE_DETAIL_URL = "https://opendart.fss.or.kr/api/piicDecsn.json"
+
 
 class DartCollector:
     """Collector for Korean official corporate disclosures from DART."""
@@ -63,12 +65,75 @@ class DartCollector:
                 pass
         return default_date
 
+    @staticmethod
+    def _parse_amount(value: object) -> int:
+        """Parse OpenDART monetary strings such as '5,000,000,000' safely."""
+        text = str(value or "").strip().replace(",", "")
+        if not text or text in {"-", "--"}:
+            return 0
+        try:
+            return int(float(text))
+        except (TypeError, ValueError):
+            return 0
+
+    def _load_rights_issue_detail(
+        self,
+        item: dict,
+        since: datetime,
+        end_at: datetime,
+    ) -> Optional[dict]:
+        """Return structured rights-issue detail only when facility funding is positive."""
+        rcept_no = str(item.get("rcept_no", "")).strip()
+
+        # Deterministic fixture support without network calls.
+        if self.fixture_path:
+            detail = item.get("rights_issue_detail")
+            if isinstance(detail, dict) and self._parse_amount(detail.get("fdpp_fclt")) > 0:
+                return detail
+            if self._parse_amount(item.get("fdpp_fclt")) > 0:
+                return item
+            return None
+
+        corp_code = str(item.get("corp_code", "")).strip()
+        if not self.api_key or not corp_code or not rcept_no:
+            return None
+
+        params = {
+            "crtfc_key": self.api_key,
+            "corp_code": corp_code,
+            "bgn_de": since.strftime("%Y%m%d"),
+            "end_de": end_at.strftime("%Y%m%d"),
+        }
+        try:
+            resp = self.session.get(
+                DART_RIGHTS_ISSUE_DETAIL_URL,
+                params=params,
+                timeout=self.timeout,
+            )
+            if resp.status_code != 200:
+                return None
+            payload = resp.json()
+            if payload.get("status") != "000":
+                return None
+            for detail in payload.get("list", []):
+                if str(detail.get("rcept_no", "")).strip() != rcept_no:
+                    continue
+                if self._parse_amount(detail.get("fdpp_fclt")) > 0:
+                    return detail
+                return None
+        except Exception:
+            # A detail lookup failure must not promote a generic rights issue into the radar.
+            return None
+        return None
+
     def collect(self, since: datetime) -> list[RawEvent]:
         """Collect corporate action disclosures."""
         start_time = time.time()
         events: list[RawEvent] = []
 
         try:
+            now = datetime.now()
+
             # 1. Use local fixture if provided
             if self.fixture_path and self.fixture_path.exists():
                 with open(self.fixture_path, mode="r", encoding="utf-8") as f:
@@ -77,7 +142,7 @@ class DartCollector:
             elif self.api_key:
                 # OpenDART list API query
                 bgn_de = since.strftime("%Y%m%d")
-                end_de = datetime.now().strftime("%Y%m%d")
+                end_de = now.strftime("%Y%m%d")
                 url = f"https://opendart.fss.or.kr/api/list.json?crtfc_key={self.api_key}&bgn_de={bgn_de}&end_de={end_de}&pblntf_ty=B&page_count=100"
                 resp = self.session.get(url, timeout=self.timeout)
                 if resp.status_code != 200:
@@ -105,6 +170,21 @@ class DartCollector:
                 except ValueError:
                     ann_date = since
 
+                raw_payload = dict(item)
+                evidence_text = item.get("details", report_nm).strip()
+                event_name = f"{item.get('corp_name', '')} {report_nm}".strip()
+
+                # Generic rights issues are noisy. Keep only those with explicit facility/capex funding.
+                if ev_type == "RIGHTS_ISSUE":
+                    detail = self._load_rights_issue_detail(item, since=since, end_at=now)
+                    if detail is None:
+                        continue
+                    facility_raw = str(detail.get("fdpp_fclt", "")).strip()
+                    ev_type = "CAPEX_FINANCING"
+                    event_name = f"{item.get('corp_name', '')} 시설자금 조달 유상증자".strip()
+                    evidence_text = f"{report_nm}; 시설자금 {facility_raw}원"
+                    raw_payload["rights_issue_detail"] = detail
+
                 # Target event date from disclosure details or item
                 if "event_date" in item:
                     ev_date = date.fromisoformat(item["event_date"].strip()[:10])
@@ -124,14 +204,14 @@ class DartCollector:
                         primary_ticker=ticker,
                         primary_company=item.get("corp_name", "").strip(),
                         event_type=ev_type,
-                        event_name=f"{item.get('corp_name', '')} {report_nm}".strip(),
+                        event_name=event_name,
                         announced_at=ann_date,
                         event_date=ev_date,
                         event_time_context="DATE_ONLY",
                         status="CONFIRMED",
-                        evidence_text=item.get("details", report_nm).strip(),
+                        evidence_text=evidence_text,
                         ingest_mode="AUTO",
-                        raw_payload=item,
+                        raw_payload=raw_payload,
                     )
                 )
 
