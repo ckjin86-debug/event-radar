@@ -18,6 +18,7 @@ from event_radar.models import RawEvent
 
 
 KIND_IPO_URL = "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain"
+KIND_SEARCH_URL = "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do"
 KIND_BASE_URL = "https://kind.krx.co.kr"
 
 _DATE_RE = re.compile(r"(20\d{2})[.\-/]\s*(\d{1,2})[.\-/]\s*(\d{1,2})")
@@ -55,8 +56,6 @@ class KindIpoCollector:
     def __init__(self, mock_html: Optional[str] = None, timeout: int = 10, months_ahead: int = 2) -> None:
         self.mock_html = mock_html
         self.timeout = timeout
-        # Retained for constructor compatibility. The server-rendered public-offering
-        # company page already includes upcoming bookbuilding/subscription/listing dates.
         self.months_ahead = max(0, months_ahead)
         self.session = requests.Session()
         self.session.headers.update({
@@ -107,28 +106,47 @@ class KindIpoCollector:
         )
 
     def _parse_table(self, html_text: str, since: datetime) -> list[RawEvent]:
-        """Parse KIND's server-rendered public-offering company table."""
+        """Parse KIND public-offering rows from either full-page or AJAX HTML.
+
+        The full page may include column headers. KIND's AJAX result fragment omits
+        those headers, but its offering columns have a stable order:
+        company, filing date, bookbuilding, subscription, payment, price, amount,
+        listing date, underwriter.
+        """
         soup = BeautifulSoup(html_text, "html.parser")
         events: list[RawEvent] = []
+
         for table in soup.find_all("table"):
             headers = [cell.get_text(" ", strip=True) for cell in table.find_all("th")]
-            if not headers:
-                continue
-            company_idx = _find_index(headers, "회사명", "종목명", "기업명")
-            market_idx = _find_index(headers, "시장구분", "시장")
-            book_idx = _find_index(headers, "수요예측")
-            subscription_idx = _find_index(headers, "청약")
-            payment_idx = _find_index(headers, "납입")
-            listing_idx = _find_index(headers, "상장예정", "상장일", "상장")
-            if company_idx is None or not any(idx is not None for idx in (book_idx, subscription_idx, payment_idx, listing_idx)):
-                continue
+            if headers:
+                company_idx = _find_index(headers, "회사명", "종목명", "기업명")
+                market_idx = _find_index(headers, "시장구분", "시장")
+                book_idx = _find_index(headers, "수요예측")
+                subscription_idx = _find_index(headers, "청약")
+                payment_idx = _find_index(headers, "납입")
+                listing_idx = _find_index(headers, "상장예정", "상장일", "상장")
+                if company_idx is None or not any(
+                    idx is not None for idx in (book_idx, subscription_idx, payment_idx, listing_idx)
+                ):
+                    continue
+            else:
+                # Official AJAX response has no header row. These positions were
+                # verified against the live KIND response used by the web page.
+                company_idx = 0
+                market_idx = None
+                book_idx = 2
+                subscription_idx = 3
+                payment_idx = 4
+                listing_idx = 7
 
             for row in table.find_all("tr"):
                 cells = row.find_all("td")
-                if not cells or company_idx >= len(cells):
+                required = [idx for idx in (company_idx, book_idx, subscription_idx, payment_idx, listing_idx) if idx is not None]
+                if not cells or not required or max(required) >= len(cells):
                     continue
+
                 company_cell = cells[company_idx]
-                company = company_cell.get_text(" ", strip=True)
+                company = company_cell.get("title", "").strip() or company_cell.get_text(" ", strip=True)
                 if not company:
                     continue
                 link = company_cell.find("a", href=True)
@@ -137,8 +155,6 @@ class KindIpoCollector:
                 if market_idx is not None and market_idx < len(cells):
                     market_text = cells[market_idx].get_text(" ", strip=True)
                 else:
-                    # Current KIND markup puts the market badge inside the company cell,
-                    # e.g. <img alt="코스닥"> rather than exposing a market column.
                     market_img = company_cell.find("img")
                     market_text = market_img.get("alt", "") if market_img else ""
                 ticker = self._market_proxy(market_text)
@@ -167,7 +183,8 @@ class KindIpoCollector:
                 add_single(payment_idx, "IPO_PAYMENT", "납입일")
                 add_single(listing_idx, "IPO_LISTING", "상장예정일")
 
-        return sorted(events, key=lambda e: (e.event_date, e.primary_company, e.event_type))
+        deduped = {(event.primary_company, event.event_type, event.event_date): event for event in events}
+        return sorted(deduped.values(), key=lambda e: (e.event_date, e.primary_company, e.event_type))
 
     def _parse_calendar_entries(self, html_text: str) -> list[dict]:
         """Retain calendar parsing for fixtures/backward compatibility."""
@@ -242,10 +259,43 @@ class KindIpoCollector:
         deduped = {(event.primary_company, event.event_type, event.event_date): event for event in events}
         return sorted(deduped.values(), key=lambda e: (e.event_date, e.primary_company, e.event_type))
 
+    @staticmethod
+    def _search_payload() -> dict[str, str]:
+        return {
+            "method": "searchPubofrProgComSub",
+            "forward": "pubofrprogcom_sub",
+            "marketType": "",
+            "searchCorpNameTmp": "",
+            "searchCorpName": "",
+            "repMajAgntDesignAdvserComp": "",
+            "repMajAgntComp": "",
+            "designAdvserComp": "",
+            "fromDate": "",
+            "toDate": "",
+            "currentPageSize": "100",
+            "pageIndex": "1",
+            "orderMode": "1",
+            "orderStat": "D",
+            "searchMode": "",
+            "isurCd": "",
+            "repIsuSrtCd": "",
+        }
+
     def _fetch_public_offering_table(self) -> str:
-        response = self.session.get(KIND_IPO_URL, timeout=self.timeout)
+        # The initial GET establishes KIND's JSESSIONID. The page then requests the
+        # actual result rows through an AJAX POST; a plain GET only returns the form.
+        initial = self.session.get(KIND_IPO_URL, timeout=self.timeout)
+        if initial.status_code != 200:
+            raise ConnectionError(f"KIND initial page returned HTTP {initial.status_code}")
+
+        response = self.session.post(
+            KIND_SEARCH_URL,
+            data=self._search_payload(),
+            headers={"X-Requested-With": "XMLHttpRequest", "Referer": KIND_IPO_URL},
+            timeout=self.timeout,
+        )
         if response.status_code != 200:
-            raise ConnectionError(f"KIND returned HTTP {response.status_code}")
+            raise ConnectionError(f"KIND search returned HTTP {response.status_code}")
         if hasattr(response, "apparent_encoding"):
             response.encoding = response.apparent_encoding or response.encoding
         return response.text
@@ -253,13 +303,8 @@ class KindIpoCollector:
     def collect(self, since: datetime) -> list[RawEvent]:
         started = time.time()
         try:
-            if self.mock_html is not None:
-                html_text = self.mock_html
-            else:
-                html_text = self._fetch_public_offering_table()
+            html_text = self.mock_html if self.mock_html is not None else self._fetch_public_offering_table()
 
-            # Production uses the public-offering company table because it contains
-            # bookbuilding, subscription, payment and listing dates in one stable page.
             events = self._parse_table(html_text, since)
             if not events:
                 calendar_entries = self._parse_calendar_entries(html_text)
