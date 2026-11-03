@@ -98,7 +98,6 @@ def parse_future_window(text: str, reference_date: date) -> Optional[FutureWindo
     """Parse a Korean future-time expression into a bounded date window."""
     normalized = html.unescape(re.sub(r"<[^>]+>", " ", text))
 
-    # 내년 N분기
     m = re.search(r"내년\s*([1-4])\s*분기", normalized)
     if m:
         quarter = int(m.group(1))
@@ -109,7 +108,6 @@ def parse_future_window(text: str, reference_date: date) -> Optional[FutureWindo
         end = date(year, end_month, calendar.monthrange(year, end_month)[1])
         return FutureWindow("QUARTER", start, end, m.group(0))
 
-    # N월 N일: infer next year if this year's date is already past.
     m = re.search(r"(?<!\d)(1[0-2]|0?[1-9])\s*월\s*(3[01]|[12]?\d)\s*일", normalized)
     if m:
         month = int(m.group(1))
@@ -125,7 +123,6 @@ def parse_future_window(text: str, reference_date: date) -> Optional[FutureWindo
                 return None
         return FutureWindow("EXACT_DATE", candidate, candidate, m.group(0))
 
-    # 오는 N일 means the next occurrence of that day number, normally this month.
     m = re.search(r"오는\s*(3[01]|[12]?\d)\s*일", normalized)
     if m:
         day = int(m.group(1))
@@ -142,14 +139,12 @@ def parse_future_window(text: str, reference_date: date) -> Optional[FutureWindo
                 return None
         return FutureWindow("EXACT_DATE", candidate, candidate, m.group(0))
 
-    # 내달 / 다음달
     m = re.search(r"(?:내달|다음달)", normalized)
     if m:
         year, month = _next_month(reference_date)
         start, end = _month_bounds(year, month)
         return FutureWindow("MONTH", start, end, m.group(0))
 
-    # explicit month only
     m = re.search(r"(?<!\d)(1[0-2]|0?[1-9])\s*월(?!\s*\d+\s*일)", normalized)
     if m:
         month = int(m.group(1))
@@ -157,7 +152,6 @@ def parse_future_window(text: str, reference_date: date) -> Optional[FutureWindo
         start, end = _month_bounds(year, month)
         return FutureWindow("MONTH", start, end, m.group(0))
 
-    # 내년 상/하반기
     m = re.search(r"내년\s*(상반기|하반기)", normalized)
     if m:
         year = reference_date.year + 1
@@ -165,7 +159,6 @@ def parse_future_window(text: str, reference_date: date) -> Optional[FutureWindo
             return FutureWindow("HALF_YEAR", date(year, 1, 1), date(year, 6, 30), m.group(0))
         return FutureWindow("HALF_YEAR", date(year, 7, 1), date(year, 12, 31), m.group(0))
 
-    # 연내
     m = re.search(r"연내", normalized)
     if m:
         return FutureWindow("YEAR", reference_date, date(reference_date.year, 12, 31), m.group(0))
@@ -182,7 +175,6 @@ def classify_catalyst(text: str) -> Optional[str]:
             return "CAPEX_FINANCING"
         return None
 
-    # Korean IPO/listing dates are owned by the official KIND collector.
     if re.search(r"상장|IPO", normalized, re.IGNORECASE):
         return None
 
@@ -223,6 +215,8 @@ def _parse_pubdate(value: str, fallback: datetime) -> datetime:
 
 
 def _is_actionable_window(window: FutureWindow, event_type: str) -> bool:
+    if event_type == "PRODUCT_LAUNCH":
+        return window.precision == "EXACT_DATE"
     if window.precision in {"YEAR", "HALF_YEAR", "QUARTER"}:
         return event_type in BROAD_WINDOW_EVENT_TYPES
     return True
@@ -319,15 +313,15 @@ class NewsFutureCollector:
                         continue
 
                     published = _parse_pubdate(item.get("pubDate", ""), fallback=since)
-                    window = parse_future_window(combined, published.date())
-                    event_type = classify_catalyst(combined)
+                    window = parse_future_window(title, published.date())
+                    event_type = classify_catalyst(title)
                     if window is None or event_type is None:
                         continue
                     if window.end < published.date():
                         continue
                     if not _is_actionable_window(window, event_type):
                         continue
-                    if not _is_temporally_linked(combined, window, event_type):
+                    if not _is_temporally_linked(title, window, event_type):
                         continue
 
                     ticker = _extract_ticker(combined)
