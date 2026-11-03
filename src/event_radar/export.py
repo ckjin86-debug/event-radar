@@ -24,25 +24,16 @@ def _is_actual_convertible_listing(ev: Event) -> bool:
 
 def _is_visible_radar_event(ev: Event) -> bool:
     """Hide historical rows that no longer meet the radar's signal policy."""
-    # Generic Korean rights issues are retained in canonical history but hidden.
-    # Capex-backed issues are reclassified as CAPEX_FINANCING at collection time.
     if ev.source_name == "DART" and ev.event_type == "RIGHTS_ISSUE":
         return False
-
-    # Older KIND runs emitted every IPO process milestone. The radar now treats
-    # listing day as the only primary IPO event.
     if ev.source_name == "KIND_IPO" and ev.event_type != "IPO_LISTING":
         return False
-
-    # Older DART runs broadly labelled CB/BW financing notices as listings.
-    # Preserve them in canonical history, but expose only actual exercise/listing rows.
     if (
         ev.source_name == "DART"
         and ev.event_type == "CONVERTIBLE_LISTING"
         and not _is_actual_convertible_listing(ev)
     ):
         return False
-
     return True
 
 
@@ -51,7 +42,7 @@ def export_site_data(
     revisions: list[EventRevision],
     event_securities: dict[str, list[EventSecurity]],
     event_scores: dict[str, ScoreResult],
-    event_returns_df: Any,  # pd.DataFrame
+    event_returns_df: Any,
     strategy_results: dict[str, list[StrategyResult]],
     backtest_summaries: dict[str, BacktestSummary],
     output_dir: Path | str = "site/data",
@@ -68,18 +59,16 @@ def export_site_data(
 
     visible_events = [ev for ev in events if _is_visible_radar_event(ev)]
 
-    # 1. site/data/events.json
     events_list = []
     for ev in visible_events:
         d_day = (ev.event_date - today).days
         score = event_scores.get(ev.event_id)
         total_score = score.total_score if score else 50
 
-        # Get primary relation score/grade
         sec_list = event_securities.get(ev.event_id, [])
         primary_rel = sec_list[0] if sec_list else None
-        rel_grade = primary_rel.relation_grade if primary_rel else "A"
-        rel_score = primary_rel.relation_score if primary_rel else 100
+        rel_grade = primary_rel.relation_grade if primary_rel else "UNMAPPED"
+        rel_score = primary_rel.relation_score if primary_rel else 0
         window_start = ev.window_start or ev.event_date
         window_end = ev.window_end or ev.event_date
 
@@ -103,7 +92,6 @@ def export_site_data(
             "source_url": ev.source_url,
         })
 
-    # Sort primarily by d_day ascending (closest upcoming first) or event_score descending
     events_list.sort(key=lambda x: (x["d_day"] < 0, abs(x["d_day"])))
 
     (out_path / "events.json").write_text(
@@ -111,7 +99,6 @@ def export_site_data(
         encoding="utf-8",
     )
 
-    # 2. site/data/event_details.json
     details_map = {}
     for ev in visible_events:
         ev_id = ev.event_id
@@ -157,7 +144,6 @@ def export_site_data(
             for s in strategy_results.get(ev_id, [])
         ]
 
-        # Calculate event curve points from returns df if available
         curve_points = []
         if event_returns_df is not None and not getattr(event_returns_df, "empty", True):
             ev_rets = event_returns_df[event_returns_df["event_id"] == ev_id]
@@ -222,7 +208,6 @@ def export_site_data(
         encoding="utf-8",
     )
 
-    # 3. site/data/metadata.json
     metadata = {
         "generated_at": now.isoformat(),
         "total_events": len(visible_events),
