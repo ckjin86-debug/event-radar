@@ -48,6 +48,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No data changes to commit."
           else
-            git commit -m "chore(data): auto-update event datasets and site json [skip ci]"
+            git commit -m "chore(data): auto-update event datasets and site json"
             git push
           fi
