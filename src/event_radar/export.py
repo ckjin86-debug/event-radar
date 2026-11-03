@@ -46,6 +46,20 @@ def _is_visible_radar_event(ev: Event) -> bool:
     return True
 
 
+def _has_investable_news_security(
+    ev: Event,
+    event_securities: dict[str, list[EventSecurity]],
+) -> bool:
+    """Keep company-specific NEWS_FUTURE only when it resolves to a listed security."""
+    if ev.source_name != "NEWS_FUTURE":
+        return True
+    if ev.event_type == "POLICY":
+        return True
+    if not ev.primary_ticker.startswith("^"):
+        return True
+    return bool(event_securities.get(ev.event_id, []))
+
+
 def export_site_data(
     events: list[Event],
     revisions: list[EventRevision],
@@ -66,7 +80,12 @@ def export_site_data(
     out_path = Path(output_dir)
     out_path.mkdir(parents=True, exist_ok=True)
 
-    visible_events = [ev for ev in events if _is_visible_radar_event(ev)]
+    visible_events = [
+        ev
+        for ev in events
+        if _is_visible_radar_event(ev)
+        and _has_investable_news_security(ev, event_securities)
+    ]
 
     # 1. site/data/events.json
     events_list = []
@@ -80,6 +99,7 @@ def export_site_data(
         primary_rel = sec_list[0] if sec_list else None
         rel_grade = primary_rel.relation_grade if primary_rel else "A"
         rel_score = primary_rel.relation_score if primary_rel else 100
+        display_ticker = primary_rel.ticker if primary_rel else ev.primary_ticker
         window_start = ev.window_start or ev.event_date
         window_end = ev.window_end or ev.event_date
 
@@ -87,7 +107,7 @@ def export_site_data(
             "event_id": ev.event_id,
             "d_day": d_day,
             "country": ev.country,
-            "ticker": ev.primary_ticker,
+            "ticker": display_ticker,
             "company": ev.primary_company,
             "event_type": ev.event_type,
             "event_name": ev.event_name,
@@ -181,11 +201,13 @@ def export_site_data(
         }
         window_start = ev.window_start or ev.event_date
         window_end = ev.window_end or ev.event_date
+        primary_rel = event_securities.get(ev_id, [None])[0]
+        display_ticker = primary_rel.ticker if primary_rel else ev.primary_ticker
 
         details_map[ev_id] = {
             "event_id": ev_id,
             "country": ev.country,
-            "ticker": ev.primary_ticker,
+            "ticker": display_ticker,
             "company": ev.primary_company,
             "event_type": ev.event_type,
             "event_name": ev.event_name,
