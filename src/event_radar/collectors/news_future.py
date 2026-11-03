@@ -22,18 +22,41 @@ from event_radar.models import RawEvent
 NAVER_NEWS_URL = "https://naverapihub.apigw.ntruss.com/search/v1/news"
 DEFAULT_QUERIES = [
     "내달 가동",
-    "다음달 출시",
+    "다음달 가동",
+    "내년 가동",
+    "내달 착공",
+    "다음달 착공",
+    "내년 착공",
     "연내 승인",
-    "내년 1분기 가동",
-    "상장 예정",
+    "다음달 승인",
+    "내년 승인",
+    "FDA 승인 예정",
     "임상 결과 예정",
+    "임상 발표 예정",
     "정책 시행 예정",
+    "정책 발표 예정",
+    "규제 시행 예정",
     "수주 발표 예정",
-    "경영권 분쟁 예정",
-    "임시주총 예정",
+    "공급 계약 예정",
+    "입찰 예정",
+    "우선협상 예정",
     "원전 입찰 예정",
     "원전 수주 예정",
+    "경영권 분쟁 예정",
+    "임시주총 예정",
+    "주총 표대결 예정",
+    "선고 예정",
+    "판결 예정",
+    "인수 예정",
+    "합병 예정",
     "대선 경선 예정",
+    "총선 일정",
+    "지방선거 예정",
+    "후보 확정 예정",
+    "신제품 출시 예정",
+    "신작 출시 예정",
+    "시설투자 예정",
+    "증설 예정",
 ]
 
 BROAD_WINDOW_EVENT_TYPES = {
@@ -164,6 +187,11 @@ def parse_future_window(text: str, reference_date: date) -> Optional[FutureWindo
         start, end = _month_bounds(year, month)
         return FutureWindow("MONTH", start, end, m.group(0))
 
+    m = re.search(r"(?:이달|이번\s*달)", normalized)
+    if m:
+        _, end = _month_bounds(reference_date.year, reference_date.month)
+        return FutureWindow("MONTH", reference_date, end, m.group(0))
+
     m = re.search(r"(?<!\d)(1[0-2]|0?[1-9])\s*월(?!\s*\d+\s*일)", normalized)
     if m:
         month = int(m.group(1))
@@ -177,6 +205,11 @@ def parse_future_window(text: str, reference_date: date) -> Optional[FutureWindo
         if m.group(1) == "상반기":
             return FutureWindow("HALF_YEAR", date(year, 1, 1), date(year, 6, 30), m.group(0))
         return FutureWindow("HALF_YEAR", date(year, 7, 1), date(year, 12, 31), m.group(0))
+
+    m = re.search(r"내년", normalized)
+    if m:
+        year = reference_date.year + 1
+        return FutureWindow("YEAR", date(year, 1, 1), date(year, 12, 31), m.group(0))
 
     m = re.search(r"연내", normalized)
     if m:
@@ -295,16 +328,24 @@ class NewsFutureCollector:
             "X-NCP-APIGW-API-KEY": self.api_key,
         }
         payloads: list[dict] = []
+        failures = 0
         for query in self.queries:
-            response = self.session.get(
-                NAVER_NEWS_URL,
-                headers=headers,
-                params={"query": query, "display": 100, "sort": "date"},
-                timeout=self.timeout,
-            )
-            if response.status_code != 200:
-                raise ConnectionError(f"NAVER API HUB returned HTTP {response.status_code}")
-            payloads.append(response.json())
+            try:
+                response = self.session.get(
+                    NAVER_NEWS_URL,
+                    headers=headers,
+                    params={"query": query, "display": 100, "sort": "date"},
+                    timeout=self.timeout,
+                )
+                if response.status_code != 200:
+                    failures += 1
+                    continue
+                payloads.append(response.json())
+            except Exception:
+                failures += 1
+                continue
+        if not payloads and failures:
+            raise ConnectionError("NAVER API HUB queries all failed")
         return payloads
 
     def collect(self, since: datetime) -> list[RawEvent]:
@@ -332,15 +373,15 @@ class NewsFutureCollector:
                         continue
 
                     published = _parse_pubdate(item.get("pubDate", ""), fallback=since)
-                    window = parse_future_window(title, published.date())
-                    event_type = classify_catalyst(title)
+                    window = parse_future_window(combined, published.date())
+                    event_type = classify_catalyst(combined)
                     if window is None or event_type is None:
                         continue
                     if window.end < published.date():
                         continue
                     if not _is_actionable_window(window, event_type):
                         continue
-                    if not _is_temporally_linked(title, window, event_type):
+                    if not _is_temporally_linked(combined, window, event_type):
                         continue
 
                     ticker = _extract_ticker(combined)
