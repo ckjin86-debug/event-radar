@@ -68,7 +68,22 @@ class ListedCompanyRegistry:
             if alias and re.fullmatch(r"\d{6}", code):
                 cleaned[alias] = code
         self._mapping = cleaned
-        self._aliases = sorted(cleaned, key=lambda name: len(re.sub(r"\s+", "", name)), reverse=True)
+        self._aliases = sorted(
+            cleaned,
+            key=lambda name: len(re.sub(r"\s+", "", name)),
+            reverse=True,
+        )
+        self._alias_lookup = {alias.casefold(): alias for alias in self._aliases}
+        if self._aliases:
+            # One compiled alternation is dramatically cheaper than compiling and
+            # searching one regex for every listed company for every news event.
+            alternatives = "|".join(re.escape(alias) for alias in self._aliases)
+            self._mention_pattern = re.compile(
+                rf"(?<![0-9A-Za-z가-힣])(?:{alternatives})(?![0-9A-Za-z가-힣])",
+                re.IGNORECASE,
+            )
+        else:
+            self._mention_pattern = None
 
     @classmethod
     def from_mapping(cls, mapping: Mapping[str, str]) -> "ListedCompanyRegistry":
@@ -145,12 +160,15 @@ class ListedCompanyRegistry:
 
     def mentioned_companies(self, text: str) -> list[tuple[str, str]]:
         """Return exact company-name mentions with Korean/Latin token boundaries."""
+        if self._mention_pattern is None:
+            return []
+
         haystack = text or ""
         rows: list[tuple[str, str]] = []
         seen_tickers: set[str] = set()
-        for company in self._aliases:
-            pattern = rf"(?<![0-9A-Za-z가-힣]){re.escape(company)}(?![0-9A-Za-z가-힣])"
-            if re.search(pattern, haystack, re.IGNORECASE) is None:
+        for match in self._mention_pattern.finditer(haystack):
+            company = self._alias_lookup.get(match.group(0).casefold())
+            if company is None:
                 continue
             ticker = self._mapping[company]
             if ticker in seen_tickers:
