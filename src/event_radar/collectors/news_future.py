@@ -8,6 +8,7 @@ import html
 import os
 import re
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from datetime import date, datetime
 from email.utils import parsedate_to_datetime
@@ -312,39 +313,55 @@ class NewsFutureCollector:
         queries: Optional[Iterable[str]] = None,
         mock_payloads: Optional[list[dict]] = None,
         timeout: int = 10,
+        max_workers: int = 8,
     ) -> None:
         self.api_key_id = api_key_id or os.getenv("NAVER_API_HUB_KEY_ID", "")
         self.api_key = api_key or os.getenv("NAVER_API_HUB_KEY", "")
         self.queries = list(queries or DEFAULT_QUERIES)
         self.mock_payloads = mock_payloads
         self.timeout = timeout
-        self.session = requests.Session()
+        self.max_workers = max(1, min(12, int(max_workers)))
+
+    def _fetch_one(self, query: str, headers: dict[str, str]) -> dict | None:
+        try:
+            response = requests.get(
+                NAVER_NEWS_URL,
+                headers=headers,
+                params={"query": query, "display": 100, "sort": "date"},
+                timeout=self.timeout,
+            )
+            if response.status_code != 200:
+                return None
+            return response.json()
+        except Exception:
+            return None
 
     def _fetch_payloads(self) -> list[dict]:
         if self.mock_payloads is not None:
             return self.mock_payloads
+        if not self.queries:
+            return []
+
         headers = {
             "X-NCP-APIGW-API-KEY-ID": self.api_key_id,
             "X-NCP-APIGW-API-KEY": self.api_key,
         }
-        payloads: list[dict] = []
-        failures = 0
-        for query in self.queries:
-            try:
-                response = self.session.get(
-                    NAVER_NEWS_URL,
-                    headers=headers,
-                    params={"query": query, "display": 100, "sort": "date"},
-                    timeout=self.timeout,
-                )
-                if response.status_code != 200:
-                    failures += 1
-                    continue
-                payloads.append(response.json())
-            except Exception:
-                failures += 1
-                continue
-        if not payloads and failures:
+        results: list[dict | None] = [None] * len(self.queries)
+        workers = min(self.max_workers, len(self.queries))
+        with ThreadPoolExecutor(max_workers=workers) as executor:
+            future_map = {
+                executor.submit(self._fetch_one, query, headers): index
+                for index, query in enumerate(self.queries)
+            }
+            for future in as_completed(future_map):
+                index = future_map[future]
+                try:
+                    results[index] = future.result()
+                except Exception:
+                    results[index] = None
+
+        payloads = [payload for payload in results if payload is not None]
+        if not payloads and self.queries:
             raise ConnectionError("NAVER API HUB queries all failed")
         return payloads
 
