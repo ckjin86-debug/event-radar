@@ -7,7 +7,7 @@ from event_radar.models import Event
 from event_radar.entity_resolver import ListedCompanyRegistry, is_market_proxy, parse_dart_corp_code_zip
 
 
-def _event(name: str, company: str = "") -> Event:
+def _event(name: str, company: str = "", evidence: str | None = None) -> Event:
     now = datetime(2026, 11, 3, 15, 0)
     return Event(
         event_id="EVT_ENTITY_TEST",
@@ -21,7 +21,7 @@ def _event(name: str, company: str = "") -> Event:
         status="EXPECTED",
         source_kind="SECONDARY",
         source_name="NEWS_FUTURE",
-        evidence_text=name,
+        evidence_text=evidence if evidence is not None else name,
         first_seen_at=now,
         last_seen_at=now,
     )
@@ -44,6 +44,28 @@ def test_registry_resolves_explicit_listed_company_mentions():
     assert [(row.ticker, row.relation_grade, row.relation_type) for row in samsung] == [
         ("207940", "A", "DIRECT_MENTION")
     ]
+
+
+def test_news_direct_mapping_ignores_company_only_in_background_evidence():
+    registry = ListedCompanyRegistry.from_mapping({"대우건설": "047040"})
+    event = _event(
+        "환경공단 기술형 입찰 발주 일정 공개",
+        company="환경공단 기술형 입찰 발주 일정",
+        evidence="환경공단은 12월 입찰을 진행한다. 지난해 대우건설은 다른 사업을 수주했다.",
+    )
+
+    assert registry.resolve_mentions(event) == []
+
+
+def test_news_direct_mapping_keeps_company_named_in_headline():
+    registry = ListedCompanyRegistry.from_mapping({"대우건설": "047040"})
+    event = _event(
+        "대우건설, 12월 가락우성1차 입찰 참여 예정",
+        evidence="과거 수주 이력과 사업 전망도 함께 소개했다.",
+    )
+
+    rows = registry.resolve_mentions(event)
+    assert [(row.ticker, row.relation_grade) for row in rows] == [("047040", "A")]
 
 
 def test_registry_resolves_multiple_mentions_and_prefers_long_alias_boundary():
