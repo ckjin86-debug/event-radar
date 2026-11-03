@@ -286,9 +286,12 @@ def run_pipeline(
     all_mapped_rows = []
     entity_universe = config.entity_universe or EntityUniverse()
     for ev in current_events:
-        mention_text = " ".join(
-            part for part in (ev.primary_company, ev.event_name, ev.evidence_text) if part
+        mention_parts = (
+            (ev.primary_company, ev.event_name)
+            if ev.source_name == "NEWS_FUTURE"
+            else (ev.primary_company, ev.event_name, ev.evidence_text)
         )
+        mention_text = " ".join(part for part in mention_parts if part)
         direct_mentions = entity_universe.resolve_mentions(mention_text, ev.country)
         secs = resolve_related_securities(
             ev,
