@@ -33,3 +33,4 @@ def test_collect_workflow_uses_optional_naver_secrets_without_sec_watchlist_or_d
     assert "NAVER_API_HUB_KEY" in workflow
     assert "backup_drive.py" not in workflow
     assert "GOOGLE_DRIVE_FOLDER_ID" not in workflow
+    assert "[skip ci]" not in workflow.lower()
