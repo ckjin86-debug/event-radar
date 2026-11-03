@@ -1,6 +1,8 @@
 name: Scheduled Event Collection
 
 on:
+  push:
+    branches: [main]
   schedule:
     # 21:00 UTC = 06:00 KST (KR morning before market open)
     - cron: "0 21 * * *"
