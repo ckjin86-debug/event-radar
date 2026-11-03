@@ -13,6 +13,7 @@ from event_radar.models import Event, EventRevision, Relation, EventSecurity, Ra
 from event_radar.normalize import normalize_event
 from event_radar.dedupe import merge_events
 from event_radar.relations import resolve_related_securities, load_relations_csv, save_relations_csv
+from event_radar.theme import load_theme_mappings, merge_event_securities, resolve_theme_securities
 from event_radar.manual.google_sheet import load_manual_rows, apply_manual_overrides, apply_manual_relations
 from event_radar.prices.base import PriceProvider, CachedPriceProvider
 from event_radar.prices.yahoo import YahooPriceProvider
@@ -224,11 +225,13 @@ def run_pipeline(
     relations_csv = canonical_dir / "relations.csv"
     manual_events_csv = canonical_dir / "manual_events.csv"
     manual_relations_csv = canonical_dir / "manual_relations.csv"
+    theme_mappings_csv = config.config_dir / "theme_mappings.csv"
 
     # 1. Load existing canonical data
     existing_events = load_canonical_events(events_csv)
     existing_revisions = load_canonical_revisions(revisions_csv)
     existing_relations = load_relations_csv(relations_csv)
+    theme_mappings = load_theme_mappings(theme_mappings_csv)
 
     # 2. Run collectors with graceful degradation
     successful_sources: list[str] = []
@@ -279,11 +282,13 @@ def run_pipeline(
     save_canonical_revisions(all_revisions, revisions_csv)
     save_relations_csv(all_relations, relations_csv)
 
-    # 7. Resolve related securities
+    # 7. Resolve direct/economic and evidence-backed theme securities.
     event_securities: dict[str, list[EventSecurity]] = {}
     all_mapped_rows = []
     for ev in current_events:
-        secs = resolve_related_securities(ev, all_relations)
+        direct_secs = resolve_related_securities(ev, all_relations)
+        theme_secs = resolve_theme_securities(ev, theme_mappings)
+        secs = merge_event_securities(direct_secs, theme_secs)
         event_securities[ev.event_id] = secs
         for s in secs:
             all_mapped_rows.append({
@@ -330,6 +335,8 @@ def run_pipeline(
         end_date = min(now.date(), session_date + timedelta(days=45))
 
         for sec in event_securities.get(ev.event_id, []):
+            if not sec.ticker:
+                continue
             try:
                 stock_prices = price_provider.history(sec.ticker, start_date, end_date)
                 benchmark_prices = price_provider.history(benchmark_ticker, start_date, end_date)
@@ -356,8 +363,8 @@ def run_pipeline(
     for ev in current_events:
         ev_df = all_returns_df[all_returns_df["event_id"] == ev.event_id]
         primary_sec = event_securities.get(ev.event_id, [None])[0]
-        rel_score = primary_sec.relation_score if primary_sec else 100
-        primary_grade = primary_sec.relation_grade if primary_sec else "A"
+        rel_score = primary_sec.relation_score if primary_sec else 0
+        primary_grade = primary_sec.relation_grade if primary_sec else "UNMAPPED"
 
         # D+5 is a realized post-event outcome; unlike D0 it is not identically zero.
         b_sum = summarize_event_group(ev_df, target_offset=5)

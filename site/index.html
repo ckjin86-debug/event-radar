@@ -12,7 +12,7 @@
       <div>
         <h1>🎯 Event Radar</h1>
         <div class="header-meta">
-          <span>한국·미국 미래 주가 이벤트 및 A/B 관련주 백테스트 레이더</span>
+          <span>한국·미국 미래 이벤트 · A/B/THEME 관련주 · 과거 반응 백테스트</span>
           <span>마지막 업데이트: <strong id="lastUpdated">-</strong></span>
         </div>
       </div>
@@ -23,9 +23,7 @@
       </div>
     </header>
 
-    <!-- Filters -->
     <section class="filters-container">
-      <!-- Horizon -->
       <div class="filter-row">
         <span class="filter-label">기간</span>
         <button class="btn-pill active" data-filter-key="horizon" data-filter-value="all">전체</button>
@@ -35,7 +33,6 @@
         <button class="btn-pill" data-filter-key="horizon" data-filter-value="90d">90일 이내</button>
       </div>
 
-      <!-- Country -->
       <div class="filter-row">
         <span class="filter-label">국가</span>
         <button class="btn-pill active" data-filter-key="country" data-filter-value="all">전체</button>
@@ -43,14 +40,13 @@
         <button class="btn-pill" data-filter-key="country" data-filter-value="US">미국 (US)</button>
       </div>
 
-      <!-- Category -->
       <div class="filter-row">
         <span class="filter-label">유형</span>
         <button class="btn-pill active" data-filter-key="category" data-filter-value="all">전체</button>
-        <button class="btn-pill" data-filter-key="category" data-filter-value="증자">증자</button>
+        <button class="btn-pill" data-filter-key="category" data-filter-value="원전">원전/대형수주</button>
+        <button class="btn-pill" data-filter-key="category" data-filter-value="경영권">경영권 분쟁</button>
+        <button class="btn-pill" data-filter-key="category" data-filter-value="정치">정치/선거</button>
         <button class="btn-pill" data-filter-key="category" data-filter-value="CAPEX">CAPEX/시설투자</button>
-        <button class="btn-pill" data-filter-key="category" data-filter-value="분할">주식분할/병합</button>
-        <button class="btn-pill" data-filter-key="category" data-filter-value="락업">락업/보호예수</button>
         <button class="btn-pill" data-filter-key="category" data-filter-value="실적">실적발표</button>
         <button class="btn-pill" data-filter-key="category" data-filter-value="FDA">FDA/임상</button>
         <button class="btn-pill" data-filter-key="category" data-filter-value="IPO">IPO/상장</button>
@@ -61,12 +57,13 @@
         <button class="btn-pill" data-filter-key="category" data-filter-value="게임">게임 출시</button>
       </div>
 
-      <!-- Grade & Status -->
       <div class="filter-row">
         <span class="filter-label">관련 등급</span>
         <button class="btn-pill active" data-filter-key="grade" data-filter-value="all">전체</button>
-        <button class="btn-pill" data-filter-key="grade" data-filter-value="A">A급 (직접 당사자)</button>
-        <button class="btn-pill" data-filter-key="grade" data-filter-value="B">B급 (경제적 관련주)</button>
+        <button class="btn-pill" data-filter-key="grade" data-filter-value="A">A 직접</button>
+        <button class="btn-pill" data-filter-key="grade" data-filter-value="B">B 공식관계</button>
+        <button class="btn-pill" data-filter-key="grade" data-filter-value="THEME">THEME 시장테마</button>
+        <button class="btn-pill" data-filter-key="grade" data-filter-value="UNMAPPED">미매핑</button>
 
         <span class="filter-label" style="margin-left: 16px;">확정도</span>
         <button class="btn-pill active" data-filter-key="status" data-filter-value="all">전체</button>
@@ -74,7 +71,6 @@
         <button class="btn-pill" data-filter-key="status" data-filter-value="EXPECTED">EXPECTED</button>
       </div>
 
-      <!-- Search & Sort -->
       <div class="filter-row" style="margin-top: 4px;">
         <span class="filter-label">검색/정렬</span>
         <input type="text" id="searchInput" class="search-input" placeholder="종목명, 티커, 이벤트명 검색...">
@@ -85,21 +81,20 @@
       </div>
     </section>
 
-    <!-- Table -->
     <main class="table-responsive">
       <table>
         <thead>
           <tr>
             <th>D-Day</th>
             <th>국가</th>
-            <th>종목</th>
+            <th>종목/이슈</th>
             <th>Ticker</th>
             <th>이벤트</th>
             <th>이벤트 날짜</th>
             <th>관련등급</th>
             <th>Event Score</th>
             <th>상태</th>
-            <th>공식 출처</th>
+            <th>출처</th>
           </tr>
         </thead>
         <tbody id="eventsTableBody">

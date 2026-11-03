@@ -22,7 +22,6 @@ async function initDashboard() {
     filterEngine = new EventFilter(events);
     renderTable(filterEngine.apply());
     setupEventListeners();
-
   } catch (err) {
     console.error("Dashboard init error:", err);
     const tbody = document.getElementById("eventsTableBody");
@@ -62,6 +61,13 @@ function periodBadgeText(ev) {
   return labels[ev.date_precision] || null;
 }
 
+function gradeClass(grade) {
+  if (grade === "A") return "badge-a";
+  if (grade === "B") return "badge-b";
+  if (grade === "THEME") return "badge-theme";
+  return "badge-unmapped";
+}
+
 function renderTable(events) {
   const tbody = document.getElementById("eventsTableBody");
   if (!tbody) return;
@@ -87,19 +93,19 @@ function renderTable(events) {
       }
     }
 
-    const gradeClass = ev.relation_grade === "A" ? "badge-a" : "badge-b";
     const statusClass = ev.status === "CONFIRMED" ? "badge-confirmed" : "badge-expected";
     const score = Math.max(0, Math.min(100, ev.event_score || 0));
+    const tickerLabel = ev.ticker || "미매핑";
 
     return `
       <tr>
         <td><span class="badge ${ddayClass}">${ddayText}</span></td>
         <td><span class="badge badge-country">${ev.country}</span></td>
         <td><strong>${escapeHtml(ev.company)}</strong></td>
-        <td><code>${escapeHtml(ev.ticker)}</code></td>
+        <td><code>${escapeHtml(tickerLabel)}</code></td>
         <td><a href="event.html?id=${encodeURIComponent(ev.event_id)}" class="row-link">${escapeHtml(ev.event_name)}</a></td>
         <td>${escapeHtml(formatEventDate(ev))}</td>
-        <td><span class="badge ${gradeClass}">${ev.relation_grade} (${ev.relation_score})</span></td>
+        <td><span class="badge ${gradeClass(ev.relation_grade)}">${escapeHtml(ev.relation_grade)} (${ev.relation_score})</span></td>
         <td>
           <div class="score-cell">
             <span>${score}</span>

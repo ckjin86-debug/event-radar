@@ -22,7 +22,6 @@ class EventFilter {
 
   apply() {
     let result = this.allEvents.filter(ev => {
-      // 1. Horizon filter (based on event_date / window_start d_day)
       if (this.criteria.horizon !== "all") {
         const d = ev.d_day;
         if (this.criteria.horizon === "today" && d !== 0) return false;
@@ -31,15 +30,14 @@ class EventFilter {
         if (this.criteria.horizon === "90d" && (d < 0 || d > 90)) return false;
       }
 
-      // 2. Country filter
       if (this.criteria.country !== "all" && ev.country !== this.criteria.country) {
         return false;
       }
 
-      // 3. Category / Event Type filter
       if (this.criteria.category !== "all") {
         const t = (ev.event_type || "").toUpperCase();
         const source = (ev.source_name || "").toUpperCase();
+        const text = `${ev.company || ""} ${ev.event_name || ""}`.toLowerCase();
         const cat = this.criteria.category;
         if (cat === "증자" && !t.includes("ISSUE")) return false;
         if (cat === "분할" && !t.includes("SPLIT")) return false;
@@ -53,19 +51,19 @@ class EventFilter {
         if (cat === "FOMC" && !t.includes("FOMC")) return false;
         if (cat === "뉴스촉매" && source !== "NEWS_FUTURE") return false;
         if (cat === "CAPEX" && !t.includes("CAPEX")) return false;
+        if (cat === "원전" && !/(원전|원자력|nuclear|dukovany|barakah)/i.test(text)) return false;
+        if (cat === "경영권" && t !== "CONTROL_DISPUTE") return false;
+        if (cat === "정치" && t !== "ELECTION") return false;
       }
 
-      // 4. Relation Grade filter
       if (this.criteria.grade !== "all" && ev.relation_grade !== this.criteria.grade) {
         return false;
       }
 
-      // 5. Status filter
       if (this.criteria.status !== "all" && ev.status !== this.criteria.status) {
         return false;
       }
 
-      // 6. Search query
       if (this.criteria.search) {
         const q = this.criteria.search.toLowerCase().trim();
         const combined = `${ev.ticker} ${ev.company} ${ev.event_name} ${ev.event_type} ${ev.source_name}`.toLowerCase();
@@ -75,7 +73,6 @@ class EventFilter {
       return true;
     });
 
-    // 7. Sort
     result.sort((a, b) => {
       if (this.criteria.sort === "score_desc") {
         return b.event_score - a.event_score;
