@@ -35,7 +35,6 @@ jobs:
       - name: Run Event Collection Pipeline
         env:
           DART_API_KEY: ${{ secrets.DART_API_KEY }}
-          SEC_CIKS: ${{ vars.SEC_CIKS }}
         run: |
           python scripts/collect.py
 
