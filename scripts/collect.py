@@ -16,6 +16,18 @@ from event_radar.collectors.games import GamesCollector
 from event_radar.collectors.index_changes import IndexChangesCollector
 
 
+def build_collectors(root: Path):
+    """Build production collectors without test fixtures."""
+    return [
+        DartCollector(),
+        SecCollector(),
+        FdaCollector(config_path=root / "config" / "site_registry.yaml"),
+        EntertainmentCollector(config_path=root / "config" / "site_registry.yaml"),
+        GamesCollector(config_path=root / "config" / "site_registry.yaml"),
+        IndexChangesCollector(config_path=root / "config" / "site_registry.yaml"),
+    ]
+
+
 def main():
     root = Path(__file__).resolve().parent.parent
     config = PipelineConfig(
@@ -24,19 +36,7 @@ def main():
         config_dir=root / "config",
     )
 
-    # Instantiate all collectors
-    collectors = [
-        DartCollector(
-            fixture_path=root / "tests" / "fixtures" / "dart" / "sample_disclosures.json"
-        ),
-        SecCollector(
-            fixture_path=root / "tests" / "fixtures" / "sec" / "sample_submissions.json"
-        ),
-        FdaCollector(config_path=root / "config" / "site_registry.yaml"),
-        EntertainmentCollector(config_path=root / "config" / "site_registry.yaml"),
-        GamesCollector(config_path=root / "config" / "site_registry.yaml"),
-        IndexChangesCollector(config_path=root / "config" / "site_registry.yaml"),
-    ]
+    collectors = build_collectors(root)
 
     print("=== Starting Event Radar Collection Pipeline ===")
     report = run_pipeline(collectors=collectors, config=config)
