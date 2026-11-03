@@ -1,0 +1,67 @@
+name: Related News Diagnostic
+
+on:
+  push:
+    branches: ["feature/auto-related-securities-v4"]
+    paths:
+      - ".related-news-debug"
+      - ".github/workflows/related-news-debug.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+      - name: Run live news and entity diagnostic
+        env:
+          DART_API_KEY: ${{ secrets.DART_API_KEY }}
+          NAVER_API_HUB_KEY_ID: ${{ secrets.NAVER_API_HUB_KEY_ID }}
+          NAVER_API_HUB_KEY: ${{ secrets.NAVER_API_HUB_KEY }}
+        run: |
+          python - <<'PY'
+          import os
+          from datetime import datetime, timedelta
+          from event_radar.collectors.news_future import NewsFutureCollector
+          from event_radar.entities import load_entity_universe
+
+          universe = load_entity_universe(dart_api_key=os.getenv("DART_API_KEY", ""))
+          events = NewsFutureCollector().collect(since=datetime.now() - timedelta(days=7))
+          resolved_events = 0
+          resolved_securities = set()
+          print("NEWS_COUNT", len(events))
+          for event in events:
+              text = " ".join(
+                  part for part in (event.primary_company, event.event_name, event.evidence_text) if part
+              )
+              mentions = universe.resolve_mentions(text, event.country)
+              if mentions:
+                  resolved_events += 1
+                  resolved_securities.update((m.ticker, m.company_name) for m in mentions)
+              mapped = ",".join(f"{m.company_name}:{m.ticker}" for m in mentions) or "-"
+              print(
+                  "EVENT",
+                  event.event_type,
+                  event.date_precision,
+                  event.event_date.isoformat(),
+                  event.primary_company,
+                  "=>",
+                  mapped,
+                  "|",
+                  event.event_name,
+              )
+          print("DIRECT_RESOLVED_EVENTS", resolved_events)
+          print("DIRECT_SECURITY_COUNT", len(resolved_securities))
+          for ticker, company in sorted(resolved_securities):
+              print("DIRECT_SECURITY", ticker, company)
+          PY
