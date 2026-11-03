@@ -37,6 +37,15 @@ def test_parse_explicit_month_day_is_exact_date():
     assert window.end == date(2026, 11, 18)
 
 
+def test_parse_next_month_day_is_exact_date():
+    mod = _news_module()
+    window = mod.parse_future_window("내달 6일 선고 예정", date(2026, 11, 3))
+    assert window is not None
+    assert window.precision == "EXACT_DATE"
+    assert window.start == date(2026, 12, 6)
+    assert window.end == date(2026, 12, 6)
+
+
 def test_parse_next_year_quarter():
     mod = _news_module()
     window = mod.parse_future_window("내년 1분기 공장 상업가동 예정", date(2026, 11, 3))
@@ -61,6 +70,12 @@ def test_classify_requires_market_catalyst():
 def test_classify_rejects_listing_because_kind_is_authoritative():
     mod = _news_module()
     assert mod.classify_catalyst("넥스아이, 11월 12일 코스닥 상장 예정") is None
+
+
+def test_classify_rejects_warrant_sale_as_m_and_a():
+    mod = _news_module()
+    assert mod.classify_catalyst("뷰노 유증 두 차례 연기…대표 인수권 매각 12월로") is None
+    assert mod.classify_catalyst("삼성바이오로직스, 연내 바이오기업 인수 마무리") == "M_AND_A"
 
 
 def test_classify_rejects_promotion_only_launch_but_keeps_meaningful_launch():
