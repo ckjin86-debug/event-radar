@@ -70,6 +70,12 @@ def load_canonical_events(path: Path) -> list[Event]:
             f_seen = datetime.fromisoformat(row.get("first_seen_at", "").strip() or ann.isoformat())
             l_seen = datetime.fromisoformat(row.get("last_seen_at", "").strip() or datetime.now().isoformat())
             needs_rev = str(row.get("needs_review", "False")).strip().lower() in ("true", "1")
+            event_date = date.fromisoformat(row["event_date"].strip()[:10])
+            precision = row.get("date_precision", "").strip().upper() or "EXACT_DATE"
+            window_start_raw = row.get("window_start", "").strip()
+            window_end_raw = row.get("window_end", "").strip()
+            window_start = date.fromisoformat(window_start_raw[:10]) if window_start_raw else event_date
+            window_end = date.fromisoformat(window_end_raw[:10]) if window_end_raw else event_date
 
             events.append(
                 Event(
@@ -80,7 +86,10 @@ def load_canonical_events(path: Path) -> list[Event]:
                     primary_ticker=row.get("primary_ticker", "").strip().upper(),
                     primary_company=row.get("primary_company", "").strip(),
                     announced_at=ann,
-                    event_date=date.fromisoformat(row["event_date"].strip()[:10]),
+                    event_date=event_date,
+                    date_precision=precision,  # type: ignore
+                    window_start=window_start,
+                    window_end=window_end,
                     event_time_context=row.get("event_time_context", "DATE_ONLY").strip(),  # type: ignore
                     status=row.get("status", "CONFIRMED").strip().upper(),  # type: ignore
                     source_kind=row.get("source_kind", "REGULATOR").strip().upper(),  # type: ignore
@@ -101,7 +110,8 @@ def save_canonical_events(events: list[Event], path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     fieldnames = [
         "event_id", "country", "event_type", "event_name", "primary_ticker", "primary_company",
-        "announced_at", "event_date", "event_time_context", "status", "source_kind", "source_name",
+        "announced_at", "event_date", "date_precision", "window_start", "window_end",
+        "event_time_context", "status", "source_kind", "source_name",
         "source_url", "source_event_uid", "evidence_text", "ingest_mode", "first_seen_at",
         "last_seen_at", "needs_review",
     ]
@@ -109,6 +119,8 @@ def save_canonical_events(events: list[Event], path: Path) -> None:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         for ev in events:
+            window_start = ev.window_start or ev.event_date
+            window_end = ev.window_end or ev.event_date
             writer.writerow({
                 "event_id": ev.event_id,
                 "country": ev.country,
@@ -118,6 +130,9 @@ def save_canonical_events(events: list[Event], path: Path) -> None:
                 "primary_company": ev.primary_company,
                 "announced_at": ev.announced_at.isoformat(),
                 "event_date": ev.event_date.isoformat(),
+                "date_precision": ev.date_precision,
+                "window_start": window_start.isoformat(),
+                "window_end": window_end.isoformat(),
                 "event_time_context": ev.event_time_context,
                 "status": ev.status,
                 "source_kind": ev.source_kind,
