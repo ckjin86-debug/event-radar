@@ -1,0 +1,18 @@
+mapping_id,event_pattern,ticker,company,relation_grade,relation_score,relation_type,valid_from,valid_to,evidence_text,source_url
+CZ_DOOSAN,(체코|Dukovany),034020,두산에너빌리티,B,90,OFFICIAL_CONSORTIUM,2024-01-01,,체코 원전 Team Korea 공식 참여사,https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=7508&type=O
+CZ_KEPCO_ENC,(체코|Dukovany),052690,한국전력기술,B,88,OFFICIAL_CONSORTIUM,2024-01-01,,체코 원전 Team Korea 설계 참여사,https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=7508&type=O
+CZ_DAEWOO_ENC,(체코|Dukovany),047040,대우건설,B,86,OFFICIAL_CONSORTIUM,2024-01-01,,체코 원전 Team Korea 건설 참여사,https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=7508&type=O
+CZ_KEPCO_KPS,(체코|Dukovany),051600,한전KPS,B,84,OFFICIAL_CONSORTIUM,2024-01-01,,체코 원전 Team Korea 시운전 유지보수 참여사,https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=7508&type=O
+UAE_KEPCO,(UAE|Barakah|아랍에미리트),015760,한국전력,B,92,OFFICIAL_CONSORTIUM,2009-01-01,,UAE Barakah 원전 수주 컨소시엄 주도사,https://en.yna.co.kr/view/AEN20091227001800320
+NUCLEAR_DOOSAN,(원전|원자력|nuclear),034020,두산에너빌리티,THEME,55,NUCLEAR_MARKET_THEME,2024-01-01,,공식 원전 프로젝트 참여 이력이 있는 원전 테마 후보,https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=7508&type=O
+NUCLEAR_KEPCO_ENC,(원전|원자력|nuclear),052690,한국전력기술,THEME,52,NUCLEAR_MARKET_THEME,2024-01-01,,공식 원전 프로젝트 설계 참여 이력이 있는 원전 테마 후보,https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=7508&type=O
+NUCLEAR_KEPCO_KPS,(원전|원자력|nuclear),051600,한전KPS,THEME,50,NUCLEAR_MARKET_THEME,2024-01-01,,공식 원전 프로젝트 시운전 유지보수 참여 이력이 있는 원전 테마 후보,https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=7508&type=O
+POL2022_YOON_NE,윤석열,053290,NE능률,THEME,38,POLITICAL_THEME,2021-01-01,2022-03-10,언론에서 윤석열 정치 테마주로 분류됐으나 기업가치와 직접 관련은 없음,https://www.yna.co.kr/view/AKR20231214084751002
+POL2022_YOON_DUKSUNG,윤석열,004830,덕성,THEME,38,POLITICAL_THEME,2021-01-01,2022-03-10,언론에서 윤석열 정치 테마주로 거론,https://www.yna.co.kr/view/AKR20220303050551002
+POL2022_LEE_ESTAR,이재명,015020,이스타코,THEME,38,POLITICAL_THEME,2021-01-01,2022-03-10,언론에서 이재명 정책 테마주로 분류됐으나 직접 사업 연관은 제한적,https://www.yna.co.kr/view/AKR20231214084751002
+POL2022_AHN_AHNLAB,안철수,053800,안랩,THEME,45,POLITICAL_THEME,2021-01-01,2022-03-10,안철수 후보가 창업하고 대주주였던 회사로 정치 테마주로 반복 거론,https://www.yna.co.kr/view/AKR20220303050551002
+POL2024_HAN_DAESANG,(총선|한동훈|정치 테마주),084690,대상홀딩스,THEME,32,POLITICAL_THEME,2023-11-26,2024-04-10,언론에서 한동훈 테마주로 묶였으나 회사는 사업 관련성이 없다고 공시,https://www.yna.co.kr/view/AKR20231214084751002
+POL2025_LEE_HYUNGJI,이재명,093240,형지엘리트,THEME,35,POLITICAL_THEME,2025-04-04,2025-06-03,조기 대선 국면에서 이재명 테마주로 투자경고 종목에 포함,https://www.yna.co.kr/amp/view/AKR20250503040000008
+POL2025_LEE_SANGJI,이재명,042940,상지건설,THEME,35,POLITICAL_THEME,2025-04-04,2025-06-03,조기 대선 국면에서 이재명 테마주로 투자경고 종목에 포함,https://www.yna.co.kr/amp/view/AKR20250503040000008
+POL2025_LEE_HYUNGJI_GLOBAL,이재명,308100,형지글로벌,THEME,35,POLITICAL_THEME,2025-04-04,2025-06-03,조기 대선 국면에서 이재명 테마주로 투자경고 종목에 포함,https://www.yna.co.kr/amp/view/AKR20250503040000008
+POL2025_KIM_PYUNGHWA,김문수,010770,평화홀딩스,THEME,35,POLITICAL_THEME,2025-04-04,2025-06-03,조기 대선 국면에서 김문수 테마주로 투자경고 종목에 포함,https://www.yna.co.kr/amp/view/AKR20250503040000008
