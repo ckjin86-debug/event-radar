@@ -363,46 +363,63 @@ def run_pipeline(
     calendar_kr = get_trading_calendar("KR", calendar_start, calendar_end)
     calendar_us = get_trading_calendar("US", calendar_start, calendar_end)
 
-    return_frames: list[pd.DataFrame] = []
-    price_provider = None if skip_price_fetch else _resolve_price_provider(config)
-
-    for ev in current_events:
-        trading_days = calendar_us if ev.country == "US" else calendar_kr
-        session_date, _ = resolve_event_session(ev.event_date, ev.event_time_context, trading_days)
-
-        # Future events do not have realized D0/D+ returns yet. Never synthesize them.
-        if price_provider is None or session_date > now.date():
-            continue
-
-        benchmark_ticker = BENCHMARK_BY_COUNTRY.get(ev.country, "^GSPC")
-        start_date = session_date - timedelta(days=120)
-        end_date = min(now.date(), session_date + timedelta(days=45))
-
-        for sec in event_securities.get(ev.event_id, []):
-            if not sec.ticker:
-                continue
+    returns_csv = derived_dir / "backtest_event_returns.csv"
+    if skip_price_fetch:
+        # A fast event/relation refresh must not destroy already-realized backtests.
+        # Reuse the last successful return frame for scoring/export while leaving
+        # the canonical backtest file untouched.
+        if returns_csv.exists():
             try:
-                stock_prices = price_provider.history(sec.ticker, start_date, end_date)
-                benchmark_prices = price_provider.history(benchmark_ticker, start_date, end_date)
-                frame = calculate_event_window_returns(
-                    event_id=ev.event_id,
-                    ticker=sec.ticker,
-                    relation_grade=sec.relation_grade,
-                    event_session_date=session_date,
-                    stock_prices=stock_prices,
-                    benchmark_prices=benchmark_prices,
-                )
-                if not frame.empty:
-                    return_frames.append(frame)
+                all_returns_df = pd.read_csv(returns_csv)
+                for column in RETURN_COLUMNS:
+                    if column not in all_returns_df.columns:
+                        all_returns_df[column] = pd.NA
+                all_returns_df = all_returns_df[RETURN_COLUMNS]
             except Exception:
-                # A price-provider failure for one security must not stop collection/export.
+                all_returns_df = pd.DataFrame(columns=RETURN_COLUMNS)
+        else:
+            all_returns_df = pd.DataFrame(columns=RETURN_COLUMNS)
+    else:
+        return_frames: list[pd.DataFrame] = []
+        price_provider = _resolve_price_provider(config)
+
+        for ev in current_events:
+            trading_days = calendar_us if ev.country == "US" else calendar_kr
+            session_date, _ = resolve_event_session(ev.event_date, ev.event_time_context, trading_days)
+
+            # Future events do not have realized D0/D+ returns yet. Never synthesize them.
+            if session_date > now.date():
                 continue
 
-    if return_frames:
-        all_returns_df = pd.concat(return_frames, ignore_index=True)
-    else:
-        all_returns_df = pd.DataFrame(columns=RETURN_COLUMNS)
-    all_returns_df.to_csv(derived_dir / "backtest_event_returns.csv", index=False)
+            benchmark_ticker = BENCHMARK_BY_COUNTRY.get(ev.country, "^GSPC")
+            start_date = session_date - timedelta(days=120)
+            end_date = min(now.date(), session_date + timedelta(days=45))
+
+            for sec in event_securities.get(ev.event_id, []):
+                if not sec.ticker:
+                    continue
+                try:
+                    stock_prices = price_provider.history(sec.ticker, start_date, end_date)
+                    benchmark_prices = price_provider.history(benchmark_ticker, start_date, end_date)
+                    frame = calculate_event_window_returns(
+                        event_id=ev.event_id,
+                        ticker=sec.ticker,
+                        relation_grade=sec.relation_grade,
+                        event_session_date=session_date,
+                        stock_prices=stock_prices,
+                        benchmark_prices=benchmark_prices,
+                    )
+                    if not frame.empty:
+                        return_frames.append(frame)
+                except Exception:
+                    # A price-provider failure for one security must not stop collection/export.
+                    continue
+
+        if return_frames:
+            all_returns_df = pd.concat(return_frames, ignore_index=True)
+        else:
+            all_returns_df = pd.DataFrame(columns=RETURN_COLUMNS)
+        all_returns_df.to_csv(returns_csv, index=False)
 
     for ev in current_events:
         ev_df = all_returns_df[all_returns_df["event_id"] == ev.event_id]

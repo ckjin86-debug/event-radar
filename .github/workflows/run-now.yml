@@ -40,7 +40,7 @@ jobs:
           NAVER_API_HUB_KEY_ID: ${{ secrets.NAVER_API_HUB_KEY_ID }}
           NAVER_API_HUB_KEY: ${{ secrets.NAVER_API_HUB_KEY }}
         run: |
-          python scripts/collect.py
+          python scripts/collect.py --skip-price-fetch
 
       - name: Commit and push updated data
         run: |
