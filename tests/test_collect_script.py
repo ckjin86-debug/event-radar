@@ -1,4 +1,12 @@
-from scripts import collect as collect_script
+import importlib.util
+from pathlib import Path
+
+
+SCRIPT_PATH = Path(__file__).resolve().parents[1] / "scripts" / "collect.py"
+SPEC = importlib.util.spec_from_file_location("collect_script", SCRIPT_PATH)
+assert SPEC is not None and SPEC.loader is not None
+collect_script = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(collect_script)
 
 
 def test_build_collectors_uses_live_dart_and_sec_sources(tmp_path):
