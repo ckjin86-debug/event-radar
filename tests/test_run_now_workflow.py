@@ -23,3 +23,17 @@ def test_collection_workflows_deploy_pages_in_same_run():
         assert "actions/upload-pages-artifact@v3" in workflow
         assert "actions/deploy-pages@v4" in workflow
         assert 'path: "site/"' in workflow
+
+
+def test_collection_job_does_not_hold_pages_environment_while_collecting():
+    for name in ("run-now.yml", "collect.yml"):
+        workflow = _workflow(name)
+        assert "collect-and-update:" in workflow
+        assert "deploy-pages:" in workflow
+        collect_block = workflow.split("collect-and-update:", 1)[1].split("deploy-pages:", 1)[0]
+        deploy_block = workflow.split("deploy-pages:", 1)[1]
+        assert "environment:" not in collect_block
+        assert "needs: collect-and-update" in deploy_block
+        assert "environment:" in deploy_block
+        assert "name: github-pages" in deploy_block
+        assert "actions/deploy-pages@v4" in deploy_block
