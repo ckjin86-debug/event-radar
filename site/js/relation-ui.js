@@ -1,3 +1,10 @@
+if (!document.querySelector('link[href="css/relation-ui.css"]')) {
+  const relationStyle = document.createElement("link");
+  relationStyle.rel = "stylesheet";
+  relationStyle.href = "css/relation-ui.css";
+  document.head.appendChild(relationStyle);
+}
+
 function relationUiBadgeClass(grade) {
   if (grade === "A") return "badge-a";
   if (grade === "B") return "badge-b";
