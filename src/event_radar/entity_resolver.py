@@ -222,9 +222,16 @@ class ListedCompanyRegistry:
     def resolve_mentions(self, event: Event) -> list[EventSecurity]:
         if event.country != "KR" or not self._mapping:
             return []
-        text = " ".join(
-            part for part in (event.primary_company, event.event_name, event.evidence_text) if part
-        )
+
+        # For NEWS_FUTURE, a company mentioned only in the article background is
+        # not automatically a direct party to the future catalyst. Direct A-grade
+        # mapping is therefore limited to the normalized subject and headline.
+        # Other authoritative/historical sources may still use their full evidence.
+        parts = (event.primary_company, event.event_name)
+        if event.source_name != "NEWS_FUTURE":
+            parts = (*parts, event.evidence_text)
+        text = " ".join(part for part in parts if part)
+
         return [
             EventSecurity(
                 event_id=event.event_id,
