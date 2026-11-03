@@ -46,7 +46,7 @@ class FdaCollector:
 
     @staticmethod
     def _parse_us_date(text: str) -> Optional[date]:
-        match = re.search(r"(?<!\d)(1[0-2]|0?[1-9])/(3[01]|[12]?\d)/(20\d{2})(?!\d)", text)
+        match = re.search(r"(?<!\d)(1[0-2]|0?[1-9])/(3[01]|[12]\d|0?[1-9])/(20\d{2})(?!\d)", text)
         if not match:
             return None
         try:
@@ -75,7 +75,6 @@ class FdaCollector:
             if ev_date is None or ev_date < since.date():
                 continue
 
-            # Prefer the meeting cell/link rather than repeating date text in the event name.
             meeting_cell = next((cell for cell in cells[1:] if cell.get_text(" ", strip=True)), cells[-1])
             link = meeting_cell.find("a", href=True)
             title = meeting_cell.get_text(" ", strip=True)
