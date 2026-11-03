@@ -14,21 +14,13 @@ from event_radar.backtest.historical import build_historical_peer_frame
 
 
 PUBLIC_NEWS_RELATION_GRADES = {"A", "B", "THEME"}
-EVENT_FIRST_PUBLIC_TYPES = {"CONTROL_DISPUTE", "ELECTION", "COURT_RULING", "TENDER", "POLICY"}
-EVENT_FIRST_KEYWORDS = (
-    "원전",
-    "원자력",
-    "경영권",
-    "대선",
-    "총선",
-    "지방선거",
-    "경선",
-    "주총",
-    "판결",
-    "선고",
-    "입찰",
-    "우선협상",
-)
+EVENT_FIRST_PUBLIC_TYPES = {"CONTROL_DISPUTE", "ELECTION", "TENDER", "POLICY"}
+EVENT_FIRST_KEYWORDS_BY_TYPE = {
+    "CONTROL_DISPUTE": ("경영권", "임시주총", "표대결", "공개매수"),
+    "ELECTION": ("대선", "총선", "지방선거", "경선", "선거"),
+    "TENDER": ("원전", "원자력", "smr", "방산", "국방", "전투기", "함정", "잠수함", "미사일"),
+    "POLICY": ("반도체", "배터리", "원전", "원자력", "관세", "보조금", "수출규제", "세제", "전기차"),
+}
 GENERIC_EVENT_ENTITIES = {
     "",
     "cm",
@@ -97,8 +89,11 @@ def _event_first_entity_is_plausible(ev: Event) -> bool:
     company_key = re.sub(r"[^0-9A-Za-z가-힣]", "", ev.primary_company or "").lower()
     if company_key in GENERIC_EVENT_ENTITIES or len(company_key) < 3 or len(company_key) > 40:
         return False
-    combined = f"{ev.event_name} {ev.evidence_text}"
-    return any(keyword in combined for keyword in EVENT_FIRST_KEYWORDS)
+    keywords = EVENT_FIRST_KEYWORDS_BY_TYPE.get(ev.event_type, ())
+    if not keywords:
+        return False
+    combined = f"{ev.event_name} {ev.evidence_text}".lower()
+    return any(keyword.lower() in combined for keyword in keywords)
 
 
 def _is_public_news_event(
