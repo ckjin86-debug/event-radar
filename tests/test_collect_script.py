@@ -25,6 +25,11 @@ def test_build_collectors_uses_live_core_and_v2_sources(tmp_path):
     assert "FED_FOMC" in by_name
 
 
+def test_fast_refresh_collectors_only_hit_future_news(tmp_path):
+    collectors = collect_script.build_collectors(tmp_path, fast_refresh=True)
+    assert [collector.source_name for collector in collectors] == ["NEWS_FUTURE"]
+
+
 def test_production_news_queries_include_natural_phrasing_without_expected_word(tmp_path):
     collectors = collect_script.build_collectors(tmp_path)
     by_name = {collector.source_name: collector for collector in collectors}
