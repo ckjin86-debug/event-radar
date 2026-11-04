@@ -23,10 +23,14 @@
       </div>
     </header>
 
+    <section class="radar-intro"><span class="eyebrow">EVENT WATCHLIST</span><h2>다가오는 변화, 확인된 근거부터.</h2><p>일정·관련주·과거 반응을 함께 비교하세요. 점수 옆에서 어떤 근거가 있고 무엇이 부족한지 확인할 수 있습니다.</p></section>
+    <section id="radarOverview" class="radar-overview" aria-label="레이더 데이터 현황"></section>
+
     <section class="filters-container">
       <div class="filter-row">
         <span class="filter-label">기간</span>
-        <button class="btn-pill active" data-filter-key="horizon" data-filter-value="all">전체</button>
+        <button class="btn-pill active" data-filter-key="horizon" data-filter-value="upcoming">다가오는 일정</button>
+        <button class="btn-pill" data-filter-key="horizon" data-filter-value="all">전체</button>
         <button class="btn-pill" data-filter-key="horizon" data-filter-value="today">오늘</button>
         <button class="btn-pill" data-filter-key="horizon" data-filter-value="7d">7일 이내</button>
         <button class="btn-pill" data-filter-key="horizon" data-filter-value="30d">30일 이내</button>
@@ -72,10 +76,17 @@
       </div>
 
       <div class="filter-row" style="margin-top: 4px;">
+        <span class="filter-label">근거 보기</span>
+        <button class="btn-pill active" data-filter-key="evidence" data-filter-value="all">전체 근거</button>
+        <button class="btn-pill" data-filter-key="evidence" data-filter-value="focus">근거 충실</button>
+        <button class="btn-pill" data-filter-key="evidence" data-filter-value="history">과거 비교 가능</button>
+        <button class="btn-pill" data-filter-key="evidence" data-filter-value="check">관련주 추가 확인</button>
+      </div>
+      <div class="filter-row" style="margin-top: 4px;">
         <span class="filter-label">검색/정렬</span>
         <input type="text" id="searchInput" class="search-input" placeholder="종목명, 티커, 이벤트명 검색...">
         <select id="sortSelect" class="btn-pill" style="border-radius: var(--radius); padding: 8px 12px; background: var(--bg-primary);">
-          <option value="score_desc">Event Score 높은순</option>
+          <option value="score_desc">관찰 우선순위</option>
           <option value="dday_asc">D-Day 가까운순</option>
         </select>
       </div>
@@ -92,7 +103,7 @@
             <th>이벤트</th>
             <th>이벤트 날짜</th>
             <th>관련등급</th>
-            <th>Event Score</th>
+            <th>관찰 우선순위</th>
             <th>상태</th>
             <th>출처</th>
           </tr>
@@ -120,6 +131,7 @@
 
   <script src="js/filters.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/insight-ui.js"></script>
   <script src="js/dashboard-relation-ui.js"></script>
 </body>
 </html>

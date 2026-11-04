@@ -2,7 +2,7 @@
  * High-performance Canvas event curve chart renderer.
  */
 
-function renderEventCurveChart(canvasId, curveData) {
+function renderEventCurveChart(canvasId, curveData, marketProxy = false) {
   const canvas = document.getElementById(canvasId);
   if (!canvas || !curveData || curveData.length === 0) return;
 
@@ -104,7 +104,7 @@ function renderEventCurveChart(canvasId, curveData) {
   drawSeries("return_from_d0", "#38bdf8", 2);
 
   // 2. Abnormal Return curve (Green)
-  drawSeries("abnormal_return", "#4ade80", 2.5);
+  if (!marketProxy) drawSeries("abnormal_return", "#4ade80", 2.5);
 
   // Legend
   ctx.textAlign = "left";
@@ -115,6 +115,8 @@ function renderEventCurveChart(canvasId, curveData) {
   ctx.fillRect(width - 240, 12, 14, 4);
   ctx.fillStyle = "#cbd5e1";
   ctx.fillText("절대수익률", width - 220, 18);
+
+  if (marketProxy) return;
 
   // Green
   ctx.fillStyle = "#4ade80";

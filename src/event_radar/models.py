@@ -142,3 +142,4 @@ class EventSecurity(BaseModel):
     relation_known_date: Optional[date] = None
     ingest_mode: IngestMode = "AUTO"
     from_entity: str = ""
+    company_name: str = ""

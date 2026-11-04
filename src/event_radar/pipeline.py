@@ -2,10 +2,13 @@
 
 from __future__ import annotations
 import csv
+import json
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, time as clock_time, timedelta
 from pathlib import Path
 import time
+from zoneinfo import ZoneInfo
 from typing import Optional
 import pandas as pd
 
@@ -29,6 +32,8 @@ from event_radar.export import export_site_data
 from event_radar.collectors.base import Collector
 from event_radar.collectors.news_future import extract_future_catalyst
 from event_radar.revisions import detect_revisions
+from event_radar.evidence_relations import discover_relations
+from event_radar.insights import market_snapshot
 
 
 RETURN_COLUMNS = [
@@ -49,6 +54,8 @@ class PipelineConfig:
     site_dir: Path = Path("site")
     config_dir: Path = Path("config")
     price_provider: Optional[PriceProvider] = None
+    refresh_market_prices: bool = False
+    refresh_public_registry: bool = False
 
 
 @dataclass
@@ -221,8 +228,15 @@ def resolve_event_stock_rows(
     Strongest evidence wins per ticker: A direct mentions/economic relations,
     evidence-backed B relations, THEME candidates, then informational PROXY rows.
     """
-    rows = resolve_related_securities(event, relations)
+    rows = resolve_related_securities(event, relations, knowledge_asof=as_of.date())
     rows = merge_event_securities(rows, registry.resolve_mentions(event))
+    # Resolve established relations through detected issuer codes even when the
+    # original news primary_company is a headline fragment and ticker is blank.
+    for issuer in list(rows):
+        if issuer.relation_type != "DIRECT_MENTION" or not issuer.ticker:
+            continue
+        anchored = event.model_copy(update={"primary_ticker": issuer.ticker, "primary_company": issuer.from_entity or event.primary_company})
+        rows = merge_event_securities(rows, resolve_related_securities(anchored, relations, knowledge_asof=as_of.date()))
     rows = merge_event_securities(rows, ipo_enricher.enrich(event, registry, as_of=as_of))
     rows = merge_event_securities(rows, resolve_theme_securities(event, theme_mappings))
     if event.event_type == "IPO_LISTING":
@@ -242,7 +256,7 @@ def run_pipeline(
     """Execute end-to-end collection, merge, analysis, and site export."""
     start_time = time.time()
     if now is None:
-        now = datetime.now()
+        now = datetime.now(ZoneInfo('Asia/Seoul')).replace(tzinfo=None)
 
     canonical_dir = config.data_dir / "canonical"
     derived_dir = config.data_dir / "derived"
@@ -265,7 +279,8 @@ def run_pipeline(
     existing_relations = load_relations_csv(relations_csv)
     theme_mappings = load_theme_mappings(theme_mappings_csv)
     registry = ListedCompanyRegistry.load_korean(
-        cache_path=config.data_dir / "cache" / "listed_companies_kr.csv"
+        cache_path=config.data_dir / "cache" / "listed_companies_kr.csv",
+        refresh_public=config.refresh_public_registry,
     )
     ipo_enricher = IpoRelationEnricher()
 
@@ -339,6 +354,10 @@ def run_pipeline(
 
     # 7. Resolve direct/economic, text-mentioned, IPO, and theme securities.
     mapping_started = time.time()
+    discovered = discover_relations(current_events, registry, now.date())
+    save_relations_csv(discovered, derived_dir / 'discovered_relations.csv')
+    verified_sources = load_relations_csv(config.config_dir / 'economic_relations.csv')
+    mapping_relations = all_relations + verified_sources + discovered
     ipo_enricher.prefetch(
         ev.primary_company
         for ev in current_events
@@ -349,7 +368,7 @@ def run_pipeline(
     for ev in current_events:
         secs = resolve_event_stock_rows(
             ev,
-            relations=all_relations,
+            relations=mapping_relations,
             theme_mappings=theme_mappings,
             registry=registry,
             ipo_enricher=ipo_enricher,
@@ -357,6 +376,8 @@ def run_pipeline(
         )
         event_securities[ev.event_id] = secs
         for s in secs:
+            if s.ticker and not s.company_name:
+                s.company_name = registry.company_for_ticker(s.ticker)
             all_mapped_rows.append({
                 "event_id": ev.event_id,
                 "ticker": s.ticker,
@@ -378,6 +399,29 @@ def run_pipeline(
     event_scores: dict[str, ScoreResult] = {}
     strategy_results: dict[str, list[StrategyResult]] = {}
     backtest_summaries: dict[str, BacktestSummary] = {}
+    market_file = derived_dir / 'market_snapshots.json'
+    try:
+        market_snapshots = json.loads(market_file.read_text('utf-8')) if market_file.exists() else {}
+    except (ValueError, OSError):
+        market_snapshots = {}
+    if config.refresh_market_prices and not skip_price_fetch:
+        market_provider = _resolve_price_provider(config)
+        targets = sorted({(sec.ticker, ev.country) for ev in current_events if (ev.window_end or ev.event_date) >= now.date()
+                          and not ev.needs_review and ev.status != 'CANCELLED'
+                          for sec in event_securities.get(ev.event_id, []) if sec.ticker and sec.relation_grade in {'A', 'B', 'PROXY'}})
+        def observe(target):
+            ticker, country = target
+            zone, close = ('Asia/Seoul', clock_time(15, 30)) if country == 'KR' else ('America/New_York', clock_time(16))
+            local_now = now.replace(tzinfo=ZoneInfo('Asia/Seoul')).astimezone(ZoneInfo(zone))
+            cutoff = local_now.date() - timedelta(days=local_now.time() < close)
+            try:
+                frame = market_provider.history(ticker, cutoff - timedelta(days=100), cutoff)
+                return ticker, market_snapshot(frame, cutoff)
+            except Exception:
+                return ticker, None
+        with ThreadPoolExecutor(max_workers=4) as pool:
+            market_snapshots = dict(pool.map(observe, targets))
+        market_file.write_text(json.dumps(market_snapshots, ensure_ascii=False, indent=2), 'utf-8')
 
     if current_events:
         calendar_start = min(ev.event_date for ev in current_events) - timedelta(days=10)
@@ -490,6 +534,7 @@ def run_pipeline(
         event_returns_df=all_returns_df,
         strategy_results=strategy_results,
         backtest_summaries=backtest_summaries,
+        market_snapshots=market_snapshots,
         output_dir=site_data_dir,
         collector_status=collector_status,
         now=now,

@@ -12,6 +12,7 @@ class EventFilter {
       grade: "all",
       status: "all",
       search: "",
+      evidence: "all",
       sort: "score_desc",
     };
   }
@@ -24,6 +25,7 @@ class EventFilter {
     let result = this.allEvents.filter(ev => {
       if (this.criteria.horizon !== "all") {
         const d = ev.d_day;
+        if (this.criteria.horizon === 'upcoming' && (ev.insight?.tier === 'PAST' || (d < 0 && (!ev.window_end || ev.window_end < new Date().toLocaleDateString('en-CA', {timeZone:'Asia/Seoul'}))))) return false;
         if (this.criteria.horizon === "today" && d !== 0) return false;
         if (this.criteria.horizon === "7d" && (d < 0 || d > 7)) return false;
         if (this.criteria.horizon === "30d" && (d < 0 || d > 30)) return false;
@@ -56,9 +58,12 @@ class EventFilter {
         if (cat === "정치" && t !== "ELECTION") return false;
       }
 
-      if (this.criteria.grade !== "all" && ev.relation_grade !== this.criteria.grade) {
+      if (this.criteria.grade !== "all" && ev.relation_grade !== this.criteria.grade && !(ev.related_securities || []).some(s=>s.relation_grade === this.criteria.grade)) {
         return false;
       }
+      if (this.criteria.evidence === 'focus' && ev.insight?.tier !== 'FOCUS') return false;
+      if (this.criteria.evidence === 'history' && !(ev.insight?.coverage?.complete_events > 0)) return false;
+      if (this.criteria.evidence === 'check' && ev.insight?.tier !== 'CHECK') return false;
 
       if (this.criteria.status !== "all" && ev.status !== this.criteria.status) {
         return false;
@@ -76,7 +81,7 @@ class EventFilter {
 
     result.sort((a, b) => {
       if (this.criteria.sort === "score_desc") {
-        return b.event_score - a.event_score;
+        return (a.insight?.tier === 'PAST') - (b.insight?.tier === 'PAST') || b.event_score - a.event_score || Math.abs(a.d_day) - Math.abs(b.d_day);
       }
       if (this.criteria.sort === "dday_asc") {
         return a.d_day - b.d_day;

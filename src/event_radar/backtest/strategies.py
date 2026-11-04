@@ -27,6 +27,7 @@ class StrategyResult:
     entry_offset: int
     exit_offset: int
     sample_n: int = 0
+    event_n: int = 0
     mean_return: float = 0.0
     median_return: float = 0.0
     win_rate: float = 0.0
@@ -108,6 +109,7 @@ def evaluate_strategies(
         strat_returns = []
         strat_abnormal = []
         strat_drawdowns = []
+        strat_events = []
 
         for indexed in samples:
             try:
@@ -131,6 +133,7 @@ def evaluate_strategies(
 
             strat_returns.append(ret)
             strat_abnormal.append(abnormal_ret)
+            strat_events.append(str(row_in['event_id']))
             path = indexed.loc[(indexed.index >= entry) & (indexed.index <= exit_off), "price"].sort_index().astype(float)
             path = path[np.isfinite(path) & (path > 0)]
             strat_drawdowns.append(float((1 - path / path.cummax()).max()))
@@ -148,9 +151,10 @@ def evaluate_strategies(
             )
             continue
 
-        ret_series = pd.Series(strat_returns)
-        ab_series = pd.Series(strat_abnormal)
-        win_rate = float((ab_series > 0).sum() / n)
+        event_means = pd.DataFrame(dict(event_id=strat_events, returns=strat_returns, abnormal=strat_abnormal)).groupby('event_id').mean()
+        ret_series = event_means['returns']
+        ab_series = event_means['abnormal']
+        win_rate = float((ab_series > 0).sum() / len(event_means))
 
         results.append(
             StrategyResult(
@@ -159,12 +163,13 @@ def evaluate_strategies(
                 entry_offset=entry,
                 exit_offset=exit_off,
                 sample_n=n,
+                event_n=len(event_means),
                 mean_return=round(float(ret_series.mean()), 4),
                 median_return=round(float(ret_series.median()), 4),
                 win_rate=round(win_rate, 4),
                 mean_abnormal_return=round(float(ab_series.mean()), 4),
                 median_abnormal_return=round(float(ab_series.median()), 4),
-                stdev=round(float(ret_series.std(ddof=1)) if n > 1 else 0.0, 4),
+                stdev=round(float(ret_series.std(ddof=1)) if len(ret_series) > 1 else 0.0, 4),
                 max_loss=round(float(ret_series.min()), 4),
                 max_drawdown=round(max(strat_drawdowns), 4),
             )

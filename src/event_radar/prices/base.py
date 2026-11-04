@@ -68,11 +68,15 @@ class CachedPriceProvider:
         min_date = existing_df["date"].min()
         max_date = existing_df["date"].max()
 
-        # Complete cache hit.
-        if min_date <= start and max_date >= end:
-            return self._slice(existing_df, start, end)
-
         missing_ranges: list[tuple[date, date]] = []
+        # Old caches can contain multiple disjoint studies. Their outer bounds
+        # say nothing about an empty interval between those studies.
+        cached_dates = existing_df["date"].tolist()
+        for left, right in zip(cached_dates, cached_dates[1:]):
+            if (right - left).days > 7:
+                gap_start, gap_end = max(start, left + timedelta(days=1)), min(end, right - timedelta(days=1))
+                if gap_start <= gap_end:
+                    missing_ranges.append((gap_start, gap_end))
 
         # If the cached block does not overlap the request at all, fetch only the
         # requested interval rather than the gap between cache and request.

@@ -20,6 +20,7 @@ async function initDashboard() {
     const events = await evResp.json();
 
     filterEngine = new EventFilter(events);
+    filterEngine.setCriterion('horizon', 'upcoming');
     renderTable(filterEngine.apply());
     setupEventListeners();
     loadHistoricalLibrary();
@@ -123,6 +124,7 @@ function gradeClass(grade) {
 function renderTable(events) {
   const tbody = document.getElementById("eventsTableBody");
   if (!tbody) return;
+  if (typeof renderDashboardSummary === 'function') renderDashboardSummary(events);
 
   if (events.length === 0) {
     tbody.innerHTML = `<tr><td colspan="10" style="text-align:center; padding: 32px; color:#94a3b8;">조건에 일치하는 일정이 없습니다.</td></tr>`;
@@ -149,7 +151,8 @@ function renderTable(events) {
     const score = Math.max(0, Math.min(100, ev.event_score || 0));
     const tickerLabel = ev.ticker || "미매핑";
     const related = (ev.related_securities || []).filter(s => s.ticker);
-    const tickersHtml = related.length ? related.map(s => `<div class="listed-security"><code>${escapeHtml(s.ticker)}</code> <small>${escapeHtml(s.relation_grade)}</small>${s.from_entity ? `<div class="security-name">${escapeHtml(s.from_entity)}</div>` : ""}</div>`).join("") : `<code>${escapeHtml(tickerLabel)}</code>`;
+    const tickersHtml = related.length ? related.slice(0,3).map(s => `<div class="listed-security"><code>${escapeHtml(s.ticker)}</code> <small>${escapeHtml(s.relation_grade)}</small>${s.company_name || s.from_entity ? `<div class="security-name">${escapeHtml(s.company_name || s.from_entity)}</div>` : ""}</div>`).join("") + (related.length > 3 ? `<small class="text-muted">외 ${related.length-3}개 · 상세 확인</small>` : '') : `<code>${escapeHtml(tickerLabel)}</code>`;
+    const why = ev.insight ? `<div class="event-reason">${escapeHtml(ev.insight.reasons.slice(0,2).join(' · '))}</div><div class="event-data-note">과거 D+5 ${ev.insight.coverage.complete_events}건${ev.insight.market ? ' · 20거래일 '+(ev.insight.market.return_20d*100).toFixed(1)+'%' : ' · 현재 가격 미확인'}</div>` : '';
 
     return `
       <tr>
@@ -157,14 +160,14 @@ function renderTable(events) {
         <td><span class="badge badge-country">${ev.country}</span></td>
         <td><strong>${escapeHtml(ev.company)}</strong></td>
         <td>${tickersHtml}</td>
-        <td><a href="event.html?id=${encodeURIComponent(ev.event_id)}" class="row-link">${escapeHtml(ev.event_name)}</a></td>
+        <td><a href="event.html?id=${encodeURIComponent(ev.event_id)}" class="row-link">${escapeHtml(ev.event_name)}</a>${why}</td>
         <td>${escapeHtml(formatEventDate(ev))}</td>
         <td><span class="badge ${gradeClass(ev.relation_grade)}">${escapeHtml(ev.relation_grade)} (${ev.relation_score})</span></td>
         <td>
-          <div class="score-cell">
+          ${typeof renderPriorityCell === 'function' ? renderPriorityCell(ev) : `<div class="score-cell">
             <span>${score}</span>
             <div class="score-bar"><div class="score-fill" style="width: ${score}%;"></div></div>
-          </div>
+          </div>`}
         </td>
         <td><span class="badge ${statusClass}">${ev.status}</span></td>
         <td>
@@ -179,7 +182,7 @@ function setupEventListeners() {
   document.querySelectorAll(".btn-pill").forEach(btn => {
     btn.addEventListener("click", e => {
       const group = e.target.closest(".filter-row");
-      group.querySelectorAll(".btn-pill").forEach(b => b.classList.remove("active"));
+      group.querySelectorAll(`.btn-pill[data-filter-key="${e.target.dataset.filterKey}"]`).forEach(b => b.classList.remove("active"));
       e.target.classList.add("active");
 
       const filterKey = e.target.dataset.filterKey;

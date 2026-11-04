@@ -119,3 +119,12 @@ def test_ipo_underwriter_mention_is_not_promoted_to_direct_issuer():
     event.source_name = 'KIND_IPO'
     event.evidence_text = '주관사: 대신증권'
     assert ListedCompanyRegistry({'대신증권':'003540'}).resolve_mentions(event) == []
+
+
+def test_official_kind_table_preserves_new_alphanumeric_stock_codes():
+    from event_radar.entity_resolver import parse_kind_company_table
+    html = '<table><tr><th>회사명</th><th>시장구분</th><th>종목코드</th></tr><tr><td>래블업</td><td>코스닥</td><td>0147B0</td></tr><tr><td>영풍</td><td>유가증권</td><td>000670</td></tr></table>'
+    assert parse_kind_company_table(html) == {'래블업':'0147B0', '영풍':'000670'}
+    registry = ListedCompanyRegistry(parse_kind_company_table(html))
+    assert registry.ticker_for_company('영풍') == '000670'
+    assert registry.ticker_for_company('래블업') == '0147B0'

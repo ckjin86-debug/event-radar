@@ -79,6 +79,7 @@ function renderBacktestVerdict(d) {
   const peerN = d.peer_sample_n || 0;
   const d5N = d.d5_sample_n || 0;
   const bs = d.backtest_summary || {};
+  const completed = d.insight?.coverage?.complete_events || bs.event_n || 0;
 
   if (peerN === 0) {
     elem.className = "backtest-verdict neutral";
@@ -93,6 +94,11 @@ function renderBacktestVerdict(d) {
   }
 
   const edge = bs.mean_abnormal_return || 0;
+  if (completed < 3 || d.market_proxy_study) {
+    elem.className = 'backtest-verdict caution';
+    elem.innerHTML = `<strong>과거 비교 ${peerN}건 · D+5 완료 사건 ${completed}건 / 종목 표본 ${d5N}개</strong><span>${d.market_proxy_study ? '지수 자체의 과거 반응입니다. 개별 관련주 수익률로 해석하지 않습니다.' : '완료 사건이 3건 미만인 소표본입니다. 방향성 판단에 사용하기에는 근거가 부족합니다.'}</span>`;
+    return;
+  }
   elem.className = `backtest-verdict ${edge >= 0 ? "positive-verdict" : "negative-verdict"}`;
   elem.innerHTML = `<strong>과거 비교 사례 ${peerN}건 · D+5 종목표본 ${d5N}개</strong><span>D+5 평균 초과수익률 ${pct(edge)} · 승률 ${pct(bs.win_rate, 0)}</span>`;
 }
@@ -105,12 +111,14 @@ function renderBacktestStats(d) {
   const peerN = d.peer_sample_n || 0;
   const d5N = d.d5_sample_n || 0;
   const noD5 = d5N === 0;
+  const measuredReturn = d.market_proxy_study ? bs.mean_return : bs.mean_abnormal_return;
+  const measuredWin = d.market_proxy_study ? bs.absolute_win_rate : bs.win_rate;
 
   statsElem.innerHTML = `
     <div class="stat-box"><div class="stat-val">${peerN}건</div><div class="stat-label">비교 가능한 과거 사건</div></div>
     <div class="stat-box"><div class="stat-val">${d5N}개</div><div class="stat-label">D+5 완료 종목 표본</div></div>
-    <div class="stat-box"><div class="stat-val ${noD5 ? "muted-value" : ((bs.mean_abnormal_return || 0) >= 0 ? "positive" : "negative")}">${noD5 ? "데이터 없음" : pct(bs.mean_abnormal_return)}</div><div class="stat-label">D+5 평균 초과수익률</div></div>
-    <div class="stat-box"><div class="stat-val ${noD5 ? "muted-value" : ((bs.win_rate || 0) >= 0.5 ? "positive" : "negative")}">${noD5 ? "데이터 없음" : pct(bs.win_rate, 0)}</div><div class="stat-label">D+5 초과수익 승률</div></div>
+    <div class="stat-box"><div class="stat-val ${noD5 ? "muted-value" : ((measuredReturn || 0) >= 0 ? "positive" : "negative")}">${noD5 ? "데이터 없음" : pct(measuredReturn)}</div><div class="stat-label">D+5 ${d.market_proxy_study ? '시장 절대수익률' : '평균 초과수익률'}</div></div>
+    <div class="stat-box"><div class="stat-val ${noD5 ? "muted-value" : ((measuredWin || 0) >= 0.5 ? "positive" : "negative")}">${noD5 ? "데이터 없음" : pct(measuredWin, 0)}</div><div class="stat-label">D+5 ${d.market_proxy_study ? '시장 상승 비율' : '초과수익 승률'}</div></div>
   `;
 }
 
@@ -148,6 +156,7 @@ function renderHistoricalPeers(d) {
         <h3>${escapeHtml(peer.event_name)}</h3>
         <p>${escapeHtml(peer.evidence_text || peer.company || "")}</p>
         <div class="history-securities">${securitiesHtml}</div>
+        ${typeof renderOutcomeTable === 'function' ? renderOutcomeTable(peer, d.market_proxy_study) : ''}
         ${peer.source_url ? `<a href="${escapeHtml(peer.source_url)}" target="_blank" rel="noopener noreferrer" class="row-link history-source">사례 근거 ↗</a>` : ""}
       </article>
     `;
@@ -164,8 +173,10 @@ function renderBestStrategy(d) {
     return;
   }
 
-  const best = sampled.reduce((a, b) => b.mean_abnormal_return > a.mean_abnormal_return ? b : a);
-  const caution = best.sample_n < 3 ? ` · 표본 ${best.sample_n}개라 참고용` : ` · 표본 ${best.sample_n}개`;
+  const metric = d.market_proxy_study ? "mean_return" : "mean_abnormal_return";
+  const best = sampled.reduce((a, b) => b[metric] > a[metric] ? b : a);
+  const eventN = best.event_n || 0;
+  const caution = ` · 사건 ${eventN}건 / 종목 ${best.sample_n}개${eventN < 3 ? ' · 소표본 참고용' : ''}`;
   elem.innerHTML = `
     <div>
       <span class="best-label">가장 좋았던 구간</span>
@@ -173,7 +184,7 @@ function renderBestStrategy(d) {
     </div>
     <div class="best-numbers">
       <span>평균 수익률 <strong class="${best.mean_return >= 0 ? "positive" : "negative"}">${pct(best.mean_return)}</strong></span>
-      <span>시장 대비 <strong class="${best.mean_abnormal_return >= 0 ? "positive" : "negative"}">${pct(best.mean_abnormal_return)}</strong></span>
+      ${d.market_proxy_study ? "" : `<span>시장 대비 <strong class="${best.mean_abnormal_return >= 0 ? "positive" : "negative"}">${pct(best.mean_abnormal_return)}</strong></span>`}
       <span class="text-muted">${escapeHtml(caution)}</span>
     </div>
   `;
@@ -183,6 +194,7 @@ function renderDetail(d) {
   const tickerLabel = d.ticker || "미매핑";
   document.title = `${d.event_name} | Event Radar`;
   document.getElementById("eventTitle").textContent = d.event_name;
+  if (typeof renderDetailInsight === 'function') renderDetailInsight(d);
 
   const basicInfoElem = document.getElementById("basicInfo");
   if (basicInfoElem) {
@@ -193,7 +205,7 @@ function renderDetail(d) {
       <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
         <div><span class="text-muted">국가 / 관련 티커:</span> <strong>${d.country} / ${escapeHtml(tickerLabel)}</strong></div>
         <div><span class="text-muted">이벤트 유형:</span> <strong>${d.event_type}</strong></div>
-        <div><span class="text-muted">최초 발표일:</span> <strong>${d.announced_at ? d.announced_at.slice(0, 10) : "-"}</strong></div>
+        <div><span class="text-muted">${d.source_name === "FED_FOMC" ? "일정 공지일" : "최초 발표일"}:</span> <strong>${d.source_name === "FED_FOMC" ? "미확인" : d.announced_at ? d.announced_at.slice(0, 10) : "-"}</strong></div>
         <div><span class="text-muted">이벤트 예정일:</span> <strong style="color:var(--accent-blue);">${escapeHtml(formatEventDate(d))} (${escapeHtml(scheduleContext)})</strong></div>
         <div><span class="text-muted">확정 상태:</span> <span class="badge ${d.status === 'CONFIRMED' ? 'badge-confirmed' : 'badge-expected'}">${d.status}</span></div>
         <div>
@@ -206,7 +218,9 @@ function renderDetail(d) {
   }
 
   const scoreElem = document.getElementById("scoreBreakdown");
-  if (scoreElem && d.score_breakdown) {
+  if (scoreElem && d.insight) {
+    scoreElem.innerHTML = `<p class="section-subtitle">${escapeHtml(d.insight.methodology)}</p><div class="compact-priority">${typeof renderPriorityCell === 'function' ? renderPriorityCell(d) : d.insight.score}</div><p>${escapeHtml(d.insight.reasons.join(' · '))}</p>`;
+  } else if (scoreElem && d.score_breakdown) {
     const sb = d.score_breakdown;
     scoreElem.innerHTML = `
       <div style="text-align: center; margin-bottom: 16px;">
@@ -226,10 +240,16 @@ function renderDetail(d) {
   renderBacktestVerdict(d);
   renderBacktestStats(d);
   renderHistoricalPeers(d);
-  renderBestStrategy(d);
+  const strategyCard = document.getElementById("strategyCard");
+  if (strategyCard) strategyCard.hidden = Boolean(d.market_proxy_study);
+  if (!d.market_proxy_study) renderBestStrategy(d);
+  const curveNote = document.getElementById("curveNote");
+  if (curveNote && d.market_proxy_study) {
+    curveNote.textContent = "D0 대비 지수 절대수익률 · 사건별 동일 가중";
+  }
 
   if (d.event_curve && d.event_curve.length > 0) {
-    renderEventCurveChart("curveChartCanvas", d.event_curve);
+    renderEventCurveChart("curveChartCanvas", d.event_curve, d.market_proxy_study);
   }
 
   const relElem = document.getElementById("relatedSecuritiesBody");
@@ -258,7 +278,7 @@ function renderDetail(d) {
       stratElem.innerHTML = list.map(s => `
         <tr>
           <td><strong>${escapeHtml(s.name)}</strong></td>
-          <td>${s.sample_n}</td>
+          <td>${s.event_n == null ? '' : s.event_n + '건 / '}${s.sample_n}개</td>
           <td class="${s.sample_n ? (s.mean_return >= 0 ? 'stat-val positive' : 'stat-val negative') : 'muted-value'}" style="font-size:0.9rem;">${s.sample_n ? pct(s.mean_return) : '데이터 없음'}</td>
           <td class="${s.sample_n ? (s.mean_abnormal_return >= 0 ? 'stat-val positive' : 'stat-val negative') : 'muted-value'}" style="font-size:0.9rem;">${s.sample_n ? pct(s.mean_abnormal_return) : '데이터 없음'}</td>
           <td>${s.sample_n ? pct(s.win_rate, 0) : '—'}</td>

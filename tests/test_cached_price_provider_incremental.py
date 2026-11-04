@@ -70,3 +70,16 @@ def test_complete_cache_makes_no_delegate_call(tmp_path):
     cached.history("005930", date(2026, 10, 15), date(2026, 11, 1))
 
     assert delegate.calls == []
+
+
+def test_disjoint_cache_blocks_do_not_hide_an_interior_request(tmp_path):
+    delegate = RecordingProvider()
+    cached = CachedPriceProvider(delegate, tmp_path)
+    path = cached._cache_path('^KS11')
+    _seed_cache(path, date(2009, 12, 1), date(2009, 12, 31))
+    first = pd.read_csv(path)
+    _seed_cache(path, date(2026, 10, 1), date(2026, 11, 3))
+    pd.concat([first, pd.read_csv(path)]).to_csv(path, index=False)
+    frame = cached.history('^KS11', date(2024, 7, 1), date(2024, 7, 31))
+    assert len(frame) == 31
+    assert delegate.calls == [('^KS11', date(2024, 7, 1), date(2024, 7, 31))]

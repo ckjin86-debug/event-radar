@@ -31,6 +31,21 @@ def event_family_key(event: Event) -> str:
     return f"{event.event_type}:{family}"
 
 
+def eligible_peer_events(events: list[Event], target: Event, as_of: date | None = None) -> list[Event]:
+    """Event eligibility before price joins; preserves missing-data denominators."""
+    cutoff = min(target.event_date, as_of) if as_of else target.event_date
+    unique: dict[tuple, Event] = {}
+    for event in events:
+        if (event.event_id == target.event_id or event.country != target.country
+            or event.event_type != target.event_type or event_family_key(event) != event_family_key(target)
+            or event.event_date >= cutoff or event.date_precision != 'EXACT_DATE'
+            or event.status == 'CANCELLED' or event.needs_review):
+            continue
+        key = (event.country, event.event_type, event.event_date, event.primary_ticker, event.primary_company)
+        unique.setdefault(key, event)
+    return list(unique.values())
+
+
 def build_historical_peer_frame(
     events: list[Event],
     returns_df: pd.DataFrame,
@@ -46,20 +61,7 @@ def build_historical_peer_frame(
     if returns_df.empty:
         return returns_df.copy()
 
-    target_family = event_family_key(target_event)
-    peer_ids = {
-        ev.event_id
-        for ev in events
-        if ev.event_id != target_event.event_id
-        and ev.country == target_event.country
-        and ev.event_type == target_event.event_type
-        and event_family_key(ev) == target_family
-        and ev.event_date < target_event.event_date
-        and ev.date_precision == "EXACT_DATE"
-        and ev.status != "CANCELLED"
-        and not ev.needs_review
-        and (as_of is None or ev.event_date < as_of)
-    }
+    peer_ids = {event.event_id for event in eligible_peer_events(events, target_event, as_of)}
     if not peer_ids:
         return returns_df.iloc[0:0].copy()
 

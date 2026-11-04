@@ -3,6 +3,7 @@
 from __future__ import annotations
 import json
 import re
+from zoneinfo import ZoneInfo
 from datetime import date, datetime
 from pathlib import Path
 from typing import Any
@@ -10,7 +11,8 @@ from event_radar.models import Event, EventRevision, EventSecurity
 from event_radar.scoring import ScoreInput, ScoreResult, calculate_event_score
 from event_radar.backtest.strategies import StrategyResult, evaluate_strategies
 from event_radar.backtest.metrics import BacktestSummary, summarize_event_group
-from event_radar.backtest.historical import build_historical_peer_frame
+from event_radar.backtest.historical import build_historical_peer_frame, eligible_peer_events
+from event_radar.insights import build_insight
 from event_radar.collectors.news_future import extract_future_catalyst, is_news_digest
 from event_radar.entity_resolver import is_market_proxy
 
@@ -190,6 +192,7 @@ def _serialize_securities(securities: list[EventSecurity]) -> list[dict[str, Any
     return [
         {
             "ticker": s.ticker,
+            "company_name": s.company_name,
             "relation_grade": s.relation_grade,
             "relation_score": s.relation_score,
             "relation_type": s.relation_type,
@@ -265,11 +268,13 @@ def export_site_data(
     output_dir: Path | str = "site/data",
     collector_status: dict[str, str] | None = None,
     now: datetime | None = None,
+    market_snapshots: dict | None = None,
 ) -> None:
     """Generate public JSON files for static GitHub Pages."""
     if now is None:
-        now = datetime.now()
+        now = datetime.now(ZoneInfo('Asia/Seoul')).replace(tzinfo=None)
     today = now.date()
+    market_snapshots = market_snapshots or {}
 
     out_path = Path(output_dir)
     out_path.mkdir(parents=True, exist_ok=True)
@@ -277,6 +282,14 @@ def export_site_data(
     analysis_events = [ev for ev in events if _is_visible_radar_event(ev)]
     historical_seed_events = [ev for ev in analysis_events if ev.source_name == "HISTORICAL_SEED"]
     visible_events = _select_public_visible_events(analysis_events, event_securities, today)
+    official_history = [ev for ev in analysis_events if ev.source_name == 'FED_FOMC' and ev.event_date < today]
+    visible_events = [ev for ev in visible_events if ev not in official_history]
+    if event_returns_df is not None and not event_returns_df.empty:
+        mappings = {(event_id, security.ticker, security.relation_grade)
+                    for event_id, securities in event_securities.items() for security in securities if security.ticker}
+        return_keys = zip(event_returns_df['event_id'], event_returns_df['ticker'].astype(str),
+                          event_returns_df['relation_grade'])
+        event_returns_df = event_returns_df.loc[[key in mappings for key in return_keys]]
     historical_analysis = {
         ev.event_id: _analyze_historical_peers(
             event=ev,
@@ -287,6 +300,21 @@ def export_site_data(
         )
         for ev in visible_events
     }
+    insights = {}
+    for ev in visible_events:
+        secs = event_securities.get(ev.event_id, [])
+        grade = secs[0].relation_grade if secs else 'UNMAPPED'
+        eligible = [peer for peer in eligible_peer_events(analysis_events, ev, today)
+                    if any(s.ticker and s.relation_grade == grade for s in event_securities.get(peer.event_id, []))]
+        peer_df, summary, _, _ = historical_analysis[ev.event_id]
+        priced_ids = set(peer_df['event_id']) if peer_df is not None and not peer_df.empty else set()
+        complete_ids = set(peer_df.loc[peer_df['offset'] == 5, 'event_id']) if priced_ids else set()
+        coverage = dict(eligible_events=len(eligible), priced_events=len(priced_ids), complete_events=len(complete_ids),
+                        security_samples=summary.sample_n, not_calculated_events=max(0, len(eligible)-len(priced_ids)),
+                        completion_percent=round(100*len(complete_ids)/len(eligible)) if eligible else None)
+        market = next((dict(market_snapshots[s.ticker], ticker=s.ticker) for s in secs
+                       if market_snapshots.get(s.ticker)), None)
+        insights[ev.event_id] = build_insight(ev, secs, today, coverage, summary, market)
 
     events_list = []
     for ev in visible_events:
@@ -320,7 +348,8 @@ def export_site_data(
             "relation_score": rel_score,
             "relation_type": rel_type,
             "relation_ingest_mode": rel_ingest_mode,
-            "event_score": score.total_score,
+            "event_score": insights[ev.event_id]['score'],
+            "insight": insights[ev.event_id],
             "status": ev.status,
             "source_name": ev.source_name,
             "source_url": ev.source_url,
@@ -344,7 +373,7 @@ def export_site_data(
             "evidence_text": ev.evidence_text,
             "related_securities": _serialize_securities(event_securities.get(ev.event_id, [])),
         }
-        for ev in sorted(historical_seed_events, key=lambda item: item.event_date, reverse=True)
+        for ev in sorted(historical_seed_events + official_history, key=lambda item: item.event_date, reverse=True)
     ]
     (out_path / "historical_events.json").write_text(
         json.dumps(historical_library, ensure_ascii=False, indent=2),
@@ -383,6 +412,13 @@ def export_site_data(
                 if peer_event is None:
                     continue
                 peer_rows = peer_df[peer_df["event_id"] == peer_id]
+                outcomes = []
+                for ticker, ticker_rows in peer_rows.groupby('ticker'):
+                    observed = ticker_rows.set_index('offset')
+                    outcomes.append(dict(ticker=str(ticker), return_d5=float(observed.loc[5, 'return_from_d0']) if 5 in observed.index else None,
+                        abnormal_d5=float(observed.loc[5, 'abnormal_return']) if 5 in observed.index else None,
+                        return_d20=float(observed.loc[20, 'return_from_d0']) if 20 in observed.index else None,
+                        max_offset=int(ticker_rows['offset'].max())))
                 historical_peers.append({
                     "event_id": peer_id,
                     "country": peer_event.country,
@@ -396,6 +432,7 @@ def export_site_data(
                     "min_offset": int(peer_rows["offset"].min()),
                     "max_offset": int(peer_rows["offset"].max()),
                     "related_securities": _serialize_securities(event_securities.get(peer_id, [])),
+                    "outcomes": outcomes,
                 })
 
         strats = [
@@ -404,6 +441,7 @@ def export_site_data(
                 "entry_offset": s.entry_offset,
                 "exit_offset": s.exit_offset,
                 "sample_n": s.sample_n,
+                "event_n": s.event_n,
                 "mean_return": s.mean_return,
                 "median_return": s.median_return,
                 "win_rate": s.win_rate,
@@ -417,7 +455,7 @@ def export_site_data(
 
         curve_points = []
         if peer_df is not None and not peer_df.empty:
-            grouped = peer_df.groupby("offset")[["return_from_d0", "abnormal_return"]].mean().reset_index()
+            grouped = peer_df.groupby(['event_id', 'offset'])[["return_from_d0", "abnormal_return"]].mean().groupby('offset').mean().reset_index()
             for _, r in grouped.iterrows():
                 curve_points.append({
                     "offset": int(r["offset"]),
@@ -455,17 +493,25 @@ def export_site_data(
             "source_url": ev.source_url,
             "evidence_text": ev.evidence_text,
             "score_breakdown": score_breakdown,
+            "insight": insights[ev_id],
             "revisions": ev_revs,
             "related_securities": ev_secs,
             "backtest_basis": "HISTORICAL_PEERS",
+            "market_proxy_study": bool(event_securities.get(ev_id) and event_securities[ev_id][0].relation_grade == 'PROXY'),
+            "announcement_basis": '공식 결정일 기준 · 당시 일정 공지일 미검증' if ev.source_name == 'FED_FOMC' else '원문 발표일 기준',
             "peer_sample_n": len(historical_peers),
             "d5_sample_n": b_summary.sample_n,
             "historical_peers": historical_peers,
             "backtest_summary": {
                 "sample_n": b_summary.sample_n,
+                "event_n": b_summary.event_n,
                 "mean_return": b_summary.mean_return,
                 "median_return": b_summary.median_return,
                 "win_rate": b_summary.win_rate,
+                "absolute_win_rate": b_summary.absolute_win_rate,
+                "max_gain": b_summary.max_gain,
+                "max_loss": b_summary.max_loss,
+                "standard_deviation": b_summary.standard_deviation,
                 "mean_abnormal_return": b_summary.mean_abnormal_return,
                 "median_abnormal_return": b_summary.median_abnormal_return,
                 "max_drawdown": b_summary.max_drawdown,
@@ -473,22 +519,25 @@ def export_site_data(
             "strategy_summary": strats,
             "event_curve": curve_points,
             "sample_count": b_summary.sample_n,
-            "latest_update": now.isoformat(),
+            "latest_update": now.replace(tzinfo=ZoneInfo('Asia/Seoul')).isoformat(),
         }
 
     (out_path / "event_details.json").write_text(
-        json.dumps(details_map, ensure_ascii=False, indent=2),
+        json.dumps(details_map, ensure_ascii=False, allow_nan=False, indent=2),
         encoding="utf-8",
     )
 
     news_candidates = sum(1 for ev in analysis_events if ev.source_name == "NEWS_FUTURE")
     news_visible = sum(1 for ev in visible_events if ev.source_name == "NEWS_FUTURE")
     metadata = {
-        "generated_at": now.isoformat(),
+        "generated_at": now.replace(tzinfo=ZoneInfo('Asia/Seoul')).isoformat(),
         "total_events": len(visible_events),
         "kr_events": sum(1 for e in visible_events if e.country == "KR"),
         "us_events": sum(1 for e in visible_events if e.country == "US"),
         "historical_seed_events": len(historical_seed_events),
+        "official_historical_events": len(official_history),
+        "events_with_d5": sum(insights[e.event_id]['coverage']['complete_events'] > 0 for e in visible_events),
+        "events_with_market_data": sum(insights[e.event_id]['market'] is not None for e in visible_events),
         "news_candidates": news_candidates,
         "news_visible": news_visible,
         "version": "1.0.0",

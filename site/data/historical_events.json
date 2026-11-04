@@ -1,5 +1,105 @@
 [
   {
+    "event_id": "US_FED_FOMC_b3e6d8a21ccf92cf7373fe509ad6b5ef9b3c3548",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2026-10-28",
+    "event_date": "2026-10-28",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2026 October 27-28",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2026-10-28",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_20c14f3165e2f1f1fb2e259d7f3ad313d5f187e8",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2026-09-16",
+    "event_date": "2026-09-16",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2026 September 15-16*",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2026-09-16",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_1d1273ace50222b7e5f8958f20b2b659343c3755",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2026-07-29",
+    "event_date": "2026-07-29",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2026 July 28-29",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2026-07-29",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_645ac77656d3b507389843a4aaa488e95603bdb6",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2026-06-17",
+    "event_date": "2026-06-17",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2026 June 16-17*",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2026-06-17",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
     "event_id": "KR_HISTORICAL_SEED_HIST_ELECTION_KR_LOCAL_2026",
     "country": "KR",
     "event_type": "ELECTION",
@@ -11,6 +111,7 @@
     "related_securities": [
       {
         "ticker": "",
+        "company_name": "",
         "relation_grade": "UNMAPPED",
         "relation_score": 0,
         "relation_type": "UNMAPPED",
@@ -20,6 +121,206 @@
         "relation_known_date": "",
         "ingest_mode": "AUTO",
         "from_entity": ""
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_76d3bf3929c639dc2064f8747f9a8e6592046613",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2026-04-29",
+    "event_date": "2026-04-29",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2026 April 28-29",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2026-04-29",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_83cf83335a96da7a739506ca3b63ef823a4d4824",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2026-03-18",
+    "event_date": "2026-03-18",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2026 March 17-18*",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2026-03-18",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_06622d4f7d9b3929496e7f05ea6e2998632d865d",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2026-01-28",
+    "event_date": "2026-01-28",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2026 January 27-28",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2026-01-28",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_11f8fecccce0a57d16d04f299675634a3ff31bf3",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2025-12-10",
+    "event_date": "2025-12-10",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2025 December 9-10*",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2025-12-10",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_d1f6b432ba20245aee62c6cec6c56faf8921ac38",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2025-10-29",
+    "event_date": "2025-10-29",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2025 October 28-29",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2025-10-29",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_c42aeb8196cb28022f7ac2f10ea902d95808bd62",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2025-09-17",
+    "event_date": "2025-09-17",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2025 September 16-17*",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2025-09-17",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_3d5464f40b822eaf561f4bffdc6b5d3648381c5d",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2025-07-30",
+    "event_date": "2025-07-30",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2025 July 29-30",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2025-07-30",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_36948682927e78775669431f8c203649c513c8a2",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2025-06-18",
+    "event_date": "2025-06-18",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2025 June 17-18*",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2025-06-18",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
       }
     ]
   },
@@ -35,6 +336,7 @@
     "related_securities": [
       {
         "ticker": "034020",
+        "company_name": "두산에너빌리티",
         "relation_grade": "B",
         "relation_score": 90,
         "relation_type": "OFFICIAL_CONSORTIUM",
@@ -47,6 +349,7 @@
       },
       {
         "ticker": "052690",
+        "company_name": "한전기술",
         "relation_grade": "B",
         "relation_score": 88,
         "relation_type": "OFFICIAL_CONSORTIUM",
@@ -59,6 +362,7 @@
       },
       {
         "ticker": "047040",
+        "company_name": "대우건설",
         "relation_grade": "B",
         "relation_score": 86,
         "relation_type": "OFFICIAL_CONSORTIUM",
@@ -71,6 +375,7 @@
       },
       {
         "ticker": "051600",
+        "company_name": "한전KPS",
         "relation_grade": "B",
         "relation_score": 84,
         "relation_type": "OFFICIAL_CONSORTIUM",
@@ -95,6 +400,7 @@
     "related_securities": [
       {
         "ticker": "093240",
+        "company_name": "형지엘리트",
         "relation_grade": "THEME",
         "relation_score": 35,
         "relation_type": "POLITICAL_THEME",
@@ -107,6 +413,7 @@
       },
       {
         "ticker": "042940",
+        "company_name": "상지건설",
         "relation_grade": "THEME",
         "relation_score": 35,
         "relation_type": "POLITICAL_THEME",
@@ -119,6 +426,7 @@
       },
       {
         "ticker": "308100",
+        "company_name": "형지글로벌",
         "relation_grade": "THEME",
         "relation_score": 35,
         "relation_type": "POLITICAL_THEME",
@@ -131,6 +439,7 @@
       },
       {
         "ticker": "010770",
+        "company_name": "평화홀딩스",
         "relation_grade": "THEME",
         "relation_score": 35,
         "relation_type": "POLITICAL_THEME",
@@ -140,6 +449,156 @@
         "relation_known_date": "2025-04-04",
         "ingest_mode": "AUTO",
         "from_entity": "평화홀딩스"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_2aba1884898b0f6448e23ebb38d0a20e454d2bb4",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2025-05-07",
+    "event_date": "2025-05-07",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2025 May 6-7",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2025-05-07",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_6f929abb32e2d73fde2275b522f88134e3be137e",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2025-03-19",
+    "event_date": "2025-03-19",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2025 March 18-19*",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2025-03-19",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_217a55220f6c322a53f56664344f49b1e25d7b5a",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2025-01-29",
+    "event_date": "2025-01-29",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2025 January 28-29",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2025-01-29",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_4a0a97db3056d641515220958a2af785dac42c65",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2024-12-18",
+    "event_date": "2024-12-18",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2024 December 17-18*",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2024-12-18",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_30bcdf2220a1ee55f2d062212dadae7f35ee3df9",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2024-11-07",
+    "event_date": "2024-11-07",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2024 November 6-7",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2024-11-07",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_875b3b9e56e3c9dc5bca9c9824dc538bd9179c3c",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2024-09-18",
+    "event_date": "2024-09-18",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2024 September 17-18*",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2024-09-18",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
       }
     ]
   },
@@ -155,6 +614,7 @@
     "related_securities": [
       {
         "ticker": "010130",
+        "company_name": "고려아연",
         "relation_grade": "A",
         "relation_score": 100,
         "relation_type": "DIRECT",
@@ -164,6 +624,31 @@
         "relation_known_date": "2024-09-13",
         "ingest_mode": "AUTO",
         "from_entity": "고려아연"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_3f72df5bb75bba0094698b0981f81eab96dcf7c4",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2024-07-31",
+    "event_date": "2024-07-31",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2024 July 30-31",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2024-07-31",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
       }
     ]
   },
@@ -179,6 +664,7 @@
     "related_securities": [
       {
         "ticker": "034020",
+        "company_name": "두산에너빌리티",
         "relation_grade": "B",
         "relation_score": 90,
         "relation_type": "OFFICIAL_CONSORTIUM",
@@ -191,6 +677,7 @@
       },
       {
         "ticker": "052690",
+        "company_name": "한전기술",
         "relation_grade": "B",
         "relation_score": 88,
         "relation_type": "OFFICIAL_CONSORTIUM",
@@ -203,6 +690,7 @@
       },
       {
         "ticker": "047040",
+        "company_name": "대우건설",
         "relation_grade": "B",
         "relation_score": 86,
         "relation_type": "OFFICIAL_CONSORTIUM",
@@ -215,6 +703,7 @@
       },
       {
         "ticker": "051600",
+        "company_name": "한전KPS",
         "relation_grade": "B",
         "relation_score": 84,
         "relation_type": "OFFICIAL_CONSORTIUM",
@@ -224,6 +713,56 @@
         "relation_known_date": "2024-01-01",
         "ingest_mode": "AUTO",
         "from_entity": "한전KPS"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_0c9bf041f00dfa1bfc2641c7e8bf6658a8285f3f",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2024-06-12",
+    "event_date": "2024-06-12",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2024 June 11-12*",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2024-06-12",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_552efb3a12326dd15a9c20d517044f91df74f5f8",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2024-05-01",
+    "event_date": "2024-05-01",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2024 Apr/May 30-1",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2024-05-01",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
       }
     ]
   },
@@ -239,6 +778,7 @@
     "related_securities": [
       {
         "ticker": "084690",
+        "company_name": "대상홀딩스",
         "relation_grade": "THEME",
         "relation_score": 32,
         "relation_type": "POLITICAL_THEME",
@@ -263,6 +803,7 @@
     "related_securities": [
       {
         "ticker": "008930",
+        "company_name": "한미사이언스",
         "relation_grade": "A",
         "relation_score": 100,
         "relation_type": "DIRECT",
@@ -272,6 +813,231 @@
         "relation_known_date": "2024-03-28",
         "ingest_mode": "AUTO",
         "from_entity": "한미사이언스"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_4a344f66c8ff9f285580c4517940d29b78c7be7d",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2024-03-20",
+    "event_date": "2024-03-20",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2024 March 19-20*",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2024-03-20",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_49242cb8764003d6948d7d8566b07c0de8097c68",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2024-01-31",
+    "event_date": "2024-01-31",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2024 January 30-31",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2024-01-31",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_79c1d107942927c6050b6e6cfcf056bdf3885144",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2023-12-13",
+    "event_date": "2023-12-13",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2023 December 12-13*",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2023-12-13",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_232ae229abb43e8e9130088d2936912adff6cbb6",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2023-11-01",
+    "event_date": "2023-11-01",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2023 Oct/Nov 31-1",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2023-11-01",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_987ba30b6260aa56be7556814d1ab85c70d25358",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2023-09-20",
+    "event_date": "2023-09-20",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2023 September 19-20*",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2023-09-20",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_77573087fc24047b29a863521035aad0198f5e7d",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2023-07-26",
+    "event_date": "2023-07-26",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2023 July 25-26",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2023-07-26",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_959c410d9d8134ed7e87a349e90630b8c3ac3011",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2023-06-14",
+    "event_date": "2023-06-14",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2023 June 13-14*",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2023-06-14",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_3957521137a38fa897c44a328fbe48178bbd98ee",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2023-05-03",
+    "event_date": "2023-05-03",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2023 May 2-3",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2023-05-03",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_d8aaadff0810e3975433ab4ef5b10253a2b5f213",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2023-03-22",
+    "event_date": "2023-03-22",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2023 March 21-22*",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2023-03-22",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
       }
     ]
   },
@@ -287,6 +1053,7 @@
     "related_securities": [
       {
         "ticker": "041510",
+        "company_name": "에스엠",
         "relation_grade": "A",
         "relation_score": 100,
         "relation_type": "DIRECT",
@@ -296,6 +1063,206 @@
         "relation_known_date": "2023-02-10",
         "ingest_mode": "AUTO",
         "from_entity": "에스엠"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_17b05e8bd9367fd2adbd564b2e4d8dbbd5219fa4",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2023-02-01",
+    "event_date": "2023-02-01",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2023 Jan/Feb 31-1",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2023-02-01",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_35847f67249df5a864ab6cdf671f7731d164fd5d",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2022-12-14",
+    "event_date": "2022-12-14",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2022 December 13-14*",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2022-12-14",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_9c9980722dec04f202fb69ddf83065f50870d991",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2022-11-02",
+    "event_date": "2022-11-02",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2022 November 1-2",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2022-11-02",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_5ff7c5ae0a9e91c069878ac4259485bc48b3b4d1",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2022-09-21",
+    "event_date": "2022-09-21",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2022 September 20-21*",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2022-09-21",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_b51e7bb8c55434bce70175d90614fd8f71e59537",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2022-07-27",
+    "event_date": "2022-07-27",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2022 July 26-27",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2022-07-27",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_fbea93d2d19656e0c121b1adc43537051c280854",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2022-06-15",
+    "event_date": "2022-06-15",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2022 June 14-15*",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2022-06-15",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_1783014c69289c1d960033f88ab34ec495c99e3e",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2022-05-04",
+    "event_date": "2022-05-04",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2022 May 3-4",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2022-05-04",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_299f2110791f58683be19171224d25214a503fbf",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2022-03-16",
+    "event_date": "2022-03-16",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2022 March 15-16*",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2022-03-16",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
       }
     ]
   },
@@ -311,6 +1278,7 @@
     "related_securities": [
       {
         "ticker": "053290",
+        "company_name": "NE능률",
         "relation_grade": "THEME",
         "relation_score": 38,
         "relation_type": "POLITICAL_THEME",
@@ -323,6 +1291,7 @@
       },
       {
         "ticker": "004830",
+        "company_name": "덕성",
         "relation_grade": "THEME",
         "relation_score": 38,
         "relation_type": "POLITICAL_THEME",
@@ -335,6 +1304,7 @@
       },
       {
         "ticker": "015020",
+        "company_name": "이스타코",
         "relation_grade": "THEME",
         "relation_score": 38,
         "relation_type": "POLITICAL_THEME",
@@ -344,6 +1314,231 @@
         "relation_known_date": "2021-01-01",
         "ingest_mode": "AUTO",
         "from_entity": "이스타코"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_ff8069403ed0bb57498b0a74519843b3e24b1fa3",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2022-01-26",
+    "event_date": "2022-01-26",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2022 January 25-26",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2022-01-26",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_fbed6c3542cf4af29ad3ec8cd6b3d447b5bcd1bb",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2021-12-15",
+    "event_date": "2021-12-15",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2021 December 14-15*",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2021-12-15",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_489ca22303195809319531a27f66baeaefc26aa7",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2021-11-03",
+    "event_date": "2021-11-03",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2021 November 2-3",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2021-11-03",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_5191f0391cabc54b5d09a5b332a752100ef8701a",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2021-09-22",
+    "event_date": "2021-09-22",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2021 September 21-22*",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2021-09-22",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_59078bdc6933f07c5363dceb6e203b97f140f9d4",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2021-07-28",
+    "event_date": "2021-07-28",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2021 July 27-28",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2021-07-28",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_ab71f20d683c458d5e52de458172b926a091d3da",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2021-06-16",
+    "event_date": "2021-06-16",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2021 June 15-16*",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2021-06-16",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_be85f253d8866df9e7a88623a810f4d64babbf9b",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2021-04-28",
+    "event_date": "2021-04-28",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2021 April 27-28",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2021-04-28",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_12c28ed246a875a4a096e4efb7c15ddeda9eb87b",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2021-03-17",
+    "event_date": "2021-03-17",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2021 March 16-17*",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2021-03-17",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
+      }
+    ]
+  },
+  {
+    "event_id": "US_FED_FOMC_c0172013eb571ed840c77e9220c58f9b97e21f19",
+    "country": "US",
+    "event_type": "FOMC_DECISION",
+    "event_name": "FOMC policy decision 2021-01-27",
+    "event_date": "2021-01-27",
+    "company": "Federal Reserve",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "evidence_text": "2021 January 26-27",
+    "related_securities": [
+      {
+        "ticker": "^GSPC",
+        "company_name": "",
+        "relation_grade": "PROXY",
+        "relation_score": 0,
+        "relation_type": "MARKET_PROXY",
+        "evidence_text": "시장/섹터 반응 참고용 프록시",
+        "evidence_source": "FED_FOMC",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "relation_known_date": "2021-01-27",
+        "ingest_mode": "AUTO",
+        "from_entity": "Federal Reserve"
       }
     ]
   },
@@ -359,6 +1554,7 @@
     "related_securities": [
       {
         "ticker": "180640",
+        "company_name": "한진칼",
         "relation_grade": "A",
         "relation_score": 100,
         "relation_type": "DIRECT",
@@ -383,6 +1579,7 @@
     "related_securities": [
       {
         "ticker": "015760",
+        "company_name": "한국전력공사",
         "relation_grade": "B",
         "relation_score": 92,
         "relation_type": "OFFICIAL_CONSORTIUM",

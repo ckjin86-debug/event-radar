@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import time
+import re
 from datetime import date, datetime, timedelta, timezone
 
 import pandas as pd
@@ -30,7 +31,7 @@ class YahooPriceProvider:
     def _ticker_candidates(self, ticker: str) -> list[str]:
         """Return Yahoo symbols to try, including KOSPI/KOSDAQ fallback."""
         ticker = ticker.strip().upper()
-        if len(ticker) == 6 and ticker.isdigit():
+        if re.fullmatch(r'\d[0-9A-Z]{5}', ticker):
             return [f"{ticker}.KS", f"{ticker}.KQ"]
         return [ticker]
 

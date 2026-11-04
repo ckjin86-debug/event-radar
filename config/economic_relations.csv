@@ -1,0 +1,5 @@
+relation_id,from_entity,to_ticker,relation_type,relation_grade,relation_score,relation_known_date,relation_start_date,relation_end_date,evidence_source,source_url,ingest_mode
+PUBLIC_SK_HYNIX_OWNER,000660,402340,OWNERSHIP_LINK,B,82,2026-11-04,2026-11-04,,SK하이닉스 공식 IR 주주구조에서 SK스퀘어 최대주주 관계 확인(현재 확인일 기준; 과거 백테스트에 소급하지 않음),https://www.skhynix.com/ir/UI-FR-IR04/,AUTO
+PUBLIC_SK_SQUARE_HYNIX,402340,000660,OWNERSHIP_LINK,B,82,2026-11-04,2026-11-04,,SK하이닉스 공식 IR 주주구조에서 SK스퀘어 최대주주 관계 확인(현재 확인일 기준; 과거 백테스트에 소급하지 않음),https://www.skhynix.com/ir/UI-FR-IR04/,AUTO
+PUBLIC_HANWHA_SYSTEMS_OWNER,272210,012450,OWNERSHIP_LINK,B,82,2026-11-04,2026-11-04,,한화시스템 공식 기업지배구조에서 한화에어로스페이스 지분 관계 확인(현재 확인일 기준; 과거 백테스트에 소급하지 않음),https://www.hanwhasystems.com/kr/investment/governance.do,AUTO
+PUBLIC_HANWHA_AERO_SYSTEMS,012450,272210,OWNERSHIP_LINK,B,82,2026-11-04,2026-11-04,,한화시스템 공식 기업지배구조에서 한화에어로스페이스 지분 관계 확인(현재 확인일 기준; 과거 백테스트에 소급하지 않음),https://www.hanwhasystems.com/kr/investment/governance.do,AUTO

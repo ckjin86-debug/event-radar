@@ -38,7 +38,7 @@ def _is_legacy_hidden_noise(event: Event) -> bool:
     return False
 
 
-def resolve_related_securities(event: Event, relations: list[Relation]) -> list[EventSecurity]:
+def resolve_related_securities(event: Event, relations: list[Relation], knowledge_asof: date | None = None) -> list[EventSecurity]:
     """Resolve related securities for an event avoiding look-ahead bias and expired relations."""
     if _is_legacy_hidden_noise(event):
         return _unmapped(event, "레이더 비노출 레거시 이벤트")
@@ -46,6 +46,7 @@ def resolve_related_securities(event: Event, relations: list[Relation]) -> list[
     results: dict[str, EventSecurity] = {}
     announced_date = event.announced_at.date() if hasattr(event.announced_at, "date") else event.announced_at
     event_date = event.event_date
+    known_cutoff = knowledge_asof if knowledge_asof and event_date >= knowledge_asof else announced_date
 
     # A real primary security is Grade A. Direct event rows are automatic event
     # evidence, not manual relation writeback, even when the event itself was edited.
@@ -86,7 +87,7 @@ def resolve_related_securities(event: Event, relations: list[Relation]) -> list[
         if from_entity not in (primary_ticker, event.primary_company.strip().upper()):
             continue
 
-        if rel.relation_known_date > announced_date:
+        if rel.relation_known_date > known_cutoff:
             continue
         if rel.relation_start_date > event_date:
             continue

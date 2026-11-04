@@ -36,3 +36,35 @@ test('zero-sample strategies display missing data instead of zero-percent return
   assert.doesNotMatch(elements.strategiesTableBody.innerHTML, /0\.0%/);
   assert.match(elements.strategiesTableBody.innerHTML, /데이터 없음/);
 });
+
+test('upcoming and evidence filters retain period windows and inspect every relation', () => {
+  const ctx = vm.createContext({});
+  vm.runInContext(fs.readFileSync('site/js/filters.js', 'utf8'), ctx);
+  const ids = vm.runInContext(`(() => {
+    const engine = new EventFilter([
+      {event_id:'past',d_day:-5,window_end:'2026-10-01',insight:{tier:'PAST',coverage:{complete_events:3}}},
+      {event_id:'period',d_day:-2,window_end:'2099-12-31',relation_grade:'A',related_securities:[{relation_grade:'B',ticker:'052690'}],insight:{tier:'WATCH',coverage:{complete_events:2}}}
+    ]);
+    engine.setCriterion('horizon','upcoming'); engine.setCriterion('grade','B');
+    return engine.apply().map(e=>e.event_id).join(',');
+  })()`, ctx);
+  assert.equal(ids, 'period');
+});
+
+test('priority cell explains missing evidence and does not present a buy signal', () => {
+  const ctx = vm.createContext({document:{getElementById:()=>null,addEventListener:()=>{}},escapeHtml:s=>String(s||'')});
+  vm.runInContext(fs.readFileSync('site/js/insight-ui.js', 'utf8'), ctx);
+  const html = vm.runInContext(`renderPriorityCell({insight:{score:44,tier:'WATCH',label:'일정 관찰',reasons:['공식 일정'],missing:['과거 사건 표본']}})`, ctx);
+  assert.match(html, /일정 관찰/);
+  assert.match(html, /과거 사건 표본/);
+  assert.doesNotMatch(html, /매수 신호/);
+});
+
+test('macro proxy statistics show market returns rather than zero excess returns', () => {
+  const el = {innerHTML:''};
+  const ctx = vm.createContext({document:{getElementById:()=>el,addEventListener:()=>{}}});
+  vm.runInContext(fs.readFileSync('site/js/event-detail.js', 'utf8'), ctx);
+  vm.runInContext(`renderBacktestStats({market_proxy_study:true,peer_sample_n:10,d5_sample_n:10,backtest_summary:{mean_return:.1,mean_abnormal_return:0,win_rate:0,absolute_win_rate:1}})`,ctx);
+  assert.match(el.innerHTML,/시장 절대수익률/);
+  assert.match(el.innerHTML,/10\.0%/);
+});

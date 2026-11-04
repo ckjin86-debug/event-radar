@@ -170,3 +170,22 @@ def test_peer_count_can_be_positive_when_d5_summary_is_not_complete(tmp_path):
     assert target["d5_sample_n"] == 0
     assert target["backtest_summary"]["sample_n"] == 0
     assert target["historical_peers"][0]["max_offset"] == 3
+
+
+def test_export_exposes_eligible_missing_prices_and_per_ticker_outcomes(tmp_path):
+    events = [_event('priced', date(2024, 1, 10)), _event('missing', date(2025, 4, 20)), _event('target', date(2026, 12, 18))]
+    export_site_data(events, [], _securities(events), {}, pd.DataFrame(_return_rows('priced', .1)), {}, {}, output_dir=tmp_path, now=datetime(2026, 11, 3))
+    d = json.loads((tmp_path/'event_details.json').read_text('utf-8'))['target']
+    assert d['insight']['coverage']['eligible_events'] == 2
+    assert d['insight']['coverage']['complete_events'] == 1
+    assert d['insight']['coverage']['not_calculated_events'] == 1
+    assert d['historical_peers'][0]['outcomes'][0]['return_d5'] == .1
+    assert d['insight']['history_confidence'] == 'LIMITED'
+
+
+def test_completed_official_fomc_is_history_not_future_radar(tmp_path):
+    past = _event('fed-past', date(2025, 4, 20), source_name='FED_FOMC')
+    past.event_type = 'FOMC_DECISION'
+    export_site_data([past], [], _securities([past]), {}, None, {}, {}, output_dir=tmp_path, now=datetime(2026, 11, 3))
+    assert json.loads((tmp_path/'events.json').read_text('utf-8')) == []
+    assert json.loads((tmp_path/'historical_events.json').read_text('utf-8'))[0]['event_id'] == 'fed-past'

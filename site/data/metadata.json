@@ -1,11 +1,14 @@
 {
-  "generated_at": "2026-11-04T01:07:12.405875",
+  "generated_at": "2026-11-04T23:32:44.641399+09:00",
   "total_events": 128,
-  "kr_events": 116,
-  "us_events": 12,
+  "kr_events": 117,
+  "us_events": 11,
   "historical_seed_events": 11,
+  "official_historical_events": 47,
+  "events_with_d5": 18,
+  "events_with_market_data": 75,
   "news_candidates": 883,
-  "news_visible": 102,
+  "news_visible": 103,
   "version": "1.0.0",
   "collector_status": {
     "HISTORICAL_SEED": "SUCCESS",

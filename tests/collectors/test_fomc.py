@@ -57,3 +57,13 @@ def test_fomc_skips_decisions_before_since():
     assert date(2026, 10, 28) not in dates
     assert date(2026, 12, 9) in dates
     assert date(2027, 1, 27) in dates
+def test_cross_month_decision_date_uses_final_month():
+    from event_radar.collectors.fomc import _decision_date
+    from datetime import date
+    assert _decision_date(2024, 'Apr/May', '30-1') == date(2024, 5, 1)
+    assert _decision_date(2023, 'Jan/Feb', '31-1') == date(2023, 2, 1)
+
+
+def test_notation_vote_is_not_a_policy_decision():
+    from event_radar.collectors.fomc import _decision_date
+    assert _decision_date(2025, 'August', '22 (notation vote)') is None

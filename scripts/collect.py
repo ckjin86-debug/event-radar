@@ -3,6 +3,7 @@
 import argparse
 import os
 import sys
+from datetime import date
 from pathlib import Path
 
 # Add src to pythonpath
@@ -79,7 +80,7 @@ def build_collectors(root: Path, fast_refresh: bool = False):
         _news_collector(),
         FdaCollector(config_path=root / "config" / "site_registry.yaml"),
         KindIpoCollector(),
-        FomcCollector(),
+        FomcCollector(history_start=date(2021, 1, 1)),
         EntertainmentCollector(config_path=root / "config" / "site_registry.yaml"),
         GamesCollector(config_path=root / "config" / "site_registry.yaml"),
         IndexChangesCollector(config_path=root / "config" / "site_registry.yaml"),
@@ -114,6 +115,8 @@ def main():
         data_dir=root / "data",
         site_dir=root / "site",
         config_dir=root / "config",
+        refresh_market_prices=not args.skip_price_fetch,
+        refresh_public_registry=not args.skip_price_fetch,
     )
 
     collectors = (

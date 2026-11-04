@@ -12,11 +12,13 @@ from typing import Mapping, Optional
 import xml.etree.ElementTree as ET
 
 import requests
+from bs4 import BeautifulSoup
 
 from event_radar.models import Event, EventSecurity
 
 
 DART_CORP_CODE_URL = "https://opendart.fss.or.kr/api/corpCode.xml"
+KIND_COMPANY_LIST_URL = 'https://kind.krx.co.kr/corpgeneral/corpList.do?method=download&searchType=13'
 MARKET_PROXY_TICKERS = {"^KS11", "^KQ11", "^GSPC", "XBI"}
 KOREAN_PARTICLES = (
     "으로", "에서", "까지", "부터", "에게", "보다", "이랑", "라고", "라며",
@@ -87,23 +89,35 @@ def parse_dart_corp_code_zip(payload: bytes) -> dict[str, str]:
     return mapping
 
 
+def parse_kind_company_table(html_text: str) -> dict[str, str]:
+    rows = {}
+    for tr in BeautifulSoup(html_text, 'html.parser').select('tr'):
+        cells = tr.find_all('td')
+        if len(cells) < 3:
+            continue
+        name, ticker = cells[0].get_text(strip=True), cells[2].get_text(strip=True).upper()
+        if name and re.fullmatch(r'\d[0-9A-Z]{5}', ticker):
+            rows[name] = ticker
+    return rows
+
+
 class ListedCompanyRegistry:
     """Small in-memory name registry backed by OpenDART's listed-company map."""
 
     def __init__(self, mapping: Mapping[str, str] | None = None) -> None:
         cleaned: dict[str, str] = {}
         for company, ticker in (mapping or {}).items():
-            alias = _safe_alias(company)
+            alias = _clean_company_name(company)
             code = (ticker or "").strip().upper()
-            if alias and re.fullmatch(r"\d{6}", code):
+            if len(re.sub(r'[^0-9A-Za-z가-힣]', '', alias)) >= 2 and re.fullmatch(r"\d[0-9A-Z]{5}", code):
                 cleaned[alias] = code
         self._mapping = cleaned
         self._aliases = sorted(
-            cleaned,
+            [name for name in cleaned if _safe_alias(name)],
             key=lambda name: len(re.sub(r"\s+", "", name)),
             reverse=True,
         )
-        self._alias_lookup = {alias.casefold(): alias for alias in self._aliases}
+        self._alias_lookup = {alias.casefold(): alias for alias in cleaned}
         self._mention_trie: dict[str, dict] = {}
         for alias in self._aliases:
             node = self._mention_trie
@@ -122,12 +136,24 @@ class ListedCompanyRegistry:
         cache_path: Path | str | None = None,
         timeout: int = 15,
         session: Optional[requests.Session] = None,
+        refresh_public: bool = False,
     ) -> "ListedCompanyRegistry":
         """Load listed Korean companies from cache/OpenDART, failing closed to an empty registry."""
         key = api_key or os.getenv("DART_API_KEY", "")
         path = Path(cache_path) if cache_path else None
 
         cached = cls._load_cache(path) if path else {}
+        if refresh_public:
+            try:
+                response = (session or requests.Session()).get(KIND_COMPANY_LIST_URL, timeout=timeout)
+                response.encoding = response.apparent_encoding
+                mapping = parse_kind_company_table(response.text) if response.status_code == 200 else {}
+                if mapping:
+                    cached.update(mapping)
+                    if path:
+                        cls._save_cache(path, cached)
+            except Exception:
+                pass
         if not key:
             return cls(cached)
 
@@ -142,9 +168,10 @@ class ListedCompanyRegistry:
                 raise ConnectionError(f"OpenDART corpCode HTTP {response.status_code}")
             mapping = parse_dart_corp_code_zip(response.content)
             if mapping:
+                cached.update(mapping)
                 if path:
-                    cls._save_cache(path, mapping)
-                return cls(mapping)
+                    cls._save_cache(path, cached)
+                return cls(cached)
         except Exception:
             pass
         return cls(cached)
@@ -181,11 +208,14 @@ class ListedCompanyRegistry:
         return bool(self._mapping)
 
     def ticker_for_company(self, company: str) -> str:
-        alias = _safe_alias(company)
+        alias = _clean_company_name(company)
         if not alias:
             return ""
         canonical = self._alias_lookup.get(alias.casefold())
         return self._mapping.get(canonical, "") if canonical else ""
+
+    def company_for_ticker(self, ticker: str) -> str:
+        return next((name for name, code in self._mapping.items() if code == ticker), "")
 
     def mentioned_companies(self, text: str) -> list[tuple[str, str]]:
         """Return exact company-name mentions without scanning every listed alias."""
@@ -226,6 +256,13 @@ class ListedCompanyRegistry:
             part for part in (event.primary_company, event.event_name, event.evidence_text) if part
         )
         mentions = self.mentioned_companies(text)
+        primary_code = self.ticker_for_company(event.primary_company)
+        if primary_code and not any(code == primary_code for _, code in mentions):
+            mentions.insert(0, (event.primary_company, primary_code))
+        headline_mentions = self.mentioned_companies(event.event_name)
+        headline_tickers = {headline_mentions[0][1]} if len(headline_mentions) == 1 else set()
+        if primary_code:
+            headline_tickers.add(primary_code)
         if event.event_type == "IPO_LISTING":
             # KIND includes brokers/underwriters in the listing row. Their name
             # alone is not proof that they are the company being listed.
@@ -235,14 +272,15 @@ class ListedCompanyRegistry:
             EventSecurity(
                 event_id=event.event_id,
                 ticker=ticker,
-                relation_grade="A",
-                relation_score=100,
-                relation_type="DIRECT_MENTION",
+                relation_grade="A" if ticker in headline_tickers or event.event_type == "IPO_LISTING" else "THEME",
+                relation_score=100 if ticker in headline_tickers or event.event_type == "IPO_LISTING" else 35,
+                relation_type="DIRECT_MENTION" if ticker in headline_tickers or event.event_type == "IPO_LISTING" else "CONTEXT_MENTION",
                 evidence_text=f"이벤트 원문에 상장사명 명시: {company}",
                 evidence_source=event.source_name,
                 source_url=event.source_url,
                 relation_known_date=event.announced_at.date(),
                 from_entity=company,
+                company_name=company,
             )
             for company, ticker in mentions
         ]

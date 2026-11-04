@@ -61,18 +61,22 @@ function renderRelationCard(row) {
   const sourceLink = row.source_url
     ? `<a href="${escapeHtml(row.source_url)}" target="_blank" rel="noopener noreferrer" class="row-link relation-source-link">근거 원문 ↗</a>`
     : "";
+  const roleNames = {DIRECT:'직접 당사자',DIRECT_MENTION:'원문 당사자',CONTEXT_MENTION:'본문 언급 · 경제관계 미확인',
+    SUPPLY_CONTRACT:'공급·납품 계약 상대방',OWNERSHIP_LINK:'지분·계열 관계',INVESTMENT_LINK:'투자·출자 관계',
+    OFFICIAL_CONSORTIUM:'공식 프로젝트 참여사',IPO_MAJOR_SHAREHOLDER:'IPO 최대주주',IPO_INVESTOR:'IPO 투자사',MARKET_PROXY:'시장 반응 참고'};
 
   return `
     <article class="relation-item">
       <div class="relation-item-top">
         <div class="relation-ticker-wrap">
           <code class="relation-ticker">${escapeHtml(row.ticker || "미매핑")}</code>
+          <strong>${escapeHtml(row.company_name || '')}</strong>
           <span class="badge ${relationUiBadgeClass(row.relation_grade)}">${escapeHtml(row.relation_grade || "UNMAPPED")}</span>
         </div>
         <span class="relation-state ${state.css}">${escapeHtml(state.label)}</span>
       </div>
       <div class="relation-type-line">
-        <strong>${escapeHtml(row.relation_type || "UNMAPPED")}</strong>
+        <strong>${escapeHtml(roleNames[row.relation_type] || row.relation_type || "미매핑")}</strong>
         <span>${Number(row.relation_score || 0)}점</span>
       </div>
       <p class="relation-state-description">${escapeHtml(state.description)}</p>
@@ -82,6 +86,7 @@ function renderRelationCard(row) {
         <span><strong>근거</strong> ${escapeHtml(sourceName)}</span>
       </div>
       <p class="relation-evidence">${escapeHtml(row.evidence_text || "관계 근거가 아직 없습니다.")}</p>
+      <p class="relation-state-description">수혜·악재 방향은 연결 사실만으로 확정하지 않습니다.</p>
       ${sourceLink}
     </article>
   `;

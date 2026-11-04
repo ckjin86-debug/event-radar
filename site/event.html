@@ -19,6 +19,7 @@
         </a>
       </div>
     </header>
+    <section id="decisionInsight" class="card decision-insight" aria-label="이벤트 판단 근거"></section>
 
     <div class="detail-grid">
       <div class="card">
@@ -27,7 +28,7 @@
       </div>
 
       <div class="card">
-        <h2>⭐ Event Score 세부 내역</h2>
+        <h2>⭐ 관찰 우선순위 근거</h2>
         <div id="scoreBreakdown">로딩 중...</div>
       </div>
     </div>
@@ -108,12 +109,12 @@
       <div class="chart-container">
         <canvas id="curveChartCanvas"></canvas>
       </div>
-      <div class="chart-note">
-        파란선: 절대수익률 · 초록선: 벤치마크 대비 초과수익률 · 현재 이벤트보다 이전의 동일 국가·이벤트 유형·이벤트 패밀리·관계등급만 사용
+      <div id="curveNote" class="chart-note">
+        파란선: D0 대비 절대수익률 · 초록선: 벤치마크 대비 초과수익률 · 현재 이벤트보다 이전의 동일 국가·이벤트 유형·이벤트 패밀리·관계등급만 사용 · 사건별 동일 가중
       </div>
     </div>
 
-    <div class="card" style="margin-bottom: 24px;">
+    <div id="strategyCard" class="card" style="margin-bottom: 24px;">
       <h2>🎯 매매 구간 요약</h2>
       <div id="bestStrategy" class="best-strategy">계산 중...</div>
       <details class="strategy-details">
@@ -123,7 +124,7 @@
             <thead>
               <tr>
                 <th>전략명</th>
-                <th>종목 표본 (N)</th>
+                <th>사건 / 종목 표본</th>
                 <th>평균 수익률</th>
                 <th>평균 초과수익률</th>
                 <th>승률</th>
@@ -162,6 +163,7 @@
 
   <script src="js/charts.js"></script>
   <script src="js/event-detail.js"></script>
+  <script src="js/insight-ui.js"></script>
   <script src="js/relation-ui.js"></script>
 </body>
 </html>

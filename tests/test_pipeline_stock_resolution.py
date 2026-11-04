@@ -117,3 +117,17 @@ def test_legacy_ipo_index_is_not_listed_as_the_ipo_stock():
     event = _event(event_type='IPO_LISTING', ticker='^KQ11', source_name='KIND_IPO')
     rows = resolve_event_stock_rows(event, [], [], ListedCompanyRegistry({}), FakeIpoEnricher(), datetime(2026, 11, 3))
     assert all(row.ticker != '^KQ11' for row in rows)
+
+
+def test_future_lookup_can_use_current_verified_link_but_past_lookup_cannot():
+    from event_radar.models import Relation
+    relation = Relation(relation_id='verified', from_entity='272210', to_ticker='012450', relation_type='OWNERSHIP_LINK',
+        relation_grade='B', relation_score=82, relation_known_date=date(2026,11,4), relation_start_date=date(2026,11,4),
+        evidence_source='공식 지배구조', source_url='https://example.com/ir')
+    registry = ListedCompanyRegistry({'한화시스템':'272210'})
+    future = _event()
+    rows = resolve_event_stock_rows(future, [relation], [], registry, FakeIpoEnricher(), datetime(2026,11,4))
+    assert any(s.ticker == '012450' and s.relation_grade == 'B' for s in rows)
+    past = future.model_copy(update={'event_date':date(2026,11,3)})
+    rows = resolve_event_stock_rows(past, [relation], [], registry, FakeIpoEnricher(), datetime(2026,11,4))
+    assert not any(s.ticker == '012450' for s in rows)

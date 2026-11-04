@@ -19,12 +19,15 @@ from event_radar.models import RawEvent
 FOMC_CALENDAR_URL = "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
 
 MONTHS = {name.lower(): number for number, name in enumerate(calendar.month_name) if name}
+MONTHS.update({name.lower(): number for number, name in enumerate(calendar.month_abbr) if name})
 _MONTH_PATTERN = "|".join(calendar.month_name[1:])
 _DATE_PATTERN = re.compile(r"(?<!\d)(\d{1,2})(?:\s*[-–—]\s*(\d{1,2}))?\s*\*?(?!\d)")
 
 
 def _decision_date(year: int, month_name: str, date_text: str) -> Optional[date]:
-    month = MONTHS.get(month_name.strip().lower())
+    if "notation" in date_text.lower():
+        return None
+    month = MONTHS.get(month_name.strip().split("/")[-1].strip().lower())
     if month is None:
         return None
     match = _DATE_PATTERN.search(date_text)
@@ -51,9 +54,10 @@ def _find_year_for_node(node: Tag) -> Optional[int]:
 class FomcCollector:
     source_name = "FED_FOMC"
 
-    def __init__(self, mock_html: Optional[str] = None, timeout: int = 10) -> None:
+    def __init__(self, mock_html: Optional[str] = None, timeout: int = 10, history_start: date | None = None) -> None:
         self.mock_html = mock_html
         self.timeout = timeout
+        self.history_start = history_start
         self.session = requests.Session()
         self.session.headers.update({
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) EventRadar/1.0"
@@ -150,6 +154,8 @@ class FomcCollector:
                 html_text = response.text
 
             soup = BeautifulSoup(html_text, "html.parser")
+            if self.history_start:
+                since = min(since, datetime.combine(self.history_start, datetime.min.time()))
             events = self._parse_structured(soup, since)
             if not events:
                 events = self._parse_text_fallback(soup, since)

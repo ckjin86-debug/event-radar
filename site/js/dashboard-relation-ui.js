@@ -10,7 +10,7 @@ function mappingStatusText(event) {
   if ((grade === "A" || grade === "B") && event.relation_ingest_mode === "MANUAL") {
     return "검증 관계 · 영구등록";
   }
-  if (grade === "A") return "직접 당사자";
+  if (grade === "A") return event.relation_type === 'DIRECT_MENTION' ? '원문 명시' : "직접 당사자";
   if (grade === "B") return "자동 매핑";
   if (grade === "THEME" || grade === "C") return "테마 후보";
   if (grade === "PROXY") return "프록시";
