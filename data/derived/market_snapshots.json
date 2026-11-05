@@ -16,11 +16,11 @@
     "source": "Yahoo Finance"
   },
   "000670": {
-    "as_of": "2026-11-03",
-    "price": 30500.0,
-    "return_20d": -0.247842,
-    "volume_ratio_20d": 0.825,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 30600.0,
+    "return_20d": -0.25908,
+    "volume_ratio_20d": 1.18,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "000720": {
@@ -32,35 +32,43 @@
     "source": "Yahoo Finance"
   },
   "000880": {
-    "as_of": "2026-11-03",
-    "price": 93500.0,
-    "return_20d": -0.274631,
-    "volume_ratio_20d": 0.955,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 95200.0,
+    "return_20d": -0.247431,
+    "volume_ratio_20d": 0.998,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "001120": {
-    "as_of": "2026-11-03",
-    "price": 39450.0,
-    "return_20d": -0.105442,
-    "volume_ratio_20d": 1.577,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 41100.0,
+    "return_20d": -0.050808,
+    "volume_ratio_20d": 1.098,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "0011T0": {
-    "as_of": "2026-11-03",
-    "price": 3945.0,
-    "return_20d": -0.269444,
-    "volume_ratio_20d": 0.733,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 4030.0,
+    "return_20d": -0.265938,
+    "volume_ratio_20d": 0.915,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "001440": {
-    "as_of": "2026-11-03",
-    "price": 19150.0,
-    "return_20d": -0.392063,
-    "volume_ratio_20d": 0.873,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 20050.0,
+    "return_20d": -0.368504,
+    "volume_ratio_20d": 1.228,
+    "sessions": 68,
+    "source": "Yahoo Finance"
+  },
+  "002990": {
+    "as_of": "2026-11-04",
+    "price": 8670.0,
+    "return_20d": -0.266497,
+    "volume_ratio_20d": 0.274,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "003000": {
@@ -68,6 +76,14 @@
     "price": 3840.0,
     "return_20d": -0.074699,
     "volume_ratio_20d": 0.78,
+    "sessions": 68,
+    "source": "Yahoo Finance"
+  },
+  "003230": {
+    "as_of": "2026-11-04",
+    "price": 1189000.0,
+    "return_20d": -0.017355,
+    "volume_ratio_20d": 0.817,
     "sessions": 68,
     "source": "Yahoo Finance"
   },
@@ -88,19 +104,19 @@
     "source": "Yahoo Finance"
   },
   "003670": {
-    "as_of": "2026-11-03",
-    "price": 163700.0,
-    "return_20d": -0.124131,
-    "volume_ratio_20d": 1.008,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 181400.0,
+    "return_20d": -0.112958,
+    "volume_ratio_20d": 1.831,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "004020": {
-    "as_of": "2026-11-03",
-    "price": 28500.0,
-    "return_20d": -0.05,
-    "volume_ratio_20d": 0.992,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 29000.0,
+    "return_20d": -0.03172,
+    "volume_ratio_20d": 1.042,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "004170": {
@@ -151,12 +167,20 @@
     "sessions": 68,
     "source": "Yahoo Finance"
   },
+  "009290": {
+    "as_of": "2026-11-04",
+    "price": 6320.0,
+    "return_20d": -0.070588,
+    "volume_ratio_20d": 0.786,
+    "sessions": 68,
+    "source": "Yahoo Finance"
+  },
   "010060": {
-    "as_of": "2026-11-03",
-    "price": 181200.0,
-    "return_20d": -0.233827,
-    "volume_ratio_20d": 1.459,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 200000.0,
+    "return_20d": -0.182004,
+    "volume_ratio_20d": 4.803,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "010130": {
@@ -168,11 +192,11 @@
     "source": "Yahoo Finance"
   },
   "011000": {
-    "as_of": "2026-11-03",
+    "as_of": "2026-11-04",
     "price": 2670.0,
     "return_20d": 0.0,
     "volume_ratio_20d": null,
-    "sessions": 67,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "011210": {
@@ -184,19 +208,19 @@
     "source": "Yahoo Finance"
   },
   "011300": {
-    "as_of": "2026-11-03",
+    "as_of": "2026-11-04",
     "price": 1890.0,
-    "return_20d": -0.339161,
-    "volume_ratio_20d": 0.329,
-    "sessions": 67,
+    "return_20d": -0.327402,
+    "volume_ratio_20d": 0.267,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "011810": {
-    "as_of": "2026-11-03",
+    "as_of": "2026-11-04",
     "price": 410465.125,
-    "return_20d": 115.279072,
+    "return_20d": 0.0,
     "volume_ratio_20d": null,
-    "sessions": 67,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "012330": {
@@ -216,20 +240,20 @@
     "source": "Yahoo Finance"
   },
   "012630": {
-    "as_of": "2026-11-03",
-    "price": 21400.0,
-    "return_20d": -0.089362,
-    "volume_ratio_20d": 0.508,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 21600.0,
+    "return_20d": -0.064935,
+    "volume_ratio_20d": 1.433,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "0147B0": null,
   "014950": {
-    "as_of": "2026-11-03",
-    "price": 6760.0,
-    "return_20d": -0.209357,
-    "volume_ratio_20d": 0.178,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 6670.0,
+    "return_20d": -0.205952,
+    "volume_ratio_20d": 0.198,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "016360": {
@@ -240,52 +264,76 @@
     "sessions": 68,
     "source": "Yahoo Finance"
   },
+  "017670": {
+    "as_of": "2026-11-04",
+    "price": 77400.0,
+    "return_20d": -0.124434,
+    "volume_ratio_20d": 1.241,
+    "sessions": 68,
+    "source": "Yahoo Finance"
+  },
   "017960": {
-    "as_of": "2026-11-03",
-    "price": 15930.0,
-    "return_20d": -0.224818,
-    "volume_ratio_20d": 0.952,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 15950.0,
+    "return_20d": -0.221951,
+    "volume_ratio_20d": 0.921,
+    "sessions": 68,
+    "source": "Yahoo Finance"
+  },
+  "018250": {
+    "as_of": "2026-11-04",
+    "price": 10410.0,
+    "return_20d": -0.068873,
+    "volume_ratio_20d": 0.861,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "020560": {
-    "as_of": "2026-11-03",
-    "price": 7750.0,
-    "return_20d": -0.051408,
-    "volume_ratio_20d": 2.669,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 7910.0,
+    "return_20d": -0.043531,
+    "volume_ratio_20d": 0.696,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "024850": {
-    "as_of": "2026-11-03",
-    "price": 14700.0,
-    "return_20d": -0.097606,
-    "volume_ratio_20d": 0.611,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 16490.0,
+    "return_20d": -0.059327,
+    "volume_ratio_20d": 2.512,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "027740": {
-    "as_of": "2026-11-03",
-    "price": 1123.0,
-    "return_20d": -0.028547,
-    "volume_ratio_20d": 0.445,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 1135.0,
+    "return_20d": 0.0,
+    "volume_ratio_20d": 0.666,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "028300": {
-    "as_of": "2026-11-03",
-    "price": 40700.0,
-    "return_20d": 0.00618,
-    "volume_ratio_20d": 0.423,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 33500.0,
+    "return_20d": -0.293249,
+    "volume_ratio_20d": 2.812,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "032640": {
-    "as_of": "2026-11-03",
-    "price": 14480.0,
-    "return_20d": -0.004811,
-    "volume_ratio_20d": 0.654,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 15510.0,
+    "return_20d": 0.065247,
+    "volume_ratio_20d": 4.189,
+    "sessions": 68,
+    "source": "Yahoo Finance"
+  },
+  "033790": {
+    "as_of": "2026-11-04",
+    "price": 8350.0,
+    "return_20d": -0.190891,
+    "volume_ratio_20d": 1.353,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "034020": {
@@ -293,6 +341,14 @@
     "price": 52700.0,
     "return_20d": -0.353374,
     "volume_ratio_20d": 1.172,
+    "sessions": 68,
+    "source": "Yahoo Finance"
+  },
+  "035720": {
+    "as_of": "2026-11-04",
+    "price": 29100.0,
+    "return_20d": -0.131343,
+    "volume_ratio_20d": 1.174,
     "sessions": 68,
     "source": "Yahoo Finance"
   },
@@ -306,27 +362,27 @@
   },
   "037620": null,
   "038540": {
-    "as_of": "2026-11-03",
-    "price": 1924.0,
-    "return_20d": 0.017989,
-    "volume_ratio_20d": 0.77,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 1906.0,
+    "return_20d": -0.047,
+    "volume_ratio_20d": 0.852,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "039130": {
-    "as_of": "2026-11-03",
-    "price": 28600.0,
-    "return_20d": -0.043478,
-    "volume_ratio_20d": 1.252,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 28100.0,
+    "return_20d": -0.066445,
+    "volume_ratio_20d": 1.05,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "039340": {
-    "as_of": "2026-11-03",
-    "price": 4570.0,
-    "return_20d": -0.051867,
-    "volume_ratio_20d": 0.461,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 4600.0,
+    "return_20d": -0.048604,
+    "volume_ratio_20d": 1.354,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "040300": {
@@ -338,11 +394,11 @@
     "source": "Yahoo Finance"
   },
   "042660": {
-    "as_of": "2026-11-03",
-    "price": 53800.0,
-    "return_20d": -0.317259,
-    "volume_ratio_20d": 0.58,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 52800.0,
+    "return_20d": -0.316062,
+    "volume_ratio_20d": 0.592,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "047040": {
@@ -354,11 +410,11 @@
     "source": "Yahoo Finance"
   },
   "047050": {
-    "as_of": "2026-11-03",
-    "price": 50000.0,
-    "return_20d": -0.116608,
-    "volume_ratio_20d": 0.804,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 52200.0,
+    "return_20d": -0.089005,
+    "volume_ratio_20d": 0.906,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "051600": {
@@ -385,13 +441,21 @@
     "sessions": 68,
     "source": "Yahoo Finance"
   },
+  "053580": {
+    "as_of": "2026-11-04",
+    "price": 6370.0,
+    "return_20d": -0.105337,
+    "volume_ratio_20d": 0.718,
+    "sessions": 68,
+    "source": "Yahoo Finance"
+  },
   "057050": null,
   "060370": {
-    "as_of": "2026-11-03",
-    "price": 25100.0,
-    "return_20d": -0.259587,
-    "volume_ratio_20d": 0.285,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 25850.0,
+    "return_20d": -0.260372,
+    "volume_ratio_20d": 0.446,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "062580": null,
@@ -404,19 +468,19 @@
     "source": "Yahoo Finance"
   },
   "068270": {
-    "as_of": "2026-11-03",
-    "price": 189900.0,
-    "return_20d": 0.039978,
-    "volume_ratio_20d": 0.611,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 200000.0,
+    "return_20d": 0.096491,
+    "volume_ratio_20d": 2.151,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "069620": {
-    "as_of": "2026-11-03",
-    "price": 102200.0,
-    "return_20d": -0.062385,
-    "volume_ratio_20d": 0.932,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 102900.0,
+    "return_20d": -0.058554,
+    "volume_ratio_20d": 0.825,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "079940": {
@@ -452,11 +516,19 @@
     "source": "Yahoo Finance"
   },
   "102950": {
-    "as_of": "2026-11-03",
-    "price": 1695.0,
-    "return_20d": -0.04507,
-    "volume_ratio_20d": 0.029,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 1675.0,
+    "return_20d": -0.103319,
+    "volume_ratio_20d": 1.295,
+    "sessions": 68,
+    "source": "Yahoo Finance"
+  },
+  "115180": {
+    "as_of": "2026-11-04",
+    "price": 16240.0,
+    "return_20d": -0.3504,
+    "volume_ratio_20d": 0.912,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "128940": {
@@ -475,12 +547,20 @@
     "sessions": 68,
     "source": "Yahoo Finance"
   },
+  "144510": {
+    "as_of": "2026-11-04",
+    "price": 10010.0,
+    "return_20d": -0.325926,
+    "volume_ratio_20d": 1.03,
+    "sessions": 68,
+    "source": "Yahoo Finance"
+  },
   "171090": {
-    "as_of": "2026-11-03",
-    "price": 70700.0,
-    "return_20d": -0.070959,
-    "volume_ratio_20d": 0.961,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 69900.0,
+    "return_20d": -0.071713,
+    "volume_ratio_20d": 1.362,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "180640": {
@@ -492,11 +572,11 @@
     "source": "Yahoo Finance"
   },
   "183490": {
-    "as_of": "2026-11-03",
+    "as_of": "2026-11-04",
     "price": 990.0,
     "return_20d": 0.0,
     "volume_ratio_20d": null,
-    "sessions": 67,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "195940": {
@@ -508,19 +588,27 @@
     "source": "Yahoo Finance"
   },
   "196170": {
-    "as_of": "2026-11-03",
-    "price": 213500.0,
-    "return_20d": -0.177264,
-    "volume_ratio_20d": 0.967,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 204000.0,
+    "return_20d": -0.215385,
+    "volume_ratio_20d": 2.493,
+    "sessions": 68,
+    "source": "Yahoo Finance"
+  },
+  "200130": {
+    "as_of": "2026-11-04",
+    "price": 7370.0,
+    "return_20d": -0.086741,
+    "volume_ratio_20d": 0.968,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "205500": {
-    "as_of": "2026-11-03",
-    "price": 1690.0,
-    "return_20d": -0.084011,
-    "volume_ratio_20d": 0.901,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 1628.0,
+    "return_20d": -0.091518,
+    "volume_ratio_20d": 1.288,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "207940": {
@@ -532,19 +620,27 @@
     "source": "Yahoo Finance"
   },
   "226400": {
-    "as_of": "2026-11-03",
+    "as_of": "2026-11-04",
     "price": 4050.0,
-    "return_20d": -0.027611,
-    "volume_ratio_20d": 0.467,
-    "sessions": 67,
+    "return_20d": -0.035714,
+    "volume_ratio_20d": 3.158,
+    "sessions": 68,
+    "source": "Yahoo Finance"
+  },
+  "247540": {
+    "as_of": "2026-11-04",
+    "price": 97200.0,
+    "return_20d": -0.245927,
+    "volume_ratio_20d": 1.627,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "249420": {
-    "as_of": "2026-11-03",
-    "price": 12190.0,
-    "return_20d": -0.15989,
-    "volume_ratio_20d": 0.766,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 12350.0,
+    "return_20d": -0.161575,
+    "volume_ratio_20d": 1.118,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "259960": {
@@ -556,19 +652,19 @@
     "source": "Yahoo Finance"
   },
   "267250": {
-    "as_of": "2026-11-03",
-    "price": 140700.0,
-    "return_20d": -0.3,
-    "volume_ratio_20d": 0.647,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 137600.0,
+    "return_20d": -0.295443,
+    "volume_ratio_20d": 0.769,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "267260": {
-    "as_of": "2026-11-03",
-    "price": 439000.0,
-    "return_20d": -0.352507,
-    "volume_ratio_20d": 0.959,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 438500.0,
+    "return_20d": -0.35798,
+    "volume_ratio_20d": 1.388,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "267270": {
@@ -596,35 +692,35 @@
     "source": "Yahoo Finance"
   },
   "290690": {
-    "as_of": "2026-11-03",
-    "price": 2785.0,
-    "return_20d": -0.08838,
-    "volume_ratio_20d": 0.679,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 3620.0,
+    "return_20d": 0.181077,
+    "volume_ratio_20d": 6.425,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "293490": {
-    "as_of": "2026-11-03",
-    "price": 11990.0,
-    "return_20d": 0.182446,
-    "volume_ratio_20d": 0.892,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 11950.0,
+    "return_20d": 0.193806,
+    "volume_ratio_20d": 1.138,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "298040": {
-    "as_of": "2026-11-03",
-    "price": 1971000.0,
-    "return_20d": -0.29228,
-    "volume_ratio_20d": 0.791,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 2049000.0,
+    "return_20d": -0.270039,
+    "volume_ratio_20d": 1.332,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "298690": {
-    "as_of": "2026-11-03",
-    "price": 1457.0,
-    "return_20d": -0.02996,
-    "volume_ratio_20d": 17.382,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 1461.0,
+    "return_20d": -0.024048,
+    "volume_ratio_20d": 1.236,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "307950": {
@@ -636,11 +732,11 @@
     "source": "Yahoo Finance"
   },
   "320000": {
-    "as_of": "2026-11-03",
-    "price": 7200.0,
-    "return_20d": -0.298246,
-    "volume_ratio_20d": 0.373,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 7640.0,
+    "return_20d": -0.264678,
+    "volume_ratio_20d": 1.325,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "347850": {
@@ -652,11 +748,19 @@
     "source": "Yahoo Finance"
   },
   "368600": {
-    "as_of": "2026-11-03",
-    "price": 4090.0,
-    "return_20d": -0.144351,
-    "volume_ratio_20d": 0.491,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 4025.0,
+    "return_20d": -0.15795,
+    "volume_ratio_20d": 0.283,
+    "sessions": 68,
+    "source": "Yahoo Finance"
+  },
+  "372320": {
+    "as_of": "2026-11-04",
+    "price": 22350.0,
+    "return_20d": -0.015419,
+    "volume_ratio_20d": 0.691,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "373220": {
@@ -668,11 +772,11 @@
     "source": "Yahoo Finance"
   },
   "375500": {
-    "as_of": "2026-11-03",
+    "as_of": "2026-11-04",
     "price": 53100.0,
-    "return_20d": -0.292,
-    "volume_ratio_20d": 0.668,
-    "sessions": 67,
+    "return_20d": -0.282432,
+    "volume_ratio_20d": 1.413,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "389470": {
@@ -684,11 +788,11 @@
     "source": "Yahoo Finance"
   },
   "417200": {
-    "as_of": "2026-11-03",
-    "price": 10420.0,
-    "return_20d": -0.311302,
-    "volume_ratio_20d": 0.283,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 10910.0,
+    "return_20d": -0.308619,
+    "volume_ratio_20d": 0.451,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "420610": null,
@@ -702,37 +806,45 @@
     "source": "Yahoo Finance"
   },
   "456040": {
-    "as_of": "2026-11-03",
-    "price": 55100.0,
-    "return_20d": -0.255405,
-    "volume_ratio_20d": 1.929,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 57500.0,
+    "return_20d": -0.221922,
+    "volume_ratio_20d": 2.68,
+    "sessions": 68,
+    "source": "Yahoo Finance"
+  },
+  "456570": {
+    "as_of": "2026-11-04",
+    "price": 11000.0,
+    "return_20d": -0.153846,
+    "volume_ratio_20d": 0.073,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "489790": {
-    "as_of": "2026-11-03",
-    "price": 47900.0,
-    "return_20d": -0.060784,
-    "volume_ratio_20d": 1.028,
-    "sessions": 67,
+    "as_of": "2026-11-04",
+    "price": 47400.0,
+    "return_20d": -0.076023,
+    "volume_ratio_20d": 1.026,
+    "sessions": 68,
     "source": "Yahoo Finance"
   },
   "495910": null,
   "507547": null,
   "XBI": {
-    "as_of": "2026-11-03",
-    "price": 154.97,
-    "return_20d": 0.026972,
-    "volume_ratio_20d": 0.643,
-    "sessions": 71,
+    "as_of": "2026-11-04",
+    "price": 156.44,
+    "return_20d": 0.041337,
+    "volume_ratio_20d": 0.509,
+    "sessions": 72,
     "source": "Yahoo Finance"
   },
   "^GSPC": {
-    "as_of": "2026-11-03",
-    "price": 7568.9199,
-    "return_20d": -0.031975,
-    "volume_ratio_20d": 1.023,
-    "sessions": 71,
+    "as_of": "2026-11-04",
+    "price": 7703.79,
+    "return_20d": -0.012559,
+    "volume_ratio_20d": 0.332,
+    "sessions": 72,
     "source": "Yahoo Finance"
   }
 }
