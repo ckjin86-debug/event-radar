@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-06T10:25:28.804981+09:00",
-  "total_events": 273,
-  "kr_events": 262,
+  "generated_at": "2026-11-07T01:44:00+09:00",
+  "total_events": 276,
+  "kr_events": 265,
   "us_events": 11,
   "historical_seed_events": 11,
   "official_historical_events": 47,
@@ -20,6 +20,7 @@
     "FED_FOMC": "SUCCESS",
     "ENTER_KR": "SUCCESS",
     "GAMES_RELEASE": "SUCCESS",
-    "INDEX_KR": "SUCCESS"
+    "INDEX_KR": "SUCCESS",
+    "DART_5PCT": "SUCCESS"
   }
 }
