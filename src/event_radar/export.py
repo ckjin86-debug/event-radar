@@ -59,6 +59,15 @@ def _is_actual_convertible_listing(ev: Event) -> bool:
     return has_exercise and has_listing
 
 
+def _is_five_pct_event(ev: Event) -> bool:
+    """5% large-shareholding filings are disclosures, not scheduled events.
+
+    They are exported to five_pct.json (rendered by radar-tabs.js in their
+    own tab) and must never appear in the scheduled-events list.
+    """
+    return ev.event_type == "5PCT_OWNERSHIP" or ev.source_name == "DART_5PCT"
+
+
 def _is_visible_radar_event(ev: Event) -> bool:
     """Hide historical rows that no longer meet the radar's signal policy."""
     if ev.source_name == "DART" and ev.event_type == "RIGHTS_ISSUE":
@@ -280,8 +289,10 @@ def export_site_data(
     out_path.mkdir(parents=True, exist_ok=True)
 
     analysis_events = [ev for ev in events if _is_visible_radar_event(ev)]
+    five_pct_events = [ev for ev in analysis_events if _is_five_pct_event(ev)]
+    radar_events = [ev for ev in analysis_events if not _is_five_pct_event(ev)]
     historical_seed_events = [ev for ev in analysis_events if ev.source_name == "HISTORICAL_SEED"]
-    visible_events = _select_public_visible_events(analysis_events, event_securities, today)
+    visible_events = _select_public_visible_events(radar_events, event_securities, today)
     official_history = [ev for ev in analysis_events if ev.source_name == 'FED_FOMC' and ev.event_date < today]
     visible_events = [ev for ev in visible_events if ev not in official_history]
     if event_returns_df is not None and not event_returns_df.empty:
@@ -358,6 +369,125 @@ def export_site_data(
     events_list.sort(key=lambda x: (x["d_day"] < 0, abs(x["d_day"])))
     (out_path / "events.json").write_text(
         json.dumps(events_list, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+
+    # 5% filings live in their own file/tab: they are received disclosures,
+    # not scheduled events, so they never join events.json above.
+    five_pct_list = []
+    for ev in sorted(
+        five_pct_events,
+        key=lambda item: (item.event_date, item.event_id),
+        reverse=True,
+    )[:300]:
+        sec_list = event_securities.get(ev.event_id, [])
+        primary_rel = sec_list[0] if sec_list else None
+        if primary_rel is not None:
+            rel_grade = primary_rel.relation_grade
+            rel_score = primary_rel.relation_score
+            rel_type = primary_rel.relation_type
+            rel_ingest_mode = primary_rel.ingest_mode
+            related = _serialize_securities(sec_list)
+            for row in related:
+                row["name"] = row.get("company_name", "")
+        else:
+            # A filing's subject company is the direct party to the disclosure.
+            rel_grade = "A"
+            rel_score = 100
+            rel_type = "DIRECT"
+            rel_ingest_mode = ev.ingest_mode
+            related = [{
+                "ticker": ev.primary_ticker,
+                "name": ev.primary_company,
+                "company_name": ev.primary_company,
+                "relation_grade": rel_grade,
+                "relation_score": rel_score,
+                "relation_type": rel_type,
+                "evidence_text": ev.evidence_text,
+                "evidence_source": ev.source_name,
+                "source_url": ev.source_url,
+                "relation_known_date": ev.announced_at.date().isoformat(),
+                "ingest_mode": rel_ingest_mode,
+                "from_entity": ev.primary_company,
+            }]
+
+        score_result = event_scores.get(ev.event_id)
+        if score_result is not None:
+            five_event_score = getattr(score_result, "total_score", None)
+            if five_event_score is None and isinstance(score_result, dict):
+                five_event_score = score_result.get("total_score", score_result.get("score"))
+        else:
+            five_event_score = None
+        if five_event_score is None:
+            five_event_score = rel_score
+
+        summary = ev.evidence_text.strip() or ev.event_name
+
+        # Collector-computed S1~S7 analysis (five_pct_rules) wins over the
+        # generic event score: the alpha score IS the filing's score, and
+        # the tier/summary are derived from its breakdown reasons.
+        analysis = ev.five_pct_analysis or {}
+        alpha_score = analysis.get("alpha_score")
+        score_breakdown = analysis.get("score_breakdown") or []
+        if alpha_score is not None:
+            five_event_score = alpha_score
+            if alpha_score >= 5:
+                five_tier = "HIGH"
+            elif alpha_score >= 1:
+                five_tier = "POSITIVE"
+            elif alpha_score <= -2:
+                five_tier = "RISK"
+            else:
+                five_tier = "NEUTRAL"
+            scored_reasons = [
+                str(entry.get("reason", "")).strip()
+                for entry in score_breakdown
+                if isinstance(entry, dict) and entry.get("points")
+            ]
+            if scored_reasons:
+                summary = " · ".join(scored_reasons)
+        else:
+            five_tier = "WATCH"
+
+        five_pct_list.append({
+            "event_id": ev.event_id,
+            "d_day": (ev.event_date - today).days,
+            "country": ev.country,
+            "ticker": _display_ticker(ev, sec_list),
+            "primary_ticker": ev.primary_ticker,
+            "related_securities": related,
+            "company": ev.primary_company,
+            "event_type": "5PCT_OWNERSHIP",
+            "event_name": ev.event_name,
+            "event_date": ev.event_date.isoformat(),
+            "date_precision": ev.date_precision,
+            "window_start": (ev.window_start or ev.event_date).isoformat(),
+            "window_end": (ev.window_end or ev.event_date).isoformat(),
+            "relation_grade": rel_grade,
+            "relation_score": rel_score,
+            "relation_type": rel_type,
+            "relation_ingest_mode": rel_ingest_mode,
+            "event_score": five_event_score,
+            "alpha_score": alpha_score,
+            "score_breakdown": score_breakdown,
+            "investor_class": analysis.get("investor_class"),
+            "purpose_prev": analysis.get("purpose_prev"),
+            "purpose_current": analysis.get("purpose_current"),
+            "accumulation_count": analysis.get("accumulation_count"),
+            "freshness": analysis.get("freshness"),
+            "insight": {
+                "tier": five_tier,
+                "label": "지분공시",
+                "summary": summary,
+                "score": five_event_score,
+            },
+            "status": ev.status,
+            "source_name": "DART_5PCT",
+            "source_url": ev.source_url,
+        })
+
+    (out_path / "five_pct.json").write_text(
+        json.dumps(five_pct_list, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
 

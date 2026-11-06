@@ -85,6 +85,15 @@ def load_canonical_events(path: Path) -> list[Event]:
             f_seen = datetime.fromisoformat(row.get("first_seen_at", "").strip() or ann.isoformat())
             l_seen = datetime.fromisoformat(row.get("last_seen_at", "").strip() or datetime.now().isoformat())
             needs_rev = str(row.get("needs_review", "False")).strip().lower() in ("true", "1")
+            five_pct_analysis: dict = {}
+            analysis_raw = (row.get("five_pct_analysis") or "").strip()
+            if analysis_raw:
+                try:
+                    parsed_analysis = json.loads(analysis_raw)
+                    if isinstance(parsed_analysis, dict):
+                        five_pct_analysis = parsed_analysis
+                except (ValueError, TypeError):
+                    five_pct_analysis = {}
             event_date = date.fromisoformat(row["event_date"].strip()[:10])
             precision = row.get("date_precision", "").strip().upper() or "EXACT_DATE"
             window_start_raw = row.get("window_start", "").strip()
@@ -116,6 +125,7 @@ def load_canonical_events(path: Path) -> list[Event]:
                     first_seen_at=f_seen,
                     last_seen_at=l_seen,
                     needs_review=needs_rev,
+                    five_pct_analysis=five_pct_analysis,
                 )
             )
     return events
@@ -128,7 +138,7 @@ def save_canonical_events(events: list[Event], path: Path) -> None:
         "announced_at", "event_date", "date_precision", "window_start", "window_end",
         "event_time_context", "status", "source_kind", "source_name",
         "source_url", "source_event_uid", "evidence_text", "ingest_mode", "first_seen_at",
-        "last_seen_at", "needs_review",
+        "last_seen_at", "needs_review", "five_pct_analysis",
     ]
     with open(path, mode="w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
@@ -159,6 +169,11 @@ def save_canonical_events(events: list[Event], path: Path) -> None:
                 "first_seen_at": ev.first_seen_at.isoformat(),
                 "last_seen_at": ev.last_seen_at.isoformat(),
                 "needs_review": ev.needs_review,
+                "five_pct_analysis": (
+                    json.dumps(ev.five_pct_analysis, ensure_ascii=False)
+                    if ev.five_pct_analysis
+                    else ""
+                ),
             })
 
 

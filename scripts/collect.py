@@ -12,6 +12,7 @@ sys.path.insert(0, str(src_dir))
 
 from event_radar.pipeline import run_pipeline, PipelineConfig
 from event_radar.collectors.dart import DartCollector
+from event_radar.collectors.dart_five_pct import DartFivePctCollector
 from event_radar.collectors.sec import SecCollector
 from event_radar.collectors.news_future import DEFAULT_QUERIES, NewsFutureCollector
 from event_radar.collectors.fda import FdaCollector
@@ -76,6 +77,7 @@ def build_collectors(root: Path, fast_refresh: bool = False):
     return [
         HistoricalSeedCollector(config_path=root / "config" / "historical_events.csv"),
         DartCollector(),
+        DartFivePctCollector(),
         SecCollector(),
         _news_collector(),
         FdaCollector(config_path=root / "config" / "site_registry.yaml"),

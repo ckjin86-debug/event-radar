@@ -83,6 +83,11 @@ class Event(BaseModel):
     first_seen_at: datetime
     last_seen_at: datetime
     needs_review: bool = False
+    # Structured 5% ownership analysis (DART_5PCT only): S1~S7 alpha score
+    # breakdown produced by event_radar.five_pct_rules at collection time.
+    # Empty for every other event type; export.py renders it into
+    # five_pct.json without recomputing anything.
+    five_pct_analysis: dict[str, Any] = Field(default_factory=dict)
 
 
 class EventRevision(BaseModel):

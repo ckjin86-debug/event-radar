@@ -52,8 +52,20 @@ jobs:
             echo "No data changes to commit."
           else
             git commit -m "chore(data): auto-update event datasets and site json"
-            git pull --rebase origin main
-            git push origin HEAD:main
+            # A concurrent run may push first; retry rebase+push instead of
+            # failing the whole collection over a single push race.
+            for attempt in 1 2 3; do
+              if git pull --rebase origin main && git push origin HEAD:main; then
+                echo "Push succeeded on attempt ${attempt}."
+                break
+              fi
+              if [ "${attempt}" -eq 3 ]; then
+                echo "::error::Push failed after 3 attempts."
+                exit 1
+              fi
+              echo "Push attempt ${attempt} failed; retrying after rebase..."
+              sleep 5
+            done
           fi
 
       - name: Setup Pages
@@ -66,6 +78,11 @@ jobs:
 
   deploy-pages:
     needs: collect-and-update
+    # Serialize with deploy-pages.yml, which uses the same "pages" group, so
+    # the two workflows never deploy to GitHub Pages at the same time.
+    concurrency:
+      group: "pages"
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     environment:
       name: github-pages

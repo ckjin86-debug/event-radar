@@ -74,6 +74,7 @@ def normalize_event(raw: RawEvent, now: Optional[datetime] = None) -> Event:
         source_event_uid=str(raw.source_event_uid).strip() if raw.source_event_uid else None,
         evidence_text=raw.evidence_text.strip(),
         ingest_mode=raw.ingest_mode,
+        five_pct_analysis=dict(raw.raw_payload.get("five_pct_analysis") or {}),
         first_seen_at=now,
         last_seen_at=now,
         needs_review=False,
