@@ -26,6 +26,14 @@
     <section class="radar-intro"><span class="eyebrow">EVENT WATCHLIST</span><h2>다가오는 변화, 확인된 근거부터.</h2><p>일정·관련주·과거 반응을 함께 비교하세요. 점수 옆에서 어떤 근거가 있고 무엇이 부족한지 확인할 수 있습니다.</p></section>
     <section id="radarOverview" class="radar-overview" aria-label="레이더 데이터 현황"></section>
 
+    
+    <nav class="radar-tabs" style="display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 20px;border-bottom:2px solid #334155;padding-bottom:14px;">
+      <button class="tab-btn active" id="tabAll" onclick="switchRadarTab('all')" style="background:#38bdf8;color:#0f172a;border:none;padding:10px 18px;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;">🎯 전체 통합 레이더</button>
+      <button class="tab-btn" id="tab5pct" onclick="switchRadarTab('5pct')" style="background:#1e293b;color:#94a3b8;border:1px solid #334155;padding:10px 18px;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;">💎 5% 지분 & 스마트머니</button>
+      <button class="tab-btn" id="tabDday" onclick="switchRadarTab('dday')" style="background:#1e293b;color:#94a3b8;border:1px solid #334155;padding:10px 18px;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;">🚀 D-Day 일정 매매</button>
+      <button class="tab-btn" id="tabOverlap" onclick="switchRadarTab('overlap')" style="background:#1e293b;color:#ec4899;border:1px solid #ec4899;padding:10px 18px;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;">🔥 수급+일정 교집합</button>
+    </nav>
+
     <section class="filters-container">
       <div class="filter-row">
         <span class="filter-label">기간</span>
@@ -47,6 +55,7 @@
       <div class="filter-row">
         <span class="filter-label">유형</span>
         <button class="btn-pill active" data-filter-key="category" data-filter-value="all">전체</button>
+        <button class="btn-pill" data-filter-key="category" data-filter-value="지분공시">💎 5% 지분/주요주주</button>
         <button class="btn-pill" data-filter-key="category" data-filter-value="원전">원전/대형수주</button>
         <button class="btn-pill" data-filter-key="category" data-filter-value="경영권">경영권 분쟁</button>
         <button class="btn-pill" data-filter-key="category" data-filter-value="정치">정치/선거</button>

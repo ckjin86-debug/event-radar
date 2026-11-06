@@ -41,6 +41,7 @@ class EventFilter {
         const source = (ev.source_name || "").toUpperCase();
         const text = `${ev.company || ""} ${ev.event_name || ""}`.toLowerCase();
         const cat = this.criteria.category;
+        if (cat === "지분공시" && !t.includes("OWNERSHIP") && !t.includes("INSIDER") && !t.includes("5PCT") && !t.includes("MAJOR")) return false;
         if (cat === "증자" && !t.includes("ISSUE")) return false;
         if (cat === "분할" && !t.includes("SPLIT")) return false;
         if (cat === "락업" && !t.includes("LOCKUP")) return false;
@@ -92,3 +93,50 @@ class EventFilter {
     return result;
   }
 }
+
+
+window.switchRadarTab = function(tabKey) {
+  const tabs = {
+    all: document.getElementById('tabAll'),
+    '5pct': document.getElementById('tab5pct'),
+    dday: document.getElementById('tabDday'),
+    overlap: document.getElementById('tabOverlap')
+  };
+
+  Object.values(tabs).forEach(btn => {
+    if (btn) {
+      btn.style.background = '#1e293b';
+      btn.style.color = btn.id === 'tabOverlap' ? '#ec4899' : '#94a3b8';
+    }
+  });
+
+  const activeBtn = tabs[tabKey];
+  if (activeBtn) {
+    activeBtn.style.background = tabKey === 'overlap' ? '#ec4899' : '#38bdf8';
+    activeBtn.style.color = '#0f172a';
+  }
+
+  // Trigger filters
+  if (window.eventFilter && window.app) {
+    if (tabKey === 'all') {
+      window.eventFilter.setCriterion('category', 'all');
+      window.eventFilter.setCriterion('horizon', 'upcoming');
+    } else if (tabKey === '5pct') {
+      window.eventFilter.setCriterion('category', '지분공시');
+      window.eventFilter.setCriterion('horizon', 'all');
+    } else if (tabKey === 'dday') {
+      window.eventFilter.setCriterion('category', 'all');
+      window.eventFilter.setCriterion('horizon', '30d');
+    } else if (tabKey === 'overlap') {
+      window.eventFilter.setCriterion('category', 'all');
+      window.eventFilter.setCriterion('grade', 'A');
+    }
+
+    // Update pill styles in UI
+    document.querySelectorAll('.btn-pill[data-filter-key="category"]').forEach(p => {
+      p.classList.toggle('active', p.getAttribute('data-filter-value') === (tabKey === '5pct' ? '지분공시' : 'all'));
+    });
+
+    window.app.renderTable();
+  }
+};

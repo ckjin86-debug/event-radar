@@ -1,5 +1,107 @@
 [
   {
+    "event_id": "DART-5PCT-20261106-003",
+    "d_day": 0,
+    "country": "KR",
+    "ticker": "123510",
+    "primary_ticker": "123510",
+    "related_securities": [
+      {
+        "ticker": "123510",
+        "name": "폴라리스우노",
+        "relation_grade": "A",
+        "relation_type": "DIRECT"
+      }
+    ],
+    "company": "폴라리스우노",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "5% 대량보유 공시 (보고자: 폴라리스세원 지분 확대)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 90,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 89,
+    "insight": {
+      "tier": "HIGH_CONVICTION",
+      "summary": "폴라리스세원의 폴라리스우노 지분 추가 취득 및 경영권 강화."
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr"
+  },
+  {
+    "event_id": "DART-5PCT-20261106-002",
+    "d_day": 0,
+    "country": "KR",
+    "ticker": "063080",
+    "primary_ticker": "063080",
+    "related_securities": [
+      {
+        "ticker": "063080",
+        "name": "컴투스홀딩스",
+        "relation_grade": "A",
+        "relation_type": "DIRECT"
+      }
+    ],
+    "company": "컴투스홀딩스",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "5% 대량보유 공시 (보고자: 컴투스 특별관계자 지분 취득)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 92,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 91,
+    "insight": {
+      "tier": "HIGH_CONVICTION",
+      "summary": "그룹 지배력 강화 및 주주가치 제고를 위한 계열사 지분 매집 공시."
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr"
+  },
+  {
+    "event_id": "DART-5PCT-20261106-001",
+    "d_day": 0,
+    "country": "KR",
+    "ticker": "043610",
+    "primary_ticker": "043610",
+    "related_securities": [
+      {
+        "ticker": "043610",
+        "name": "KT지니뮤직",
+        "relation_grade": "A",
+        "relation_type": "DIRECT"
+      }
+    ],
+    "company": "KT지니뮤직",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "5% 대량보유 공시 (보고자: CJ ENM 지분 변동 보고)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 95,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 94,
+    "insight": {
+      "tier": "HIGH_CONVICTION",
+      "summary": "CJ ENM의 KT지니뮤직 주식등의대량보유상황보고서 접수. 전략적 지분 유지 및 사업 제휴 강화 목적."
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr"
+  },
+  {
     "event_id": "KR_NEWS_FUTURE_e14ced3593303b033c128c86fb298f1297df4d25",
     "d_day": 0,
     "country": "KR",
