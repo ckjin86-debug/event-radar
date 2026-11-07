@@ -2764,6 +2764,108 @@
     "source_url": "http://www.inews24.com/view/2023515"
   },
   {
+    "event_id": "KR_NEWS_FUTURE_be9b0f84ed4c42ea0b88fe551a7d46aa843cb0df",
+    "d_day": 10,
+    "country": "KR",
+    "ticker": "112240",
+    "primary_ticker": "",
+    "related_securities": [
+      {
+        "ticker": "112240",
+        "company_name": "에스에프씨",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 에스에프씨",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.yna.co.kr/view/AKR20261106071100008?input=1195m",
+        "relation_known_date": "2026-11-07",
+        "ingest_mode": "AUTO",
+        "from_entity": "에스에프씨"
+      },
+      {
+        "ticker": "001720",
+        "company_name": "신영증권",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 신영증권",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.yna.co.kr/view/AKR20261106071100008?input=1195m",
+        "relation_known_date": "2026-11-07",
+        "ingest_mode": "AUTO",
+        "from_entity": "신영증권"
+      }
+    ],
+    "company": "내주 에스에프씨 등 5개사 수요예측",
+    "event_type": "M_AND_A",
+    "event_name": "[IPO챗] 내주 에스에프씨 등 5개사 수요예측",
+    "event_date": "2026-11-17",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-17",
+    "window_end": "2026-11-17",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 48,
+    "insight": {
+      "score": 48,
+      "tier": "WATCH",
+      "label": "일정 관찰",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 19,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 21,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 0,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 8,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 날짜 확정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본",
+        "최근 가격·거래량"
+      ],
+      "history_confidence": "NONE",
+      "market": null,
+      "coverage": {
+        "eligible_events": 4,
+        "priced_events": 4,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": 0
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.yna.co.kr/view/AKR20261106071100008?input=1195m"
+  },
+  {
     "event_id": "KR_KIND_IPO_3148cd5fac8929cee30beeb9b427599152f80244",
     "d_day": 11,
     "country": "KR",
