@@ -17,6 +17,11 @@ Collection follows the original "DART 5% Super Radar" 2-stage pipeline:
    accumulation streaks, S1~S7 signal scoring) and the latest filing per
    (corp, reporter) becomes one event carrying the analysis in
    raw_payload["five_pct_analysis"].
+3. Document: each corp's single latest filing is verified against the
+   DART document viewer (event_radar.dart_document). A disclosed
+   weighted-average acquisition price from the filing's 세부변동내역
+   (Priority 1, DISCLOSED) and a document-confirmed holding purpose are
+   applied to that filing's score input before the event is built.
 
 When majorstock.json returns no rows for a corp, the collector degrades
 to the previous behaviour: one event per list row, enriched best-effort
@@ -29,11 +34,15 @@ import os
 import time
 from datetime import datetime
 from pathlib import Path
-from typing import Optional
+from typing import Callable, Optional
 import requests
 from event_radar.models import RawEvent
 from event_radar.collectors.base import CollectorRunLog, log_collector_run
-from event_radar.five_pct_rules import process_majorstock_history
+from event_radar.dart_document import parse_dart_report_detail
+from event_radar.five_pct_rules import (
+    evaluate_signal_score,
+    process_majorstock_history,
+)
 
 
 DART_LIST_URL = "https://opendart.fss.or.kr/api/list.json"
@@ -58,10 +67,16 @@ class DartFivePctCollector:
         api_key=None,
         fixture_path: Optional[Path | str] = None,
         timeout: int = 10,
+        document_fetcher: Optional[Callable[[str], dict]] = None,
     ):
         self.api_key = api_key or os.getenv("DART_API_KEY", "")
         self.fixture_path = Path(fixture_path) if fixture_path else None
         self.timeout = timeout
+        # Optional injection point for the DISCLOSED document parse
+        # (rcept_no -> dart_document.parse_dart_report_detail result).
+        # Tests pass a fake; production uses dart_document with the
+        # collector session, or fixture "documents" entries offline.
+        self.document_fetcher = document_fetcher
         self.session = requests.Session()
         self.session.headers.update({
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) EventRadar/1.0"
@@ -289,7 +304,7 @@ class DartFivePctCollector:
     def _analysis_payload(processed: dict) -> dict:
         evaluation = processed.get("eval") or {}
         factor_scores = evaluation.get("factor_scores") or {}
-        return {
+        payload = {
             "score_input": {
                 key: processed.get(key)
                 for key in DartFivePctCollector._SCORE_INPUT_KEYS
@@ -315,6 +330,135 @@ class DartFivePctCollector:
                 "recent_accumulation_signal_active"
             ),
         }
+        # Set only when the filing document overrode the majorstock
+        # purpose (see _enrich_latest_with_document).
+        if processed.get("purpose_source"):
+            payload["purpose_source"] = processed["purpose_source"]
+        return payload
+
+    # ------------------------------------------------------------------
+    # DISCLOSED document enrichment (원문 세부변동내역 실단가, Priority 1)
+    # ------------------------------------------------------------------
+    def _document_detail(
+        self,
+        rcept_no: str,
+        fixture: Optional[dict],
+    ) -> Optional[dict]:
+        """Best-effort document parse for one filing; never raises.
+
+        Resolution order: injected document_fetcher → fixture
+        "documents" entry (HTML pages or a pre-parsed detail dict) →
+        live dart_document fetch on the collector session. Fixture mode
+        never touches the network.
+        """
+        if self.document_fetcher is not None:
+            try:
+                detail = self.document_fetcher(rcept_no)
+            except Exception:
+                return None
+            return detail if isinstance(detail, dict) else None
+
+        if fixture is not None:
+            documents = fixture.get("documents")
+            if not isinstance(documents, dict):
+                return None
+            entry = documents.get(rcept_no)
+            if not isinstance(entry, dict):
+                return None
+            if "main_html" not in entry:
+                # Pre-parsed detail dict embedded in the fixture.
+                return entry
+            viewer_htmls = entry.get("viewer_htmls")
+            if not isinstance(viewer_htmls, list):
+                viewer_htmls = []
+            state = {"viewer_idx": 0}
+
+            def _fixture_fetch(url: str) -> Optional[str]:
+                if "dsaf001/main.do" in url:
+                    main_html = entry.get("main_html")
+                    return main_html if isinstance(main_html, str) else None
+                idx = state["viewer_idx"]
+                state["viewer_idx"] += 1
+                if idx < len(viewer_htmls):
+                    html = viewer_htmls[idx]
+                    return html if isinstance(html, str) else None
+                return None
+
+            try:
+                return parse_dart_report_detail(rcept_no, fetch_text=_fixture_fetch)
+            except Exception:
+                return None
+
+        try:
+            return parse_dart_report_detail(
+                rcept_no, session=self.session, timeout=self.timeout
+            )
+        except Exception:
+            return None
+
+    def _enrich_latest_with_document(
+        self,
+        processed_items: list[dict],
+        latest_item: dict,
+        fixture: Optional[dict],
+    ) -> None:
+        """Apply the DISCLOSED document parse to the corp's latest filing.
+
+        Mirrors the original extension's enrich step: only the corp's
+        single latest filing is parsed (one document fetch per corp),
+        a parsed weighted-average price lands in the item's
+        est_avg_price/price_source (Priority 1 — the pipeline's VWAP
+        step never overwrites it), a document-confirmed purpose
+        overrides the majorstock one, and the item is re-scored so the
+        analysis reflects both. Any failure leaves the item untouched.
+        """
+        target_no = str(latest_item.get("rcept_no") or "").strip()
+        if not target_no:
+            return
+        target = next(
+            (
+                item
+                for item in processed_items
+                if str(item.get("rcept_no") or "").strip() == target_no
+            ),
+            None,
+        )
+        if target is None:
+            return
+
+        # 원본과 동일: 이미 DISCLOSED/DERIVED 단가가 있으면 다시 읽지 않는다.
+        existing_source = str(target.get("price_source") or "")
+        if target.get("est_avg_price") and (
+            existing_source.startswith("DISCLOSED:")
+            or existing_source.startswith("DERIVED:")
+        ):
+            return
+
+        detail = self._document_detail(target_no, fixture)
+        if not detail or not detail.get("ok"):
+            return
+
+        changed = False
+        weighted_avg_price = detail.get("weighted_avg_price")
+        if weighted_avg_price:
+            target["est_avg_price"] = weighted_avg_price
+            target["price_source"] = (
+                detail.get("price_source")
+                or "DISCLOSED: 원문 제3부 세부변동내역 가중평균"
+            )
+            changed = True
+
+        doc_purpose = detail.get("curr_purpose")
+        if doc_purpose and doc_purpose != target.get("curr_purpose"):
+            target["curr_purpose"] = doc_purpose
+            target["purpose_source"] = "DOCUMENT"
+            changed = True
+
+        if changed:
+            eval_input = {
+                key: value for key, value in target.items() if key != "eval"
+            }
+            target["eval"] = evaluate_signal_score(eval_input)
 
     @staticmethod
     def _parse_rcept_dt(value: object, fallback: datetime) -> datetime:
@@ -494,6 +638,9 @@ class DartFivePctCollector:
                     )
 
                 if processed_items:
+                    self._enrich_latest_with_document(
+                        processed_items, latest_item, fixture
+                    )
                     for processed in processed_items:
                         if not str(
                             processed.get("stock_code") or corp_meta["stock_code"]
