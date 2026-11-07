@@ -217,9 +217,9 @@
   // 5pct tab: faithful reproduction of the original DART 5% Super Radar
   // dashboard display (market switcher, backtest panel, KPI cards,
   // original table columns and detail modal). Data comes from
-  // five_pct.json fields only; values the feed does not carry yet
-  // (holding ratio, backtest returns) are shown as "-"/"도래전",
-  // exactly like the original did before its backtester ran.
+  // five_pct.json fields only; values the feed does not carry for a
+  // row are shown as "-"/"도래전", exactly like the original did
+  // before its backtester ran.
   // =====================================================================
   let fiveMarket = "KR";
   const fiveById = new Map();
@@ -344,9 +344,38 @@
     </div>`;
   }
 
-  // Original formatLatestBtCell(): filing date + freshness badge; returns
-  // are not computed by this feed yet, so pills stay "도래전" and the
-  // cumulative return "-", like the original before its backtest ran.
+  // Original pillOrWait(): a horizon that has elapsed in trading days
+  // shows its signed return as a pill (red up / blue down, the
+  // original's cum-return colors); a pending one stays "도래전"
+  // instead of a fabricated number. `plain` matches the first-entry
+  // cell's unboxed wait style.
+  function fiveBtPill(label, val, plain) {
+    if (val === null || val === undefined || !Number.isFinite(Number(val))) {
+      return `<span class="${plain ? "sr-bt-wait-plain" : "sr-bt-wait"}">${label} 도래전</span>`;
+    }
+    const v = Number(val);
+    const bg = v >= 0 ? "rgba(239,68,68,0.16)" : "rgba(59,130,246,0.16)";
+    const color = v >= 0 ? "#fca5a5" : "#93c5fd";
+    return `<span style="font-size:0.7rem;padding:2px 7px;border-radius:4px;background:${bg};color:${color};font-weight:700;">${label} ${fmtPct(v)}</span>`;
+  }
+
+  // Original's Max Run-up / MDD spans (gold run-up, muted drawdown).
+  function fiveBtExtremesHtml(m) {
+    let html = "";
+    if (m.maxRunup != null && Number.isFinite(Number(m.maxRunup))) {
+      html += `<span style="color:#fbbf24;font-weight:800;">★최고 ${fmtPct(Number(m.maxRunup))}</span>`;
+    }
+    if (m.mdd != null && Number.isFinite(Number(m.mdd))) {
+      html += `<span style="color:#94a3b8;">MDD ${fmtPct(Number(m.mdd))}</span>`;
+    }
+    return html;
+  }
+
+  // Original formatLatestBtCell(): filing date + freshness badge, the
+  // cumulative return since the filing and D+5/D+20/D+60 pills from the
+  // feed's trading-day backtest (five_pct_backtest). Rows without a
+  // computed backtest keep the placeholder exactly as before: pills
+  // "도래전", cumulative return "-".
   function fiveLatestBtHtml(ev) {
     const esc = escapeHtml;
     const days = daysSince(ev.event_date);
@@ -357,24 +386,52 @@
     else if (f === "RECENT") badge = `<span class="sr-fresh-badge sr-fresh-recent" title="공시 신선도: RECENT (31~90일)">RECENT · ${dTxt}일</span>`;
     else if (f === "AGING") badge = `<span class="sr-fresh-badge sr-fresh-aging" title="공시 신선도: AGING (91~180일)">AGING · ${dTxt}일</span>`;
     else if (f === "STALE") badge = `<span class="sr-fresh-badge sr-fresh-stale" title="STALE (181일↑): 장기 Ownership Context 전용 · 최근 매집 신호 비활성화">STALE · ${dTxt}일(장기맥락)</span>`;
-    return `<div class="sr-bt-cell sr-bt-latest">
+    const L = ev.backtest && ev.backtest.latest ? ev.backtest.latest : null;
+    if (!L) {
+      return `<div class="sr-bt-cell sr-bt-latest">
       <div class="sr-bt-row sr-bt-head"><strong>${esc(ev.event_date || "-")}</strong>${badge}</div>
       <div class="sr-bt-row"><span class="sr-bt-label">접수후 현재:</span><strong class="sr-bt-na">-</strong></div>
       <div class="sr-bt-row"><span class="sr-bt-wait">D+5 도래전</span><span class="sr-bt-wait">D+20 도래전</span></div>
     </div>`;
+    }
+    const cum = L.cumReturn != null && Number.isFinite(Number(L.cumReturn)) ? Number(L.cumReturn) : null;
+    const cumHtml = cum === null
+      ? `<strong class="sr-bt-na">-</strong>`
+      : `<strong style="color:${cum > 0 ? "#fca5a5" : cum < 0 ? "#93c5fd" : "#cbd5e1"};">${fmtPct(cum)}</strong>`;
+    return `<div class="sr-bt-cell sr-bt-latest">
+      <div class="sr-bt-row sr-bt-head"><strong>${esc(L.baseDate || ev.event_date || "-")}</strong>${badge}</div>
+      <div class="sr-bt-row"><span class="sr-bt-label">접수후 현재:</span>${cumHtml}</div>
+      <div class="sr-bt-row">${fiveBtPill("D+5", L.d5)}${fiveBtPill("D+20", L.d20)}</div>
+      <div class="sr-bt-row">${fiveBtPill("D+60", L.d60)}${fiveBtExtremesHtml(L)}</div>
+    </div>`;
   }
 
-  // Original formatFirstEntryBtCell(): first-entry placeholder when the
-  // reporter has no previous filing; otherwise track-record pills pending.
+  // Original formatFirstEntryBtCell(): the reporter's first-ever 5%
+  // entry gets its own track-record cell (D+5/D+20/D+60, Max Run-up,
+  // MDD) once the feed's backtest is attached; a first entry that *is*
+  // this filing (under a week old) and rows with no previous filing
+  // show the "금번이 최초 5% 진입" panel; rows without a backtest keep
+  // the pending placeholder pills.
   function fiveFirstBtHtml(ev) {
     const esc = escapeHtml;
-    if (!ev.purpose_prev) {
-      return `<div class="sr-bt-cell sr-bt-first">
+    const firstPanel = `<div class="sr-bt-cell sr-bt-first">
         <div class="sr-bt-first-title">★ 금번이 최초 5% 진입</div>
         <div class="sr-bt-first-sub">과거 공시 이력 없음 (1회차)</div>
         <div class="sr-bt-first-note">향후 D+5 / D+20 추적 대상</div>
       </div>`;
+    const F = ev.backtest && ev.backtest.firstEntry ? ev.backtest.firstEntry : null;
+    if (F) {
+      const elapsed = F.elapsedDays != null && Number.isFinite(Number(F.elapsedDays))
+        ? Number(F.elapsedDays)
+        : daysSince(F.baseDate || ev.first_entry_dt);
+      if (F.isSameAsLatest && elapsed !== null && elapsed < 7) return firstPanel;
+      return `<div class="sr-bt-cell sr-bt-first">
+      <div class="sr-bt-row"><span class="sr-bt-first-date">최초진입: ${esc(F.baseDate || ev.first_entry_dt || "-")}</span>${elapsed !== null ? `<span style="color:#94a3b8;">(${elapsed}일전)</span>` : ""}</div>
+      <div class="sr-bt-row">${fiveBtPill("D+5", F.d5, true)}${fiveBtPill("D+20", F.d20, true)}</div>
+      <div class="sr-bt-row">${fiveBtPill("D+60", F.d60, true)}${fiveBtExtremesHtml(F)}</div>
+    </div>`;
     }
+    if (!ev.purpose_prev) return firstPanel;
     return `<div class="sr-bt-cell sr-bt-first">
       <div class="sr-bt-row"><span class="sr-bt-first-date">최초진입: ${esc(ev.first_entry_dt || "-")}</span></div>
       <div class="sr-bt-row"><span class="sr-bt-wait-plain">D+5 도래전</span><span class="sr-bt-wait-plain">D+20 도래전</span></div>

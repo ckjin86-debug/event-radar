@@ -504,6 +504,12 @@ def export_site_data(
             fact_value = analysis.get(fact_key)
             if fact_value is not None:
                 five_row[fact_key] = fact_value
+        # Dual trading-day backtest (pipeline five_pct_backtest):
+        # lifted verbatim only when the event study was computed —
+        # rows without price history carry no backtest key at all.
+        backtest = analysis.get("backtest")
+        if backtest is not None:
+            five_row["backtest"] = backtest
         five_pct_list.append(five_row)
 
     (out_path / "five_pct.json").write_text(

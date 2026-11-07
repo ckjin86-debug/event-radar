@@ -40,6 +40,20 @@ def test_us_market_empty_state_message():
     assert "미국 SEC (13D / 13G) 공시가 아직 수집되지 않았습니다" in RADAR_TABS
 
 
+def test_backtest_cells_render_feed_values():
+    # five_pct.json rows may carry the dual trading-day backtest
+    # (five_pct_backtest); both cells must render its real values.
+    for marker in (
+        "ev.backtest",
+        "backtest.latest",
+        "backtest.firstEntry",
+        "cumReturn",
+        "maxRunup",
+        "fiveBtPill",
+    ):
+        assert marker in RADAR_TABS, marker
+
+
 def test_super_radar_styles_defined():
     for selector in (".sr-score-badge", ".sr-market-btn", ".sr-kpi-card",
                      ".sr-modal-backdrop", ".sr-tag-streak", ".sr-fresh-hot"):

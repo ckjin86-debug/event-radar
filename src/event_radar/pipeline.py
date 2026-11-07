@@ -28,6 +28,7 @@ from event_radar.backtest.returns import calculate_event_window_returns
 from event_radar.backtest.metrics import summarize_event_group, BacktestSummary
 from event_radar.backtest.strategies import evaluate_strategies, StrategyResult
 from event_radar.scoring import ScoreInput, ScoreResult, calculate_event_score
+from event_radar.five_pct_backtest import enrich_five_pct_backtests
 from event_radar.five_pct_pricing import enrich_five_pct_prices
 from event_radar.export import export_site_data
 from event_radar.collectors.base import Collector
@@ -552,9 +553,20 @@ def run_pipeline(
     # a VWAP window, so frames come from the same cached price provider
     # the backtest uses. A fast refresh must not hit the price network.
     if not skip_price_fetch:
+        five_pct_provider = _resolve_price_provider(config)
         current_events = enrich_five_pct_prices(
             current_events,
-            price_provider=_resolve_price_provider(config),
+            price_provider=five_pct_provider,
+            as_of=now.date(),
+        )
+        # 8.6. Five-percent backtest: trading-day event study for each
+        # filing, anchored both at its own receipt date and at the
+        # reporter's first-ever 5% entry (the original dual backtest).
+        # Same provider/as_of as the price enrichment above; filings
+        # without a price frame simply keep no backtest.
+        current_events = enrich_five_pct_backtests(
+            current_events,
+            price_provider=five_pct_provider,
             as_of=now.date(),
         )
 

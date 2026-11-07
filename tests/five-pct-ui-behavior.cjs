@@ -37,6 +37,30 @@ test('5pct tab reproduces the Super Radar dashboard and market switcher', async 
       insight: { tier: 'RISK', label: '지분공시', summary: '지분 축소', score: -3 },
       related_securities: [{ ticker: '000660', name: '신규진입주', relation_grade: 'DIRECT' }],
     },
+    {
+      event_id: 'F3', event_type: '5PCT_OWNERSHIP', source_name: 'DART_5PCT',
+      source_url: '', category: '지분공시', country: 'KR', company: '백테스트주', ticker: '035720',
+      event_name: '주식등의대량보유상황보고서(일반) (대표보고자: 가치투자자 김철수)',
+      event_date: today, d_day: 0, status: 'CONFIRMED',
+      alpha_score: 4, event_score: 4,
+      score_breakdown: [{ strategy: '전략 2 (연속 매집)', reason: '3회 연속 순매수 확대', points: 2 }],
+      investor_class: '가치투자/장기', purpose_prev: '단순투자', purpose_current: '일반투자',
+      accumulation_count: 3, freshness: 'CURRENT', first_entry_dt: '2026-08-03',
+      insight: { tier: 'POSITIVE', label: '지분공시', summary: '연속 매집', score: 4 },
+      related_securities: [{ ticker: '035720', name: '백테스트주', relation_grade: 'DIRECT' }],
+      backtest: {
+        latest: {
+          baseDate: today, marketBaseDate: today, elapsedDays: 0, availTradingDays: 25,
+          basePrice: 50000, cumReturn: 12.3, d5: 3.2, d20: -1.4, d60: null,
+          maxRunup: 15.6, mdd: -4.2,
+        },
+        firstEntry: {
+          baseDate: '2026-08-03', marketBaseDate: '2026-08-03', elapsedDays: 96,
+          availTradingDays: 85, basePrice: 42000, cumReturn: 31.5, d5: 2.1,
+          d20: 9.8, d60: 22.4, maxRunup: 35.0, mdd: -6.5, isSameAsLatest: false,
+        },
+      },
+    },
   ];
 
   const makeEl = () => ({
@@ -93,6 +117,20 @@ test('5pct tab reproduces the Super Radar dashboard and market switcher', async 
   assert.match(tbody.innerHTML, /D\+5 도래전/);
   assert.match(tbody.innerHTML, /★ 금번이 최초 5% 진입/); // F2: no previous filing
   assert.doesNotMatch(tbody.innerHTML, /점수 미산정/);
+
+  // F3 carries a computed dual backtest: real values replace the
+  // placeholders, pending horizons (latest D+60) stay "도래전".
+  assert.match(tbody.innerHTML, /접수후 현재:<\/span><strong style="color:#fca5a5;">\+12\.3%<\/strong>/);
+  assert.match(tbody.innerHTML, /D\+5 \+3\.2%/);
+  assert.match(tbody.innerHTML, /D\+20 -1\.4%/);
+  assert.match(tbody.innerHTML, /D\+60 도래전/);
+  assert.match(tbody.innerHTML, /★최고 \+15\.6%/);
+  assert.match(tbody.innerHTML, /MDD -4\.2%/);
+  assert.match(tbody.innerHTML, /최초진입: 2026-08-03/);
+  assert.match(tbody.innerHTML, /\(96일전\)/);
+  assert.match(tbody.innerHTML, /D\+20 \+9\.8%/);
+  assert.match(tbody.innerHTML, /★최고 \+35\.0%/);
+  assert.match(tbody.innerHTML, /MDD -6\.5%/);
 
   // KPI cards + market switcher in the overview area.
   assert.match(overview.innerHTML, /sr-market-switcher/);
