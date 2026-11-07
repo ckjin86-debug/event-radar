@@ -1,104 +1,5278 @@
 [
   {
-    "event_id": "DART-5PCT-20261106-001",
-    "d_day": 0,
+    "event_id": "KR_DART_5PCT_20261106000475",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "0147B0",
+    "primary_ticker": "0147B0",
+    "related_securities": [
+      {
+        "ticker": "0147B0",
+        "company_name": "래블업",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000475",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "래블업",
+        "name": "래블업"
+      }
+    ],
+    "company": "래블업",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "래블업 주식등의대량보유상황보고서(일반) (대표보고자: 신정규)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 11,
+    "alpha_score": 11,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "슈퍼개미/개인 핵심 주체 (신정규)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (적극적 주주활동)",
+        "reason": "단순투자가 아닌 일반투자/적극주주 목적 공시",
+        "points": 2
+      },
+      {
+        "strategy": "전략 4 (신규 5% 돌파)",
+        "reason": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (51.56%)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+7,571,850) 및 지분율 +51.56%p 확대",
+        "points": 3
+      },
+      {
+        "strategy": "전략 5 (임계 구간 돌파)",
+        "reason": "실제 주식 매집으로 지분율 10% 돌파 (단기매매차익 반환 의무 감수)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "슈퍼개미/개인",
+    "purpose_prev": null,
+    "purpose_current": "일반투자",
+    "accumulation_count": 1,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "슈퍼개미/개인 핵심 주체 (신정규) · 단순투자가 아닌 일반투자/적극주주 목적 공시 · 실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (51.56%) · 실제 보유주식수 증가(+7,571,850) 및 지분율 +51.56%p 확대 · 실제 주식 매집으로 지분율 10% 돌파 (단기매매차익 반환 의무 감수)",
+      "score": 11
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000475"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000472",
+    "d_day": -1,
     "country": "KR",
     "ticker": "043610",
     "primary_ticker": "043610",
     "related_securities": [
       {
         "ticker": "043610",
-        "name": "KT지니뮤직",
+        "company_name": "KT지니뮤직",
         "relation_grade": "A",
-        "relation_type": "DIRECT"
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000472",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "KT지니뮤직",
+        "name": "KT지니뮤직"
+      },
+      {
+        "ticker": "035760",
+        "company_name": "CJ ENM",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: CJ ENM",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000472",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "CJ ENM",
+        "name": "CJ ENM"
       }
     ],
     "company": "KT지니뮤직",
     "event_type": "5PCT_OWNERSHIP",
-    "event_name": "5% 대량보유 공시 (보고자: CJ ENM 지분 변동 보고)",
+    "event_name": "KT지니뮤직 주식등의대량보유상황보고서(일반) (대표보고자: CJ ENM)",
     "event_date": "2026-11-06",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-11-06",
     "window_end": "2026-11-06",
     "relation_grade": "A",
-    "relation_score": 95,
+    "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 94,
-    "insight": {
-      "tier": "HIGH_CONVICTION",
-      "summary": "CJ ENM의 KT지니뮤직 주식등의대량보유상황보고서 접수. 전략적 지분 유지 및 사업 제휴 강화 목적."
-    },
-    "status": "CONFIRMED",
-    "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr"
-  },
-  {
-    "event_id": "DART-5PCT-20261106-002",
-    "d_day": 0,
-    "country": "KR",
-    "ticker": "063080",
-    "primary_ticker": "063080",
-    "related_securities": [
+    "event_score": 2,
+    "alpha_score": 2,
+    "score_breakdown": [
       {
-        "ticker": "063080",
-        "name": "컴투스홀딩스",
-        "relation_grade": "A",
-        "relation_type": "DIRECT"
+        "strategy": "전략 3 (적극적 주주활동)",
+        "reason": "단순투자가 아닌 일반투자/적극주주 목적 공시",
+        "points": 2
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
       }
     ],
-    "company": "컴투스홀딩스",
+    "investor_class": "일반법인/기타",
+    "purpose_prev": null,
+    "purpose_current": "일반투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "POSITIVE",
+      "label": "지분공시",
+      "summary": "단순투자가 아닌 일반투자/적극주주 목적 공시",
+      "score": 2
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000472"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000469",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "291230",
+    "primary_ticker": "291230",
+    "related_securities": [
+      {
+        "ticker": "291230",
+        "company_name": "컴투스엔",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000469",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "컴투스엔",
+        "name": "컴투스엔"
+      },
+      {
+        "ticker": "078340",
+        "company_name": "컴투스",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 컴투스",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000469",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "컴투스",
+        "name": "컴투스"
+      }
+    ],
+    "company": "컴투스엔",
     "event_type": "5PCT_OWNERSHIP",
-    "event_name": "5% 대량보유 공시 (보고자: 컴투스 특별관계자 지분 취득)",
+    "event_name": "컴투스엔 주식등의대량보유상황보고서(일반) (대표보고자: 컴투스)",
     "event_date": "2026-11-06",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-11-06",
     "window_end": "2026-11-06",
     "relation_grade": "A",
-    "relation_score": 92,
+    "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 91,
+    "event_score": 2,
+    "alpha_score": 2,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "슈퍼개미/개인 핵심 주체 (컴투스)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      },
+      {
+        "strategy": "전략 7 (지분 축소)",
+        "reason": "직전 보고 대비 보유주식수(-1,081,106주) 및 지분율(-4.50%p) 감소",
+        "points": -3
+      }
+    ],
+    "investor_class": "슈퍼개미/개인",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
     "insight": {
-      "tier": "HIGH_CONVICTION",
-      "summary": "그룹 지배력 강화 및 주주가치 제고를 위한 계열사 지분 매집 공시."
+      "tier": "POSITIVE",
+      "label": "지분공시",
+      "summary": "슈퍼개미/개인 핵심 주체 (컴투스) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 직전 보고 대비 보유주식수(-1,081,106주) 및 지분율(-4.50%p) 감소",
+      "score": 2
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000469"
   },
   {
-    "event_id": "DART-5PCT-20261106-003",
-    "d_day": 0,
+    "event_id": "KR_DART_5PCT_20261106000465",
+    "d_day": -1,
     "country": "KR",
-    "ticker": "123510",
-    "primary_ticker": "123510",
+    "ticker": "114630",
+    "primary_ticker": "114630",
     "related_securities": [
       {
-        "ticker": "123510",
-        "name": "폴라리스우노",
+        "ticker": "114630",
+        "company_name": "폴라리스우노",
         "relation_grade": "A",
-        "relation_type": "DIRECT"
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000465",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "폴라리스우노",
+        "name": "폴라리스우노"
+      },
+      {
+        "ticker": "234100",
+        "company_name": "폴라리스세원",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 폴라리스세원",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000465",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "폴라리스세원",
+        "name": "폴라리스세원"
       }
     ],
     "company": "폴라리스우노",
     "event_type": "5PCT_OWNERSHIP",
-    "event_name": "5% 대량보유 공시 (보고자: 폴라리스세원 지분 확대)",
+    "event_name": "폴라리스우노 [기재정정]주식등의대량보유상황보고서(일반) (대표보고자: 폴라리스세원)",
     "event_date": "2026-11-06",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-11-06",
     "window_end": "2026-11-06",
     "relation_grade": "A",
-    "relation_score": 90,
+    "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 89,
+    "event_score": 3,
+    "alpha_score": 3,
+    "score_breakdown": [
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
     "insight": {
-      "tier": "HIGH_CONVICTION",
-      "summary": "폴라리스세원의 폴라리스우노 지분 추가 취득 및 경영권 강화."
+      "tier": "POSITIVE",
+      "label": "지분공시",
+      "summary": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+      "score": 3
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000465"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000450",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "448900",
+    "primary_ticker": "448900",
+    "related_securities": [
+      {
+        "ticker": "448900",
+        "company_name": "한국피아이엠",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000450",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "한국피아이엠",
+        "name": "한국피아이엠"
+      }
+    ],
+    "company": "한국피아이엠",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "한국피아이엠 주식등의대량보유상황보고서(일반) (대표보고자: 송준호)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "슈퍼개미/개인 핵심 주체 (송준호)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "슈퍼개미/개인",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "슈퍼개미/개인 핵심 주체 (송준호) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000450"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000447",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "134580",
+    "primary_ticker": "134580",
+    "related_securities": [
+      {
+        "ticker": "134580",
+        "company_name": "엔키AX",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000447",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "엔키AX",
+        "name": "엔키AX"
+      }
+    ],
+    "company": "엔키AX",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "엔키AX [기재정정]주식등의대량보유상황보고서(일반) (대표보고자: 엔키홀딩스)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 2,
+    "alpha_score": 2,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "PEF/투자조합 핵심 주체 (엔키홀딩스)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      },
+      {
+        "strategy": "전략 7 (지분 축소)",
+        "reason": "직전 보고 대비 보유주식수(-2,095,220주) 및 지분율(-4.25%p) 감소",
+        "points": -3
+      }
+    ],
+    "investor_class": "PEF/투자조합",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "POSITIVE",
+      "label": "지분공시",
+      "summary": "PEF/투자조합 핵심 주체 (엔키홀딩스) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 직전 보고 대비 보유주식수(-2,095,220주) 및 지분율(-4.25%p) 감소",
+      "score": 2
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000447"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000441",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "182360",
+    "primary_ticker": "182360",
+    "related_securities": [
+      {
+        "ticker": "182360",
+        "company_name": "큐브엔터",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000441",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "큐브엔터",
+        "name": "큐브엔터"
+      }
+    ],
+    "company": "큐브엔터",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "큐브엔터 주식등의대량보유상황보고서(일반) (대표보고자: 강승곤)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "슈퍼개미/개인 핵심 주체 (강승곤)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "슈퍼개미/개인",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "슈퍼개미/개인 핵심 주체 (강승곤) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000441"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000439",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "064960",
+    "primary_ticker": "064960",
+    "related_securities": [
+      {
+        "ticker": "064960",
+        "company_name": "SNT모티브",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000439",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "SNT모티브",
+        "name": "SNT모티브"
+      },
+      {
+        "ticker": "036530",
+        "company_name": "SNT홀딩스",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: SNT홀딩스",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000439",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "SNT홀딩스",
+        "name": "SNT홀딩스"
+      }
+    ],
+    "company": "SNT모티브",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "SNT모티브 주식등의대량보유상황보고서(일반) (대표보고자: SNT홀딩스)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 11,
+    "alpha_score": 11,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "PEF/투자조합 핵심 주체 (SNT홀딩스)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (적극적 주주활동)",
+        "reason": "단순투자가 아닌 일반투자/적극주주 목적 공시",
+        "points": 2
+      },
+      {
+        "strategy": "전략 4 (신규 5% 돌파)",
+        "reason": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (52.42%)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+6,350,289) 및 지분율 +10.41%p 확대",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (취득원천 검증)",
+        "reason": "보고사유: - 발행회사의 무상증자 및 자기주식 소각\n- 장내매수",
+        "points": 2
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "PEF/투자조합",
+    "purpose_prev": null,
+    "purpose_current": "일반투자",
+    "accumulation_count": 1,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "PEF/투자조합 핵심 주체 (SNT홀딩스) · 단순투자가 아닌 일반투자/적극주주 목적 공시 · 실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (52.42%) · 실제 보유주식수 증가(+6,350,289) 및 지분율 +10.41%p 확대 · 보고사유: - 발행회사의 무상증자 및 자기주식 소각\n- 장내매수",
+      "score": 11
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000439"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000437",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "039980",
+    "primary_ticker": "039980",
+    "related_securities": [
+      {
+        "ticker": "039980",
+        "company_name": "폴라리스AI",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000437",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "폴라리스AI",
+        "name": "폴라리스AI"
+      },
+      {
+        "ticker": "114630",
+        "company_name": "폴라리스우노",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 폴라리스우노",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000437",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "폴라리스우노",
+        "name": "폴라리스우노"
+      }
+    ],
+    "company": "폴라리스AI",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "폴라리스AI [기재정정]주식등의대량보유상황보고서(일반) (대표보고자: 폴라리스우노)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 1,
+    "alpha_score": 1,
+    "score_breakdown": [
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      },
+      {
+        "strategy": "전략 7 (지분 축소)",
+        "reason": "직전 보고 대비 보유주식수(-85,000주) 및 지분율(-0.59%p) 감소",
+        "points": -2
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "POSITIVE",
+      "label": "지분공시",
+      "summary": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 직전 보고 대비 보유주식수(-85,000주) 및 지분율(-0.59%p) 감소",
+      "score": 1
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000437"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000431",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "251970",
+    "primary_ticker": "251970",
+    "related_securities": [
+      {
+        "ticker": "251970",
+        "company_name": "펌텍코리아",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000431",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "펌텍코리아",
+        "name": "펌텍코리아"
+      }
+    ],
+    "company": "펌텍코리아",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "펌텍코리아 주식등의대량보유상황보고서(약식) (대표보고자: FILLIMITED)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": -7,
+    "alpha_score": -7,
+    "score_breakdown": [
+      {
+        "strategy": "전략 7 (지분 축소)",
+        "reason": "직전 대비 -1.58%p (-195,710주) 지분 매도/감소",
+        "points": -3
+      },
+      {
+        "strategy": "전략 7 (5% 이탈 최우선 경보)",
+        "reason": "최신 보유비율 3.99%로 5% 미만 진입 (공시의무 소멸 및 오버행 주의)",
+        "points": -4
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "단순투자",
+    "purpose_current": "단순투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "RISK",
+      "label": "지분공시",
+      "summary": "직전 대비 -1.58%p (-195,710주) 지분 매도/감소 · 최신 보유비율 3.99%로 5% 미만 진입 (공시의무 소멸 및 오버행 주의)",
+      "score": -7
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000431"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000426",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "439580",
+    "primary_ticker": "439580",
+    "related_securities": [
+      {
+        "ticker": "439580",
+        "company_name": "블루엠텍",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000426",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "블루엠텍",
+        "name": "블루엠텍"
+      }
+    ],
+    "company": "블루엠텍",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "블루엠텍 주식등의대량보유상황보고서(일반) (대표보고자: 케이디비아이헬스케어밸류업)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 9,
+    "alpha_score": 9,
+    "score_breakdown": [
+      {
+        "strategy": "전략 3 (적극적 주주활동)",
+        "reason": "단순투자가 아닌 일반투자/적극주주 목적 공시",
+        "points": 2
+      },
+      {
+        "strategy": "전략 4 (신규 5% 돌파)",
+        "reason": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (21.07%)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+7,131,777) 및 지분율 +21.07%p 확대",
+        "points": 3
+      },
+      {
+        "strategy": "전략 5 (임계 구간 돌파)",
+        "reason": "실제 주식 매집으로 지분율 10% 돌파 (단기매매차익 반환 의무 감수)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": null,
+    "purpose_current": "일반투자",
+    "accumulation_count": 1,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "단순투자가 아닌 일반투자/적극주주 목적 공시 · 실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (21.07%) · 실제 보유주식수 증가(+7,131,777) 및 지분율 +21.07%p 확대 · 실제 주식 매집으로 지분율 10% 돌파 (단기매매차익 반환 의무 감수)",
+      "score": 9
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000426"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000421",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "439580",
+    "primary_ticker": "439580",
+    "related_securities": [
+      {
+        "ticker": "439580",
+        "company_name": "블루엠텍",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000421",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "블루엠텍",
+        "name": "블루엠텍"
+      }
+    ],
+    "company": "블루엠텍",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "블루엠텍 주식등의대량보유상황보고서 (대표보고자: 산은인베스트먼트)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": -1,
+    "alpha_score": -1,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "PEF/투자조합 핵심 주체 (산은인베스트먼트)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      },
+      {
+        "strategy": "전략 7 (지분 축소)",
+        "reason": "직전 보고 대비 보유주식수(-7,131,777주) 및 지분율(-21.07%p) 감소",
+        "points": -3
+      }
+    ],
+    "investor_class": "PEF/투자조합",
+    "purpose_prev": "단순투자",
+    "purpose_current": "단순투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "NEUTRAL",
+      "label": "지분공시",
+      "summary": "PEF/투자조합 핵심 주체 (산은인베스트먼트) · 직전 보고 대비 보유주식수(-7,131,777주) 및 지분율(-21.07%p) 감소",
+      "score": -1
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000421"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000415",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "081150",
+    "primary_ticker": "081150",
+    "related_securities": [
+      {
+        "ticker": "081150",
+        "company_name": "티플랙스",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000415",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "티플랙스",
+        "name": "티플랙스"
+      }
+    ],
+    "company": "티플랙스",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "티플랙스 주식등의대량보유상황보고서(일반) (대표보고자: 김영국)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "슈퍼개미/개인 핵심 주체 (김영국)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "슈퍼개미/개인",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "슈퍼개미/개인 핵심 주체 (김영국) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000415"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000411",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "381970",
+    "primary_ticker": "381970",
+    "related_securities": [
+      {
+        "ticker": "381970",
+        "company_name": "KG모빌리티플랫폼",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000411",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "KG모빌리티플랫폼",
+        "name": "KG모빌리티플랫폼"
+      }
+    ],
+    "company": "KG모빌리티플랫폼",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "KG모빌리티플랫폼 [기재정정]주식등의대량보유상황보고서(일반) (대표보고자: 한앤코오토서비스홀딩스)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 2,
+    "alpha_score": 2,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "PEF/투자조합 핵심 주체 (한앤코오토서비스홀딩스)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      },
+      {
+        "strategy": "전략 7 (지분 축소)",
+        "reason": "직전 보고 대비 보유주식수(-35,255,670주) 및 지분율(-72.21%p) 감소",
+        "points": -3
+      }
+    ],
+    "investor_class": "PEF/투자조합",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "POSITIVE",
+      "label": "지분공시",
+      "summary": "PEF/투자조합 핵심 주체 (한앤코오토서비스홀딩스) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 직전 보고 대비 보유주식수(-35,255,670주) 및 지분율(-72.21%p) 감소",
+      "score": 2
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000411"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000407",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "214270",
+    "primary_ticker": "214270",
+    "related_securities": [
+      {
+        "ticker": "214270",
+        "company_name": "FSN",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000407",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "FSN",
+        "name": "FSN"
+      }
+    ],
+    "company": "FSN",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "FSN 주식등의대량보유상황보고서(일반) (대표보고자: 제이투비)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 11,
+    "alpha_score": 11,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "슈퍼개미/개인 핵심 주체 (제이투비)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+16,630) 및 지분율 +0.03%p 확대",
+        "points": 1
+      },
+      {
+        "strategy": "전략 2 (연속 매집)",
+        "reason": "공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (취득원천 검증)",
+        "reason": "보고사유: - 특별관계자 서정교의 주식 장내매수\n- 특별관계자 김경호의 주식 장내매수\n- 특별관계자 서정교의 일부 주식담보대출 상환 및 신규 주식담보대출 계약체결\n- 특별관계자 이상석의 주식담보대출 연장 및 일부 조건 변경\n- 특별관계자 이정찬의 주식담보대출 일부 상환, 만기 연장 및 계약조건 변경",
+        "points": 2
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "슈퍼개미/개인",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 2,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "슈퍼개미/개인 핵심 주체 (제이투비) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 실제 보유주식수 증가(+16,630) 및 지분율 +0.03%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인 · 보고사유: - 특별관계자 서정교의 주식 장내매수\n- 특별관계자 김경호의 주식 장내매수\n- 특별관계자 서정교의 일부 주식담보대출 상환 및 신규 주식담보대출 계약체결\n- 특별관계자 이상석의 주식담보대출 연장 및 일부 조건 변경\n- 특별관계자 이정찬의 주식담보대출 일부 상환, 만기 연장 및 계약조건 변경",
+      "score": 11
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000407"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000403",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "247660",
+    "primary_ticker": "247660",
+    "related_securities": [
+      {
+        "ticker": "247660",
+        "company_name": "나노씨엠에스",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000403",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "나노씨엠에스",
+        "name": "나노씨엠에스"
+      }
+    ],
+    "company": "나노씨엠에스",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "나노씨엠에스 [기재정정]주식등의대량보유상황보고서(일반) (대표보고자: 에스에이치에너지알이백)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 8,
+    "alpha_score": 8,
+    "score_breakdown": [
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+84,500) 및 지분율 +1.36%p 확대",
+        "points": 2
+      },
+      {
+        "strategy": "전략 2 (연속 매집)",
+        "reason": "공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 2,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 실제 보유주식수 증가(+84,500) 및 지분율 +1.36%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
+      "score": 8
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000403"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000397",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "034830",
+    "primary_ticker": "034830",
+    "related_securities": [
+      {
+        "ticker": "034830",
+        "company_name": "한국토지신탁",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000397",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "한국토지신탁",
+        "name": "한국토지신탁"
+      }
+    ],
+    "company": "한국토지신탁",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "한국토지신탁 주식등의대량보유상황보고서(일반) (대표보고자: 엠케이인베스트먼트)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "PEF/투자조합 핵심 주체 (엠케이인베스트먼트)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "PEF/투자조합",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "PEF/투자조합 핵심 주체 (엠케이인베스트먼트) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000397"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000395",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "234340",
+    "primary_ticker": "234340",
+    "related_securities": [
+      {
+        "ticker": "234340",
+        "company_name": "헥토파이낸셜",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000395",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "헥토파이낸셜",
+        "name": "헥토파이낸셜"
+      },
+      {
+        "ticker": "214180",
+        "company_name": "헥토이노베이션",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 헥토이노베이션",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000395",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "헥토이노베이션",
+        "name": "헥토이노베이션"
+      }
+    ],
+    "company": "헥토파이낸셜",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "헥토파이낸셜 주식등의대량보유상황보고서(일반) (대표보고자: 헥토이노베이션)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 4,
+    "alpha_score": 4,
+    "score_breakdown": [
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+6,547) 및 지분율 +0.04%p 확대",
+        "points": 1
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 1,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "POSITIVE",
+      "label": "지분공시",
+      "summary": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 실제 보유주식수 증가(+6,547) 및 지분율 +0.04%p 확대",
+      "score": 4
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000395"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000386",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "159910",
+    "primary_ticker": "159910",
+    "related_securities": [
+      {
+        "ticker": "159910",
+        "company_name": "에코글로우",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000386",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "에코글로우",
+        "name": "에코글로우"
+      }
+    ],
+    "company": "에코글로우",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "에코글로우 주식등의대량보유상황보고서(일반) (대표보고자: 크리스밸류)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 11,
+    "alpha_score": 11,
+    "score_breakdown": [
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+145,912) 및 지분율 +1.26%p 확대",
+        "points": 2
+      },
+      {
+        "strategy": "전략 2 (연속 매집)",
+        "reason": "공식 이력 기준 3회 연속 실제 보유주식수 증가 확인",
+        "points": 4
+      },
+      {
+        "strategy": "전략 6 (취득원천 검증)",
+        "reason": "보고사유: 특숙관계자의 장내매수",
+        "points": 2
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 3,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 실제 보유주식수 증가(+145,912) 및 지분율 +1.26%p 확대 · 공식 이력 기준 3회 연속 실제 보유주식수 증가 확인 · 보고사유: 특숙관계자의 장내매수",
+      "score": 11
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000386"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000380",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "178320",
+    "primary_ticker": "178320",
+    "related_securities": [
+      {
+        "ticker": "178320",
+        "company_name": "서진시스템",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000380",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "서진시스템",
+        "name": "서진시스템"
+      }
+    ],
+    "company": "서진시스템",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "서진시스템 주식등의대량보유상황보고서(일반) (대표보고자: 전동규)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "슈퍼개미/개인 핵심 주체 (전동규)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "슈퍼개미/개인",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "슈퍼개미/개인 핵심 주체 (전동규) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000380"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000377",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "123840",
+    "primary_ticker": "123840",
+    "related_securities": [
+      {
+        "ticker": "123840",
+        "company_name": "뉴온",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000377",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "뉴온",
+        "name": "뉴온"
+      },
+      {
+        "ticker": "042040",
+        "company_name": "케이피엠테크",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 케이피엠테크",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000377",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "케이피엠테크",
+        "name": "케이피엠테크"
+      }
+    ],
+    "company": "뉴온",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "뉴온 주식등의대량보유상황보고서(일반) (대표보고자: 케이피엠테크)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 3,
+    "alpha_score": 3,
+    "score_breakdown": [
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "POSITIVE",
+      "label": "지분공시",
+      "summary": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+      "score": 3
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000377"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000370",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "001270",
+    "primary_ticker": "001270",
+    "related_securities": [
+      {
+        "ticker": "001270",
+        "company_name": "부국증권",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000370",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "부국증권",
+        "name": "부국증권"
+      }
+    ],
+    "company": "부국증권",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "부국증권 주식등의대량보유상황보고서(일반) (대표보고자: 김중건)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 10,
+    "alpha_score": 10,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "슈퍼개미/개인 핵심 주체 (김중건)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+1,551) 및 지분율 +0.02%p 확대",
+        "points": 1
+      },
+      {
+        "strategy": "전략 2 (연속 매집)",
+        "reason": "공식 이력 기준 90회 연속 실제 보유주식수 증가 확인",
+        "points": 4
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "슈퍼개미/개인",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 90,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "슈퍼개미/개인 핵심 주체 (김중건) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 실제 보유주식수 증가(+1,551) 및 지분율 +0.02%p 확대 · 공식 이력 기준 90회 연속 실제 보유주식수 증가 확인",
+      "score": 10
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000370"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000367",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "114190",
+    "primary_ticker": "114190",
+    "related_securities": [
+      {
+        "ticker": "114190",
+        "company_name": "강원에너지",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000367",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "강원에너지",
+        "name": "강원에너지"
+      }
+    ],
+    "company": "강원에너지",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "강원에너지 주식등의대량보유상황보고서(일반) (대표보고자: 평산파트너스)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "PEF/투자조합 핵심 주체 (평산파트너스)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "PEF/투자조합",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "PEF/투자조합 핵심 주체 (평산파트너스) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000367"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000366",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "107640",
+    "primary_ticker": "107640",
+    "related_securities": [
+      {
+        "ticker": "107640",
+        "company_name": "한중엔시에스",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000366",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "한중엔시에스",
+        "name": "한중엔시에스"
+      }
+    ],
+    "company": "한중엔시에스",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "한중엔시에스 주식등의대량보유상황보고서(약식) (대표보고자: 삼성자산운용)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+136,577) 및 지분율 +1.48%p 확대",
+        "points": 2
+      },
+      {
+        "strategy": "전략 2 (연속 매집)",
+        "reason": "공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "단순투자",
+    "purpose_current": "단순투자",
+    "accumulation_count": 2,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "실제 보유주식수 증가(+136,577) 및 지분율 +1.48%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000366"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000362",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "091580",
+    "primary_ticker": "091580",
+    "related_securities": [
+      {
+        "ticker": "091580",
+        "company_name": "상신이디피",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000362",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "상신이디피",
+        "name": "상신이디피"
+      }
+    ],
+    "company": "상신이디피",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "상신이디피 주식등의대량보유상황보고서(약식) (대표보고자: 삼성자산운용)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+251,954) 및 지분율 +1.89%p 확대",
+        "points": 2
+      },
+      {
+        "strategy": "전략 2 (연속 매집)",
+        "reason": "공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "단순투자",
+    "purpose_current": "단순투자",
+    "accumulation_count": 2,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "실제 보유주식수 증가(+251,954) 및 지분율 +1.89%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000362"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000359",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "178320",
+    "primary_ticker": "178320",
+    "related_securities": [
+      {
+        "ticker": "178320",
+        "company_name": "서진시스템",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000359",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "서진시스템",
+        "name": "서진시스템"
+      }
+    ],
+    "company": "서진시스템",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "서진시스템 주식등의대량보유상황보고서 (대표보고자: 삼성자산운용)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+729,880) 및 지분율 +1.14%p 확대",
+        "points": 2
+      },
+      {
+        "strategy": "전략 2 (연속 매집)",
+        "reason": "공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "단순투자",
+    "purpose_current": "단순투자",
+    "accumulation_count": 2,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "실제 보유주식수 증가(+729,880) 및 지분율 +1.14%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000359"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000357",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "078600",
+    "primary_ticker": "078600",
+    "related_securities": [
+      {
+        "ticker": "078600",
+        "company_name": "대주전자재료",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000357",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "대주전자재료",
+        "name": "대주전자재료"
+      }
+    ],
+    "company": "대주전자재료",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "대주전자재료 주식등의대량보유상황보고서(약식) (대표보고자: 삼성자산운용)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+239,251) 및 지분율 +1.53%p 확대",
+        "points": 2
+      },
+      {
+        "strategy": "전략 2 (연속 매집)",
+        "reason": "공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "단순투자",
+    "purpose_current": "단순투자",
+    "accumulation_count": 2,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "실제 보유주식수 증가(+239,251) 및 지분율 +1.53%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000357"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000352",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "064760",
+    "primary_ticker": "064760",
+    "related_securities": [
+      {
+        "ticker": "064760",
+        "company_name": "티씨케이",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000352",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "티씨케이",
+        "name": "티씨케이"
+      }
+    ],
+    "company": "티씨케이",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "티씨케이 주식등의대량보유상황보고서(약식) (대표보고자: 삼성자산운용)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 4,
+    "alpha_score": 4,
+    "score_breakdown": [
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+95,278) 및 지분율 +0.85%p 확대",
+        "points": 1
+      },
+      {
+        "strategy": "전략 2 (연속 매집)",
+        "reason": "공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "단순투자",
+    "purpose_current": "단순투자",
+    "accumulation_count": 2,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "POSITIVE",
+      "label": "지분공시",
+      "summary": "실제 보유주식수 증가(+95,278) 및 지분율 +0.85%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
+      "score": 4
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000352"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000349",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "439270",
+    "primary_ticker": "439270",
+    "related_securities": [
+      {
+        "ticker": "439270",
+        "company_name": "크리에이츠",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000349",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "크리에이츠",
+        "name": "크리에이츠"
+      }
+    ],
+    "company": "크리에이츠",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "크리에이츠 주식등의대량보유상황보고서(일반) (대표보고자: 석재호)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 11,
+    "alpha_score": 11,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "슈퍼개미/개인 핵심 주체 (석재호)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (적극적 주주활동)",
+        "reason": "단순투자가 아닌 일반투자/적극주주 목적 공시",
+        "points": 2
+      },
+      {
+        "strategy": "전략 4 (신규 5% 돌파)",
+        "reason": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (48.33%)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+6,464,000) 및 지분율 +48.33%p 확대",
+        "points": 3
+      },
+      {
+        "strategy": "전략 5 (임계 구간 돌파)",
+        "reason": "실제 주식 매집으로 지분율 10% 돌파 (단기매매차익 반환 의무 감수)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "슈퍼개미/개인",
+    "purpose_prev": null,
+    "purpose_current": "일반투자",
+    "accumulation_count": 1,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "슈퍼개미/개인 핵심 주체 (석재호) · 단순투자가 아닌 일반투자/적극주주 목적 공시 · 실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (48.33%) · 실제 보유주식수 증가(+6,464,000) 및 지분율 +48.33%p 확대 · 실제 주식 매집으로 지분율 10% 돌파 (단기매매차익 반환 의무 감수)",
+      "score": 11
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000349"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000347",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "298380",
+    "primary_ticker": "298380",
+    "related_securities": [
+      {
+        "ticker": "298380",
+        "company_name": "에이비엘바이오",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000347",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "에이비엘바이오",
+        "name": "에이비엘바이오"
+      }
+    ],
+    "company": "에이비엘바이오",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "에이비엘바이오 주식등의대량보유상황보고서(일반) (대표보고자: LEESANGHOON)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 3,
+    "alpha_score": 3,
+    "score_breakdown": [
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "POSITIVE",
+      "label": "지분공시",
+      "summary": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+      "score": 3
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000347"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000331",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "046310",
+    "primary_ticker": "046310",
+    "related_securities": [
+      {
+        "ticker": "046310",
+        "company_name": "백금T&A",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000331",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "백금T&A",
+        "name": "백금T&A"
+      }
+    ],
+    "company": "백금T&A",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "백금T&A 주식등의대량보유상황보고서(일반) (대표보고자: 차파트너스자산운용)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 15,
+    "alpha_score": 15,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "행동주의 핵심 주체 (차파트너스자산운용)",
+        "points": 4
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+221,546) 및 지분율 +1.35%p 확대",
+        "points": 2
+      },
+      {
+        "strategy": "전략 2 (연속 매집)",
+        "reason": "공식 이력 기준 4회 연속 실제 보유주식수 증가 확인",
+        "points": 4
+      },
+      {
+        "strategy": "전략 5 (임계 구간 돌파)",
+        "reason": "실제 주식 매집으로 지분율 10% 돌파 (단기매매차익 반환 의무 감수)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "행동주의",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 4,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "행동주의 핵심 주체 (차파트너스자산운용) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 실제 보유주식수 증가(+221,546) 및 지분율 +1.35%p 확대 · 공식 이력 기준 4회 연속 실제 보유주식수 증가 확인 · 실제 주식 매집으로 지분율 10% 돌파 (단기매매차익 반환 의무 감수)",
+      "score": 15
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000331"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000326",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "078340",
+    "primary_ticker": "078340",
+    "related_securities": [
+      {
+        "ticker": "078340",
+        "company_name": "컴투스",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000326",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "컴투스",
+        "name": "컴투스"
+      },
+      {
+        "ticker": "063080",
+        "company_name": "컴투스홀딩스",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 컴투스홀딩스",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000326",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "컴투스홀딩스",
+        "name": "컴투스홀딩스"
+      }
+    ],
+    "company": "컴투스",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "컴투스 주식등의대량보유상황보고서(일반) (대표보고자: 컴투스홀딩스)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "PEF/투자조합 핵심 주체 (컴투스홀딩스)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "PEF/투자조합",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "PEF/투자조합 핵심 주체 (컴투스홀딩스) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000326"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000324",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "032540",
+    "primary_ticker": "032540",
+    "related_securities": [
+      {
+        "ticker": "032540",
+        "company_name": "TJ미디어",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000324",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "TJ미디어",
+        "name": "TJ미디어"
+      }
+    ],
+    "company": "TJ미디어",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "TJ미디어 주식등의대량보유상황보고서(일반) (대표보고자: 윤나라)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "슈퍼개미/개인 핵심 주체 (윤나라)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "슈퍼개미/개인",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "슈퍼개미/개인 핵심 주체 (윤나라) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000324"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000320",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "098460",
+    "primary_ticker": "098460",
+    "related_securities": [
+      {
+        "ticker": "098460",
+        "company_name": "고영",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000320",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "고영",
+        "name": "고영"
+      }
+    ],
+    "company": "고영",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "고영 주식등의대량보유상황보고서(약식) (대표보고자: J.P.MORGANSECURITIESPLC)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 4,
+    "alpha_score": 4,
+    "score_breakdown": [
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+9,618) 및 지분율 +0.02%p 확대",
+        "points": 1
+      },
+      {
+        "strategy": "전략 2 (연속 매집)",
+        "reason": "공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "단순투자",
+    "purpose_current": "단순투자",
+    "accumulation_count": 2,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "POSITIVE",
+      "label": "지분공시",
+      "summary": "실제 보유주식수 증가(+9,618) 및 지분율 +0.02%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
+      "score": 4
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000320"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000317",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "033160",
+    "primary_ticker": "033160",
+    "related_securities": [
+      {
+        "ticker": "033160",
+        "company_name": "엠케이전자",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000317",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "엠케이전자",
+        "name": "엠케이전자"
+      }
+    ],
+    "company": "엠케이전자",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "엠케이전자 주식등의대량보유상황보고서(일반) (대표보고자: 오션비홀딩스)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "PEF/투자조합 핵심 주체 (오션비홀딩스)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "PEF/투자조합",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "PEF/투자조합 핵심 주체 (오션비홀딩스) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000317"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000315",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "016670",
+    "primary_ticker": "016670",
+    "related_securities": [
+      {
+        "ticker": "016670",
+        "company_name": "디모아",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000315",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "디모아",
+        "name": "디모아"
+      },
+      {
+        "ticker": "002070",
+        "company_name": "비비안",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 비비안",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000315",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "비비안",
+        "name": "비비안"
+      }
+    ],
+    "company": "디모아",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "디모아 주식등의대량보유상황보고서(일반) (대표보고자: 비비안)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 2,
+    "alpha_score": 2,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "슈퍼개미/개인 핵심 주체 (비비안)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      },
+      {
+        "strategy": "전략 7 (지분 축소)",
+        "reason": "직전 보고 대비 보유주식수(0주) 및 지분율(-8.05%p) 감소",
+        "points": -3
+      }
+    ],
+    "investor_class": "슈퍼개미/개인",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "POSITIVE",
+      "label": "지분공시",
+      "summary": "슈퍼개미/개인 핵심 주체 (비비안) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 직전 보고 대비 보유주식수(0주) 및 지분율(-8.05%p) 감소",
+      "score": 2
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000315"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000313",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "299030",
+    "primary_ticker": "299030",
+    "related_securities": [
+      {
+        "ticker": "299030",
+        "company_name": "하나기술",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000313",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "하나기술",
+        "name": "하나기술"
+      }
+    ],
+    "company": "하나기술",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "하나기술 주식등의대량보유상황보고서(일반) (대표보고자: 오태봉)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "슈퍼개미/개인 핵심 주체 (오태봉)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "슈퍼개미/개인",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "슈퍼개미/개인 핵심 주체 (오태봉) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000313"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000311",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "439580",
+    "primary_ticker": "439580",
+    "related_securities": [
+      {
+        "ticker": "439580",
+        "company_name": "블루엠텍",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000311",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "블루엠텍",
+        "name": "블루엠텍"
+      }
+    ],
+    "company": "블루엠텍",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "블루엠텍 주식등의대량보유상황보고서 (대표보고자: 연제량)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 2,
+    "alpha_score": 2,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "슈퍼개미/개인 핵심 주체 (연제량)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "슈퍼개미/개인",
+    "purpose_prev": "단순투자",
+    "purpose_current": "단순투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "POSITIVE",
+      "label": "지분공시",
+      "summary": "슈퍼개미/개인 핵심 주체 (연제량)",
+      "score": 2
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000311"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000307",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "139130",
+    "primary_ticker": "139130",
+    "related_securities": [
+      {
+        "ticker": "139130",
+        "company_name": "iM금융지주",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000307",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "iM금융지주",
+        "name": "iM금융지주"
+      }
+    ],
+    "company": "iM금융지주",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "iM금융지주 주식등의대량보유상황보고서(약식) (대표보고자: 브이아이피자산운용)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 6,
+    "alpha_score": 6,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "가치투자/구루 핵심 주체 (브이아이피자산운용)",
+        "points": 3
+      },
+      {
+        "strategy": "전략 4 (신규 5% 돌파)",
+        "reason": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (5.07%)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+219,947) 및 지분율 +0.14%p 확대",
+        "points": 1
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "가치투자/구루",
+    "purpose_prev": null,
+    "purpose_current": "단순투자",
+    "accumulation_count": 1,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "가치투자/구루 핵심 주체 (브이아이피자산운용) · 실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (5.07%) · 실제 보유주식수 증가(+219,947) 및 지분율 +0.14%p 확대",
+      "score": 6
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000307"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000306",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "154040",
+    "primary_ticker": "154040",
+    "related_securities": [
+      {
+        "ticker": "154040",
+        "company_name": "다산솔루에타",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000306",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "다산솔루에타",
+        "name": "다산솔루에타"
+      }
+    ],
+    "company": "다산솔루에타",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "다산솔루에타 주식등의대량보유상황보고서(일반) (대표보고자: 다산인베스트)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 2,
+    "alpha_score": 2,
+    "score_breakdown": [
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      },
+      {
+        "strategy": "전략 7 (지분 축소)",
+        "reason": "직전 보고 대비 보유주식수(-12,297,393주) 및 지분율(0.74%p) 감소",
+        "points": -1
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "POSITIVE",
+      "label": "지분공시",
+      "summary": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 직전 보고 대비 보유주식수(-12,297,393주) 및 지분율(0.74%p) 감소",
+      "score": 2
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000306"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000303",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "007460",
+    "primary_ticker": "007460",
+    "related_securities": [
+      {
+        "ticker": "007460",
+        "company_name": "에이프로젠",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000303",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "에이프로젠",
+        "name": "에이프로젠"
+      }
+    ],
+    "company": "에이프로젠",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "에이프로젠 주식등의대량보유상황보고서(일반) (대표보고자: 지베이스)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "슈퍼개미/개인 핵심 주체 (지베이스)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "슈퍼개미/개인",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "슈퍼개미/개인 핵심 주체 (지베이스) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000303"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000302",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "339950",
+    "primary_ticker": "339950",
+    "related_securities": [
+      {
+        "ticker": "339950",
+        "company_name": "아이비김영",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000302",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "아이비김영",
+        "name": "아이비김영"
+      },
+      {
+        "ticker": "215200",
+        "company_name": "메가스터디교육",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 메가스터디교육",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000302",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "메가스터디교육",
+        "name": "메가스터디교육"
+      }
+    ],
+    "company": "아이비김영",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "아이비김영 주식등의대량보유상황보고서(일반) (대표보고자: 메가스터디교육)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 3,
+    "alpha_score": 3,
+    "score_breakdown": [
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "POSITIVE",
+      "label": "지분공시",
+      "summary": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+      "score": 3
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000302"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000289",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "227950",
+    "primary_ticker": "227950",
+    "related_securities": [
+      {
+        "ticker": "227950",
+        "company_name": "엔투텍",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000289",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "엔투텍",
+        "name": "엔투텍"
+      },
+      {
+        "ticker": "052300",
+        "company_name": "오션인더블유",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 오션인더블유",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000289",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "오션인더블유",
+        "name": "오션인더블유"
+      }
+    ],
+    "company": "엔투텍",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "엔투텍 주식등의대량보유상황보고서(약식) (대표보고자: 오션인더블유)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": -2,
+    "alpha_score": -2,
+    "score_breakdown": [
+      {
+        "strategy": "전략 6 (취득원천 검증)",
+        "reason": "보고사유: 18CB 일부 조기상환, 19CB 신규취득",
+        "points": -2
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "단순투자",
+    "purpose_current": "단순투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "RISK",
+      "label": "지분공시",
+      "summary": "보고사유: 18CB 일부 조기상환, 19CB 신규취득",
+      "score": -2
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000289"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000284",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "001780",
+    "primary_ticker": "001780",
+    "related_securities": [
+      {
+        "ticker": "001780",
+        "company_name": "알루코",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000284",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "알루코",
+        "name": "알루코"
+      },
+      {
+        "ticker": "054410",
+        "company_name": "케이피티유",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 케이피티유",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000284",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "케이피티유",
+        "name": "케이피티유"
+      }
+    ],
+    "company": "알루코",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "알루코 주식등의대량보유상황보고서(일반) (대표보고자: 케이피티유)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 3,
+    "alpha_score": 3,
+    "score_breakdown": [
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "POSITIVE",
+      "label": "지분공시",
+      "summary": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+      "score": 3
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000284"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000280",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "002380",
+    "primary_ticker": "002380",
+    "related_securities": [
+      {
+        "ticker": "002380",
+        "company_name": "케이씨씨",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000280",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "케이씨씨",
+        "name": "케이씨씨"
+      }
+    ],
+    "company": "케이씨씨",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "케이씨씨 주식등의대량보유상황보고서(일반) (대표보고자: 정몽진)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "슈퍼개미/개인 핵심 주체 (정몽진)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "슈퍼개미/개인",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "슈퍼개미/개인 핵심 주체 (정몽진) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000280"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000264",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "170900",
+    "primary_ticker": "170900",
+    "related_securities": [
+      {
+        "ticker": "170900",
+        "company_name": "동아에스티",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000264",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "동아에스티",
+        "name": "동아에스티"
+      },
+      {
+        "ticker": "000640",
+        "company_name": "동아제약",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 동아제약",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000264",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "동아제약",
+        "name": "동아제약"
+      }
+    ],
+    "company": "동아에스티",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "동아에스티 주식등의대량보유상황보고서(일반) (대표보고자: 동아제약)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 12,
+    "alpha_score": 12,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "슈퍼개미/개인 핵심 주체 (동아제약)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 경영권 영향(13D) 공식 상향",
+        "points": 5
+      },
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+608) 및 지분율 +0.01%p 확대",
+        "points": 1
+      },
+      {
+        "strategy": "전략 2 (연속 매집)",
+        "reason": "공식 이력 기준 3회 연속 실제 보유주식수 증가 확인",
+        "points": 4
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "슈퍼개미/개인",
+    "purpose_prev": "단순투자",
+    "purpose_current": "경영권 영향",
+    "accumulation_count": 3,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "슈퍼개미/개인 핵심 주체 (동아제약) · 단순투자 (13G/약식) → 경영권 영향(13D) 공식 상향 · 실제 보유주식수 증가(+608) 및 지분율 +0.01%p 확대 · 공식 이력 기준 3회 연속 실제 보유주식수 증가 확인",
+      "score": 12
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000264"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000262",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "000640",
+    "primary_ticker": "000640",
+    "related_securities": [
+      {
+        "ticker": "000640",
+        "company_name": "동아제약",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000262",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "동아제약",
+        "name": "동아제약"
+      }
+    ],
+    "company": "동아제약",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "동아제약 주식등의대량보유상황보고서(일반) (대표보고자: 강정석)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 9,
+    "alpha_score": 9,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "슈퍼개미/개인 핵심 주체 (강정석)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+2,477) 및 지분율 +0.04%p 확대",
+        "points": 1
+      },
+      {
+        "strategy": "전략 2 (연속 매집)",
+        "reason": "공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "슈퍼개미/개인",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 2,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "슈퍼개미/개인 핵심 주체 (강정석) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 실제 보유주식수 증가(+2,477) 및 지분율 +0.04%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
+      "score": 9
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000262"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000261",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "065060",
+    "primary_ticker": "065060",
+    "related_securities": [
+      {
+        "ticker": "065060",
+        "company_name": "지엔코",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000261",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "지엔코",
+        "name": "지엔코"
+      },
+      {
+        "ticker": "040350",
+        "company_name": "크레오에스지",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 크레오에스지",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000261",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "크레오에스지",
+        "name": "크레오에스지"
+      }
+    ],
+    "company": "지엔코",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "지엔코 주식등의대량보유상황보고서(일반) (대표보고자: 크레오에스지)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 10,
+    "alpha_score": 10,
+    "score_breakdown": [
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+5,834) 및 지분율 +0.09%p 확대",
+        "points": 1
+      },
+      {
+        "strategy": "전략 2 (연속 매집)",
+        "reason": "공식 이력 기준 9회 연속 실제 보유주식수 증가 확인",
+        "points": 4
+      },
+      {
+        "strategy": "전략 6 (취득원천 검증)",
+        "reason": "보고사유: 특별관계자 주식장내매수 및 주식근질권설정변경계약 체결",
+        "points": 2
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 9,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 실제 보유주식수 증가(+5,834) 및 지분율 +0.09%p 확대 · 공식 이력 기준 9회 연속 실제 보유주식수 증가 확인 · 보고사유: 특별관계자 주식장내매수 및 주식근질권설정변경계약 체결",
+      "score": 10
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000261"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000256",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "014280",
+    "primary_ticker": "014280",
+    "related_securities": [
+      {
+        "ticker": "014280",
+        "company_name": "금강공업",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000256",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "금강공업",
+        "name": "금강공업"
+      }
+    ],
+    "company": "금강공업",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "금강공업 주식등의대량보유상황보고서(일반) (대표보고자: 안영순)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "슈퍼개미/개인 핵심 주체 (안영순)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "슈퍼개미/개인",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "슈퍼개미/개인 핵심 주체 (안영순) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000256"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000254",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "040350",
+    "primary_ticker": "040350",
+    "related_securities": [
+      {
+        "ticker": "040350",
+        "company_name": "크레오에스지",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000254",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "크레오에스지",
+        "name": "크레오에스지"
+      },
+      {
+        "ticker": "051780",
+        "company_name": "큐로홀딩스",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 큐로홀딩스",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000254",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "큐로홀딩스",
+        "name": "큐로홀딩스"
+      }
+    ],
+    "company": "크레오에스지",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "크레오에스지 주식등의대량보유상황보고서(일반) (대표보고자: 큐로홀딩스)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "PEF/투자조합 핵심 주체 (큐로홀딩스)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "PEF/투자조합",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "PEF/투자조합 핵심 주체 (큐로홀딩스) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000254"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000237",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "429270",
+    "primary_ticker": "429270",
+    "related_securities": [
+      {
+        "ticker": "429270",
+        "company_name": "시지트로닉스",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000237",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "시지트로닉스",
+        "name": "시지트로닉스"
+      }
+    ],
+    "company": "시지트로닉스",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "시지트로닉스 주식등의대량보유상황보고서(일반) (대표보고자: 심규환)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "슈퍼개미/개인 핵심 주체 (심규환)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "슈퍼개미/개인",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "슈퍼개미/개인 핵심 주체 (심규환) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000237"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000232",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "200350",
+    "primary_ticker": "200350",
+    "related_securities": [
+      {
+        "ticker": "200350",
+        "company_name": "아티스트스튜디오",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000232",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "아티스트스튜디오",
+        "name": "아티스트스튜디오"
+      }
+    ],
+    "company": "아티스트스튜디오",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "아티스트스튜디오 주식등의대량보유상황보고서(일반) (대표보고자: 매일방송)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 10,
+    "alpha_score": 10,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "슈퍼개미/개인 핵심 주체 (매일방송)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+2,305,037) 및 지분율 +20.06%p 확대",
+        "points": 3
+      },
+      {
+        "strategy": "전략 5 (임계 구간 돌파)",
+        "reason": "실제 주식 매집으로 지분율 10% 돌파 (단기매매차익 반환 의무 감수)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "슈퍼개미/개인",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 1,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "슈퍼개미/개인 핵심 주체 (매일방송) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 실제 보유주식수 증가(+2,305,037) 및 지분율 +20.06%p 확대 · 실제 주식 매집으로 지분율 10% 돌파 (단기매매차익 반환 의무 감수)",
+      "score": 10
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000232"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000175",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "363260",
+    "primary_ticker": "363260",
+    "related_securities": [
+      {
+        "ticker": "363260",
+        "company_name": "모비데이즈",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000175",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "모비데이즈",
+        "name": "모비데이즈"
+      }
+    ],
+    "company": "모비데이즈",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "모비데이즈 주식등의대량보유상황보고서(일반) (대표보고자: 유범령)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 11,
+    "alpha_score": 11,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "슈퍼개미/개인 핵심 주체 (유범령)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+1,000) 및 지분율 +0.02%p 확대",
+        "points": 1
+      },
+      {
+        "strategy": "전략 2 (연속 매집)",
+        "reason": "공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (취득원천 검증)",
+        "reason": "보고사유: 장내매수 내역 반영을 위한 자발적 변동보고",
+        "points": 2
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "슈퍼개미/개인",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 2,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "슈퍼개미/개인 핵심 주체 (유범령) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 실제 보유주식수 증가(+1,000) 및 지분율 +0.02%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인 · 보고사유: 장내매수 내역 반영을 위한 자발적 변동보고",
+      "score": 11
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000175"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000172",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "0222E0",
+    "primary_ticker": "0222E0",
+    "related_securities": [
+      {
+        "ticker": "0222E0",
+        "company_name": "아이엠스팩1호",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000172",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "아이엠스팩1호",
+        "name": "아이엠스팩1호"
+      }
+    ],
+    "company": "아이엠스팩1호",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "아이엠스팩1호 주식등의대량보유상황보고서(약식) (대표보고자: 코어자산운용)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 4 (신규 5% 돌파)",
+        "reason": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (5.42%)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+300,000) 및 지분율 +5.42%p 확대",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": null,
+    "purpose_current": "단순투자",
+    "accumulation_count": 1,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (5.42%) · 실제 보유주식수 증가(+300,000) 및 지분율 +5.42%p 확대",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000172"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000143",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "002990",
+    "primary_ticker": "002990",
+    "related_securities": [
+      {
+        "ticker": "002990",
+        "company_name": "금호건설",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000143",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "금호건설",
+        "name": "금호건설"
+      }
+    ],
+    "company": "금호건설",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "금호건설 주식등의대량보유상황보고서(약식) (대표보고자: 우리엔에이치동반성장1호사모투자)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 0,
+    "alpha_score": 0,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "PEF/투자조합 핵심 주체 (우리엔에이치동반성장1호사모투자)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 4 (신규 5% 예외)",
+        "reason": "전환사채(CB)/메자닌 인수에 따른 잠재주권 신규 보고로 매집 가점 제외 (10.18%)",
+        "points": 0
+      },
+      {
+        "strategy": "전략 6 (취득원천 검증)",
+        "reason": "보고사유: 제304회 후순위 무기명식 무보증 사모 전환사채(신종자본증권) 인수(신규보고)",
+        "points": -2
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "PEF/투자조합",
+    "purpose_prev": null,
+    "purpose_current": "단순투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "NEUTRAL",
+      "label": "지분공시",
+      "summary": "PEF/투자조합 핵심 주체 (우리엔에이치동반성장1호사모투자) · 보고사유: 제304회 후순위 무기명식 무보증 사모 전환사채(신종자본증권) 인수(신규보고)",
+      "score": 0
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000143"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000116",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "088340",
+    "primary_ticker": "088340",
+    "related_securities": [
+      {
+        "ticker": "088340",
+        "company_name": "유라클",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000116",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "유라클",
+        "name": "유라클"
+      }
+    ],
+    "company": "유라클",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "유라클 주식등의대량보유상황보고서(일반) (대표보고자: 조준희)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 12,
+    "alpha_score": 12,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "슈퍼개미/개인 핵심 주체 (조준희)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+3,000) 및 지분율 +0.07%p 확대",
+        "points": 1
+      },
+      {
+        "strategy": "전략 2 (연속 매집)",
+        "reason": "공식 이력 기준 16회 연속 실제 보유주식수 증가 확인",
+        "points": 4
+      },
+      {
+        "strategy": "전략 6 (취득원천 검증)",
+        "reason": "보고사유: 보고자 장내매수",
+        "points": 2
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "슈퍼개미/개인",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 16,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "슈퍼개미/개인 핵심 주체 (조준희) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 실제 보유주식수 증가(+3,000) 및 지분율 +0.07%p 확대 · 공식 이력 기준 16회 연속 실제 보유주식수 증가 확인 · 보고사유: 보고자 장내매수",
+      "score": 12
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000116"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000101",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "330860",
+    "primary_ticker": "330860",
+    "related_securities": [
+      {
+        "ticker": "330860",
+        "company_name": "네패스아크",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000101",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "네패스아크",
+        "name": "네패스아크"
+      }
+    ],
+    "company": "네패스아크",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "네패스아크 주식등의대량보유상황보고서(약식) (대표보고자: J.P.MORGANSECURITIESPLC)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 4,
+    "alpha_score": 4,
+    "score_breakdown": [
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+2,370) 및 지분율 +0.02%p 확대",
+        "points": 1
+      },
+      {
+        "strategy": "전략 2 (연속 매집)",
+        "reason": "공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "단순투자",
+    "purpose_current": "단순투자",
+    "accumulation_count": 2,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "POSITIVE",
+      "label": "지분공시",
+      "summary": "실제 보유주식수 증가(+2,370) 및 지분율 +0.02%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
+      "score": 4
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000101"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000096",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "388610",
+    "primary_ticker": "388610",
+    "related_securities": [
+      {
+        "ticker": "388610",
+        "company_name": "지에프씨생명과학",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000096",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "지에프씨생명과학",
+        "name": "지에프씨생명과학"
+      }
+    ],
+    "company": "지에프씨생명과학",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "지에프씨생명과학 주식등의대량보유상황보고서(일반) (대표보고자: 강희철)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 10,
+    "alpha_score": 10,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "슈퍼개미/개인 핵심 주체 (강희철)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+763) 및 지분율 +0.01%p 확대",
+        "points": 1
+      },
+      {
+        "strategy": "전략 2 (연속 매집)",
+        "reason": "공식 이력 기준 24회 연속 실제 보유주식수 증가 확인",
+        "points": 4
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "슈퍼개미/개인",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 24,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "슈퍼개미/개인 핵심 주체 (강희철) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 실제 보유주식수 증가(+763) 및 지분율 +0.01%p 확대 · 공식 이력 기준 24회 연속 실제 보유주식수 증가 확인",
+      "score": 10
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000096"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000095",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "307180",
+    "primary_ticker": "307180",
+    "related_securities": [
+      {
+        "ticker": "307180",
+        "company_name": "아이엘",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000095",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "아이엘",
+        "name": "아이엘"
+      }
+    ],
+    "company": "아이엘",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "아이엘 주식등의대량보유상황보고서(일반) (대표보고자: 송성근)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 8,
+    "alpha_score": 8,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "슈퍼개미/개인 핵심 주체 (송성근)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+7,000) 및 지분율 +0.02%p 확대",
+        "points": 1
+      },
+      {
+        "strategy": "전략 6 (취득원천 검증)",
+        "reason": "보고사유: 장내매수에 따른 보유주식수 변동",
+        "points": 2
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "슈퍼개미/개인",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 1,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "슈퍼개미/개인 핵심 주체 (송성근) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 실제 보유주식수 증가(+7,000) 및 지분율 +0.02%p 확대 · 보고사유: 장내매수에 따른 보유주식수 변동",
+      "score": 8
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000095"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000084",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "185490",
+    "primary_ticker": "185490",
+    "related_securities": [
+      {
+        "ticker": "185490",
+        "company_name": "아이진",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000084",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "아이진",
+        "name": "아이진"
+      }
+    ],
+    "company": "아이진",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "아이진 주식등의대량보유상황보고서(일반) (대표보고자: 한국비엠아이)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 8,
+    "alpha_score": 8,
+    "score_breakdown": [
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+337,179) 및 지분율 +0.78%p 확대",
+        "points": 1
+      },
+      {
+        "strategy": "전략 2 (연속 매집)",
+        "reason": "공식 이력 기준 5회 연속 실제 보유주식수 증가 확인",
+        "points": 4
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 5,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 실제 보유주식수 증가(+337,179) 및 지분율 +0.78%p 확대 · 공식 이력 기준 5회 연속 실제 보유주식수 증가 확인",
+      "score": 8
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000084"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000083",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "004080",
+    "primary_ticker": "004080",
+    "related_securities": [
+      {
+        "ticker": "004080",
+        "company_name": "신흥",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000083",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "신흥",
+        "name": "신흥"
+      }
+    ],
+    "company": "신흥",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "신흥 주식등의대량보유상황보고서(일반) (대표보고자: 이용익)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 4,
+    "alpha_score": 4,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "슈퍼개미/개인 핵심 주체 (이용익)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (목적 변경)",
+        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      },
+      {
+        "strategy": "전략 7 (지분 축소)",
+        "reason": "직전 보고 대비 보유주식수(-93,350주) 및 지분율(-0.19%p) 감소",
+        "points": -1
+      }
+    ],
+    "investor_class": "슈퍼개미/개인",
+    "purpose_prev": "단순투자",
+    "purpose_current": "일반투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "POSITIVE",
+      "label": "지분공시",
+      "summary": "슈퍼개미/개인 핵심 주체 (이용익) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 직전 보고 대비 보유주식수(-93,350주) 및 지분율(-0.19%p) 감소",
+      "score": 4
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000083"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000079",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "128540",
+    "primary_ticker": "128540",
+    "related_securities": [
+      {
+        "ticker": "128540",
+        "company_name": "에코캡",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000079",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "에코캡",
+        "name": "에코캡"
+      }
+    ],
+    "company": "에코캡",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "에코캡 주식등의대량보유상황보고서(약식) (대표보고자: 최영천)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": -6,
+    "alpha_score": -6,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "슈퍼개미/개인 핵심 주체 (최영천)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 7 (지분 축소)",
+        "reason": "직전 대비 -6.75%p (-1,801,533주) 지분 매도/감소",
+        "points": -3
+      },
+      {
+        "strategy": "전략 7 (5% 이탈 최우선 경보)",
+        "reason": "최신 보유비율 3.24%로 5% 미만 진입 (공시의무 소멸 및 오버행 주의)",
+        "points": -4
+      },
+      {
+        "strategy": "전략 6 (처분원천 확인)",
+        "reason": "보고사유: 장내매도로 인한 보유주식 비율 감소(5% 미만)",
+        "points": -1
+      }
+    ],
+    "investor_class": "슈퍼개미/개인",
+    "purpose_prev": "단순투자",
+    "purpose_current": "단순투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "RISK",
+      "label": "지분공시",
+      "summary": "슈퍼개미/개인 핵심 주체 (최영천) · 직전 대비 -6.75%p (-1,801,533주) 지분 매도/감소 · 최신 보유비율 3.24%로 5% 미만 진입 (공시의무 소멸 및 오버행 주의) · 보고사유: 장내매도로 인한 보유주식 비율 감소(5% 미만)",
+      "score": -6
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000079"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000078",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "359410",
+    "primary_ticker": "359410",
+    "related_securities": [
+      {
+        "ticker": "359410",
+        "company_name": "영광",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000078",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "영광",
+        "name": "영광"
+      }
+    ],
+    "company": "영광",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "영광 주식등의대량보유상황보고서(일반) (대표보고자: 허철기)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 11,
+    "alpha_score": 11,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "슈퍼개미/개인 핵심 주체 (허철기)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (적극적 주주활동)",
+        "reason": "단순투자가 아닌 일반투자/적극주주 목적 공시",
+        "points": 2
+      },
+      {
+        "strategy": "전략 4 (신규 5% 돌파)",
+        "reason": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (61.88%)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+5,604,240) 및 지분율 +61.88%p 확대",
+        "points": 3
+      },
+      {
+        "strategy": "전략 5 (임계 구간 돌파)",
+        "reason": "실제 주식 매집으로 지분율 10% 돌파 (단기매매차익 반환 의무 감수)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "슈퍼개미/개인",
+    "purpose_prev": null,
+    "purpose_current": "일반투자",
+    "accumulation_count": 1,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "슈퍼개미/개인 핵심 주체 (허철기) · 단순투자가 아닌 일반투자/적극주주 목적 공시 · 실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (61.88%) · 실제 보유주식수 증가(+5,604,240) 및 지분율 +61.88%p 확대 · 실제 주식 매집으로 지분율 10% 돌파 (단기매매차익 반환 의무 감수)",
+      "score": 11
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000078"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000044",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "200350",
+    "primary_ticker": "200350",
+    "related_securities": [
+      {
+        "ticker": "200350",
+        "company_name": "아티스트스튜디오",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000044",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "아티스트스튜디오",
+        "name": "아티스트스튜디오"
+      }
+    ],
+    "company": "아티스트스튜디오",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "아티스트스튜디오 주식등의대량보유상황보고서 (대표보고자: 스튜디오지담)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 4 (신규 5% 돌파)",
+        "reason": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (9.83%)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+1,129,190) 및 지분율 +9.83%p 확대",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "단순투자",
+    "purpose_current": "단순투자",
+    "accumulation_count": 1,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (9.83%) · 실제 보유주식수 증가(+1,129,190) 및 지분율 +9.83%p 확대",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000044"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261106000027",
+    "d_day": -1,
+    "country": "KR",
+    "ticker": "0222E0",
+    "primary_ticker": "0222E0",
+    "related_securities": [
+      {
+        "ticker": "0222E0",
+        "company_name": "아이엠스팩1호",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000027",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "아이엠스팩1호",
+        "name": "아이엠스팩1호"
+      }
+    ],
+    "company": "아이엠스팩1호",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "아이엠스팩1호 주식등의대량보유상황보고서 (대표보고자: 아이엠증권)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 7,
+    "alpha_score": 7,
+    "score_breakdown": [
+      {
+        "strategy": "전략 4 (신규 5% 돌파)",
+        "reason": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (14.68%)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+900,000) 및 지분율 +14.68%p 확대",
+        "points": 3
+      },
+      {
+        "strategy": "전략 5 (임계 구간 돌파)",
+        "reason": "실제 주식 매집으로 지분율 10% 돌파 (단기매매차익 반환 의무 감수)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": null,
+    "purpose_current": "단순투자",
+    "accumulation_count": 1,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (14.68%) · 실제 보유주식수 증가(+900,000) 및 지분율 +14.68%p 확대 · 실제 주식 매집으로 지분율 10% 돌파 (단기매매차익 반환 의무 감수)",
+      "score": 7
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000027"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261105000505",
+    "d_day": -2,
+    "country": "KR",
+    "ticker": "0222E0",
+    "primary_ticker": "0222E0",
+    "related_securities": [
+      {
+        "ticker": "0222E0",
+        "company_name": "아이엠스팩1호",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261105000505",
+        "relation_known_date": "2026-11-05",
+        "ingest_mode": "AUTO",
+        "from_entity": "아이엠스팩1호",
+        "name": "아이엠스팩1호"
+      },
+      {
+        "ticker": "001750",
+        "company_name": "한양증권",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 한양증권",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261105000505",
+        "relation_known_date": "2026-11-05",
+        "ingest_mode": "AUTO",
+        "from_entity": "한양증권",
+        "name": "한양증권"
+      }
+    ],
+    "company": "아이엠스팩1호",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "아이엠스팩1호 주식등의대량보유상황보고서 (대표보고자: 한양증권)",
+    "event_date": "2026-11-05",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-05",
+    "window_end": "2026-11-05",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 4 (신규 5% 돌파)",
+        "reason": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (5.42%)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+300,000) 및 지분율 +5.42%p 확대",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": null,
+    "purpose_current": "단순투자",
+    "accumulation_count": 1,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (5.42%) · 실제 보유주식수 증가(+300,000) 및 지분율 +5.42%p 확대",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261105000505"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261105000388",
+    "d_day": -2,
+    "country": "KR",
+    "ticker": "0147B0",
+    "primary_ticker": "0147B0",
+    "related_securities": [
+      {
+        "ticker": "0147B0",
+        "company_name": "래블업",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261105000388",
+        "relation_known_date": "2026-11-05",
+        "ingest_mode": "AUTO",
+        "from_entity": "래블업",
+        "name": "래블업"
+      },
+      {
+        "ticker": "309960",
+        "company_name": "LB인베스트먼트",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: LB인베스트먼트",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261105000388",
+        "relation_known_date": "2026-11-05",
+        "ingest_mode": "AUTO",
+        "from_entity": "LB인베스트먼트",
+        "name": "LB인베스트먼트"
+      }
+    ],
+    "company": "래블업",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "래블업 주식등의대량보유상황보고서 (대표보고자: LB인베스트먼트)",
+    "event_date": "2026-11-05",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-05",
+    "window_end": "2026-11-05",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 7,
+    "alpha_score": 7,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "PEF/투자조합 핵심 주체 (LB인베스트먼트)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 4 (신규 5% 돌파)",
+        "reason": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (6.15%)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+896,500) 및 지분율 +6.15%p 확대",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "PEF/투자조합",
+    "purpose_prev": null,
+    "purpose_current": "단순투자",
+    "accumulation_count": 1,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "PEF/투자조합 핵심 주체 (LB인베스트먼트) · 실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (6.15%) · 실제 보유주식수 증가(+896,500) 및 지분율 +6.15%p 확대",
+      "score": 7
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261105000388"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261105000297",
+    "d_day": -2,
+    "country": "KR",
+    "ticker": "429270",
+    "primary_ticker": "429270",
+    "related_securities": [
+      {
+        "ticker": "429270",
+        "company_name": "시지트로닉스",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261105000297",
+        "relation_known_date": "2026-11-05",
+        "ingest_mode": "AUTO",
+        "from_entity": "시지트로닉스",
+        "name": "시지트로닉스"
+      }
+    ],
+    "company": "시지트로닉스",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "시지트로닉스 주식등의대량보유상황보고서 (대표보고자: 케이앤인터내셔널)",
+    "event_date": "2026-11-05",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-05",
+    "window_end": "2026-11-05",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 4 (신규 5% 돌파)",
+        "reason": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (5.56%)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+400,000) 및 지분율 +5.56%p 확대",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": null,
+    "purpose_current": "단순투자",
+    "accumulation_count": 1,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (5.56%) · 실제 보유주식수 증가(+400,000) 및 지분율 +5.56%p 확대",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261105000297"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261104000295",
+    "d_day": -3,
+    "country": "KR",
+    "ticker": "0222E0",
+    "primary_ticker": "0222E0",
+    "related_securities": [
+      {
+        "ticker": "0222E0",
+        "company_name": "아이엠스팩1호",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261104000295",
+        "relation_known_date": "2026-11-04",
+        "ingest_mode": "AUTO",
+        "from_entity": "아이엠스팩1호",
+        "name": "아이엠스팩1호"
+      }
+    ],
+    "company": "아이엠스팩1호",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "아이엠스팩1호 주식등의대량보유상황보고서 (대표보고자: 하우자산운용)",
+    "event_date": "2026-11-04",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-04",
+    "window_end": "2026-11-04",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 4 (신규 5% 돌파)",
+        "reason": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (5.42%)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 2 (실제 주식수 확대)",
+        "reason": "실제 보유주식수 증가(+300,000) 및 지분율 +5.42%p 확대",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": null,
+    "purpose_current": "단순투자",
+    "accumulation_count": 1,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (5.42%) · 실제 보유주식수 증가(+300,000) 및 지분율 +5.42%p 확대",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261104000295"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261103000383",
+    "d_day": -4,
+    "country": "KR",
+    "ticker": "381970",
+    "primary_ticker": "381970",
+    "related_securities": [
+      {
+        "ticker": "381970",
+        "company_name": "KG모빌리티플랫폼",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261103000383",
+        "relation_known_date": "2026-11-03",
+        "ingest_mode": "AUTO",
+        "from_entity": "KG모빌리티플랫폼",
+        "name": "KG모빌리티플랫폼"
+      }
+    ],
+    "company": "KG모빌리티플랫폼",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "KG모빌리티플랫폼 주식등의대량보유상황보고서 (대표보고자: 케이모빌리티밸류업)",
+    "event_date": "2026-11-03",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-03",
+    "window_end": "2026-11-03",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 0,
+    "alpha_score": 0,
+    "score_breakdown": [
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "단순투자",
+    "purpose_current": "단순투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "NEUTRAL",
+      "label": "지분공시",
+      "summary": "주식등의대량보유상황보고서 · 대표보고자 케이모빌리티밸류업 · 보유비율 19.69% · 보유주식수 9,612,860주",
+      "score": 0
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261103000383"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261103000340",
+    "d_day": -4,
+    "country": "KR",
+    "ticker": "381970",
+    "primary_ticker": "381970",
+    "related_securities": [
+      {
+        "ticker": "381970",
+        "company_name": "KG모빌리티플랫폼",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261103000340",
+        "relation_known_date": "2026-11-03",
+        "ingest_mode": "AUTO",
+        "from_entity": "KG모빌리티플랫폼",
+        "name": "KG모빌리티플랫폼"
+      },
+      {
+        "ticker": "016380",
+        "company_name": "KG스틸",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: KG스틸",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261103000340",
+        "relation_known_date": "2026-11-03",
+        "ingest_mode": "AUTO",
+        "from_entity": "KG스틸",
+        "name": "KG스틸"
+      }
+    ],
+    "company": "KG모빌리티플랫폼",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "KG모빌리티플랫폼 주식등의대량보유상황보고서 (대표보고자: KG스틸)",
+    "event_date": "2026-11-03",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-03",
+    "window_end": "2026-11-03",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 0,
+    "alpha_score": 0,
+    "score_breakdown": [
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "단순투자",
+    "purpose_current": "단순투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "NEUTRAL",
+      "label": "지분공시",
+      "summary": "주식등의대량보유상황보고서 · 대표보고자 KG스틸 · 보유비율 52.52% · 보유비율 증감 0.02%p · 보유주식수 25,642,810주",
+      "score": 0
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261103000340"
+  },
+  {
+    "event_id": "KR_DART_5PCT_20261103000323",
+    "d_day": -4,
+    "country": "KR",
+    "ticker": "107640",
+    "primary_ticker": "107640",
+    "related_securities": [
+      {
+        "ticker": "107640",
+        "company_name": "한중엔시에스",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "DART_5PCT",
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261103000323",
+        "relation_known_date": "2026-11-03",
+        "ingest_mode": "AUTO",
+        "from_entity": "한중엔시에스",
+        "name": "한중엔시에스"
+      }
+    ],
+    "company": "한중엔시에스",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "한중엔시에스 주식등의대량보유상황보고서 (대표보고자: 김상균)",
+    "event_date": "2026-11-03",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-03",
+    "window_end": "2026-11-03",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 2,
+    "alpha_score": 2,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "슈퍼개미/개인 핵심 주체 (김상균)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "슈퍼개미/개인",
+    "purpose_prev": "단순투자",
+    "purpose_current": "단순투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "POSITIVE",
+      "label": "지분공시",
+      "summary": "슈퍼개미/개인 핵심 주체 (김상균)",
+      "score": 2
+    },
+    "status": "CONFIRMED",
+    "source_name": "DART_5PCT",
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261103000323"
   }
 ]

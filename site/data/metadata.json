@@ -1,18 +1,19 @@
 {
-  "generated_at": "2026-11-07T01:44:00+09:00",
-  "total_events": 276,
-  "kr_events": 265,
+  "generated_at": "2026-11-07T08:53:37.646771+09:00",
+  "total_events": 314,
+  "kr_events": 303,
   "us_events": 11,
   "historical_seed_events": 11,
   "official_historical_events": 47,
-  "events_with_d5": 26,
-  "events_with_market_data": 240,
-  "news_candidates": 1502,
-  "news_visible": 246,
+  "events_with_d5": 27,
+  "events_with_market_data": 274,
+  "news_candidates": 1707,
+  "news_visible": 286,
   "version": "1.0.0",
   "collector_status": {
     "HISTORICAL_SEED": "SUCCESS",
     "DART": "SUCCESS",
+    "DART_5PCT": "SUCCESS",
     "SEC": "SUCCESS",
     "NEWS_FUTURE": "SUCCESS",
     "FDA_ADVISORY": "SUCCESS",
@@ -20,7 +21,6 @@
     "FED_FOMC": "SUCCESS",
     "ENTER_KR": "SUCCESS",
     "GAMES_RELEASE": "SUCCESS",
-    "INDEX_KR": "SUCCESS",
-    "DART_5PCT": "SUCCESS"
+    "INDEX_KR": "SUCCESS"
   }
 }
