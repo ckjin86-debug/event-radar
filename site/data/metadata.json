@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T09:30:20.224324+09:00",
+  "generated_at": "2026-11-07T09:42:58.777717+09:00",
   "total_events": 317,
   "kr_events": 306,
   "us_events": 11,
@@ -7,7 +7,7 @@
   "official_historical_events": 47,
   "events_with_d5": 27,
   "events_with_market_data": 276,
-  "news_candidates": 1719,
+  "news_candidates": 1721,
   "news_visible": 289,
   "version": "1.0.0",
   "collector_status": {
