@@ -1,7 +1,7 @@
 [
   {
     "event_id": "KR_NEWS_FUTURE_db8265466c469a943d8102457285c5e62e58e213",
-    "d_day": 1,
+    "d_day": 0,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "347850",
@@ -99,7 +99,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_5ffecc946ac6e5b87ddd29d4d7f8364b65ef46a2",
-    "d_day": 1,
+    "d_day": 0,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "024850",
@@ -197,7 +197,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_10b523c2dfd89e34dad786b8354b9ca3f3d25d5d",
-    "d_day": 2,
+    "d_day": 1,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "017960",
@@ -295,7 +295,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_d34a1aa1b7a634f2ea4a726977356fae99e79418",
-    "d_day": 2,
+    "d_day": 1,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "018250",
@@ -406,7 +406,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_03a5d533a2385e53a75a6455cd5d2a21ece2dc20",
-    "d_day": 2,
+    "d_day": 1,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "030200",
@@ -504,7 +504,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_70ccc840f1a378b965dc4de77bb6e063f2e3f2dd",
-    "d_day": 2,
+    "d_day": 1,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "128940",
@@ -615,7 +615,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_928dd88c08aaa66edca1685e24f25227f39355e6",
-    "d_day": 2,
+    "d_day": 1,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "128940",
@@ -713,7 +713,7 @@
   },
   {
     "event_id": "KR_KIND_IPO_36e9f8708575adda2a70afe5d5d3a7c40f4d272f",
-    "d_day": 3,
+    "d_day": 2,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "016360",
@@ -887,7 +887,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_8221befe1edde09a3edcc650f3574af1404ed4e6",
-    "d_day": 3,
+    "d_day": 2,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "192820",
@@ -985,7 +985,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_dfff0aa832ee75ea324a4d86bda5eadbc09bd952",
-    "d_day": 3,
+    "d_day": 2,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "189330",
@@ -1083,7 +1083,7 @@
   },
   {
     "event_id": "KR_KIND_IPO_50f59a35c8353f20413198ea5751a0be600345e9",
-    "d_day": 4,
+    "d_day": 3,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "016360",
@@ -1231,7 +1231,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_b4441490af5cf8a4f6d44d63eb19cd8518aac575",
-    "d_day": 4,
+    "d_day": 3,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "373220",
@@ -1329,7 +1329,7 @@
   },
   {
     "event_id": "KR_KIND_IPO_f720780dcb05cf82442eea023725dcb72a037487",
-    "d_day": 5,
+    "d_day": 4,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "037620",
@@ -1555,7 +1555,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_b9a8281586dfc08f3aa1dcb03e13a2f95d2151a6",
-    "d_day": 6,
+    "d_day": 5,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "053580",
@@ -1653,7 +1653,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_07f6960e4028235d48f0d80c7df956face40b771",
-    "d_day": 6,
+    "d_day": 5,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "053580",
@@ -1765,7 +1765,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_77ea08474bc44fad7922c171803056dcd9ce5c04",
-    "d_day": 7,
+    "d_day": 6,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "347850",
@@ -1863,7 +1863,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_3a043bec5d4d35456362ce90836fd9a742fdc229",
-    "d_day": 7,
+    "d_day": 6,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "047040",
@@ -1961,7 +1961,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_63fe8a51b3f881ce8bbaa1b25d802694b09d3739",
-    "d_day": 8,
+    "d_day": 7,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "500197",
@@ -2006,9 +2006,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 58,
+    "event_score": 60,
     "insight": {
-      "score": 58,
+      "score": 60,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -2034,7 +2034,7 @@
         },
         "timing": {
           "label": "일정 접근·신선도",
-          "points": 8,
+          "points": 10,
           "max": 10
         }
       },
@@ -2072,7 +2072,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_64b6aa5f37f75f5b92672b61c37be783dd094eb5",
-    "d_day": 9,
+    "d_day": 8,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "205500",
@@ -2170,7 +2170,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_9be5c1f017b543eb2e2c4669f6900bb679efb479",
-    "d_day": 9,
+    "d_day": 8,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "000720",
@@ -2269,7 +2269,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_9a1e070f3d570db4b0c7bca53a18ec296a6df8e0",
-    "d_day": 9,
+    "d_day": 8,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "293490",
@@ -2381,7 +2381,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_10516328c7815fdae9b0784e2e268b1e08fbf69e",
-    "d_day": 9,
+    "d_day": 8,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "000720",
@@ -2493,7 +2493,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_be9b0f84ed4c42ea0b88fe551a7d46aa843cb0df",
-    "d_day": 10,
+    "d_day": 9,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "112240",
@@ -2597,7 +2597,7 @@
   },
   {
     "event_id": "KR_KIND_IPO_3148cd5fac8929cee30beeb9b427599152f80244",
-    "d_day": 11,
+    "d_day": 10,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "001500",
@@ -2771,7 +2771,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_ba5765dfa55cf8ca28a278538f7e4d33b646035d",
-    "d_day": 11,
+    "d_day": 10,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "068270",
@@ -2869,7 +2869,7 @@
   },
   {
     "event_id": "US_FDA_ADVISORY_federal-register:2026-18920",
-    "d_day": 12,
+    "d_day": 11,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "XBI",
@@ -2968,7 +2968,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_3e6e20fca674127cf04299741a88a1dc86d5775e",
-    "d_day": 12,
+    "d_day": 11,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "507547",
@@ -3059,7 +3059,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_f830cbaf9d326cb10f83d07546d64755c7f91c44",
-    "d_day": 12,
+    "d_day": 11,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "069080",
@@ -3157,7 +3157,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_f919cb3c8bd7fc4802dc8992d57bad011ffa4b5c",
-    "d_day": 13,
+    "d_day": 12,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "",
@@ -3249,7 +3249,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_924849f58208b3358cee602cc8bc64aaae282959",
-    "d_day": 13,
+    "d_day": 12,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "035720",
@@ -3360,7 +3360,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_79418ba96891ee679377f1165fa08f251178e4d8",
-    "d_day": 14,
+    "d_day": 13,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "000720",
@@ -3472,7 +3472,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_563429628905797236037c8a760e7eaddd237826",
-    "d_day": 17,
+    "d_day": 16,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "003000",
@@ -3570,7 +3570,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_dcd76c71b427aea07a269c86db490e1c21ca5de3",
-    "d_day": 19,
+    "d_day": 18,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "263750",
@@ -3681,7 +3681,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_109415caf397ce0d7dfcfaf3c9e54ca8707587ee",
-    "d_day": 22,
+    "d_day": 21,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "005930",
@@ -3792,7 +3792,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_50544afca346632b5d5b298b5bb24c8568c98683",
-    "d_day": 23,
+    "d_day": 22,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "294870",
@@ -3884,7 +3884,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_b6ae21e37d835ba2f0bb5d05b5e275f1f271f0dc",
-    "d_day": 23,
+    "d_day": 22,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "051910",
@@ -3982,7 +3982,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_2354e3a8cd5c37b5dc3bec6a6c7febcb251bb0b1",
-    "d_day": 24,
+    "d_day": 23,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "180640",
@@ -4081,7 +4081,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_0f9a3a1d103c1ca699c0474eb15cd1efd0ffb2aa",
-    "d_day": 24,
+    "d_day": 23,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "272450",
@@ -4179,7 +4179,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_a08f3bd9382cc08e32a972e05de954fdfba16b1c",
-    "d_day": 24,
+    "d_day": 23,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "010130",
@@ -4275,7 +4275,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_58dcfd65b2e819549d6fe28426cc85d5d5aa16b0",
-    "d_day": 24,
+    "d_day": 23,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "180640",
@@ -4400,7 +4400,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_a29d037559cf4d0ee0f24ae639812270030a1617",
-    "d_day": 24,
+    "d_day": 23,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "011810",
@@ -4511,7 +4511,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_363da54661b28404e7901fe89fea2b803e3ae268",
-    "d_day": 24,
+    "d_day": 23,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "003490",
@@ -4609,7 +4609,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_3fb903157465c4c7c0fe4e674c2cfc4268059ac4",
-    "d_day": 24,
+    "d_day": 23,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "011210",
@@ -4721,7 +4721,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_52022995d6be39dbf045ac5bb4ffed99eb28cd7d",
-    "d_day": 24,
+    "d_day": 23,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "141080",
@@ -4819,7 +4819,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_41953e8c21d320fe8add8c749a22857ca8906a7f",
-    "d_day": 24,
+    "d_day": 23,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "144510",
@@ -4944,7 +4944,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_97a60f6b45139fb6af4b95bf4f9cabf6f010f104",
-    "d_day": 24,
+    "d_day": 23,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "005930",
@@ -5028,8 +5028,8 @@
         "ticker": "005930"
       },
       "coverage": {
-        "eligible_events": 3,
-        "priced_events": 3,
+        "eligible_events": 2,
+        "priced_events": 2,
         "complete_events": 0,
         "security_samples": 0,
         "not_calculated_events": 0,
@@ -5043,7 +5043,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_d94ce1b25566fad4f35eb6bb2bbf7f8693665604",
-    "d_day": 24,
+    "d_day": 23,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "144510",
@@ -5154,7 +5154,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_b468b7536a5ebf310f563cabb55135e109e5ae13",
-    "d_day": 24,
+    "d_day": 23,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "372320",
@@ -5252,7 +5252,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_c521b9c42402507251975604667e46dbc83eb1b4",
-    "d_day": 24,
+    "d_day": 23,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "115180",
@@ -5350,7 +5350,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_cbe40bf88d71e14e7dbb4a770f5fd62629c8bb0b",
-    "d_day": 24,
+    "d_day": 23,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "024850",
@@ -5461,7 +5461,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_0b6ecebe52a7bd0b7db9fc5790ef516a89f6af0f",
-    "d_day": 24,
+    "d_day": 23,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "272450",
@@ -5572,7 +5572,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_1c3d498e914fd11a6b4bf3be5dbaa36a540316f0",
-    "d_day": 24,
+    "d_day": 23,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "144510",
@@ -5671,7 +5671,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_8478948e7b6670006799bfdb85db0a5b3a40f762",
-    "d_day": 24,
+    "d_day": 23,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "000830",
@@ -5762,7 +5762,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_5814de089c1323cc6d7614171100f119fc1724a6",
-    "d_day": 24,
+    "d_day": 23,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "012650",
@@ -5853,7 +5853,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_7183e9d9bb138e483af012f5380a0eed7374c25c",
-    "d_day": 24,
+    "d_day": 23,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "027410",
@@ -5951,7 +5951,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_cac3c97e9cf5fc468af00929c1f733d185da9e31",
-    "d_day": 24,
+    "d_day": 23,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "004530",
@@ -6042,7 +6042,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_91364fef3005452d62df8524b872d3502999c10e",
-    "d_day": 24,
+    "d_day": 23,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "272450",
@@ -6179,7 +6179,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_a073fd03264a5804f675f0a8ce8ab41fdf30beb3",
-    "d_day": 24,
+    "d_day": 23,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "229640",
@@ -6277,7 +6277,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_32fa9fbcc25d43371f7726ae5ff2cfeb56f4cb74",
-    "d_day": 24,
+    "d_day": 23,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "001290",
@@ -6354,8 +6354,8 @@
       "history_confidence": "NONE",
       "market": null,
       "coverage": {
-        "eligible_events": 3,
-        "priced_events": 3,
+        "eligible_events": 2,
+        "priced_events": 2,
         "complete_events": 0,
         "security_samples": 0,
         "not_calculated_events": 0,
@@ -6369,7 +6369,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_9332aa643a2e14dabf519f820a7a2c87225c5ebf",
-    "d_day": 24,
+    "d_day": 23,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "006360",
@@ -6481,7 +6481,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_15172b3f6ac0b2751b9a8b071c5acda1dd1fbd85",
-    "d_day": 24,
+    "d_day": 23,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "080420",
@@ -6558,8 +6558,8 @@
       "history_confidence": "NONE",
       "market": null,
       "coverage": {
-        "eligible_events": 3,
-        "priced_events": 3,
+        "eligible_events": 2,
+        "priced_events": 2,
         "complete_events": 0,
         "security_samples": 0,
         "not_calculated_events": 0,
@@ -6573,7 +6573,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_fb42d89f4a0181f8cf8f09f623f99ad4c70f73ae",
-    "d_day": 24,
+    "d_day": 23,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "068270",
@@ -6671,7 +6671,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_769c53d00100088305f2e1bc8aaa59001dee7d7a",
-    "d_day": 24,
+    "d_day": 23,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "040300",
@@ -6769,7 +6769,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_c4527b1787b4ba8a96da93e31db127ed6ea28cc6",
-    "d_day": 24,
+    "d_day": 23,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "018880",
@@ -6867,7 +6867,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_65fe259c554eeced3ea55b5e7b170815a527d391",
-    "d_day": 26,
+    "d_day": 25,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "259960",
@@ -6965,7 +6965,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_1f3108214ec4cbd8a3cd5c78a37f7a41e152c6a1",
-    "d_day": 30,
+    "d_day": 29,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "272450",
@@ -7076,7 +7076,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_c923b50e9e1f7a441292bf2a6761532a4acade8f",
-    "d_day": 30,
+    "d_day": 29,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "272450",
@@ -7173,8 +7173,8 @@
         "ticker": "272450"
       },
       "coverage": {
-        "eligible_events": 3,
-        "priced_events": 3,
+        "eligible_events": 2,
+        "priced_events": 2,
         "complete_events": 0,
         "security_samples": 0,
         "not_calculated_events": 0,
@@ -7188,7 +7188,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_b3f5857727fae4f620ddc5a97752ae386d3af284",
-    "d_day": 30,
+    "d_day": 29,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "002320",
@@ -7299,7 +7299,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_040c6086ecc07a1a4b6c00bf3590ff8a109d88c8",
-    "d_day": 30,
+    "d_day": 29,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "072020",
@@ -7397,7 +7397,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_7b83c99adea5e31a49318f4c930aff94fc3fe665",
-    "d_day": 31,
+    "d_day": 30,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "141080",
@@ -7429,9 +7429,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 55,
+    "event_score": 58,
     "insight": {
-      "score": 55,
+      "score": 58,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -7457,7 +7457,7 @@
         },
         "timing": {
           "label": "일정 접근·신선도",
-          "points": 5,
+          "points": 8,
           "max": 10
         }
       },
@@ -7495,7 +7495,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_df35a937d1ed5215aa74d86af74817b986053d65",
-    "d_day": 31,
+    "d_day": 30,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "089860",
@@ -7553,9 +7553,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 55,
+    "event_score": 58,
     "insight": {
-      "score": 55,
+      "score": 58,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -7581,7 +7581,7 @@
         },
         "timing": {
           "label": "일정 접근·신선도",
-          "points": 5,
+          "points": 8,
           "max": 10
         }
       },
@@ -7619,7 +7619,7 @@
   },
   {
     "event_id": "US_FED_FOMC_f58d532f7e3b63c6fa8f0b523ff171c240dd2348",
-    "d_day": 32,
+    "d_day": 31,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "^GSPC",
@@ -7717,7 +7717,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_c68f440b3570b72c5823b49009cd55b3fbe19f8d",
-    "d_day": 32,
+    "d_day": 31,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "047040",
@@ -7815,7 +7815,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_57fd2a84a6fa5c4691bf107d3803e516980b47b8",
-    "d_day": 34,
+    "d_day": 33,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "293490",
@@ -7915,7 +7915,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_c8dc0c1254054e158ae8e687e1acb70879cec73c",
-    "d_day": 35,
+    "d_day": 34,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "293490",
@@ -8014,7 +8014,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_d3d1a8c2de961303ece1dc3f34ea73503d94f855",
-    "d_day": 35,
+    "d_day": 34,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "293490",
@@ -8126,7 +8126,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_9622e833bd4d45a9868d47e8dbf37b640312cbc6",
-    "d_day": 35,
+    "d_day": 34,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "024850",
@@ -8224,7 +8224,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_bd057c0b7aa09c62de9036f15df73eab334cfd8d",
-    "d_day": 35,
+    "d_day": 34,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "144510",
@@ -8322,7 +8322,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_3b7b574d26b1a4409a0abd1cc2a42cbe929d9953",
-    "d_day": 36,
+    "d_day": 35,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "024850",
@@ -8420,7 +8420,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_10c2d5a1f69541efaf8418362ba7d3441dd92632",
-    "d_day": 37,
+    "d_day": 36,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "141080",
@@ -8518,7 +8518,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_50a2becfbea5df60ee0396368e792c757f955be3",
-    "d_day": 37,
+    "d_day": 36,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "005440",
@@ -8642,7 +8642,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_3b46e6c8b8592758ea1108ea24fe95c54b58ffa8",
-    "d_day": 39,
+    "d_day": 38,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "180640",
@@ -8741,7 +8741,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_aed9a3d081db3b730005459df849747f8185ecad",
-    "d_day": 39,
+    "d_day": 38,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "020560",
@@ -8839,7 +8839,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_388d2700e92d42115cf7d03117b26246aaa26936",
-    "d_day": 40,
+    "d_day": 39,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "003490",
@@ -8963,7 +8963,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_dacd44bfd54968c4b19a641bf54a86870efb51d4",
-    "d_day": 40,
+    "d_day": 39,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "003490",
@@ -9074,7 +9074,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_aa267fc537b357cb471288a2c158ca40d6bab81a",
-    "d_day": 40,
+    "d_day": 39,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "003490",
@@ -9198,7 +9198,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_0a072121c2490d22f874d1cb9e96bab0a0f6b114",
-    "d_day": 41,
+    "d_day": 40,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "040300",
@@ -9296,7 +9296,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_332bd6751c9d5ad47f1e1ae5013bb8ebe53287ca",
-    "d_day": 41,
+    "d_day": 40,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "363250",
@@ -9394,7 +9394,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_8ed6c9480144115283bcb82f3a9a3bcce6bfa2bc",
-    "d_day": 44,
+    "d_day": 43,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "034830",
@@ -9506,7 +9506,7 @@
   },
   {
     "event_id": "KR_KIND_IPO_053ff0fde7b70d248fe0b2d388e8e37366b64306",
-    "d_day": 45,
+    "d_day": 44,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "066970",
@@ -9615,7 +9615,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_ab727f264d76c1376ba732770cd967be7169dbd1",
-    "d_day": 52,
+    "d_day": 51,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "200130",
@@ -9713,7 +9713,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_b8f73723b2925c5de9b1c4ce89faec404de335cc",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "089590",
@@ -9864,7 +9864,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_bd773ab456810f6e3ffe8ac02ff7a697421baaae",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "180640",
@@ -9987,7 +9987,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_de03d28b35e37868447597ecd1917f6f2ebd6b90",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "267270",
@@ -10085,7 +10085,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_7c4e277471577832dba3924b0522fc17a99c31d3",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "280360",
@@ -10177,7 +10177,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_6b8b3e1c3333cf15710c6550ac373328ca488033",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "100090",
@@ -10275,7 +10275,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_983bd14653100955a0c9a658178886800aac0f15",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "088350",
@@ -10386,7 +10386,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_5cf37b574500a65fcebf4d899fd9b4cb897838f4",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "047040",
@@ -10523,7 +10523,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_bd70fabef9a019be5a8d57505e12491a210b0f14",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "207940",
@@ -10622,7 +10622,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_ea7dcd7d203506d100ec58a63fb3f8e328f5713d",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "005930",
@@ -10733,7 +10733,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_ae60fe51477759a5138347551308d4b6a03f109a",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "375500",
@@ -10831,7 +10831,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_ab07dcfb19e63171886dc840b13e1a6eff13f1b2",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "035890",
@@ -10929,7 +10929,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_fba4329c7e0171c57da2514a60bdbddafed24c38",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "066970",
@@ -11040,7 +11040,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_3f352e7a2b45dde5315083bc7731974d0fe16a0d",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "000670",
@@ -11149,7 +11149,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_d3cc33cbcd0de1157f15bb8f02e6f54d95a94b26",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "180640",
@@ -11246,7 +11246,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_7807224ac012bead56cdc20a62a39abe86083d0d",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "008930",
@@ -11342,7 +11342,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_4bf5607c5a1b5ce6caf38ac8471dc6f8fa7a2438",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "047040",
@@ -11479,7 +11479,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_6df2bf07bfa753365d6bc9bf6091e0bab0fa7868",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "011210",
@@ -11590,7 +11590,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_30ae49960a0d81a463462aaf19f1ad928c061844",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "375500",
@@ -11688,7 +11688,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_e5a4eb04b726869b43effc45d342317e5a71043e",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "267250",
@@ -11786,7 +11786,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_687db7f9c723d2f217752dd16238fbae8f69755e",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "038540",
@@ -11884,7 +11884,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_b05a8946a9433190fd3328910fbf0f873cbb67d0",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "066970",
@@ -11982,7 +11982,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_dc494cb2c4c0be80688fc8bd1fbf5dea31e77bc5",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "096770",
@@ -12059,8 +12059,8 @@
       "history_confidence": "NONE",
       "market": null,
       "coverage": {
-        "eligible_events": 3,
-        "priced_events": 3,
+        "eligible_events": 2,
+        "priced_events": 2,
         "complete_events": 0,
         "security_samples": 0,
         "not_calculated_events": 0,
@@ -12074,7 +12074,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_4d55435f0599b90658c8d87a72d5f24eb10d0dfb",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "347850",
@@ -12172,7 +12172,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_a7d63f7b3c455897bb1da8c0389f09a5bb983e43",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "003490",
@@ -12270,7 +12270,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_c39018d4c4120f731e5ce9fb7f76006c354ddf15",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "000830",
@@ -12382,7 +12382,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_10f85ecadf99ca20d4bdc33424ce9aa01d220006",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "010130",
@@ -12481,7 +12481,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_01598869a42f4172b0749da74b23394e3d8bf776",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "0011T0",
@@ -12579,7 +12579,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_7af51166b00ba76509707a605de748606ee7f9e5",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "003670",
@@ -12678,7 +12678,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_7b5a9d0f6424122017446df16de300f4bbeb7f2f",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "088350",
@@ -12776,7 +12776,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_56310f0d1ef0cd0608f680ebb9b129bb6dd12ac3",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "307950",
@@ -12939,7 +12939,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_e4f5a3980a92191cb78f062e274ad9b0dd8c6f3b",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "298040",
@@ -13037,7 +13037,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_72d8aa90d119859844d83c036c14af782205a6f7",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "003540",
@@ -13136,7 +13136,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_96b7b8a25a48b68e75e13e83aefefbd978fed88c",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "028300",
@@ -13234,7 +13234,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_293aadb5c931ec4fcba06f6e9e6b00439f689be4",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "068270",
@@ -13318,8 +13318,8 @@
         "ticker": "068270"
       },
       "coverage": {
-        "eligible_events": 3,
-        "priced_events": 3,
+        "eligible_events": 2,
+        "priced_events": 2,
         "complete_events": 0,
         "security_samples": 0,
         "not_calculated_events": 0,
@@ -13333,7 +13333,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_303e3932f3b69e8429ca593c929cb21f4045cf00",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "271560",
@@ -13432,7 +13432,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_0af02299200f01c7edce926e3120fb56117fc52c",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "293490",
@@ -13531,7 +13531,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_909ac9a0d5b28e5e4d71febadaa710d4c4675281",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "489790",
@@ -13642,7 +13642,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_98ce0b4f53be792cfd9fbb2b93e2baa585d3ee50",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "006400",
@@ -13741,7 +13741,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_5c2a834857aa6d8af05fd522464edeaa7492d346",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "032640",
@@ -13839,7 +13839,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_a7d9f7502f675f25a2a234e2d2fec19e97e01a15",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "060370",
@@ -13937,7 +13937,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_a66619cde3ca3ac41aa7bb304d96b5fd2ede0cd5",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "001120",
@@ -14035,7 +14035,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_51f197b91dd1b0c29b466addfee347d4b1a83f2a",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "000880",
@@ -14133,7 +14133,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_6bbfdf2b3f96d9ec161476802dd4edae4d6b4ab3",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "010130",
@@ -14229,7 +14229,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_bde84bcbaa9125dab2f340ef2119fda917bc772c",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "105560",
@@ -14321,7 +14321,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_22aaaa76d59447685b2e9dbe30636d6d0c7ea3e1",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "373220",
@@ -14419,7 +14419,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_258ea29c4182f913b40f1a4837f9a1368b46ee3d",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "212525",
@@ -14530,7 +14530,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_f6b955ff1f12ec2dc3f0b36a5e0408a014320efe",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "068270",
@@ -14628,7 +14628,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_4b061f38bfa25d36b74925463291657f9e090c7d",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "308080",
@@ -14720,7 +14720,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_68461e432e46354d66b0f7471649210f94dea2a5",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "226400",
@@ -14818,7 +14818,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_0a4b9df78d986e04bc1cf6654aac789332a1c6c1",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "293490",
@@ -14930,7 +14930,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_f17faf5b4c5f0460f31e87bf136da7daa5f3a1e9",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "171090",
@@ -15028,7 +15028,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_108eac28e02b3a8f94ad17aa73b2602e229d4128",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "293490",
@@ -15127,7 +15127,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_8b3954e5bb19f0a34f073608f778200b535172ee",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "001120",
@@ -15225,7 +15225,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_ddf4bb806e49a6afc4cb7e001594e733b22eb2f8",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "009290",
@@ -15323,7 +15323,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_de1397c41705f9ebf1d8b0c2fb5da7ddf5ab6ccc",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "009290",
@@ -15421,7 +15421,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_09e3b0927362b285e88c470422a1adb4fd674601",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "069620",
@@ -15532,7 +15532,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_5834c0c98682fc0feaef9e034f733a7733d608e4",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "069620",
@@ -15630,7 +15630,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_38a7be5d985dd39686751f36120f432960b1ace1",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "001440",
@@ -15728,7 +15728,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_f0dd75853dbd828723be7ef02c4801e725c4a8a2",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "017670",
@@ -15826,7 +15826,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_a59f48fcd775c180a4485566e2c18947e3913828",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "267250",
@@ -15924,7 +15924,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_2f401920f2d5808b786032cd7d37609d998dc7a0",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "005930",
@@ -16035,7 +16035,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_2a83b364ff8433cc88f12a5fd1fb1d9e4814cda1",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "247540",
@@ -16133,7 +16133,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_3c1187c55529e2b76ce5ccb2ba1646f255130cd3",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "247540",
@@ -16231,7 +16231,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_487f79e9dfc4ccd63ee3fef95e62fd5deb7fff87",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "456570",
@@ -16329,7 +16329,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_a2e6466853f3f385a5da29ab9fed9c67dcbe81d9",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "003230",
@@ -16427,7 +16427,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_08f7df3f6181208b519550da92ef841b89d25d97",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "",
@@ -16519,7 +16519,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_b02160beac970cbe3e329f971c435cd5496999e8",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "066570",
@@ -16617,7 +16617,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_2db14b541007bd18570613de98cf5dfe568b43c1",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "051910",
@@ -16728,7 +16728,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_7f14b27d6c3ebc6d1943e717cf9bdcf77b099369",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "006260",
@@ -16826,7 +16826,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_ba9a07c219856bd039c077b442e04259655a8519",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "302440",
@@ -16924,7 +16924,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_dfd2e8cda32226744e175a44a3012c408cc35855",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "010130",
@@ -17036,7 +17036,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_05808e00f76b1a2b1795d362797aa3bb8f0c4af6",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "069620",
@@ -17134,7 +17134,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_220d7e257db7104d00987c01f1d48270b0a6b249",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "",
@@ -17226,7 +17226,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_bba878f39b24396481d96d2d4c0649161d857bcd",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "009150",
@@ -17337,7 +17337,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_fba1f3471378a2330322c2a80182e33ea718e774",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "247540",
@@ -17436,7 +17436,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_694d4e35b9efa54123e384dd5d39c3e2a9c654a0",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "035720",
@@ -17534,7 +17534,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_ed90ef5fef41e93a994ca457f238acf32ece7426",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "034020",
@@ -17659,7 +17659,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_6fd72c3ced3c122d48d31282ecdb8ba277cfd465",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "082740",
@@ -17757,7 +17757,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_cf7d93fbe9aafb4ef5a5cba44074b7fefe2bfeff",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "020150",
@@ -17868,7 +17868,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_151a5b739e21072d49f82071e19f052759fe44c0",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "",
@@ -17960,7 +17960,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_44e09047ab5e65709417c0685e05f65fe9f63670",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "271560",
@@ -18071,7 +18071,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_fbccd49164e4a7d57f2e089940b88738eeb09d20",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "003470",
@@ -18163,7 +18163,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_e6b81e6e154d53a3523c36aaff18713a54bcd156",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "115180",
@@ -18261,7 +18261,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_af68bbba801a646da65ff84f77d9a336d2405344",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "468530",
@@ -18359,7 +18359,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_4536b98f3bac6483543405688db44363b2a4b630",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "035760",
@@ -18471,7 +18471,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_43806c347bc7e190178493b728b8b2cac885c8b7",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "006360",
@@ -18569,7 +18569,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_d9c372c31d06cb3bcfbeed9a0f1d0a4218be524e",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "001440",
@@ -18667,7 +18667,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_c3babffc61c17c51bd1f4ea32414fd99300a7c98",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "005930",
@@ -18779,7 +18779,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_7690aa966f70cfcbdf7a82d75003625b4e7252a7",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "170900",
@@ -18877,7 +18877,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_e6673f846f47826010a89fb63dd8dae83921f46d",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "011170",
@@ -18975,7 +18975,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_7546ac732819533c2ce33296c2d7d8b9b59d1bbe",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "011170",
@@ -19073,7 +19073,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_68180d042cad1618dc130d49feaa21cdddcac58a",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "011170",
@@ -19184,7 +19184,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_f08c58f4273e73c90d90251eb738f5632b01a8f6",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "005940",
@@ -19283,7 +19283,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_250fa17334a242d2027612e3582ebf71d4167616",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "005930",
@@ -19407,7 +19407,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_c52fba21eebec8a498056435ea14b2663c86e68e",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "354200",
@@ -19532,7 +19532,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_f097e20395e688931fb536c23e14a4928f10d621",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "023530",
@@ -19656,7 +19656,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_71a0d771f68ee34d8b79b8982009c4884c89cd25",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "047040",
@@ -19819,7 +19819,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_9fd9187b4fbbb551964cda9ca3a5c5b450fece01",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "003490",
@@ -19930,7 +19930,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_e60705cfb4ad43469ea9f02ed7cd712f93fc7957",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "161390",
@@ -20022,7 +20022,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_af1747640bbce3f114db51bc0da1115508224f6a",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "011170",
@@ -20133,7 +20133,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_f53100406e361cab15f26e87df8ef73afca0d29c",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "405100",
@@ -20231,7 +20231,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_fe0bcd519452862584f8fe6857f10289f3d901b3",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "010950",
@@ -20355,7 +20355,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_fd95b3d3fa0143e3c1a28cf84b31f29f31d4311b",
-    "d_day": 55,
+    "d_day": 54,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "286940",
@@ -20452,8 +20452,133 @@
     "source_url": "https://www.g-enews.com/view.php?ud=2026110711141138140c8c1c064d_1"
   },
   {
+    "event_id": "KR_NEWS_FUTURE_cab3c81b5eb64da66e91a005170006b0a3799068",
+    "d_day": 54,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "034020",
+    "primary_ticker": "",
+    "anchor_status": "theme_proxy_only",
+    "related_securities": [
+      {
+        "ticker": "034020",
+        "company_name": "두산에너빌리티",
+        "relation_grade": "THEME",
+        "relation_score": 55,
+        "relation_type": "NUCLEAR_MARKET_THEME",
+        "evidence_text": "두산에너빌리티: 공식 원전 프로젝트 참여 이력이 있는 원전 테마 후보",
+        "evidence_source": "THEME_MAPPING",
+        "source_url": "https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=7508&type=O",
+        "relation_known_date": "2024-01-01",
+        "ingest_mode": "AUTO",
+        "from_entity": "두산에너빌리티"
+      },
+      {
+        "ticker": "052690",
+        "company_name": "한전기술",
+        "relation_grade": "THEME",
+        "relation_score": 52,
+        "relation_type": "NUCLEAR_MARKET_THEME",
+        "evidence_text": "한국전력기술: 공식 원전 프로젝트 설계 참여 이력이 있는 원전 테마 후보",
+        "evidence_source": "THEME_MAPPING",
+        "source_url": "https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=7508&type=O",
+        "relation_known_date": "2024-01-01",
+        "ingest_mode": "AUTO",
+        "from_entity": "한국전력기술"
+      },
+      {
+        "ticker": "051600",
+        "company_name": "한전KPS",
+        "relation_grade": "THEME",
+        "relation_score": 50,
+        "relation_type": "NUCLEAR_MARKET_THEME",
+        "evidence_text": "한전KPS: 공식 원전 프로젝트 시운전 유지보수 참여 이력이 있는 원전 테마 후보",
+        "evidence_source": "THEME_MAPPING",
+        "source_url": "https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=7508&type=O",
+        "relation_known_date": "2024-01-01",
+        "ingest_mode": "AUTO",
+        "from_entity": "한전KPS"
+      }
+    ],
+    "company": "프랑스 극좌 대권 주자 \"은퇴 나이 60세 복원",
+    "event_type": "ELECTION",
+    "event_name": "프랑스 극좌 대권 주자 \"은퇴 나이 60세 복원·나토 탈퇴\"",
+    "event_date": "2027-01-01",
+    "date_precision": "YEAR",
+    "window_start": "2027-01-01",
+    "window_end": "2027-12-31",
+    "relation_grade": "THEME",
+    "relation_score": 55,
+    "relation_type": "NUCLEAR_MARKET_THEME",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 32,
+    "insight": {
+      "score": 32,
+      "tier": "CHECK",
+      "label": "추가 확인",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 11,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 6,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 5,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "검증된 개별 관련주 부족",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "검증된 개별 관련주",
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 44700.0,
+        "return_20d": -0.426923,
+        "volume_ratio_20d": 1.67,
+        "sessions": 67,
+        "source": "Yahoo Finance",
+        "ticker": "034020"
+      },
+      "coverage": {
+        "eligible_events": 0,
+        "priced_events": 0,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": null
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.yna.co.kr/view/AKR20261107054500098?input=1195m"
+  },
+  {
     "event_id": "KR_NEWS_FUTURE_1c8d5b615deebc4a876238fab152cb0589fbbb56",
-    "d_day": 62,
+    "d_day": 61,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "035720",
@@ -20551,7 +20676,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_f345041e02e6fe10fb5ba88a5af55327e3f104f7",
-    "d_day": 65,
+    "d_day": 64,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "006360",
@@ -20649,7 +20774,7 @@
   },
   {
     "event_id": "US_FED_FOMC_17c662e09879d52fe265843d376fb3c2fc83f128",
-    "d_day": 81,
+    "d_day": 80,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "^GSPC",
@@ -20747,7 +20872,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_2eea7155a99cb0cd8ebb814a1c3489e8af4330a6",
-    "d_day": 84,
+    "d_day": 83,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "000830",
@@ -20839,7 +20964,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_9a44dd683d0c0b7900361b4958f341a7a22c2562",
-    "d_day": 86,
+    "d_day": 85,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "006880",
@@ -20916,8 +21041,8 @@
       "history_confidence": "NONE",
       "market": null,
       "coverage": {
-        "eligible_events": 3,
-        "priced_events": 3,
+        "eligible_events": 2,
+        "priced_events": 2,
         "complete_events": 0,
         "security_samples": 0,
         "not_calculated_events": 0,
@@ -20931,7 +21056,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_eb97932a5e430bc1406cfd0da77b57cf17ea9a4d",
-    "d_day": 86,
+    "d_day": 85,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "068270",
@@ -21029,7 +21154,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_0ebc2c082a01bfadc2161843bb21fd7961e7a73a",
-    "d_day": 86,
+    "d_day": 85,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "248170",
@@ -21106,8 +21231,8 @@
       "history_confidence": "NONE",
       "market": null,
       "coverage": {
-        "eligible_events": 3,
-        "priced_events": 3,
+        "eligible_events": 2,
+        "priced_events": 2,
         "complete_events": 0,
         "security_samples": 0,
         "not_calculated_events": 0,
@@ -21121,7 +21246,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_af201faaa2c032e1f0892fe2b28cbc2bffe8e456",
-    "d_day": 86,
+    "d_day": 85,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "015760",
@@ -21220,7 +21345,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_193bccb3e6625e51a7f1c9538afb2ab23dcc81ff",
-    "d_day": 86,
+    "d_day": 85,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "035720",
@@ -21318,7 +21443,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_4c0777366daf2e47e1328c4b4f4f9442e6c55db3",
-    "d_day": 86,
+    "d_day": 85,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "035720",
@@ -21442,7 +21567,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_cf338a627d300538c72ddae16c469497e6f999f2",
-    "d_day": 86,
+    "d_day": 85,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "358570",
@@ -21540,7 +21665,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_551f44fecd614b062d04d7f46281e8b2f7ebda38",
-    "d_day": 104,
+    "d_day": 103,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "041590",
@@ -21703,7 +21828,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_ba8679eba27709df9e6a275294ddb5bd0bae02e7",
-    "d_day": 114,
+    "d_day": 113,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "307950",
@@ -21853,7 +21978,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_83172c68f104f5f8ceb510fd6a5c8a87719c0107",
-    "d_day": 114,
+    "d_day": 113,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "010130",
@@ -21949,7 +22074,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_8602969c273aafb44dc0d355cf9b1daf054228f1",
-    "d_day": 114,
+    "d_day": 113,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "003490",
@@ -22058,7 +22183,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_e049f28758c0cdeb7c53b8489e320b5eb15e0704",
-    "d_day": 114,
+    "d_day": 113,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "272450",
@@ -22169,7 +22294,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_20b06bd78c68993a35f04f43a978dfd56122ad3c",
-    "d_day": 114,
+    "d_day": 113,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "039340",
@@ -22267,7 +22392,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_7e8146199d5e224e1551807e7855e657198d7b20",
-    "d_day": 114,
+    "d_day": 113,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "000720",
@@ -22417,7 +22542,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_2003cc3a20b02b54967172609d4fb8d9364fd23b",
-    "d_day": 114,
+    "d_day": 113,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "180640",
@@ -22568,7 +22693,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_19babd71a4a1ce767eb5f8656143881b7594cfcc",
-    "d_day": 114,
+    "d_day": 113,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "003490",
@@ -22666,7 +22791,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_ec00384e7f9c3d48f4ae32518897eda6b12733e8",
-    "d_day": 114,
+    "d_day": 113,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "180640",
@@ -22763,7 +22888,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_51d69773c3ec3e5992dd072524f33be0058cb868",
-    "d_day": 114,
+    "d_day": 113,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "057050",
@@ -22854,7 +22979,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_48705284e288f474a7c72ebecb192326e228e6ec",
-    "d_day": 114,
+    "d_day": 113,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "034020",
@@ -22991,7 +23116,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_446e61b10ec80d815a85ed8ce3b43b8ca5c8e92e",
-    "d_day": 114,
+    "d_day": 113,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "001070",
@@ -23089,7 +23214,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_196fdc7b19f94f73133d1f3cef701767025a26c9",
-    "d_day": 114,
+    "d_day": 113,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "012330",
@@ -23188,7 +23313,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_9b81193c03f550c5faa001d076978551600473e2",
-    "d_day": 129,
+    "d_day": 128,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "003490",
@@ -23311,8 +23436,8 @@
         "ticker": "003490"
       },
       "coverage": {
-        "eligible_events": 3,
-        "priced_events": 3,
+        "eligible_events": 2,
+        "priced_events": 2,
         "complete_events": 0,
         "security_samples": 0,
         "not_calculated_events": 0,
@@ -23326,7 +23451,7 @@
   },
   {
     "event_id": "US_FED_FOMC_964b50a3c921583db1e4c714399e4344f4769177",
-    "d_day": 130,
+    "d_day": 129,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "^GSPC",
@@ -23424,7 +23549,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_49e77b35f79b119a7c3bfeee3ca2e3f839fc9a82",
-    "d_day": 130,
+    "d_day": 129,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "180640",
@@ -23562,7 +23687,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_eec0343d9c42beed0edafde36edc9446aba9225c",
-    "d_day": 130,
+    "d_day": 129,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "272450",
@@ -23660,7 +23785,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_8ca8aa59a9cbf0ce3772bf9c6afcd30ce9719f26",
-    "d_day": 130,
+    "d_day": 129,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "272450",
@@ -23771,7 +23896,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_35ee4c1c6f4b8e58b9aff8bc215e53c0f85df31d",
-    "d_day": 130,
+    "d_day": 129,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "180640",
@@ -23922,7 +24047,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_68a2b7aa9c4dea111cf9c1ea3ed47c5b1e7dcb6c",
-    "d_day": 130,
+    "d_day": 129,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "002320",
@@ -24046,7 +24171,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_f359f1c23251413efe22f45e47f7d5e9df6407ea",
-    "d_day": 135,
+    "d_day": 134,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "003000",
@@ -24130,8 +24255,8 @@
         "ticker": "003000"
       },
       "coverage": {
-        "eligible_events": 3,
-        "priced_events": 3,
+        "eligible_events": 2,
+        "priced_events": 2,
         "complete_events": 0,
         "security_samples": 0,
         "not_calculated_events": 0,
@@ -24145,7 +24270,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_d0e3c0cfd3a82c7ff76b7494331559fc93a064c0",
-    "d_day": 145,
+    "d_day": 144,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "183490",
@@ -24241,7 +24366,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_72297d0a0acb6d15d7cbb92895f3fde92c4dcc84",
-    "d_day": 145,
+    "d_day": 144,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "034020",
@@ -24379,7 +24504,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_cd0547df3c19f972e13ea77eb27327a8266e9fd1",
-    "d_day": 145,
+    "d_day": 144,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "028300",
@@ -24477,7 +24602,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_db33aca83a3677b74b44700ed8e22018e2fc3c2c",
-    "d_day": 145,
+    "d_day": 144,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "028300",
@@ -24589,7 +24714,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_a4094524ea12cb248af3706a2879f798593d7041",
-    "d_day": 145,
+    "d_day": 144,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "002990",
@@ -24687,7 +24812,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_69b28694aac34949c82a17747338cc0512622fa0",
-    "d_day": 145,
+    "d_day": 144,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "000720",
@@ -24825,7 +24950,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_c2a150edc4a44361a180af1597ba472b4e37341c",
-    "d_day": 145,
+    "d_day": 144,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "034020",
@@ -24962,7 +25087,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_f6659f4b68b6d81a9bb22dd02a95db58d8b556b8",
-    "d_day": 145,
+    "d_day": 144,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "011780",
@@ -25054,7 +25179,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_e8106a9fd7e8ddc6bb2501ea85f40401192b8e7c",
-    "d_day": 153,
+    "d_day": 152,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "028300",
@@ -25152,7 +25277,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_5f24544a2904aac4036f1017a52820e37748c5af",
-    "d_day": 153,
+    "d_day": 152,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "028300",
@@ -25250,7 +25375,7 @@
   },
   {
     "event_id": "US_FED_FOMC_0ca8ec5ee389c69ca738f1ddfb01b815fa1af97f",
-    "d_day": 172,
+    "d_day": 171,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "^GSPC",
@@ -25348,7 +25473,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_3d46b25634c926ed72072fa9031a229d0e6b5782",
-    "d_day": 174,
+    "d_day": 173,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "099520",
@@ -25459,7 +25584,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_ee7feff7be1ee511db9cbe0eb611d6053714c2c9",
-    "d_day": 175,
+    "d_day": 174,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "069620",
@@ -25557,7 +25682,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_8c3178d4c6f616b0783044afcd8547b4d0814ef9",
-    "d_day": 182,
+    "d_day": 181,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "062580",
@@ -25648,7 +25773,7 @@
   },
   {
     "event_id": "US_FED_FOMC_18ae6f6ec2fd0d0f72f330e0106c1e67abbd3c66",
-    "d_day": 214,
+    "d_day": 213,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "^GSPC",
@@ -25746,7 +25871,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_756c7153a4c206abd9bc06750e14cde6f948de18",
-    "d_day": 236,
+    "d_day": 235,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "047040",
@@ -25883,7 +26008,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_be463df4ecdc92cf70de8e4bda6fea2ccd04931d",
-    "d_day": 236,
+    "d_day": 235,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "001440",
@@ -25981,7 +26106,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_bb64e7d8a3bbd8b5797d5d745cc776f2a2b3e683",
-    "d_day": 236,
+    "d_day": 235,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "047040",
@@ -26092,7 +26217,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_3aa88b37a92bb4f85d06a7c624e5b9e124ea1cb8",
-    "d_day": 236,
+    "d_day": 235,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "034020",
@@ -26217,7 +26342,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_e4f4c1003118a13634c482385289f2770bdf086c",
-    "d_day": 236,
+    "d_day": 235,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "293780",
@@ -26315,7 +26440,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_8e4b115bb3f60da47b31480bd6648706d96fc13f",
-    "d_day": 236,
+    "d_day": 235,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "001290",
@@ -26407,7 +26532,7 @@
   },
   {
     "event_id": "US_FED_FOMC_881541bb0fe02ba7a8dfbb308b847d8eee821f5f",
-    "d_day": 263,
+    "d_day": 262,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "^GSPC",
@@ -26505,7 +26630,7 @@
   },
   {
     "event_id": "US_FED_FOMC_f78ce707fb49333ff657bde7b01bb68639da9be0",
-    "d_day": 312,
+    "d_day": 311,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "^GSPC",
@@ -26603,7 +26728,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_f94c5331f39a71a2e0b64729b82c42ba21dcb9c1",
-    "d_day": 328,
+    "d_day": 327,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "042660",
@@ -26701,7 +26826,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_f98dc3b644d0c0bd8a0493e983ce8070cae297ba",
-    "d_day": 328,
+    "d_day": 327,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "267250",
@@ -26800,7 +26925,7 @@
   },
   {
     "event_id": "US_FED_FOMC_4be8cd079cb3a664de18b7e4ab3b0d571b7b557f",
-    "d_day": 354,
+    "d_day": 353,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "^GSPC",
@@ -26898,7 +27023,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_0b8a0366d286564b6a93865388f8df7d6f169183",
-    "d_day": 358,
+    "d_day": 357,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "196300",
@@ -27010,7 +27135,7 @@
   },
   {
     "event_id": "US_FED_FOMC_bd9946dcc990c3743eda9b9f21290415226c4d46",
-    "d_day": 396,
+    "d_day": 395,
     "d_day_far_future": true,
     "country": "US",
     "ticker": "^GSPC",
@@ -27108,7 +27233,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_52d34ca8306a0a54cc14739f14c95832cc187b3d",
-    "d_day": 420,
+    "d_day": 419,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "066970",
@@ -27206,7 +27331,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_b1b8de856be06a4a16509e0d917903da13ad1c63",
-    "d_day": 420,
+    "d_day": 419,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "373220",
@@ -27317,7 +27442,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_35e39a94a64f5419caec11e03d95221a48c1d91b",
-    "d_day": 420,
+    "d_day": 419,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "000030",
@@ -27409,7 +27534,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_1205d4b83f5d71b1d2527dbd6283f9f5a22bd8a7",
-    "d_day": 420,
+    "d_day": 419,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "108490",
@@ -27501,7 +27626,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_e236237d75f05742347386db814b85170cfdfe1f",
-    "d_day": 420,
+    "d_day": 419,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "035890",
@@ -27599,7 +27724,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_b820dbef931d472374b2801fc368205d0e11be18",
-    "d_day": 420,
+    "d_day": 419,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "000010",
@@ -27676,8 +27801,8 @@
       "history_confidence": "NONE",
       "market": null,
       "coverage": {
-        "eligible_events": 3,
-        "priced_events": 3,
+        "eligible_events": 2,
+        "priced_events": 2,
         "complete_events": 0,
         "security_samples": 0,
         "not_calculated_events": 0,
@@ -27691,7 +27816,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_97b7f71119b565a3a2a334c4d5d7a9809c6e6eac",
-    "d_day": 420,
+    "d_day": 419,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "005930",
@@ -27802,7 +27927,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_f315cb8e83bca8e723ec032d123cfbb51dbb0983",
-    "d_day": 420,
+    "d_day": 419,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "000660",
@@ -27913,7 +28038,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_8ba99aedc71bdf544fa9d6da38e5b6f1d16c3791",
-    "d_day": 420,
+    "d_day": 419,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "000660",
@@ -28012,7 +28137,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_c6e8776335e0e261d41ea72ee4506d4a78508518",
-    "d_day": 420,
+    "d_day": 419,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "004170",
@@ -28104,7 +28229,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_28be302666884ff6de4ecfb2bbf0815ee23b97bb",
-    "d_day": 420,
+    "d_day": 419,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "005940",
@@ -28203,7 +28328,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_7e98088324d4bf2048631f0e479c62c312b01654",
-    "d_day": 420,
+    "d_day": 419,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "005930",
@@ -28314,7 +28439,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_8f53695a9ea635e085b3c3d830e12020f2ddce6b",
-    "d_day": 602,
+    "d_day": 601,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "417200",
@@ -28413,7 +28538,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_d978868b80698b7caafd2e13a92a3584c78361e5",
-    "d_day": 602,
+    "d_day": 601,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "000150",
@@ -28511,7 +28636,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_edf2bf6da9e50ef5339524d4c3ec86a4d55d07a4",
-    "d_day": 602,
+    "d_day": 601,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "000150",
@@ -28609,7 +28734,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_95d54cd604934e6789a9e51489e94f4efa218cb8",
-    "d_day": 664,
+    "d_day": 663,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "006360",
@@ -28707,7 +28832,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_c33449f8cfcec6a19cb92eca32c63ea118b46d2f",
-    "d_day": 694,
+    "d_day": 693,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "000830",
@@ -28798,7 +28923,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_a074e1db1da49fadb1b41bf13f1df381756c1986",
-    "d_day": 786,
+    "d_day": 785,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "347850",
@@ -28896,7 +29021,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_112a492f139df59bae874a83918cc29e9abd95df",
-    "d_day": 786,
+    "d_day": 785,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "",
@@ -28988,7 +29113,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_db652d4487f38034cc789fc860fd0371fa94ff8c",
-    "d_day": 786,
+    "d_day": 785,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "456040",
@@ -29086,7 +29211,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_6458ff41549268d8042627fbfe2dbc2c1bf01bee",
-    "d_day": 786,
+    "d_day": 785,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "004020",
@@ -29184,7 +29309,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_84134371ef35fd80524190749e334ddb934b58b0",
-    "d_day": 786,
+    "d_day": 785,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "373220",
@@ -29283,7 +29408,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_8efdd7935450ef2b9ccd53cd24c30c988ca20d41",
-    "d_day": 786,
+    "d_day": 785,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "014950",
@@ -29381,7 +29506,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_e7eaa60b231adaab2f8b0bd7e233d1e6b9936aff",
-    "d_day": 786,
+    "d_day": 785,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "012450",
@@ -29492,7 +29617,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_c2d6d6890ea73009b998c88aa96b42a4f867dd90",
-    "d_day": 786,
+    "d_day": 785,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "034020",
@@ -29617,7 +29742,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_de25cc26c5642a4d2c910ca64b6f825cdbff4927",
-    "d_day": 817,
+    "d_day": 816,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "373220",
@@ -29716,7 +29841,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_0972391353862f534825e80271da2a0aa660d4b8",
-    "d_day": 1090,
+    "d_day": 1089,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "034020",
@@ -29853,7 +29978,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_cf1a77ca848621b216070894f66c6c03ae5d4f8c",
-    "d_day": 1090,
+    "d_day": 1089,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "034020",
@@ -29978,7 +30103,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_87feced170608c3bbd259dd1d1d9bbe3800344eb",
-    "d_day": 1151,
+    "d_day": 1150,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "307950",
@@ -30128,7 +30253,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_95c92b2cd25709119a115424a707006e072af697",
-    "d_day": 1151,
+    "d_day": 1150,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "290690",
@@ -30205,8 +30330,8 @@
       "history_confidence": "NONE",
       "market": null,
       "coverage": {
-        "eligible_events": 3,
-        "priced_events": 3,
+        "eligible_events": 2,
+        "priced_events": 2,
         "complete_events": 0,
         "security_samples": 0,
         "not_calculated_events": 0,
@@ -30220,7 +30345,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_ea84a18e963ec13c7e586ad57336ed4fd909677a",
-    "d_day": 1151,
+    "d_day": 1150,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "000880",
@@ -30318,7 +30443,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_5f6402790af5e2a724be122bf4226800687eb78b",
-    "d_day": 1151,
+    "d_day": 1150,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "068270",
@@ -30416,7 +30541,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_5baf5a03737663fe31073422b924efcbde8e7f35",
-    "d_day": 1151,
+    "d_day": 1150,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "323410",
@@ -30514,7 +30639,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_f5bde8295a79a826f28f6c418528bcb39e62b53c",
-    "d_day": 1151,
+    "d_day": 1150,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "405100",
@@ -30612,7 +30737,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_be35f96c48b1683c9da7846f0c4fe0c219d7c45e",
-    "d_day": 1516,
+    "d_day": 1515,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "000660",
@@ -30724,7 +30849,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_a855264b3fcb2e40246b46778a1a4fb0955a05f6",
-    "d_day": 1516,
+    "d_day": 1515,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "068270",
@@ -30822,7 +30947,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_fa06ed94db4686ff02a2f864f3faa2a7c0d546fa",
-    "d_day": 1516,
+    "d_day": 1515,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "051910",
@@ -30920,7 +31045,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_c135d89ca0647e8b7116565b386b948eb10502db",
-    "d_day": 1516,
+    "d_day": 1515,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "005930",
@@ -31019,7 +31144,7 @@
   },
   {
     "event_id": "KR_NEWS_FUTURE_e752ea328168590ea6c612e8507fbc76852cf518",
-    "d_day": 1881,
+    "d_day": 1880,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "034020",
@@ -31144,7 +31269,7 @@
   },
   {
     "event_id": "KR_DART_20261106000213",
-    "d_day": -1,
+    "d_day": -2,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "002240",
@@ -31235,7 +31360,7 @@
   },
   {
     "event_id": "US_SEC_0000936340-26-000172",
-    "d_day": -1,
+    "d_day": -2,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "DTE",
@@ -31326,7 +31451,7 @@
   },
   {
     "event_id": "US_SEC_0001692819-26-000023",
-    "d_day": -1,
+    "d_day": -2,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "VST",
@@ -31417,7 +31542,7 @@
   },
   {
     "event_id": "US_SEC_0001091667-26-000072",
-    "d_day": -1,
+    "d_day": -2,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "CHTR",
@@ -31508,7 +31633,7 @@
   },
   {
     "event_id": "US_SEC_0000038777-26-000287",
-    "d_day": -1,
+    "d_day": -2,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "BEN",
@@ -31599,7 +31724,7 @@
   },
   {
     "event_id": "US_SEC_0000049071-26-000064",
-    "d_day": -1,
+    "d_day": -2,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "HUM",
@@ -31690,7 +31815,7 @@
   },
   {
     "event_id": "US_SEC_0001682852-26-000194",
-    "d_day": -1,
+    "d_day": -2,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "MRNA",
@@ -31781,7 +31906,7 @@
   },
   {
     "event_id": "US_SEC_0000922224-26-000050",
-    "d_day": -1,
+    "d_day": -2,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "PPL",
@@ -31872,7 +31997,7 @@
   },
   {
     "event_id": "US_SEC_0001393052-26-000039",
-    "d_day": -1,
+    "d_day": -2,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "VEEV",
@@ -31963,7 +32088,7 @@
   },
   {
     "event_id": "KR_DART_20261105000001",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "033790",
@@ -32054,7 +32179,7 @@
   },
   {
     "event_id": "US_SEC_0001002910-26-000030",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "AEE",
@@ -32145,7 +32270,7 @@
   },
   {
     "event_id": "US_SEC_0001020569-26-000081",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "IRM",
@@ -32236,7 +32361,7 @@
   },
   {
     "event_id": "US_SEC_0001024478-26-000045",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "ROK",
@@ -32327,7 +32452,7 @@
   },
   {
     "event_id": "US_SEC_0001032208-26-000051",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "SRE",
@@ -32418,7 +32543,7 @@
   },
   {
     "event_id": "US_SEC_0001628280-26-070619",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "RL",
@@ -32509,7 +32634,7 @@
   },
   {
     "event_id": "US_SEC_0001037646-26-000072",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "MTD",
@@ -32600,7 +32725,7 @@
   },
   {
     "event_id": "US_SEC_0001047862-26-000157",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "ED",
@@ -32691,7 +32816,7 @@
   },
   {
     "event_id": "US_SEC_0001104659-26-123325",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "SPG",
@@ -32782,7 +32907,7 @@
   },
   {
     "event_id": "US_SEC_0001628280-26-071150",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "AXON",
@@ -32873,7 +32998,7 @@
   },
   {
     "event_id": "US_SEC_0001628280-26-071086",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "AXON",
@@ -32964,7 +33089,7 @@
   },
   {
     "event_id": "US_SEC_0001628280-26-070511",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "BDX",
@@ -33055,7 +33180,7 @@
   },
   {
     "event_id": "US_SEC_0001086222-26-000097",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "AKAM",
@@ -33146,7 +33271,7 @@
   },
   {
     "event_id": "US_SEC_0001193125-26-449884",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "DVN",
@@ -33237,7 +33362,7 @@
   },
   {
     "event_id": "US_SEC_0001140361-26-042034",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "TPR",
@@ -33328,7 +33453,7 @@
   },
   {
     "event_id": "US_SEC_0001123360-26-000091",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "GPN",
@@ -33419,7 +33544,7 @@
   },
   {
     "event_id": "US_SEC_0001163165-26-000043",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "COP",
@@ -33510,7 +33635,7 @@
   },
   {
     "event_id": "US_SEC_0001174922-26-000078",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "WYNN",
@@ -33601,7 +33726,7 @@
   },
   {
     "event_id": "US_SEC_0001326160-26-000048",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "DUK",
@@ -33692,7 +33817,7 @@
   },
   {
     "event_id": "US_SEC_0001335258-26-000052",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "LYV",
@@ -33783,7 +33908,7 @@
   },
   {
     "event_id": "US_SEC_0001193125-26-448401",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "TRGP",
@@ -33874,7 +33999,7 @@
   },
   {
     "event_id": "US_SEC_0001437749-26-035082",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "VRSK",
@@ -33965,7 +34090,7 @@
   },
   {
     "event_id": "US_SEC_0001555280-26-000048",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "ZTS",
@@ -34056,7 +34181,7 @@
   },
   {
     "event_id": "US_SEC_0001193125-26-449727",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "ABNB",
@@ -34147,7 +34272,7 @@
   },
   {
     "event_id": "US_SEC_0001140361-26-042013",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "VST",
@@ -34238,7 +34363,7 @@
   },
   {
     "event_id": "US_SEC_0001193125-26-448521",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "EVRG",
@@ -34329,7 +34454,7 @@
   },
   {
     "event_id": "US_SEC_0001140361-26-042030",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "CI",
@@ -34420,7 +34545,7 @@
   },
   {
     "event_id": "US_SEC_0001792044-26-000053",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "VTRS",
@@ -34511,7 +34636,7 @@
   },
   {
     "event_id": "US_SEC_0001964738-26-000055",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "SOLV",
@@ -34602,7 +34727,7 @@
   },
   {
     "event_id": "US_SEC_0000026172-26-000035",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "CMI",
@@ -34693,7 +34818,7 @@
   },
   {
     "event_id": "US_SEC_0000002969-26-000043",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "APD",
@@ -34784,7 +34909,7 @@
   },
   {
     "event_id": "US_SEC_0001628280-26-070514",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "KMB",
@@ -34875,7 +35000,7 @@
   },
   {
     "event_id": "US_SEC_0000721371-26-000042",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "CAH",
@@ -34966,7 +35091,7 @@
   },
   {
     "event_id": "US_SEC_0001193125-26-449951",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "XEL",
@@ -35057,7 +35182,7 @@
   },
   {
     "event_id": "US_SEC_0000076334-26-000170",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "PH",
@@ -35148,7 +35273,7 @@
   },
   {
     "event_id": "US_SEC_0000821189-26-000226",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "EOG",
@@ -35239,7 +35364,7 @@
   },
   {
     "event_id": "US_SEC_0000827054-26-000061",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "MCHP",
@@ -35330,7 +35455,7 @@
   },
   {
     "event_id": "US_SEC_0001104659-26-123387",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "MNST",
@@ -35421,7 +35546,7 @@
   },
   {
     "event_id": "US_SEC_0001628280-26-071117",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "CPT",
@@ -35512,7 +35637,7 @@
   },
   {
     "event_id": "KR_462870_C752F4CE63E1",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "462870",
@@ -35572,7 +35697,7 @@
         },
         "timing": {
           "label": "일정 접근·신선도",
-          "points": 10,
+          "points": 9,
           "max": 10
         }
       },
@@ -35603,7 +35728,7 @@
   },
   {
     "event_id": "US_SEC_0001193125-26-450159",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "REG",
@@ -35694,7 +35819,7 @@
   },
   {
     "event_id": "US_SEC_0000092122-26-000071",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "SO",
@@ -35785,7 +35910,7 @@
   },
   {
     "event_id": "US_SEC_0000936340-26-000166",
-    "d_day": -2,
+    "d_day": -3,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "DTE",
@@ -35875,8 +36000,99 @@
     "source_url": "https://www.sec.gov/Archives/edgar/data/936340/000093634026000166/dte-20261105.htm"
   },
   {
-    "event_id": "KR_KIND_IPO_561e48a87092e0fc9bbbb7ded749dfef7c92f18b",
+    "event_id": "KR_462870_0F254BD893EB",
     "d_day": -3,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "462870",
+    "primary_ticker": "462870",
+    "anchor_status": "primary",
+    "related_securities": [
+      {
+        "ticker": "462870",
+        "company_name": "시프트업",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "GAMES_RELEASE",
+        "source_url": "https://www.inven.co.kr/webzine/calendar/game/10697",
+        "relation_known_date": "2026-11-01",
+        "ingest_mode": "AUTO",
+        "from_entity": "시프트업"
+      }
+    ],
+    "company": "시프트업",
+    "event_type": "GAME_RELEASE",
+    "event_name": "스텔라 블레이드",
+    "event_date": "2026-11-05",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-05",
+    "window_end": "2026-11-05",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 0,
+    "insight": {
+      "score": 0,
+      "tier": "PAST",
+      "label": "지난 일정",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 30,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 25,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 0,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 10,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "공식 일정 · 날짜 확정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본",
+        "최근 가격·거래량"
+      ],
+      "history_confidence": "NONE",
+      "market": null,
+      "coverage": {
+        "eligible_events": 0,
+        "priced_events": 0,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": null
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "CONFIRMED",
+    "source_name": "GAMES_RELEASE",
+    "source_url": "https://www.inven.co.kr/webzine/calendar/game/10697"
+  },
+  {
+    "event_id": "KR_KIND_IPO_561e48a87092e0fc9bbbb7ded749dfef7c92f18b",
+    "d_day": -4,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "0222E0",
@@ -35892,7 +36108,7 @@
         "evidence_text": "이벤트 원문에 상장사명 명시: 아이엠스팩1호",
         "evidence_source": "KIND_IPO",
         "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
-        "relation_known_date": "2026-10-31",
+        "relation_known_date": "2026-11-01",
         "ingest_mode": "AUTO",
         "from_entity": "아이엠스팩1호"
       },
@@ -36013,7 +36229,7 @@
   },
   {
     "event_id": "KR_KIND_IPO_6c60d4cd8f1e8f43bb8d389d838e1d66c0f4f357",
-    "d_day": -3,
+    "d_day": -4,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "495910",
@@ -36029,7 +36245,7 @@
         "evidence_text": "이벤트 원문에 상장사명 명시: 이에스티",
         "evidence_source": "KIND_IPO",
         "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
-        "relation_known_date": "2026-10-31",
+        "relation_known_date": "2026-11-01",
         "ingest_mode": "AUTO",
         "from_entity": "이에스티"
       },
@@ -36117,7 +36333,7 @@
   },
   {
     "event_id": "KR_DART_20261104000319",
-    "d_day": -3,
+    "d_day": -4,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "468530",
@@ -36215,7 +36431,7 @@
   },
   {
     "event_id": "KR_KIND_IPO_c36644468a48de410093c57ca68cf92dc10cdd85",
-    "d_day": -4,
+    "d_day": -5,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "0147B0",
@@ -36231,7 +36447,7 @@
         "evidence_text": "이벤트 원문에 상장사명 명시: 래블업",
         "evidence_source": "KIND_IPO",
         "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
-        "relation_known_date": "2026-10-31",
+        "relation_known_date": "2026-11-01",
         "ingest_mode": "AUTO",
         "from_entity": "래블업"
       },
@@ -36392,7 +36608,7 @@
   },
   {
     "event_id": "KR_KIND_IPO_5a3452ed7550c9d112a70cb1ad2e8756a6e4b71f",
-    "d_day": -5,
+    "d_day": -6,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "359410",
@@ -36408,7 +36624,7 @@
         "evidence_text": "이벤트 원문에 상장사명 명시: 영광",
         "evidence_source": "KIND_IPO",
         "source_url": "https://kind.krx.co.kr/listinvstg/pubofrprogcom.do?method=searchPubofrProgComMain",
-        "relation_known_date": "2026-10-31",
+        "relation_known_date": "2026-11-01",
         "ingest_mode": "AUTO",
         "from_entity": "영광"
       },
@@ -36503,7 +36719,7 @@
   },
   {
     "event_id": "KR_KIND_IPO_832784cc1f6eb61b3b81a0e156cf38dcfca1b75e",
-    "d_day": -7,
+    "d_day": -8,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "420610",
@@ -36576,7 +36792,7 @@
         },
         "timing": {
           "label": "일정 접근·신선도",
-          "points": 10,
+          "points": 9,
           "max": 10
         }
       },
@@ -36607,7 +36823,7 @@
   },
   {
     "event_id": "US_FDA_ADVISORY_federal-register:2026-19700",
-    "d_day": -8,
+    "d_day": -9,
     "d_day_far_future": false,
     "country": "US",
     "ticker": "XBI",
@@ -36706,7 +36922,7 @@
   },
   {
     "event_id": "KR_KIND_IPO_22b1edbb2ea1b2abd5cabf9e7c2316a8b6b2f247",
-    "d_day": -8,
+    "d_day": -9,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "0127E0",
@@ -36895,7 +37111,7 @@
   },
   {
     "event_id": "KR_KIND_IPO_7a94ec521b66d5a584d72ad5cf9304a8fca23281",
-    "d_day": -9,
+    "d_day": -10,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "439270",
@@ -36986,7 +37202,7 @@
   },
   {
     "event_id": "KR_KIND_IPO_81bfec927fc30451d4700230ccffeb3194e205e4",
-    "d_day": -9,
+    "d_day": -10,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "0053F0",
@@ -37090,7 +37306,7 @@
   },
   {
     "event_id": "KR_KIND_IPO_ad4821a8291ab1af54535a38d4482e46008cc2ae",
-    "d_day": -11,
+    "d_day": -12,
     "d_day_far_future": false,
     "country": "KR",
     "ticker": "0205H0",

@@ -1,7 +1,7 @@
 [
   {
     "event_id": "US_SEC_13DG_0002162486-26-000003",
-    "d_day": -1,
+    "d_day": -2,
     "country": "US",
     "ticker": "RBNE",
     "primary_ticker": "RBNE",
@@ -62,7 +62,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 0.13099999725818634,
         "cumReturn": 0.0,
@@ -75,7 +75,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 0.13099999725818634,
         "cumReturn": 0.0,
@@ -90,7 +90,7 @@
   },
   {
     "event_id": "US_SEC_13DG_0001905106-26-000174",
-    "d_day": -1,
+    "d_day": -2,
     "country": "US",
     "ticker": "DYNC",
     "primary_ticker": "DYNC",
@@ -157,7 +157,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 10.979999542236328,
         "cumReturn": 0.0,
@@ -170,7 +170,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 10.979999542236328,
         "cumReturn": 0.0,
@@ -185,7 +185,7 @@
   },
   {
     "event_id": "US_SEC_13DG_0001897612-26-000707",
-    "d_day": -1,
+    "d_day": -2,
     "country": "US",
     "ticker": "WBI",
     "primary_ticker": "WBI",
@@ -252,7 +252,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 24.809999465942383,
         "cumReturn": 0.0,
@@ -265,7 +265,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 24.809999465942383,
         "cumReturn": 0.0,
@@ -280,7 +280,7 @@
   },
   {
     "event_id": "US_SEC_13DG_0001897612-26-000706",
-    "d_day": -1,
+    "d_day": -2,
     "country": "US",
     "ticker": "CABA",
     "primary_ticker": "CABA",
@@ -347,7 +347,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 1.2999999523162842,
         "cumReturn": 0.0,
@@ -360,7 +360,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 1.2999999523162842,
         "cumReturn": 0.0,
@@ -375,7 +375,7 @@
   },
   {
     "event_id": "US_SEC_13DG_0001897612-26-000705",
-    "d_day": -1,
+    "d_day": -2,
     "country": "US",
     "ticker": "PCVX",
     "primary_ticker": "PCVX",
@@ -442,7 +442,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 63.88999938964844,
         "cumReturn": 0.0,
@@ -455,7 +455,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 63.88999938964844,
         "cumReturn": 0.0,
@@ -470,7 +470,7 @@
   },
   {
     "event_id": "US_SEC_13DG_0001897612-26-000704",
-    "d_day": -1,
+    "d_day": -2,
     "country": "US",
     "ticker": "XENE",
     "primary_ticker": "XENE",
@@ -537,7 +537,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 39.16999816894531,
         "cumReturn": 0.0,
@@ -550,7 +550,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 39.16999816894531,
         "cumReturn": 0.0,
@@ -565,7 +565,7 @@
   },
   {
     "event_id": "US_SEC_13DG_0001897612-26-000703",
-    "d_day": -1,
+    "d_day": -2,
     "country": "US",
     "ticker": "MSGK",
     "primary_ticker": "MSGK",
@@ -632,7 +632,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 311.2200012207031,
         "cumReturn": 0.0,
@@ -645,7 +645,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 311.2200012207031,
         "cumReturn": 0.0,
@@ -660,7 +660,7 @@
   },
   {
     "event_id": "US_SEC_13DG_0001897612-26-000702",
-    "d_day": -1,
+    "d_day": -2,
     "country": "US",
     "ticker": "WBI",
     "primary_ticker": "WBI",
@@ -727,7 +727,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 24.809999465942383,
         "cumReturn": 0.0,
@@ -740,7 +740,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 24.809999465942383,
         "cumReturn": 0.0,
@@ -755,7 +755,7 @@
   },
   {
     "event_id": "US_SEC_13DG_0001897612-26-000701",
-    "d_day": -1,
+    "d_day": -2,
     "country": "US",
     "ticker": "CABA",
     "primary_ticker": "CABA",
@@ -822,7 +822,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 1.2999999523162842,
         "cumReturn": 0.0,
@@ -835,7 +835,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 1.2999999523162842,
         "cumReturn": 0.0,
@@ -850,7 +850,7 @@
   },
   {
     "event_id": "US_SEC_13DG_0001897612-26-000700",
-    "d_day": -1,
+    "d_day": -2,
     "country": "US",
     "ticker": "PCVX",
     "primary_ticker": "PCVX",
@@ -917,7 +917,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 63.88999938964844,
         "cumReturn": 0.0,
@@ -930,7 +930,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 63.88999938964844,
         "cumReturn": 0.0,
@@ -945,7 +945,7 @@
   },
   {
     "event_id": "US_SEC_13DG_0001897612-26-000698",
-    "d_day": -1,
+    "d_day": -2,
     "country": "US",
     "ticker": "MSGK",
     "primary_ticker": "MSGK",
@@ -1012,7 +1012,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 311.2200012207031,
         "cumReturn": 0.0,
@@ -1025,7 +1025,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 311.2200012207031,
         "cumReturn": 0.0,
@@ -1040,7 +1040,7 @@
   },
   {
     "event_id": "US_SEC_13DG_0001845041-26-000008",
-    "d_day": -1,
+    "d_day": -2,
     "country": "US",
     "ticker": "LIFE",
     "primary_ticker": "LIFE",
@@ -1101,7 +1101,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 33.5099983215332,
         "cumReturn": 0.0,
@@ -1114,7 +1114,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 33.5099983215332,
         "cumReturn": 0.0,
@@ -1129,7 +1129,7 @@
   },
   {
     "event_id": "US_SEC_13DG_0001753926-26-002072",
-    "d_day": -1,
+    "d_day": -2,
     "country": "US",
     "ticker": "CLRO",
     "primary_ticker": "CLRO",
@@ -1201,7 +1201,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 5.010000228881836,
         "cumReturn": 0.0,
@@ -1214,7 +1214,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 5.010000228881836,
         "cumReturn": 0.0,
@@ -1229,7 +1229,7 @@
   },
   {
     "event_id": "US_SEC_13DG_0001753926-26-002071",
-    "d_day": -1,
+    "d_day": -2,
     "country": "US",
     "ticker": "JTAI",
     "primary_ticker": "JTAI",
@@ -1306,7 +1306,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 0.9129999876022339,
         "cumReturn": 0.0,
@@ -1319,7 +1319,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 0.9129999876022339,
         "cumReturn": 0.0,
@@ -1334,7 +1334,7 @@
   },
   {
     "event_id": "US_SEC_13DG_0001753926-26-002067",
-    "d_day": -1,
+    "d_day": -2,
     "country": "US",
     "ticker": "CDT",
     "primary_ticker": "CDT",
@@ -1406,7 +1406,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 1.309999942779541,
         "cumReturn": 0.0,
@@ -1419,7 +1419,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 1.309999942779541,
         "cumReturn": 0.0,
@@ -1434,7 +1434,7 @@
   },
   {
     "event_id": "US_SEC_13DG_0001705785-26-000009",
-    "d_day": -1,
+    "d_day": -2,
     "country": "US",
     "ticker": "CHYM",
     "primary_ticker": "CHYM",
@@ -1506,7 +1506,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 31.329999923706055,
         "cumReturn": 0.0,
@@ -1519,7 +1519,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 31.329999923706055,
         "cumReturn": 0.0,
@@ -1534,7 +1534,7 @@
   },
   {
     "event_id": "US_SEC_13DG_0001644956-26-000029",
-    "d_day": -1,
+    "d_day": -2,
     "country": "US",
     "ticker": "BWIN",
     "primary_ticker": "BWIN",
@@ -1601,7 +1601,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 31.979999542236328,
         "cumReturn": 0.0,
@@ -1614,7 +1614,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 31.979999542236328,
         "cumReturn": 0.0,
@@ -1629,7 +1629,7 @@
   },
   {
     "event_id": "US_SEC_13DG_0001595888-26-000159",
-    "d_day": -1,
+    "d_day": -2,
     "country": "US",
     "ticker": "IPST",
     "primary_ticker": "IPST",
@@ -1706,7 +1706,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 2.1500000953674316,
         "cumReturn": 0.0,
@@ -1719,7 +1719,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 2.1500000953674316,
         "cumReturn": 0.0,
@@ -1734,7 +1734,7 @@
   },
   {
     "event_id": "US_SEC_13DG_0001595888-26-000158",
-    "d_day": -1,
+    "d_day": -2,
     "country": "US",
     "ticker": "INOD",
     "primary_ticker": "INOD",
@@ -1811,7 +1811,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 37.029998779296875,
         "cumReturn": 0.0,
@@ -1824,7 +1824,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 37.029998779296875,
         "cumReturn": 0.0,
@@ -1839,7 +1839,7 @@
   },
   {
     "event_id": "US_SEC_13DG_0001595888-26-000157",
-    "d_day": -1,
+    "d_day": -2,
     "country": "US",
     "ticker": "JZXN",
     "primary_ticker": "JZXN",
@@ -1916,7 +1916,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 1.059999942779541,
         "cumReturn": 0.0,
@@ -1929,7 +1929,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 1.059999942779541,
         "cumReturn": 0.0,
@@ -1944,7 +1944,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000475",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "0147B0",
     "primary_ticker": "0147B0",
@@ -2036,7 +2036,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 9740.0,
         "cumReturn": 0.0,
@@ -2049,7 +2049,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 9740.0,
         "cumReturn": 0.0,
@@ -2064,7 +2064,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000472",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "043610",
     "primary_ticker": "043610",
@@ -2150,7 +2150,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 4050.0,
         "cumReturn": 0.0,
@@ -2163,7 +2163,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 4050.0,
         "cumReturn": 0.0,
@@ -2178,7 +2178,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000469",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "291230",
     "primary_ticker": "291230",
@@ -2269,7 +2269,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 1864.0,
         "cumReturn": 0.0,
@@ -2282,7 +2282,7 @@
       "firstEntry": {
         "baseDate": "2026-07-16",
         "marketBaseDate": "2026-07-16",
-        "elapsedDays": 114,
+        "elapsedDays": 115,
         "availTradingDays": 75,
         "basePrice": 3205.0,
         "cumReturn": -41.8,
@@ -2297,7 +2297,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000465",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "114630",
     "primary_ticker": "114630",
@@ -2383,7 +2383,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 1134.0,
         "cumReturn": 0.0,
@@ -2396,7 +2396,7 @@
       "firstEntry": {
         "baseDate": "2025-12-15",
         "marketBaseDate": "2025-12-15",
-        "elapsedDays": 327,
+        "elapsedDays": 328,
         "availTradingDays": 217,
         "basePrice": 2530.0,
         "cumReturn": -55.2,
@@ -2411,7 +2411,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000450",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "448900",
     "primary_ticker": "448900",
@@ -2488,7 +2488,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 36600.0,
         "cumReturn": 0.0,
@@ -2501,7 +2501,7 @@
       "firstEntry": {
         "baseDate": "2025-04-10",
         "marketBaseDate": "2025-04-10",
-        "elapsedDays": 576,
+        "elapsedDays": 577,
         "availTradingDays": 382,
         "basePrice": 16300.0,
         "cumReturn": 124.5,
@@ -2516,7 +2516,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000447",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "134580",
     "primary_ticker": "134580",
@@ -2593,7 +2593,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 1273.0,
         "cumReturn": 0.0,
@@ -2606,7 +2606,7 @@
       "firstEntry": {
         "baseDate": "2024-12-24",
         "marketBaseDate": "2024-12-24",
-        "elapsedDays": 683,
+        "elapsedDays": 684,
         "availTradingDays": 451,
         "basePrice": 1529.0,
         "cumReturn": -16.7,
@@ -2621,7 +2621,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000441",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "182360",
     "primary_ticker": "182360",
@@ -2693,7 +2693,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 5910.0,
         "cumReturn": 0.0,
@@ -2706,7 +2706,7 @@
       "firstEntry": {
         "baseDate": "2024-11-22",
         "marketBaseDate": "2024-11-22",
-        "elapsedDays": 715,
+        "elapsedDays": 716,
         "availTradingDays": 473,
         "basePrice": 14900.0,
         "cumReturn": -60.3,
@@ -2721,7 +2721,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000439",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "064960",
     "primary_ticker": "064960",
@@ -2822,7 +2822,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 24150.0,
         "cumReturn": 0.0,
@@ -2835,7 +2835,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 24150.0,
         "cumReturn": 0.0,
@@ -2850,7 +2850,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000437",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "039980",
     "primary_ticker": "039980",
@@ -2936,7 +2936,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 3820.0,
         "cumReturn": 0.0,
@@ -2949,7 +2949,7 @@
       "firstEntry": {
         "baseDate": "2025-05-16",
         "marketBaseDate": "2025-05-16",
-        "elapsedDays": 540,
+        "elapsedDays": 541,
         "availTradingDays": 359,
         "basePrice": 14400.0,
         "cumReturn": -73.5,
@@ -2964,7 +2964,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000431",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "251970",
     "primary_ticker": "251970",
@@ -3036,7 +3036,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 70300.0,
         "cumReturn": 0.0,
@@ -3049,7 +3049,7 @@
       "firstEntry": {
         "baseDate": "2024-12-27",
         "marketBaseDate": "2024-12-27",
-        "elapsedDays": 680,
+        "elapsedDays": 681,
         "availTradingDays": 449,
         "basePrice": 41500.0,
         "cumReturn": 69.4,
@@ -3064,7 +3064,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000426",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "439580",
     "primary_ticker": "439580",
@@ -3151,7 +3151,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 1845.0,
         "cumReturn": 0.0,
@@ -3164,7 +3164,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 1845.0,
         "cumReturn": 0.0,
@@ -3179,7 +3179,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000421",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "439580",
     "primary_ticker": "439580",
@@ -3251,7 +3251,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 1845.0,
         "cumReturn": 0.0,
@@ -3264,7 +3264,7 @@
       "firstEntry": {
         "baseDate": "2026-10-14",
         "marketBaseDate": "2026-10-14",
-        "elapsedDays": 24,
+        "elapsedDays": 25,
         "availTradingDays": 17,
         "basePrice": 2175.0,
         "cumReturn": -15.2,
@@ -3279,7 +3279,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000415",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "081150",
     "primary_ticker": "081150",
@@ -3356,7 +3356,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 2130.0,
         "cumReturn": 0.0,
@@ -3369,7 +3369,7 @@
       "firstEntry": {
         "baseDate": "2026-02-10",
         "marketBaseDate": "2026-02-10",
-        "elapsedDays": 270,
+        "elapsedDays": 271,
         "availTradingDays": 179,
         "basePrice": 3160.0,
         "cumReturn": -32.6,
@@ -3384,7 +3384,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000411",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "381970",
     "primary_ticker": "381970",
@@ -3461,7 +3461,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 5490.0,
         "cumReturn": 0.0,
@@ -3474,7 +3474,7 @@
       "firstEntry": {
         "baseDate": "2025-07-28",
         "marketBaseDate": "2025-07-28",
-        "elapsedDays": 467,
+        "elapsedDays": 468,
         "availTradingDays": 310,
         "basePrice": 15490.0,
         "cumReturn": -64.6,
@@ -3489,7 +3489,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000407",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "214270",
     "primary_ticker": "214270",
@@ -3576,7 +3576,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 1139.0,
         "cumReturn": 0.0,
@@ -3589,7 +3589,7 @@
       "firstEntry": {
         "baseDate": "2024-11-14",
         "marketBaseDate": "2024-11-14",
-        "elapsedDays": 723,
+        "elapsedDays": 724,
         "availTradingDays": 479,
         "basePrice": 2110.0,
         "cumReturn": -46.0,
@@ -3604,7 +3604,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000403",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "247660",
     "primary_ticker": "247660",
@@ -3681,7 +3681,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 4425.0,
         "cumReturn": 0.0,
@@ -3694,7 +3694,7 @@
       "firstEntry": {
         "baseDate": "2026-09-01",
         "marketBaseDate": "2026-09-01",
-        "elapsedDays": 67,
+        "elapsedDays": 68,
         "availTradingDays": 44,
         "basePrice": 3765.0,
         "cumReturn": 17.5,
@@ -3709,7 +3709,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000397",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "034830",
     "primary_ticker": "034830",
@@ -3781,7 +3781,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 957.0,
         "cumReturn": 0.0,
@@ -3794,7 +3794,7 @@
       "firstEntry": {
         "baseDate": "2024-11-14",
         "marketBaseDate": "2024-11-14",
-        "elapsedDays": 723,
+        "elapsedDays": 724,
         "availTradingDays": 479,
         "basePrice": 999.0,
         "cumReturn": -4.2,
@@ -3809,7 +3809,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000395",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "234340",
     "primary_ticker": "234340",
@@ -3900,7 +3900,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 16250.0,
         "cumReturn": 0.0,
@@ -3913,7 +3913,7 @@
       "firstEntry": {
         "baseDate": "2025-01-09",
         "marketBaseDate": "2025-01-09",
-        "elapsedDays": 667,
+        "elapsedDays": 668,
         "availTradingDays": 442,
         "basePrice": 9466.6669921875,
         "cumReturn": 71.7,
@@ -3928,7 +3928,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000386",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "159910",
     "primary_ticker": "159910",
@@ -4010,7 +4010,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 3270.0,
         "cumReturn": 0.0,
@@ -4023,7 +4023,7 @@
       "firstEntry": {
         "baseDate": "2026-07-20",
         "marketBaseDate": "2026-07-20",
-        "elapsedDays": 110,
+        "elapsedDays": 111,
         "availTradingDays": 74,
         "basePrice": 3090.0,
         "cumReturn": 5.8,
@@ -4038,7 +4038,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000380",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "178320",
     "primary_ticker": "178320",
@@ -4115,7 +4115,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 25700.0,
         "cumReturn": 0.0,
@@ -4128,7 +4128,7 @@
       "firstEntry": {
         "baseDate": "2024-11-13",
         "marketBaseDate": "2024-11-13",
-        "elapsedDays": 724,
+        "elapsedDays": 725,
         "availTradingDays": 480,
         "basePrice": 28450.0,
         "cumReturn": -9.7,
@@ -4143,7 +4143,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000377",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "123840",
     "primary_ticker": "123840",
@@ -4224,7 +4224,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 1396.0,
         "cumReturn": 0.0,
@@ -4237,7 +4237,7 @@
       "firstEntry": {
         "baseDate": "2024-12-13",
         "marketBaseDate": "2024-12-13",
-        "elapsedDays": 694,
+        "elapsedDays": 695,
         "availTradingDays": 458,
         "basePrice": 17500.0,
         "cumReturn": -92.0,
@@ -4252,7 +4252,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000370",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "001270",
     "primary_ticker": "001270",
@@ -4334,7 +4334,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 38600.0,
         "cumReturn": 0.0,
@@ -4347,7 +4347,7 @@
       "firstEntry": {
         "baseDate": "2024-11-08",
         "marketBaseDate": "2024-11-08",
-        "elapsedDays": 729,
+        "elapsedDays": 730,
         "availTradingDays": 483,
         "basePrice": 27900.0,
         "cumReturn": 38.4,
@@ -4362,7 +4362,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000367",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "114190",
     "primary_ticker": "114190",
@@ -4434,7 +4434,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 8400.0,
         "cumReturn": 0.0,
@@ -4447,7 +4447,7 @@
       "firstEntry": {
         "baseDate": "2024-12-03",
         "marketBaseDate": "2024-12-03",
-        "elapsedDays": 704,
+        "elapsedDays": 705,
         "availTradingDays": 466,
         "basePrice": 10740.0,
         "cumReturn": -21.8,
@@ -4462,7 +4462,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000366",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "107640",
     "primary_ticker": "107640",
@@ -4539,7 +4539,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 42550.0,
         "cumReturn": 0.0,
@@ -4552,7 +4552,7 @@
       "firstEntry": {
         "baseDate": "2026-10-23",
         "marketBaseDate": "2026-10-23",
-        "elapsedDays": 15,
+        "elapsedDays": 16,
         "availTradingDays": 10,
         "basePrice": 45900.0,
         "cumReturn": -7.3,
@@ -4567,7 +4567,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000362",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "091580",
     "primary_ticker": "091580",
@@ -4644,7 +4644,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 22150.0,
         "cumReturn": 0.0,
@@ -4657,7 +4657,7 @@
       "firstEntry": {
         "baseDate": "2026-10-23",
         "marketBaseDate": "2026-10-23",
-        "elapsedDays": 15,
+        "elapsedDays": 16,
         "availTradingDays": 10,
         "basePrice": 24150.0,
         "cumReturn": -8.3,
@@ -4672,7 +4672,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000359",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "178320",
     "primary_ticker": "178320",
@@ -4749,7 +4749,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 25700.0,
         "cumReturn": 0.0,
@@ -4762,7 +4762,7 @@
       "firstEntry": {
         "baseDate": "2026-06-18",
         "marketBaseDate": "2026-06-18",
-        "elapsedDays": 142,
+        "elapsedDays": 143,
         "availTradingDays": 95,
         "basePrice": 69100.0,
         "cumReturn": -62.8,
@@ -4777,7 +4777,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000357",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "078600",
     "primary_ticker": "078600",
@@ -4823,7 +4823,7 @@
       },
       {
         "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "세력 매집단가(93,855) 대비 현재가(74,500)가 -20.6% 할인 구간 [DISCLOSED: 원문 제3부 세부변동내역 가중평균(107,092주)]",
+        "reason": "세력 매집단가(87,467) 대비 현재가(74,500)가 -14.8% 할인 구간 [VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP]",
         "points": 2
       }
     ],
@@ -4835,16 +4835,16 @@
     "insight": {
       "tier": "HIGH",
       "label": "지분공시",
-      "summary": "실제 보유주식수 증가(+239,251) 및 지분율 +1.53%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인 · 세력 매집단가(93,855) 대비 현재가(74,500)가 -20.6% 할인 구간 [DISCLOSED: 원문 제3부 세부변동내역 가중평균(107,092주)]",
+      "summary": "실제 보유주식수 증가(+239,251) 및 지분율 +1.53%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인 · 세력 매집단가(87,467) 대비 현재가(74,500)가 -14.8% 할인 구간 [VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP]",
       "score": 7
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
     "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000357",
-    "est_avg_price": 93855,
+    "est_avg_price": 87467,
     "current_price": 74500.0,
-    "price_gap_pct": -20.6,
-    "price_source": "DISCLOSED: 원문 제3부 세부변동내역 가중평균(107,092주)",
+    "price_gap_pct": -14.8,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
     "hold_stock_rt": 6.57,
     "stk_rt_var": 1.53,
     "stk_cnt_var": "+239,251",
@@ -4854,7 +4854,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 74500.0,
         "cumReturn": 0.0,
@@ -4867,7 +4867,7 @@
       "firstEntry": {
         "baseDate": "2026-03-12",
         "marketBaseDate": "2026-03-12",
-        "elapsedDays": 240,
+        "elapsedDays": 241,
         "availTradingDays": 161,
         "basePrice": 111400.0,
         "cumReturn": -33.1,
@@ -4882,7 +4882,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000352",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "064760",
     "primary_ticker": "064760",
@@ -4928,7 +4928,7 @@
       },
       {
         "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "세력 매집단가(267,927) 대비 현재가(137,400)가 -48.7% 할인 구간 [DISCLOSED: 원문 제3부 세부변동내역 가중평균(412,464주)]",
+        "reason": "세력 매집단가(179,271) 대비 현재가(137,400)가 -23.4% 할인 구간 [VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP]",
         "points": 2
       }
     ],
@@ -4940,16 +4940,16 @@
     "insight": {
       "tier": "HIGH",
       "label": "지분공시",
-      "summary": "실제 보유주식수 증가(+95,278) 및 지분율 +0.85%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인 · 세력 매집단가(267,927) 대비 현재가(137,400)가 -48.7% 할인 구간 [DISCLOSED: 원문 제3부 세부변동내역 가중평균(412,464주)]",
+      "summary": "실제 보유주식수 증가(+95,278) 및 지분율 +0.85%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인 · 세력 매집단가(179,271) 대비 현재가(137,400)가 -23.4% 할인 구간 [VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP]",
       "score": 6
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
     "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000352",
-    "est_avg_price": 267927,
+    "est_avg_price": 179271,
     "current_price": 137400.0,
-    "price_gap_pct": -48.7,
-    "price_source": "DISCLOSED: 원문 제3부 세부변동내역 가중평균(412,464주)",
+    "price_gap_pct": -23.4,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
     "hold_stock_rt": 5.89,
     "stk_rt_var": 0.85,
     "stk_cnt_var": "+95,278",
@@ -4959,7 +4959,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 137400.0,
         "cumReturn": 0.0,
@@ -4972,7 +4972,7 @@
       "firstEntry": {
         "baseDate": "2026-03-12",
         "marketBaseDate": "2026-03-12",
-        "elapsedDays": 240,
+        "elapsedDays": 241,
         "availTradingDays": 161,
         "basePrice": 223500.0,
         "cumReturn": -38.5,
@@ -4987,7 +4987,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000349",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "439270",
     "primary_ticker": "439270",
@@ -5079,7 +5079,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 5070.0,
         "cumReturn": 0.0,
@@ -5092,7 +5092,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 5070.0,
         "cumReturn": 0.0,
@@ -5107,7 +5107,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000347",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "298380",
     "primary_ticker": "298380",
@@ -5179,7 +5179,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 36050.0,
         "cumReturn": 0.0,
@@ -5192,7 +5192,7 @@
       "firstEntry": {
         "baseDate": "2025-01-03",
         "marketBaseDate": "2025-01-03",
-        "elapsedDays": 673,
+        "elapsedDays": 674,
         "availTradingDays": 446,
         "basePrice": 31150.0,
         "cumReturn": 15.7,
@@ -5207,7 +5207,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000331",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "046310",
     "primary_ticker": "046310",
@@ -5281,10 +5281,10 @@
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
     "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000331",
-    "est_avg_price": 2432,
+    "est_avg_price": 2497,
     "current_price": 2635.0,
-    "price_gap_pct": 8.3,
-    "price_source": "DISCLOSED: 원문 제3부 세부변동내역 가중평균(221,546주)",
+    "price_gap_pct": 5.5,
+    "price_source": "VWAP_ESTIMATE: 2026-10-19~2026-11-06 매집기간 일봉 VWAP",
     "hold_stock_rt": 10.35,
     "stk_rt_var": 1.35,
     "stk_cnt_var": "+221,546",
@@ -5294,7 +5294,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 2635.0,
         "cumReturn": 0.0,
@@ -5307,7 +5307,7 @@
       "firstEntry": {
         "baseDate": "2026-04-23",
         "marketBaseDate": "2026-04-23",
-        "elapsedDays": 198,
+        "elapsedDays": 199,
         "availTradingDays": 131,
         "basePrice": 3570.0,
         "cumReturn": -26.2,
@@ -5322,7 +5322,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000326",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "078340",
     "primary_ticker": "078340",
@@ -5408,7 +5408,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 34750.0,
         "cumReturn": 0.0,
@@ -5421,7 +5421,7 @@
       "firstEntry": {
         "baseDate": "2024-11-20",
         "marketBaseDate": "2024-11-20",
-        "elapsedDays": 717,
+        "elapsedDays": 718,
         "availTradingDays": 475,
         "basePrice": 43400.0,
         "cumReturn": -19.9,
@@ -5436,7 +5436,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000324",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "032540",
     "primary_ticker": "032540",
@@ -5508,7 +5508,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 3690.0,
         "cumReturn": 0.0,
@@ -5521,7 +5521,7 @@
       "firstEntry": {
         "baseDate": "2026-05-26",
         "marketBaseDate": "2026-05-26",
-        "elapsedDays": 165,
+        "elapsedDays": 166,
         "availTradingDays": 111,
         "basePrice": 3470.0,
         "cumReturn": 6.3,
@@ -5536,7 +5536,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000320",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "098460",
     "primary_ticker": "098460",
@@ -5613,7 +5613,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 20450.0,
         "cumReturn": 0.0,
@@ -5626,7 +5626,7 @@
       "firstEntry": {
         "baseDate": "2026-08-14",
         "marketBaseDate": "2026-08-14",
-        "elapsedDays": 85,
+        "elapsedDays": 86,
         "availTradingDays": 55,
         "basePrice": 32350.0,
         "cumReturn": -36.8,
@@ -5641,7 +5641,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000317",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "033160",
     "primary_ticker": "033160",
@@ -5718,7 +5718,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 9760.0,
         "cumReturn": 0.0,
@@ -5731,7 +5731,7 @@
       "firstEntry": {
         "baseDate": "2024-11-21",
         "marketBaseDate": "2024-11-21",
-        "elapsedDays": 716,
+        "elapsedDays": 717,
         "availTradingDays": 474,
         "basePrice": 6910.0,
         "cumReturn": 41.2,
@@ -5746,7 +5746,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000315",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "016670",
     "primary_ticker": "016670",
@@ -5837,7 +5837,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 2285.0,
         "cumReturn": 0.0,
@@ -5850,7 +5850,7 @@
       "firstEntry": {
         "baseDate": "2025-02-12",
         "marketBaseDate": "2025-02-12",
-        "elapsedDays": 633,
+        "elapsedDays": 634,
         "availTradingDays": 422,
         "basePrice": 3420.0,
         "cumReturn": -33.2,
@@ -5865,7 +5865,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000313",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "299030",
     "primary_ticker": "299030",
@@ -5942,7 +5942,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 10160.0,
         "cumReturn": 0.0,
@@ -5955,7 +5955,7 @@
       "firstEntry": {
         "baseDate": "2024-11-21",
         "marketBaseDate": "2024-11-21",
-        "elapsedDays": 716,
+        "elapsedDays": 717,
         "availTradingDays": 474,
         "basePrice": 21100.0,
         "cumReturn": -51.8,
@@ -5970,7 +5970,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000311",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "439580",
     "primary_ticker": "439580",
@@ -6037,7 +6037,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 1845.0,
         "cumReturn": 0.0,
@@ -6050,7 +6050,7 @@
       "firstEntry": {
         "baseDate": "2025-05-15",
         "marketBaseDate": "2025-05-15",
-        "elapsedDays": 541,
+        "elapsedDays": 542,
         "availTradingDays": 360,
         "basePrice": 7420.0,
         "cumReturn": -75.1,
@@ -6065,7 +6065,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000307",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "139130",
     "primary_ticker": "139130",
@@ -6129,10 +6129,10 @@
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
     "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000307",
-    "est_avg_price": 15385,
+    "est_avg_price": 15368,
     "current_price": 15240.0,
-    "price_gap_pct": -0.9,
-    "price_source": "DISCLOSED: 원문 제3부 세부변동내역 가중평균(303,501주)",
+    "price_gap_pct": -0.8,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
     "hold_stock_rt": 5.07,
     "stk_rt_var": 0.14,
     "stk_cnt_var": "+219,947",
@@ -6142,7 +6142,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 15240.0,
         "cumReturn": 0.0,
@@ -6155,7 +6155,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 15240.0,
         "cumReturn": 0.0,
@@ -6170,7 +6170,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000306",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "154040",
     "primary_ticker": "154040",
@@ -6229,10 +6229,10 @@
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
     "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000306",
-    "est_avg_price": 10531,
+    "est_avg_price": 10215,
     "current_price": 9300.0,
-    "price_gap_pct": -11.7,
-    "price_source": "DISCLOSED: 원문 제3부 세부변동내역 가중평균(99,414주)",
+    "price_gap_pct": -9.0,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
     "hold_stock_rt": 64.03,
     "stk_rt_var": 0.74,
     "stk_cnt_var": "-12,297,393",
@@ -6242,7 +6242,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 9300.0,
         "cumReturn": 0.0,
@@ -6255,7 +6255,7 @@
       "firstEntry": {
         "baseDate": "2025-04-09",
         "marketBaseDate": "2025-04-09",
-        "elapsedDays": 577,
+        "elapsedDays": 578,
         "availTradingDays": 383,
         "basePrice": 9940.0,
         "cumReturn": -6.4,
@@ -6270,7 +6270,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000303",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "007460",
     "primary_ticker": "007460",
@@ -6347,7 +6347,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 1720.0,
         "cumReturn": 0.0,
@@ -6360,7 +6360,7 @@
       "firstEntry": {
         "baseDate": "2024-11-22",
         "marketBaseDate": "2024-11-22",
-        "elapsedDays": 715,
+        "elapsedDays": 716,
         "availTradingDays": 473,
         "basePrice": 17181.41015625,
         "cumReturn": -90.0,
@@ -6375,7 +6375,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000302",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "339950",
     "primary_ticker": "339950",
@@ -6456,7 +6456,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 2165.0,
         "cumReturn": 0.0,
@@ -6469,7 +6469,7 @@
       "firstEntry": {
         "baseDate": "2024-11-08",
         "marketBaseDate": "2024-11-08",
-        "elapsedDays": 729,
+        "elapsedDays": 730,
         "availTradingDays": 483,
         "basePrice": 1808.0,
         "cumReturn": 19.7,
@@ -6484,7 +6484,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000289",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "227950",
     "primary_ticker": "227950",
@@ -6565,7 +6565,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 1046.0,
         "cumReturn": 0.0,
@@ -6578,7 +6578,7 @@
       "firstEntry": {
         "baseDate": "2026-09-23",
         "marketBaseDate": "2026-09-23",
-        "elapsedDays": 45,
+        "elapsedDays": 46,
         "availTradingDays": 28,
         "basePrice": 1208.0,
         "cumReturn": -13.4,
@@ -6593,7 +6593,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000284",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "001780",
     "primary_ticker": "001780",
@@ -6679,7 +6679,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 1330.0,
         "cumReturn": 0.0,
@@ -6692,7 +6692,7 @@
       "firstEntry": {
         "baseDate": "2024-12-05",
         "marketBaseDate": "2024-12-05",
-        "elapsedDays": 702,
+        "elapsedDays": 703,
         "availTradingDays": 464,
         "basePrice": 1992.0,
         "cumReturn": -33.2,
@@ -6707,7 +6707,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000280",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "002380",
     "primary_ticker": "002380",
@@ -6784,7 +6784,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 366500.0,
         "cumReturn": 0.0,
@@ -6797,7 +6797,7 @@
       "firstEntry": {
         "baseDate": "2024-12-05",
         "marketBaseDate": "2024-12-05",
-        "elapsedDays": 702,
+        "elapsedDays": 703,
         "availTradingDays": 464,
         "basePrice": 230500.0,
         "cumReturn": 59.0,
@@ -6812,7 +6812,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000264",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "170900",
     "primary_ticker": "170900",
@@ -6908,7 +6908,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 33750.0,
         "cumReturn": 0.0,
@@ -6921,7 +6921,7 @@
       "firstEntry": {
         "baseDate": "2024-12-04",
         "marketBaseDate": "2024-12-04",
-        "elapsedDays": 703,
+        "elapsedDays": 704,
         "availTradingDays": 465,
         "basePrice": 56582.6328125,
         "cumReturn": -40.4,
@@ -6936,7 +6936,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000262",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "000640",
     "primary_ticker": "000640",
@@ -7018,7 +7018,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 87000.0,
         "cumReturn": 0.0,
@@ -7031,7 +7031,7 @@
       "firstEntry": {
         "baseDate": "2024-11-21",
         "marketBaseDate": "2024-11-21",
-        "elapsedDays": 716,
+        "elapsedDays": 717,
         "availTradingDays": 474,
         "basePrice": 102742.953125,
         "cumReturn": -15.3,
@@ -7046,7 +7046,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000261",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "065060",
     "primary_ticker": "065060",
@@ -7091,8 +7091,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 11,
-    "alpha_score": 11,
+    "event_score": 10,
+    "alpha_score": 10,
     "score_breakdown": [
       {
         "strategy": "전략 3 (목적 변경)",
@@ -7113,11 +7113,6 @@
         "strategy": "전략 6 (취득원천 검증)",
         "reason": "보고사유: 특별관계자 주식장내매수 및 주식근질권설정변경계약 체결",
         "points": 2
-      },
-      {
-        "strategy": "전략 6 (세력 평단 하회)",
-        "reason": "세력 매집단가 대비 현재가 -5.9% 할인 구간 [DISCLOSED: 원문 제3부 세부변동내역 가중평균(5,834주)]",
-        "points": 1
       }
     ],
     "investor_class": "일반법인/기타",
@@ -7128,16 +7123,16 @@
     "insight": {
       "tier": "HIGH",
       "label": "지분공시",
-      "summary": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 실제 보유주식수 증가(+5,834) 및 지분율 +0.09%p 확대 · 공식 이력 기준 9회 연속 실제 보유주식수 증가 확인 · 보고사유: 특별관계자 주식장내매수 및 주식근질권설정변경계약 체결 · 세력 매집단가 대비 현재가 -5.9% 할인 구간 [DISCLOSED: 원문 제3부 세부변동내역 가중평균(5,834주)]",
-      "score": 11
+      "summary": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 실제 보유주식수 증가(+5,834) 및 지분율 +0.09%p 확대 · 공식 이력 기준 9회 연속 실제 보유주식수 증가 확인 · 보고사유: 특별관계자 주식장내매수 및 주식근질권설정변경계약 체결",
+      "score": 10
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
     "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000261",
-    "est_avg_price": 3034,
+    "est_avg_price": 2967,
     "current_price": 2855.0,
-    "price_gap_pct": -5.9,
-    "price_source": "DISCLOSED: 원문 제3부 세부변동내역 가중평균(5,834주)",
+    "price_gap_pct": -3.8,
+    "price_source": "VWAP_ESTIMATE: 2026-10-19~2026-11-06 매집기간 일봉 VWAP",
     "hold_stock_rt": 74.7,
     "stk_rt_var": 0.09,
     "stk_cnt_var": "+5,834",
@@ -7147,7 +7142,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 2855.0,
         "cumReturn": 0.0,
@@ -7160,7 +7155,7 @@
       "firstEntry": {
         "baseDate": "2024-12-03",
         "marketBaseDate": "2024-12-03",
-        "elapsedDays": 704,
+        "elapsedDays": 705,
         "availTradingDays": 466,
         "basePrice": 9057.5693359375,
         "cumReturn": -68.5,
@@ -7175,7 +7170,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000256",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "014280",
     "primary_ticker": "014280",
@@ -7247,7 +7242,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 4030.0,
         "cumReturn": 0.0,
@@ -7260,7 +7255,7 @@
       "firstEntry": {
         "baseDate": "2024-11-13",
         "marketBaseDate": "2024-11-13",
-        "elapsedDays": 724,
+        "elapsedDays": 725,
         "availTradingDays": 480,
         "basePrice": 4180.0,
         "cumReturn": -3.6,
@@ -7275,7 +7270,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000254",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "040350",
     "primary_ticker": "040350",
@@ -7361,7 +7356,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 2385.0,
         "cumReturn": 0.0,
@@ -7374,7 +7369,7 @@
       "firstEntry": {
         "baseDate": "2024-11-15",
         "marketBaseDate": "2024-11-15",
-        "elapsedDays": 722,
+        "elapsedDays": 723,
         "availTradingDays": 478,
         "basePrice": 5960.0,
         "cumReturn": -60.0,
@@ -7389,7 +7384,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000237",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "429270",
     "primary_ticker": "429270",
@@ -7466,7 +7461,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 2020.0,
         "cumReturn": 0.0,
@@ -7479,7 +7474,7 @@
       "firstEntry": {
         "baseDate": "2024-12-11",
         "marketBaseDate": "2024-12-11",
-        "elapsedDays": 696,
+        "elapsedDays": 697,
         "availTradingDays": 460,
         "basePrice": 4710.0,
         "cumReturn": -57.1,
@@ -7494,7 +7489,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000232",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "200350",
     "primary_ticker": "200350",
@@ -7576,7 +7571,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 3370.0,
         "cumReturn": 0.0,
@@ -7589,7 +7584,7 @@
       "firstEntry": {
         "baseDate": "2025-05-02",
         "marketBaseDate": "2025-05-02",
-        "elapsedDays": 554,
+        "elapsedDays": 555,
         "availTradingDays": 367,
         "basePrice": 16690.0,
         "cumReturn": -79.8,
@@ -7604,7 +7599,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000175",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "363260",
     "primary_ticker": "363260",
@@ -7696,7 +7691,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 2760.0,
         "cumReturn": 0.0,
@@ -7709,7 +7704,7 @@
       "firstEntry": {
         "baseDate": "2025-02-26",
         "marketBaseDate": "2025-02-26",
-        "elapsedDays": 619,
+        "elapsedDays": 620,
         "availTradingDays": 412,
         "basePrice": 10400.0,
         "cumReturn": -73.5,
@@ -7724,7 +7719,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000172",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "0222E0",
     "primary_ticker": "0222E0",
@@ -7801,7 +7796,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 1858.0,
         "cumReturn": 0.0,
@@ -7814,7 +7809,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 1858.0,
         "cumReturn": 0.0,
@@ -7829,7 +7824,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000143",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "002990",
     "primary_ticker": "002990",
@@ -7906,7 +7901,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 7930.0,
         "cumReturn": 0.0,
@@ -7919,7 +7914,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 7930.0,
         "cumReturn": 0.0,
@@ -7934,7 +7929,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000116",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "088340",
     "primary_ticker": "088340",
@@ -8021,7 +8016,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 5030.0,
         "cumReturn": 0.0,
@@ -8034,7 +8029,7 @@
       "firstEntry": {
         "baseDate": "2025-03-12",
         "marketBaseDate": "2025-03-12",
-        "elapsedDays": 605,
+        "elapsedDays": 606,
         "availTradingDays": 403,
         "basePrice": 10370.0,
         "cumReturn": -51.5,
@@ -8049,7 +8044,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000101",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "330860",
     "primary_ticker": "330860",
@@ -8126,7 +8121,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 17080.0,
         "cumReturn": 0.0,
@@ -8139,7 +8134,7 @@
       "firstEntry": {
         "baseDate": "2026-10-21",
         "marketBaseDate": "2026-10-21",
-        "elapsedDays": 17,
+        "elapsedDays": 18,
         "availTradingDays": 12,
         "basePrice": 25650.0,
         "cumReturn": -33.4,
@@ -8154,7 +8149,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000096",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "388610",
     "primary_ticker": "388610",
@@ -8236,7 +8231,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 4045.0,
         "cumReturn": 0.0,
@@ -8249,7 +8244,7 @@
       "firstEntry": {
         "baseDate": "2025-07-04",
         "marketBaseDate": "2025-07-04",
-        "elapsedDays": 491,
+        "elapsedDays": 492,
         "availTradingDays": 326,
         "basePrice": 22400.0,
         "cumReturn": -81.9,
@@ -8264,7 +8259,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000095",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "307180",
     "primary_ticker": "307180",
@@ -8346,7 +8341,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 4350.0,
         "cumReturn": 0.0,
@@ -8359,7 +8354,7 @@
       "firstEntry": {
         "baseDate": "2024-12-05",
         "marketBaseDate": "2024-12-05",
-        "elapsedDays": 702,
+        "elapsedDays": 703,
         "availTradingDays": 464,
         "basePrice": 2615.0,
         "cumReturn": 66.3,
@@ -8374,7 +8369,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000084",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "185490",
     "primary_ticker": "185490",
@@ -8451,7 +8446,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 1720.0,
         "cumReturn": 0.0,
@@ -8464,7 +8459,7 @@
       "firstEntry": {
         "baseDate": "2025-09-30",
         "marketBaseDate": "2025-09-30",
-        "elapsedDays": 403,
+        "elapsedDays": 404,
         "availTradingDays": 266,
         "basePrice": 2460.0,
         "cumReturn": -30.1,
@@ -8479,7 +8474,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000083",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "004080",
     "primary_ticker": "004080",
@@ -8556,7 +8551,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 14550.0,
         "cumReturn": 0.0,
@@ -8569,7 +8564,7 @@
       "firstEntry": {
         "baseDate": "2024-12-06",
         "marketBaseDate": "2024-12-06",
-        "elapsedDays": 701,
+        "elapsedDays": 702,
         "availTradingDays": 463,
         "basePrice": 14250.0,
         "cumReturn": 2.1,
@@ -8584,7 +8579,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000079",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "128540",
     "primary_ticker": "128540",
@@ -8666,7 +8661,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 796.0,
         "cumReturn": 0.0,
@@ -8679,7 +8674,7 @@
       "firstEntry": {
         "baseDate": "2025-08-06",
         "marketBaseDate": "2025-08-06",
-        "elapsedDays": 458,
+        "elapsedDays": 459,
         "availTradingDays": 303,
         "basePrice": 1898.0,
         "cumReturn": -58.1,
@@ -8694,7 +8689,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000078",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "359410",
     "primary_ticker": "359410",
@@ -8786,7 +8781,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 9870.0,
         "cumReturn": 0.0,
@@ -8799,7 +8794,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 9870.0,
         "cumReturn": 0.0,
@@ -8814,7 +8809,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000044",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "200350",
     "primary_ticker": "200350",
@@ -8886,7 +8881,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 3370.0,
         "cumReturn": 0.0,
@@ -8899,7 +8894,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 3370.0,
         "cumReturn": 0.0,
@@ -8914,7 +8909,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261106000027",
-    "d_day": -1,
+    "d_day": -2,
     "country": "KR",
     "ticker": "0222E0",
     "primary_ticker": "0222E0",
@@ -8996,7 +8991,7 @@
       "latest": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 1858.0,
         "cumReturn": 0.0,
@@ -9009,7 +9004,7 @@
       "firstEntry": {
         "baseDate": "2026-11-06",
         "marketBaseDate": "2026-11-06",
-        "elapsedDays": 1,
+        "elapsedDays": 2,
         "availTradingDays": 0,
         "basePrice": 1858.0,
         "cumReturn": 0.0,
@@ -9024,7 +9019,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261105000505",
-    "d_day": -2,
+    "d_day": -3,
     "country": "KR",
     "ticker": "0222E0",
     "primary_ticker": "0222E0",
@@ -9115,7 +9110,7 @@
       "latest": {
         "baseDate": "2026-11-05",
         "marketBaseDate": "2026-11-05",
-        "elapsedDays": 2,
+        "elapsedDays": 3,
         "availTradingDays": 1,
         "basePrice": 1862.0,
         "cumReturn": -0.2,
@@ -9128,7 +9123,7 @@
       "firstEntry": {
         "baseDate": "2026-11-05",
         "marketBaseDate": "2026-11-05",
-        "elapsedDays": 2,
+        "elapsedDays": 3,
         "availTradingDays": 1,
         "basePrice": 1862.0,
         "cumReturn": -0.2,
@@ -9143,7 +9138,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261105000388",
-    "d_day": -2,
+    "d_day": -3,
     "country": "KR",
     "ticker": "0147B0",
     "primary_ticker": "0147B0",
@@ -9239,7 +9234,7 @@
       "latest": {
         "baseDate": "2026-11-05",
         "marketBaseDate": "2026-11-05",
-        "elapsedDays": 2,
+        "elapsedDays": 3,
         "availTradingDays": 1,
         "basePrice": 12190.0,
         "cumReturn": -20.1,
@@ -9252,7 +9247,7 @@
       "firstEntry": {
         "baseDate": "2026-11-05",
         "marketBaseDate": "2026-11-05",
-        "elapsedDays": 2,
+        "elapsedDays": 3,
         "availTradingDays": 1,
         "basePrice": 12190.0,
         "cumReturn": -20.1,
@@ -9267,7 +9262,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261105000297",
-    "d_day": -2,
+    "d_day": -3,
     "country": "KR",
     "ticker": "429270",
     "primary_ticker": "429270",
@@ -9344,7 +9339,7 @@
       "latest": {
         "baseDate": "2026-11-05",
         "marketBaseDate": "2026-11-05",
-        "elapsedDays": 2,
+        "elapsedDays": 3,
         "availTradingDays": 1,
         "basePrice": 2220.0,
         "cumReturn": -9.0,
@@ -9357,7 +9352,7 @@
       "firstEntry": {
         "baseDate": "2026-11-05",
         "marketBaseDate": "2026-11-05",
-        "elapsedDays": 2,
+        "elapsedDays": 3,
         "availTradingDays": 1,
         "basePrice": 2220.0,
         "cumReturn": -9.0,
@@ -9372,7 +9367,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261104000295",
-    "d_day": -3,
+    "d_day": -4,
     "country": "KR",
     "ticker": "0222E0",
     "primary_ticker": "0222E0",
@@ -9449,7 +9444,7 @@
       "latest": {
         "baseDate": "2026-11-04",
         "marketBaseDate": "2026-11-04",
-        "elapsedDays": 3,
+        "elapsedDays": 4,
         "availTradingDays": 2,
         "basePrice": 1863.0,
         "cumReturn": -0.3,
@@ -9462,7 +9457,7 @@
       "firstEntry": {
         "baseDate": "2026-11-04",
         "marketBaseDate": "2026-11-04",
-        "elapsedDays": 3,
+        "elapsedDays": 4,
         "availTradingDays": 2,
         "basePrice": 1863.0,
         "cumReturn": -0.3,
@@ -9477,7 +9472,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261103000383",
-    "d_day": -4,
+    "d_day": -5,
     "country": "KR",
     "ticker": "381970",
     "primary_ticker": "381970",
@@ -9538,7 +9533,7 @@
       "latest": {
         "baseDate": "2026-11-03",
         "marketBaseDate": "2026-11-03",
-        "elapsedDays": 4,
+        "elapsedDays": 5,
         "availTradingDays": 3,
         "basePrice": 5330.0,
         "cumReturn": 3.0,
@@ -9551,7 +9546,7 @@
       "firstEntry": {
         "baseDate": "2026-06-26",
         "marketBaseDate": "2026-06-26",
-        "elapsedDays": 134,
+        "elapsedDays": 135,
         "availTradingDays": 89,
         "basePrice": 8290.0,
         "cumReturn": -33.8,
@@ -9566,7 +9561,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261103000340",
-    "d_day": -4,
+    "d_day": -5,
     "country": "KR",
     "ticker": "381970",
     "primary_ticker": "381970",
@@ -9641,7 +9636,7 @@
       "latest": {
         "baseDate": "2026-11-03",
         "marketBaseDate": "2026-11-03",
-        "elapsedDays": 4,
+        "elapsedDays": 5,
         "availTradingDays": 3,
         "basePrice": 5330.0,
         "cumReturn": 3.0,
@@ -9654,7 +9649,7 @@
       "firstEntry": {
         "baseDate": "2026-04-07",
         "marketBaseDate": "2026-04-07",
-        "elapsedDays": 214,
+        "elapsedDays": 215,
         "availTradingDays": 143,
         "basePrice": 9880.0,
         "cumReturn": -44.4,
@@ -9669,7 +9664,7 @@
   },
   {
     "event_id": "KR_DART_5PCT_20261103000323",
-    "d_day": -4,
+    "d_day": -5,
     "country": "KR",
     "ticker": "107640",
     "primary_ticker": "107640",
@@ -9736,7 +9731,7 @@
       "latest": {
         "baseDate": "2026-11-03",
         "marketBaseDate": "2026-11-03",
-        "elapsedDays": 4,
+        "elapsedDays": 5,
         "availTradingDays": 3,
         "basePrice": 44700.0,
         "cumReturn": -4.8,
@@ -9749,7 +9744,7 @@
       "firstEntry": {
         "baseDate": "2026-07-24",
         "marketBaseDate": "2026-07-24",
-        "elapsedDays": 106,
+        "elapsedDays": 107,
         "availTradingDays": 70,
         "basePrice": 30400.0,
         "cumReturn": 40.0,
