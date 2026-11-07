@@ -16,6 +16,14 @@ dependencies = [
     "beautifulsoup4>=4.12.0",
     "lxml>=5.2.0",
     "pyyaml>=6.0.1",
+    # Scrapling: adaptive parsing for the Inven games calendar collector
+    # (parser/Adaptor only — no browser-automation extras).
+    "scrapling>=0.5.1,<0.6.0",
+    # edgartools: structured EDGAR access for the SEC collectors
+    # (8-K discovery/conversion and Schedule 13D/13G parsing). Pinned:
+    # its index/ownership parsing semantics are part of the collectors'
+    # correctness contract (see collectors/sec_edgartools.py).
+    "edgartools==5.62.1",
 ]
 
 [project.optional-dependencies]

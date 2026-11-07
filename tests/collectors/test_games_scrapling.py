@@ -1,7 +1,7 @@
-"""Pilot tests for the Scrapling-based games collector.
+"""Tests for the Scrapling-based games collector (production GAMES_RELEASE).
 
-Skipped entirely when the optional ``scrapling`` package is not installed,
-so the production test suite is unaffected by this pilot.
+Skipped entirely when the ``scrapling`` package is not installed, so the
+suite also runs in minimal environments without the dependency.
 """
 
 from datetime import datetime
@@ -75,6 +75,21 @@ def test_scrapling_relocates_after_class_rename(tmp_path):
         mock_html=MUTATED_HTML, storage_file=store
     ).collect(SINCE)
     assert _brief(recovered) == _brief(learned)
+
+
+def test_recovery_is_flagged_not_silent(tmp_path):
+    store = str(tmp_path / "fp.db")
+    clean = GamesScraplingCollector(mock_html=ORIGINAL_HTML, storage_file=store)
+    clean.collect(SINCE)
+    # Primary selectors worked: nothing to flag.
+    assert clean.recovered_selectors == []
+
+    recovered = GamesScraplingCollector(mock_html=MUTATED_HTML, storage_file=store)
+    events = recovered.collect(SINCE)
+    assert len(events) == 2
+    # The run must say, explicitly, that relocation happened (the run log
+    # carries the same selectors as an ADAPTIVE_RECOVERY note).
+    assert ".calendar__item" in recovered.recovered_selectors
 
 
 def test_scrapling_without_fingerprints_cannot_relocate(tmp_path):

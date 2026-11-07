@@ -29,6 +29,43 @@ DEFAULT_GAME_MAP = {
 }
 
 
+def resolve_event_date(
+    title_text: str,
+    date_text: str,
+    page_year: int,
+    page_month: int,
+    since: datetime,
+) -> date:
+    """Resolve an Inven calendar item's date (shared by both collectors).
+
+    Full dates (YYYY.MM.DD) win when present in the title. The Inven
+    calendar instead renders month/day only ("11/02(월)" or a range
+    "10/16(금)~11/15(일)"), so anchor those to the page's year-month,
+    rolling the year when an item spills across a year boundary.
+    """
+    m = re.search(r"(\d{4})[./-](\d{1,2})[./-](\d{1,2})", title_text)
+    if m:
+        try:
+            return date(int(m.group(1)), int(m.group(2)), int(m.group(3)))
+        except ValueError:
+            pass
+
+    m = re.search(r"(\d{1,2})/(\d{1,2})", date_text or title_text)
+    if m:
+        month, day = int(m.group(1)), int(m.group(2))
+        year = page_year
+        if month - page_month >= 6:
+            year -= 1
+        elif page_month - month >= 6:
+            year += 1
+        try:
+            return date(year, month, day)
+        except ValueError:
+            pass
+
+    return since.date()
+
+
 class GamesCollector:
     """Collector for major game launches and updates."""
 
@@ -57,36 +94,10 @@ class GamesCollector:
         page_month: int,
         since: datetime,
     ) -> date:
-        """Resolve an item's date.
-
-        Full dates (YYYY.MM.DD) win when present in the title. The Inven
-        calendar instead renders month/day only ("11/02(월)" or a range
-        "10/16(금)~11/15(일)"), so anchor those to the page's year-month,
-        rolling the year when an item spills across a year boundary.
-        """
-        m = re.search(r"(\d{4})[./-](\d{1,2})[./-](\d{1,2})", title_text)
-        if m:
-            try:
-                return date(int(m.group(1)), int(m.group(2)), int(m.group(3)))
-            except ValueError:
-                pass
-
+        """Resolve an item's date (delegates to :func:`resolve_event_date`)."""
         date_elem = item.select_one(date_sel) if date_sel else None
         date_text = date_elem.get_text(strip=True) if date_elem else title_text
-        m = re.search(r"(\d{1,2})/(\d{1,2})", date_text)
-        if m:
-            month, day = int(m.group(1)), int(m.group(2))
-            year = page_year
-            if month - page_month >= 6:
-                year -= 1
-            elif page_month - month >= 6:
-                year += 1
-            try:
-                return date(year, month, day)
-            except ValueError:
-                pass
-
-        return since.date()
+        return resolve_event_date(title_text, date_text, page_year, page_month, since)
 
     def collect(self, since: datetime) -> list[RawEvent]:
         start_time = time.time()

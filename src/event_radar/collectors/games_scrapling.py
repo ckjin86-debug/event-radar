@@ -1,32 +1,42 @@
-"""PILOT — Scrapling-based variant of the Inven games calendar collector.
+"""Scrapling-based Inven games calendar collector (production).
 
-This module mirrors :class:`event_radar.collectors.games.GamesCollector`
-(same source, same config, same game map, same ``RawEvent`` output schema)
-but parses the page with Scrapling's ``Adaptor`` instead of BeautifulSoup.
+This is the production implementation of the GAMES_RELEASE source. It
+mirrors the legacy BeautifulSoup collector
+(:class:`event_radar.collectors.games.GamesCollector`, kept for fallback /
+comparison) — same source, same config, same game map, same ``RawEvent``
+output schema — but parses the page with Scrapling's ``Adaptor``.
 
-Why: the legacy collector hard-codes CSS classes (``.calendar__item`` etc.).
-Inven already retired one page layout (``/schedule`` -> ``/webzine/calendar``);
-when the class names change again, the BeautifulSoup selectors silently
-return nothing. Scrapling can *relocate* elements: selections made with
-``auto_save=True`` store a structural fingerprint of each element, and a
-later parse with ``adaptive=True`` finds the same elements by similarity
-even when the original selector no longer matches.
+Why: the legacy collector hard-codes CSS classes (``.calendar__item``
+etc.). Inven already retired one page layout (``/schedule`` ->
+``/webzine/calendar``); when the class names change again, the
+BeautifulSoup selectors silently return nothing. Scrapling can *relocate*
+elements: selections made with ``auto_save=True`` store a structural
+fingerprint of each element, and a later parse with ``adaptive=True``
+finds the same elements by similarity even when the original selector no
+longer matches.
 
-Pilot scope / caveats:
-- Not wired into the collector registry; nothing in production uses this yet.
-- ``scrapling`` is an optional dependency for this pilot only (not in
-  ``pyproject.toml`` dependencies).
-- Date-resolution semantics intentionally duplicate
-  ``GamesCollector._parse_event_date`` so the two collectors stay
-  independent; if this pilot is adopted, the shared logic should be
-  factored out instead of copied.
+Operational contract (adopted 2026-11-07 after the pilot on branch
+``pilot/scrapling-games``):
+
+- Fingerprints persist across runs in a SQLite file under
+  ``data/fingerprints/`` (see ``DEFAULT_FINGERPRINT_PATH``). The
+  collection workflow commits ``data/`` after every run, so the store
+  survives GitHub Actions' ephemeral runners. Without a persisted store
+  the adaptive relocation cannot work (cold start = no recovery).
+- Recovery is never silent: when a selector only matches through adaptive
+  relocation, the run is logged with an ``ADAPTIVE_RECOVERY:`` note in
+  ``data/logs/collector_runs.csv`` and the selectors are exposed on
+  :attr:`GamesScraplingCollector.recovered_selectors`, so a markup change
+  is visible in the run history instead of being masked.
+- Date resolution is shared with the legacy collector via
+  :func:`event_radar.collectors.games.resolve_event_date`.
 """
 
 from __future__ import annotations
 
 import re
 import time
-from datetime import date, datetime
+from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
@@ -36,11 +46,14 @@ from scrapling.parser import Adaptor
 
 from event_radar.models import RawEvent
 from event_radar.collectors.base import CollectorRunLog, log_collector_run
-from event_radar.collectors.games import DEFAULT_GAME_MAP
+from event_radar.collectors.games import DEFAULT_GAME_MAP, resolve_event_date
+
+
+DEFAULT_FINGERPRINT_PATH = "data/fingerprints/games_scrapling.db"
 
 
 class GamesScraplingCollector:
-    """Scrapling/adaptive variant of the Inven game calendar collector."""
+    """Scrapling/adaptive collector for the Inven game calendar."""
 
     source_name: str = "GAMES_RELEASE"
 
@@ -56,9 +69,13 @@ class GamesScraplingCollector:
         self.mock_html = mock_html
         self.timeout = timeout
         # Where Scrapling keeps element fingerprints for relocation.
-        # None -> Scrapling's library default location.
-        self.storage_file = storage_file
+        # None -> the repo-persisted default under data/fingerprints/,
+        # which the collection workflow commits alongside the datasets.
+        self.storage_file = storage_file or DEFAULT_FINGERPRINT_PATH
         self.adaptive = adaptive
+        # Selectors that only matched via adaptive relocation in the most
+        # recent collect() run (empty when the primary selectors worked).
+        self.recovered_selectors: list[str] = []
         self.session = requests.Session()
         self.session.headers.update({
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) EventRadar/1.0"
@@ -71,7 +88,8 @@ class GamesScraplingCollector:
 
         A normal hit also refreshes the stored fingerprint (``auto_save``).
         Only when the selector matches nothing do we fall back to adaptive
-        relocation against previously saved fingerprints.
+        relocation against previously saved fingerprints — and record it,
+        so the recovery is explicit in the run log rather than silent.
         """
         if not selector:
             return []
@@ -79,50 +97,22 @@ class GamesScraplingCollector:
         if found:
             return found
         if self.adaptive:
-            return node.css(selector, adaptive=True)
+            relocated = node.css(selector, adaptive=True)
+            if relocated and selector not in self.recovered_selectors:
+                self.recovered_selectors.append(selector)
+            return relocated
         return found
 
     @staticmethod
     def _text(node) -> str:
         return node.get_all_text(strip=True) if node is not None else ""
 
-    # -- Date logic (same semantics as GamesCollector._parse_event_date) ---
-
-    @staticmethod
-    def _resolve_date(
-        title_text: str,
-        date_text: str,
-        page_year: int,
-        page_month: int,
-        since: datetime,
-    ) -> date:
-        m = re.search(r"(\d{4})[./-](\d{1,2})[./-](\d{1,2})", title_text)
-        if m:
-            try:
-                return date(int(m.group(1)), int(m.group(2)), int(m.group(3)))
-            except ValueError:
-                pass
-
-        m = re.search(r"(\d{1,2})/(\d{1,2})", date_text or title_text)
-        if m:
-            month, day = int(m.group(1)), int(m.group(2))
-            year = page_year
-            if month - page_month >= 6:
-                year -= 1
-            elif page_month - month >= 6:
-                year += 1
-            try:
-                return date(year, month, day)
-            except ValueError:
-                pass
-
-        return since.date()
-
     # -- Main entry point ---------------------------------------------------
 
     def collect(self, since: datetime) -> list[RawEvent]:
         start_time = time.time()
         events: list[RawEvent] = []
+        self.recovered_selectors = []
 
         try:
             game_map = DEFAULT_GAME_MAP.copy()
@@ -158,9 +148,12 @@ class GamesScraplingCollector:
             if ym:
                 page_year, page_month = int(ym.group(1)), int(ym.group(2))
 
-            storage_args = None
-            if self.storage_file:
-                storage_args = {"storage_file": self.storage_file, "url": page_url}
+            # The fingerprint store must live in a directory that exists;
+            # Scrapling creates the SQLite file but not its parents.
+            storage_path = Path(self.storage_file)
+            if storage_path.parent and not storage_path.parent.exists():
+                storage_path.parent.mkdir(parents=True, exist_ok=True)
+            storage_args = {"storage_file": self.storage_file, "url": page_url}
             # NOTE: Scrapling 0.5.x ignores auto_save/adaptive selection
             # unless the parser itself is initialised with adaptive=True.
             page = Adaptor(
@@ -196,7 +189,7 @@ class GamesScraplingCollector:
 
                 date_hits = self._select(item, date_sel)
                 date_text = self._text(date_hits[0]) if date_hits else title_text
-                ev_date = self._resolve_date(
+                ev_date = resolve_event_date(
                     title_text, date_text, page_year, page_month, since
                 )
 
@@ -220,12 +213,20 @@ class GamesScraplingCollector:
                 )
 
             duration = time.time() - start_time
+            recovery_note = ""
+            if self.recovered_selectors:
+                recovery_note = (
+                    "ADAPTIVE_RECOVERY: selectors relocated via stored "
+                    f"fingerprints: {', '.join(sorted(self.recovered_selectors))}"
+                )
+                print(f"[GAMES_RELEASE] {recovery_note}")
             log_collector_run(
                 CollectorRunLog(
                     source_name=self.source_name,
                     status="SUCCESS",
                     items_count=len(events),
                     duration_sec=duration,
+                    error_message=recovery_note,
                 )
             )
             return events

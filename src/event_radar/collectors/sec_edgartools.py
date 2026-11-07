@@ -1,48 +1,50 @@
-"""PILOT — edgartools-based variant of the SEC 8-K collector.
+"""SEC EDGAR 8-K collector backed by edgartools (production).
 
-This module mirrors :class:`event_radar.collectors.sec.SecCollector` (same
-event types, same classification helpers, same ``RawEvent`` output schema)
-but gets its filing data from the ``edgartools`` library instead of
-hand-rolled EDGAR parsing.
+This is the production implementation of the SEC source. It mirrors the
+legacy hand-rolled collector (:class:`event_radar.collectors.sec.SecCollector`,
+kept for fallback / comparison) — same event types, same classification
+helpers, same ``RawEvent`` output schema — but reaches EDGAR data through
+the maintained ``edgartools`` library instead of local text parsing.
 
-Why: the production collector's discovery depends on literal text matching
-of the EDGAR daily master index header. EDGAR's real header ends with
-"File Name" (with a space); the original code waited for "Filename", never
-matched, and silently parsed zero rows from every live index — the failure
-was invisible until someone noticed the SEC source had gone quiet.
-edgartools reaches the same EDGAR data through the structured submissions
-JSON (per company) and parses the daily *form* index positionally
-(pyarrow ``read_csv`` with ``skip_rows`` + named columns), so no literal
-header-string gate exists in either path. It is also a maintained library
-with its own test suite, so an EDGAR format drift is more likely to be
-caught (and fixed) upstream than in a local regex.
+Why (adopted 2026-11-07 after the pilot on branch ``pilot/edgartools-sec``):
 
-Pilot scope / caveats:
-- Not wired into the collector registry or the pipeline; nothing in
-  production uses this yet.
-- ``edgartools`` is an optional dependency for this pilot only (not in
-  ``pyproject.toml`` dependencies).
-- Discovery differs by design: production scans the daily master index
-  for *all* filers and then filters to the large-cap universe, while this
-  pilot walks an explicit ticker list (per-company submissions). That is
-  the right shape for a parsing-parity pilot; universe-scale discovery
-  via ``edgar.get_filings(filing_date=...)`` (daily form index) is exposed
-  as :meth:`discover_day` for comparison but not used by ``collect``.
-- Event-field semantics intentionally duplicate ``SecCollector`` — the
-  classification helpers are literally reused — so any output difference
-  in the pilot comparison is attributable to the data/parsing layer, not
-  to re-implemented business rules.
+- The legacy discovery gate was a literal, case-sensitive header-prefix
+  match on the daily master index. Plausible EDGAR header drifts
+  (lowercase, spacing, BOM, column order) still make it return *zero
+  rows with no error* — the failure mode behind the historical SEC
+  outage, where the source silently went quiet. edgartools parses the
+  index positionally and either returns the rows or raises (loud).
+- The legacy event conversion zipped the submissions JSON's parallel
+  arrays by hand. edgartools' filings table carries the same fields as
+  typed rows.
+
+Discovery shape (pilot recommendation "b"): scan each day's EDGAR *form
+index* via edgartools for 8-K / 8-K/A filings, apply the large-cap
+universe filter (the very same ``SecCollector._large_cap_ciks`` logic),
+then convert only the discovered filings, using each company's edgartools
+filings table for the detail fields (items, acceptanceDateTime, primary
+document) the bare index rows do not carry.
+
+Semantics pinned by the pilot:
+
+- ``acceptanceDateTime`` comes back from edgartools as a tz-aware
+  datetime; it is normalised with ``isoformat()`` before the legacy
+  time-context helper sees it (the helper expects the raw "…T…" string).
+- Event classification helpers are literally reused from ``SecCollector``
+  so typing / time-context / date extraction cannot drift between the
+  two implementations.
 """
 
 from __future__ import annotations
 
 import time
 from datetime import date, datetime
+from pathlib import Path
 from typing import Optional
 
 try:
     import edgar as _edgar
-except ImportError:  # pragma: no cover - exercised only without the optional dep
+except ImportError:  # pragma: no cover - exercised only without the dependency
     _edgar = None
 
 from event_radar.collectors.base import CollectorRunLog, log_collector_run
@@ -51,7 +53,7 @@ from event_radar.models import RawEvent
 
 
 class SecEdgartoolsCollector:
-    """SEC 8-K collector backed by edgartools (pilot, not for production wiring)."""
+    """SEC 8-K collector backed by edgartools."""
 
     source_name: str = "SEC"
 
@@ -59,21 +61,30 @@ class SecEdgartoolsCollector:
         self,
         user_agent: str = SEC_DEFAULT_USER_AGENT,
         tickers: Optional[list[str]] = None,
+        universe_path: Optional[Path | str] = None,
+        universe_tickers: Optional[set[str]] = None,
     ):
         self.user_agent = user_agent
         self.tickers = [t.strip().upper() for t in tickers or [] if t and t.strip()]
-        # Reuse the production classification helpers verbatim so event
-        # typing / time-context / date extraction cannot drift between the
-        # two implementations during comparison.
-        self._classifier = SecCollector(request_interval=0)
+        # No fixture mode: kept as an attribute so wiring/tests can rely
+        # on the same shape as the legacy collector.
+        self.fixture_path = None
+        # Reuse the production classification helpers — and, for
+        # discovery, the production ticker map / universe / window logic —
+        # verbatim, so behaviour cannot drift between implementations.
+        self._classifier = SecCollector(
+            request_interval=0,
+            universe_path=universe_path,
+            universe_tickers=universe_tickers,
+        )
 
     # ------------------------------------------------------------------
     @staticmethod
     def _require_edgar():
         if _edgar is None:
             raise RuntimeError(
-                "edgartools is not installed; this pilot collector needs the "
-                "optional 'edgartools' package (pilot venv only)."
+                "edgartools is not installed; the SEC collector needs the "
+                "'edgartools' package (see pyproject.toml)."
             )
 
     def _identity(self) -> None:
@@ -189,7 +200,7 @@ class SecEdgartoolsCollector:
         """Return raw edgartools rows for one day's 8-K filings (all filers).
 
         Uses edgartools' daily form-index path — the discovery analogue of
-        the production collector's master-index scan — for parity checks.
+        the legacy collector's master-index scan.
         """
         self._identity()
         filings = _edgar.get_filings(
@@ -200,14 +211,115 @@ class SecEdgartoolsCollector:
         return filings.data.to_pylist()
 
     # ------------------------------------------------------------------
+    # Production discovery: daily form index -> large-cap filter ->
+    # per-company conversion of the discovered filings only.
+    # ------------------------------------------------------------------
+    def _discover_candidates(self, since: datetime) -> dict[str, dict]:
+        """Map CIK -> {accessions, ticker, company} for discovered 8-Ks."""
+        try:
+            ticker_map = self._classifier._load_company_tickers()
+        except Exception:
+            # The per-company filings table also carries tickers, so a
+            # mapping failure is non-fatal (same stance as the legacy
+            # collector).
+            ticker_map = {}
+
+        # Large-cap filter first, so detail fetches are never spent on
+        # filings that would be discarded anyway.
+        large_cap_ciks = self._classifier._large_cap_ciks(ticker_map)
+
+        candidates: dict[str, dict] = {}
+        seen_accessions: set[str] = set()
+        for day in self._classifier._discovery_dates(since):
+            try:
+                rows = self.discover_day(day)
+            except Exception:
+                # One day's index being unavailable (weekend / not yet
+                # published) must not sink the whole run.
+                continue
+            for row in rows:
+                cik = str(row.get("cik") or "").zfill(10)
+                if not cik.strip("0"):
+                    continue
+                if large_cap_ciks is not None and cik not in large_cap_ciks:
+                    continue
+                accession = str(row.get("accession_number") or "")
+                if not accession or accession in seen_accessions:
+                    continue
+                seen_accessions.add(accession)
+                ticker, mapped_company = ticker_map.get(cik, ("", ""))
+                entry = candidates.setdefault(
+                    cik,
+                    {
+                        "accessions": set(),
+                        "ticker": ticker,
+                        "company": mapped_company or str(row.get("company") or ""),
+                    },
+                )
+                entry["accessions"].add(accession)
+        return candidates
+
+    def _events_for_cik(
+        self,
+        cik: str,
+        candidate: dict,
+        since: datetime,
+    ) -> list[RawEvent]:
+        """Convert one company's discovered filings via its filings table."""
+        try:
+            company = _edgar.Company(int(cik))
+        except Exception:
+            return []
+        date_range = (
+            f"{since.date().isoformat()}:{datetime.now().date().isoformat()}"
+        )
+        try:
+            filings = company.get_filings(
+                form=sorted(TARGET_FORMS), filing_date=date_range
+            )
+        except Exception:
+            return []
+        if filings is None or len(filings) == 0:
+            return []
+
+        primary_ticker = (
+            candidate.get("ticker")
+            or (company.tickers[0] if company.tickers else "")
+        ).upper()
+        if not primary_ticker:
+            return []
+        company_name = candidate.get("company") or company.name
+
+        events: list[RawEvent] = []
+        for row in filings.data.to_pylist():
+            if str(row.get("accession_number") or "") not in candidate["accessions"]:
+                continue
+            event = self._row_to_event(
+                row,
+                cik=cik,
+                company_name=company_name,
+                primary_ticker=primary_ticker,
+                since=since,
+            )
+            if event is not None:
+                events.append(event)
+        return events
+
+    # ------------------------------------------------------------------
     def collect(self, since: datetime) -> list[RawEvent]:
-        """Collect events for the explicitly configured ticker list."""
+        """Collect recent large-cap SEC 8-K events via edgartools."""
         start_time = time.time()
         events: list[RawEvent] = []
         try:
             self._require_edgar()
-            for ticker in self.tickers:
-                events.extend(self.events_for_ticker(ticker, since))
+            if self.tickers:
+                # Explicit watchlist mode (parity checks / tests).
+                for ticker in self.tickers:
+                    events.extend(self.events_for_ticker(ticker, since))
+            else:
+                candidates = self._discover_candidates(since)
+                for cik, candidate in candidates.items():
+                    events.extend(self._events_for_cik(cik, candidate, since))
 
             duration = time.time() - start_time
             log_collector_run(

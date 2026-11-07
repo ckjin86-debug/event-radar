@@ -13,14 +13,14 @@ sys.path.insert(0, str(src_dir))
 from event_radar.pipeline import run_pipeline, PipelineConfig
 from event_radar.collectors.dart import DartCollector
 from event_radar.collectors.dart_five_pct import DartFivePctCollector
-from event_radar.collectors.sec import SecCollector
+from event_radar.collectors.sec_edgartools import SecEdgartoolsCollector
 from event_radar.collectors.sec_five_pct import SecFivePctCollector
 from event_radar.collectors.news_future import DEFAULT_QUERIES, NewsFutureCollector
 from event_radar.collectors.fda import FdaCollector
 from event_radar.collectors.kind_ipo import KindIpoCollector
 from event_radar.collectors.fomc import FomcCollector
 from event_radar.collectors.entertainment import EntertainmentCollector
-from event_radar.collectors.games import GamesCollector
+from event_radar.collectors.games_scrapling import GamesScraplingCollector
 from event_radar.collectors.index_changes import IndexChangesCollector
 from event_radar.collectors.historical_seed import HistoricalSeedCollector
 
@@ -79,13 +79,28 @@ def build_collectors(root: Path, fast_refresh: bool = False):
         HistoricalSeedCollector(config_path=root / "config" / "historical_events.csv"),
         DartCollector(),
         DartFivePctCollector(),
-        SecCollector(universe_path=root / "config" / "sec_large_cap_universe.json"),
+        # SEC 8-K runs on the edgartools collector (adopted 2026-11-07):
+        # daily form-index discovery + large-cap universe filter, with the
+        # legacy SecCollector kept in collectors/sec.py as fallback and as
+        # the shared source of classification/universe helpers.
+        SecEdgartoolsCollector(
+            universe_path=root / "config" / "sec_large_cap_universe.json"
+        ),
         SecFivePctCollector(),
         _news_collector(),
         FdaCollector(config_path=root / "config" / "site_registry.yaml"),
         KindIpoCollector(),
         FomcCollector(history_start=date(2021, 1, 1)),
-        GamesCollector(config_path=root / "config" / "site_registry.yaml"),
+        # GAMES_RELEASE runs on the Scrapling collector (adopted 2026-11-07):
+        # adaptive relocation survives Inven markup changes, with element
+        # fingerprints persisted under data/fingerprints/ (committed by the
+        # collection workflow) and recoveries flagged in the run log. The
+        # legacy BeautifulSoup GamesCollector remains in collectors/games.py
+        # as fallback/comparison.
+        GamesScraplingCollector(
+            config_path=root / "config" / "site_registry.yaml",
+            storage_file=str(root / "data" / "fingerprints" / "games_scrapling.db"),
+        ),
         # Deregistered 2026-11-07 after live diagnosis (classes kept in
         # src/event_radar/collectors/ so they can be revived):
         # - ENTER_KR (EntertainmentCollector): weverse.io/notice is now a

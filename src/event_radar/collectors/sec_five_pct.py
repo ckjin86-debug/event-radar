@@ -12,11 +12,21 @@ SEC pipeline (background.js `fetchSecEdgarPipeline` /
    including /A amendments, over the requested date range. Subject
    company and filer come from the hit's display_names (in that order),
    the ticker from the subject's "(TICKER)" suffix.
-2. Verification: each filing's official primary_doc.xml is parsed for
-   percentOfClass, aggregateAmountOwned, reportingPersonName and the
-   Item 3 fundsSource. A filing whose percentOfClass cannot be read is
-   skipped — the original never substituted a placeholder value, and
+2. Verification: each filing's official primary_doc.xml is parsed with
+   edgartools (``Schedule13D`` / ``Schedule13G``) for the first reporting
+   person's percentOfClass, aggregateAmountOwned and name, plus the
+   Item 3 source of funds. A filing whose percentOfClass cannot be read
+   is skipped — the original never substituted a placeholder value, and
    neither do we (in particular there is no sample-data fallback here).
+
+   Semantics pinned by the 2026-11-07 edgartools pilot: for multi-person
+   filings the values come from ``reporting_persons[0]`` (document
+   order), NOT from the schedule totals — edgartools' ``total_percent`` /
+   ``total_shares`` aggregate over the control person and differ (a real
+   CDT filing: first person 16.8% / 1,565,080 shares vs totals 22.1% /
+   2,064,698). edgartools also reports a missing percentOfClass as 0.0
+   with the field listed in the person's ``unreported_fields``; that is
+   treated as unreadable, exactly like the original's missing tag.
 3. Scoring: the extracted item is scored by the same
    five_pct_rules.evaluate_signal_score used for KR filings, and the
    analysis rides on the event in raw_payload["five_pct_analysis"] with
@@ -37,6 +47,13 @@ from pathlib import Path
 from typing import Optional
 
 import requests
+
+try:
+    import edgar as _edgar
+    from edgar.beneficial_ownership.schedule13 import Schedule13D, Schedule13G
+except ImportError:  # pragma: no cover - edgartools is a hard dependency
+    _edgar = None
+    Schedule13D = Schedule13G = None  # type: ignore[assignment]
 
 from event_radar.collectors.base import CollectorRunLog, log_collector_run
 from event_radar.collectors.dart_five_pct import DartFivePctCollector
@@ -227,40 +244,76 @@ class SecFivePctCollector:
             return None
         return resp.text
 
-    def _parse_primary_doc(self, xml: Optional[str]) -> Optional[dict]:
+    def _parse_primary_doc(
+        self, xml: Optional[str], form: str = ""
+    ) -> Optional[dict]:
         """Extract the ownership facts from a 13D/13G primary_doc.xml.
 
-        Returns None when percentOfClass is unreadable — the original
-        dropped such filings rather than guessing a stake.
+        The document is parsed with edgartools and the facts come from
+        ``reporting_persons[0]`` (see the module docstring for why not
+        the schedule totals). Returns None when percentOfClass is
+        unreadable — the original dropped such filings rather than
+        guessing a stake.
         """
         if not xml:
             return None
+        if Schedule13D is None or Schedule13G is None:
+            raise RuntimeError("edgartools is not installed")
 
-        pct_raw = self._extract_tag(xml, "percentOfClass")
-        percent = None
-        if pct_raw is not None:
-            try:
-                parsed = float(pct_raw)
-            except (TypeError, ValueError):
-                parsed = math.nan
-            if not math.isnan(parsed):
-                percent = round(parsed, 2)
-        if percent is None:
+        is_13g = "13G" in (form or "").upper()
+        if not form:
+            # Dispatch fallback for direct calls without a form hint.
+            type_match = re.search(
+                r"<submissionType>\s*([^<]+)", xml[:4000], re.IGNORECASE
+            )
+            is_13g = bool(type_match and "13G" in type_match.group(1).upper())
+
+        schedule_cls = Schedule13G if is_13g else Schedule13D
+        try:
+            parsed_doc = schedule_cls.parse_xml(xml)
+        except Exception:
             return None
 
-        shares_raw = self._extract_tag(xml, "aggregateAmountOwned")
+        persons = parsed_doc.get("reporting_persons") or []
+        if not persons:
+            return None
+        person = persons[0]
+        unreported = getattr(person, "unreported_fields", frozenset()) or frozenset()
+
+        pct_raw = getattr(person, "percent_of_class", None)
+        if pct_raw is None or "percent_of_class" in unreported:
+            return None
+        try:
+            parsed_pct = float(pct_raw)
+        except (TypeError, ValueError):
+            return None
+        if math.isnan(parsed_pct):
+            return None
+        percent = round(parsed_pct, 2)
+
         numeric_shares = 0
         aggregate = "-"
-        if shares_raw:
+        shares_raw = getattr(person, "aggregate_amount", None)
+        if shares_raw is not None and "aggregate_amount" not in unreported:
             try:
-                numeric_shares = int(round(float(shares_raw.replace(",", ""))))
+                numeric_shares = int(round(float(str(shares_raw).replace(",", ""))))
             except (TypeError, ValueError):
                 numeric_shares = 0
             if numeric_shares > 0:
                 aggregate = f"{numeric_shares:,}"
 
+        items = parsed_doc.get("items")
+        funds_source = None
+        purpose_text = None
+        if items is not None:
+            raw_funds = getattr(items, "item3_source_of_funds", None)
+            if isinstance(raw_funds, str) and raw_funds.strip():
+                funds_source = raw_funds.strip()
+            raw_purpose = getattr(items, "item4_purpose_of_transaction", None)
+            if isinstance(raw_purpose, str) and raw_purpose.strip():
+                purpose_text = raw_purpose.strip()
+
         # Priority 2 (DERIVED): Item 3 fundsSource total amount / shares.
-        funds_source = self._extract_tag(xml, "fundsSource")
         est_avg_price = None
         price_source = None
         if funds_source and numeric_shares > 0:
@@ -279,16 +332,26 @@ class SecFivePctCollector:
                             f"/취득주식수({numeric_shares:,}주)"
                         )
 
-        purpose_text = self._extract_tag(xml, "transactionPurpose")
-        tx_desc = self._extract_tag(xml, "transactionDesc")
-        snippet_source = purpose_text or tx_desc or funds_source or ""
+        if purpose_text:
+            snippet_source = purpose_text
+        else:
+            # Snippet-only fallback: in some amendments edgartools leaves
+            # Item 4 empty while the narrative sits in the raw
+            # transactionPurpose/transactionDesc tags. This text feeds
+            # only the display snippet — never a scored fact.
+            snippet_source = (
+                self._extract_tag(xml, "transactionPurpose")
+                or self._extract_tag(xml, "transactionDesc")
+                or funds_source
+                or ""
+            )
         snippet = re.sub(r"\s+", " ", snippet_source)[:140]
 
         return {
             "percent_of_class": percent,
             "aggregate_amount_owned": aggregate,
             "numeric_shares": numeric_shares,
-            "reporting_person_name": self._extract_tag(xml, "reportingPersonName"),
+            "reporting_person_name": getattr(person, "name", None) or None,
             "funds_source": funds_source,
             "est_avg_price": est_avg_price,
             "price_source": price_source,
@@ -353,7 +416,7 @@ class SecFivePctCollector:
         filer_name = self._clean_display_name(filer_raw)
 
         detail = self._parse_primary_doc(
-            self._load_primary_doc_xml(cik, adsh, fixture)
+            self._load_primary_doc_xml(cik, adsh, fixture), form=form
         )
         if detail is None:
             # percentOfClass unreadable: the original skipped the filing.
