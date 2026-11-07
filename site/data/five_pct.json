@@ -1,5 +1,147 @@
 [
   {
+    "event_id": "US_SEC_13DG_0001753926-26-002072",
+    "d_day": -1,
+    "country": "US",
+    "ticker": "CLRO",
+    "primary_ticker": "CLRO",
+    "related_securities": [
+      {
+        "ticker": "CLRO",
+        "company_name": "",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "SEC_13DG",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/840715/000175392626002072/0001753926-26-002072-index.html",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "CLEARONE INC",
+        "name": ""
+      }
+    ],
+    "company": "CLEARONE INC",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "CLEARONE INC SCHEDULE 13D/A (Active Ownership) (대표보고자: BAGLEY EDWARD D)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 3 (경영권 영향)",
+        "reason": "경영권 영향(Schedule 13D) 목적 하 주주권 행사/보유 유지",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "세력 매집단가(5.79) 대비 현재가(5.01)가 -13.5% 할인 구간 [VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP]",
+        "points": 2
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "경영권 영향",
+    "purpose_current": "경영권 영향",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "경영권 영향(Schedule 13D) 목적 하 주주권 행사/보유 유지 · 세력 매집단가(5.79) 대비 현재가(5.01)가 -13.5% 할인 구간 [VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP]",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "SEC_13DG",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/840715/000175392626002072/0001753926-26-002072-index.html",
+    "est_avg_price": 5.79,
+    "current_price": 5.010000228881836,
+    "price_gap_pct": -13.5,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 6.5,
+    "stk_rt_var": 0,
+    "stk_cnt_var": "-",
+    "first_entry_dt": "2026-11-06",
+    "reporter": "BAGLEY EDWARD D"
+  },
+  {
+    "event_id": "US_SEC_13DG_0001753926-26-002067",
+    "d_day": -1,
+    "country": "US",
+    "ticker": "CDT",
+    "primary_ticker": "CDT",
+    "related_securities": [
+      {
+        "ticker": "CDT",
+        "company_name": "",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "SEC_13DG",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1896212/000175392626002067/0001753926-26-002067-index.html",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "CDT Equity Inc.",
+        "name": ""
+      }
+    ],
+    "company": "CDT Equity Inc.",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "CDT Equity Inc. SCHEDULE 13D/A (Active Ownership) (대표보고자: Corvus Capital Ltd.)",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 1,
+    "alpha_score": 1,
+    "score_breakdown": [
+      {
+        "strategy": "전략 3 (경영권 영향)",
+        "reason": "경영권 영향(Schedule 13D) 목적 하 주주권 행사/보유 유지",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (취득원천 검증)",
+        "reason": "보고사유: SCHEDULE 13D (0001753926-26-002067): \"Item 4. Purpose of Transaction.\" of the Schedule 13D is hereby amended and restated by this Amendment No. 8 as follows: The Reporting Perso",
+        "points": -2
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "경영권 영향",
+    "purpose_current": "경영권 영향",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "POSITIVE",
+      "label": "지분공시",
+      "summary": "경영권 영향(Schedule 13D) 목적 하 주주권 행사/보유 유지 · 보고사유: SCHEDULE 13D (0001753926-26-002067): \"Item 4. Purpose of Transaction.\" of the Schedule 13D is hereby amended and restated by this Amendment No. 8 as follows: The Reporting Perso",
+      "score": 1
+    },
+    "status": "CONFIRMED",
+    "source_name": "SEC_13DG",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1896212/000175392626002067/0001753926-26-002067-index.html",
+    "est_avg_price": 1.3,
+    "current_price": 1.309999942779541,
+    "price_gap_pct": 0.8,
+    "price_source": "VWAP_ESTIMATE: 2026-11-06~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 16.8,
+    "stk_rt_var": 0,
+    "stk_cnt_var": "-",
+    "first_entry_dt": "2026-11-06",
+    "reporter": "Corvus Capital Ltd."
+  },
+  {
     "event_id": "KR_DART_5PCT_20261106000475",
     "d_day": -1,
     "country": "KR",
@@ -32,8 +174,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 11,
-    "alpha_score": 11,
+    "event_score": 13,
+    "alpha_score": 13,
     "score_breakdown": [
       {
         "strategy": "전략 1 (주체 가중치)",
@@ -62,8 +204,8 @@
       },
       {
         "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "reason": "세력 매집단가(17,368) 대비 현재가(9,740)가 -43.9% 할인 구간 [VWAP_ESTIMATE: 2026-11-03~2026-11-06 매집기간 일봉 VWAP]",
+        "points": 2
       }
     ],
     "investor_class": "슈퍼개미/개인",
@@ -74,12 +216,21 @@
     "insight": {
       "tier": "HIGH",
       "label": "지분공시",
-      "summary": "슈퍼개미/개인 핵심 주체 (신정규) · 단순투자가 아닌 일반투자/적극주주 목적 공시 · 실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (51.56%) · 실제 보유주식수 증가(+7,571,850) 및 지분율 +51.56%p 확대 · 실제 주식 매집으로 지분율 10% 돌파 (단기매매차익 반환 의무 감수)",
-      "score": 11
+      "summary": "슈퍼개미/개인 핵심 주체 (신정규) · 단순투자가 아닌 일반투자/적극주주 목적 공시 · 실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (51.56%) · 실제 보유주식수 증가(+7,571,850) 및 지분율 +51.56%p 확대 · 실제 주식 매집으로 지분율 10% 돌파 (단기매매차익 반환 의무 감수) · 세력 매집단가(17,368) 대비 현재가(9,740)가 -43.9% 할인 구간 [VWAP_ESTIMATE: 2026-11-03~2026-11-06 매집기간 일봉 VWAP]",
+      "score": 13
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000475"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000475",
+    "est_avg_price": 17368,
+    "current_price": 9740.0,
+    "price_gap_pct": -43.9,
+    "price_source": "VWAP_ESTIMATE: 2026-11-03~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 51.56,
+    "stk_rt_var": 51.56,
+    "stk_cnt_var": "+7,571,850",
+    "first_entry_dt": "2026-11-06",
+    "reporter": "신정규"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000472",
@@ -128,8 +279,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 2,
-    "alpha_score": 2,
+    "event_score": 3,
+    "alpha_score": 3,
     "score_breakdown": [
       {
         "strategy": "전략 3 (적극적 주주활동)",
@@ -137,9 +288,9 @@
         "points": 2
       },
       {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "strategy": "전략 6 (세력 평단 하회)",
+        "reason": "세력 매집단가 대비 현재가 -5.0% 할인 구간 [VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP]",
+        "points": 1
       }
     ],
     "investor_class": "일반법인/기타",
@@ -150,12 +301,21 @@
     "insight": {
       "tier": "POSITIVE",
       "label": "지분공시",
-      "summary": "단순투자가 아닌 일반투자/적극주주 목적 공시",
-      "score": 2
+      "summary": "단순투자가 아닌 일반투자/적극주주 목적 공시 · 세력 매집단가 대비 현재가 -5.0% 할인 구간 [VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP]",
+      "score": 3
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000472"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000472",
+    "est_avg_price": 4263,
+    "current_price": 4050.0,
+    "price_gap_pct": -5.0,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 15.35,
+    "stk_rt_var": 15.35,
+    "stk_cnt_var": "+1,784,537",
+    "first_entry_dt": "2026-11-06",
+    "reporter": "CJ ENM"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000469",
@@ -218,11 +378,6 @@
         "points": 3
       },
       {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
-      },
-      {
         "strategy": "전략 7 (지분 축소)",
         "reason": "직전 보고 대비 보유주식수(-1,081,106주) 및 지분율(-4.50%p) 감소",
         "points": -3
@@ -241,7 +396,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000469"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000469",
+    "est_avg_price": 2438,
+    "current_price": 1864.0,
+    "price_gap_pct": -23.5,
+    "price_source": "VWAP_ESTIMATE: 2026-09-30~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 27.13,
+    "stk_rt_var": -4.5,
+    "stk_cnt_var": "-1,081,106",
+    "first_entry_dt": "2026-07-16",
+    "reporter": "컴투스"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000465",
@@ -290,8 +454,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 3,
-    "alpha_score": 3,
+    "event_score": 4,
+    "alpha_score": 4,
     "score_breakdown": [
       {
         "strategy": "전략 3 (목적 변경)",
@@ -299,9 +463,9 @@
         "points": 3
       },
       {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "strategy": "전략 6 (세력 평단 하회)",
+        "reason": "세력 매집단가 대비 현재가 -5.7% 할인 구간 [VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP]",
+        "points": 1
       }
     ],
     "investor_class": "일반법인/기타",
@@ -312,12 +476,21 @@
     "insight": {
       "tier": "POSITIVE",
       "label": "지분공시",
-      "summary": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
-      "score": 3
+      "summary": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 세력 매집단가 대비 현재가 -5.7% 할인 구간 [VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP]",
+      "score": 4
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000465"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000465",
+    "est_avg_price": 1202,
+    "current_price": 1134.0,
+    "price_gap_pct": -5.7,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 51.84,
+    "stk_rt_var": 0.0,
+    "stk_cnt_var": "0",
+    "first_entry_dt": "2025-12-15",
+    "reporter": "폴라리스세원"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000450",
@@ -352,8 +525,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 5,
-    "alpha_score": 5,
+    "event_score": 7,
+    "alpha_score": 7,
     "score_breakdown": [
       {
         "strategy": "전략 1 (주체 가중치)",
@@ -367,8 +540,8 @@
       },
       {
         "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "reason": "세력 매집단가(45,321) 대비 현재가(36,600)가 -19.2% 할인 구간 [VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP]",
+        "points": 2
       }
     ],
     "investor_class": "슈퍼개미/개인",
@@ -379,12 +552,21 @@
     "insight": {
       "tier": "HIGH",
       "label": "지분공시",
-      "summary": "슈퍼개미/개인 핵심 주체 (송준호) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
-      "score": 5
+      "summary": "슈퍼개미/개인 핵심 주체 (송준호) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 세력 매집단가(45,321) 대비 현재가(36,600)가 -19.2% 할인 구간 [VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP]",
+      "score": 7
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000450"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000450",
+    "est_avg_price": 45321,
+    "current_price": 36600.0,
+    "price_gap_pct": -19.2,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 46.4,
+    "stk_rt_var": 0.0,
+    "stk_cnt_var": "0",
+    "first_entry_dt": "2025-04-10",
+    "reporter": "송준호"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000447",
@@ -433,11 +615,6 @@
         "points": 3
       },
       {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
-      },
-      {
         "strategy": "전략 7 (지분 축소)",
         "reason": "직전 보고 대비 보유주식수(-2,095,220주) 및 지분율(-4.25%p) 감소",
         "points": -3
@@ -456,7 +633,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000447"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000447",
+    "est_avg_price": 1514,
+    "current_price": 1273.0,
+    "price_gap_pct": -15.9,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 65.18,
+    "stk_rt_var": -4.25,
+    "stk_cnt_var": "-2,095,220",
+    "first_entry_dt": "2024-12-24",
+    "reporter": "엔키홀딩스"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000441",
@@ -503,11 +689,6 @@
         "strategy": "전략 3 (목적 변경)",
         "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
         "points": 3
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "슈퍼개미/개인",
@@ -523,7 +704,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000441"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000441",
+    "est_avg_price": 6013,
+    "current_price": 5910.0,
+    "price_gap_pct": -1.7,
+    "price_source": "VWAP_ESTIMATE: 2026-10-30~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 56.71,
+    "stk_rt_var": 0.0,
+    "stk_cnt_var": "0",
+    "first_entry_dt": "2024-11-22",
+    "reporter": "강승곤"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000439",
@@ -599,11 +789,6 @@
         "strategy": "전략 6 (취득원천 검증)",
         "reason": "보고사유: - 발행회사의 무상증자 및 자기주식 소각\n- 장내매수",
         "points": 2
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "PEF/투자조합",
@@ -619,7 +804,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000439"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000439",
+    "est_avg_price": 23756,
+    "current_price": 24150.0,
+    "price_gap_pct": 1.7,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 52.42,
+    "stk_rt_var": 10.41,
+    "stk_cnt_var": "+6,350,289",
+    "first_entry_dt": "2026-11-06",
+    "reporter": "SNT홀딩스"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000437",
@@ -677,11 +871,6 @@
         "points": 3
       },
       {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
-      },
-      {
         "strategy": "전략 7 (지분 축소)",
         "reason": "직전 보고 대비 보유주식수(-85,000주) 및 지분율(-0.59%p) 감소",
         "points": -2
@@ -700,7 +889,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000437"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000437",
+    "est_avg_price": 4972,
+    "current_price": 3820.0,
+    "price_gap_pct": -23.2,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 40.86,
+    "stk_rt_var": -0.59,
+    "stk_cnt_var": "-85,000",
+    "first_entry_dt": "2025-05-16",
+    "reporter": "폴라리스우노"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000431",
@@ -762,7 +960,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000431"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000431",
+    "est_avg_price": 66680,
+    "current_price": 70300.0,
+    "price_gap_pct": 5.4,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 3.99,
+    "stk_rt_var": -1.58,
+    "stk_cnt_var": "-195,710",
+    "first_entry_dt": "2024-12-27",
+    "reporter": "FILLIMITED"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000426",
@@ -819,11 +1026,6 @@
         "strategy": "전략 5 (임계 구간 돌파)",
         "reason": "실제 주식 매집으로 지분율 10% 돌파 (단기매매차익 반환 의무 감수)",
         "points": 2
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "일반법인/기타",
@@ -839,7 +1041,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000426"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000426",
+    "est_avg_price": 1898,
+    "current_price": 1845.0,
+    "price_gap_pct": -2.8,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 21.07,
+    "stk_rt_var": 21.07,
+    "stk_cnt_var": "+7,131,777",
+    "first_entry_dt": "2026-11-06",
+    "reporter": "케이디비아이헬스케어밸류업"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000421",
@@ -883,11 +1094,6 @@
         "points": 2
       },
       {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
-      },
-      {
         "strategy": "전략 7 (지분 축소)",
         "reason": "직전 보고 대비 보유주식수(-7,131,777주) 및 지분율(-21.07%p) 감소",
         "points": -3
@@ -906,7 +1112,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000421"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000421",
+    "est_avg_price": 2056,
+    "current_price": 1845.0,
+    "price_gap_pct": -10.3,
+    "price_source": "VWAP_ESTIMATE: 2026-10-14~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 0.0,
+    "stk_rt_var": -21.07,
+    "stk_cnt_var": "-7,131,777",
+    "first_entry_dt": "2026-10-14",
+    "reporter": "산은인베스트먼트"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000415",
@@ -941,8 +1156,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 5,
-    "alpha_score": 5,
+    "event_score": 6,
+    "alpha_score": 6,
     "score_breakdown": [
       {
         "strategy": "전략 1 (주체 가중치)",
@@ -955,9 +1170,9 @@
         "points": 3
       },
       {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "strategy": "전략 6 (세력 평단 하회)",
+        "reason": "세력 매집단가 대비 현재가 -8.0% 할인 구간 [VWAP_ESTIMATE: 2026-10-23~2026-11-06 매집기간 일봉 VWAP]",
+        "points": 1
       }
     ],
     "investor_class": "슈퍼개미/개인",
@@ -968,12 +1183,21 @@
     "insight": {
       "tier": "HIGH",
       "label": "지분공시",
-      "summary": "슈퍼개미/개인 핵심 주체 (김영국) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
-      "score": 5
+      "summary": "슈퍼개미/개인 핵심 주체 (김영국) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 세력 매집단가 대비 현재가 -8.0% 할인 구간 [VWAP_ESTIMATE: 2026-10-23~2026-11-06 매집기간 일봉 VWAP]",
+      "score": 6
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000415"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000415",
+    "est_avg_price": 2314,
+    "current_price": 2130.0,
+    "price_gap_pct": -8.0,
+    "price_source": "VWAP_ESTIMATE: 2026-10-23~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 31.74,
+    "stk_rt_var": 0.0,
+    "stk_cnt_var": "0",
+    "first_entry_dt": "2026-02-10",
+    "reporter": "김영국"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000411",
@@ -1022,11 +1246,6 @@
         "points": 3
       },
       {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
-      },
-      {
         "strategy": "전략 7 (지분 축소)",
         "reason": "직전 보고 대비 보유주식수(-35,255,670주) 및 지분율(-72.21%p) 감소",
         "points": -3
@@ -1045,7 +1264,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000411"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000411",
+    "est_avg_price": 5518,
+    "current_price": 5490.0,
+    "price_gap_pct": -0.5,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 0.0,
+    "stk_rt_var": -72.21,
+    "stk_cnt_var": "-35,255,670",
+    "first_entry_dt": "2025-07-28",
+    "reporter": "한앤코오토서비스홀딩스"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000407",
@@ -1107,11 +1335,6 @@
         "strategy": "전략 6 (취득원천 검증)",
         "reason": "보고사유: - 특별관계자 서정교의 주식 장내매수\n- 특별관계자 김경호의 주식 장내매수\n- 특별관계자 서정교의 일부 주식담보대출 상환 및 신규 주식담보대출 계약체결\n- 특별관계자 이상석의 주식담보대출 연장 및 일부 조건 변경\n- 특별관계자 이정찬의 주식담보대출 일부 상환, 만기 연장 및 계약조건 변경",
         "points": 2
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "슈퍼개미/개인",
@@ -1127,7 +1350,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000407"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000407",
+    "est_avg_price": 1182,
+    "current_price": 1139.0,
+    "price_gap_pct": -3.6,
+    "price_source": "VWAP_ESTIMATE: 2026-10-29~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 29.17,
+    "stk_rt_var": 0.03,
+    "stk_cnt_var": "+16,630",
+    "first_entry_dt": "2024-11-14",
+    "reporter": "제이투비"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000403",
@@ -1179,11 +1411,6 @@
         "strategy": "전략 2 (연속 매집)",
         "reason": "공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
         "points": 3
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "일반법인/기타",
@@ -1199,7 +1426,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000403"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000403",
+    "est_avg_price": 3910,
+    "current_price": 4425.0,
+    "price_gap_pct": 13.2,
+    "price_source": "VWAP_ESTIMATE: 2026-09-16~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 26.17,
+    "stk_rt_var": 1.36,
+    "stk_cnt_var": "+84,500",
+    "first_entry_dt": "2026-09-01",
+    "reporter": "에스에이치에너지알이백"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000397",
@@ -1246,11 +1482,6 @@
         "strategy": "전략 3 (목적 변경)",
         "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
         "points": 3
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "PEF/투자조합",
@@ -1266,7 +1497,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000397"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000397",
+    "est_avg_price": 986,
+    "current_price": 957.0,
+    "price_gap_pct": -2.9,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 35.75,
+    "stk_rt_var": 0.0,
+    "stk_cnt_var": "0",
+    "first_entry_dt": "2024-11-14",
+    "reporter": "엠케이인베스트먼트"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000395",
@@ -1315,8 +1555,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 4,
-    "alpha_score": 4,
+    "event_score": 5,
+    "alpha_score": 5,
     "score_breakdown": [
       {
         "strategy": "전략 3 (목적 변경)",
@@ -1329,9 +1569,9 @@
         "points": 1
       },
       {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "strategy": "전략 6 (세력 평단 하회)",
+        "reason": "세력 매집단가 대비 현재가 -8.3% 할인 구간 [VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP]",
+        "points": 1
       }
     ],
     "investor_class": "일반법인/기타",
@@ -1340,14 +1580,23 @@
     "accumulation_count": 1,
     "freshness": "CURRENT",
     "insight": {
-      "tier": "POSITIVE",
+      "tier": "HIGH",
       "label": "지분공시",
-      "summary": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 실제 보유주식수 증가(+6,547) 및 지분율 +0.04%p 확대",
-      "score": 4
+      "summary": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 실제 보유주식수 증가(+6,547) 및 지분율 +0.04%p 확대 · 세력 매집단가 대비 현재가 -8.3% 할인 구간 [VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP]",
+      "score": 5
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000395"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000395",
+    "est_avg_price": 17721,
+    "current_price": 16250.0,
+    "price_gap_pct": -8.3,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 41.0,
+    "stk_rt_var": 0.04,
+    "stk_cnt_var": "+6,547",
+    "first_entry_dt": "2025-01-09",
+    "reporter": "헥토이노베이션"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000386",
@@ -1404,11 +1653,6 @@
         "strategy": "전략 6 (취득원천 검증)",
         "reason": "보고사유: 특숙관계자의 장내매수",
         "points": 2
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "일반법인/기타",
@@ -1424,7 +1668,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000386"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000386",
+    "est_avg_price": 3165,
+    "current_price": 3270.0,
+    "price_gap_pct": 3.3,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 24.02,
+    "stk_rt_var": 1.26,
+    "stk_cnt_var": "+145,912",
+    "first_entry_dt": "2026-07-20",
+    "reporter": "크리스밸류"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000380",
@@ -1459,8 +1712,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 5,
-    "alpha_score": 5,
+    "event_score": 7,
+    "alpha_score": 7,
     "score_breakdown": [
       {
         "strategy": "전략 1 (주체 가중치)",
@@ -1474,8 +1727,8 @@
       },
       {
         "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "reason": "세력 매집단가(33,124) 대비 현재가(25,700)가 -22.4% 할인 구간 [VWAP_ESTIMATE: 2026-10-16~2026-11-06 매집기간 일봉 VWAP]",
+        "points": 2
       }
     ],
     "investor_class": "슈퍼개미/개인",
@@ -1486,12 +1739,21 @@
     "insight": {
       "tier": "HIGH",
       "label": "지분공시",
-      "summary": "슈퍼개미/개인 핵심 주체 (전동규) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
-      "score": 5
+      "summary": "슈퍼개미/개인 핵심 주체 (전동규) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 세력 매집단가(33,124) 대비 현재가(25,700)가 -22.4% 할인 구간 [VWAP_ESTIMATE: 2026-10-16~2026-11-06 매집기간 일봉 VWAP]",
+      "score": 7
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000380"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000380",
+    "est_avg_price": 33124,
+    "current_price": 25700.0,
+    "price_gap_pct": -22.4,
+    "price_source": "VWAP_ESTIMATE: 2026-10-16~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 20.51,
+    "stk_rt_var": 0.0,
+    "stk_cnt_var": "0",
+    "first_entry_dt": "2024-11-13",
+    "reporter": "전동규"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000377",
@@ -1547,11 +1809,6 @@
         "strategy": "전략 3 (목적 변경)",
         "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
         "points": 3
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "일반법인/기타",
@@ -1567,7 +1824,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000377"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000377",
+    "est_avg_price": 1453,
+    "current_price": 1396.0,
+    "price_gap_pct": -3.9,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 91.21,
+    "stk_rt_var": 0.0,
+    "stk_cnt_var": "0",
+    "first_entry_dt": "2024-12-13",
+    "reporter": "케이피엠테크"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000370",
@@ -1624,11 +1890,6 @@
         "strategy": "전략 2 (연속 매집)",
         "reason": "공식 이력 기준 90회 연속 실제 보유주식수 증가 확인",
         "points": 4
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "슈퍼개미/개인",
@@ -1644,7 +1905,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000370"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000370",
+    "est_avg_price": 39570,
+    "current_price": 38600.0,
+    "price_gap_pct": -2.5,
+    "price_source": "VWAP_ESTIMATE: 2026-11-04~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 35.48,
+    "stk_rt_var": 0.02,
+    "stk_cnt_var": "+1,551",
+    "first_entry_dt": "2024-11-08",
+    "reporter": "김중건"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000367",
@@ -1691,11 +1961,6 @@
         "strategy": "전략 3 (목적 변경)",
         "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
         "points": 3
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "PEF/투자조합",
@@ -1711,7 +1976,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000367"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000367",
+    "est_avg_price": 8345,
+    "current_price": 8400.0,
+    "price_gap_pct": 0.7,
+    "price_source": "VWAP_ESTIMATE: 2026-10-02~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 47.17,
+    "stk_rt_var": 0.0,
+    "stk_cnt_var": "0",
+    "first_entry_dt": "2024-12-03",
+    "reporter": "평산파트너스"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000366",
@@ -1746,8 +2020,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 5,
-    "alpha_score": 5,
+    "event_score": 6,
+    "alpha_score": 6,
     "score_breakdown": [
       {
         "strategy": "전략 2 (실제 주식수 확대)",
@@ -1760,9 +2034,9 @@
         "points": 3
       },
       {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "strategy": "전략 6 (세력 평단 하회)",
+        "reason": "세력 매집단가 대비 현재가 -9.2% 할인 구간 [VWAP_ESTIMATE: 2026-10-23~2026-11-06 매집기간 일봉 VWAP]",
+        "points": 1
       }
     ],
     "investor_class": "일반법인/기타",
@@ -1773,12 +2047,21 @@
     "insight": {
       "tier": "HIGH",
       "label": "지분공시",
-      "summary": "실제 보유주식수 증가(+136,577) 및 지분율 +1.48%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
-      "score": 5
+      "summary": "실제 보유주식수 증가(+136,577) 및 지분율 +1.48%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인 · 세력 매집단가 대비 현재가 -9.2% 할인 구간 [VWAP_ESTIMATE: 2026-10-23~2026-11-06 매집기간 일봉 VWAP]",
+      "score": 6
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000366"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000366",
+    "est_avg_price": 46872,
+    "current_price": 42550.0,
+    "price_gap_pct": -9.2,
+    "price_source": "VWAP_ESTIMATE: 2026-10-23~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 6.49,
+    "stk_rt_var": 1.48,
+    "stk_cnt_var": "+136,577",
+    "first_entry_dt": "2026-10-23",
+    "reporter": "삼성자산운용"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000362",
@@ -1813,8 +2096,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 5,
-    "alpha_score": 5,
+    "event_score": 7,
+    "alpha_score": 7,
     "score_breakdown": [
       {
         "strategy": "전략 2 (실제 주식수 확대)",
@@ -1828,8 +2111,8 @@
       },
       {
         "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "reason": "세력 매집단가(25,416) 대비 현재가(22,150)가 -12.9% 할인 구간 [VWAP_ESTIMATE: 2026-10-23~2026-11-06 매집기간 일봉 VWAP]",
+        "points": 2
       }
     ],
     "investor_class": "일반법인/기타",
@@ -1840,12 +2123,21 @@
     "insight": {
       "tier": "HIGH",
       "label": "지분공시",
-      "summary": "실제 보유주식수 증가(+251,954) 및 지분율 +1.89%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
-      "score": 5
+      "summary": "실제 보유주식수 증가(+251,954) 및 지분율 +1.89%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인 · 세력 매집단가(25,416) 대비 현재가(22,150)가 -12.9% 할인 구간 [VWAP_ESTIMATE: 2026-10-23~2026-11-06 매집기간 일봉 VWAP]",
+      "score": 7
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000362"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000362",
+    "est_avg_price": 25416,
+    "current_price": 22150.0,
+    "price_gap_pct": -12.9,
+    "price_source": "VWAP_ESTIMATE: 2026-10-23~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 7.02,
+    "stk_rt_var": 1.89,
+    "stk_cnt_var": "+251,954",
+    "first_entry_dt": "2026-10-23",
+    "reporter": "삼성자산운용"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000359",
@@ -1880,8 +2172,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 5,
-    "alpha_score": 5,
+    "event_score": 7,
+    "alpha_score": 7,
     "score_breakdown": [
       {
         "strategy": "전략 2 (실제 주식수 확대)",
@@ -1895,8 +2187,8 @@
       },
       {
         "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "reason": "세력 매집단가(29,137) 대비 현재가(25,700)가 -11.8% 할인 구간 [VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP]",
+        "points": 2
       }
     ],
     "investor_class": "일반법인/기타",
@@ -1907,12 +2199,21 @@
     "insight": {
       "tier": "HIGH",
       "label": "지분공시",
-      "summary": "실제 보유주식수 증가(+729,880) 및 지분율 +1.14%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
-      "score": 5
+      "summary": "실제 보유주식수 증가(+729,880) 및 지분율 +1.14%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인 · 세력 매집단가(29,137) 대비 현재가(25,700)가 -11.8% 할인 구간 [VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP]",
+      "score": 7
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000359"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000359",
+    "est_avg_price": 29137,
+    "current_price": 25700.0,
+    "price_gap_pct": -11.8,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 6.22,
+    "stk_rt_var": 1.14,
+    "stk_cnt_var": "+729,880",
+    "first_entry_dt": "2026-06-18",
+    "reporter": "삼성자산운용"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000357",
@@ -1947,8 +2248,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 5,
-    "alpha_score": 5,
+    "event_score": 7,
+    "alpha_score": 7,
     "score_breakdown": [
       {
         "strategy": "전략 2 (실제 주식수 확대)",
@@ -1962,8 +2263,8 @@
       },
       {
         "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "reason": "세력 매집단가(87,467) 대비 현재가(74,500)가 -14.8% 할인 구간 [VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP]",
+        "points": 2
       }
     ],
     "investor_class": "일반법인/기타",
@@ -1974,12 +2275,21 @@
     "insight": {
       "tier": "HIGH",
       "label": "지분공시",
-      "summary": "실제 보유주식수 증가(+239,251) 및 지분율 +1.53%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
-      "score": 5
+      "summary": "실제 보유주식수 증가(+239,251) 및 지분율 +1.53%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인 · 세력 매집단가(87,467) 대비 현재가(74,500)가 -14.8% 할인 구간 [VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP]",
+      "score": 7
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000357"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000357",
+    "est_avg_price": 87467,
+    "current_price": 74500.0,
+    "price_gap_pct": -14.8,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 6.57,
+    "stk_rt_var": 1.53,
+    "stk_cnt_var": "+239,251",
+    "first_entry_dt": "2026-03-12",
+    "reporter": "삼성자산운용"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000352",
@@ -2014,8 +2324,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 4,
-    "alpha_score": 4,
+    "event_score": 6,
+    "alpha_score": 6,
     "score_breakdown": [
       {
         "strategy": "전략 2 (실제 주식수 확대)",
@@ -2029,8 +2339,8 @@
       },
       {
         "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "reason": "세력 매집단가(179,271) 대비 현재가(137,400)가 -23.4% 할인 구간 [VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP]",
+        "points": 2
       }
     ],
     "investor_class": "일반법인/기타",
@@ -2039,14 +2349,23 @@
     "accumulation_count": 2,
     "freshness": "CURRENT",
     "insight": {
-      "tier": "POSITIVE",
+      "tier": "HIGH",
       "label": "지분공시",
-      "summary": "실제 보유주식수 증가(+95,278) 및 지분율 +0.85%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
-      "score": 4
+      "summary": "실제 보유주식수 증가(+95,278) 및 지분율 +0.85%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인 · 세력 매집단가(179,271) 대비 현재가(137,400)가 -23.4% 할인 구간 [VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP]",
+      "score": 6
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000352"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000352",
+    "est_avg_price": 179271,
+    "current_price": 137400.0,
+    "price_gap_pct": -23.4,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 5.89,
+    "stk_rt_var": 0.85,
+    "stk_cnt_var": "+95,278",
+    "first_entry_dt": "2026-03-12",
+    "reporter": "삼성자산운용"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000349",
@@ -2081,8 +2400,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 11,
-    "alpha_score": 11,
+    "event_score": 13,
+    "alpha_score": 13,
     "score_breakdown": [
       {
         "strategy": "전략 1 (주체 가중치)",
@@ -2111,8 +2430,8 @@
       },
       {
         "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "reason": "세력 매집단가(7,235) 대비 현재가(5,070)가 -29.9% 할인 구간 [VWAP_ESTIMATE: 2026-11-02~2026-11-06 매집기간 일봉 VWAP]",
+        "points": 2
       }
     ],
     "investor_class": "슈퍼개미/개인",
@@ -2123,12 +2442,21 @@
     "insight": {
       "tier": "HIGH",
       "label": "지분공시",
-      "summary": "슈퍼개미/개인 핵심 주체 (석재호) · 단순투자가 아닌 일반투자/적극주주 목적 공시 · 실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (48.33%) · 실제 보유주식수 증가(+6,464,000) 및 지분율 +48.33%p 확대 · 실제 주식 매집으로 지분율 10% 돌파 (단기매매차익 반환 의무 감수)",
-      "score": 11
+      "summary": "슈퍼개미/개인 핵심 주체 (석재호) · 단순투자가 아닌 일반투자/적극주주 목적 공시 · 실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (48.33%) · 실제 보유주식수 증가(+6,464,000) 및 지분율 +48.33%p 확대 · 실제 주식 매집으로 지분율 10% 돌파 (단기매매차익 반환 의무 감수) · 세력 매집단가(7,235) 대비 현재가(5,070)가 -29.9% 할인 구간 [VWAP_ESTIMATE: 2026-11-02~2026-11-06 매집기간 일봉 VWAP]",
+      "score": 13
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000349"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000349",
+    "est_avg_price": 7235,
+    "current_price": 5070.0,
+    "price_gap_pct": -29.9,
+    "price_source": "VWAP_ESTIMATE: 2026-11-02~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 48.33,
+    "stk_rt_var": 48.33,
+    "stk_cnt_var": "+6,464,000",
+    "first_entry_dt": "2026-11-06",
+    "reporter": "석재호"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000347",
@@ -2163,8 +2491,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 3,
-    "alpha_score": 3,
+    "event_score": 5,
+    "alpha_score": 5,
     "score_breakdown": [
       {
         "strategy": "전략 3 (목적 변경)",
@@ -2173,8 +2501,8 @@
       },
       {
         "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "reason": "세력 매집단가(41,421) 대비 현재가(36,050)가 -13.0% 할인 구간 [VWAP_ESTIMATE: 2026-10-16~2026-11-06 매집기간 일봉 VWAP]",
+        "points": 2
       }
     ],
     "investor_class": "일반법인/기타",
@@ -2183,14 +2511,23 @@
     "accumulation_count": 0,
     "freshness": "CURRENT",
     "insight": {
-      "tier": "POSITIVE",
+      "tier": "HIGH",
       "label": "지분공시",
-      "summary": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
-      "score": 3
+      "summary": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 세력 매집단가(41,421) 대비 현재가(36,050)가 -13.0% 할인 구간 [VWAP_ESTIMATE: 2026-10-16~2026-11-06 매집기간 일봉 VWAP]",
+      "score": 5
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000347"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000347",
+    "est_avg_price": 41421,
+    "current_price": 36050.0,
+    "price_gap_pct": -13.0,
+    "price_source": "VWAP_ESTIMATE: 2026-10-16~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 24.53,
+    "stk_rt_var": 0.0,
+    "stk_cnt_var": "0",
+    "first_entry_dt": "2025-01-03",
+    "reporter": "LEESANGHOON"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000331",
@@ -2252,11 +2589,6 @@
         "strategy": "전략 5 (임계 구간 돌파)",
         "reason": "실제 주식 매집으로 지분율 10% 돌파 (단기매매차익 반환 의무 감수)",
         "points": 2
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "행동주의",
@@ -2272,7 +2604,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000331"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000331",
+    "est_avg_price": 2497,
+    "current_price": 2635.0,
+    "price_gap_pct": 5.5,
+    "price_source": "VWAP_ESTIMATE: 2026-10-19~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 10.35,
+    "stk_rt_var": 1.35,
+    "stk_cnt_var": "+221,546",
+    "first_entry_dt": "2026-04-23",
+    "reporter": "차파트너스자산운용"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000326",
@@ -2333,11 +2674,6 @@
         "strategy": "전략 3 (목적 변경)",
         "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
         "points": 3
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "PEF/투자조합",
@@ -2353,7 +2689,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000326"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000326",
+    "est_avg_price": 32531,
+    "current_price": 34750.0,
+    "price_gap_pct": 6.8,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 31.44,
+    "stk_rt_var": 0.0,
+    "stk_cnt_var": "0",
+    "first_entry_dt": "2024-11-20",
+    "reporter": "컴투스홀딩스"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000324",
@@ -2400,11 +2745,6 @@
         "strategy": "전략 3 (목적 변경)",
         "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
         "points": 3
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "슈퍼개미/개인",
@@ -2420,7 +2760,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000324"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000324",
+    "est_avg_price": 3757,
+    "current_price": 3690.0,
+    "price_gap_pct": -1.8,
+    "price_source": "VWAP_ESTIMATE: 2026-09-10~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 54.81,
+    "stk_rt_var": 0.0,
+    "stk_cnt_var": "0",
+    "first_entry_dt": "2026-05-26",
+    "reporter": "윤나라"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000320",
@@ -2455,8 +2804,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 4,
-    "alpha_score": 4,
+    "event_score": 6,
+    "alpha_score": 6,
     "score_breakdown": [
       {
         "strategy": "전략 2 (실제 주식수 확대)",
@@ -2470,8 +2819,8 @@
       },
       {
         "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "reason": "세력 매집단가(24,739) 대비 현재가(20,450)가 -17.3% 할인 구간 [VWAP_ESTIMATE: 2026-11-03~2026-11-06 매집기간 일봉 VWAP]",
+        "points": 2
       }
     ],
     "investor_class": "일반법인/기타",
@@ -2480,14 +2829,23 @@
     "accumulation_count": 2,
     "freshness": "CURRENT",
     "insight": {
-      "tier": "POSITIVE",
+      "tier": "HIGH",
       "label": "지분공시",
-      "summary": "실제 보유주식수 증가(+9,618) 및 지분율 +0.02%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
-      "score": 4
+      "summary": "실제 보유주식수 증가(+9,618) 및 지분율 +0.02%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인 · 세력 매집단가(24,739) 대비 현재가(20,450)가 -17.3% 할인 구간 [VWAP_ESTIMATE: 2026-11-03~2026-11-06 매집기간 일봉 VWAP]",
+      "score": 6
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000320"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000320",
+    "est_avg_price": 24739,
+    "current_price": 20450.0,
+    "price_gap_pct": -17.3,
+    "price_source": "VWAP_ESTIMATE: 2026-11-03~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 6.96,
+    "stk_rt_var": 0.02,
+    "stk_cnt_var": "+9,618",
+    "first_entry_dt": "2026-08-14",
+    "reporter": "J.P.MORGANSECURITIESPLC"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000317",
@@ -2522,8 +2880,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 5,
-    "alpha_score": 5,
+    "event_score": 7,
+    "alpha_score": 7,
     "score_breakdown": [
       {
         "strategy": "전략 1 (주체 가중치)",
@@ -2537,8 +2895,8 @@
       },
       {
         "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "reason": "세력 매집단가(16,408) 대비 현재가(9,760)가 -40.5% 할인 구간 [VWAP_ESTIMATE: 2026-10-01~2026-11-06 매집기간 일봉 VWAP]",
+        "points": 2
       }
     ],
     "investor_class": "PEF/투자조합",
@@ -2549,12 +2907,21 @@
     "insight": {
       "tier": "HIGH",
       "label": "지분공시",
-      "summary": "PEF/투자조합 핵심 주체 (오션비홀딩스) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
-      "score": 5
+      "summary": "PEF/투자조합 핵심 주체 (오션비홀딩스) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 세력 매집단가(16,408) 대비 현재가(9,760)가 -40.5% 할인 구간 [VWAP_ESTIMATE: 2026-10-01~2026-11-06 매집기간 일봉 VWAP]",
+      "score": 7
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000317"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000317",
+    "est_avg_price": 16408,
+    "current_price": 9760.0,
+    "price_gap_pct": -40.5,
+    "price_source": "VWAP_ESTIMATE: 2026-10-01~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 32.61,
+    "stk_rt_var": 0.0,
+    "stk_cnt_var": "0",
+    "first_entry_dt": "2024-11-21",
+    "reporter": "오션비홀딩스"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000315",
@@ -2617,11 +2984,6 @@
         "points": 3
       },
       {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
-      },
-      {
         "strategy": "전략 7 (지분 축소)",
         "reason": "직전 보고 대비 보유주식수(0주) 및 지분율(-8.05%p) 감소",
         "points": -3
@@ -2640,7 +3002,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000315"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000315",
+    "est_avg_price": 2334,
+    "current_price": 2285.0,
+    "price_gap_pct": -2.1,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 23.5,
+    "stk_rt_var": -8.05,
+    "stk_cnt_var": "0",
+    "first_entry_dt": "2025-02-12",
+    "reporter": "비비안"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000313",
@@ -2675,8 +3046,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 5,
-    "alpha_score": 5,
+    "event_score": 6,
+    "alpha_score": 6,
     "score_breakdown": [
       {
         "strategy": "전략 1 (주체 가중치)",
@@ -2689,9 +3060,9 @@
         "points": 3
       },
       {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "strategy": "전략 6 (세력 평단 하회)",
+        "reason": "세력 매집단가 대비 현재가 -9.6% 할인 구간 [VWAP_ESTIMATE: 2026-10-27~2026-11-06 매집기간 일봉 VWAP]",
+        "points": 1
       }
     ],
     "investor_class": "슈퍼개미/개인",
@@ -2702,12 +3073,21 @@
     "insight": {
       "tier": "HIGH",
       "label": "지분공시",
-      "summary": "슈퍼개미/개인 핵심 주체 (오태봉) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
-      "score": 5
+      "summary": "슈퍼개미/개인 핵심 주체 (오태봉) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 세력 매집단가 대비 현재가 -9.6% 할인 구간 [VWAP_ESTIMATE: 2026-10-27~2026-11-06 매집기간 일봉 VWAP]",
+      "score": 6
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000313"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000313",
+    "est_avg_price": 11245,
+    "current_price": 10160.0,
+    "price_gap_pct": -9.6,
+    "price_source": "VWAP_ESTIMATE: 2026-10-27~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 29.32,
+    "stk_rt_var": 0.0,
+    "stk_cnt_var": "0",
+    "first_entry_dt": "2024-11-21",
+    "reporter": "오태봉"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000311",
@@ -2749,11 +3129,6 @@
         "strategy": "전략 1 (주체 가중치)",
         "reason": "슈퍼개미/개인 핵심 주체 (연제량)",
         "points": 2
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "슈퍼개미/개인",
@@ -2769,7 +3144,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000311"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000311",
+    "est_avg_price": 2056,
+    "current_price": 1845.0,
+    "price_gap_pct": -10.3,
+    "price_source": "VWAP_ESTIMATE: 2026-10-14~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 22.71,
+    "stk_rt_var": 0.0,
+    "stk_cnt_var": "0",
+    "first_entry_dt": "2025-05-15",
+    "reporter": "연제량"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000307",
@@ -2821,11 +3205,6 @@
         "strategy": "전략 2 (실제 주식수 확대)",
         "reason": "실제 보유주식수 증가(+219,947) 및 지분율 +0.14%p 확대",
         "points": 1
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "가치투자/구루",
@@ -2841,7 +3220,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000307"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000307",
+    "est_avg_price": 15368,
+    "current_price": 15240.0,
+    "price_gap_pct": -0.8,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 5.07,
+    "stk_rt_var": 0.14,
+    "stk_cnt_var": "+219,947",
+    "first_entry_dt": "2026-11-06",
+    "reporter": "브이아이피자산운용"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000306",
@@ -2885,11 +3273,6 @@
         "points": 3
       },
       {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
-      },
-      {
         "strategy": "전략 7 (지분 축소)",
         "reason": "직전 보고 대비 보유주식수(-12,297,393주) 및 지분율(0.74%p) 감소",
         "points": -1
@@ -2908,7 +3291,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000306"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000306",
+    "est_avg_price": 10215,
+    "current_price": 9300.0,
+    "price_gap_pct": -9.0,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 64.03,
+    "stk_rt_var": 0.74,
+    "stk_cnt_var": "-12,297,393",
+    "first_entry_dt": "2025-04-09",
+    "reporter": "다산인베스트"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000303",
@@ -2943,8 +3335,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 5,
-    "alpha_score": 5,
+    "event_score": 6,
+    "alpha_score": 6,
     "score_breakdown": [
       {
         "strategy": "전략 1 (주체 가중치)",
@@ -2957,9 +3349,9 @@
         "points": 3
       },
       {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "strategy": "전략 6 (세력 평단 하회)",
+        "reason": "세력 매집단가 대비 현재가 -7.5% 할인 구간 [VWAP_ESTIMATE: 2026-10-23~2026-11-06 매집기간 일봉 VWAP]",
+        "points": 1
       }
     ],
     "investor_class": "슈퍼개미/개인",
@@ -2970,12 +3362,21 @@
     "insight": {
       "tier": "HIGH",
       "label": "지분공시",
-      "summary": "슈퍼개미/개인 핵심 주체 (지베이스) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
-      "score": 5
+      "summary": "슈퍼개미/개인 핵심 주체 (지베이스) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 세력 매집단가 대비 현재가 -7.5% 할인 구간 [VWAP_ESTIMATE: 2026-10-23~2026-11-06 매집기간 일봉 VWAP]",
+      "score": 6
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000303"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000303",
+    "est_avg_price": 1860,
+    "current_price": 1720.0,
+    "price_gap_pct": -7.5,
+    "price_source": "VWAP_ESTIMATE: 2026-10-23~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 85.61,
+    "stk_rt_var": 0.0,
+    "stk_cnt_var": "0",
+    "first_entry_dt": "2024-11-07",
+    "reporter": "지베이스"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000302",
@@ -3031,11 +3432,6 @@
         "strategy": "전략 3 (목적 변경)",
         "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
         "points": 3
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "일반법인/기타",
@@ -3051,7 +3447,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000302"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000302",
+    "est_avg_price": 2220,
+    "current_price": 2165.0,
+    "price_gap_pct": -2.5,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 65.05,
+    "stk_rt_var": 0.0,
+    "stk_cnt_var": "0",
+    "first_entry_dt": "2024-11-08",
+    "reporter": "메가스터디교육"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000289",
@@ -3107,11 +3512,6 @@
         "strategy": "전략 6 (취득원천 검증)",
         "reason": "보고사유: 18CB 일부 조기상환, 19CB 신규취득",
         "points": -2
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "일반법인/기타",
@@ -3127,7 +3527,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000289"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000289",
+    "est_avg_price": 1274,
+    "current_price": 1046.0,
+    "price_gap_pct": -17.9,
+    "price_source": "VWAP_ESTIMATE: 2026-09-23~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 17.43,
+    "stk_rt_var": 0.41,
+    "stk_cnt_var": "+206,050",
+    "first_entry_dt": "2026-09-23",
+    "reporter": "오션인더블유"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000284",
@@ -3176,8 +3585,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 3,
-    "alpha_score": 3,
+    "event_score": 5,
+    "alpha_score": 5,
     "score_breakdown": [
       {
         "strategy": "전략 3 (목적 변경)",
@@ -3186,8 +3595,8 @@
       },
       {
         "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "reason": "세력 매집단가(1,753) 대비 현재가(1,330)가 -24.1% 할인 구간 [VWAP_ESTIMATE: 2026-10-02~2026-11-06 매집기간 일봉 VWAP]",
+        "points": 2
       }
     ],
     "investor_class": "일반법인/기타",
@@ -3196,14 +3605,23 @@
     "accumulation_count": 0,
     "freshness": "CURRENT",
     "insight": {
-      "tier": "POSITIVE",
+      "tier": "HIGH",
       "label": "지분공시",
-      "summary": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
-      "score": 3
+      "summary": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 세력 매집단가(1,753) 대비 현재가(1,330)가 -24.1% 할인 구간 [VWAP_ESTIMATE: 2026-10-02~2026-11-06 매집기간 일봉 VWAP]",
+      "score": 5
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000284"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000284",
+    "est_avg_price": 1753,
+    "current_price": 1330.0,
+    "price_gap_pct": -24.1,
+    "price_source": "VWAP_ESTIMATE: 2026-10-02~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 46.81,
+    "stk_rt_var": 0.0,
+    "stk_cnt_var": "0",
+    "first_entry_dt": "2024-12-05",
+    "reporter": "케이피티유"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000280",
@@ -3238,8 +3656,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 5,
-    "alpha_score": 5,
+    "event_score": 7,
+    "alpha_score": 7,
     "score_breakdown": [
       {
         "strategy": "전략 1 (주체 가중치)",
@@ -3253,8 +3671,8 @@
       },
       {
         "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "reason": "세력 매집단가(440,528) 대비 현재가(366,500)가 -16.8% 할인 구간 [VWAP_ESTIMATE: 2026-09-08~2026-11-06 매집기간 일봉 VWAP]",
+        "points": 2
       }
     ],
     "investor_class": "슈퍼개미/개인",
@@ -3265,12 +3683,21 @@
     "insight": {
       "tier": "HIGH",
       "label": "지분공시",
-      "summary": "슈퍼개미/개인 핵심 주체 (정몽진) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
-      "score": 5
+      "summary": "슈퍼개미/개인 핵심 주체 (정몽진) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 세력 매집단가(440,528) 대비 현재가(366,500)가 -16.8% 할인 구간 [VWAP_ESTIMATE: 2026-09-08~2026-11-06 매집기간 일봉 VWAP]",
+      "score": 7
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000280"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000280",
+    "est_avg_price": 440528,
+    "current_price": 366500.0,
+    "price_gap_pct": -16.8,
+    "price_source": "VWAP_ESTIMATE: 2026-09-08~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 35.56,
+    "stk_rt_var": 0.0,
+    "stk_cnt_var": "0",
+    "first_entry_dt": "2024-12-05",
+    "reporter": "정몽진"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000264",
@@ -3341,11 +3768,6 @@
         "strategy": "전략 2 (연속 매집)",
         "reason": "공식 이력 기준 3회 연속 실제 보유주식수 증가 확인",
         "points": 4
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "슈퍼개미/개인",
@@ -3361,7 +3783,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000264"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000264",
+    "est_avg_price": 34533,
+    "current_price": 33750.0,
+    "price_gap_pct": -2.3,
+    "price_source": "VWAP_ESTIMATE: 2026-10-22~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 41.53,
+    "stk_rt_var": 0.01,
+    "stk_cnt_var": "+608",
+    "first_entry_dt": "2024-12-04",
+    "reporter": "동아제약"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000262",
@@ -3418,11 +3849,6 @@
         "strategy": "전략 2 (연속 매집)",
         "reason": "공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
         "points": 3
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "슈퍼개미/개인",
@@ -3438,7 +3864,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000262"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000262",
+    "est_avg_price": 87490,
+    "current_price": 87000.0,
+    "price_gap_pct": -0.6,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 42.58,
+    "stk_rt_var": 0.04,
+    "stk_cnt_var": "+2,477",
+    "first_entry_dt": "2024-11-21",
+    "reporter": "강정석"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000261",
@@ -3509,11 +3944,6 @@
         "strategy": "전략 6 (취득원천 검증)",
         "reason": "보고사유: 특별관계자 주식장내매수 및 주식근질권설정변경계약 체결",
         "points": 2
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "일반법인/기타",
@@ -3529,7 +3959,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000261"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000261",
+    "est_avg_price": 2967,
+    "current_price": 2855.0,
+    "price_gap_pct": -3.8,
+    "price_source": "VWAP_ESTIMATE: 2026-10-19~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 74.7,
+    "stk_rt_var": 0.09,
+    "stk_cnt_var": "+5,834",
+    "first_entry_dt": "2024-12-03",
+    "reporter": "크레오에스지"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000256",
@@ -3576,11 +4015,6 @@
         "strategy": "전략 3 (목적 변경)",
         "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
         "points": 3
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "슈퍼개미/개인",
@@ -3596,7 +4030,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000256"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000256",
+    "est_avg_price": 4047,
+    "current_price": 4030.0,
+    "price_gap_pct": -0.4,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 39.58,
+    "stk_rt_var": 0.0,
+    "stk_cnt_var": "0",
+    "first_entry_dt": "2024-11-13",
+    "reporter": "안영순"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000254",
@@ -3657,11 +4100,6 @@
         "strategy": "전략 3 (목적 변경)",
         "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
         "points": 3
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "PEF/투자조합",
@@ -3677,7 +4115,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000254"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000254",
+    "est_avg_price": 2426,
+    "current_price": 2385.0,
+    "price_gap_pct": -1.7,
+    "price_source": "VWAP_ESTIMATE: 2026-10-30~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 44.09,
+    "stk_rt_var": 0.0,
+    "stk_cnt_var": "0",
+    "first_entry_dt": "2024-11-15",
+    "reporter": "큐로홀딩스"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000237",
@@ -3712,8 +4159,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 5,
-    "alpha_score": 5,
+    "event_score": 7,
+    "alpha_score": 7,
     "score_breakdown": [
       {
         "strategy": "전략 1 (주체 가중치)",
@@ -3727,8 +4174,8 @@
       },
       {
         "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "reason": "세력 매집단가(3,003) 대비 현재가(2,020)가 -32.7% 할인 구간 [VWAP_ESTIMATE: 2026-10-02~2026-11-06 매집기간 일봉 VWAP]",
+        "points": 2
       }
     ],
     "investor_class": "슈퍼개미/개인",
@@ -3739,12 +4186,21 @@
     "insight": {
       "tier": "HIGH",
       "label": "지분공시",
-      "summary": "슈퍼개미/개인 핵심 주체 (심규환) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
-      "score": 5
+      "summary": "슈퍼개미/개인 핵심 주체 (심규환) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 세력 매집단가(3,003) 대비 현재가(2,020)가 -32.7% 할인 구간 [VWAP_ESTIMATE: 2026-10-02~2026-11-06 매집기간 일봉 VWAP]",
+      "score": 7
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000237"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000237",
+    "est_avg_price": 3003,
+    "current_price": 2020.0,
+    "price_gap_pct": -32.7,
+    "price_source": "VWAP_ESTIMATE: 2026-10-02~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 18.3,
+    "stk_rt_var": 0.0,
+    "stk_cnt_var": "0",
+    "first_entry_dt": "2024-12-11",
+    "reporter": "심규환"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000232",
@@ -3801,11 +4257,6 @@
         "strategy": "전략 5 (임계 구간 돌파)",
         "reason": "실제 주식 매집으로 지분율 10% 돌파 (단기매매차익 반환 의무 감수)",
         "points": 2
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "슈퍼개미/개인",
@@ -3821,7 +4272,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000232"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000232",
+    "est_avg_price": 3122,
+    "current_price": 3370.0,
+    "price_gap_pct": 7.9,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 20.06,
+    "stk_rt_var": 20.06,
+    "stk_cnt_var": "+2,305,037",
+    "first_entry_dt": "2025-05-02",
+    "reporter": "매일방송"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000175",
@@ -3856,8 +4316,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 11,
-    "alpha_score": 11,
+    "event_score": 13,
+    "alpha_score": 13,
     "score_breakdown": [
       {
         "strategy": "전략 1 (주체 가중치)",
@@ -3886,8 +4346,8 @@
       },
       {
         "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "reason": "세력 매집단가(3,592) 대비 현재가(2,760)가 -23.2% 할인 구간 [VWAP_ESTIMATE: 2026-09-18~2026-11-06 매집기간 일봉 VWAP]",
+        "points": 2
       }
     ],
     "investor_class": "슈퍼개미/개인",
@@ -3898,12 +4358,21 @@
     "insight": {
       "tier": "HIGH",
       "label": "지분공시",
-      "summary": "슈퍼개미/개인 핵심 주체 (유범령) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 실제 보유주식수 증가(+1,000) 및 지분율 +0.02%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인 · 보고사유: 장내매수 내역 반영을 위한 자발적 변동보고",
-      "score": 11
+      "summary": "슈퍼개미/개인 핵심 주체 (유범령) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 실제 보유주식수 증가(+1,000) 및 지분율 +0.02%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인 · 보고사유: 장내매수 내역 반영을 위한 자발적 변동보고 · 세력 매집단가(3,592) 대비 현재가(2,760)가 -23.2% 할인 구간 [VWAP_ESTIMATE: 2026-09-18~2026-11-06 매집기간 일봉 VWAP]",
+      "score": 13
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000175"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000175",
+    "est_avg_price": 3592,
+    "current_price": 2760.0,
+    "price_gap_pct": -23.2,
+    "price_source": "VWAP_ESTIMATE: 2026-09-18~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 50.51,
+    "stk_rt_var": 0.02,
+    "stk_cnt_var": "+1,000",
+    "first_entry_dt": "2025-02-26",
+    "reporter": "유범령"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000172",
@@ -3938,8 +4407,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 5,
-    "alpha_score": 5,
+    "event_score": 7,
+    "alpha_score": 7,
     "score_breakdown": [
       {
         "strategy": "전략 4 (신규 5% 돌파)",
@@ -3953,8 +4422,8 @@
       },
       {
         "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "reason": "세력 매집단가(2,465) 대비 현재가(1,858)가 -24.6% 할인 구간 [VWAP_ESTIMATE: 2026-11-04~2026-11-06 매집기간 일봉 VWAP]",
+        "points": 2
       }
     ],
     "investor_class": "일반법인/기타",
@@ -3965,12 +4434,21 @@
     "insight": {
       "tier": "HIGH",
       "label": "지분공시",
-      "summary": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (5.42%) · 실제 보유주식수 증가(+300,000) 및 지분율 +5.42%p 확대",
-      "score": 5
+      "summary": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (5.42%) · 실제 보유주식수 증가(+300,000) 및 지분율 +5.42%p 확대 · 세력 매집단가(2,465) 대비 현재가(1,858)가 -24.6% 할인 구간 [VWAP_ESTIMATE: 2026-11-04~2026-11-06 매집기간 일봉 VWAP]",
+      "score": 7
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000172"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000172",
+    "est_avg_price": 2465,
+    "current_price": 1858.0,
+    "price_gap_pct": -24.6,
+    "price_source": "VWAP_ESTIMATE: 2026-11-04~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 5.42,
+    "stk_rt_var": 5.42,
+    "stk_cnt_var": "+300,000",
+    "first_entry_dt": "2026-11-06",
+    "reporter": "코어자산운용"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000143",
@@ -4022,11 +4500,6 @@
         "strategy": "전략 6 (취득원천 검증)",
         "reason": "보고사유: 제304회 후순위 무기명식 무보증 사모 전환사채(신종자본증권) 인수(신규보고)",
         "points": -2
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "PEF/투자조합",
@@ -4042,7 +4515,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000143"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000143",
+    "est_avg_price": 8944,
+    "current_price": 7930.0,
+    "price_gap_pct": -11.3,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 10.18,
+    "stk_rt_var": 10.18,
+    "stk_cnt_var": "+4,223,328",
+    "first_entry_dt": "2026-11-06",
+    "reporter": "우리엔에이치동반성장1호사모투자"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000116",
@@ -4104,11 +4586,6 @@
         "strategy": "전략 6 (취득원천 검증)",
         "reason": "보고사유: 보고자 장내매수",
         "points": 2
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "슈퍼개미/개인",
@@ -4124,7 +4601,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000116"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000116",
+    "est_avg_price": 5232,
+    "current_price": 5030.0,
+    "price_gap_pct": -3.9,
+    "price_source": "VWAP_ESTIMATE: 2026-10-30~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 33.49,
+    "stk_rt_var": 0.07,
+    "stk_cnt_var": "+3,000",
+    "first_entry_dt": "2025-03-12",
+    "reporter": "조준희"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000101",
@@ -4159,8 +4645,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 4,
-    "alpha_score": 4,
+    "event_score": 5,
+    "alpha_score": 5,
     "score_breakdown": [
       {
         "strategy": "전략 2 (실제 주식수 확대)",
@@ -4173,9 +4659,9 @@
         "points": 3
       },
       {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "strategy": "전략 6 (세력 평단 하회)",
+        "reason": "세력 매집단가 대비 현재가 -9.0% 할인 구간 [VWAP_ESTIMATE: 2026-11-05~2026-11-06 매집기간 일봉 VWAP]",
+        "points": 1
       }
     ],
     "investor_class": "일반법인/기타",
@@ -4184,14 +4670,23 @@
     "accumulation_count": 2,
     "freshness": "CURRENT",
     "insight": {
-      "tier": "POSITIVE",
+      "tier": "HIGH",
       "label": "지분공시",
-      "summary": "실제 보유주식수 증가(+2,370) 및 지분율 +0.02%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인",
-      "score": 4
+      "summary": "실제 보유주식수 증가(+2,370) 및 지분율 +0.02%p 확대 · 공식 이력 기준 2회 연속 실제 보유주식수 증가 확인 · 세력 매집단가 대비 현재가 -9.0% 할인 구간 [VWAP_ESTIMATE: 2026-11-05~2026-11-06 매집기간 일봉 VWAP]",
+      "score": 5
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000101"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000101",
+    "est_avg_price": 18777,
+    "current_price": 17080.0,
+    "price_gap_pct": -9.0,
+    "price_source": "VWAP_ESTIMATE: 2026-11-05~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 5.48,
+    "stk_rt_var": 0.02,
+    "stk_cnt_var": "+2,370",
+    "first_entry_dt": "2026-10-21",
+    "reporter": "J.P.MORGANSECURITIESPLC"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000096",
@@ -4248,11 +4743,6 @@
         "strategy": "전략 2 (연속 매집)",
         "reason": "공식 이력 기준 24회 연속 실제 보유주식수 증가 확인",
         "points": 4
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "슈퍼개미/개인",
@@ -4268,7 +4758,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000096"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000096",
+    "est_avg_price": 4093,
+    "current_price": 4045.0,
+    "price_gap_pct": -1.2,
+    "price_source": "VWAP_ESTIMATE: 2026-11-02~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 37.72,
+    "stk_rt_var": 0.01,
+    "stk_cnt_var": "+763",
+    "first_entry_dt": "2025-07-04",
+    "reporter": "강희철"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000095",
@@ -4325,11 +4824,6 @@
         "strategy": "전략 6 (취득원천 검증)",
         "reason": "보고사유: 장내매수에 따른 보유주식수 변동",
         "points": 2
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "슈퍼개미/개인",
@@ -4345,7 +4839,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000095"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000095",
+    "est_avg_price": 4379,
+    "current_price": 4350.0,
+    "price_gap_pct": -0.7,
+    "price_source": "VWAP_ESTIMATE: 2026-11-05~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 21.2,
+    "stk_rt_var": 0.02,
+    "stk_cnt_var": "+7,000",
+    "first_entry_dt": "2024-11-07",
+    "reporter": "송성근"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000084",
@@ -4397,11 +4900,6 @@
         "strategy": "전략 2 (연속 매집)",
         "reason": "공식 이력 기준 5회 연속 실제 보유주식수 증가 확인",
         "points": 4
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "일반법인/기타",
@@ -4417,7 +4915,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000084"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000084",
+    "est_avg_price": 1714,
+    "current_price": 1720.0,
+    "price_gap_pct": 0.4,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 30.72,
+    "stk_rt_var": 0.78,
+    "stk_cnt_var": "+337,179",
+    "first_entry_dt": "2025-09-30",
+    "reporter": "한국비엠아이"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000083",
@@ -4466,11 +4973,6 @@
         "points": 3
       },
       {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
-      },
-      {
         "strategy": "전략 7 (지분 축소)",
         "reason": "직전 보고 대비 보유주식수(-93,350주) 및 지분율(-0.19%p) 감소",
         "points": -1
@@ -4489,7 +4991,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000083"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000083",
+    "est_avg_price": 14500,
+    "current_price": 14550.0,
+    "price_gap_pct": 0.3,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 75.91,
+    "stk_rt_var": -0.19,
+    "stk_cnt_var": "-93,350",
+    "first_entry_dt": "2024-12-06",
+    "reporter": "이용익"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000079",
@@ -4561,7 +5072,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000079"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000079",
+    "est_avg_price": 679,
+    "current_price": 796.0,
+    "price_gap_pct": 17.2,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 3.24,
+    "stk_rt_var": -6.75,
+    "stk_cnt_var": "-1,801,533",
+    "first_entry_dt": "2025-08-06",
+    "reporter": "최영천"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000078",
@@ -4596,8 +5116,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 11,
-    "alpha_score": 11,
+    "event_score": 13,
+    "alpha_score": 13,
     "score_breakdown": [
       {
         "strategy": "전략 1 (주체 가중치)",
@@ -4626,8 +5146,8 @@
       },
       {
         "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "reason": "세력 매집단가(15,925) 대비 현재가(9,870)가 -38.0% 할인 구간 [VWAP_ESTIMATE: 2026-11-03~2026-11-06 매집기간 일봉 VWAP]",
+        "points": 2
       }
     ],
     "investor_class": "슈퍼개미/개인",
@@ -4638,12 +5158,21 @@
     "insight": {
       "tier": "HIGH",
       "label": "지분공시",
-      "summary": "슈퍼개미/개인 핵심 주체 (허철기) · 단순투자가 아닌 일반투자/적극주주 목적 공시 · 실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (61.88%) · 실제 보유주식수 증가(+5,604,240) 및 지분율 +61.88%p 확대 · 실제 주식 매집으로 지분율 10% 돌파 (단기매매차익 반환 의무 감수)",
-      "score": 11
+      "summary": "슈퍼개미/개인 핵심 주체 (허철기) · 단순투자가 아닌 일반투자/적극주주 목적 공시 · 실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (61.88%) · 실제 보유주식수 증가(+5,604,240) 및 지분율 +61.88%p 확대 · 실제 주식 매집으로 지분율 10% 돌파 (단기매매차익 반환 의무 감수) · 세력 매집단가(15,925) 대비 현재가(9,870)가 -38.0% 할인 구간 [VWAP_ESTIMATE: 2026-11-03~2026-11-06 매집기간 일봉 VWAP]",
+      "score": 13
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000078"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000078",
+    "est_avg_price": 15925,
+    "current_price": 9870.0,
+    "price_gap_pct": -38.0,
+    "price_source": "VWAP_ESTIMATE: 2026-11-03~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 61.88,
+    "stk_rt_var": 61.88,
+    "stk_cnt_var": "+5,604,240",
+    "first_entry_dt": "2026-11-06",
+    "reporter": "허철기"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000044",
@@ -4690,11 +5219,6 @@
         "strategy": "전략 2 (실제 주식수 확대)",
         "reason": "실제 보유주식수 증가(+1,129,190) 및 지분율 +9.83%p 확대",
         "points": 3
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "일반법인/기타",
@@ -4710,7 +5234,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000044"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000044",
+    "est_avg_price": 3122,
+    "current_price": 3370.0,
+    "price_gap_pct": 7.9,
+    "price_source": "VWAP_ESTIMATE: 2026-10-28~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 9.83,
+    "stk_rt_var": 9.83,
+    "stk_cnt_var": "+1,129,190",
+    "first_entry_dt": "2026-11-06",
+    "reporter": "스튜디오지담"
   },
   {
     "event_id": "KR_DART_5PCT_20261106000027",
@@ -4745,8 +5278,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 7,
-    "alpha_score": 7,
+    "event_score": 9,
+    "alpha_score": 9,
     "score_breakdown": [
       {
         "strategy": "전략 4 (신규 5% 돌파)",
@@ -4765,8 +5298,8 @@
       },
       {
         "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "reason": "세력 매집단가(2,465) 대비 현재가(1,858)가 -24.6% 할인 구간 [VWAP_ESTIMATE: 2026-11-04~2026-11-06 매집기간 일봉 VWAP]",
+        "points": 2
       }
     ],
     "investor_class": "일반법인/기타",
@@ -4777,12 +5310,21 @@
     "insight": {
       "tier": "HIGH",
       "label": "지분공시",
-      "summary": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (14.68%) · 실제 보유주식수 증가(+900,000) 및 지분율 +14.68%p 확대 · 실제 주식 매집으로 지분율 10% 돌파 (단기매매차익 반환 의무 감수)",
-      "score": 7
+      "summary": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (14.68%) · 실제 보유주식수 증가(+900,000) 및 지분율 +14.68%p 확대 · 실제 주식 매집으로 지분율 10% 돌파 (단기매매차익 반환 의무 감수) · 세력 매집단가(2,465) 대비 현재가(1,858)가 -24.6% 할인 구간 [VWAP_ESTIMATE: 2026-11-04~2026-11-06 매집기간 일봉 VWAP]",
+      "score": 9
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000027"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000027",
+    "est_avg_price": 2465,
+    "current_price": 1858.0,
+    "price_gap_pct": -24.6,
+    "price_source": "VWAP_ESTIMATE: 2026-11-04~2026-11-06 매집기간 일봉 VWAP",
+    "hold_stock_rt": 14.68,
+    "stk_rt_var": 14.68,
+    "stk_cnt_var": "+900,000",
+    "first_entry_dt": "2026-11-06",
+    "reporter": "아이엠증권"
   },
   {
     "event_id": "KR_DART_5PCT_20261105000505",
@@ -4831,8 +5373,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 5,
-    "alpha_score": 5,
+    "event_score": 7,
+    "alpha_score": 7,
     "score_breakdown": [
       {
         "strategy": "전략 4 (신규 5% 돌파)",
@@ -4846,8 +5388,8 @@
       },
       {
         "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "reason": "세력 매집단가(2,466) 대비 현재가(1,858)가 -24.7% 할인 구간 [VWAP_ESTIMATE: 2026-11-04~2026-11-05 매집기간 일봉 VWAP]",
+        "points": 2
       }
     ],
     "investor_class": "일반법인/기타",
@@ -4858,12 +5400,21 @@
     "insight": {
       "tier": "HIGH",
       "label": "지분공시",
-      "summary": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (5.42%) · 실제 보유주식수 증가(+300,000) 및 지분율 +5.42%p 확대",
-      "score": 5
+      "summary": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (5.42%) · 실제 보유주식수 증가(+300,000) 및 지분율 +5.42%p 확대 · 세력 매집단가(2,466) 대비 현재가(1,858)가 -24.7% 할인 구간 [VWAP_ESTIMATE: 2026-11-04~2026-11-05 매집기간 일봉 VWAP]",
+      "score": 7
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261105000505"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261105000505",
+    "est_avg_price": 2466,
+    "current_price": 1858.0,
+    "price_gap_pct": -24.7,
+    "price_source": "VWAP_ESTIMATE: 2026-11-04~2026-11-05 매집기간 일봉 VWAP",
+    "hold_stock_rt": 5.42,
+    "stk_rt_var": 5.42,
+    "stk_cnt_var": "+300,000",
+    "first_entry_dt": "2026-11-05",
+    "reporter": "한양증권"
   },
   {
     "event_id": "KR_DART_5PCT_20261105000388",
@@ -4912,8 +5463,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 7,
-    "alpha_score": 7,
+    "event_score": 9,
+    "alpha_score": 9,
     "score_breakdown": [
       {
         "strategy": "전략 1 (주체 가중치)",
@@ -4932,8 +5483,8 @@
       },
       {
         "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "reason": "세력 매집단가(17,491) 대비 현재가(9,740)가 -44.3% 할인 구간 [VWAP_ESTIMATE: 2026-11-03~2026-11-05 매집기간 일봉 VWAP]",
+        "points": 2
       }
     ],
     "investor_class": "PEF/투자조합",
@@ -4944,12 +5495,21 @@
     "insight": {
       "tier": "HIGH",
       "label": "지분공시",
-      "summary": "PEF/투자조합 핵심 주체 (LB인베스트먼트) · 실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (6.15%) · 실제 보유주식수 증가(+896,500) 및 지분율 +6.15%p 확대",
-      "score": 7
+      "summary": "PEF/투자조합 핵심 주체 (LB인베스트먼트) · 실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (6.15%) · 실제 보유주식수 증가(+896,500) 및 지분율 +6.15%p 확대 · 세력 매집단가(17,491) 대비 현재가(9,740)가 -44.3% 할인 구간 [VWAP_ESTIMATE: 2026-11-03~2026-11-05 매집기간 일봉 VWAP]",
+      "score": 9
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261105000388"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261105000388",
+    "est_avg_price": 17491,
+    "current_price": 9740.0,
+    "price_gap_pct": -44.3,
+    "price_source": "VWAP_ESTIMATE: 2026-11-03~2026-11-05 매집기간 일봉 VWAP",
+    "hold_stock_rt": 6.15,
+    "stk_rt_var": 6.15,
+    "stk_cnt_var": "+896,500",
+    "first_entry_dt": "2026-11-05",
+    "reporter": "LB인베스트먼트"
   },
   {
     "event_id": "KR_DART_5PCT_20261105000297",
@@ -4984,8 +5544,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 5,
-    "alpha_score": 5,
+    "event_score": 7,
+    "alpha_score": 7,
     "score_breakdown": [
       {
         "strategy": "전략 4 (신규 5% 돌파)",
@@ -4999,8 +5559,8 @@
       },
       {
         "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "reason": "세력 매집단가(2,723) 대비 현재가(2,020)가 -25.8% 할인 구간 [VWAP_ESTIMATE: 2026-10-27~2026-11-05 매집기간 일봉 VWAP]",
+        "points": 2
       }
     ],
     "investor_class": "일반법인/기타",
@@ -5011,12 +5571,21 @@
     "insight": {
       "tier": "HIGH",
       "label": "지분공시",
-      "summary": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (5.56%) · 실제 보유주식수 증가(+400,000) 및 지분율 +5.56%p 확대",
-      "score": 5
+      "summary": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (5.56%) · 실제 보유주식수 증가(+400,000) 및 지분율 +5.56%p 확대 · 세력 매집단가(2,723) 대비 현재가(2,020)가 -25.8% 할인 구간 [VWAP_ESTIMATE: 2026-10-27~2026-11-05 매집기간 일봉 VWAP]",
+      "score": 7
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261105000297"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261105000297",
+    "est_avg_price": 2723,
+    "current_price": 2020.0,
+    "price_gap_pct": -25.8,
+    "price_source": "VWAP_ESTIMATE: 2026-10-27~2026-11-05 매집기간 일봉 VWAP",
+    "hold_stock_rt": 5.56,
+    "stk_rt_var": 5.56,
+    "stk_cnt_var": "+400,000",
+    "first_entry_dt": "2026-11-05",
+    "reporter": "케이앤인터내셔널"
   },
   {
     "event_id": "KR_DART_5PCT_20261104000295",
@@ -5051,8 +5620,8 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 5,
-    "alpha_score": 5,
+    "event_score": 7,
+    "alpha_score": 7,
     "score_breakdown": [
       {
         "strategy": "전략 4 (신규 5% 돌파)",
@@ -5066,8 +5635,8 @@
       },
       {
         "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
+        "reason": "세력 매집단가(2,470) 대비 현재가(1,858)가 -24.8% 할인 구간 [VWAP_ESTIMATE: 2026-11-04~2026-11-04 매집기간 일봉 VWAP]",
+        "points": 2
       }
     ],
     "investor_class": "일반법인/기타",
@@ -5078,12 +5647,21 @@
     "insight": {
       "tier": "HIGH",
       "label": "지분공시",
-      "summary": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (5.42%) · 실제 보유주식수 증가(+300,000) 및 지분율 +5.42%p 확대",
-      "score": 5
+      "summary": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (5.42%) · 실제 보유주식수 증가(+300,000) 및 지분율 +5.42%p 확대 · 세력 매집단가(2,470) 대비 현재가(1,858)가 -24.8% 할인 구간 [VWAP_ESTIMATE: 2026-11-04~2026-11-04 매집기간 일봉 VWAP]",
+      "score": 7
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261104000295"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261104000295",
+    "est_avg_price": 2470,
+    "current_price": 1858.0,
+    "price_gap_pct": -24.8,
+    "price_source": "VWAP_ESTIMATE: 2026-11-04~2026-11-04 매집기간 일봉 VWAP",
+    "hold_stock_rt": 5.42,
+    "stk_rt_var": 5.42,
+    "stk_cnt_var": "+300,000",
+    "first_entry_dt": "2026-11-04",
+    "reporter": "하우자산운용"
   },
   {
     "event_id": "KR_DART_5PCT_20261103000383",
@@ -5120,13 +5698,7 @@
     "relation_ingest_mode": "AUTO",
     "event_score": 0,
     "alpha_score": 0,
-    "score_breakdown": [
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
-      }
-    ],
+    "score_breakdown": [],
     "investor_class": "일반법인/기타",
     "purpose_prev": "단순투자",
     "purpose_current": "단순투자",
@@ -5140,7 +5712,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261103000383"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261103000383",
+    "est_avg_price": 5842,
+    "current_price": 5490.0,
+    "price_gap_pct": -6.0,
+    "price_source": "VWAP_ESTIMATE: 2026-10-23~2026-11-03 매집기간 일봉 VWAP",
+    "hold_stock_rt": 19.69,
+    "stk_rt_var": 0.0,
+    "stk_cnt_var": "0",
+    "first_entry_dt": "2026-06-26",
+    "reporter": "케이모빌리티밸류업"
   },
   {
     "event_id": "KR_DART_5PCT_20261103000340",
@@ -5191,13 +5772,7 @@
     "relation_ingest_mode": "AUTO",
     "event_score": 0,
     "alpha_score": 0,
-    "score_breakdown": [
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
-      }
-    ],
+    "score_breakdown": [],
     "investor_class": "일반법인/기타",
     "purpose_prev": "단순투자",
     "purpose_current": "단순투자",
@@ -5211,7 +5786,16 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261103000340"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261103000340",
+    "est_avg_price": 6186,
+    "current_price": 5490.0,
+    "price_gap_pct": -11.3,
+    "price_source": "VWAP_ESTIMATE: 2026-09-16~2026-11-03 매집기간 일봉 VWAP",
+    "hold_stock_rt": 52.52,
+    "stk_rt_var": 0.02,
+    "stk_cnt_var": "+10,000",
+    "first_entry_dt": "2026-04-07",
+    "reporter": "KG스틸"
   },
   {
     "event_id": "KR_DART_5PCT_20261103000323",
@@ -5253,11 +5837,6 @@
         "strategy": "전략 1 (주체 가중치)",
         "reason": "슈퍼개미/개인 핵심 주체 (김상균)",
         "points": 2
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "미산출(가격 데이터 필요)",
-        "points": 0
       }
     ],
     "investor_class": "슈퍼개미/개인",
@@ -5273,6 +5852,15 @@
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261103000323"
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261103000323",
+    "est_avg_price": 46810,
+    "current_price": 42550.0,
+    "price_gap_pct": -9.1,
+    "price_source": "VWAP_ESTIMATE: 2026-10-12~2026-11-03 매집기간 일봉 VWAP",
+    "hold_stock_rt": 36.24,
+    "stk_rt_var": -0.27,
+    "stk_cnt_var": "0",
+    "first_entry_dt": "2026-07-24",
+    "reporter": "김상균"
   }
 ]

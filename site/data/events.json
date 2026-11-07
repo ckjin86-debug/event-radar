@@ -20347,6 +20347,224 @@
     "source_url": "https://www.ntoday.co.kr/news/articleView.html?idxno=130688"
   },
   {
+    "event_id": "KR_NEWS_FUTURE_f53100406e361cab15f26e87df8ef73afca0d29c",
+    "d_day": 55,
+    "country": "KR",
+    "ticker": "405100",
+    "primary_ticker": "",
+    "related_securities": [
+      {
+        "ticker": "405100",
+        "company_name": "큐알티",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 큐알티",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.bigtanews.co.kr/article/view/big202611070003",
+        "relation_known_date": "2026-11-07",
+        "ingest_mode": "AUTO",
+        "from_entity": "큐알티"
+      }
+    ],
+    "company": "KB증권",
+    "event_type": "PLANT_OPERATION",
+    "event_name": "KB증권, 11월 첫째주 큐알티 등 28종목 매수 추천",
+    "event_date": "2027-01-01",
+    "date_precision": "YEAR",
+    "window_start": "2027-01-01",
+    "window_end": "2027-12-31",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 47,
+    "insight": {
+      "score": 47,
+      "tier": "WATCH",
+      "label": "일정 관찰",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 11,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 21,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 5,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 13650.0,
+        "return_20d": -0.221779,
+        "volume_ratio_20d": 1.211,
+        "sessions": 68,
+        "source": "Yahoo Finance",
+        "ticker": "405100"
+      },
+      "coverage": {
+        "eligible_events": 0,
+        "priced_events": 0,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": null
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.bigtanews.co.kr/article/view/big202611070003"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_fe0bcd519452862584f8fe6857f10289f3d901b3",
+    "d_day": 55,
+    "country": "KR",
+    "ticker": "010950",
+    "primary_ticker": "010950",
+    "related_securities": [
+      {
+        "ticker": "010950",
+        "company_name": "S-Oil",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.bigtanews.co.kr/article/view/big202611070002",
+        "relation_known_date": "2026-11-07",
+        "ingest_mode": "AUTO",
+        "from_entity": "삼성증권"
+      },
+      {
+        "ticker": "016360",
+        "company_name": "삼성증권",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 삼성증권",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.bigtanews.co.kr/article/view/big202611070002",
+        "relation_known_date": "2026-11-07",
+        "ingest_mode": "AUTO",
+        "from_entity": "삼성증권"
+      },
+      {
+        "ticker": "035760",
+        "company_name": "CJ ENM",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: CJ ENM",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.bigtanews.co.kr/article/view/big202611070002",
+        "relation_known_date": "2026-11-07",
+        "ingest_mode": "AUTO",
+        "from_entity": "CJ ENM"
+      }
+    ],
+    "company": "삼성증권",
+    "event_type": "CAPEX",
+    "event_name": "삼성증권, 11월 첫째주 CJ ENM 등 49종목 매수 추천",
+    "event_date": "2027-01-01",
+    "date_precision": "QUARTER",
+    "window_start": "2027-01-01",
+    "window_end": "2027-03-31",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 49,
+    "insight": {
+      "score": 49,
+      "tier": "WATCH",
+      "label": "일정 관찰",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 13,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 21,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 5,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "직접 2개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 106200.0,
+        "return_20d": -0.37048,
+        "volume_ratio_20d": 0.92,
+        "sessions": 68,
+        "source": "Yahoo Finance",
+        "ticker": "010950"
+      },
+      "coverage": {
+        "eligible_events": 2,
+        "priced_events": 2,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": 0
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.bigtanews.co.kr/article/view/big202611070002"
+  },
+  {
     "event_id": "KR_NEWS_FUTURE_1c8d5b615deebc4a876238fab152cb0589fbbb56",
     "d_day": 62,
     "country": "KR",
@@ -30619,68 +30837,42 @@
     "source_url": "https://www.insightkorea.co.kr/news/articleView.html?idxno=258187"
   },
   {
-    "event_id": "KR_NEWS_FUTURE_7585df12a1d86bdfc7692a184c66bc42dc8a0c97",
+    "event_id": "KR_NEWS_FUTURE_f5bde8295a79a826f28f6c418528bcb39e62b53c",
     "d_day": 1151,
     "country": "KR",
-    "ticker": "034020",
+    "ticker": "405100",
     "primary_ticker": "",
     "related_securities": [
       {
-        "ticker": "034020",
-        "company_name": "두산에너빌리티",
-        "relation_grade": "THEME",
-        "relation_score": 55,
-        "relation_type": "NUCLEAR_MARKET_THEME",
-        "evidence_text": "두산에너빌리티: 공식 원전 프로젝트 참여 이력이 있는 원전 테마 후보",
-        "evidence_source": "THEME_MAPPING",
-        "source_url": "https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=7508&type=O",
-        "relation_known_date": "2024-01-01",
+        "ticker": "405100",
+        "company_name": "큐알티",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 큐알티",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.bigtanews.co.kr/article/view/big202611070003",
+        "relation_known_date": "2026-11-07",
         "ingest_mode": "AUTO",
-        "from_entity": "두산에너빌리티"
-      },
-      {
-        "ticker": "052690",
-        "company_name": "한전기술",
-        "relation_grade": "THEME",
-        "relation_score": 52,
-        "relation_type": "NUCLEAR_MARKET_THEME",
-        "evidence_text": "한국전력기술: 공식 원전 프로젝트 설계 참여 이력이 있는 원전 테마 후보",
-        "evidence_source": "THEME_MAPPING",
-        "source_url": "https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=7508&type=O",
-        "relation_known_date": "2024-01-01",
-        "ingest_mode": "AUTO",
-        "from_entity": "한국전력기술"
-      },
-      {
-        "ticker": "051600",
-        "company_name": "한전KPS",
-        "relation_grade": "THEME",
-        "relation_score": 50,
-        "relation_type": "NUCLEAR_MARKET_THEME",
-        "evidence_text": "한전KPS: 공식 원전 프로젝트 시운전 유지보수 참여 이력이 있는 원전 테마 후보",
-        "evidence_source": "THEME_MAPPING",
-        "source_url": "https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=7508&type=O",
-        "relation_known_date": "2024-01-01",
-        "ingest_mode": "AUTO",
-        "from_entity": "한전KPS"
+        "from_entity": "큐알티"
       }
     ],
-    "company": "한국형 핵잠 ‘장보고 N’ 내년 경쟁입찰",
-    "event_type": "TENDER",
-    "event_name": "한국형 핵잠 ‘장보고 N’ 내년 경쟁입찰…2030년대 중반 진수 목표",
+    "company": "KB증권",
+    "event_type": "POLICY",
+    "event_name": "KB증권, 11월 첫째주 큐알티 등 28종목 매수 추천",
     "event_date": "2030-01-01",
     "date_precision": "YEAR",
     "window_start": "2030-01-01",
     "window_end": "2030-12-31",
-    "relation_grade": "THEME",
-    "relation_score": 55,
-    "relation_type": "NUCLEAR_MARKET_THEME",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 30,
+    "event_score": 45,
     "insight": {
-      "score": 30,
-      "tier": "CHECK",
-      "label": "추가 확인",
+      "score": 45,
+      "tier": "WATCH",
+      "label": "일정 관찰",
       "components": {
         "schedule": {
           "label": "일정 신뢰도",
@@ -30689,7 +30881,7 @@
         },
         "relation": {
           "label": "관련주 근거",
-          "points": 6,
+          "points": 21,
           "max": 25
         },
         "history": {
@@ -30710,22 +30902,21 @@
       },
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
-        "검증된 개별 관련주 부족",
+        "직접 1개 · 경제관계 0개",
         "D+5 완료 사건 0건"
       ],
       "missing": [
-        "검증된 개별 관련주",
         "충분한 과거 사건 표본"
       ],
       "history_confidence": "NONE",
       "market": {
         "as_of": "2026-11-06",
-        "price": 44700.0,
-        "return_20d": -0.426923,
-        "volume_ratio_20d": 1.67,
+        "price": 13650.0,
+        "return_20d": -0.221779,
+        "volume_ratio_20d": 1.211,
         "sessions": 68,
         "source": "Yahoo Finance",
-        "ticker": "034020"
+        "ticker": "405100"
       },
       "coverage": {
         "eligible_events": 0,
@@ -30739,7 +30930,7 @@
     },
     "status": "EXPECTED",
     "source_name": "NEWS_FUTURE",
-    "source_url": "http://www.newstomato.com/ReadNews.aspx?no=1319591&inflow=N"
+    "source_url": "https://www.bigtanews.co.kr/article/view/big202611070003"
   },
   {
     "event_id": "KR_NEWS_FUTURE_be35f96c48b1683c9da7846f0c4fe0c219d7c45e",
