@@ -79,7 +79,7 @@ def build_collectors(root: Path, fast_refresh: bool = False):
         HistoricalSeedCollector(config_path=root / "config" / "historical_events.csv"),
         DartCollector(),
         DartFivePctCollector(),
-        SecCollector(),
+        SecCollector(universe_path=root / "config" / "sec_large_cap_universe.json"),
         SecFivePctCollector(),
         _news_collector(),
         FdaCollector(config_path=root / "config" / "site_registry.yaml"),

@@ -265,6 +265,107 @@ def test_one_enrichment_failure_does_not_discard_other_company(monkeypatch):
     assert events[0].event_type == "EARNINGS"
 
 
+MASTER_INDEX_WITH_SMALLCAP = """Description: Master Index of EDGAR Dissemination Feed
+CIK|Company Name|Form Type|Date Filed|File Name
+320193|Apple Inc.|8-K|2026-11-03|edgar/data/320193/0000320193-26-000101.txt
+320193|Apple Inc.|8-K/A|2026-11-03|edgar/data/320193/0000320193-26-000102.txt
+1652044|Alphabet Inc.|8-K|2026-11-03|edgar/data/1652044/0001652044-26-000777.txt
+9999999|Tiny Corp|8-K|2026-11-03|edgar/data/9999999/0009999999-26-000001.txt
+"""
+
+TICKERS_WITH_SMALLCAP = {
+    "0": {"cik_str": 320193, "ticker": "AAPL", "title": "Apple Inc."},
+    "1": {"cik_str": 1652044, "ticker": "GOOGL", "title": "Alphabet Inc."},
+    "2": {"cik_str": 9999999, "ticker": "TINY", "title": "Tiny Corp"},
+}
+
+
+def _mock_index_and_tickers(monkeypatch, collector, index_text, tickers):
+    class MockResponse:
+        def __init__(self, status_code=200, text="", payload=None):
+            self.status_code = status_code
+            self.text = text
+            self._payload = payload
+
+        def json(self):
+            return self._payload
+
+    def mock_get(url, timeout=10):
+        if url.endswith("company_tickers.json"):
+            return MockResponse(payload=tickers)
+        if "master." in url and url.endswith(".idx"):
+            return MockResponse(text=index_text)
+        raise AssertionError(f"unexpected URL: {url}")
+
+    monkeypatch.setattr(collector.session, "get", mock_get)
+
+
+def test_discovery_filters_out_non_large_cap_companies(monkeypatch):
+    collector = SecCollector(request_interval=0, universe_tickers={"AAPL", "GOOGL"})
+    _mock_index_and_tickers(
+        monkeypatch, collector, MASTER_INDEX_WITH_SMALLCAP, TICKERS_WITH_SMALLCAP
+    )
+
+    candidates = collector._discover_candidates(
+        since=datetime(2026, 11, 1),
+        today=date(2026, 11, 3),
+    )
+
+    assert {c["ticker"] for c in candidates} == {"AAPL", "GOOGL"}
+    assert all(c["cik"] != "0009999999" for c in candidates)
+
+
+def test_discovery_without_universe_keeps_all_candidates(monkeypatch, tmp_path):
+    # Fail-open: an unavailable universe file must not zero out collection.
+    collector = SecCollector(
+        request_interval=0,
+        universe_path=tmp_path / "missing-universe.json",
+    )
+    _mock_index_and_tickers(
+        monkeypatch, collector, MASTER_INDEX_WITH_SMALLCAP, TICKERS_WITH_SMALLCAP
+    )
+
+    candidates = collector._discover_candidates(
+        since=datetime(2026, 11, 1),
+        today=date(2026, 11, 3),
+    )
+
+    assert {c["ticker"] for c in candidates} == {"AAPL", "GOOGL", "TINY"}
+
+
+def test_collect_never_fetches_submissions_for_filtered_companies(monkeypatch):
+    payload = json.loads(FIXTURE_PATH.read_text(encoding="utf-8"))
+    collector = SecCollector(request_interval=0, universe_tickers={"AAPL"})
+    fetched_urls: list[str] = []
+
+    class MockResponse:
+        def __init__(self, status_code=200, text="", payload=None):
+            self.status_code = status_code
+            self.text = text
+            self._payload = payload
+
+        def json(self):
+            return self._payload
+
+    def mock_get(url, timeout=10):
+        fetched_urls.append(url)
+        if url.endswith("company_tickers.json"):
+            return MockResponse(payload=TICKERS_WITH_SMALLCAP)
+        if "master." in url and url.endswith(".idx"):
+            return MockResponse(text=MASTER_INDEX_WITH_SMALLCAP)
+        if "CIK0000320193.json" in url:
+            return MockResponse(payload=payload)
+        raise AssertionError(f"submissions fetched for filtered company: {url}")
+
+    monkeypatch.setattr(collector.session, "get", mock_get)
+
+    events = collector.collect(since=datetime(2026, 10, 1))
+
+    assert len(events) == 2
+    assert {e.primary_ticker for e in events} == {"AAPL"}
+    assert not any("9999999" in url or "1652044" in url for url in fetched_urls)
+
+
 def test_sec_collector_graceful_on_discovery_error(monkeypatch):
     collector = SecCollector(request_interval=0)
 

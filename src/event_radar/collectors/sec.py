@@ -15,6 +15,7 @@ import requests
 
 from event_radar.collectors.base import CollectorRunLog, log_collector_run
 from event_radar.models import RawEvent
+from event_radar.sec_universe import load_large_cap_universe, normalize_us_ticker
 
 
 SEC_DEFAULT_USER_AGENT = "EventRadarAdmin admin@eventradar.org"
@@ -40,6 +41,8 @@ class SecCollector:
         timeout: int = 20,
         request_interval: float = 0.12,
         max_workers: int = 5,
+        universe_path: Optional[Path | str] = None,
+        universe_tickers: Optional[set[str]] = None,
     ):
         self.fixture_path = Path(fixture_path) if fixture_path else None
         self.timeout = timeout
@@ -48,6 +51,17 @@ class SecCollector:
         self._last_request_at = 0.0
         self._rate_lock = threading.Lock()
         self._ticker_map_cache: Optional[dict[str, tuple[str, str]]] = None
+        # Large-cap policy: only S&P 500 / Nasdaq-100 constituents' 8-Ks are
+        # collected. An explicit ticker set wins (tests); otherwise the
+        # universe JSON is loaded lazily. A missing file disables filtering
+        # (fail-open) instead of silently collecting nothing.
+        self._universe_path = Path(universe_path) if universe_path else None
+        self._universe_tickers: Optional[frozenset[str]] = (
+            frozenset(normalize_us_ticker(t) for t in universe_tickers)
+            if universe_tickers is not None
+            else None
+        )
+        self._universe_loaded = universe_tickers is not None
 
         self.session = requests.Session()
         self.session.headers.update(
@@ -170,6 +184,31 @@ class SecCollector:
         self._ticker_map_cache = mapping
         return mapping
 
+    def _large_cap_tickers(self) -> Optional[frozenset[str]]:
+        """Return the large-cap universe tickers, or None to skip filtering."""
+        if not self._universe_loaded:
+            self._universe_tickers = load_large_cap_universe(self._universe_path)
+            self._universe_loaded = True
+        return self._universe_tickers
+
+    def _large_cap_ciks(
+        self,
+        ticker_map: dict[str, tuple[str, str]],
+    ) -> Optional[set[str]]:
+        """Resolve universe tickers to CIKs via the SEC company ticker map.
+
+        Returns None when filtering cannot apply (universe unavailable or
+        the ticker map failed to load), so discovery stays fail-open.
+        """
+        universe = self._large_cap_tickers()
+        if universe is None or not ticker_map:
+            return None
+        return {
+            cik
+            for cik, (ticker, _title) in ticker_map.items()
+            if normalize_us_ticker(ticker) in universe
+        }
+
     def _daily_index_url(self, day: date) -> str:
         quarter = ((day.month - 1) // 3) + 1
         return SEC_DAILY_INDEX_URL.format(
@@ -198,6 +237,11 @@ class SecCollector:
             # Submissions JSON also includes tickers, so mapping failure is non-fatal.
             ticker_map = {}
 
+        # Large-cap filter: drop non-universe companies here, before any
+        # per-CIK submissions fetch, so detail requests are never spent on
+        # filings that would be discarded anyway.
+        large_cap_ciks = self._large_cap_ciks(ticker_map)
+
         candidates: list[dict] = []
         seen_accessions: set[str] = set()
 
@@ -212,6 +256,8 @@ class SecCollector:
                 continue
 
             for row in self._parse_master_index(response.text):
+                if large_cap_ciks is not None and row["cik"] not in large_cap_ciks:
+                    continue
                 accession = row["accession"]
                 if accession in seen_accessions:
                     continue

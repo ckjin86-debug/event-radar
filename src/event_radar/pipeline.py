@@ -34,6 +34,7 @@ from event_radar.five_pct_pricing import enrich_five_pct_prices
 from event_radar.export import export_site_data
 from event_radar.collectors.base import Collector
 from event_radar.collectors.news_future import extract_future_catalyst
+from event_radar.sec_universe import UNIVERSE_FILENAME, load_large_cap_universe, normalize_us_ticker
 from event_radar.revisions import detect_revisions
 from event_radar.evidence_relations import discover_relations
 from event_radar.insights import market_snapshot
@@ -306,6 +307,29 @@ def promote_primary_from_relations(
     return event, "no_rows"
 
 
+def prune_non_large_cap_sec_events(
+    events: list[Event],
+    universe_tickers: Optional[frozenset[str]],
+) -> list[Event]:
+    """Drop canonical SEC 8-K events outside the large-cap universe.
+
+    The SEC collector now filters at discovery time, but canonical storage
+    is persistent: 8-K events collected before the large-cap policy (or
+    while the universe file was unavailable) would otherwise stay on the
+    public radar forever. Only ``source_name == "SEC"`` rows are pruned —
+    the SEC 13D/13G filings (``SEC_13DG``) are a separate product and are
+    never touched here. A missing universe (None) prunes nothing.
+    """
+    if universe_tickers is None:
+        return events
+    return [
+        ev
+        for ev in events
+        if ev.source_name != "SEC"
+        or normalize_us_ticker(ev.primary_ticker) in universe_tickers
+    ]
+
+
 def run_pipeline(
     collectors: list[Collector],
     config: PipelineConfig,
@@ -418,6 +442,12 @@ def run_pipeline(
     )
     current_events = dedupe_res.events
     all_revisions.extend(dedupe_res.revisions)
+
+    # 5.6. SEC large-cap policy: canonical rows persist across runs, so
+    # prune already-stored non-large-cap SEC 8-K events before saving;
+    # otherwise the pre-policy backlog would stay public indefinitely.
+    sec_universe = load_large_cap_universe(config.config_dir / UNIVERSE_FILENAME)
+    current_events = prune_non_large_cap_sec_events(current_events, sec_universe)
 
     # 6. Save updated canonical data
     save_canonical_events(current_events, events_csv)
