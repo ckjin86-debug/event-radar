@@ -79,7 +79,7 @@
         "price": 37750.0,
         "return_20d": -0.11902,
         "volume_ratio_20d": 1.394,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "347850"
       },
@@ -177,7 +177,7 @@
         "price": 14340.0,
         "return_20d": -0.229447,
         "volume_ratio_20d": 0.919,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "024850"
       },
@@ -275,7 +275,7 @@
         "price": 14250.0,
         "return_20d": -0.255875,
         "volume_ratio_20d": 0.998,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "017960"
       },
@@ -386,7 +386,7 @@
         "price": 10140.0,
         "return_20d": -0.093834,
         "volume_ratio_20d": 1.901,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "018250"
       },
@@ -484,7 +484,7 @@
         "price": 51300.0,
         "return_20d": -0.002256,
         "volume_ratio_20d": 0.247,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "030200"
       },
@@ -595,7 +595,7 @@
         "price": 480000.0,
         "return_20d": -0.001041,
         "volume_ratio_20d": 0.728,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "128940"
       },
@@ -693,7 +693,7 @@
         "price": 480000.0,
         "return_20d": -0.001041,
         "volume_ratio_20d": 0.728,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "128940"
       },
@@ -867,17 +867,17 @@
         "price": 71500.0,
         "return_20d": -0.165694,
         "volume_ratio_20d": 0.418,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "016360"
       },
       "coverage": {
-        "eligible_events": 7,
-        "priced_events": 7,
+        "eligible_events": 8,
+        "priced_events": 8,
         "complete_events": 3,
         "security_samples": 9,
         "not_calculated_events": 0,
-        "completion_percent": 43
+        "completion_percent": 38
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -965,7 +965,7 @@
         "price": 244500.0,
         "return_20d": -0.202284,
         "volume_ratio_20d": 0.216,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "192820"
       },
@@ -1063,7 +1063,7 @@
         "price": 6930.0,
         "return_20d": -0.304217,
         "volume_ratio_20d": 1.115,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "189330"
       },
@@ -1211,17 +1211,17 @@
         "price": 71500.0,
         "return_20d": -0.165694,
         "volume_ratio_20d": 0.418,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "016360"
       },
       "coverage": {
-        "eligible_events": 7,
-        "priced_events": 7,
+        "eligible_events": 8,
+        "priced_events": 8,
         "complete_events": 3,
         "security_samples": 9,
         "not_calculated_events": 0,
-        "completion_percent": 43
+        "completion_percent": 38
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -1309,7 +1309,7 @@
         "price": 337500.0,
         "return_20d": -0.158354,
         "volume_ratio_20d": 0.864,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "373220"
       },
@@ -1535,17 +1535,17 @@
         "price": 71500.0,
         "return_20d": -0.165694,
         "volume_ratio_20d": 0.418,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "016360"
       },
       "coverage": {
-        "eligible_events": 7,
-        "priced_events": 7,
+        "eligible_events": 8,
+        "priced_events": 8,
         "complete_events": 3,
         "security_samples": 9,
         "not_calculated_events": 0,
-        "completion_percent": 43
+        "completion_percent": 38
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -1633,7 +1633,7 @@
         "price": 6200.0,
         "return_20d": -0.120567,
         "volume_ratio_20d": 1.675,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "053580"
       },
@@ -1745,7 +1745,7 @@
         "price": 6200.0,
         "return_20d": -0.120567,
         "volume_ratio_20d": 1.675,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "053580"
       },
@@ -1843,7 +1843,7 @@
         "price": 37750.0,
         "return_20d": -0.11902,
         "volume_ratio_20d": 1.394,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "347850"
       },
@@ -1941,7 +1941,7 @@
         "price": 10170.0,
         "return_20d": -0.389922,
         "volume_ratio_20d": 0.267,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "047040"
       },
@@ -2052,7 +2052,7 @@
         "price": 480000.0,
         "return_20d": -0.001041,
         "volume_ratio_20d": 0.728,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "128940"
       },
@@ -2150,7 +2150,7 @@
         "price": 1561.0,
         "return_20d": -0.126469,
         "volume_ratio_20d": 1.318,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "205500"
       },
@@ -2249,7 +2249,7 @@
         "price": 78100.0,
         "return_20d": -0.27551,
         "volume_ratio_20d": 1.39,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "000720"
       },
@@ -2361,7 +2361,7 @@
         "price": 12340.0,
         "return_20d": 0.319786,
         "volume_ratio_20d": 0.88,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "293490"
       },
@@ -2473,7 +2473,7 @@
         "price": 78100.0,
         "return_20d": -0.27551,
         "volume_ratio_20d": 1.39,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "000720"
       },
@@ -2751,17 +2751,17 @@
         "price": 6690.0,
         "return_20d": -0.110372,
         "volume_ratio_20d": 0.401,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "001500"
       },
       "coverage": {
-        "eligible_events": 7,
-        "priced_events": 7,
+        "eligible_events": 8,
+        "priced_events": 8,
         "complete_events": 3,
         "security_samples": 9,
         "not_calculated_events": 0,
-        "completion_percent": 43
+        "completion_percent": 38
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -2849,7 +2849,7 @@
         "price": 209750.0,
         "return_20d": 0.167873,
         "volume_ratio_20d": 0.419,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "068270"
       },
@@ -3137,7 +3137,7 @@
         "price": 12590.0,
         "return_20d": 0.047421,
         "volume_ratio_20d": 1.501,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "069080"
       },
@@ -3340,7 +3340,7 @@
         "price": 32300.0,
         "return_20d": 0.0,
         "volume_ratio_20d": 2.587,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "035720"
       },
@@ -3452,7 +3452,7 @@
         "price": 78100.0,
         "return_20d": -0.27551,
         "volume_ratio_20d": 1.39,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "000720"
       },
@@ -3550,7 +3550,7 @@
         "price": 3800.0,
         "return_20d": -0.062885,
         "volume_ratio_20d": 1.52,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "003000"
       },
@@ -3661,7 +3661,7 @@
         "price": 33200.0,
         "return_20d": 0.018405,
         "volume_ratio_20d": 1.254,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "263750"
       },
@@ -3772,7 +3772,7 @@
         "price": 188700.0,
         "return_20d": -0.279771,
         "volume_ratio_20d": 1.842,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "005930"
       },
@@ -3962,7 +3962,7 @@
         "price": 232000.0,
         "return_20d": -0.190227,
         "volume_ratio_20d": 0.892,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "051910"
       },
@@ -4061,7 +4061,7 @@
         "price": 191800.0,
         "return_20d": 0.471988,
         "volume_ratio_20d": 1.516,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "180640"
       },
@@ -4159,7 +4159,7 @@
         "price": 6000.0,
         "return_20d": 0.034483,
         "volume_ratio_20d": 1.014,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "272450"
       },
@@ -4255,7 +4255,7 @@
         "price": 960000.0,
         "return_20d": -0.070668,
         "volume_ratio_20d": 2.069,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "010130"
       },
@@ -4380,7 +4380,7 @@
         "price": 191800.0,
         "return_20d": 0.471988,
         "volume_ratio_20d": 1.516,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "180640"
       },
@@ -4491,7 +4491,7 @@
         "price": 410465.125,
         "return_20d": 0.0,
         "volume_ratio_20d": null,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "011810"
       },
@@ -4589,7 +4589,7 @@
         "price": 29400.0,
         "return_20d": -0.042345,
         "volume_ratio_20d": 0.991,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "003490"
       },
@@ -4701,7 +4701,7 @@
         "price": 49200.0,
         "return_20d": -0.031496,
         "volume_ratio_20d": 1.329,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "011210"
       },
@@ -4799,7 +4799,7 @@
         "price": 58400.0,
         "return_20d": -0.203274,
         "volume_ratio_20d": 1.214,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "141080"
       },
@@ -4924,7 +4924,7 @@
         "price": 9940.0,
         "return_20d": -0.319178,
         "volume_ratio_20d": 1.075,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "144510"
       },
@@ -5023,7 +5023,7 @@
         "price": 188700.0,
         "return_20d": -0.279771,
         "volume_ratio_20d": 1.842,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "005930"
       },
@@ -5134,7 +5134,7 @@
         "price": 9940.0,
         "return_20d": -0.319178,
         "volume_ratio_20d": 1.075,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "144510"
       },
@@ -5232,7 +5232,7 @@
         "price": 21050.0,
         "return_20d": -0.195029,
         "volume_ratio_20d": 3.328,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "372320"
       },
@@ -5330,7 +5330,7 @@
         "price": 15310.0,
         "return_20d": -0.280213,
         "volume_ratio_20d": 1.081,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "115180"
       },
@@ -5441,7 +5441,7 @@
         "price": 14340.0,
         "return_20d": -0.229447,
         "volume_ratio_20d": 0.919,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "024850"
       },
@@ -5552,7 +5552,7 @@
         "price": 6000.0,
         "return_20d": 0.034483,
         "volume_ratio_20d": 1.014,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "272450"
       },
@@ -5651,7 +5651,7 @@
         "price": 9940.0,
         "return_20d": -0.319178,
         "volume_ratio_20d": 1.075,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "144510"
       },
@@ -5931,7 +5931,7 @@
         "price": 3405.0,
         "return_20d": -0.103947,
         "volume_ratio_20d": 0.222,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "027410"
       },
@@ -6159,7 +6159,7 @@
         "price": 6000.0,
         "return_20d": 0.034483,
         "volume_ratio_20d": 1.014,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "272450"
       },
@@ -6257,7 +6257,7 @@
         "price": 37950.0,
         "return_20d": -0.480137,
         "volume_ratio_20d": 0.532,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "229640"
       },
@@ -6461,7 +6461,7 @@
         "price": 29750.0,
         "return_20d": -0.073209,
         "volume_ratio_20d": 2.449,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "006360"
       },
@@ -6651,7 +6651,7 @@
         "price": 209750.0,
         "return_20d": 0.167873,
         "volume_ratio_20d": 0.419,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "068270"
       },
@@ -6749,7 +6749,7 @@
         "price": 1924.0,
         "return_20d": -0.146785,
         "volume_ratio_20d": 0.361,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "040300"
       },
@@ -6847,7 +6847,7 @@
         "price": 3115.0,
         "return_20d": -0.224159,
         "volume_ratio_20d": 0.367,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "018880"
       },
@@ -6945,7 +6945,7 @@
         "price": 220500.0,
         "return_20d": 0.179775,
         "volume_ratio_20d": 1.577,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "259960"
       },
@@ -7056,7 +7056,7 @@
         "price": 6000.0,
         "return_20d": 0.034483,
         "volume_ratio_20d": 1.014,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "272450"
       },
@@ -7168,7 +7168,7 @@
         "price": 6000.0,
         "return_20d": 0.034483,
         "volume_ratio_20d": 1.014,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "272450"
       },
@@ -7279,7 +7279,7 @@
         "price": 16040.0,
         "return_20d": -0.057025,
         "volume_ratio_20d": 0.326,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "002320"
       },
@@ -7377,7 +7377,7 @@
         "price": 8900.0,
         "return_20d": -0.028384,
         "volume_ratio_20d": 1.743,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "072020"
       },
@@ -7475,7 +7475,7 @@
         "price": 58400.0,
         "return_20d": -0.203274,
         "volume_ratio_20d": 1.214,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "141080"
       },
@@ -7599,7 +7599,7 @@
         "price": 58450.0,
         "return_20d": 0.13716,
         "volume_ratio_20d": 8.804,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "089860"
       },
@@ -7795,7 +7795,7 @@
         "price": 10170.0,
         "return_20d": -0.389922,
         "volume_ratio_20d": 0.267,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "047040"
       },
@@ -7812,6 +7812,106 @@
     "status": "EXPECTED",
     "source_name": "NEWS_FUTURE",
     "source_url": "https://www.dnews.co.kr/uhtml/view.jsp?idxno=202611021850551490283"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_57fd2a84a6fa5c4691bf107d3803e516980b47b8",
+    "d_day": 34,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "293490",
+    "primary_ticker": "",
+    "anchor_status": "theme_proxy_only",
+    "related_securities": [
+      {
+        "ticker": "293490",
+        "company_name": "카카오게임즈",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 카카오게임즈",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.techm.kr/news/articleView.html?idxno=157044",
+        "relation_known_date": "2026-11-07",
+        "ingest_mode": "AUTO",
+        "from_entity": "카카오게임즈"
+      }
+    ],
+    "company": "패스 오브 엑자일2' 12월 정식 출시 ...메인 스토리 완결",
+    "event_type": "PRODUCT_LAUNCH",
+    "event_name": "'패스 오브 엑자일2' 12월 정식 출시 ...메인 스토리 완결·신규 직업 등...",
+    "event_date": "2026-12-11",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-12-11",
+    "window_end": "2026-12-11",
+    "relation_grade": "THEME",
+    "relation_score": 35,
+    "relation_type": "CONTEXT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 35,
+    "insight": {
+      "score": 35,
+      "tier": "CHECK",
+      "label": "추가 확인",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 19,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 6,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 5,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 5,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 날짜 확정",
+        "검증된 개별 관련주 부족",
+        "D+5 완료 사건 0건",
+        "최근 20거래일 20% 이상 상승 · 급등 부담"
+      ],
+      "missing": [
+        "검증된 개별 관련주",
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 12340.0,
+        "return_20d": 0.319786,
+        "volume_ratio_20d": 0.88,
+        "sessions": 67,
+        "source": "Yahoo Finance",
+        "ticker": "293490"
+      },
+      "coverage": {
+        "eligible_events": 0,
+        "priced_events": 0,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": null
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.techm.kr/news/articleView.html?idxno=157044"
   },
   {
     "event_id": "KR_NEWS_FUTURE_c8dc0c1254054e158ae8e687e1acb70879cec73c",
@@ -7894,7 +7994,7 @@
         "price": 12340.0,
         "return_20d": 0.319786,
         "volume_ratio_20d": 0.88,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "293490"
       },
@@ -8006,7 +8106,7 @@
         "price": 12340.0,
         "return_20d": 0.319786,
         "volume_ratio_20d": 0.88,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "293490"
       },
@@ -8104,7 +8204,7 @@
         "price": 14340.0,
         "return_20d": -0.229447,
         "volume_ratio_20d": 0.919,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "024850"
       },
@@ -8202,7 +8302,7 @@
         "price": 9940.0,
         "return_20d": -0.319178,
         "volume_ratio_20d": 1.075,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "144510"
       },
@@ -8300,7 +8400,7 @@
         "price": 14340.0,
         "return_20d": -0.229447,
         "volume_ratio_20d": 0.919,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "024850"
       },
@@ -8398,7 +8498,7 @@
         "price": 58400.0,
         "return_20d": -0.203274,
         "volume_ratio_20d": 1.214,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "141080"
       },
@@ -8522,7 +8622,7 @@
         "price": 11330.0,
         "return_20d": -0.118288,
         "volume_ratio_20d": 1.123,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "005440"
       },
@@ -8621,7 +8721,7 @@
         "price": 191800.0,
         "return_20d": 0.471988,
         "volume_ratio_20d": 1.516,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "180640"
       },
@@ -8719,7 +8819,7 @@
         "price": 7960.0,
         "return_20d": -0.030451,
         "volume_ratio_20d": 0.703,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "020560"
       },
@@ -8843,7 +8943,7 @@
         "price": 29400.0,
         "return_20d": -0.042345,
         "volume_ratio_20d": 0.991,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "003490"
       },
@@ -8954,7 +9054,7 @@
         "price": 29400.0,
         "return_20d": -0.042345,
         "volume_ratio_20d": 0.991,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "003490"
       },
@@ -9078,7 +9178,7 @@
         "price": 29400.0,
         "return_20d": -0.042345,
         "volume_ratio_20d": 0.991,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "003490"
       },
@@ -9176,7 +9276,7 @@
         "price": 1924.0,
         "return_20d": -0.146785,
         "volume_ratio_20d": 0.361,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "040300"
       },
@@ -9274,7 +9374,7 @@
         "price": 3935.0,
         "return_20d": -0.03198,
         "volume_ratio_20d": 0.871,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "363250"
       },
@@ -9386,7 +9486,7 @@
         "price": 10170.0,
         "return_20d": -0.389922,
         "volume_ratio_20d": 0.267,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "047040"
       },
@@ -9495,17 +9595,17 @@
         "price": 74900.0,
         "return_20d": -0.355422,
         "volume_ratio_20d": 1.71,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "066970"
       },
       "coverage": {
-        "eligible_events": 7,
-        "priced_events": 7,
+        "eligible_events": 8,
+        "priced_events": 8,
         "complete_events": 3,
         "security_samples": 9,
         "not_calculated_events": 0,
-        "completion_percent": 43
+        "completion_percent": 38
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -9593,7 +9693,7 @@
         "price": 7200.0,
         "return_20d": -0.110012,
         "volume_ratio_20d": 0.828,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "200130"
       },
@@ -9744,7 +9844,7 @@
         "price": 6380.0,
         "return_20d": 0.42252,
         "volume_ratio_20d": 0.905,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "089590"
       },
@@ -9867,7 +9967,7 @@
         "price": 191800.0,
         "return_20d": 0.471988,
         "volume_ratio_20d": 1.516,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "180640"
       },
@@ -9965,7 +10065,7 @@
         "price": 80000.0,
         "return_20d": -0.253731,
         "volume_ratio_20d": 0.67,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "267270"
       },
@@ -10155,7 +10255,7 @@
         "price": 9340.0,
         "return_20d": -0.228099,
         "volume_ratio_20d": 1.911,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "100090"
       },
@@ -10266,7 +10366,7 @@
         "price": 3900.0,
         "return_20d": -0.247104,
         "volume_ratio_20d": 1.127,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "088350"
       },
@@ -10403,7 +10503,7 @@
         "price": 10170.0,
         "return_20d": -0.389922,
         "volume_ratio_20d": 0.267,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "047040"
       },
@@ -10502,7 +10602,7 @@
         "price": 1516000.0,
         "return_20d": 0.243642,
         "volume_ratio_20d": 1.22,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "207940"
       },
@@ -10613,7 +10713,7 @@
         "price": 188700.0,
         "return_20d": -0.279771,
         "volume_ratio_20d": 1.842,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "005930"
       },
@@ -10711,7 +10811,7 @@
         "price": 51500.0,
         "return_20d": -0.235905,
         "volume_ratio_20d": 0.885,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "375500"
       },
@@ -10809,7 +10909,7 @@
         "price": 2040.0,
         "return_20d": -0.028571,
         "volume_ratio_20d": 1.136,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "035890"
       },
@@ -10920,7 +11020,7 @@
         "price": 74900.0,
         "return_20d": -0.355422,
         "volume_ratio_20d": 1.71,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "066970"
       },
@@ -11029,7 +11129,7 @@
         "price": 30300.0,
         "return_20d": -0.260073,
         "volume_ratio_20d": 1.015,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "000670"
       },
@@ -11126,7 +11226,7 @@
         "price": 191800.0,
         "return_20d": 0.471988,
         "volume_ratio_20d": 1.516,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "180640"
       },
@@ -11222,7 +11322,7 @@
         "price": 54300.0,
         "return_20d": -0.010929,
         "volume_ratio_20d": 1.526,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "008930"
       },
@@ -11359,7 +11459,7 @@
         "price": 10170.0,
         "return_20d": -0.389922,
         "volume_ratio_20d": 0.267,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "047040"
       },
@@ -11470,7 +11570,7 @@
         "price": 49200.0,
         "return_20d": -0.031496,
         "volume_ratio_20d": 1.329,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "011210"
       },
@@ -11568,7 +11668,7 @@
         "price": 51500.0,
         "return_20d": -0.235905,
         "volume_ratio_20d": 0.885,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "375500"
       },
@@ -11666,7 +11766,7 @@
         "price": 124100.0,
         "return_20d": -0.308635,
         "volume_ratio_20d": 1.106,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "267250"
       },
@@ -11764,7 +11864,7 @@
         "price": 1900.0,
         "return_20d": -0.025641,
         "volume_ratio_20d": 2.568,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "038540"
       },
@@ -11862,7 +11962,7 @@
         "price": 74900.0,
         "return_20d": -0.355422,
         "volume_ratio_20d": 1.71,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "066970"
       },
@@ -12052,7 +12152,7 @@
         "price": 37750.0,
         "return_20d": -0.11902,
         "volume_ratio_20d": 1.394,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "347850"
       },
@@ -12150,7 +12250,7 @@
         "price": 29400.0,
         "return_20d": -0.042345,
         "volume_ratio_20d": 0.991,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "003490"
       },
@@ -12262,7 +12362,7 @@
         "price": 29750.0,
         "return_20d": -0.073209,
         "volume_ratio_20d": 2.449,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "006360"
       },
@@ -12361,7 +12461,7 @@
         "price": 960000.0,
         "return_20d": -0.070668,
         "volume_ratio_20d": 2.069,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "010130"
       },
@@ -12459,7 +12559,7 @@
         "price": 3660.0,
         "return_20d": -0.287938,
         "volume_ratio_20d": 1.541,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "0011T0"
       },
@@ -12558,7 +12658,7 @@
         "price": 161800.0,
         "return_20d": -0.162092,
         "volume_ratio_20d": 1.165,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "003670"
       },
@@ -12656,7 +12756,7 @@
         "price": 3900.0,
         "return_20d": -0.247104,
         "volume_ratio_20d": 1.127,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "088350"
       },
@@ -12819,7 +12919,7 @@
         "price": 272000.0,
         "return_20d": -0.245492,
         "volume_ratio_20d": 0.877,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "307950"
       },
@@ -12917,7 +13017,7 @@
         "price": 1577000.0,
         "return_20d": -0.367682,
         "volume_ratio_20d": 2.239,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "298040"
       },
@@ -13016,7 +13116,7 @@
         "price": 20600.0,
         "return_20d": -0.1643,
         "volume_ratio_20d": 0.488,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "003540"
       },
@@ -13114,7 +13214,7 @@
         "price": 31250.0,
         "return_20d": -0.315444,
         "volume_ratio_20d": 1.383,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "028300"
       },
@@ -13213,7 +13313,7 @@
         "price": 209750.0,
         "return_20d": 0.167873,
         "volume_ratio_20d": 0.419,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "068270"
       },
@@ -13312,7 +13412,7 @@
         "price": 119900.0,
         "return_20d": 0.150672,
         "volume_ratio_20d": 0.241,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "271560"
       },
@@ -13411,7 +13511,7 @@
         "price": 12340.0,
         "return_20d": 0.319786,
         "volume_ratio_20d": 0.88,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "293490"
       },
@@ -13522,7 +13622,7 @@
         "price": 38100.0,
         "return_20d": -0.223242,
         "volume_ratio_20d": 0.759,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "489790"
       },
@@ -13621,7 +13721,7 @@
         "price": 464500.0,
         "return_20d": -0.183656,
         "volume_ratio_20d": 0.305,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "006400"
       },
@@ -13719,7 +13819,7 @@
         "price": 16760.0,
         "return_20d": 0.163889,
         "volume_ratio_20d": 3.132,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "032640"
       },
@@ -13817,7 +13917,7 @@
         "price": 24650.0,
         "return_20d": -0.227273,
         "volume_ratio_20d": 0.693,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "060370"
       },
@@ -13915,7 +14015,7 @@
         "price": 34450.0,
         "return_20d": -0.205306,
         "volume_ratio_20d": 2.409,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "001120"
       },
@@ -14013,7 +14113,7 @@
         "price": 81400.0,
         "return_20d": -0.260672,
         "volume_ratio_20d": 0.984,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "000880"
       },
@@ -14109,7 +14209,7 @@
         "price": 960000.0,
         "return_20d": -0.070668,
         "volume_ratio_20d": 2.069,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "010130"
       },
@@ -14299,7 +14399,7 @@
         "price": 337500.0,
         "return_20d": -0.158354,
         "volume_ratio_20d": 0.864,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "373220"
       },
@@ -14410,7 +14510,7 @@
         "price": 103200.0,
         "return_20d": -0.048848,
         "volume_ratio_20d": 0.943,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "069620"
       },
@@ -14508,7 +14608,7 @@
         "price": 209750.0,
         "return_20d": 0.167873,
         "volume_ratio_20d": 0.419,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "068270"
       },
@@ -14698,7 +14798,7 @@
         "price": 3850.0,
         "return_20d": -0.094118,
         "volume_ratio_20d": 1.585,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "226400"
       },
@@ -14810,7 +14910,7 @@
         "price": 12340.0,
         "return_20d": 0.319786,
         "volume_ratio_20d": 0.88,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "293490"
       },
@@ -14908,7 +15008,7 @@
         "price": 63000.0,
         "return_20d": -0.16,
         "volume_ratio_20d": 0.513,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "171090"
       },
@@ -15007,7 +15107,7 @@
         "price": 12340.0,
         "return_20d": 0.319786,
         "volume_ratio_20d": 0.88,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "293490"
       },
@@ -15105,7 +15205,7 @@
         "price": 34450.0,
         "return_20d": -0.205306,
         "volume_ratio_20d": 2.409,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "001120"
       },
@@ -15203,7 +15303,7 @@
         "price": 6250.0,
         "return_20d": -0.096821,
         "volume_ratio_20d": 1.117,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "009290"
       },
@@ -15301,7 +15401,7 @@
         "price": 6250.0,
         "return_20d": -0.096821,
         "volume_ratio_20d": 1.117,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "009290"
       },
@@ -15412,7 +15512,7 @@
         "price": 103200.0,
         "return_20d": -0.048848,
         "volume_ratio_20d": 0.943,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "069620"
       },
@@ -15510,7 +15610,7 @@
         "price": 103200.0,
         "return_20d": -0.048848,
         "volume_ratio_20d": 0.943,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "069620"
       },
@@ -15608,7 +15708,7 @@
         "price": 16880.0,
         "return_20d": -0.399288,
         "volume_ratio_20d": 1.367,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "001440"
       },
@@ -15706,7 +15806,7 @@
         "price": 77700.0,
         "return_20d": -0.0761,
         "volume_ratio_20d": 2.377,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "017670"
       },
@@ -15804,7 +15904,7 @@
         "price": 124100.0,
         "return_20d": -0.308635,
         "volume_ratio_20d": 1.106,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "267250"
       },
@@ -15915,7 +16015,7 @@
         "price": 188700.0,
         "return_20d": -0.279771,
         "volume_ratio_20d": 1.842,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "005930"
       },
@@ -16013,7 +16113,7 @@
         "price": 83100.0,
         "return_20d": -0.354814,
         "volume_ratio_20d": 1.374,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "247540"
       },
@@ -16111,7 +16211,7 @@
         "price": 83100.0,
         "return_20d": -0.354814,
         "volume_ratio_20d": 1.374,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "247540"
       },
@@ -16209,7 +16309,7 @@
         "price": 11380.0,
         "return_20d": -0.124615,
         "volume_ratio_20d": 0.06,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "456570"
       },
@@ -16307,7 +16407,7 @@
         "price": 1220000.0,
         "return_20d": 0.040956,
         "volume_ratio_20d": 1.545,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "003230"
       },
@@ -16497,7 +16597,7 @@
         "price": 133700.0,
         "return_20d": -0.333167,
         "volume_ratio_20d": 0.197,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "066570"
       },
@@ -16608,7 +16708,7 @@
         "price": 232000.0,
         "return_20d": -0.190227,
         "volume_ratio_20d": 0.892,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "051910"
       },
@@ -16706,7 +16806,7 @@
         "price": 168800.0,
         "return_20d": -0.368972,
         "volume_ratio_20d": 0.195,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "006260"
       },
@@ -16804,7 +16904,7 @@
         "price": 36750.0,
         "return_20d": 0.0,
         "volume_ratio_20d": 0.284,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "302440"
       },
@@ -16916,7 +17016,7 @@
         "price": 960000.0,
         "return_20d": -0.070668,
         "volume_ratio_20d": 2.069,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "010130"
       },
@@ -17014,7 +17114,7 @@
         "price": 103200.0,
         "return_20d": -0.048848,
         "volume_ratio_20d": 0.943,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "069620"
       },
@@ -17217,7 +17317,7 @@
         "price": 822000.0,
         "return_20d": -0.468305,
         "volume_ratio_20d": 0.572,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "009150"
       },
@@ -17316,7 +17416,7 @@
         "price": 83100.0,
         "return_20d": -0.354814,
         "volume_ratio_20d": 1.374,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "247540"
       },
@@ -17414,7 +17514,7 @@
         "price": 32300.0,
         "return_20d": 0.0,
         "volume_ratio_20d": 2.587,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "035720"
       },
@@ -17539,7 +17639,7 @@
         "price": 44700.0,
         "return_20d": -0.426923,
         "volume_ratio_20d": 1.67,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "034020"
       },
@@ -17637,7 +17737,7 @@
         "price": 25200.0,
         "return_20d": -0.386114,
         "volume_ratio_20d": 0.155,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "082740"
       },
@@ -17748,7 +17848,7 @@
         "price": 30950.0,
         "return_20d": -0.439312,
         "volume_ratio_20d": 0.139,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "020150"
       },
@@ -17951,7 +18051,7 @@
         "price": 119900.0,
         "return_20d": 0.150672,
         "volume_ratio_20d": 0.241,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "271560"
       },
@@ -18141,7 +18241,7 @@
         "price": 15310.0,
         "return_20d": -0.280213,
         "volume_ratio_20d": 1.081,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "115180"
       },
@@ -18239,7 +18339,7 @@
         "price": 46450.0,
         "return_20d": 0.046171,
         "volume_ratio_20d": 0.705,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "468530"
       },
@@ -18351,7 +18451,7 @@
         "price": 44750.0,
         "return_20d": 0.237898,
         "volume_ratio_20d": 0.341,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "035760"
       },
@@ -18449,7 +18549,7 @@
         "price": 29750.0,
         "return_20d": -0.073209,
         "volume_ratio_20d": 2.449,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "006360"
       },
@@ -18547,7 +18647,7 @@
         "price": 16880.0,
         "return_20d": -0.399288,
         "volume_ratio_20d": 1.367,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "001440"
       },
@@ -18659,7 +18759,7 @@
         "price": 188700.0,
         "return_20d": -0.279771,
         "volume_ratio_20d": 1.842,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "005930"
       },
@@ -18757,7 +18857,7 @@
         "price": 33750.0,
         "return_20d": -0.034335,
         "volume_ratio_20d": 0.952,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "170900"
       },
@@ -18855,7 +18955,7 @@
         "price": 46600.0,
         "return_20d": -0.218121,
         "volume_ratio_20d": 1.412,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "011170"
       },
@@ -18953,7 +19053,7 @@
         "price": 46600.0,
         "return_20d": -0.218121,
         "volume_ratio_20d": 1.412,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "011170"
       },
@@ -19064,7 +19164,7 @@
         "price": 46600.0,
         "return_20d": -0.218121,
         "volume_ratio_20d": 1.412,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "011170"
       },
@@ -19163,7 +19263,7 @@
         "price": 21800.0,
         "return_20d": -0.120968,
         "volume_ratio_20d": 0.316,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "005940"
       },
@@ -19287,7 +19387,7 @@
         "price": 188700.0,
         "return_20d": -0.279771,
         "volume_ratio_20d": 1.842,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "005930"
       },
@@ -19412,7 +19512,7 @@
         "price": 46450.0,
         "return_20d": 0.046171,
         "volume_ratio_20d": 0.705,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "468530"
       },
@@ -19536,7 +19636,7 @@
         "price": 89700.0,
         "return_20d": -0.082822,
         "volume_ratio_20d": 0.561,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "023530"
       },
@@ -19699,7 +19799,7 @@
         "price": 10170.0,
         "return_20d": -0.389922,
         "volume_ratio_20d": 0.267,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "047040"
       },
@@ -19810,7 +19910,7 @@
         "price": 29400.0,
         "return_20d": -0.042345,
         "volume_ratio_20d": 0.991,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "003490"
       },
@@ -20013,7 +20113,7 @@
         "price": 46600.0,
         "return_20d": -0.218121,
         "volume_ratio_20d": 1.412,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "011170"
       },
@@ -20111,7 +20211,7 @@
         "price": 13650.0,
         "return_20d": -0.221779,
         "volume_ratio_20d": 1.211,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "405100"
       },
@@ -20235,7 +20335,7 @@
         "price": 106200.0,
         "return_20d": -0.37048,
         "volume_ratio_20d": 0.92,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "010950"
       },
@@ -20333,7 +20433,7 @@
         "price": 16100.0,
         "return_20d": -0.082621,
         "volume_ratio_20d": 1.296,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "286940"
       },
@@ -20431,7 +20531,7 @@
         "price": 32300.0,
         "return_20d": 0.0,
         "volume_ratio_20d": 2.587,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "035720"
       },
@@ -20529,7 +20629,7 @@
         "price": 29750.0,
         "return_20d": -0.073209,
         "volume_ratio_20d": 2.449,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "006360"
       },
@@ -20909,7 +21009,7 @@
         "price": 209750.0,
         "return_20d": 0.167873,
         "volume_ratio_20d": 0.419,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "068270"
       },
@@ -21100,7 +21200,7 @@
         "price": 30400.0,
         "return_20d": 0.044674,
         "volume_ratio_20d": 1.471,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "015760"
       },
@@ -21198,7 +21298,7 @@
         "price": 32300.0,
         "return_20d": 0.0,
         "volume_ratio_20d": 2.587,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "035720"
       },
@@ -21322,7 +21422,7 @@
         "price": 32300.0,
         "return_20d": 0.0,
         "volume_ratio_20d": 2.587,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "035720"
       },
@@ -21420,7 +21520,7 @@
         "price": 6760.0,
         "return_20d": -0.200946,
         "volume_ratio_20d": 1.691,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "358570"
       },
@@ -21583,7 +21683,7 @@
         "price": 2367.2368,
         "return_20d": 0.0,
         "volume_ratio_20d": null,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "041590"
       },
@@ -21733,7 +21833,7 @@
         "price": 272000.0,
         "return_20d": -0.245492,
         "volume_ratio_20d": 0.877,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "307950"
       },
@@ -21829,7 +21929,7 @@
         "price": 960000.0,
         "return_20d": -0.070668,
         "volume_ratio_20d": 2.069,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "010130"
       },
@@ -21938,7 +22038,7 @@
         "price": 29400.0,
         "return_20d": -0.042345,
         "volume_ratio_20d": 0.991,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "003490"
       },
@@ -22049,7 +22149,7 @@
         "price": 6000.0,
         "return_20d": 0.034483,
         "volume_ratio_20d": 1.014,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "272450"
       },
@@ -22147,7 +22247,7 @@
         "price": 4590.0,
         "return_20d": -0.046729,
         "volume_ratio_20d": 0.459,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "039340"
       },
@@ -22297,7 +22397,7 @@
         "price": 78100.0,
         "return_20d": -0.27551,
         "volume_ratio_20d": 1.39,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "000720"
       },
@@ -22448,7 +22548,7 @@
         "price": 191800.0,
         "return_20d": 0.471988,
         "volume_ratio_20d": 1.516,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "180640"
       },
@@ -22546,7 +22646,7 @@
         "price": 29400.0,
         "return_20d": -0.042345,
         "volume_ratio_20d": 0.991,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "003490"
       },
@@ -22643,7 +22743,7 @@
         "price": 191800.0,
         "return_20d": 0.471988,
         "volume_ratio_20d": 1.516,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "180640"
       },
@@ -22871,7 +22971,7 @@
         "price": 44700.0,
         "return_20d": -0.426923,
         "volume_ratio_20d": 1.67,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "034020"
       },
@@ -22969,7 +23069,7 @@
         "price": 5670.0,
         "return_20d": -0.003515,
         "volume_ratio_20d": 0.193,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "001070"
       },
@@ -23068,7 +23168,7 @@
         "price": 349000.0,
         "return_20d": -0.027855,
         "volume_ratio_20d": 0.952,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "012330"
       },
@@ -23206,7 +23306,7 @@
         "price": 29400.0,
         "return_20d": -0.042345,
         "volume_ratio_20d": 0.991,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "003490"
       },
@@ -23442,7 +23542,7 @@
         "price": 191800.0,
         "return_20d": 0.471988,
         "volume_ratio_20d": 1.516,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "180640"
       },
@@ -23540,7 +23640,7 @@
         "price": 6000.0,
         "return_20d": 0.034483,
         "volume_ratio_20d": 1.014,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "272450"
       },
@@ -23651,7 +23751,7 @@
         "price": 6000.0,
         "return_20d": 0.034483,
         "volume_ratio_20d": 1.014,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "272450"
       },
@@ -23802,7 +23902,7 @@
         "price": 191800.0,
         "return_20d": 0.471988,
         "volume_ratio_20d": 1.516,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "180640"
       },
@@ -23926,7 +24026,7 @@
         "price": 16040.0,
         "return_20d": -0.057025,
         "volume_ratio_20d": 0.326,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "002320"
       },
@@ -24025,7 +24125,7 @@
         "price": 3800.0,
         "return_20d": -0.062885,
         "volume_ratio_20d": 1.52,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "003000"
       },
@@ -24121,7 +24221,7 @@
         "price": 990.0,
         "return_20d": 0.0,
         "volume_ratio_20d": null,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "183490"
       },
@@ -24259,7 +24359,7 @@
         "price": 44700.0,
         "return_20d": -0.426923,
         "volume_ratio_20d": 1.67,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "034020"
       },
@@ -24357,7 +24457,7 @@
         "price": 31250.0,
         "return_20d": -0.315444,
         "volume_ratio_20d": 1.383,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "028300"
       },
@@ -24469,7 +24569,7 @@
         "price": 31250.0,
         "return_20d": -0.315444,
         "volume_ratio_20d": 1.383,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "028300"
       },
@@ -24567,7 +24667,7 @@
         "price": 7930.0,
         "return_20d": -0.288151,
         "volume_ratio_20d": 0.307,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "002990"
       },
@@ -24705,7 +24805,7 @@
         "price": 78100.0,
         "return_20d": -0.27551,
         "volume_ratio_20d": 1.39,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "000720"
       },
@@ -24842,7 +24942,7 @@
         "price": 44700.0,
         "return_20d": -0.426923,
         "volume_ratio_20d": 1.67,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "034020"
       },
@@ -25032,7 +25132,7 @@
         "price": 31250.0,
         "return_20d": -0.315444,
         "volume_ratio_20d": 1.383,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "028300"
       },
@@ -25130,7 +25230,7 @@
         "price": 31250.0,
         "return_20d": -0.315444,
         "volume_ratio_20d": 1.383,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "028300"
       },
@@ -25339,7 +25439,7 @@
         "price": 654.0,
         "return_20d": -0.745525,
         "volume_ratio_20d": 0.053,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "099520"
       },
@@ -25437,7 +25537,7 @@
         "price": 103200.0,
         "return_20d": -0.048848,
         "volume_ratio_20d": 0.943,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "069620"
       },
@@ -25763,7 +25863,7 @@
         "price": 10170.0,
         "return_20d": -0.389922,
         "volume_ratio_20d": 0.267,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "047040"
       },
@@ -25861,7 +25961,7 @@
         "price": 16880.0,
         "return_20d": -0.399288,
         "volume_ratio_20d": 1.367,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "001440"
       },
@@ -25972,7 +26072,7 @@
         "price": 10170.0,
         "return_20d": -0.389922,
         "volume_ratio_20d": 0.267,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "047040"
       },
@@ -26097,7 +26197,7 @@
         "price": 44700.0,
         "return_20d": -0.426923,
         "volume_ratio_20d": 1.67,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "034020"
       },
@@ -26195,7 +26295,7 @@
         "price": 4900.0,
         "return_20d": -0.382872,
         "volume_ratio_20d": 0.594,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "293780"
       },
@@ -26581,7 +26681,7 @@
         "price": 47350.0,
         "return_20d": -0.342361,
         "volume_ratio_20d": 0.53,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "042660"
       },
@@ -26680,7 +26780,7 @@
         "price": 124100.0,
         "return_20d": -0.308635,
         "volume_ratio_20d": 1.106,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "267250"
       },
@@ -26890,7 +26990,7 @@
         "price": 5950.0,
         "return_20d": -0.232258,
         "volume_ratio_20d": 0.17,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "014950"
       },
@@ -27086,7 +27186,7 @@
         "price": 74900.0,
         "return_20d": -0.355422,
         "volume_ratio_20d": 1.71,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "066970"
       },
@@ -27197,7 +27297,7 @@
         "price": 337500.0,
         "return_20d": -0.158354,
         "volume_ratio_20d": 0.864,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "373220"
       },
@@ -27479,7 +27579,7 @@
         "price": 2040.0,
         "return_20d": -0.028571,
         "volume_ratio_20d": 1.136,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "035890"
       },
@@ -27682,7 +27782,7 @@
         "price": 188700.0,
         "return_20d": -0.279771,
         "volume_ratio_20d": 1.842,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "005930"
       },
@@ -27793,7 +27893,7 @@
         "price": 1132000.0,
         "return_20d": -0.326591,
         "volume_ratio_20d": 2.062,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "000660"
       },
@@ -27892,7 +27992,7 @@
         "price": 1132000.0,
         "return_20d": -0.326591,
         "volume_ratio_20d": 2.062,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "000660"
       },
@@ -28083,7 +28183,7 @@
         "price": 21800.0,
         "return_20d": -0.120968,
         "volume_ratio_20d": 0.316,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "005940"
       },
@@ -28194,7 +28294,7 @@
         "price": 188700.0,
         "return_20d": -0.279771,
         "volume_ratio_20d": 1.842,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "005930"
       },
@@ -28293,7 +28393,7 @@
         "price": 8880.0,
         "return_20d": -0.460182,
         "volume_ratio_20d": 0.6,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "417200"
       },
@@ -28391,7 +28491,7 @@
         "price": 617000.0,
         "return_20d": -0.540238,
         "volume_ratio_20d": 0.342,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "000150"
       },
@@ -28408,6 +28508,104 @@
     "status": "EXPECTED",
     "source_name": "NEWS_FUTURE",
     "source_url": "http://www.popcornnews.net/news/articleView.html?idxno=138991"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_edf2bf6da9e50ef5339524d4c3ec86a4d55d07a4",
+    "d_day": 602,
+    "d_day_far_future": true,
+    "country": "KR",
+    "ticker": "000150",
+    "primary_ticker": "000150",
+    "anchor_status": "anchored_from_relation",
+    "related_securities": [
+      {
+        "ticker": "000150",
+        "company_name": "두산",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 두산",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "http://www.thefirstmedia.net/news/articleView.html?idxno=212947",
+        "relation_known_date": "2026-11-07",
+        "ingest_mode": "AUTO",
+        "from_entity": "두산"
+      }
+    ],
+    "company": "두산",
+    "event_type": "CAPEX",
+    "event_name": "두산, 中 창수에 5500억 원 투자협약…CCL 생산라인 증설",
+    "event_date": "2028-07-01",
+    "date_precision": "HALF_YEAR",
+    "window_start": "2028-07-01",
+    "window_end": "2028-12-31",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 46,
+    "insight": {
+      "score": 46,
+      "tier": "WATCH",
+      "label": "일정 관찰",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 12,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 21,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 3,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 617000.0,
+        "return_20d": -0.540238,
+        "volume_ratio_20d": 0.342,
+        "sessions": 67,
+        "source": "Yahoo Finance",
+        "ticker": "000150"
+      },
+      "coverage": {
+        "eligible_events": 1,
+        "priced_events": 1,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": 0
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "http://www.thefirstmedia.net/news/articleView.html?idxno=212947"
   },
   {
     "event_id": "KR_NEWS_FUTURE_95d54cd604934e6789a9e51489e94f4efa218cb8",
@@ -28489,7 +28687,7 @@
         "price": 29750.0,
         "return_20d": -0.073209,
         "volume_ratio_20d": 2.449,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "006360"
       },
@@ -28678,7 +28876,7 @@
         "price": 37750.0,
         "return_20d": -0.11902,
         "volume_ratio_20d": 1.394,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "347850"
       },
@@ -28868,7 +29066,7 @@
         "price": 53000.0,
         "return_20d": -0.255618,
         "volume_ratio_20d": 2.168,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "456040"
       },
@@ -28966,7 +29164,7 @@
         "price": 28150.0,
         "return_20d": -0.001773,
         "volume_ratio_20d": 0.858,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "004020"
       },
@@ -29065,7 +29263,7 @@
         "price": 337500.0,
         "return_20d": -0.158354,
         "volume_ratio_20d": 0.864,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "373220"
       },
@@ -29163,7 +29361,7 @@
         "price": 5950.0,
         "return_20d": -0.232258,
         "volume_ratio_20d": 0.17,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "014950"
       },
@@ -29274,7 +29472,7 @@
         "price": 625000.0,
         "return_20d": -0.298541,
         "volume_ratio_20d": 0.221,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "012450"
       },
@@ -29399,7 +29597,7 @@
         "price": 44700.0,
         "return_20d": -0.426923,
         "volume_ratio_20d": 1.67,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "034020"
       },
@@ -29498,7 +29696,7 @@
         "price": 337500.0,
         "return_20d": -0.158354,
         "volume_ratio_20d": 0.864,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "373220"
       },
@@ -29635,7 +29833,7 @@
         "price": 44700.0,
         "return_20d": -0.426923,
         "volume_ratio_20d": 1.67,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "034020"
       },
@@ -29760,7 +29958,7 @@
         "price": 44700.0,
         "return_20d": -0.426923,
         "volume_ratio_20d": 1.67,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "034020"
       },
@@ -29910,7 +30108,7 @@
         "price": 272000.0,
         "return_20d": -0.245492,
         "volume_ratio_20d": 0.877,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "307950"
       },
@@ -30100,7 +30298,7 @@
         "price": 81400.0,
         "return_20d": -0.260672,
         "volume_ratio_20d": 0.984,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "000880"
       },
@@ -30198,7 +30396,7 @@
         "price": 209750.0,
         "return_20d": 0.167873,
         "volume_ratio_20d": 0.419,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "068270"
       },
@@ -30296,7 +30494,7 @@
         "price": 20100.0,
         "return_20d": 0.032357,
         "volume_ratio_20d": 0.219,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "323410"
       },
@@ -30394,7 +30592,7 @@
         "price": 13650.0,
         "return_20d": -0.221779,
         "volume_ratio_20d": 1.211,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "405100"
       },
@@ -30506,7 +30704,7 @@
         "price": 1132000.0,
         "return_20d": -0.326591,
         "volume_ratio_20d": 2.062,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "000660"
       },
@@ -30604,7 +30802,7 @@
         "price": 209750.0,
         "return_20d": 0.167873,
         "volume_ratio_20d": 0.419,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "068270"
       },
@@ -30702,7 +30900,7 @@
         "price": 232000.0,
         "return_20d": -0.190227,
         "volume_ratio_20d": 0.892,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "051910"
       },
@@ -30801,7 +30999,7 @@
         "price": 188700.0,
         "return_20d": -0.279771,
         "volume_ratio_20d": 1.842,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "005930"
       },
@@ -30926,7 +31124,7 @@
         "price": 44700.0,
         "return_20d": -0.426923,
         "volume_ratio_20d": 1.67,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "034020"
       },
@@ -31034,6 +31232,734 @@
     "status": "CONFIRMED",
     "source_name": "DART",
     "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000213"
+  },
+  {
+    "event_id": "US_SEC_0000936340-26-000172",
+    "d_day": -1,
+    "d_day_far_future": false,
+    "country": "US",
+    "ticker": "DTE",
+    "primary_ticker": "DTE",
+    "anchor_status": "primary",
+    "related_securities": [
+      {
+        "ticker": "DTE",
+        "company_name": "",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "SEC",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/936340/000093634026000172/dte-20261106.htm",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "DTE ENERGY CO"
+      }
+    ],
+    "company": "DTE ENERGY CO",
+    "event_type": "EARNINGS",
+    "event_name": "DTE ENERGY CO 8-K",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 0,
+    "insight": {
+      "score": 0,
+      "tier": "PAST",
+      "label": "지난 일정",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 30,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 25,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 0,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 10,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "공식 일정 · 날짜 확정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본",
+        "최근 가격·거래량"
+      ],
+      "history_confidence": "NONE",
+      "market": null,
+      "coverage": {
+        "eligible_events": 38,
+        "priced_events": 21,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 17,
+        "completion_percent": 0
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "CONFIRMED",
+    "source_name": "SEC",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/936340/000093634026000172/dte-20261106.htm"
+  },
+  {
+    "event_id": "US_SEC_0001692819-26-000023",
+    "d_day": -1,
+    "d_day_far_future": false,
+    "country": "US",
+    "ticker": "VST",
+    "primary_ticker": "VST",
+    "anchor_status": "primary",
+    "related_securities": [
+      {
+        "ticker": "VST",
+        "company_name": "",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "SEC",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1692819/000169281926000023/vistra-20261106.htm",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "Vistra Corp."
+      }
+    ],
+    "company": "Vistra Corp.",
+    "event_type": "EARNINGS",
+    "event_name": "Vistra Corp. 8-K",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 0,
+    "insight": {
+      "score": 0,
+      "tier": "PAST",
+      "label": "지난 일정",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 30,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 25,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 0,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 10,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "공식 일정 · 날짜 확정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본",
+        "최근 가격·거래량"
+      ],
+      "history_confidence": "NONE",
+      "market": null,
+      "coverage": {
+        "eligible_events": 38,
+        "priced_events": 21,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 17,
+        "completion_percent": 0
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "CONFIRMED",
+    "source_name": "SEC",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1692819/000169281926000023/vistra-20261106.htm"
+  },
+  {
+    "event_id": "US_SEC_0001091667-26-000072",
+    "d_day": -1,
+    "d_day_far_future": false,
+    "country": "US",
+    "ticker": "CHTR",
+    "primary_ticker": "CHTR",
+    "anchor_status": "primary",
+    "related_securities": [
+      {
+        "ticker": "CHTR",
+        "company_name": "",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "SEC",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1091667/000109166726000072/chtr-20261106.htm",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "CHARTER COMMUNICATIONS, INC. /MO/"
+      }
+    ],
+    "company": "CHARTER COMMUNICATIONS, INC. /MO/",
+    "event_type": "EARNINGS",
+    "event_name": "CHARTER COMMUNICATIONS, INC. /MO/ 8-K",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 0,
+    "insight": {
+      "score": 0,
+      "tier": "PAST",
+      "label": "지난 일정",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 30,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 25,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 0,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 10,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "공식 일정 · 날짜 확정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본",
+        "최근 가격·거래량"
+      ],
+      "history_confidence": "NONE",
+      "market": null,
+      "coverage": {
+        "eligible_events": 38,
+        "priced_events": 21,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 17,
+        "completion_percent": 0
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "CONFIRMED",
+    "source_name": "SEC",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1091667/000109166726000072/chtr-20261106.htm"
+  },
+  {
+    "event_id": "US_SEC_0000038777-26-000287",
+    "d_day": -1,
+    "d_day_far_future": false,
+    "country": "US",
+    "ticker": "BEN",
+    "primary_ticker": "BEN",
+    "anchor_status": "primary",
+    "related_securities": [
+      {
+        "ticker": "BEN",
+        "company_name": "",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "SEC",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/38777/000003877726000287/ben-20261106.htm",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "FRANKLIN TEMPLETON INC"
+      }
+    ],
+    "company": "FRANKLIN TEMPLETON INC",
+    "event_type": "EARNINGS",
+    "event_name": "FRANKLIN TEMPLETON INC 8-K",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 0,
+    "insight": {
+      "score": 0,
+      "tier": "PAST",
+      "label": "지난 일정",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 30,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 25,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 0,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 10,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "공식 일정 · 날짜 확정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본",
+        "최근 가격·거래량"
+      ],
+      "history_confidence": "NONE",
+      "market": null,
+      "coverage": {
+        "eligible_events": 38,
+        "priced_events": 21,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 17,
+        "completion_percent": 0
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "CONFIRMED",
+    "source_name": "SEC",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/38777/000003877726000287/ben-20261106.htm"
+  },
+  {
+    "event_id": "US_SEC_0000049071-26-000064",
+    "d_day": -1,
+    "d_day_far_future": false,
+    "country": "US",
+    "ticker": "HUM",
+    "primary_ticker": "HUM",
+    "anchor_status": "primary",
+    "related_securities": [
+      {
+        "ticker": "HUM",
+        "company_name": "",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "SEC",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/49071/000004907126000064/hum-20261106.htm",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "HUMANA INC"
+      }
+    ],
+    "company": "HUMANA INC",
+    "event_type": "EARNINGS",
+    "event_name": "HUMANA INC 8-K",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 0,
+    "insight": {
+      "score": 0,
+      "tier": "PAST",
+      "label": "지난 일정",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 30,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 25,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 0,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 10,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "공식 일정 · 날짜 확정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본",
+        "최근 가격·거래량"
+      ],
+      "history_confidence": "NONE",
+      "market": null,
+      "coverage": {
+        "eligible_events": 38,
+        "priced_events": 21,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 17,
+        "completion_percent": 0
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "CONFIRMED",
+    "source_name": "SEC",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/49071/000004907126000064/hum-20261106.htm"
+  },
+  {
+    "event_id": "US_SEC_0001682852-26-000194",
+    "d_day": -1,
+    "d_day_far_future": false,
+    "country": "US",
+    "ticker": "MRNA",
+    "primary_ticker": "MRNA",
+    "anchor_status": "primary",
+    "related_securities": [
+      {
+        "ticker": "MRNA",
+        "company_name": "",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "SEC",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1682852/000168285226000194/mrna-20261106.htm",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "Moderna, Inc."
+      }
+    ],
+    "company": "Moderna, Inc.",
+    "event_type": "EARNINGS",
+    "event_name": "Moderna, Inc. 8-K",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 0,
+    "insight": {
+      "score": 0,
+      "tier": "PAST",
+      "label": "지난 일정",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 30,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 25,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 0,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 10,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "공식 일정 · 날짜 확정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본",
+        "최근 가격·거래량"
+      ],
+      "history_confidence": "NONE",
+      "market": null,
+      "coverage": {
+        "eligible_events": 38,
+        "priced_events": 21,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 17,
+        "completion_percent": 0
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "CONFIRMED",
+    "source_name": "SEC",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1682852/000168285226000194/mrna-20261106.htm"
+  },
+  {
+    "event_id": "US_SEC_0000922224-26-000050",
+    "d_day": -1,
+    "d_day_far_future": false,
+    "country": "US",
+    "ticker": "PPL",
+    "primary_ticker": "PPL",
+    "anchor_status": "primary",
+    "related_securities": [
+      {
+        "ticker": "PPL",
+        "company_name": "",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "SEC",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/922224/000092222426000050/ppl-20261106.htm",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "PPL Corp"
+      }
+    ],
+    "company": "PPL Corp",
+    "event_type": "EARNINGS",
+    "event_name": "PPL Corp 8-K",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 0,
+    "insight": {
+      "score": 0,
+      "tier": "PAST",
+      "label": "지난 일정",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 30,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 25,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 0,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 10,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "공식 일정 · 날짜 확정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본",
+        "최근 가격·거래량"
+      ],
+      "history_confidence": "NONE",
+      "market": null,
+      "coverage": {
+        "eligible_events": 38,
+        "priced_events": 21,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 17,
+        "completion_percent": 0
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "CONFIRMED",
+    "source_name": "SEC",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/922224/000092222426000050/ppl-20261106.htm"
+  },
+  {
+    "event_id": "US_SEC_0001393052-26-000039",
+    "d_day": -1,
+    "d_day_far_future": false,
+    "country": "US",
+    "ticker": "VEEV",
+    "primary_ticker": "VEEV",
+    "anchor_status": "primary",
+    "related_securities": [
+      {
+        "ticker": "VEEV",
+        "company_name": "",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "SEC",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1393052/000139305226000039/veev-20261105.htm",
+        "relation_known_date": "2026-11-06",
+        "ingest_mode": "AUTO",
+        "from_entity": "VEEVA SYSTEMS INC"
+      }
+    ],
+    "company": "VEEVA SYSTEMS INC",
+    "event_type": "EARNINGS",
+    "event_name": "VEEVA SYSTEMS INC 8-K",
+    "event_date": "2026-11-06",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-06",
+    "window_end": "2026-11-06",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 0,
+    "insight": {
+      "score": 0,
+      "tier": "PAST",
+      "label": "지난 일정",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 30,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 25,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 0,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 10,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "공식 일정 · 날짜 확정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본",
+        "최근 가격·거래량"
+      ],
+      "history_confidence": "NONE",
+      "market": null,
+      "coverage": {
+        "eligible_events": 38,
+        "priced_events": 21,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 17,
+        "completion_percent": 0
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "CONFIRMED",
+    "source_name": "SEC",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1393052/000139305226000039/veev-20261105.htm"
   },
   {
     "event_id": "KR_DART_20261105000001",
@@ -35067,7 +35993,7 @@
         "price": 21800.0,
         "return_20d": -0.120968,
         "volume_ratio_20d": 0.316,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "005940"
       },
@@ -35269,7 +36195,7 @@
         "price": 46450.0,
         "return_20d": 0.046171,
         "volume_ratio_20d": 0.705,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "468530"
       },
@@ -35446,7 +36372,7 @@
         "price": 191800.0,
         "return_20d": 0.471988,
         "volume_ratio_20d": 1.516,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "180640"
       },
@@ -35485,6 +36411,19 @@
         "relation_known_date": "2026-10-31",
         "ingest_mode": "AUTO",
         "from_entity": "영광"
+      },
+      {
+        "ticker": "128940",
+        "company_name": "한미약품",
+        "relation_grade": "B",
+        "relation_score": 64,
+        "relation_type": "IPO_BUSINESS_RELATION",
+        "evidence_text": "한미약품: 조관구 지씨씨엘 대표는 \"한미약품이 국내 기술력으로 이뤄낸 비만 신약 개발이라는 뜻깊은 성과에 임상시험 분석 파트너로 함께할 수 있어 영광 스럽다\"며 \"전문 분석 역량과 품질관리 시스템을 바탕으로 국내 제약 | http://www.thefirstmedia.net/news/articleView.html?idxno=212952",
+        "evidence_source": "",
+        "source_url": "",
+        "relation_known_date": "",
+        "ingest_mode": "AUTO",
+        "from_entity": ""
       }
     ],
     "company": "영광",
@@ -35521,7 +36460,7 @@
         },
         "market": {
           "label": "현재 가격 관측",
-          "points": 0,
+          "points": 10,
           "max": 10
         },
         "timing": {
@@ -35532,15 +36471,22 @@
       },
       "reasons": [
         "공식 일정 · 날짜 확정",
-        "직접 1개 · 경제관계 0개",
+        "직접 1개 · 경제관계 1개",
         "D+5 완료 사건 0건"
       ],
       "missing": [
-        "충분한 과거 사건 표본",
-        "최근 가격·거래량"
+        "충분한 과거 사건 표본"
       ],
       "history_confidence": "NONE",
-      "market": null,
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 480000.0,
+        "return_20d": -0.001041,
+        "volume_ratio_20d": 0.728,
+        "sessions": 67,
+        "source": "Yahoo Finance",
+        "ticker": "128940"
+      },
       "coverage": {
         "eligible_events": 5,
         "priced_events": 0,
@@ -35929,7 +36875,7 @@
         "price": 21800.0,
         "return_20d": -0.120968,
         "volume_ratio_20d": 0.316,
-        "sessions": 68,
+        "sessions": 67,
         "source": "Yahoo Finance",
         "ticker": "005940"
       },

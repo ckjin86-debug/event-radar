@@ -4,7 +4,7 @@ KR_KIND_IPO_7a94ec521b66d5a584d72ad5cf9304a8fca23281,439270,A,100,DIRECT_MENTION
 KR_KIND_IPO_81bfec927fc30451d4700230ccffeb3194e205e4,126340,B,76,IPO_INVESTOR,"비나텍: 한국투자증권은 전력과 용수 사용을 둘러싼 규제가 확대되는 가운데 블룸에너지의 연료전지 수요 증가에 따라 비나텍, 티앤이코리아 등 국내 기업의 수혜를 예상했다 | https://theviewers.co.kr/View.aspx?No=4298426"
 KR_KIND_IPO_22b1edbb2ea1b2abd5cabf9e7c2316a8b6b2f247,005940,B,76,IPO_INVESTOR,"NH투자증권: 한화투자증권은 올해 페스카로 상장에 NH투자증권과 공동주관사로 참여했고, 한화플러스제6호스팩 의 코스닥 상장을 위한 예비심사를 지난달 청구했다 | https://www.etoday.co.kr/news/view/2535555"
 KR_KIND_IPO_832784cc1f6eb61b3b81a0e156cf38dcfca1b75e,137310,B,76,IPO_INVESTOR,에스디바이오센서: 조영식 에스디바이오센서 회장의 인텔리빅스 투자가 평가이익 구간에 진입했다 | https://www.newstopkorea.com/news/articleView.html?idxno=48683
-KR_KIND_IPO_5a3452ed7550c9d112a70cb1ad2e8756a6e4b71f,359410,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 영광
+KR_KIND_IPO_5a3452ed7550c9d112a70cb1ad2e8756a6e4b71f,128940,B,64,IPO_BUSINESS_RELATION,"한미약품: 조관구 지씨씨엘 대표는 ""한미약품이 국내 기술력으로 이뤄낸 비만 신약 개발이라는 뜻깊은 성과에 임상시험 분석 파트너로 함께할 수 있어 영광 스럽다""며 ""전문 분석 역량과 품질관리 시스템을 바탕으로 국내 제약 | http://www.thefirstmedia.net/news/articleView.html?idxno=212952"
 KR_KIND_IPO_c36644468a48de410093c57ca68cf92dc10cdd85,008830,B,68,IPO_AFFILIATE,"대동기어: 최근 상장한 엠에스바이오와 래블업 , 같은 그룹 계열사인 대동금속·대동기어 등에도 거래가 | http://www.kjdaily.com/article.php?aid=1793939051691481276"
 KR_KIND_IPO_561e48a87092e0fc9bbbb7ded749dfef7c92f18b,037620,B,76,IPO_INVESTOR,미래에셋증권: NH투자증권 아이엠스팩1호 : 10월 26일 ~ 27일 @ 아이엠증권 에이엘로봇 : 10월 26일 ~ 27일 @대신증권 엠비디: 10월 28일 ~ 29일 @하나증권 바로팜 : 11월 2일 ~ 3일 @ 미래에셋증권 하나에어로다이내믹스 : 11월 10일 | http://www.economytalk.kr/news/articleView.html?idxno=424324
 KR_KIND_IPO_6c60d4cd8f1e8f43bb8d389d838e1d66c0f4f357,0147B0,B,76,IPO_INVESTOR,래블업: 1일 금융투자업계에 따르면 오는 2일부터 6일까지 △영광 △래블업 △ 이에스티 3곳이 코스닥시장에 | https://www.mt.co.kr/stock/2026/11/01/2026103016051370804
@@ -437,3 +437,4 @@ KR_NEWS_FUTURE_0f391c666e74e93d9372bdd85b2912edc76e8610,039200,A,100,DIRECT_MENT
 KR_NEWS_FUTURE_f53100406e361cab15f26e87df8ef73afca0d29c,405100,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 큐알티
 KR_NEWS_FUTURE_f5bde8295a79a826f28f6c418528bcb39e62b53c,405100,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 큐알티
 KR_NEWS_FUTURE_fd95b3d3fa0143e3c1a28cf84b31f29f31d4311b,286940,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 롯데이노베이트
+KR_NEWS_FUTURE_edf2bf6da9e50ef5339524d4c3ec86a4d55d07a4,000150,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 두산
