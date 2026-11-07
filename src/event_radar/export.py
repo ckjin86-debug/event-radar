@@ -266,6 +266,22 @@ def _analyze_historical_peers(
     return peer_df, summary, strategies, score
 
 
+def _derive_anchor_status(ev: Event, securities: list[EventSecurity]) -> str:
+    """Explain why an event row does or does not carry a primary stock."""
+    if ev.primary_ticker:
+        return "primary"
+    grades = {row.relation_grade for row in securities if row.ticker}
+    if "A" in grades:
+        return "anchorable_a_row"
+    if "B" in grades:
+        return "b_only"
+    if grades & {"THEME", "PROXY"}:
+        return "theme_proxy_only"
+    if securities:
+        return "unmapped_only"
+    return "no_rows"
+
+
 def export_site_data(
     events: list[Event],
     revisions: list[EventRevision],
@@ -278,6 +294,7 @@ def export_site_data(
     collector_status: dict[str, str] | None = None,
     now: datetime | None = None,
     market_snapshots: dict | None = None,
+    anchor_status: dict[str, str] | None = None,
 ) -> None:
     """Generate public JSON files for static GitHub Pages."""
     if now is None:
@@ -344,9 +361,16 @@ def export_site_data(
         events_list.append({
             "event_id": ev.event_id,
             "d_day": d_day,
+            # d_day is measured to window_start; for imprecise (MONTH/YEAR…)
+            # windows that number is not a countdown to a known day, and a
+            # far-future window must never look like an imminent schedule.
+            "d_day_far_future": d_day > 365,
             "country": ev.country,
             "ticker": _display_ticker(ev, sec_list),
             "primary_ticker": ev.primary_ticker,
+            "anchor_status": (anchor_status or {}).get(
+                ev.event_id, _derive_anchor_status(ev, sec_list)
+            ),
             "related_securities": _serialize_securities(sec_list),
             "company": ev.primary_company,
             "event_type": ev.event_type,

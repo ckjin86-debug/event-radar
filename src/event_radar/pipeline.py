@@ -15,9 +15,10 @@ import pandas as pd
 from event_radar.models import Event, EventRevision, Relation, EventSecurity, RawEvent
 from event_radar.normalize import normalize_event
 from event_radar.dedupe import merge_events
+from event_radar.news_dedupe import merge_duplicate_news_events
 from event_radar.relations import resolve_related_securities, load_relations_csv, save_relations_csv
 from event_radar.theme import load_theme_mappings, merge_event_securities, resolve_theme_securities
-from event_radar.entity_resolver import ListedCompanyRegistry
+from event_radar.entity_resolver import ListedCompanyRegistry, is_market_proxy
 from event_radar.ipo_enrichment import IpoRelationEnricher
 from event_radar.manual.google_sheet import load_manual_rows, apply_manual_overrides, apply_manual_relations
 from event_radar.prices.base import PriceProvider, CachedPriceProvider
@@ -264,6 +265,47 @@ def resolve_event_stock_rows(
     return rows
 
 
+def promote_primary_from_relations(
+    event: Event,
+    securities: list[EventSecurity],
+) -> tuple[Event, str]:
+    """Anchor an event's primary stock from its strongest A-grade relation.
+
+    Relation rows exist for almost every event, but collectors often leave
+    ``primary_ticker`` blank (news headlines rarely carry a code), so the
+    public display had nothing to anchor on. Promote the highest-scored
+    A-grade row — direct mentions/economic relations only; THEME/PROXY/B
+    rows are never promoted, and their presence is reported as the reason
+    the event stays unanchored. An existing primary is always kept.
+    """
+    if event.event_type == "5PCT_OWNERSHIP" or event.source_name == "DART_5PCT":
+        return event, "not_applicable"
+    if event.primary_ticker:
+        return event, "primary"
+    a_rows = [
+        row
+        for row in securities
+        if row.relation_grade == "A" and row.ticker and not is_market_proxy(row.ticker)
+    ]
+    if a_rows:
+        best = max(a_rows, key=lambda row: row.relation_score)
+        company = best.company_name or best.from_entity or event.primary_company
+        return (
+            event.model_copy(
+                update={"primary_ticker": best.ticker, "primary_company": company}
+            ),
+            "anchored_from_relation",
+        )
+    grades = {row.relation_grade for row in securities if row.ticker}
+    if "B" in grades:
+        return event, "b_only"
+    if grades & {"THEME", "PROXY"}:
+        return event, "theme_proxy_only"
+    if securities:
+        return event, "unmapped_only"
+    return event, "no_rows"
+
+
 def run_pipeline(
     collectors: list[Collector],
     config: PipelineConfig,
@@ -364,6 +406,19 @@ def run_pipeline(
             change_reason="뉴스 원문 날짜의 연도·미래 촉매 연결 재검증"))
         current_events[index] = repaired
 
+    # 5.5. Merge duplicate news stories: the collector clusters by extracted
+    # company + window, so one real schedule reported by several outlets (or
+    # extracted under different company strings) survives as multiple
+    # canonical events. Collapse them before saving so downstream relation
+    # resolution, backtests, and the public radar see one event per schedule.
+    dedupe_res = merge_duplicate_news_events(
+        current_events,
+        existing_revisions=all_revisions,
+        now=now,
+    )
+    current_events = dedupe_res.events
+    all_revisions.extend(dedupe_res.revisions)
+
     # 6. Save updated canonical data
     save_canonical_events(current_events, events_csv)
     save_canonical_revisions(all_revisions, revisions_csv)
@@ -381,8 +436,9 @@ def run_pipeline(
         if ev.country == "KR" and ev.event_type == "IPO_LISTING" and ev.primary_company
     )
     event_securities: dict[str, list[EventSecurity]] = {}
+    anchor_status: dict[str, str] = {}
     all_mapped_rows = []
-    for ev in current_events:
+    for index, ev in enumerate(current_events):
         secs = resolve_event_stock_rows(
             ev,
             relations=mapping_relations,
@@ -395,6 +451,13 @@ def run_pipeline(
         for s in secs:
             if s.ticker and not s.company_name:
                 s.company_name = registry.company_for_ticker(s.ticker)
+        # Anchor the display primary from the strongest A-grade relation so
+        # events whose collector left primary blank still surface their
+        # directly related stock (re-derived each run, like five-pct prices).
+        anchored, status = promote_primary_from_relations(ev, secs)
+        anchor_status[ev.event_id] = status
+        if anchored is not ev:
+            current_events[index] = anchored
             all_mapped_rows.append({
                 "event_id": ev.event_id,
                 "ticker": s.ticker,
@@ -583,6 +646,7 @@ def run_pipeline(
         output_dir=site_data_dir,
         collector_status=collector_status,
         now=now,
+        anchor_status=anchor_status,
     )
 
     duration = time.time() - start_time

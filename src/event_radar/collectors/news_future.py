@@ -107,6 +107,40 @@ LOW_QUALITY_COMPANY_MARKERS = (
     "게임 게시판",
 )
 
+# Headlines whose subject is a completed evaluation, award, casting, or a
+# price-move roundup are not scheduled catalysts — even when the article body
+# incidentally mentions another company's clinical trial, contract, or plan.
+# The headline is the article's subject, so a non-event headline vetoes the
+# whole item (collector, pipeline repair, and export all share this check).
+NON_EVENT_HEADLINE_PATTERNS = (
+    r"ESG[^.]{0,24}(?:평가|등급|지수)",  # ESG 평가/등급 결과 기사
+    r"평가서",  # 평가서·등급 획득 류
+    r"(?:수상|어워즈|브랜드\s*대상)",  # 수상/선정 홍보 기사
+    r"(?:모델\s*(?:발탁|선정)|홍보대사|앰버서더)",  # 모델 발탁 홍보 기사
+    r"등\s*\d+\s*개\s*종목",  # "N개 종목 급등" 시황 라운드업
+)
+
+_NON_EVENT_HEADLINE_RE = re.compile("|".join(NON_EVENT_HEADLINE_PATTERNS))
+
+
+def _headline_of(text: str) -> str:
+    """Return the headline segment of a combined title+description text."""
+    cleaned = _clean_text(text)
+    head = re.split(r"\.\s", cleaned, maxsplit=1)[0]
+    return head[:160]
+
+
+def is_non_event_headline(text: str) -> bool:
+    """True when the headline subject is an evaluation/award/promo story."""
+    headline = _headline_of(text)
+    if _NON_EVENT_HEADLINE_RE.search(headline):
+        return True
+    # Multi-company price-move roundups ("A·B 등 급등") are market recaps,
+    # not scheduled events for any single company in the headline.
+    if "·" in headline and re.search(r"급등|급락|상한가|하한가", headline):
+        return True
+    return False
+
 
 @dataclass(frozen=True)
 class FutureWindow:
@@ -282,6 +316,8 @@ def _is_temporally_linked(text: str, window: FutureWindow, event_type: str) -> b
 
 def extract_future_catalyst(text: str, reference_date: date) -> tuple[FutureWindow, str] | None:
     """Select a dated catalyst in the same clause, ignoring historical background."""
+    if is_non_event_headline(text):
+        return None
     clauses = re.split(r"(?<!\d)[.!?。！？]+(?!\d)", _clean_text(text))
     for clause in clauses:
         if re.search(r"일정\s*미정|날짜\s*미정|시기\s*미정", clause):
@@ -303,7 +339,12 @@ def extract_future_catalyst(text: str, reference_date: date) -> tuple[FutureWind
             if start < 0:
                 break
             end = start + len(window.matched_text)
-            windows.append((start, end, window))
+            # A date that merely ends a stated period ("계약 기간은 2031년
+            # 12월 31일까지") is a maturity/expiry bound, not the date of a
+            # future catalyst, so it can never anchor an event window.
+            preceding = clause[max(0, start - 16):start]
+            if not re.search(r"(?:기간|만기|종료일)\s*(?:은|는)?\s*$", preceding):
+                windows.append((start, end, window))
             remaining = remaining[:start] + " " * (end - start) + remaining[end:]
         candidates = []
         for kind, pattern in EVENT_PATTERNS.items():
@@ -327,7 +368,7 @@ def extract_future_catalyst(text: str, reference_date: date) -> tuple[FutureWind
 
 
 def is_news_digest(title: str) -> bool:
-    return bool(re.search(r"사설|칼럼|기고|브리프|브리핑|알공|인물탐구|Who Is", title, re.IGNORECASE))
+    return bool(re.search(r"사설|칼럼|기고|브리프|브리핑|알공|인물탐구|Who Is|바이오스냅", title, re.IGNORECASE))
 
 
 def _is_low_quality_company(company: str, event_type: str) -> bool:
