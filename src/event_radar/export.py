@@ -482,7 +482,7 @@ def export_site_data(
                 "score": five_event_score,
             },
             "status": ev.status,
-            "source_name": "DART_5PCT",
+            "source_name": ev.source_name,
             "source_url": ev.source_url,
         }
         # Real-price enrichment (pipeline five_pct_pricing): the fields
@@ -494,6 +494,16 @@ def export_site_data(
             price_value = analysis.get(price_key)
             if price_value is not None:
                 five_row[price_key] = price_value
+        # Filing facts the collectors already computed (holdings ratio and
+        # its change, first-entry date, reporter) — lifted to row level so
+        # the Super Radar table can render them like the original did.
+        for fact_key in (
+            "hold_stock_rt", "stk_rt_var", "stk_cnt_var",
+            "first_entry_dt", "reporter",
+        ):
+            fact_value = analysis.get(fact_key)
+            if fact_value is not None:
+                five_row[fact_key] = fact_value
         five_pct_list.append(five_row)
 
     (out_path / "five_pct.json").write_text(

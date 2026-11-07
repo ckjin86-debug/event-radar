@@ -157,7 +157,7 @@ def enrich_five_pct_event(
             candles,
             score_input.get("rcept_dt"),
             score_input.get("prev_rcept_dt"),
-            is_us=False,
+            is_us=(ev.country == "US"),
         )
         if vwap_result and vwap_result["vwap"]:
             item["est_avg_price"] = vwap_result["vwap"]
