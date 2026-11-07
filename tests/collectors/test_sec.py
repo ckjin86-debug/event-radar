@@ -7,7 +7,7 @@ from event_radar.collectors.sec import SecCollector
 FIXTURE_PATH = Path(__file__).parent.parent / "fixtures" / "sec" / "sample_submissions.json"
 
 MASTER_INDEX = """Description: Master Index of EDGAR Dissemination Feed
-CIK|Company Name|Form Type|Date Filed|Filename
+CIK|Company Name|Form Type|Date Filed|File Name
 320193|Apple Inc.|8-K|2026-11-03|edgar/data/320193/0000320193-26-000101.txt
 320193|Apple Inc.|8-K/A|2026-11-03|edgar/data/320193/0000320193-26-000102.txt
 789019|Microsoft Corp|10-Q|2026-11-03|edgar/data/789019/0000789019-26-000999.txt
@@ -54,6 +54,17 @@ def test_parse_master_index_keeps_only_8k_candidates():
     assert rows[0]["cik"] == "0000320193"
     assert rows[0]["accession"] == "0000320193-26-000101"
     assert all(row["form"] != "10-Q" for row in rows)
+
+
+def test_parse_master_index_accepts_real_edgar_header():
+    # Regression: EDGAR's live header is "...|File Name" (with a space).
+    # The parser originally waited for "Filename", never matched, and
+    # silently returned zero candidates from every live daily index.
+    collector = SecCollector()
+
+    rows = collector._parse_master_index(MASTER_INDEX)
+
+    assert len(rows) == 3
 
 
 def test_load_company_tickers_builds_cik_map(monkeypatch):

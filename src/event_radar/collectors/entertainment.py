@@ -1,4 +1,10 @@
-"""Entertainment schedule and comeback event collector."""
+"""Entertainment schedule and comeback event collector.
+
+DORMANT (deregistered in scripts/collect.py, 2026-11-07): weverse.io/notice
+is now a JavaScript SPA shell — the static HTML contains no notice items,
+so this scraper parsed 0 events on every live run. Kept for revival
+against a stable Weverse API; do not re-register against the HTML page.
+"""
 
 from __future__ import annotations
 import re

@@ -1,4 +1,11 @@
-"""Index rebalance announcement and change schedule collector."""
+"""Index rebalance announcement and change schedule collector.
+
+DORMANT (deregistered in scripts/collect.py, 2026-11-07): the configured
+source is the KRX global portal root, which carries no notice board with
+the configured selectors anywhere on the portal, so this scraper parsed
+0 events on every live run. Kept for revival against a real KRX
+board/API source for index-change notices.
+"""
 
 from __future__ import annotations
 import re

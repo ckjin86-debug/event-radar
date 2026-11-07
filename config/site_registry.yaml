@@ -29,9 +29,11 @@ sources:
     name: "GAMES_RELEASE"
     country: "KR"
     event_type: "GAME_RELEASE"
-    url: "https://www.inven.co.kr/schedule"
-    container_selector: ".game-item"
-    title_selector: ".game-name"
+    # Inven retired /schedule (404); the calendar moved to /webzine/calendar.
+    url: "https://www.inven.co.kr/webzine/calendar"
+    container_selector: ".calendar__item"
+    title_selector: ".calendar__title"
+    date_selector: ".calendar__date"
     date_regex: '(\d{4})[./-](\d{2})[./-](\d{2})'
     timezone: "Asia/Seoul"
     game_map:
@@ -40,6 +42,8 @@ sources:
       붉은사막: {ticker: "263750", company: "펄어비스"}
       Crimson Desert: {ticker: "263750", company: "펄어비스"}
       TL: {ticker: "036570", company: "엔씨소프트"}
+      스텔라 블레이드: {ticker: "462870", company: "시프트업"}
+      Stellar Blade: {ticker: "462870", company: "시프트업"}
 
   index_rebalance:
     name: "INDEX_KR"

@@ -85,9 +85,17 @@ def build_collectors(root: Path, fast_refresh: bool = False):
         FdaCollector(config_path=root / "config" / "site_registry.yaml"),
         KindIpoCollector(),
         FomcCollector(history_start=date(2021, 1, 1)),
-        EntertainmentCollector(config_path=root / "config" / "site_registry.yaml"),
         GamesCollector(config_path=root / "config" / "site_registry.yaml"),
-        IndexChangesCollector(config_path=root / "config" / "site_registry.yaml"),
+        # Deregistered 2026-11-07 after live diagnosis (classes kept in
+        # src/event_radar/collectors/ so they can be revived):
+        # - ENTER_KR (EntertainmentCollector): weverse.io/notice is now a
+        #   JavaScript SPA shell; the static page carries no notice items,
+        #   so every run parsed 0 events. Revive only against a stable
+        #   Weverse API, not the HTML page.
+        # - INDEX_KR (IndexChangesCollector): it scraped the KRX global
+        #   portal root with board selectors that do not exist anywhere on
+        #   that portal; every run parsed 0 events. Revive only with a
+        #   real KRX board/API source for index-change notices.
     ]
 
 

@@ -45,11 +45,14 @@ def test_entertainment_collector_artist_mapping():
 
 
 def test_games_collector_publisher_mapping():
+    # Inven's calendar markup since the /schedule page was retired:
+    # .calendar__item rows with month/day-only dates in .calendar__date.
     html = """
-    <div class="schedule-list">
-      <div class="game-item">
-        <span class="game-name">인조이(inZOI) 글로벌 얼리액세스 출시일 확정 2026.12.01</span>
-        <a href="https://inven.co.kr/game/inzoi">링크</a>
+    <div class="calendar">
+      <div class="calendar__item">
+        <span class="calendar__title">인조이(inZOI) 글로벌 얼리액세스</span>
+        <span class="calendar__date">12/01(월)</span>
+        <a href="/webzine/calendar/game/123">링크</a>
       </div>
     </div>
     """
@@ -61,6 +64,43 @@ def test_games_collector_publisher_mapping():
     assert events[0].primary_ticker == "259960"
     assert events[0].primary_company == "크래프톤"
     assert events[0].event_date == date(2026, 12, 1)
+    assert events[0].source_url == "https://www.inven.co.kr/webzine/calendar/game/123"
+
+
+def test_games_collector_calendar_year_rollover():
+    # A January item seen on a December page belongs to the next year.
+    html = """
+    <div class="calendar">
+      <div class="calendar__item">
+        <span class="calendar__title">붉은사막 콘솔 출시</span>
+        <span class="calendar__date">01/05(월)</span>
+        <a href="/webzine/calendar/game/456">링크</a>
+      </div>
+    </div>
+    """
+    collector = GamesCollector(mock_html=html)
+    events = collector.collect(since=datetime(2026, 12, 15))
+
+    assert len(events) == 1
+    assert events[0].primary_ticker == "263750"
+    assert events[0].event_date == date(2027, 1, 5)
+
+
+def test_games_collector_full_date_in_title_still_wins():
+    html = """
+    <div class="calendar">
+      <div class="calendar__item">
+        <span class="calendar__title">인조이 정식 출시 2027.03.15 확정</span>
+        <span class="calendar__date">11/20(금)</span>
+        <a href="/webzine/calendar/game/789">링크</a>
+      </div>
+    </div>
+    """
+    collector = GamesCollector(mock_html=html)
+    events = collector.collect(since=datetime(2026, 11, 1))
+
+    assert len(events) == 1
+    assert events[0].event_date == date(2027, 3, 15)
 
 
 def test_selector_failure_logs_failed_without_crashing():

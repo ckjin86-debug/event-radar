@@ -4,7 +4,9 @@ from __future__ import annotations
 
 import json
 import re
+import threading
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Optional
@@ -35,13 +37,16 @@ class SecCollector:
         self,
         fixture_path: Optional[Path | str] = None,
         user_agent: str = SEC_DEFAULT_USER_AGENT,
-        timeout: int = 10,
+        timeout: int = 20,
         request_interval: float = 0.12,
+        max_workers: int = 5,
     ):
         self.fixture_path = Path(fixture_path) if fixture_path else None
         self.timeout = timeout
         self.request_interval = max(0.0, request_interval)
+        self.max_workers = max(1, max_workers)
         self._last_request_at = 0.0
+        self._rate_lock = threading.Lock()
         self._ticker_map_cache: Optional[dict[str, tuple[str, str]]] = None
 
         self.session = requests.Session()
@@ -54,15 +59,15 @@ class SecCollector:
 
     def _get(self, url: str):
         """Rate-limit SEC requests while keeping network access mockable in tests."""
-        if self.request_interval > 0 and self._last_request_at:
-            elapsed = time.monotonic() - self._last_request_at
-            remaining = self.request_interval - elapsed
-            if remaining > 0:
-                time.sleep(remaining)
+        with self._rate_lock:
+            if self.request_interval > 0 and self._last_request_at:
+                elapsed = time.monotonic() - self._last_request_at
+                remaining = self.request_interval - elapsed
+                if remaining > 0:
+                    time.sleep(remaining)
+            self._last_request_at = time.monotonic()
 
-        response = self.session.get(url, timeout=self.timeout)
-        self._last_request_at = time.monotonic()
-        return response
+        return self.session.get(url, timeout=self.timeout)
 
     def _determine_event_type(self, form: str, items: str, desc: str) -> Optional[str]:
         combined = f"{form} {items} {desc}".upper()
@@ -105,7 +110,10 @@ class SecCollector:
         for raw_line in text.splitlines():
             line = raw_line.strip()
             if not header_seen:
-                if line.startswith("CIK|Company Name|Form Type|Date Filed|Filename"):
+                # EDGAR's real header ends with "File Name" (with a space);
+                # the original code waited for "Filename", never matched,
+                # and silently parsed zero rows from every live index.
+                if line.startswith("CIK|Company Name|Form Type|Date Filed|File"):
                     header_seen = True
                 continue
             if not line or "|" not in line:
@@ -303,6 +311,38 @@ class SecCollector:
 
         return events
 
+    def _events_for_cik(
+        self,
+        cik: str,
+        cik_candidates: list[dict],
+        since: datetime,
+    ) -> list[RawEvent]:
+        """Fetch one company's submissions and convert its discovered filings."""
+        try:
+            response = self._get(SEC_SUBMISSIONS_URL.format(cik=cik))
+            if response.status_code != 200:
+                return []
+            data = response.json()
+        except Exception:
+            return []
+
+        allowed_accessions = {candidate["accession"] for candidate in cik_candidates}
+        ticker_override = next(
+            (candidate.get("ticker", "") for candidate in cik_candidates if candidate.get("ticker")),
+            "",
+        )
+        company_override = next(
+            (candidate.get("company", "") for candidate in cik_candidates if candidate.get("company")),
+            "",
+        )
+        return self._events_from_payload(
+            data,
+            since=since,
+            allowed_accessions=allowed_accessions,
+            ticker_override=ticker_override,
+            company_override=company_override,
+        )
+
     def collect(self, since: datetime) -> list[RawEvent]:
         """Collect recent SEC corporate events without a manually maintained watchlist."""
         start_time = time.time()
@@ -319,33 +359,17 @@ class SecCollector:
                 for candidate in candidates:
                     by_cik.setdefault(candidate["cik"], []).append(candidate)
 
-                for cik, cik_candidates in by_cik.items():
-                    try:
-                        response = self._get(SEC_SUBMISSIONS_URL.format(cik=cik))
-                        if response.status_code != 200:
-                            continue
-                        data = response.json()
-                    except Exception:
-                        continue
-
-                    allowed_accessions = {candidate["accession"] for candidate in cik_candidates}
-                    ticker_override = next(
-                        (candidate.get("ticker", "") for candidate in cik_candidates if candidate.get("ticker")),
-                        "",
-                    )
-                    company_override = next(
-                        (candidate.get("company", "") for candidate in cik_candidates if candidate.get("company")),
-                        "",
-                    )
-                    events.extend(
-                        self._events_from_payload(
-                            data,
-                            since=since,
-                            allowed_accessions=allowed_accessions,
-                            ticker_override=ticker_override,
-                            company_override=company_override,
-                        )
-                    )
+                # A single earnings-season day can carry 700+ filing CIKs;
+                # fetching submissions serially took tens of minutes and
+                # timed out mid-run. Fetch per-CIK in parallel (the shared
+                # rate limiter still caps request starts at SEC's limit).
+                with ThreadPoolExecutor(max_workers=self.max_workers) as pool:
+                    futures = [
+                        pool.submit(self._events_for_cik, cik, cik_candidates, since)
+                        for cik, cik_candidates in by_cik.items()
+                    ]
+                    for future in as_completed(futures):
+                        events.extend(future.result())
 
             duration = time.time() - start_time
             log_collector_run(
