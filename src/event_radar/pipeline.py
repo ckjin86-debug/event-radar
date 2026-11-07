@@ -28,6 +28,7 @@ from event_radar.backtest.returns import calculate_event_window_returns
 from event_radar.backtest.metrics import summarize_event_group, BacktestSummary
 from event_radar.backtest.strategies import evaluate_strategies, StrategyResult
 from event_radar.scoring import ScoreInput, ScoreResult, calculate_event_score
+from event_radar.five_pct_pricing import enrich_five_pct_prices
 from event_radar.export import export_site_data
 from event_radar.collectors.base import Collector
 from event_radar.collectors.news_future import extract_future_catalyst
@@ -539,6 +540,23 @@ def run_pipeline(
             )
         )
     backtest_duration_sec = time.time() - backtest_started
+
+    # 8.5. Five-percent filings: attach real prices (latest close +
+    # acquisition-window VWAP estimate) and re-run the S1~S7 scoring so
+    # the S6 safety-margin half is actually computed instead of staying
+    # "미산출". Canonical data (already saved in step 6) keeps the
+    # collector's price-free analysis; the enrichment is re-derived on
+    # every run, like the market snapshots. The market-snapshot targets
+    # above deliberately stay unchanged: snapshots are summary dicts
+    # (latest price/returns only, upcoming events only) and cannot feed
+    # a VWAP window, so frames come from the same cached price provider
+    # the backtest uses. A fast refresh must not hit the price network.
+    if not skip_price_fetch:
+        current_events = enrich_five_pct_prices(
+            current_events,
+            price_provider=_resolve_price_provider(config),
+            as_of=now.date(),
+        )
 
     # 9. Export Site Data
     export_site_data(

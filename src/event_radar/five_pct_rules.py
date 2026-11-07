@@ -15,15 +15,19 @@ investment system package:
   (연속매집횟수·직전 목적·최초 5% 공시일 산출)
 - ``evaluate_signal_score`` — 7대 전략 스코어링 (S1~S7 분해 + 근거 문장)
 - ``compute_ownership_freshness`` — 공시 신선도 (CURRENT/RECENT/AGING/STALE)
+- ``compute_acquisition_window_vwap`` — 세력 매집단가 Priority 3 추정
+  (원본 background.js의 ``computeAcquisitionWindowVWAP``)
 
-Scores, ordering and conditions follow the original exactly. The only
-deliberate deviation: the price-dependent half of S6 (세력 평단 대비
-현재가 괴리) is only computed when both an average acquisition price and
-a current price are supplied in the item; without price data the
-breakdown records "미산출(가격 데이터 필요)" with 0 points instead of
-pulling a price provider into the rules engine. The SEC (13D/13G filing
-ingestion) path of the original is not ported; the scoring core itself
-is market-agnostic, exactly as in the original.
+Scores, ordering and conditions follow the original exactly. This
+module stays pure — it never pulls a price provider. The price-dependent
+half of S6 (세력 평단 대비 현재가 괴리) is computed only when both an
+average acquisition price and a current price are supplied in the item;
+the pipeline (``event_radar.five_pct_pricing``) supplies exactly those
+two prices — the latest daily close and the acquisition-window VWAP
+estimate — and re-runs the scorer. Without price data the breakdown
+records "미산출(가격 데이터 필요)" with 0 points. The SEC (13D/13G
+filing ingestion) path of the original is not ported; the scoring core
+itself is market-agnostic, exactly as in the original.
 """
 
 from __future__ import annotations
@@ -421,6 +425,137 @@ def compute_price_gap(
 
 
 # ----------------------------------------------------------------------
+# 세력 매집단가 Priority 3 — 매집기간 일봉 VWAP 추정
+# (원본 background.js computeAcquisitionWindowVWAP)
+# ----------------------------------------------------------------------
+def _candle_number(value: Any) -> Optional[float]:
+    """JS truthiness에 쓰이는 숫자 변환: None/NaN/변환 실패 → None."""
+    if value is None:
+        return None
+    try:
+        num = float(value)
+    except (TypeError, ValueError):
+        return None
+    if num != num:  # NaN
+        return None
+    return num
+
+
+def _normalize_candles(candles: Any) -> list[dict]:
+    """DataFrame 또는 dict 리스트를 날짜 오름차순 캔들 dict로 정규화.
+
+    원본의 입력(네이버/야후 파서 결과)은 항상 날짜 오름차순이며 날짜는
+    'YYYY-MM-DD' 문자열이다. 여기서는 파이프라인 가격 프레임(date 객체
+    포함)도 받을 수 있게 같은 형태로 맞추고, 날짜/종가를 해석할 수 없는
+    행만 버린다 (원본 파서 단계에서 이미 걸러지던 경우에 해당).
+    """
+    if candles is None:
+        return []
+    if hasattr(candles, "to_dict"):  # pandas DataFrame
+        records = candles.to_dict("records")
+    else:
+        records = list(candles)
+
+    rows: list[dict] = []
+    for record in records:
+        if not isinstance(record, dict):
+            continue
+        day = format_date_str(record.get("date"))
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", day):
+            continue
+        if _candle_number(record.get("close")) is None:
+            continue
+        rows.append({
+            "date": day,
+            "high": record.get("high"),
+            "low": record.get("low"),
+            "close": record.get("close"),
+            "volume": record.get("volume"),
+        })
+    rows.sort(key=lambda c: c["date"])
+    return rows
+
+
+def compute_acquisition_window_vwap(
+    candles: Any,
+    rcept_date: Any,
+    prev_rcept_date: Any = None,
+    is_us: bool = False,
+) -> Optional[dict]:
+    """매집기간 일봉 VWAP으로 세력 매집단가를 추정 (Priority 3).
+
+    원본 ``computeAcquisitionWindowVWAP(candles, rceptDt, prevRceptDt)``
+    그대로:
+    - 윈도우 종료: 공시일 이상인 첫 캔들 (없으면 마지막 캔들)
+    - 윈도우 시작: 직전 공시 캔들 — 단 종료 캔들과 40거래일 이내일 때만.
+      아니면 종료 직전 7거래일 (종료 포함 8캔들)
+    - 캔들 대표가격 (고가+저가+종가)/3, 거래량 가중 (거래량 0이면 가중 1)
+    - KR은 정수 반올림(JS Math.round = half-up), US는 소수 2자리
+
+    반환: {"vwap", "start_date", "end_date"} 또는 None.
+    """
+    rows = _normalize_candles(candles)
+    if not rows:
+        return None
+
+    end_dt = format_date_str(rcept_date)
+    end_idx = next(
+        (i for i, c in enumerate(rows) if c["date"] >= end_dt), -1
+    )
+    if end_idx == -1:
+        end_idx = len(rows) - 1
+
+    start_idx = max(0, end_idx - 7)  # 기본: 공시 직전 7거래일 매집 윈도우
+    if prev_rcept_date:
+        clean_prev = format_date_str(prev_rcept_date)
+        found_prev_idx = next(
+            (i for i, c in enumerate(rows) if c["date"] >= clean_prev), -1
+        )
+        if (
+            found_prev_idx != -1
+            and found_prev_idx < end_idx
+            and (end_idx - found_prev_idx) <= 40
+        ):
+            start_idx = found_prev_idx
+
+    window = rows[start_idx:end_idx + 1]
+    if not window:
+        return None
+
+    total_pv = 0.0
+    total_v = 0.0
+    for c in window:
+        close = _candle_number(c["close"])
+        high = _candle_number(c["high"])
+        low = _candle_number(c["low"])
+        # JS (c.high || c.close): 0/누락이면 종가로 대체
+        typical = ((high if high else close) + (low if low else close) + close) / 3
+        vol_num = _candle_number(c["volume"])
+        vol = vol_num if vol_num and vol_num > 0 else 1
+        total_pv += typical * vol
+        total_v += vol
+
+    if total_v > 0:
+        raw_vwap = total_pv / total_v
+    else:
+        raw_vwap = _candle_number(window[-1]["close"])
+
+    if is_us:
+        vwap: float | int = float(
+            Decimal(str(raw_vwap)).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+        )
+    else:
+        vwap = int(
+            Decimal(str(raw_vwap)).quantize(Decimal("1"), rounding=ROUND_HALF_UP)
+        )
+    return {
+        "vwap": vwap,
+        "start_date": window[0]["date"],
+        "end_date": window[-1]["date"],
+    }
+
+
+# ----------------------------------------------------------------------
 # 보고자 분류 (원본 classifyInvestor: 사전 + 개인/슈퍼개미 판정)
 # ----------------------------------------------------------------------
 _INDIVIDUAL_RE = re.compile(r"^[가-힣]{2,4}(\s*외\s*\d+인)?$")
@@ -755,7 +890,9 @@ def evaluate_signal_score(
         tags.append({"text": reason_info["summary_tag"], "cls": "tag-passive"})
 
     # [S6] 세력 평단 안전마진 — 가격 데이터가 있을 때만 원본 로직 적용.
-    # 가격 모듈을 끌어오지 않으므로, 데이터가 없으면 미산출로 명시한다.
+    # 이 모듈은 순수하게 유지하고, 가격(최신 종가 + 매집기간 VWAP 추정)은
+    # 파이프라인(five_pct_pricing)이 score_input에 채워 넣는다. 가격 쌍이
+    # 모두 없으면 미산출로 명시한다.
     if price_gap is not None:
         if (
             not reason_info["is_mezzanine_or_cb"]

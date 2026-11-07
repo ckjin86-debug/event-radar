@@ -268,6 +268,20 @@ class DartFivePctCollector:
             facts.append(f"보유주식수 {quantity}주")
         return " · ".join(facts), repror
 
+    # Keys of the normalized majorstock item that evaluate_signal_score
+    # consumes. The pipeline (five_pct_pricing) replays the scorer with
+    # this exact input plus real prices, so the price-free collection
+    # result and the price-enriched pipeline result can never drift apart
+    # on the non-price factors.
+    _SCORE_INPUT_KEYS = (
+        "market", "rcept_no", "rcept_dt", "prev_rcept_dt", "first_entry_dt",
+        "corp_code", "corp_name", "stock_code", "rpror_nm",
+        "hold_stock_cnt", "stk_cnt_var", "hold_stock_rt", "stk_rt_var",
+        "curr_purpose", "prev_purpose", "report_resn", "report_nm",
+        "is_new_entry", "accum_count", "est_avg_price", "price_source",
+        "current_price", "ownership_freshness",
+    )
+
     # ------------------------------------------------------------------
     # Analysis payload carried on the event (consumed by export.py)
     # ------------------------------------------------------------------
@@ -276,6 +290,10 @@ class DartFivePctCollector:
         evaluation = processed.get("eval") or {}
         factor_scores = evaluation.get("factor_scores") or {}
         return {
+            "score_input": {
+                key: processed.get(key)
+                for key in DartFivePctCollector._SCORE_INPUT_KEYS
+            },
             "alpha_score": evaluation.get("score"),
             "score_breakdown": evaluation.get("breakdown") or [],
             "factor_scores": factor_scores,

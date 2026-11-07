@@ -449,7 +449,7 @@ def export_site_data(
         else:
             five_tier = "WATCH"
 
-        five_pct_list.append({
+        five_row = {
             "event_id": ev.event_id,
             "d_day": (ev.event_date - today).days,
             "country": ev.country,
@@ -484,7 +484,17 @@ def export_site_data(
             "status": ev.status,
             "source_name": "DART_5PCT",
             "source_url": ev.source_url,
-        })
+        }
+        # Real-price enrichment (pipeline five_pct_pricing): the fields
+        # exist only when prices were actually attached to the analysis —
+        # never present with fabricated values.
+        for price_key in (
+            "est_avg_price", "current_price", "price_gap_pct", "price_source",
+        ):
+            price_value = analysis.get(price_key)
+            if price_value is not None:
+                five_row[price_key] = price_value
+        five_pct_list.append(five_row)
 
     (out_path / "five_pct.json").write_text(
         json.dumps(five_pct_list, ensure_ascii=False, indent=2),
