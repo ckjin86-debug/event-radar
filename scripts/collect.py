@@ -14,6 +14,7 @@ from event_radar.pipeline import run_pipeline, PipelineConfig
 from event_radar.collectors.dart import DartCollector
 from event_radar.collectors.dart_five_pct import DartFivePctCollector
 from event_radar.collectors.sec import SecCollector
+from event_radar.collectors.sec_five_pct import SecFivePctCollector
 from event_radar.collectors.news_future import DEFAULT_QUERIES, NewsFutureCollector
 from event_radar.collectors.fda import FdaCollector
 from event_radar.collectors.kind_ipo import KindIpoCollector
@@ -79,6 +80,7 @@ def build_collectors(root: Path, fast_refresh: bool = False):
         DartCollector(),
         DartFivePctCollector(),
         SecCollector(),
+        SecFivePctCollector(),
         _news_collector(),
         FdaCollector(config_path=root / "config" / "site_registry.yaml"),
         KindIpoCollector(),
