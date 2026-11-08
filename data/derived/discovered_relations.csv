@@ -1,1 +1,3 @@
 relation_id,from_entity,to_ticker,relation_type,relation_grade,relation_score,relation_known_date,relation_start_date,relation_end_date,evidence_source,source_url,ingest_mode
+DERIVED_db6246491f98a19ed5e7,005930,000660,INVESTMENT_LINK,B,72,2026-11-08,2026-11-08,,NEWS_FUTURE: 삼성전자·SK하이닉스에 2천만원 투자했다면 배당금 얼마,https://www.topstarnews.net/news/articleView.html?idxno=16271004,AUTO
+DERIVED_c67710e837fd48e32905,000660,005930,INVESTMENT_LINK,B,72,2026-11-08,2026-11-08,,NEWS_FUTURE: 삼성전자·SK하이닉스에 2천만원 투자했다면 배당금 얼마,https://www.topstarnews.net/news/articleView.html?idxno=16271004,AUTO

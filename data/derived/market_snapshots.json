@@ -1128,7 +1128,6 @@
     "sessions": 67,
     "source": "Yahoo Finance"
   },
-  "420610": null,
   "439270": null,
   "448730": {
     "as_of": "2026-11-06",
@@ -1178,7 +1177,7 @@
     "price": 152.21,
     "return_20d": -0.010145,
     "volume_ratio_20d": 1.189,
-    "sessions": 72,
+    "sessions": 71,
     "source": "Yahoo Finance"
   },
   "^GSPC": {
@@ -1186,7 +1185,7 @@
     "price": 7376.8599,
     "return_20d": -0.055646,
     "volume_ratio_20d": 0.68,
-    "sessions": 72,
+    "sessions": 71,
     "source": "Yahoo Finance"
   }
 }
