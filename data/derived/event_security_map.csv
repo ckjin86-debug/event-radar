@@ -4,7 +4,7 @@ KR_KIND_IPO_7a94ec521b66d5a584d72ad5cf9304a8fca23281,439270,A,100,DIRECT_MENTION
 KR_KIND_IPO_81bfec927fc30451d4700230ccffeb3194e205e4,126340,B,76,IPO_INVESTOR,"비나텍: 한국투자증권은 전력과 용수 사용을 둘러싼 규제가 확대되는 가운데 블룸에너지의 연료전지 수요 증가에 따라 비나텍, 티앤이코리아 등 국내 기업의 수혜를 예상했다 | https://theviewers.co.kr/View.aspx?No=4298426"
 KR_KIND_IPO_22b1edbb2ea1b2abd5cabf9e7c2316a8b6b2f247,005940,B,76,IPO_INVESTOR,"NH투자증권: 한화투자증권은 올해 페스카로 상장에 NH투자증권과 공동주관사로 참여했고, 한화플러스제6호스팩 의 코스닥 상장을 위한 예비심사를 지난달 청구했다 | https://www.etoday.co.kr/news/view/2535555"
 KR_KIND_IPO_832784cc1f6eb61b3b81a0e156cf38dcfca1b75e,137310,B,76,IPO_INVESTOR,에스디바이오센서: 조영식 에스디바이오센서 회장의 인텔리빅스 투자가 평가이익 구간에 진입했다 | https://www.newstopkorea.com/news/articleView.html?idxno=48683
-KR_KIND_IPO_5a3452ed7550c9d112a70cb1ad2e8756a6e4b71f,128940,B,64,IPO_BUSINESS_RELATION,"한미약품: 조관구 지씨씨엘 대표는 ""한미약품이 국내 기술력으로 이뤄낸 비만 신약 개발이라는 뜻깊은 성과에 임상시험 분석 파트너로 함께할 수 있어 영광 스럽다""며 ""전문 분석 역량과 품질관리 시스템을 바탕으로 국내 제약 | http://www.thefirstmedia.net/news/articleView.html?idxno=212952"
+KR_KIND_IPO_5a3452ed7550c9d112a70cb1ad2e8756a6e4b71f,359410,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 영광
 KR_KIND_IPO_c36644468a48de410093c57ca68cf92dc10cdd85,008830,B,68,IPO_AFFILIATE,"대동기어: 최근 상장한 엠에스바이오와 래블업 , 같은 그룹 계열사인 대동금속·대동기어 등에도 거래가 | http://www.kjdaily.com/article.php?aid=1793939051691481276"
 KR_KIND_IPO_561e48a87092e0fc9bbbb7ded749dfef7c92f18b,037620,B,76,IPO_INVESTOR,미래에셋증권: NH투자증권 아이엠스팩1호 : 10월 26일 ~ 27일 @ 아이엠증권 에이엘로봇 : 10월 26일 ~ 27일 @대신증권 엠비디: 10월 28일 ~ 29일 @하나증권 바로팜 : 11월 2일 ~ 3일 @ 미래에셋증권 하나에어로다이내믹스 : 11월 10일 | http://www.economytalk.kr/news/articleView.html?idxno=424324
 KR_KIND_IPO_6c60d4cd8f1e8f43bb8d389d838e1d66c0f4f357,0147B0,B,76,IPO_INVESTOR,래블업: 1일 금융투자업계에 따르면 오는 2일부터 6일까지 △영광 △래블업 △ 이에스티 3곳이 코스닥시장에 | https://www.mt.co.kr/stock/2026/11/01/2026103016051370804
@@ -444,3 +444,18 @@ KR_NEWS_FUTURE_9c098c411cb35e8841ae7823db49c1f31738e54d,207940,A,100,DIRECT_MENT
 KR_NEWS_FUTURE_7b8744d8d0c546177063e9674ff1a67f00d48538,000660,B,75,INDUSTRY_PEER,메모리 반도체 대표 경쟁/동조주
 KR_NEWS_FUTURE_1a3a53eef6014f38b33c123464aea5767954349a,003230,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 삼양식품
 KR_NEWS_FUTURE_c3fd0267d40e3157b5c6d06e2b1d8de239b6290e,112240,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 에스에프씨
+KR_NEWS_FUTURE_846dd9e764266faff7ff7035010eb739135b0901,006400,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 삼성SDI
+KR_NEWS_FUTURE_95ca313345d1a1637054d8f18e94c3f96303785f,017810,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 풀무원
+KR_NEWS_FUTURE_db3ec227696409073b7e5885a47484d799b09c32,005930,B,72,INVESTMENT_LINK,NEWS_FUTURE: 삼성전자·SK하이닉스에 2천만원 투자했다면 배당금 얼마
+KR_NEWS_FUTURE_8237a55f87615d87e530f7c6de43e9747ff6cf12,000660,B,75,INDUSTRY_PEER,메모리 반도체 대표 경쟁/동조주
+KR_NEWS_FUTURE_f0c9ac9fb6ef1084692a5544ecb5af3053ec532b,000660,B,75,INDUSTRY_PEER,메모리 반도체 대표 경쟁/동조주
+KR_NEWS_FUTURE_46ccd0fe99bf6536e1ceef424df6607f33dede2f,030200,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 케이티
+KR_NEWS_FUTURE_ff1b9cc8557726ff7adbe35b76e99edc0f488673,000180,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 성창기업지주
+KR_NEWS_FUTURE_332ea4811929038a4e72e3d05ef50c07b71a6428,195940,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: HK이노엔
+KR_NEWS_FUTURE_49fbeea22f658f73ba516fd57c2759f3ec9ed293,011780,THEME,35,CONTEXT_MENTION,이벤트 원문에 상장사명 명시: 금호석유화학
+KR_NEWS_FUTURE_dd62cea3fbf1dae26d1cb1b8720b81e7c66635b2,005930,B,72,INVESTMENT_LINK,NEWS_FUTURE: 삼성전자·SK하이닉스에 2천만원 투자했다면 배당금 얼마
+KR_NEWS_FUTURE_7f0077d79570dc3d44d6bd8bd517a690ba35ee54,000660,B,75,INDUSTRY_PEER,메모리 반도체 대표 경쟁/동조주
+KR_NEWS_FUTURE_a9346e6533cf14e449c473d7aac4b6d664b58186,009830,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 한화솔루션
+KR_NEWS_FUTURE_586fc306c3af459d3777bb7637c383eaf53f15fc,000830,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 삼성물산
+KR_NEWS_FUTURE_27148b9b24e8988efb4d1490fe59fea19249c7df,248170,THEME,35,CONTEXT_MENTION,이벤트 원문에 상장사명 명시: 샘표식품
+KR_NEWS_FUTURE_14885fe9dcf6bcffdab892e540db9bda9ea6c647,004370,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 농심
