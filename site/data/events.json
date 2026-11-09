@@ -1781,15 +1781,15 @@
         "relation_type": "DIRECT_MENTION",
         "evidence_text": "이벤트 원문에 상장사명 명시: 대우건설",
         "evidence_source": "NEWS_FUTURE",
-        "source_url": "https://www.sisaon.co.kr/news/articleView.html?idxno=205731",
-        "relation_known_date": "2026-11-03",
+        "source_url": "https://www.dnews.co.kr/uhtml/view.jsp?idxno=202611080726174860070",
+        "relation_known_date": "2026-11-09",
         "ingest_mode": "AUTO",
         "from_entity": "대우건설"
       }
     ],
     "company": "대우건설",
     "event_type": "TENDER",
-    "event_name": "대우건설, 정비사업 수주 5조원 돌파…업계 4위로",
+    "event_name": "[이번주 재개발ㆍ재건축] 대우건설, 여의도 화랑 14일 수주 깃발 꽂나",
     "event_date": "2026-11-14",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-11-14",
@@ -1860,7 +1860,7 @@
     },
     "status": "EXPECTED",
     "source_name": "NEWS_FUTURE",
-    "source_url": "https://www.sisaon.co.kr/news/articleView.html?idxno=205731"
+    "source_url": "https://www.dnews.co.kr/uhtml/view.jsp?idxno=202611080726174860070"
   },
   {
     "event_id": "KR_NEWS_FUTURE_63fe8a51b3f881ce8bbaa1b25d802694b09d3739",
@@ -2799,7 +2799,7 @@
         "price": 152.21,
         "return_20d": -0.010145,
         "volume_ratio_20d": 1.189,
-        "sessions": 71,
+        "sessions": 70,
         "source": "Yahoo Finance",
         "ticker": "XBI"
       },
@@ -3208,6 +3208,104 @@
     "status": "EXPECTED",
     "source_name": "NEWS_FUTURE",
     "source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=313119"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_92133958fbee561b6a63fadd2f9b70a6bb7b2645",
+    "d_day": 11,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "323410",
+    "primary_ticker": "323410",
+    "anchor_status": "anchored_from_relation",
+    "related_securities": [
+      {
+        "ticker": "323410",
+        "company_name": "카카오뱅크",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 카카오뱅크",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.cstimes.com/news/articleView.html?idxno=726983",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "카카오뱅크"
+      }
+    ],
+    "company": "카카오뱅크",
+    "event_type": "COURT_RULING",
+    "event_name": "캐피탈 이어 카드·증권 검토…카카오뱅크, 사업 확장",
+    "event_date": "2026-11-20",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-20",
+    "window_end": "2026-11-20",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 58,
+    "insight": {
+      "score": 58,
+      "tier": "WATCH",
+      "label": "일정 관찰",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 19,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 21,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 8,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 날짜 확정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 20100.0,
+        "return_20d": 0.032357,
+        "volume_ratio_20d": 0.219,
+        "sessions": 66,
+        "source": "Yahoo Finance",
+        "ticker": "323410"
+      },
+      "coverage": {
+        "eligible_events": 2,
+        "priced_events": 2,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": 0
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.cstimes.com/news/articleView.html?idxno=726983"
   },
   {
     "event_id": "KR_NEWS_FUTURE_79418ba96891ee679377f1165fa08f251178e4d8",
@@ -7011,6 +7109,104 @@
     "source_url": "https://www.1conomynews.co.kr/news/articleView.html?idxno=51140"
   },
   {
+    "event_id": "KR_NEWS_FUTURE_e6a576e2b5cb675f119f24c83184a0c0f0f83c2b",
+    "d_day": 24,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "067000",
+    "primary_ticker": "067000",
+    "anchor_status": "anchored_from_relation",
+    "related_securities": [
+      {
+        "ticker": "067000",
+        "company_name": "조이시티",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 조이시티",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "http://www.worktoday.co.kr/news/articleView.html?idxno=91688",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "조이시티"
+      }
+    ],
+    "company": "조이시티",
+    "event_type": "PRODUCT_LAUNCH",
+    "event_name": "조이시티, '프리스타일 풋볼 2' 지스타 2026 시연…12월 3일 출시",
+    "event_date": "2026-12-03",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-12-03",
+    "window_end": "2026-12-03",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 58,
+    "insight": {
+      "score": 58,
+      "tier": "WATCH",
+      "label": "일정 관찰",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 19,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 21,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 8,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 날짜 확정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 954.0,
+        "return_20d": -0.198319,
+        "volume_ratio_20d": 1.058,
+        "sessions": 66,
+        "source": "Yahoo Finance",
+        "ticker": "067000"
+      },
+      "coverage": {
+        "eligible_events": 2,
+        "priced_events": 2,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": 0
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "http://www.worktoday.co.kr/news/articleView.html?idxno=91688"
+  },
+  {
     "event_id": "KR_NEWS_FUTURE_1f3108214ec4cbd8a3cd5c78a37f7a41e152c6a1",
     "d_day": 28,
     "d_day_far_future": false,
@@ -7744,7 +7940,7 @@
         "price": 7376.8599,
         "return_20d": -0.055646,
         "volume_ratio_20d": 0.68,
-        "sessions": 71,
+        "sessions": 70,
         "source": "Yahoo Finance",
         "ticker": "^GSPC"
       },
@@ -11832,7 +12028,7 @@
     "source_url": "https://www.shinailbo.co.kr/news/articleView.html?idxno=5079556"
   },
   {
-    "event_id": "KR_NEWS_FUTURE_e5a4eb04b726869b43effc45d342317e5a71043e",
+    "event_id": "KR_NEWS_FUTURE_a2e844e03b8d8edcde7e46bd304be87adafaba74",
     "d_day": 53,
     "d_day_far_future": false,
     "country": "KR",
@@ -11848,15 +12044,15 @@
         "relation_type": "DIRECT_MENTION",
         "evidence_text": "이벤트 원문에 상장사명 명시: HD현대",
         "evidence_source": "NEWS_FUTURE",
-        "source_url": "https://news.mtn.co.kr/article/2026102718164353818",
-        "relation_known_date": "2026-10-28",
+        "source_url": "https://www.investchosun.com/site/data/html_dir/2026/11/08/2026110880022.html",
+        "relation_known_date": "2026-11-09",
         "ingest_mode": "AUTO",
         "from_entity": "HD현대"
       }
     ],
     "company": "HD현대",
     "event_type": "CAPEX",
-    "event_name": "HD현대 美 조선 진출 전략…한화와 다른 선택한 세가지 이유 [이슈체크...",
+    "event_name": "[Invest]'트럼프 프리미엄' 걷힌 조선업…한화·HD현대 美투자 다시 시험...",
     "event_date": "2027-01-01",
     "date_precision": "YEAR",
     "window_start": "2027-01-01",
@@ -11865,9 +12061,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 46,
+    "event_score": 47,
     "insight": {
-      "score": 46,
+      "score": 47,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -11893,7 +12089,7 @@
         },
         "timing": {
           "label": "일정 접근·신선도",
-          "points": 4,
+          "points": 5,
           "max": 10
         }
       },
@@ -11927,7 +12123,7 @@
     },
     "status": "EXPECTED",
     "source_name": "NEWS_FUTURE",
-    "source_url": "https://news.mtn.co.kr/article/2026102718164353818"
+    "source_url": "https://www.investchosun.com/site/data/html_dir/2026/11/08/2026110880022.html"
   },
   {
     "event_id": "KR_NEWS_FUTURE_687db7f9c723d2f217752dd16238fbae8f69755e",
@@ -16473,7 +16669,7 @@
     "source_url": "https://www.edaily.co.kr/News/Read?newsId=04008166645642768&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article"
   },
   {
-    "event_id": "KR_NEWS_FUTURE_a2e6466853f3f385a5da29ab9fed9c67dcbe81d9",
+    "event_id": "KR_NEWS_FUTURE_6afb32cdbb070702a7c83f3d4f5967892c6ec538",
     "d_day": 53,
     "d_day_far_future": false,
     "country": "KR",
@@ -16489,15 +16685,15 @@
         "relation_type": "DIRECT_MENTION",
         "evidence_text": "이벤트 원문에 상장사명 명시: 삼양식품",
         "evidence_source": "NEWS_FUTURE",
-        "source_url": "https://www.ajunews.com/view/20261105083405785",
-        "relation_known_date": "2026-11-05",
+        "source_url": "http://www.popcornnews.net/news/articleView.html?idxno=139130",
+        "relation_known_date": "2026-11-09",
         "ingest_mode": "AUTO",
         "from_entity": "삼양식품"
       }
     ],
     "company": "삼양식품",
     "event_type": "PLANT_OPERATION",
-    "event_name": "하나證 \"삼양식품, 中 신공장 가동 에 내년 실적 성장 가속…목표가 유지...",
+    "event_name": "NH證 \"삼양식품, 내년 中신공장 가동 …업종 최선호주\"",
     "event_date": "2027-01-01",
     "date_precision": "YEAR",
     "window_start": "2027-01-01",
@@ -16568,99 +16764,7 @@
     },
     "status": "EXPECTED",
     "source_name": "NEWS_FUTURE",
-    "source_url": "https://www.ajunews.com/view/20261105083405785"
-  },
-  {
-    "event_id": "KR_NEWS_FUTURE_08f7df3f6181208b519550da92ef841b89d25d97",
-    "d_day": 53,
-    "d_day_far_future": false,
-    "country": "KR",
-    "ticker": "",
-    "primary_ticker": "",
-    "anchor_status": "unmapped_only",
-    "related_securities": [
-      {
-        "ticker": "",
-        "company_name": "",
-        "relation_grade": "UNMAPPED",
-        "relation_score": 0,
-        "relation_type": "UNMAPPED",
-        "evidence_text": "직접 또는 검증된 관련 종목 미매핑",
-        "evidence_source": "",
-        "source_url": "",
-        "relation_known_date": "",
-        "ingest_mode": "AUTO",
-        "from_entity": ""
-      }
-    ],
-    "company": "JTBC",
-    "event_type": "TENDER",
-    "event_name": "JTBC, 경영권 매각 본입찰 내년 1월로… 새 주인 찾기 해 넘긴다",
-    "event_date": "2027-01-01",
-    "date_precision": "MONTH",
-    "window_start": "2027-01-01",
-    "window_end": "2027-01-31",
-    "relation_grade": "UNMAPPED",
-    "relation_score": 0,
-    "relation_type": "UNMAPPED",
-    "relation_ingest_mode": "AUTO",
-    "event_score": 20,
-    "insight": {
-      "score": 20,
-      "tier": "CHECK",
-      "label": "추가 확인",
-      "components": {
-        "schedule": {
-          "label": "일정 신뢰도",
-          "points": 15,
-          "max": 30
-        },
-        "relation": {
-          "label": "관련주 근거",
-          "points": 0,
-          "max": 25
-        },
-        "history": {
-          "label": "과거 비교 근거",
-          "points": 0,
-          "max": 25
-        },
-        "market": {
-          "label": "현재 가격 관측",
-          "points": 0,
-          "max": 10
-        },
-        "timing": {
-          "label": "일정 접근·신선도",
-          "points": 5,
-          "max": 10
-        }
-      },
-      "reasons": [
-        "기사 기반 일정 · 기간형 일정",
-        "검증된 개별 관련주 부족",
-        "D+5 완료 사건 0건"
-      ],
-      "missing": [
-        "검증된 개별 관련주",
-        "충분한 과거 사건 표본",
-        "최근 가격·거래량"
-      ],
-      "history_confidence": "NONE",
-      "market": null,
-      "coverage": {
-        "eligible_events": 0,
-        "priced_events": 0,
-        "complete_events": 0,
-        "security_samples": 0,
-        "not_calculated_events": 0,
-        "completion_percent": null
-      },
-      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
-    },
-    "status": "EXPECTED",
-    "source_name": "NEWS_FUTURE",
-    "source_url": "https://biz.chosun.com/stock/market_trend/2026/11/05/GZTKUJV3JRBTXEELT6JMQCAXEQ/?utm_source=naver&utm_medium=original&utm_campaign=biz"
+    "source_url": "http://www.popcornnews.net/news/articleView.html?idxno=139130"
   },
   {
     "event_id": "KR_NEWS_FUTURE_b02160beac970cbe3e329f971c435cd5496999e8",
@@ -17678,7 +17782,7 @@
     "source_url": "https://www.edaily.co.kr/News/Read?newsId=04949526645642768&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article"
   },
   {
-    "event_id": "KR_NEWS_FUTURE_ed90ef5fef41e93a994ca457f238acf32ece7426",
+    "event_id": "KR_NEWS_FUTURE_7cbedd00c94bee7823967efc72398379e2e3e921",
     "d_day": 53,
     "d_day_far_future": false,
     "country": "KR",
@@ -17726,9 +17830,9 @@
         "from_entity": "한전KPS"
       }
     ],
-    "company": "한전 \"호남 반도체 클러스터",
+    "company": "① 美 의회發 반도체 급브레이크",
     "event_type": "CAPEX",
-    "event_name": "[문답] 한전 \"호남 반도체 클러스터, 2028년 말 전력 이상 無\"",
+    "event_name": "① 美 의회發 반도체 급브레이크…건설 수주까지 ‘사정권’",
     "event_date": "2027-01-01",
     "date_precision": "YEAR",
     "window_start": "2027-01-01",
@@ -17800,7 +17904,7 @@
     },
     "status": "EXPECTED",
     "source_name": "NEWS_FUTURE",
-    "source_url": "https://www.news1.kr/economy/env-policy/6344622"
+    "source_url": "https://www.dnews.co.kr/uhtml/view.jsp?idxno=202611081236419200091"
   },
   {
     "event_id": "KR_NEWS_FUTURE_6fd72c3ced3c122d48d31282ecdb8ba277cfd465",
@@ -20944,6 +21048,105 @@
     "source_url": "https://www.topstarnews.net/news/articleView.html?idxno=16271004"
   },
   {
+    "event_id": "KR_NEWS_FUTURE_d68c52cdb7a091d69a58f7938b3e1264865f472a",
+    "d_day": 53,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "006400",
+    "primary_ticker": "",
+    "anchor_status": "theme_proxy_only",
+    "related_securities": [
+      {
+        "ticker": "006400",
+        "company_name": "삼성SDI",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 삼성SDI",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.ddaily.co.kr/page/view/2026110802215406547",
+        "relation_known_date": "2026-11-08",
+        "ingest_mode": "AUTO",
+        "from_entity": "삼성SDI"
+      }
+    ],
+    "company": "3Q 주춤' 양극재",
+    "event_type": "TENDER",
+    "event_name": "'3Q 주춤' 양극재, 내년 반등 노린다…LG엔솔 빠진 韓 ESS 3차 입찰 [위클...",
+    "event_date": "2027-01-01",
+    "date_precision": "YEAR",
+    "window_start": "2027-01-01",
+    "window_end": "2027-12-31",
+    "relation_grade": "THEME",
+    "relation_score": 35,
+    "relation_type": "CONTEXT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 32,
+    "insight": {
+      "score": 32,
+      "tier": "CHECK",
+      "label": "추가 확인",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 11,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 6,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 5,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "검증된 개별 관련주 부족",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "검증된 개별 관련주",
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 464500.0,
+        "return_20d": -0.183656,
+        "volume_ratio_20d": 0.305,
+        "sessions": 66,
+        "source": "Yahoo Finance",
+        "ticker": "006400"
+      },
+      "coverage": {
+        "eligible_events": 1,
+        "priced_events": 1,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": 0
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.ddaily.co.kr/page/view/2026110802215406547"
+  },
+  {
     "event_id": "KR_NEWS_FUTURE_332ea4811929038a4e72e3d05ef50c07b71a6428",
     "d_day": 53,
     "d_day_far_future": false,
@@ -21474,6 +21677,1794 @@
     "source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=502154"
   },
   {
+    "event_id": "KR_NEWS_FUTURE_e983c3427b1650acea6b09763866ff5da876550a",
+    "d_day": 53,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "",
+    "primary_ticker": "",
+    "anchor_status": "unmapped_only",
+    "related_securities": [
+      {
+        "ticker": "",
+        "company_name": "",
+        "relation_grade": "UNMAPPED",
+        "relation_score": 0,
+        "relation_type": "UNMAPPED",
+        "evidence_text": "직접 또는 검증된 관련 종목 미매핑",
+        "evidence_source": "",
+        "source_url": "",
+        "relation_known_date": "",
+        "ingest_mode": "AUTO",
+        "from_entity": ""
+      }
+    ],
+    "company": "JTBC 매각 절차 본격화",
+    "event_type": "TENDER",
+    "event_name": "JTBC 매각 절차 본격화…외부 자본 유치 나서, 내년 1월 우선협상자 선...",
+    "event_date": "2027-01-01",
+    "date_precision": "MONTH",
+    "window_start": "2027-01-01",
+    "window_end": "2027-01-31",
+    "relation_grade": "UNMAPPED",
+    "relation_score": 0,
+    "relation_type": "UNMAPPED",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 20,
+    "insight": {
+      "score": 20,
+      "tier": "CHECK",
+      "label": "추가 확인",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 15,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 0,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 0,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 5,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "검증된 개별 관련주 부족",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "검증된 개별 관련주",
+        "충분한 과거 사건 표본",
+        "최근 가격·거래량"
+      ],
+      "history_confidence": "NONE",
+      "market": null,
+      "coverage": {
+        "eligible_events": 0,
+        "priced_events": 0,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": null
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.jnilbo.com/news/articleView.html?idxno=90000080746"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_a2821dde4b2294b587fb285ea4d74a1f7cce2a40",
+    "d_day": 53,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "010130",
+    "primary_ticker": "010130",
+    "anchor_status": "anchored_from_relation",
+    "related_securities": [
+      {
+        "ticker": "010130",
+        "company_name": "고려아연",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 고려아연",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.edaily.co.kr/News/Read?newsId=02168086645644080&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "고려아연"
+      }
+    ],
+    "company": "고려아연",
+    "event_type": "CAPEX",
+    "event_name": "고려아연, 금속값·환율 부담에 목표가 129만원으로 하향-현대차",
+    "event_date": "2027-01-01",
+    "date_precision": "QUARTER",
+    "window_start": "2027-01-01",
+    "window_end": "2027-03-31",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 49,
+    "insight": {
+      "score": 49,
+      "tier": "WATCH",
+      "label": "일정 관찰",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 13,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 21,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 5,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 960000.0,
+        "return_20d": -0.070668,
+        "volume_ratio_20d": 2.069,
+        "sessions": 66,
+        "source": "Yahoo Finance",
+        "ticker": "010130"
+      },
+      "coverage": {
+        "eligible_events": 1,
+        "priced_events": 1,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": 0
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.edaily.co.kr/News/Read?newsId=02168086645644080&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_8cdaf8946fcdb95af488c6b720e2999138f43528",
+    "d_day": 53,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "000500",
+    "primary_ticker": "000500",
+    "anchor_status": "anchored_from_relation",
+    "related_securities": [
+      {
+        "ticker": "000500",
+        "company_name": "가온전선",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 가온전선",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.vegannews.co.kr/news/article.html?no=402259",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "가온전선"
+      }
+    ],
+    "company": "가온전선",
+    "event_type": "CAPEX",
+    "event_name": "가온전선 LSCUS, 중전압 케이블 첫 출하",
+    "event_date": "2027-01-01",
+    "date_precision": "HALF_YEAR",
+    "window_start": "2027-01-01",
+    "window_end": "2027-06-30",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 48,
+    "insight": {
+      "score": 48,
+      "tier": "WATCH",
+      "label": "일정 관찰",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 12,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 21,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 5,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 180900.0,
+        "return_20d": -0.387817,
+        "volume_ratio_20d": 1.345,
+        "sessions": 66,
+        "source": "Yahoo Finance",
+        "ticker": "000500"
+      },
+      "coverage": {
+        "eligible_events": 1,
+        "priced_events": 1,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": 0
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.vegannews.co.kr/news/article.html?no=402259"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_21f33d20d204ff4da367f166dc0927383d87ea17",
+    "d_day": 53,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "",
+    "primary_ticker": "",
+    "anchor_status": "unmapped_only",
+    "related_securities": [
+      {
+        "ticker": "",
+        "company_name": "",
+        "relation_grade": "UNMAPPED",
+        "relation_score": 0,
+        "relation_type": "UNMAPPED",
+        "evidence_text": "직접 또는 검증된 관련 종목 미매핑",
+        "evidence_source": "",
+        "source_url": "",
+        "relation_known_date": "",
+        "ingest_mode": "AUTO",
+        "from_entity": ""
+      }
+    ],
+    "company": "공개경쟁입찰” JTBC 새 주인 누가 될까?",
+    "event_type": "TENDER",
+    "event_name": "“공개경쟁입찰” JTBC 새 주인 누가 될까?… 내년 1월 우선협상대상자 ...",
+    "event_date": "2027-01-01",
+    "date_precision": "MONTH",
+    "window_start": "2027-01-01",
+    "window_end": "2027-01-31",
+    "relation_grade": "UNMAPPED",
+    "relation_score": 0,
+    "relation_type": "UNMAPPED",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 20,
+    "insight": {
+      "score": 20,
+      "tier": "CHECK",
+      "label": "추가 확인",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 15,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 0,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 0,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 5,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "검증된 개별 관련주 부족",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "검증된 개별 관련주",
+        "충분한 과거 사건 표본",
+        "최근 가격·거래량"
+      ],
+      "history_confidence": "NONE",
+      "market": null,
+      "coverage": {
+        "eligible_events": 0,
+        "priced_events": 0,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": null
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.mk.co.kr/article/12202035"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_7ecd25d5d7ab7fc2677ed8bb472caf5f2396092a",
+    "d_day": 53,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "030610",
+    "primary_ticker": "",
+    "anchor_status": "theme_proxy_only",
+    "related_securities": [
+      {
+        "ticker": "030610",
+        "company_name": "교보증권",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 교보증권",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "http://www.popcornnews.net/news/articleView.html?idxno=139142",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "교보증권"
+      },
+      {
+        "ticker": "420770",
+        "company_name": "기가비스",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 기가비스",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "http://www.popcornnews.net/news/articleView.html?idxno=139142",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "기가비스"
+      }
+    ],
+    "company": "교보증권 \"기가비스",
+    "event_type": "CAPEX",
+    "event_name": "교보증권 \"기가비스, AI 기판 증설 수혜… 내년 영업이익 4배 전망\"",
+    "event_date": "2027-01-01",
+    "date_precision": "YEAR",
+    "window_start": "2027-01-01",
+    "window_end": "2027-12-31",
+    "relation_grade": "THEME",
+    "relation_score": 35,
+    "relation_type": "CONTEXT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 22,
+    "insight": {
+      "score": 22,
+      "tier": "CHECK",
+      "label": "추가 확인",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 11,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 6,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 0,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 5,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "검증된 개별 관련주 부족",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "검증된 개별 관련주",
+        "충분한 과거 사건 표본",
+        "최근 가격·거래량"
+      ],
+      "history_confidence": "NONE",
+      "market": null,
+      "coverage": {
+        "eligible_events": 0,
+        "priced_events": 0,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": null
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "http://www.popcornnews.net/news/articleView.html?idxno=139142"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_142c8bc5a0e77770486b4172fdff80e3d9aac328",
+    "d_day": 53,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "051910",
+    "primary_ticker": "",
+    "anchor_status": "theme_proxy_only",
+    "related_securities": [
+      {
+        "ticker": "051910",
+        "company_name": "LG화학",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: LG화학",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.joongang.co.kr/article/25476834",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "LG화학"
+      }
+    ],
+    "company": "금호석화마저 11년 만에 적자",
+    "event_type": "PLANT_OPERATION",
+    "event_name": "금호석화마저 11년 만에 적자…석화 4사, 도로 혹한기",
+    "event_date": "2027-01-01",
+    "date_precision": "YEAR",
+    "window_start": "2027-01-01",
+    "window_end": "2027-12-31",
+    "relation_grade": "THEME",
+    "relation_score": 35,
+    "relation_type": "CONTEXT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 32,
+    "insight": {
+      "score": 32,
+      "tier": "CHECK",
+      "label": "추가 확인",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 11,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 6,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 5,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "검증된 개별 관련주 부족",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "검증된 개별 관련주",
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 232000.0,
+        "return_20d": -0.190227,
+        "volume_ratio_20d": 0.892,
+        "sessions": 66,
+        "source": "Yahoo Finance",
+        "ticker": "051910"
+      },
+      "coverage": {
+        "eligible_events": 0,
+        "priced_events": 0,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": null
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.joongang.co.kr/article/25476834"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_605796dbf17b999ebcebd2628fa0a50cd2460ce8",
+    "d_day": 53,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "126340",
+    "primary_ticker": "126340",
+    "anchor_status": "primary",
+    "related_securities": [
+      {
+        "ticker": "126340",
+        "company_name": "비나텍",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "http://www.newsprime.co.kr/news/article.html?no=754078",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "비나텍"
+      }
+    ],
+    "company": "비나텍",
+    "event_type": "PLANT_OPERATION",
+    "event_name": "비나텍, 데이터센터향 수주 '연 매출 4배'…'엔비디아 800V 전력망 필수...",
+    "event_date": "2027-01-01",
+    "date_precision": "YEAR",
+    "window_start": "2027-01-01",
+    "window_end": "2027-12-31",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 47,
+    "insight": {
+      "score": 47,
+      "tier": "WATCH",
+      "label": "일정 관찰",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 11,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 21,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 5,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 70400.0,
+        "return_20d": -0.190805,
+        "volume_ratio_20d": 0.379,
+        "sessions": 66,
+        "source": "Yahoo Finance",
+        "ticker": "126340"
+      },
+      "coverage": {
+        "eligible_events": 0,
+        "priced_events": 0,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": null
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "http://www.newsprime.co.kr/news/article.html?no=754078"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_71ad42b5dd97cc8b2106daddfd25e6d37699368e",
+    "d_day": 53,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "003230",
+    "primary_ticker": "003230",
+    "anchor_status": "anchored_from_relation",
+    "related_securities": [
+      {
+        "ticker": "003230",
+        "company_name": "삼양식품",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 삼양식품",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.mt.co.kr/stock/2026/11/09/2026110908185841406",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "삼양식품"
+      }
+    ],
+    "company": "삼양식품",
+    "event_type": "PLANT_OPERATION",
+    "event_name": "\"삼양식품, 3분기 실적방어…중국 신공장 가동 이후 성장세 기대\"-키움",
+    "event_date": "2027-01-01",
+    "date_precision": "QUARTER",
+    "window_start": "2027-01-01",
+    "window_end": "2027-03-31",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 49,
+    "insight": {
+      "score": 49,
+      "tier": "WATCH",
+      "label": "일정 관찰",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 13,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 21,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 5,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 1220000.0,
+        "return_20d": 0.040956,
+        "volume_ratio_20d": 1.545,
+        "sessions": 66,
+        "source": "Yahoo Finance",
+        "ticker": "003230"
+      },
+      "coverage": {
+        "eligible_events": 0,
+        "priced_events": 0,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": null
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.mt.co.kr/stock/2026/11/09/2026110908185841406"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_79f126c155766fda177fa56813a9295011685a66",
+    "d_day": 53,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "003230",
+    "primary_ticker": "003230",
+    "anchor_status": "anchored_from_relation",
+    "related_securities": [
+      {
+        "ticker": "003230",
+        "company_name": "삼양식품",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 삼양식품",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.newspim.com/news/view/20261109000048",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "삼양식품"
+      },
+      {
+        "ticker": "003470",
+        "company_name": "유안타증권",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 유안타증권",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.newspim.com/news/view/20261109000048",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "유안타증권"
+      }
+    ],
+    "company": "삼양식품",
+    "event_type": "PLANT_OPERATION",
+    "event_name": "[모닝 리포트] 삼양식품, 3분기 영업익 50%↑…中 신공장·美 유통망 확...",
+    "event_date": "2027-01-01",
+    "date_precision": "YEAR",
+    "window_start": "2027-01-01",
+    "window_end": "2027-12-31",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 47,
+    "insight": {
+      "score": 47,
+      "tier": "WATCH",
+      "label": "일정 관찰",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 11,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 21,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 5,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 1220000.0,
+        "return_20d": 0.040956,
+        "volume_ratio_20d": 1.545,
+        "sessions": 66,
+        "source": "Yahoo Finance",
+        "ticker": "003230"
+      },
+      "coverage": {
+        "eligible_events": 0,
+        "priced_events": 0,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": null
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.newspim.com/news/view/20261109000048"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_3856ea36c6ddfc3abddf3adca89f2798e4a562f1",
+    "d_day": 53,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "",
+    "primary_ticker": "",
+    "anchor_status": "unmapped_only",
+    "related_securities": [
+      {
+        "ticker": "",
+        "company_name": "",
+        "relation_grade": "UNMAPPED",
+        "relation_score": 0,
+        "relation_type": "UNMAPPED",
+        "evidence_text": "직접 또는 검증된 관련 종목 미매핑",
+        "evidence_source": "",
+        "source_url": "",
+        "relation_known_date": "",
+        "ingest_mode": "AUTO",
+        "from_entity": ""
+      }
+    ],
+    "company": "새 주인 찾는 JTBC",
+    "event_type": "TENDER",
+    "event_name": "새 주인 찾는 JTBC, 오늘 매각 공고…\"내년 1월 우선협상자 선정\"",
+    "event_date": "2027-01-01",
+    "date_precision": "MONTH",
+    "window_start": "2027-01-01",
+    "window_end": "2027-01-31",
+    "relation_grade": "UNMAPPED",
+    "relation_score": 0,
+    "relation_type": "UNMAPPED",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 20,
+    "insight": {
+      "score": 20,
+      "tier": "CHECK",
+      "label": "추가 확인",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 15,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 0,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 0,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 5,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "검증된 개별 관련주 부족",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "검증된 개별 관련주",
+        "충분한 과거 사건 표본",
+        "최근 가격·거래량"
+      ],
+      "history_confidence": "NONE",
+      "market": null,
+      "coverage": {
+        "eligible_events": 0,
+        "priced_events": 0,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": null
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "http://www.yonhapnewstv.co.kr/news/AKR20261109093543fMd"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_fff160c3ec5043d35408a1f47f01f2ed6c40d06c",
+    "d_day": 53,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "161890",
+    "primary_ticker": "161890",
+    "anchor_status": "anchored_from_relation",
+    "related_securities": [
+      {
+        "ticker": "161890",
+        "company_name": "한국콜마",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 한국콜마",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.mt.co.kr/stock/2026/11/09/2026110909055793303",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "한국콜마"
+      },
+      {
+        "ticker": "200130",
+        "company_name": "콜마비앤에이치",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 콜마비앤에이치",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.mt.co.kr/stock/2026/11/09/2026110909055793303",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "콜마비앤에이치"
+      }
+    ],
+    "company": "한국콜마",
+    "event_type": "CAPEX",
+    "event_name": "\"수요 못 따라가\" 한국콜마 목표가 줄하향...장 초반 주가 7% '뚝'",
+    "event_date": "2027-01-01",
+    "date_precision": "YEAR",
+    "window_start": "2027-01-01",
+    "window_end": "2027-12-31",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 47,
+    "insight": {
+      "score": 47,
+      "tier": "WATCH",
+      "label": "일정 관찰",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 11,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 21,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 5,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 108900.0,
+        "return_20d": -0.205689,
+        "volume_ratio_20d": 3.426,
+        "sessions": 66,
+        "source": "Yahoo Finance",
+        "ticker": "161890"
+      },
+      "coverage": {
+        "eligible_events": 1,
+        "priced_events": 1,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": 0
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.mt.co.kr/stock/2026/11/09/2026110909055793303"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_5fdfced18434b4e3ee95cc0071f8758db8d478c5",
+    "d_day": 53,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "329180",
+    "primary_ticker": "",
+    "anchor_status": "theme_proxy_only",
+    "related_securities": [
+      {
+        "ticker": "329180",
+        "company_name": "HD현대중공업",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: HD현대중공업",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.sedaily.com/article/20111605?ref=naver",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "HD현대중공업"
+      }
+    ],
+    "company": "자주포 이어 美 해군 차기 호위함 수주까지",
+    "event_type": "CAPEX",
+    "event_name": "자주포 이어 美 해군 차기 호위함 수주까지…韓·日·英·튀르키예 ‘4파...",
+    "event_date": "2027-01-01",
+    "date_precision": "YEAR",
+    "window_start": "2027-01-01",
+    "window_end": "2027-12-31",
+    "relation_grade": "THEME",
+    "relation_score": 35,
+    "relation_type": "CONTEXT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 22,
+    "insight": {
+      "score": 22,
+      "tier": "CHECK",
+      "label": "추가 확인",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 11,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 6,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 0,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 5,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "검증된 개별 관련주 부족",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "검증된 개별 관련주",
+        "충분한 과거 사건 표본",
+        "최근 가격·거래량"
+      ],
+      "history_confidence": "NONE",
+      "market": null,
+      "coverage": {
+        "eligible_events": 0,
+        "priced_events": 0,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": null
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.sedaily.com/article/20111605?ref=naver"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_18a46cad75fdd13976a296626090748b7920eb9a",
+    "d_day": 53,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "161890",
+    "primary_ticker": "161890",
+    "anchor_status": "anchored_from_relation",
+    "related_securities": [
+      {
+        "ticker": "161890",
+        "company_name": "한국콜마",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 한국콜마",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.mk.co.kr/article/12202022",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "한국콜마"
+      }
+    ],
+    "company": "한국콜마",
+    "event_type": "PLANT_OPERATION",
+    "event_name": "“주문 늘어도 비용 부담”…한국콜마 목표가 18만→15만원",
+    "event_date": "2027-01-01",
+    "date_precision": "YEAR",
+    "window_start": "2027-01-01",
+    "window_end": "2027-12-31",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 47,
+    "insight": {
+      "score": 47,
+      "tier": "WATCH",
+      "label": "일정 관찰",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 11,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 21,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 5,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 108900.0,
+        "return_20d": -0.205689,
+        "volume_ratio_20d": 3.426,
+        "sessions": 66,
+        "source": "Yahoo Finance",
+        "ticker": "161890"
+      },
+      "coverage": {
+        "eligible_events": 0,
+        "priced_events": 0,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": null
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.mk.co.kr/article/12202022"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_447f7d8c2fb4deeb4b8874200bc490bfc320e742",
+    "d_day": 53,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "004020",
+    "primary_ticker": "004020",
+    "anchor_status": "anchored_from_relation",
+    "related_securities": [
+      {
+        "ticker": "004020",
+        "company_name": "현대제철",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 현대제철",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.ilyoseoul.co.kr/news/articleView.html?idxno=524724",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "현대제철"
+      }
+    ],
+    "company": "현대제철",
+    "event_type": "POLICY",
+    "event_name": "\"주주가치 제고는 언제쯤\"… 현대제철, 결국 '저PBR' 낙인까지",
+    "event_date": "2027-01-01",
+    "date_precision": "YEAR",
+    "window_start": "2027-01-01",
+    "window_end": "2027-12-31",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 47,
+    "insight": {
+      "score": 47,
+      "tier": "WATCH",
+      "label": "일정 관찰",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 11,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 21,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 5,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 28150.0,
+        "return_20d": -0.001773,
+        "volume_ratio_20d": 0.858,
+        "sessions": 66,
+        "source": "Yahoo Finance",
+        "ticker": "004020"
+      },
+      "coverage": {
+        "eligible_events": 0,
+        "priced_events": 0,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": null
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.ilyoseoul.co.kr/news/articleView.html?idxno=524724"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_5bc60e463644ffb2d4cb2511bce487f2b38afef6",
+    "d_day": 53,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "241710",
+    "primary_ticker": "241710",
+    "anchor_status": "anchored_from_relation",
+    "related_securities": [
+      {
+        "ticker": "241710",
+        "company_name": "코스메카코리아",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 코스메카코리아",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "http://www.newsprime.co.kr/news/article.html?no=754086",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "코스메카코리아"
+      }
+    ],
+    "company": "코스메카코리아",
+    "event_type": "CAPEX",
+    "event_name": "코스메카코리아, 오창 공장 증설… 내년 성장 동력 강화",
+    "event_date": "2027-01-01",
+    "date_precision": "YEAR",
+    "window_start": "2027-01-01",
+    "window_end": "2027-12-31",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 47,
+    "insight": {
+      "score": 47,
+      "tier": "WATCH",
+      "label": "일정 관찰",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 11,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 21,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 5,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 101400.0,
+        "return_20d": -0.089767,
+        "volume_ratio_20d": 2.406,
+        "sessions": 66,
+        "source": "Yahoo Finance",
+        "ticker": "241710"
+      },
+      "coverage": {
+        "eligible_events": 1,
+        "priced_events": 1,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": 0
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "http://www.newsprime.co.kr/news/article.html?no=754086"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_29043a4bb1364b58ae85e9864ab651435379b02a",
+    "d_day": 53,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "161890",
+    "primary_ticker": "161890",
+    "anchor_status": "anchored_from_relation",
+    "related_securities": [
+      {
+        "ticker": "161890",
+        "company_name": "한국콜마",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 한국콜마",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "http://www.newsprime.co.kr/news/article.html?no=754079",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "한국콜마"
+      }
+    ],
+    "company": "한국콜마",
+    "event_type": "M_AND_A",
+    "event_name": "한국콜마, 4분기 국내 매출 40% 성장 전망…비수기 넘어 '고성장' 기대",
+    "event_date": "2027-01-01",
+    "date_precision": "HALF_YEAR",
+    "window_start": "2027-01-01",
+    "window_end": "2027-06-30",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 48,
+    "insight": {
+      "score": 48,
+      "tier": "WATCH",
+      "label": "일정 관찰",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 12,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 21,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 5,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 108900.0,
+        "return_20d": -0.205689,
+        "volume_ratio_20d": 3.426,
+        "sessions": 66,
+        "source": "Yahoo Finance",
+        "ticker": "161890"
+      },
+      "coverage": {
+        "eligible_events": 3,
+        "priced_events": 3,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": 0
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "http://www.newsprime.co.kr/news/article.html?no=754079"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_5036f1f528b8e0f9150c7e7948be2e316763945d",
+    "d_day": 53,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "001500",
+    "primary_ticker": "",
+    "anchor_status": "theme_proxy_only",
+    "related_securities": [
+      {
+        "ticker": "001500",
+        "company_name": "현대차증권",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 현대차증권",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.g-enews.com/view.php?ud=20261109084607480544093b5d4e_1",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "현대차증권"
+      },
+      {
+        "ticker": "010130",
+        "company_name": "고려아연",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 고려아연",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.g-enews.com/view.php?ud=20261109084607480544093b5d4e_1",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "고려아연"
+      }
+    ],
+    "company": "현대차증권 \"고려아연",
+    "event_type": "CAPEX",
+    "event_name": "현대차증권 \"고려아연, 실적 부진 전망.. 목표가 9.2% 하향\"",
+    "event_date": "2027-01-01",
+    "date_precision": "QUARTER",
+    "window_start": "2027-01-01",
+    "window_end": "2027-03-31",
+    "relation_grade": "THEME",
+    "relation_score": 35,
+    "relation_type": "CONTEXT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 34,
+    "insight": {
+      "score": 34,
+      "tier": "CHECK",
+      "label": "추가 확인",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 13,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 6,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 5,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "검증된 개별 관련주 부족",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "검증된 개별 관련주",
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 6690.0,
+        "return_20d": -0.110372,
+        "volume_ratio_20d": 0.401,
+        "sessions": 66,
+        "source": "Yahoo Finance",
+        "ticker": "001500"
+      },
+      "coverage": {
+        "eligible_events": 0,
+        "priced_events": 0,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": null
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.g-enews.com/view.php?ud=20261109084607480544093b5d4e_1"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_8e4e0793bdffb6c0c419ab53b5cf526a301f0d24",
+    "d_day": 53,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "003230",
+    "primary_ticker": "003230",
+    "anchor_status": "anchored_from_relation",
+    "related_securities": [
+      {
+        "ticker": "003230",
+        "company_name": "삼양식품",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 삼양식품",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.newsway.co.kr/news/view?ud=2026110908343720922",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "삼양식품"
+      }
+    ],
+    "company": "삼양식품",
+    "event_type": "CAPEX",
+    "event_name": "환율 부담에도 \"매수\"…삼양식품, 내년 증설 효과 기대[애널리스트의 시...",
+    "event_date": "2027-01-01",
+    "date_precision": "YEAR",
+    "window_start": "2027-01-01",
+    "window_end": "2027-12-31",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 47,
+    "insight": {
+      "score": 47,
+      "tier": "WATCH",
+      "label": "일정 관찰",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 11,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 21,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 5,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 1220000.0,
+        "return_20d": 0.040956,
+        "volume_ratio_20d": 1.545,
+        "sessions": 66,
+        "source": "Yahoo Finance",
+        "ticker": "003230"
+      },
+      "coverage": {
+        "eligible_events": 1,
+        "priced_events": 1,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": 0
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.newsway.co.kr/news/view?ud=2026110908343720922"
+  },
+  {
     "event_id": "KR_NEWS_FUTURE_1c8d5b615deebc4a876238fab152cb0589fbbb56",
     "d_day": 60,
     "d_day_far_future": false,
@@ -21670,7 +23661,7 @@
     "source_url": "http://www.koreastocknews.com/news/articleView.html?idxno=122067"
   },
   {
-    "event_id": "KR_NEWS_FUTURE_586fc306c3af459d3777bb7637c383eaf53f15fc",
+    "event_id": "KR_NEWS_FUTURE_46c06f7360d121c8221f08939128fca3776d1905",
     "d_day": 63,
     "d_day_far_future": false,
     "country": "KR",
@@ -21686,15 +23677,15 @@
         "relation_type": "DIRECT_MENTION",
         "evidence_text": "이벤트 원문에 상장사명 명시: 삼성물산",
         "evidence_source": "NEWS_FUTURE",
-        "source_url": "https://realty.chosun.com/site/data/html_dir/2026/11/08/2026110800776.html",
-        "relation_known_date": "2026-11-08",
+        "source_url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065570550621832",
+        "relation_known_date": "2026-11-09",
         "ingest_mode": "AUTO",
         "from_entity": "삼성물산"
       }
     ],
     "company": "삼성물산",
     "event_type": "TENDER",
-    "event_name": "목동13단지 품은 삼성물산, 수주 12조 돌파…9·5·1단지도 수주 노려",
+    "event_name": "삼성물산, 목동13단지 재건축 시공사 확정…목동 첫 '래미안' 들어선다",
     "event_date": "2027-01-11",
     "date_precision": "EXACT_DATE",
     "window_start": "2027-01-11",
@@ -21758,7 +23749,7 @@
     },
     "status": "EXPECTED",
     "source_name": "NEWS_FUTURE",
-    "source_url": "https://realty.chosun.com/site/data/html_dir/2026/11/08/2026110800776.html"
+    "source_url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065570550621832"
   },
   {
     "event_id": "US_FED_FOMC_17c662e09879d52fe265843d376fb3c2fc83f128",
@@ -21840,7 +23831,7 @@
         "price": 7376.8599,
         "return_20d": -0.055646,
         "volume_ratio_20d": 0.68,
-        "sessions": 71,
+        "sessions": 70,
         "source": "Yahoo Finance",
         "ticker": "^GSPC"
       },
@@ -22689,7 +24680,7 @@
     ],
     "company": "신세계",
     "event_type": "M_AND_A",
-    "event_name": "[주간 유통 나침반] 삼양·신세계 경영진 재편…샘표 합병·농심 美 관세...",
+    "event_name": "[주간 유통 나침반] 삼양·신세계 경영진 재편…샘표 합병 ·농심 美 관세...",
     "event_date": "2027-02-01",
     "date_precision": "EXACT_DATE",
     "window_start": "2027-02-01",
@@ -24628,7 +26619,7 @@
         "price": 7376.8599,
         "return_20d": -0.055646,
         "volume_ratio_20d": 0.68,
-        "sessions": 71,
+        "sessions": 70,
         "source": "Yahoo Finance",
         "ticker": "^GSPC"
       },
@@ -26657,7 +28648,7 @@
         "price": 7376.8599,
         "return_20d": -0.055646,
         "volume_ratio_20d": 0.68,
-        "sessions": 71,
+        "sessions": 70,
         "source": "Yahoo Finance",
         "ticker": "^GSPC"
       },
@@ -27055,7 +29046,7 @@
         "price": 7376.8599,
         "return_20d": -0.055646,
         "volume_ratio_20d": 0.68,
-        "sessions": 71,
+        "sessions": 70,
         "source": "Yahoo Finance",
         "ticker": "^GSPC"
       },
@@ -27735,6 +29726,254 @@
     "source_url": "http://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A202611060054&t=NN"
   },
   {
+    "event_id": "KR_NEWS_FUTURE_efa3aa630cbc288b4b11ca83cdef76b5e7553089",
+    "d_day": 234,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "396470",
+    "primary_ticker": "396470",
+    "anchor_status": "anchored_from_relation",
+    "related_securities": [
+      {
+        "ticker": "396470",
+        "company_name": "워트",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 워트",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.mt.co.kr/stock/2026/11/09/2026110821312146857",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "워트"
+      },
+      {
+        "ticker": "000660",
+        "company_name": "SK하이닉스",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: SK하이닉스",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.mt.co.kr/stock/2026/11/09/2026110821312146857",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "SK하이닉스"
+      },
+      {
+        "ticker": "402340",
+        "company_name": "SK스퀘어",
+        "relation_grade": "B",
+        "relation_score": 82,
+        "relation_type": "OWNERSHIP_LINK",
+        "evidence_text": "SK하이닉스 공식 IR 주주구조에서 SK스퀘어 최대주주 관계 확인(현재 확인일 기준; 과거 백테스트에 소급하지 않음)",
+        "evidence_source": "SK하이닉스 공식 IR 주주구조에서 SK스퀘어 최대주주 관계 확인(현재 확인일 기준; 과거 백테스트에 소급하지 않음)",
+        "source_url": "https://www.skhynix.com/ir/UI-FR-IR04/",
+        "relation_known_date": "2026-11-04",
+        "ingest_mode": "AUTO",
+        "from_entity": "000660"
+      },
+      {
+        "ticker": "005930",
+        "company_name": "삼성전자",
+        "relation_grade": "B",
+        "relation_score": 72,
+        "relation_type": "INVESTMENT_LINK",
+        "evidence_text": "NEWS_FUTURE: 삼성전자·SK하이닉스에 2천만원 투자했다면 배당금 얼마",
+        "evidence_source": "NEWS_FUTURE: 삼성전자·SK하이닉스에 2천만원 투자했다면 배당금 얼마",
+        "source_url": "https://www.topstarnews.net/news/articleView.html?idxno=16271004",
+        "relation_known_date": "2026-11-08",
+        "ingest_mode": "AUTO",
+        "from_entity": "000660"
+      }
+    ],
+    "company": "워트",
+    "event_type": "CONTRACT",
+    "event_name": "워트, SK하이닉스 설비투자 확대로 실적 개선 \"올 영업익 70억 기대\"",
+    "event_date": "2027-07-01",
+    "date_precision": "MONTH",
+    "window_start": "2027-07-01",
+    "window_end": "2027-07-31",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 49,
+    "insight": {
+      "score": 49,
+      "tier": "WATCH",
+      "label": "일정 관찰",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 15,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 21,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 3,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "직접 2개 · 경제관계 2개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 5600.0,
+        "return_20d": -0.214586,
+        "volume_ratio_20d": 0.503,
+        "sessions": 66,
+        "source": "Yahoo Finance",
+        "ticker": "396470"
+      },
+      "coverage": {
+        "eligible_events": 3,
+        "priced_events": 3,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": 0
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.mt.co.kr/stock/2026/11/09/2026110821312146857"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_be4a97e6e32e6ca7fe1769791c7368a76c3de768",
+    "d_day": 234,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "241710",
+    "primary_ticker": "241710",
+    "anchor_status": "anchored_from_relation",
+    "related_securities": [
+      {
+        "ticker": "241710",
+        "company_name": "코스메카코리아",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 코스메카코리아",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.newspim.com/news/view/20261109000092",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "코스메카코리아"
+      },
+      {
+        "ticker": "950140",
+        "company_name": "잉글우드랩",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 잉글우드랩",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.newspim.com/news/view/20261109000092",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "잉글우드랩"
+      }
+    ],
+    "company": "코스메카코리아",
+    "event_type": "PLANT_OPERATION",
+    "event_name": "[모닝 리포트] \"코스메카코리아, 수주 급증에도 외주비 부담\"",
+    "event_date": "2027-07-01",
+    "date_precision": "HALF_YEAR",
+    "window_start": "2027-07-01",
+    "window_end": "2027-12-31",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 46,
+    "insight": {
+      "score": 46,
+      "tier": "WATCH",
+      "label": "일정 관찰",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 12,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 21,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 3,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 101400.0,
+        "return_20d": -0.089767,
+        "volume_ratio_20d": 2.406,
+        "sessions": 66,
+        "source": "Yahoo Finance",
+        "ticker": "241710"
+      },
+      "coverage": {
+        "eligible_events": 0,
+        "priced_events": 0,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": null
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.newspim.com/news/view/20261109000092"
+  },
+  {
     "event_id": "US_FED_FOMC_881541bb0fe02ba7a8dfbb308b847d8eee821f5f",
     "d_day": 261,
     "d_day_far_future": false,
@@ -27814,7 +30053,7 @@
         "price": 7376.8599,
         "return_20d": -0.055646,
         "volume_ratio_20d": 0.68,
-        "sessions": 71,
+        "sessions": 70,
         "source": "Yahoo Finance",
         "ticker": "^GSPC"
       },
@@ -27912,7 +30151,7 @@
         "price": 7376.8599,
         "return_20d": -0.055646,
         "volume_ratio_20d": 0.68,
-        "sessions": 71,
+        "sessions": 70,
         "source": "Yahoo Finance",
         "ticker": "^GSPC"
       },
@@ -28207,7 +30446,7 @@
         "price": 7376.8599,
         "return_20d": -0.055646,
         "volume_ratio_20d": 0.68,
-        "sessions": 71,
+        "sessions": 70,
         "source": "Yahoo Finance",
         "ticker": "^GSPC"
       },
@@ -28417,7 +30656,7 @@
         "price": 7376.8599,
         "return_20d": -0.055646,
         "volume_ratio_20d": 0.68,
-        "sessions": 71,
+        "sessions": 70,
         "source": "Yahoo Finance",
         "ticker": "^GSPC"
       },
@@ -29760,7 +31999,7 @@
     "source_url": "http://www.joseilbo.com/news/news_read.php?uid=579171&class=53&grp="
   },
   {
-    "event_id": "KR_NEWS_FUTURE_ecc25a2f3c09abdfbc730103010f8dd755fb9742",
+    "event_id": "KR_NEWS_FUTURE_1cb3d1a467cb53d23407662daf39382c7feb8d5d",
     "d_day": 418,
     "d_day_far_future": true,
     "country": "KR",
@@ -29776,15 +32015,15 @@
         "relation_type": "CONTEXT_MENTION",
         "evidence_text": "이벤트 원문에 상장사명 명시: 한화투자증권",
         "evidence_source": "NEWS_FUTURE",
-        "source_url": "https://www.mt.co.kr/stock/2026/11/08/2026110811240385851",
-        "relation_known_date": "2026-11-08",
+        "source_url": "https://www.chosun.com/economy/stock-finance/2026/11/09/5M62D3TKJFAOJLRB3FQ6GOV57Q/?utm_source=naver&utm_medium=referral&utm_campaign=naver-news",
+        "relation_known_date": "2026-11-09",
         "ingest_mode": "AUTO",
         "from_entity": "한화투자증권"
       }
     ],
-    "company": "손절하고 도망쳐?\" 괴로운 개미들",
+    "company": "미 반도체 반등 성공",
     "event_type": "CAPEX",
-    "event_name": "\"손절하고 도망쳐?\" 괴로운 개미들…美 물가·코어위브 실적 주목하라는...",
+    "event_name": "미 반도체 반등 성공, 한국에도 볕 들까",
     "event_date": "2028-01-01",
     "date_precision": "YEAR",
     "window_start": "2028-01-01",
@@ -29849,7 +32088,354 @@
     },
     "status": "EXPECTED",
     "source_name": "NEWS_FUTURE",
-    "source_url": "https://www.mt.co.kr/stock/2026/11/08/2026110811240385851"
+    "source_url": "https://www.chosun.com/economy/stock-finance/2026/11/09/5M62D3TKJFAOJLRB3FQ6GOV57Q/?utm_source=naver&utm_medium=referral&utm_campaign=naver-news"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_3b14f58cfcf85ae4e1b94f69e2e6743def787b70",
+    "d_day": 418,
+    "d_day_far_future": true,
+    "country": "KR",
+    "ticker": "034020",
+    "primary_ticker": "",
+    "anchor_status": "theme_proxy_only",
+    "related_securities": [
+      {
+        "ticker": "034020",
+        "company_name": "두산에너빌리티",
+        "relation_grade": "THEME",
+        "relation_score": 55,
+        "relation_type": "NUCLEAR_MARKET_THEME",
+        "evidence_text": "두산에너빌리티: 공식 원전 프로젝트 참여 이력이 있는 원전 테마 후보",
+        "evidence_source": "THEME_MAPPING",
+        "source_url": "https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=7508&type=O",
+        "relation_known_date": "2024-01-01",
+        "ingest_mode": "AUTO",
+        "from_entity": "두산에너빌리티"
+      },
+      {
+        "ticker": "052690",
+        "company_name": "한전기술",
+        "relation_grade": "THEME",
+        "relation_score": 52,
+        "relation_type": "NUCLEAR_MARKET_THEME",
+        "evidence_text": "한국전력기술: 공식 원전 프로젝트 설계 참여 이력이 있는 원전 테마 후보",
+        "evidence_source": "THEME_MAPPING",
+        "source_url": "https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=7508&type=O",
+        "relation_known_date": "2024-01-01",
+        "ingest_mode": "AUTO",
+        "from_entity": "한국전력기술"
+      },
+      {
+        "ticker": "051600",
+        "company_name": "한전KPS",
+        "relation_grade": "THEME",
+        "relation_score": 50,
+        "relation_type": "NUCLEAR_MARKET_THEME",
+        "evidence_text": "한전KPS: 공식 원전 프로젝트 시운전 유지보수 참여 이력이 있는 원전 테마 후보",
+        "evidence_source": "THEME_MAPPING",
+        "source_url": "https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=7508&type=O",
+        "relation_known_date": "2024-01-01",
+        "ingest_mode": "AUTO",
+        "from_entity": "한전KPS"
+      },
+      {
+        "ticker": "005930",
+        "company_name": "삼성전자",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 삼성전자",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.dnews.co.kr/uhtml/view.jsp?idxno=202611081304138730096",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "삼성전자"
+      },
+      {
+        "ticker": "000660",
+        "company_name": "SK하이닉스",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: SK하이닉스",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.dnews.co.kr/uhtml/view.jsp?idxno=202611081304138730096",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "SK하이닉스"
+      }
+    ],
+    "company": "③ 건설 버팀목 ‘반도체 팹’마저",
+    "event_type": "CAPEX",
+    "event_name": "③ 건설 버팀목 ‘반도체 팹’마저…825조 호남 클러스터 흔들",
+    "event_date": "2028-01-01",
+    "date_precision": "YEAR",
+    "window_start": "2028-01-01",
+    "window_end": "2028-12-31",
+    "relation_grade": "THEME",
+    "relation_score": 55,
+    "relation_type": "NUCLEAR_MARKET_THEME",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 30,
+    "insight": {
+      "score": 30,
+      "tier": "CHECK",
+      "label": "추가 확인",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 11,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 6,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 3,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "검증된 개별 관련주 부족",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "검증된 개별 관련주",
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 44700.0,
+        "return_20d": -0.426923,
+        "volume_ratio_20d": 1.67,
+        "sessions": 66,
+        "source": "Yahoo Finance",
+        "ticker": "034020"
+      },
+      "coverage": {
+        "eligible_events": 0,
+        "priced_events": 0,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": null
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.dnews.co.kr/uhtml/view.jsp?idxno=202611081304138730096"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_f159aa36600f56383153fe2fc966aea5450c8ec1",
+    "d_day": 418,
+    "d_day_far_future": true,
+    "country": "KR",
+    "ticker": "003000",
+    "primary_ticker": "003000",
+    "anchor_status": "anchored_from_relation",
+    "related_securities": [
+      {
+        "ticker": "003000",
+        "company_name": "부광약품",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 부광약품",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "http://www.press9.kr/news/articleView.html?idxno=85794",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "부광약품"
+      }
+    ],
+    "company": "부광약품",
+    "event_type": "CLINICAL_RESULT",
+    "event_name": "부광약품 파킨슨 신약 CP-012, 유럽 임상 2상 승인",
+    "event_date": "2028-01-01",
+    "date_precision": "QUARTER",
+    "window_start": "2028-01-01",
+    "window_end": "2028-03-31",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 47,
+    "insight": {
+      "score": 47,
+      "tier": "WATCH",
+      "label": "일정 관찰",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 13,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 21,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 3,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 3800.0,
+        "return_20d": -0.062885,
+        "volume_ratio_20d": 1.52,
+        "sessions": 66,
+        "source": "Yahoo Finance",
+        "ticker": "003000"
+      },
+      "coverage": {
+        "eligible_events": 3,
+        "priced_events": 1,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 2,
+        "completion_percent": 0
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "http://www.press9.kr/news/articleView.html?idxno=85794"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_fdf7ca73ece1466a5328da5e2b275b5bf2f956f7",
+    "d_day": 509,
+    "d_day_far_future": true,
+    "country": "KR",
+    "ticker": "037230",
+    "primary_ticker": "037230",
+    "anchor_status": "anchored_from_relation",
+    "related_securities": [
+      {
+        "ticker": "037230",
+        "company_name": "한국팩키지",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 한국팩키지",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.newsis.com/view/NISX20261109_0003859683",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "한국팩키지"
+      }
+    ],
+    "company": "한국팩키지",
+    "event_type": "CAPEX",
+    "event_name": "한국팩키지, 라미팩과 멸균팩 제품 독점계약",
+    "event_date": "2028-04-01",
+    "date_precision": "QUARTER",
+    "window_start": "2028-04-01",
+    "window_end": "2028-06-30",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 47,
+    "insight": {
+      "score": 47,
+      "tier": "WATCH",
+      "label": "일정 관찰",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 13,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 21,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 3,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 1179.0,
+        "return_20d": -0.117515,
+        "volume_ratio_20d": 3.195,
+        "sessions": 66,
+        "source": "Yahoo Finance",
+        "ticker": "037230"
+      },
+      "coverage": {
+        "eligible_events": 1,
+        "priced_events": 1,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": 0
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.newsis.com/view/NISX20261109_0003859683"
   },
   {
     "event_id": "KR_NEWS_FUTURE_8f53695a9ea635e085b3c3d830e12020f2ddce6b",
@@ -30334,6 +32920,104 @@
     "status": "EXPECTED",
     "source_name": "NEWS_FUTURE",
     "source_url": "https://dealsite.co.kr/articles/172198"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_bde2f231e5376cc8ccf2918a5575f11f005d8074",
+    "d_day": 723,
+    "d_day_far_future": true,
+    "country": "KR",
+    "ticker": "112610",
+    "primary_ticker": "112610",
+    "anchor_status": "anchored_from_relation",
+    "related_securities": [
+      {
+        "ticker": "112610",
+        "company_name": "씨에스윈드",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 씨에스윈드",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "http://www.newsprime.co.kr/news/article.html?no=754057",
+        "relation_known_date": "2026-11-09",
+        "ingest_mode": "AUTO",
+        "from_entity": "씨에스윈드"
+      }
+    ],
+    "company": "씨에스윈드",
+    "event_type": "ELECTION",
+    "event_name": "씨에스윈드, 美 데이터센터 '청정에너지 착공 의무' 직수혜…\"주정부 규...",
+    "event_date": "2028-11-01",
+    "date_precision": "MONTH",
+    "window_start": "2028-11-01",
+    "window_end": "2028-11-30",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 49,
+    "insight": {
+      "score": 49,
+      "tier": "WATCH",
+      "label": "일정 관찰",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 15,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 21,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 3,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 49100.0,
+        "return_20d": -0.118492,
+        "volume_ratio_20d": 2.304,
+        "sessions": 66,
+        "source": "Yahoo Finance",
+        "ticker": "112610"
+      },
+      "coverage": {
+        "eligible_events": 0,
+        "priced_events": 0,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": null
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "http://www.newsprime.co.kr/news/article.html?no=754057"
   },
   {
     "event_id": "KR_NEWS_FUTURE_a074e1db1da49fadb1b41bf13f1df381756c1986",
@@ -32382,15 +35066,15 @@
         "relation_type": "DIRECT_MENTION",
         "evidence_text": "이벤트 원문에 상장사명 명시: 농심",
         "evidence_source": "NEWS_FUTURE",
-        "source_url": "http://www.dailysmart.co.kr/news/articleView.html?idxno=132182",
-        "relation_known_date": "2026-11-08",
+        "source_url": "https://www.socialvalue.kr/news/view/1065568489297342",
+        "relation_known_date": "2026-11-09",
         "ingest_mode": "AUTO",
         "from_entity": "농심"
       }
     ],
     "company": "농심",
     "event_type": "PLANT_OPERATION",
-    "event_name": "농심, 녹산 수출전문공장 본격 가동…2030년 매출 7.3조 정조준",
+    "event_name": "농심, 부산 녹산 수출전문공장 가동 …2030년 '매출 7조' 정조준",
     "event_date": "2030-01-01",
     "date_precision": "YEAR",
     "window_start": "2030-01-01",
@@ -32461,7 +35145,7 @@
     },
     "status": "EXPECTED",
     "source_name": "NEWS_FUTURE",
-    "source_url": "http://www.dailysmart.co.kr/news/articleView.html?idxno=132182"
+    "source_url": "https://www.socialvalue.kr/news/view/1065568489297342"
   },
   {
     "event_id": "KR_NEWS_FUTURE_be35f96c48b1683c9da7846f0c4fe0c219d7c45e",
@@ -38701,7 +41385,7 @@
         "price": 152.21,
         "return_20d": -0.010145,
         "volume_ratio_20d": 1.189,
-        "sessions": 71,
+        "sessions": 70,
         "source": "Yahoo Finance",
         "ticker": "XBI"
       },
@@ -39069,7 +41753,7 @@
         },
         "market": {
           "label": "현재 가격 관측",
-          "points": 0,
+          "points": 10,
           "max": 10
         },
         "timing": {
@@ -39084,11 +41768,18 @@
         "D+5 완료 사건 0건"
       ],
       "missing": [
-        "충분한 과거 사건 표본",
-        "최근 가격·거래량"
+        "충분한 과거 사건 표본"
       ],
       "history_confidence": "NONE",
-      "market": null,
+      "market": {
+        "as_of": "2026-11-06",
+        "price": 70400.0,
+        "return_20d": -0.190805,
+        "volume_ratio_20d": 0.379,
+        "sessions": 66,
+        "source": "Yahoo Finance",
+        "ticker": "126340"
+      },
       "coverage": {
         "eligible_events": 1,
         "priced_events": 0,
