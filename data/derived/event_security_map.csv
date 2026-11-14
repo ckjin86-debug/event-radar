@@ -4,7 +4,7 @@ KR_KIND_IPO_7a94ec521b66d5a584d72ad5cf9304a8fca23281,439270,A,100,DIRECT_MENTION
 KR_KIND_IPO_81bfec927fc30451d4700230ccffeb3194e205e4,126340,B,76,IPO_INVESTOR,"비나텍: 한국투자증권은 전력과 용수 사용을 둘러싼 규제가 확대되는 가운데 블룸에너지의 연료전지 수요 증가에 따라 비나텍, 티앤이코리아 등 국내 기업의 수혜를 예상했다 | https://theviewers.co.kr/View.aspx?No=4298426"
 KR_KIND_IPO_22b1edbb2ea1b2abd5cabf9e7c2316a8b6b2f247,005940,B,76,IPO_INVESTOR,"NH투자증권: 한화투자증권은 올해 페스카로 상장에 NH투자증권과 공동주관사로 참여했고, 한화플러스제6호스팩 의 코스닥 상장을 위한 예비심사를 지난달 청구했다 | https://www.etoday.co.kr/news/view/2535555"
 KR_KIND_IPO_832784cc1f6eb61b3b81a0e156cf38dcfca1b75e,420610,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 인텔리빅스
-KR_KIND_IPO_5a3452ed7550c9d112a70cb1ad2e8756a6e4b71f,359410,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 영광
+KR_KIND_IPO_5a3452ed7550c9d112a70cb1ad2e8756a6e4b71f,099410,B,64,IPO_BUSINESS_RELATION,"동방선기: 동방선기, 영광 등 중소형 기자재 기업은 신규 수주와 납품 확대가 실적 개선으로 이어지는지가 중요하다 | https://www.pinpointnews.co.kr/news/articleView.html?idxno=504068"
 KR_KIND_IPO_c36644468a48de410093c57ca68cf92dc10cdd85,008830,B,68,IPO_AFFILIATE,"대동기어: 최근 상장한 엠에스바이오와 래블업 , 같은 그룹 계열사인 대동금속·대동기어 등에도 거래가 | http://www.kjdaily.com/article.php?aid=1793939051691481276"
 KR_KIND_IPO_561e48a87092e0fc9bbbb7ded749dfef7c92f18b,037620,B,76,IPO_INVESTOR,미래에셋증권: NH투자증권 아이엠스팩1호 : 10월 26일 ~ 27일 @ 아이엠증권 에이엘로봇 : 10월 26일 ~ 27일 @대신증권 엠비디: 10월 28일 ~ 29일 @하나증권 바로팜 : 11월 2일 ~ 3일 @ 미래에셋증권 하나에어로다이내믹스 : 11월 10일 | http://www.economytalk.kr/news/articleView.html?idxno=424324
 KR_KIND_IPO_6c60d4cd8f1e8f43bb8d389d838e1d66c0f4f357,495910,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 이에스티
@@ -784,3 +784,7 @@ KR_NEWS_FUTURE_c090fb0ab8553dc41231cdf4dd72f4729c6c761f,950160,A,100,DIRECT_MENT
 KR_NEWS_FUTURE_6379845c7601aed6fcc3874015431c6ebb5775c7,141080,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 리가켐바이오
 KR_NEWS_FUTURE_c706f093a97e28dd1081aa48f974a33516cd240a,009150,THEME,35,CONTEXT_MENTION,이벤트 원문에 상장사명 명시: 삼성전기
 KR_NEWS_FUTURE_9ed536b37e1d93ea73d8d7de5c20e150bf63311f,181710,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: NHN
+KR_NEWS_FUTURE_6a30d775efce86914a61a447ca0e1e9bd389bf7e,005930,B,72,INVESTMENT_LINK,NEWS_FUTURE: 삼성전자·SK하이닉스에 2천만원 투자했다면 배당금 얼마
+KR_NEWS_FUTURE_6a1f09a52c30405f643f0e13505e66374e10731e,005930,B,72,INVESTMENT_LINK,NEWS_FUTURE: 삼성전자·SK하이닉스에 2천만원 투자했다면 배당금 얼마
+KR_NEWS_FUTURE_157b03b947f3df2069ec219d1167339638e91ae8,294870,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: IPARK현대산업개발
+KR_NEWS_FUTURE_a3a462e498a44475478fc0cbcc9e315bdcbd4dd8,336370,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 솔루스첨단소재
