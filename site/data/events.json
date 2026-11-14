@@ -737,11 +737,11 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 63,
+    "event_score": 69,
     "insight": {
-      "score": 63,
-      "tier": "WATCH",
-      "label": "일정 관찰",
+      "score": 69,
+      "tier": "FOCUS",
+      "label": "근거 충실",
       "components": {
         "schedule": {
           "label": "일정 신뢰도",
@@ -755,7 +755,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -772,12 +772,10 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 1608.0,
@@ -790,10 +788,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -947,11 +945,11 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 63,
+    "event_score": 69,
     "insight": {
-      "score": 63,
-      "tier": "WATCH",
-      "label": "일정 관찰",
+      "score": 69,
+      "tier": "FOCUS",
+      "label": "근거 충실",
       "components": {
         "schedule": {
           "label": "일정 신뢰도",
@@ -965,7 +963,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -982,12 +980,10 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 11500.0,
@@ -1000,10 +996,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -1281,11 +1277,11 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 64,
+    "event_score": 70,
     "insight": {
-      "score": 64,
-      "tier": "WATCH",
-      "label": "일정 관찰",
+      "score": 70,
+      "tier": "FOCUS",
+      "label": "근거 충실",
       "components": {
         "schedule": {
           "label": "일정 신뢰도",
@@ -1299,7 +1295,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -1316,12 +1312,10 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 2092.0,
@@ -1334,10 +1328,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -1664,9 +1658,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 54,
+    "event_score": 60,
     "insight": {
-      "score": 54,
+      "score": 60,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -1678,6 +1672,96 @@
         "relation": {
           "label": "관련주 근거",
           "points": 21,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 10,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 0,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 10,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 날짜 확정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 3건"
+      ],
+      "missing": [
+        "최근 가격·거래량"
+      ],
+      "history_confidence": "DEVELOPING",
+      "market": null,
+      "coverage": {
+        "eligible_events": 7,
+        "priced_events": 7,
+        "complete_events": 3,
+        "security_samples": 3,
+        "not_calculated_events": 0,
+        "completion_percent": 43
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.yna.co.kr/view/AKR20261106071100008?input=1195m"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_30dacf620d083c1c4928830aa76c3cf870558ab5",
+    "d_day": 3,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "001720",
+    "primary_ticker": "",
+    "anchor_status": "theme_proxy_only",
+    "related_securities": [
+      {
+        "ticker": "001720",
+        "company_name": "신영증권",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 신영증권",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.yna.co.kr/view/AKR20261113076800008?input=1195m",
+        "relation_known_date": "2026-11-14",
+        "ingest_mode": "AUTO",
+        "from_entity": "신영증권"
+      }
+    ],
+    "company": "내주 영광와이케이엠씨 등 3개사 코스닥 입성",
+    "event_type": "M_AND_A",
+    "event_name": "[IPO챗] 내주 영광와이케이엠씨 등 3개사 코스닥 입성",
+    "event_date": "2026-11-17",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-17",
+    "window_end": "2026-11-17",
+    "relation_grade": "THEME",
+    "relation_score": 35,
+    "relation_type": "CONTEXT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 39,
+    "insight": {
+      "score": 39,
+      "tier": "CHECK",
+      "label": "추가 확인",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 19,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 6,
           "max": 25
         },
         "history": {
@@ -1698,28 +1782,29 @@
       },
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
-        "직접 1개 · 경제관계 0개",
+        "검증된 개별 관련주 부족",
         "D+5 완료 사건 2건 · 소표본"
       ],
       "missing": [
+        "검증된 개별 관련주",
         "충분한 과거 사건 표본",
         "최근 가격·거래량"
       ],
       "history_confidence": "LIMITED",
       "market": null,
       "coverage": {
-        "eligible_events": 7,
-        "priced_events": 7,
+        "eligible_events": 3,
+        "priced_events": 3,
         "complete_events": 2,
         "security_samples": 2,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 67
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
     "status": "EXPECTED",
     "source_name": "NEWS_FUTURE",
-    "source_url": "https://www.yna.co.kr/view/AKR20261106071100008?input=1195m"
+    "source_url": "https://www.yna.co.kr/view/AKR20261113076800008?input=1195m"
   },
   {
     "event_id": "KR_KIND_IPO_3148cd5fac8929cee30beeb9b427599152f80244",
@@ -2286,10 +2371,10 @@
       ],
       "history_confidence": "LIMITED",
       "market": {
-        "as_of": "2026-11-12",
-        "price": 153.14,
-        "return_20d": 0.022433,
-        "volume_ratio_20d": 0.527,
+        "as_of": "2026-11-13",
+        "price": 149.44,
+        "return_20d": 0.035477,
+        "volume_ratio_20d": 0.509,
         "sessions": 72,
         "source": "Yahoo Finance",
         "ticker": "XBI"
@@ -2573,11 +2658,11 @@
       ],
       "history_confidence": "NONE",
       "market": {
-        "as_of": "2026-11-12",
+        "as_of": "2026-11-13",
         "price": 6200.0,
-        "return_20d": -0.138889,
-        "volume_ratio_20d": 1.233,
-        "sessions": 67,
+        "return_20d": -0.114286,
+        "volume_ratio_20d": 2.679,
+        "sessions": 68,
         "source": "Yahoo Finance",
         "ticker": "179720"
       },
@@ -2671,11 +2756,11 @@
       ],
       "history_confidence": "LIMITED",
       "market": {
-        "as_of": "2026-11-12",
-        "price": 19210.0,
-        "return_20d": 0.001564,
-        "volume_ratio_20d": 0.585,
-        "sessions": 67,
+        "as_of": "2026-11-13",
+        "price": 18310.0,
+        "return_20d": -0.119712,
+        "volume_ratio_20d": 1.454,
+        "sessions": 68,
         "source": "Yahoo Finance",
         "ticker": "0009K0"
       },
@@ -4233,11 +4318,11 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 62,
+    "event_score": 68,
     "insight": {
-      "score": 62,
-      "tier": "WATCH",
-      "label": "일정 관찰",
+      "score": 68,
+      "tier": "FOCUS",
+      "label": "근거 충실",
       "components": {
         "schedule": {
           "label": "일정 신뢰도",
@@ -4251,7 +4336,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -4268,12 +4353,10 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 94300.0,
@@ -4286,10 +4369,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -5034,11 +5117,11 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 62,
+    "event_score": 68,
     "insight": {
-      "score": 62,
-      "tier": "WATCH",
-      "label": "일정 관찰",
+      "score": 68,
+      "tier": "FOCUS",
+      "label": "근거 충실",
       "components": {
         "schedule": {
           "label": "일정 신뢰도",
@@ -5052,7 +5135,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -5069,12 +5152,10 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 35800.0,
@@ -5087,10 +5168,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -5287,6 +5368,118 @@
     "source_url": "http://www.wsobi.com/news/articleView.html?idxno=321656"
   },
   {
+    "event_id": "KR_NEWS_FUTURE_bf4d29c86683306bb335f28c9d7ea93dde7eb8a9",
+    "d_day": 16,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "317400",
+    "primary_ticker": "",
+    "anchor_status": "theme_proxy_only",
+    "related_securities": [
+      {
+        "ticker": "317400",
+        "company_name": "자이에스앤디",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 자이에스앤디",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.seoul.co.kr/news/economy/estate/2026/11/13/20261113500256?wlog_tag3=naver",
+        "relation_known_date": "2026-11-14",
+        "ingest_mode": "AUTO",
+        "from_entity": "자이에스앤디"
+      },
+      {
+        "ticker": "002990",
+        "company_name": "금호건설",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 금호건설",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.seoul.co.kr/news/economy/estate/2026/11/13/20261113500256?wlog_tag3=naver",
+        "relation_known_date": "2026-11-14",
+        "ingest_mode": "AUTO",
+        "from_entity": "금호건설"
+      }
+    ],
+    "company": "사라져가는 경쟁수주 속",
+    "event_type": "TENDER",
+    "event_name": "사라져가는 경쟁수주 속…용산서 ‘3파전’ 격돌하나",
+    "event_date": "2026-11-30",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-30",
+    "window_end": "2026-11-30",
+    "relation_grade": "THEME",
+    "relation_score": 35,
+    "relation_type": "CONTEXT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 45,
+    "insight": {
+      "score": 45,
+      "tier": "CHECK",
+      "label": "추가 확인",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 19,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 6,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 2,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 8,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 날짜 확정",
+        "검증된 개별 관련주 부족",
+        "D+5 완료 사건 1건 · 소표본"
+      ],
+      "missing": [
+        "검증된 개별 관련주",
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "LIMITED",
+      "market": {
+        "as_of": "2026-11-13",
+        "price": 11210.0,
+        "return_20d": 0.091529,
+        "volume_ratio_20d": 6.236,
+        "sessions": 68,
+        "source": "Yahoo Finance",
+        "ticker": "002990"
+      },
+      "coverage": {
+        "eligible_events": 3,
+        "priced_events": 3,
+        "complete_events": 1,
+        "security_samples": 1,
+        "not_calculated_events": 0,
+        "completion_percent": 33
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.seoul.co.kr/news/economy/estate/2026/11/13/20261113500256?wlog_tag3=naver"
+  },
+  {
     "event_id": "KR_NEWS_FUTURE_2354e3a8cd5c37b5dc3bec6a6c7febcb251bb0b1",
     "d_day": 17,
     "d_day_far_future": false,
@@ -5320,9 +5513,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 52,
+    "event_score": 58,
     "insight": {
-      "score": 52,
+      "score": 58,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -5338,7 +5531,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -5355,13 +5548,11 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본",
+        "D+5 완료 사건 3건",
         "최근 20거래일 20% 이상 상승 · 급등 부담"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 203500.0,
@@ -5374,10 +5565,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -5419,9 +5610,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 52,
+    "event_score": 58,
     "insight": {
-      "score": 52,
+      "score": 58,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -5437,7 +5628,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -5454,13 +5645,11 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본",
+        "D+5 완료 사건 3건",
         "최근 20거래일 20% 이상 상승 · 급등 부담"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 7780.0,
@@ -5473,10 +5662,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -5627,9 +5816,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 53,
+    "event_score": 59,
     "insight": {
-      "score": 53,
+      "score": 59,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -5645,7 +5834,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -5662,13 +5851,11 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본",
+        "D+5 완료 사건 3건",
         "최근 20거래일 20% 이상 상승 · 급등 부담"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 7780.0,
@@ -5681,10 +5868,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -5752,9 +5939,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 52,
+    "event_score": 58,
     "insight": {
-      "score": 52,
+      "score": 58,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -5770,7 +5957,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -5787,13 +5974,11 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본",
+        "D+5 완료 사건 3건",
         "최근 20거래일 20% 이상 상승 · 급등 부담"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 203500.0,
@@ -5806,10 +5991,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -5864,9 +6049,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 54,
+    "event_score": 60,
     "insight": {
-      "score": 54,
+      "score": 60,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -5882,7 +6067,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -5899,28 +6084,26 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
-        "as_of": "2026-11-12",
+        "as_of": "2026-11-13",
         "price": 410465.125,
         "return_20d": 0.0,
         "volume_ratio_20d": null,
-        "sessions": 67,
+        "sessions": 68,
         "source": "Yahoo Finance",
         "ticker": "011810"
       },
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -5962,9 +6145,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 57,
+    "event_score": 63,
     "insight": {
-      "score": 57,
+      "score": 63,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -5980,7 +6163,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -5997,12 +6180,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 31550.0,
@@ -6015,10 +6196,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -7180,9 +7361,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 51,
+    "event_score": 57,
     "insight": {
-      "score": 51,
+      "score": 57,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -7198,7 +7379,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -7215,21 +7396,20 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
       "missing": [
-        "충분한 과거 사건 표본",
         "최근 가격·거래량"
       ],
-      "history_confidence": "LIMITED",
+      "history_confidence": "DEVELOPING",
       "market": null,
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -7310,9 +7490,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 52,
+    "event_score": 58,
     "insight": {
-      "score": 52,
+      "score": 58,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -7328,7 +7508,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -7345,13 +7525,11 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본",
+        "D+5 완료 사건 3건",
         "최근 20거래일 20% 이상 상승 · 급등 부담"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 7780.0,
@@ -7364,10 +7542,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -8095,9 +8273,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 58,
+    "event_score": 64,
     "insight": {
-      "score": 58,
+      "score": 64,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -8113,7 +8291,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -8130,12 +8308,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 881000.0,
@@ -8148,10 +8324,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -8540,9 +8716,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 58,
+    "event_score": 64,
     "insight": {
-      "score": 58,
+      "score": 64,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -8558,7 +8734,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -8575,12 +8751,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 63600.0,
@@ -8593,10 +8767,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -8875,9 +9049,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 58,
+    "event_score": 64,
     "insight": {
-      "score": 58,
+      "score": 64,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -8893,7 +9067,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -8910,12 +9084,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 16620.0,
@@ -8928,10 +9100,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -9084,9 +9256,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 58,
+    "event_score": 64,
     "insight": {
-      "score": 58,
+      "score": 64,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -9102,7 +9274,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -9119,12 +9291,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 23200.0,
@@ -9137,10 +9307,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -9322,11 +9492,11 @@
       ],
       "history_confidence": "LIMITED",
       "market": {
-        "as_of": "2026-11-12",
-        "price": 8260.0,
-        "return_20d": 0.012255,
-        "volume_ratio_20d": 0.466,
-        "sessions": 67,
+        "as_of": "2026-11-13",
+        "price": 8240.0,
+        "return_20d": -0.015532,
+        "volume_ratio_20d": 0.277,
+        "sessions": 68,
         "source": "Yahoo Finance",
         "ticker": "002390"
       },
@@ -9343,6 +9513,340 @@
     "status": "EXPECTED",
     "source_name": "NEWS_FUTURE",
     "source_url": "https://www.edaily.co.kr/News/Read?newsId=04018006645645392&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_e3dbe36f16904a540442005ca3a1a88206c72ac0",
+    "d_day": 17,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "034020",
+    "primary_ticker": "",
+    "anchor_status": "theme_proxy_only",
+    "related_securities": [
+      {
+        "ticker": "034020",
+        "company_name": "두산에너빌리티",
+        "relation_grade": "THEME",
+        "relation_score": 55,
+        "relation_type": "NUCLEAR_MARKET_THEME",
+        "evidence_text": "두산에너빌리티: 공식 원전 프로젝트 참여 이력이 있는 원전 테마 후보",
+        "evidence_source": "THEME_MAPPING",
+        "source_url": "https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=7508&type=O",
+        "relation_known_date": "2024-01-01",
+        "ingest_mode": "AUTO",
+        "from_entity": "두산에너빌리티"
+      },
+      {
+        "ticker": "052690",
+        "company_name": "한전기술",
+        "relation_grade": "THEME",
+        "relation_score": 52,
+        "relation_type": "NUCLEAR_MARKET_THEME",
+        "evidence_text": "한국전력기술: 공식 원전 프로젝트 설계 참여 이력이 있는 원전 테마 후보",
+        "evidence_source": "THEME_MAPPING",
+        "source_url": "https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=7508&type=O",
+        "relation_known_date": "2024-01-01",
+        "ingest_mode": "AUTO",
+        "from_entity": "한국전력기술"
+      },
+      {
+        "ticker": "051600",
+        "company_name": "한전KPS",
+        "relation_grade": "THEME",
+        "relation_score": 50,
+        "relation_type": "NUCLEAR_MARKET_THEME",
+        "evidence_text": "한전KPS: 공식 원전 프로젝트 시운전 유지보수 참여 이력이 있는 원전 테마 후보",
+        "evidence_source": "THEME_MAPPING",
+        "source_url": "https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=7508&type=O",
+        "relation_known_date": "2024-01-01",
+        "ingest_mode": "AUTO",
+        "from_entity": "한전KPS"
+      },
+      {
+        "ticker": "279570",
+        "company_name": "케이뱅크",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 케이뱅크",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.sisajournal-e.com/news/articleView.html?idxno=425022",
+        "relation_known_date": "2026-11-14",
+        "ingest_mode": "AUTO",
+        "from_entity": "케이뱅크"
+      }
+    ],
+    "company": "MSCI 한국 스몰캡에 5개 종목 신규 편입",
+    "event_type": "CONTRACT",
+    "event_name": "MSCI 한국 스몰캡에 5개 종목 신규 편입···AI·로봇·원전株 두각",
+    "event_date": "2026-12-01",
+    "date_precision": "MONTH",
+    "window_start": "2026-12-01",
+    "window_end": "2026-12-31",
+    "relation_grade": "THEME",
+    "relation_score": 55,
+    "relation_type": "NUCLEAR_MARKET_THEME",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 39,
+    "insight": {
+      "score": 39,
+      "tier": "CHECK",
+      "label": "추가 확인",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 15,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 6,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 8,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "검증된 개별 관련주 부족",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "검증된 개별 관련주",
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-13",
+        "price": 46850.0,
+        "return_20d": -0.274768,
+        "volume_ratio_20d": 0.911,
+        "sessions": 68,
+        "source": "Yahoo Finance",
+        "ticker": "034020"
+      },
+      "coverage": {
+        "eligible_events": 0,
+        "priced_events": 0,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": null
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.sisajournal-e.com/news/articleView.html?idxno=425022"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_ca65edb0538adbb5b7a33a8f66bddbea78607ffe",
+    "d_day": 17,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "192820",
+    "primary_ticker": "192820",
+    "anchor_status": "anchored_from_relation",
+    "related_securities": [
+      {
+        "ticker": "192820",
+        "company_name": "코스맥스",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 코스맥스",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.edaily.co.kr/News/Read?newsId=02253366645645720&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article",
+        "relation_known_date": "2026-11-14",
+        "ingest_mode": "AUTO",
+        "from_entity": "코스맥스"
+      }
+    ],
+    "company": "코스맥스",
+    "event_type": "PLANT_OPERATION",
+    "event_name": "비수기에도 실적 날았다…K뷰티 호황 탄 코스맥스[종목e슈]",
+    "event_date": "2026-12-01",
+    "date_precision": "MONTH",
+    "window_start": "2026-12-01",
+    "window_end": "2026-12-31",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 54,
+    "insight": {
+      "score": 54,
+      "tier": "WATCH",
+      "label": "일정 관찰",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 15,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 21,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 8,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-13",
+        "price": 286500.0,
+        "return_20d": -0.030457,
+        "volume_ratio_20d": 0.348,
+        "sessions": 68,
+        "source": "Yahoo Finance",
+        "ticker": "192820"
+      },
+      "coverage": {
+        "eligible_events": 0,
+        "priced_events": 0,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": null
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.edaily.co.kr/News/Read?newsId=02253366645645720&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_c090fb0ab8553dc41231cdf4dd72f4729c6c761f",
+    "d_day": 17,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "950160",
+    "primary_ticker": "950160",
+    "anchor_status": "anchored_from_relation",
+    "related_securities": [
+      {
+        "ticker": "950160",
+        "company_name": "코오롱티슈진",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 코오롱티슈진",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.dailypharm.com/user/news/344573?REFERER=NP",
+        "relation_known_date": "2026-11-14",
+        "ingest_mode": "AUTO",
+        "from_entity": "코오롱티슈진"
+      }
+    ],
+    "company": "코오롱티슈진",
+    "event_type": "CLINICAL_RESULT",
+    "event_name": "코오롱티슈진, 골관절염약 미국 3상 실패에도 개발비 자산 늘어",
+    "event_date": "2026-12-01",
+    "date_precision": "MONTH",
+    "window_start": "2026-12-01",
+    "window_end": "2026-12-31",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 56,
+    "insight": {
+      "score": 56,
+      "tier": "WATCH",
+      "label": "일정 관찰",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 15,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 21,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 2,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 8,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 1건 · 소표본"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "LIMITED",
+      "market": {
+        "as_of": "2026-11-13",
+        "price": 12150.0,
+        "return_20d": -0.151536,
+        "volume_ratio_20d": 1.176,
+        "sessions": 68,
+        "source": "Yahoo Finance",
+        "ticker": "950160"
+      },
+      "coverage": {
+        "eligible_events": 4,
+        "priced_events": 4,
+        "complete_events": 1,
+        "security_samples": 1,
+        "not_calculated_events": 0,
+        "completion_percent": 25
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.dailypharm.com/user/news/344573?REFERER=NP"
   },
   {
     "event_id": "KR_NEWS_FUTURE_a02676aed07ff280147dc34b71b0711a57cb5e82",
@@ -9587,9 +10091,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 56,
+    "event_score": 62,
     "insight": {
-      "score": 56,
+      "score": 62,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -9605,7 +10109,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -9622,13 +10126,11 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본",
+        "D+5 완료 사건 3건",
         "최근 20거래일 20% 이상 상승 · 급등 부담"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 7780.0,
@@ -9641,10 +10143,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -9812,11 +10314,11 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 61,
+    "event_score": 67,
     "insight": {
-      "score": 61,
-      "tier": "WATCH",
-      "label": "일정 관찰",
+      "score": 67,
+      "tier": "FOCUS",
+      "label": "근거 충실",
       "components": {
         "schedule": {
           "label": "일정 신뢰도",
@@ -9830,7 +10332,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -9847,12 +10349,10 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 20150.0,
@@ -9865,10 +10365,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -10006,9 +10506,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 57,
+    "event_score": 63,
     "insight": {
-      "score": 57,
+      "score": 63,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -10024,7 +10524,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -10041,13 +10541,11 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본",
+        "D+5 완료 사건 3건",
         "최근 20거래일 20% 이상 상승 · 급등 부담"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 7780.0,
@@ -10060,10 +10558,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -10229,11 +10727,11 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 61,
+    "event_score": 67,
     "insight": {
-      "score": 61,
-      "tier": "WATCH",
-      "label": "일정 관찰",
+      "score": 67,
+      "tier": "FOCUS",
+      "label": "근거 충실",
       "components": {
         "schedule": {
           "label": "일정 신뢰도",
@@ -10247,7 +10745,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -10264,12 +10762,10 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 58500.0,
@@ -10282,10 +10778,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -10369,10 +10865,10 @@
       ],
       "history_confidence": "SUPPORTED",
       "market": {
-        "as_of": "2026-11-12",
-        "price": 7631.1201,
-        "return_20d": -0.014584,
-        "volume_ratio_20d": 0.349,
+        "as_of": "2026-11-13",
+        "price": 7521.75,
+        "return_20d": -0.017977,
+        "volume_ratio_20d": 0.257,
         "sessions": 72,
         "source": "Yahoo Finance",
         "ticker": "^GSPC"
@@ -11780,11 +12276,11 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 61,
+    "event_score": 67,
     "insight": {
-      "score": 61,
-      "tier": "WATCH",
-      "label": "일정 관찰",
+      "score": 67,
+      "tier": "FOCUS",
+      "label": "근거 충실",
       "components": {
         "schedule": {
           "label": "일정 신뢰도",
@@ -11798,7 +12294,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -11815,12 +12311,10 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 10680.0,
@@ -11833,10 +12327,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -11878,9 +12372,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 54,
+    "event_score": 60,
     "insight": {
-      "score": 54,
+      "score": 60,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -11896,7 +12390,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -11913,13 +12407,11 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본",
+        "D+5 완료 사건 3건",
         "최근 20거래일 20% 이상 상승 · 급등 부담"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 203500.0,
@@ -11932,10 +12424,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -11981,7 +12473,7 @@
     ],
     "company": "아시아나항공",
     "event_type": "M_AND_A",
-    "event_name": "아시아나항공, 지분 규제 유예 2년 연장… 합병 부담 완화",
+    "event_name": "아시아나항공, 지분 규제 유예 2년 연장…합병 부담 완화",
     "event_date": "2026-12-16",
     "date_precision": "EXACT_DATE",
     "window_start": "2026-12-16",
@@ -11990,11 +12482,11 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 59,
+    "event_score": 65,
     "insight": {
-      "score": 59,
-      "tier": "WATCH",
-      "label": "일정 관찰",
+      "score": 65,
+      "tier": "FOCUS",
+      "label": "근거 충실",
       "components": {
         "schedule": {
           "label": "일정 신뢰도",
@@ -12008,7 +12500,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -12025,12 +12517,10 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 8440.0,
@@ -12043,10 +12533,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -12338,9 +12828,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 58,
+    "event_score": 64,
     "insight": {
-      "score": 58,
+      "score": 64,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -12356,7 +12846,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -12373,12 +12863,10 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 31550.0,
@@ -12391,10 +12879,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -12449,9 +12937,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 58,
+    "event_score": 64,
     "insight": {
-      "score": 58,
+      "score": 64,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -12467,7 +12955,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -12484,12 +12972,10 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 2개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 31550.0,
@@ -12502,10 +12988,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -12573,9 +13059,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 58,
+    "event_score": 64,
     "insight": {
-      "score": 58,
+      "score": 64,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -12591,7 +13077,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -12608,12 +13094,10 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 31550.0,
@@ -12626,10 +13110,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -12671,11 +13155,11 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 59,
+    "event_score": 65,
     "insight": {
-      "score": 59,
-      "tier": "WATCH",
-      "label": "일정 관찰",
+      "score": 65,
+      "tier": "FOCUS",
+      "label": "근거 충실",
       "components": {
         "schedule": {
           "label": "일정 신뢰도",
@@ -12689,7 +13173,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -12706,12 +13190,10 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 12650.0,
@@ -12724,10 +13206,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -12980,11 +13462,11 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 59,
+    "event_score": 65,
     "insight": {
-      "score": 59,
-      "tier": "WATCH",
-      "label": "일정 관찰",
+      "score": 65,
+      "tier": "FOCUS",
+      "label": "근거 충실",
       "components": {
         "schedule": {
           "label": "일정 신뢰도",
@@ -12998,7 +13480,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -13015,12 +13497,10 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 8440.0,
@@ -13033,10 +13513,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -13414,11 +13894,11 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 59,
+    "event_score": 65,
     "insight": {
-      "score": 59,
-      "tier": "WATCH",
-      "label": "일정 관찰",
+      "score": 65,
+      "tier": "FOCUS",
+      "label": "근거 충실",
       "components": {
         "schedule": {
           "label": "일정 신뢰도",
@@ -13432,7 +13912,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -13449,12 +13929,10 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 3940.0,
@@ -13467,10 +13945,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -13830,9 +14308,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 58,
+    "event_score": 64,
     "insight": {
-      "score": 58,
+      "score": 64,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -13848,7 +14326,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -13865,12 +14343,10 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 7110.0,
@@ -13883,10 +14359,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -13928,11 +14404,11 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 59,
+    "event_score": 65,
     "insight": {
-      "score": 59,
-      "tier": "WATCH",
-      "label": "일정 관찰",
+      "score": 65,
+      "tier": "FOCUS",
+      "label": "근거 충실",
       "components": {
         "schedule": {
           "label": "일정 신뢰도",
@@ -13946,7 +14422,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -13963,12 +14439,10 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 18170.0,
@@ -13981,10 +14455,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -14026,11 +14500,11 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 59,
+    "event_score": 65,
     "insight": {
-      "score": 59,
-      "tier": "WATCH",
-      "label": "일정 관찰",
+      "score": 65,
+      "tier": "FOCUS",
+      "label": "근거 충실",
       "components": {
         "schedule": {
           "label": "일정 신뢰도",
@@ -14044,7 +14518,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -14061,12 +14535,10 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 2790.0,
@@ -14079,10 +14551,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -14222,11 +14694,11 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 59,
+    "event_score": 65,
     "insight": {
-      "score": 59,
-      "tier": "WATCH",
-      "label": "일정 관찰",
+      "score": 65,
+      "tier": "FOCUS",
+      "label": "근거 충실",
       "components": {
         "schedule": {
           "label": "일정 신뢰도",
@@ -14240,7 +14712,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -14257,12 +14729,10 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 5150.0,
@@ -14275,10 +14745,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -14372,9 +14842,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 45,
+    "event_score": 51,
     "insight": {
-      "score": 45,
+      "score": 51,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -14390,7 +14860,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -14407,13 +14877,11 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본",
+        "D+5 완료 사건 3건",
         "최근 20거래일 20% 이상 상승 · 급등 부담"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 6850.0,
@@ -14426,10 +14894,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -14893,9 +15361,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 50,
+    "event_score": 56,
     "insight": {
-      "score": 50,
+      "score": 56,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -14911,7 +15379,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -14928,12 +15396,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 3680.0,
@@ -14946,10 +15412,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -15128,9 +15594,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_ACQUIRER",
     "relation_ingest_mode": "MANUAL",
-    "event_score": 53,
+    "event_score": 59,
     "insight": {
-      "score": 53,
+      "score": 59,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -15146,7 +15612,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -15163,12 +15629,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 1411000.0,
@@ -15181,10 +15645,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -16292,9 +16756,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 51,
+    "event_score": 57,
     "insight": {
-      "score": 51,
+      "score": 57,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -16310,7 +16774,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -16327,12 +16791,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 3680.0,
@@ -16345,10 +16807,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -16873,9 +17335,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 51,
+    "event_score": 57,
     "insight": {
-      "score": 51,
+      "score": 57,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -16891,7 +17353,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -16908,12 +17370,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 31550.0,
@@ -16926,10 +17386,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -18132,9 +18592,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 50,
+    "event_score": 56,
     "insight": {
-      "score": 50,
+      "score": 56,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -18150,7 +18610,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -18167,12 +18627,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 11500.0,
@@ -18185,10 +18643,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -19438,9 +19896,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 54,
+    "event_score": 60,
     "insight": {
-      "score": 54,
+      "score": 60,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -19456,7 +19914,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -19473,12 +19931,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 11500.0,
@@ -19491,10 +19947,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -19634,9 +20090,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 52,
+    "event_score": 58,
     "insight": {
-      "score": 52,
+      "score": 58,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -19652,7 +20108,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -19669,12 +20125,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 11500.0,
@@ -19687,10 +20141,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -19732,9 +20186,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 50,
+    "event_score": 56,
     "insight": {
-      "score": 50,
+      "score": 56,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -19750,7 +20204,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -19767,12 +20221,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 35050.0,
@@ -19785,10 +20237,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -20878,11 +21330,11 @@
       ],
       "history_confidence": "LIMITED",
       "market": {
-        "as_of": "2026-11-12",
-        "price": 9520.0,
-        "return_20d": -0.132179,
-        "volume_ratio_20d": 3.997,
-        "sessions": 67,
+        "as_of": "2026-11-13",
+        "price": 9990.0,
+        "return_20d": -0.129791,
+        "volume_ratio_20d": 1.161,
+        "sessions": 68,
         "source": "Yahoo Finance",
         "ticker": "456570"
       },
@@ -21241,9 +21693,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 54,
+    "event_score": 60,
     "insight": {
-      "score": 54,
+      "score": 60,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -21259,7 +21711,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -21276,12 +21728,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 189000.0,
@@ -21294,10 +21744,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -21949,9 +22399,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 58,
+    "event_score": 64,
     "insight": {
-      "score": 58,
+      "score": 64,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -21967,7 +22417,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -21984,12 +22434,10 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 31700.0,
@@ -22002,10 +22450,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -22676,9 +23124,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 50,
+    "event_score": 56,
     "insight": {
-      "score": 50,
+      "score": 56,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -22694,7 +23142,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -22711,12 +23159,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 14510.0,
@@ -22729,10 +23175,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -22886,9 +23332,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 50,
+    "event_score": 56,
     "insight": {
-      "score": 50,
+      "score": 56,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -22904,7 +23350,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -22921,12 +23367,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 40950.0,
@@ -22939,10 +23383,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -24436,9 +24880,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 51,
+    "event_score": 57,
     "insight": {
-      "score": 51,
+      "score": 57,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -24454,7 +24898,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -24471,12 +24915,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 31550.0,
@@ -24489,10 +24931,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -24708,27 +25150,27 @@
     "d_day": 48,
     "d_day_far_future": false,
     "country": "KR",
-    "ticker": "405100",
-    "primary_ticker": "405100",
+    "ticker": "181710",
+    "primary_ticker": "181710",
     "anchor_status": "anchored_from_relation",
     "related_securities": [
       {
-        "ticker": "405100",
-        "company_name": "큐알티",
+        "ticker": "181710",
+        "company_name": "NHN",
         "relation_grade": "A",
         "relation_score": 100,
         "relation_type": "DIRECT_MENTION",
-        "evidence_text": "이벤트 원문에 상장사명 명시: 큐알티",
+        "evidence_text": "이벤트 원문에 상장사명 명시: NHN",
         "evidence_source": "NEWS_FUTURE",
-        "source_url": "https://www.bigtanews.co.kr/article/view/big202611070003",
-        "relation_known_date": "2026-11-07",
+        "source_url": "https://www.bigtanews.co.kr/article/view/big202611140003",
+        "relation_known_date": "2026-11-14",
         "ingest_mode": "AUTO",
-        "from_entity": "큐알티"
+        "from_entity": "NHN"
       }
     ],
-    "company": "큐알티",
+    "company": "NHN",
     "event_type": "PLANT_OPERATION",
-    "event_name": "KB증권, 11월 첫째주 큐알티 등 28종목 매수 추천",
+    "event_name": "KB증권, 11월 둘째주 NHN 등 27종목 매수 추천",
     "event_date": "2027-01-01",
     "date_precision": "YEAR",
     "window_start": "2027-01-01",
@@ -24737,9 +25179,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 47,
+    "event_score": 42,
     "insight": {
-      "score": 47,
+      "score": 42,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -24760,7 +25202,7 @@
         },
         "market": {
           "label": "현재 가격 관측",
-          "points": 10,
+          "points": 5,
           "max": 10
         },
         "timing": {
@@ -24772,7 +25214,8 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 0건"
+        "D+5 완료 사건 0건",
+        "최근 20거래일 20% 이상 상승 · 급등 부담"
       ],
       "missing": [
         "충분한 과거 사건 표본"
@@ -24780,12 +25223,12 @@
       "history_confidence": "NONE",
       "market": {
         "as_of": "2026-11-13",
-        "price": 16960.0,
-        "return_20d": 0.011933,
-        "volume_ratio_20d": 0.265,
+        "price": 66400.0,
+        "return_20d": 0.276923,
+        "volume_ratio_20d": 2.289,
         "sessions": 68,
         "source": "Yahoo Finance",
-        "ticker": "405100"
+        "ticker": "181710"
       },
       "coverage": {
         "eligible_events": 0,
@@ -24799,7 +25242,7 @@
     },
     "status": "EXPECTED",
     "source_name": "NEWS_FUTURE",
-    "source_url": "https://www.bigtanews.co.kr/article/view/big202611070003"
+    "source_url": "https://www.bigtanews.co.kr/article/view/big202611140003"
   },
   {
     "event_id": "KR_NEWS_FUTURE_fe0bcd519452862584f8fe6857f10289f3d901b3",
@@ -24959,9 +25402,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 51,
+    "event_score": 57,
     "insight": {
-      "score": 51,
+      "score": 57,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -24977,7 +25420,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -24994,12 +25437,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 16620.0,
@@ -25012,10 +25453,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -27201,9 +27642,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 52,
+    "event_score": 58,
     "insight": {
-      "score": 52,
+      "score": 58,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -27219,7 +27660,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -27236,12 +27677,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 102900.0,
@@ -27254,10 +27693,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -27620,9 +28059,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 51,
+    "event_score": 57,
     "insight": {
-      "score": 51,
+      "score": 57,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -27638,7 +28077,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -27655,12 +28094,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 21200.0,
@@ -27673,10 +28110,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -27718,9 +28155,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT",
     "relation_ingest_mode": "AUTO",
-    "event_score": 51,
+    "event_score": 57,
     "insight": {
-      "score": 51,
+      "score": 57,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -27736,7 +28173,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -27753,12 +28190,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 109200.0,
@@ -27771,10 +28206,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -29278,9 +29713,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 51,
+    "event_score": 57,
     "insight": {
-      "score": 51,
+      "score": 57,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -29296,7 +29731,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -29313,12 +29748,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 3050.0,
@@ -29331,10 +29764,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -29612,9 +30045,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 51,
+    "event_score": 57,
     "insight": {
-      "score": 51,
+      "score": 57,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -29630,7 +30063,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -29647,12 +30080,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 176200.0,
@@ -29665,10 +30096,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -29933,9 +30364,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 50,
+    "event_score": 56,
     "insight": {
-      "score": 50,
+      "score": 56,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -29951,7 +30382,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -29968,13 +30399,11 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본",
+        "D+5 완료 사건 3건",
         "최근 20거래일 20% 이상 상승 · 급등 부담"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 66400.0,
@@ -29987,10 +30416,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -31272,11 +31701,11 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 59,
+    "event_score": 65,
     "insight": {
-      "score": 59,
-      "tier": "WATCH",
-      "label": "일정 관찰",
+      "score": 65,
+      "tier": "FOCUS",
+      "label": "근거 충실",
       "components": {
         "schedule": {
           "label": "일정 신뢰도",
@@ -31290,7 +31719,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -31307,12 +31736,10 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 9950.0,
@@ -31325,10 +31752,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -31691,9 +32118,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 51,
+    "event_score": 57,
     "insight": {
-      "score": 51,
+      "score": 57,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -31709,7 +32136,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -31726,12 +32153,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 20800.0,
@@ -31744,10 +32169,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -31789,9 +32214,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 51,
+    "event_score": 57,
     "insight": {
-      "score": 51,
+      "score": 57,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -31807,7 +32232,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -31824,12 +32249,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 199100.0,
@@ -31842,10 +32265,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -33816,9 +34239,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 42,
+    "event_score": 48,
     "insight": {
-      "score": 42,
+      "score": 48,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -33834,7 +34257,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -33851,21 +34274,20 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
       "missing": [
-        "충분한 과거 사건 표본",
         "최근 가격·거래량"
       ],
-      "history_confidence": "LIMITED",
+      "history_confidence": "DEVELOPING",
       "market": null,
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -35010,9 +35432,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 52,
+    "event_score": 58,
     "insight": {
-      "score": 52,
+      "score": 58,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -35028,7 +35450,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -35045,12 +35467,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 46450.0,
@@ -35063,10 +35483,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -35108,9 +35528,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 41,
+    "event_score": 47,
     "insight": {
-      "score": 41,
+      "score": 47,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -35126,7 +35546,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -35143,21 +35563,20 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
       "missing": [
-        "충분한 과거 사건 표본",
         "최근 가격·거래량"
       ],
-      "history_confidence": "LIMITED",
+      "history_confidence": "DEVELOPING",
       "market": null,
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -35657,9 +36076,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 51,
+    "event_score": 57,
     "insight": {
-      "score": 51,
+      "score": 57,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -35675,7 +36094,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -35692,12 +36111,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 176200.0,
@@ -35710,10 +36127,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -36114,9 +36531,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 51,
+    "event_score": 57,
     "insight": {
-      "score": 51,
+      "score": 57,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -36132,7 +36549,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -36149,12 +36566,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 182500.0,
@@ -36167,10 +36582,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -37212,9 +37627,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 51,
+    "event_score": 57,
     "insight": {
-      "score": 51,
+      "score": 57,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -37230,7 +37645,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -37247,12 +37662,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 259000.0,
@@ -37265,10 +37678,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -37421,9 +37834,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 51,
+    "event_score": 57,
     "insight": {
-      "score": 51,
+      "score": 57,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -37439,7 +37852,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -37456,12 +37869,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 14070.0,
@@ -37474,10 +37885,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -38358,7 +38769,7 @@
     "source_url": "http://www.sisafocus.co.kr/news/articleView.html?idxno=367582"
   },
   {
-    "event_id": "KR_NEWS_FUTURE_0c9dd568b538049e61ae90a7644218f39bdf3c72",
+    "event_id": "KR_NEWS_FUTURE_6379845c7601aed6fcc3874015431c6ebb5775c7",
     "d_day": 48,
     "d_day_far_future": false,
     "country": "KR",
@@ -38374,15 +38785,15 @@
         "relation_type": "DIRECT_MENTION",
         "evidence_text": "이벤트 원문에 상장사명 명시: 리가켐바이오",
         "evidence_source": "NEWS_FUTURE",
-        "source_url": "https://www.mk.co.kr/article/12208086",
-        "relation_known_date": "2026-11-13",
+        "source_url": "https://www.medipana.com/news/articleView.html?idxno=421810",
+        "relation_known_date": "2026-11-14",
         "ingest_mode": "AUTO",
         "from_entity": "리가켐바이오"
       }
     ],
     "company": "리가켐바이오",
     "event_type": "CLINICAL_RESULT",
-    "event_name": "리가켐바이오, 3분기 영업손실 451억…적자 폭 줄이고 ADC 임상 확대",
+    "event_name": "리가켐바이오 \"빅파마와 기술이전 복수 논의…일부는 3상 직접\"",
     "event_date": "2027-01-01",
     "date_precision": "YEAR",
     "window_start": "2027-01-01",
@@ -38453,7 +38864,7 @@
     },
     "status": "EXPECTED",
     "source_name": "NEWS_FUTURE",
-    "source_url": "https://www.mk.co.kr/article/12208086"
+    "source_url": "https://www.medipana.com/news/articleView.html?idxno=421810"
   },
   {
     "event_id": "KR_NEWS_FUTURE_cc9f9690160f44c29605fe4a4ca4d4cc6c76a9c5",
@@ -39612,6 +40023,190 @@
     "source_url": "https://www.sentv.co.kr/article/view/sentv202611130103"
   },
   {
+    "event_id": "KR_NEWS_FUTURE_c0ea1be2685ed7922971ad0b8cea8fc0daf0f630",
+    "d_day": 48,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "039490",
+    "primary_ticker": "",
+    "anchor_status": "theme_proxy_only",
+    "related_securities": [
+      {
+        "ticker": "039490",
+        "company_name": "키움증권",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 키움증권",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.mt.co.kr/stock/2026/11/14/2026111316402977802",
+        "relation_known_date": "2026-11-14",
+        "ingest_mode": "AUTO",
+        "from_entity": "키움증권"
+      }
+    ],
+    "company": "바겐세일",
+    "event_type": "CLINICAL_RESULT",
+    "event_name": "\"바겐세일, 지금이 기회\" 반도체 소부장 51% 불기둥...계속 될까?[김근희...",
+    "event_date": "2027-01-01",
+    "date_precision": "YEAR",
+    "window_start": "2027-01-01",
+    "window_end": "2027-12-31",
+    "relation_grade": "THEME",
+    "relation_score": 35,
+    "relation_type": "CONTEXT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 22,
+    "insight": {
+      "score": 22,
+      "tier": "CHECK",
+      "label": "추가 확인",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 11,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 6,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 0,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 5,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "검증된 개별 관련주 부족",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "검증된 개별 관련주",
+        "충분한 과거 사건 표본",
+        "최근 가격·거래량"
+      ],
+      "history_confidence": "NONE",
+      "market": null,
+      "coverage": {
+        "eligible_events": 0,
+        "priced_events": 0,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": null
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.mt.co.kr/stock/2026/11/14/2026111316402977802"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_8fb3508cc22e3eda4e1ec0892ce2f75c2f08f723",
+    "d_day": 48,
+    "d_day_far_future": false,
+    "country": "KR",
+    "ticker": "",
+    "primary_ticker": "",
+    "anchor_status": "unmapped_only",
+    "related_securities": [
+      {
+        "ticker": "",
+        "company_name": "",
+        "relation_grade": "UNMAPPED",
+        "relation_score": 0,
+        "relation_type": "UNMAPPED",
+        "evidence_text": "직접 또는 검증된 관련 종목 미매핑",
+        "evidence_source": "",
+        "source_url": "",
+        "relation_known_date": "",
+        "ingest_mode": "AUTO",
+        "from_entity": ""
+      }
+    ],
+    "company": "재생에너지 사업",
+    "event_type": "TENDER",
+    "event_name": "재생에너지 사업, 금융기관은 무엇을 보고 돈을 빌려주나 [지평 기후에...",
+    "event_date": "2027-01-01",
+    "date_precision": "YEAR",
+    "window_start": "2027-01-01",
+    "window_end": "2027-12-31",
+    "relation_grade": "UNMAPPED",
+    "relation_score": 0,
+    "relation_type": "UNMAPPED",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 16,
+    "insight": {
+      "score": 16,
+      "tier": "CHECK",
+      "label": "추가 확인",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 11,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 0,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 0,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 5,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "검증된 개별 관련주 부족",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "검증된 개별 관련주",
+        "충분한 과거 사건 표본",
+        "최근 가격·거래량"
+      ],
+      "history_confidence": "NONE",
+      "market": null,
+      "coverage": {
+        "eligible_events": 0,
+        "priced_events": 0,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": null
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.mk.co.kr/article/12208208"
+  },
+  {
     "event_id": "KR_NEWS_FUTURE_a1d5956f6b8ae7baa4a015985ad8844392d0ddeb",
     "d_day": 53,
     "d_day_far_future": false,
@@ -39782,9 +40377,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 58,
+    "event_score": 64,
     "insight": {
-      "score": 58,
+      "score": 64,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -39800,7 +40395,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -39817,12 +40412,10 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 31700.0,
@@ -39835,10 +40428,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -40307,10 +40900,10 @@
       ],
       "history_confidence": "SUPPORTED",
       "market": {
-        "as_of": "2026-11-12",
-        "price": 7631.1201,
-        "return_20d": -0.014584,
-        "volume_ratio_20d": 0.349,
+        "as_of": "2026-11-13",
+        "price": 7521.75,
+        "return_20d": -0.017977,
+        "volume_ratio_20d": 0.257,
         "sessions": 72,
         "source": "Yahoo Finance",
         "ticker": "^GSPC"
@@ -40645,11 +41238,11 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 59,
+    "event_score": 65,
     "insight": {
-      "score": 59,
-      "tier": "WATCH",
-      "label": "일정 관찰",
+      "score": 65,
+      "tier": "FOCUS",
+      "label": "근거 충실",
       "components": {
         "schedule": {
           "label": "일정 신뢰도",
@@ -40663,7 +41256,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -40680,12 +41273,10 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 23200.0,
@@ -40698,10 +41289,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -40842,9 +41433,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 58,
+    "event_score": 64,
     "insight": {
-      "score": 58,
+      "score": 64,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -40860,7 +41451,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -40877,12 +41468,10 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 31700.0,
@@ -40895,10 +41484,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -41173,11 +41762,11 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 59,
+    "event_score": 65,
     "insight": {
-      "score": 59,
-      "tier": "WATCH",
-      "label": "일정 관찰",
+      "score": 65,
+      "tier": "FOCUS",
+      "label": "근거 충실",
       "components": {
         "schedule": {
           "label": "일정 신뢰도",
@@ -41191,7 +41780,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -41208,12 +41797,10 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 252500.0,
@@ -41226,10 +41813,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -41369,9 +41956,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 55,
+    "event_score": 61,
     "insight": {
-      "score": 55,
+      "score": 61,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -41387,7 +41974,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -41404,12 +41991,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 176200.0,
@@ -41422,10 +42007,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -41683,11 +42268,11 @@
       ],
       "history_confidence": "NONE",
       "market": {
-        "as_of": "2026-11-12",
+        "as_of": "2026-11-13",
         "price": 2367.2368,
         "return_20d": 0.0,
         "volume_ratio_20d": null,
-        "sessions": 67,
+        "sessions": 68,
         "source": "Yahoo Finance",
         "ticker": "041590"
       },
@@ -42107,9 +42692,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 47,
+    "event_score": 53,
     "insight": {
-      "score": 47,
+      "score": 53,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -42125,7 +42710,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -42142,13 +42727,11 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본",
+        "D+5 완료 사건 3건",
         "최근 20거래일 20% 이상 상승 · 급등 부담"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 7780.0,
@@ -42161,10 +42744,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -42206,9 +42789,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 52,
+    "event_score": 58,
     "insight": {
-      "score": 52,
+      "score": 58,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -42224,7 +42807,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -42241,12 +42824,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 4780.0,
@@ -42259,10 +42840,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -42506,9 +43087,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 47,
+    "event_score": 53,
     "insight": {
-      "score": 47,
+      "score": 53,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -42524,7 +43105,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -42541,13 +43122,11 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본",
+        "D+5 완료 사건 3건",
         "최근 20거래일 20% 이상 상승 · 급등 부담"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 203500.0,
@@ -42560,10 +43139,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -42605,9 +43184,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 52,
+    "event_score": 58,
     "insight": {
-      "score": 52,
+      "score": 58,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -42623,7 +43202,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -42640,12 +43219,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 31550.0,
@@ -42658,10 +43235,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -42800,9 +43377,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 46,
+    "event_score": 52,
     "insight": {
-      "score": 46,
+      "score": 52,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -42818,7 +43395,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -42835,21 +43412,20 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
       "missing": [
-        "충분한 과거 사건 표본",
         "최근 가격·거래량"
       ],
-      "history_confidence": "LIMITED",
+      "history_confidence": "DEVELOPING",
       "market": null,
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -43376,9 +43952,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 53,
+    "event_score": 59,
     "insight": {
-      "score": 53,
+      "score": 59,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -43394,7 +43970,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -43411,12 +43987,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 2개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 1216000.0,
@@ -43429,10 +44003,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -43611,9 +44185,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 48,
+    "event_score": 54,
     "insight": {
-      "score": 48,
+      "score": 54,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -43629,7 +44203,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -43646,13 +44220,11 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본",
+        "D+5 완료 사건 3건",
         "최근 20거래일 20% 이상 상승 · 급등 부담"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 1795.0,
@@ -43665,10 +44237,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -43890,10 +44462,10 @@
       ],
       "history_confidence": "SUPPORTED",
       "market": {
-        "as_of": "2026-11-12",
-        "price": 7631.1201,
-        "return_20d": -0.014584,
-        "volume_ratio_20d": 0.349,
+        "as_of": "2026-11-13",
+        "price": 7521.75,
+        "return_20d": -0.017977,
+        "volume_ratio_20d": 0.257,
         "sessions": 72,
         "source": "Yahoo Finance",
         "ticker": "^GSPC"
@@ -43985,9 +44557,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 51,
+    "event_score": 57,
     "insight": {
-      "score": 51,
+      "score": 57,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -44003,7 +44575,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -44020,13 +44592,11 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본",
+        "D+5 완료 사건 3건",
         "최근 20거래일 20% 이상 상승 · 급등 부담"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 203500.0,
@@ -44039,10 +44609,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -44084,9 +44654,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 52,
+    "event_score": 58,
     "insight": {
-      "score": 52,
+      "score": 58,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -44102,7 +44672,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -44119,13 +44689,11 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본",
+        "D+5 완료 사건 3건",
         "최근 20거래일 20% 이상 상승 · 급등 부담"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 7780.0,
@@ -44138,10 +44706,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -44196,9 +44764,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 52,
+    "event_score": 58,
     "insight": {
-      "score": 52,
+      "score": 58,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -44214,7 +44782,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -44231,13 +44799,11 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본",
+        "D+5 완료 사건 3건",
         "최근 20거래일 20% 이상 상승 · 급등 부담"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 7780.0,
@@ -44250,10 +44816,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -44347,9 +44913,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 51,
+    "event_score": 57,
     "insight": {
-      "score": 51,
+      "score": 57,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -44365,7 +44931,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -44382,13 +44948,11 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본",
+        "D+5 완료 사건 3건",
         "최근 20거래일 20% 이상 상승 · 급등 부담"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 203500.0,
@@ -44401,10 +44965,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -44472,9 +45036,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 56,
+    "event_score": 62,
     "insight": {
-      "score": 56,
+      "score": 62,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -44490,7 +45054,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -44507,12 +45071,10 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 20150.0,
@@ -44525,10 +45087,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -44596,9 +45158,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 52,
+    "event_score": 58,
     "insight": {
-      "score": 52,
+      "score": 58,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -44614,7 +45176,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -44631,13 +45193,11 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본",
+        "D+5 완료 사건 3건",
         "최근 20거래일 20% 이상 상승 · 급등 부담"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 7780.0,
@@ -44650,10 +45210,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -44834,11 +45394,11 @@
       "missing": [],
       "history_confidence": "SUPPORTED",
       "market": {
-        "as_of": "2026-11-12",
+        "as_of": "2026-11-13",
         "price": 990.0,
         "return_20d": 0.0,
         "volume_ratio_20d": null,
-        "sessions": 67,
+        "sessions": 68,
         "source": "Yahoo Finance",
         "ticker": "183490"
       },
@@ -46384,9 +46944,9 @@
         "from_entity": "한전KPS"
       }
     ],
-    "company": "시공사 다시 뽑는 체코 원전..한수원 \"내년 4월 인허가 예정 대로",
+    "company": "시공사 다시 뽑는 체코 원전 ..한수원 \"내년 4월 인허가 예정 대로",
     "event_type": "APPROVAL",
-    "event_name": "시공사 다시 뽑는 체코 원전..한수원 \"내년 4월 인허가 예정 대로\"",
+    "event_name": "시공사 다시 뽑는 체코 원전 ..한수원 \"내년 4월 인허가 예정 대로\"",
     "event_date": "2027-04-01",
     "date_precision": "MONTH",
     "window_start": "2027-04-01",
@@ -46731,10 +47291,10 @@
       ],
       "history_confidence": "SUPPORTED",
       "market": {
-        "as_of": "2026-11-12",
-        "price": 7631.1201,
-        "return_20d": -0.014584,
-        "volume_ratio_20d": 0.349,
+        "as_of": "2026-11-13",
+        "price": 7521.75,
+        "return_20d": -0.017977,
+        "volume_ratio_20d": 0.257,
         "sessions": 72,
         "source": "Yahoo Finance",
         "ticker": "^GSPC"
@@ -47077,7 +47637,7 @@
     ],
     "company": "제닉스로보틱스",
     "event_type": "PLANT_OPERATION",
-    "event_name": "제닉스로보틱스, 수주잔고 1년 새 5배 증가… 내년 5월 신공장 가동 추진",
+    "event_name": "제닉스로보틱스, 수주잔고 1년 새 5배 증가…내년 5월 신공장 가동 추진",
     "event_date": "2027-05-01",
     "date_precision": "MONTH",
     "window_start": "2027-05-01",
@@ -47128,11 +47688,11 @@
       ],
       "history_confidence": "NONE",
       "market": {
-        "as_of": "2026-11-12",
-        "price": 5150.0,
-        "return_20d": 0.084211,
-        "volume_ratio_20d": 0.4,
-        "sessions": 67,
+        "as_of": "2026-11-13",
+        "price": 5240.0,
+        "return_20d": 0.048,
+        "volume_ratio_20d": 13.829,
+        "sessions": 68,
         "source": "Yahoo Finance",
         "ticker": "381620"
       },
@@ -47184,9 +47744,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 46,
+    "event_score": 52,
     "insight": {
-      "score": 46,
+      "score": 52,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -47202,7 +47762,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -47219,21 +47779,20 @@
       "reasons": [
         "기사 기반 일정 · 날짜 확정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
       "missing": [
-        "충분한 과거 사건 표본",
         "최근 가격·거래량"
       ],
-      "history_confidence": "LIMITED",
+      "history_confidence": "DEVELOPING",
       "market": null,
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -47407,10 +47966,10 @@
       ],
       "history_confidence": "SUPPORTED",
       "market": {
-        "as_of": "2026-11-12",
-        "price": 7631.1201,
-        "return_20d": -0.014584,
-        "volume_ratio_20d": 0.349,
+        "as_of": "2026-11-13",
+        "price": 7521.75,
+        "return_20d": -0.017977,
+        "volume_ratio_20d": 0.257,
         "sessions": 72,
         "source": "Yahoo Finance",
         "ticker": "^GSPC"
@@ -49500,10 +50059,10 @@
       ],
       "history_confidence": "SUPPORTED",
       "market": {
-        "as_of": "2026-11-12",
-        "price": 7631.1201,
-        "return_20d": -0.014584,
-        "volume_ratio_20d": 0.349,
+        "as_of": "2026-11-13",
+        "price": 7521.75,
+        "return_20d": -0.017977,
+        "volume_ratio_20d": 0.257,
         "sessions": 72,
         "source": "Yahoo Finance",
         "ticker": "^GSPC"
@@ -49807,10 +50366,10 @@
       ],
       "history_confidence": "SUPPORTED",
       "market": {
-        "as_of": "2026-11-12",
-        "price": 7631.1201,
-        "return_20d": -0.014584,
-        "volume_ratio_20d": 0.349,
+        "as_of": "2026-11-13",
+        "price": 7521.75,
+        "return_20d": -0.017977,
+        "volume_ratio_20d": 0.257,
         "sessions": 72,
         "source": "Yahoo Finance",
         "ticker": "^GSPC"
@@ -50060,9 +50619,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 51,
+    "event_score": 57,
     "insight": {
-      "score": 51,
+      "score": 57,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -50078,7 +50637,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -50095,12 +50654,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 48350.0,
@@ -50113,10 +50670,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -50298,10 +50855,10 @@
       ],
       "history_confidence": "SUPPORTED",
       "market": {
-        "as_of": "2026-11-12",
-        "price": 7631.1201,
-        "return_20d": -0.014584,
-        "volume_ratio_20d": 0.349,
+        "as_of": "2026-11-13",
+        "price": 7521.75,
+        "return_20d": -0.017977,
+        "volume_ratio_20d": 0.257,
         "sessions": 72,
         "source": "Yahoo Finance",
         "ticker": "^GSPC"
@@ -50508,10 +51065,10 @@
       ],
       "history_confidence": "SUPPORTED",
       "market": {
-        "as_of": "2026-11-12",
-        "price": 7631.1201,
-        "return_20d": -0.014584,
-        "volume_ratio_20d": 0.349,
+        "as_of": "2026-11-13",
+        "price": 7521.75,
+        "return_20d": -0.017977,
+        "volume_ratio_20d": 0.257,
         "sessions": 72,
         "source": "Yahoo Finance",
         "ticker": "^GSPC"
@@ -50702,10 +51259,10 @@
       ],
       "history_confidence": "SUPPORTED",
       "market": {
-        "as_of": "2026-11-12",
-        "price": 7631.1201,
-        "return_20d": -0.014584,
-        "volume_ratio_20d": 0.349,
+        "as_of": "2026-11-13",
+        "price": 7521.75,
+        "return_20d": -0.017977,
+        "volume_ratio_20d": 0.257,
         "sessions": 72,
         "source": "Yahoo Finance",
         "ticker": "^GSPC"
@@ -52719,44 +53276,44 @@
     "source_url": "https://www.ggilbo.com/news/articleView.html?idxno=1192329"
   },
   {
-    "event_id": "KR_NEWS_FUTURE_b98d5d7a81c11d91ecdf5b8281889d008fb96880",
+    "event_id": "KR_NEWS_FUTURE_9ed536b37e1d93ea73d8d7de5c20e150bf63311f",
     "d_day": 413,
     "d_day_far_future": true,
     "country": "KR",
     "ticker": "181710",
-    "primary_ticker": "",
-    "anchor_status": "theme_proxy_only",
+    "primary_ticker": "181710",
+    "anchor_status": "anchored_from_relation",
     "related_securities": [
       {
         "ticker": "181710",
         "company_name": "NHN",
-        "relation_grade": "THEME",
-        "relation_score": 35,
-        "relation_type": "CONTEXT_MENTION",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT_MENTION",
         "evidence_text": "이벤트 원문에 상장사명 명시: NHN",
         "evidence_source": "NEWS_FUTURE",
-        "source_url": "http://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A202611100185&t=NN",
-        "relation_known_date": "2026-11-10",
+        "source_url": "https://www.bigtanews.co.kr/article/view/big202611140003",
+        "relation_known_date": "2026-11-14",
         "ingest_mode": "AUTO",
         "from_entity": "NHN"
       }
     ],
-    "company": "하루 만에 상한가 터지자 '화들짝",
+    "company": "NHN",
     "event_type": "CAPEX",
-    "event_name": "하루 만에 상한가 터지자 '화들짝'…\"9만1천원 간다\" 목표가 오른 종목...",
+    "event_name": "KB증권, 11월 둘째주 NHN 등 27종목 매수 추천",
     "event_date": "2028-01-01",
     "date_precision": "YEAR",
     "window_start": "2028-01-01",
     "window_end": "2028-12-31",
-    "relation_grade": "THEME",
-    "relation_score": 35,
-    "relation_type": "CONTEXT_MENTION",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 25,
+    "event_score": 42,
     "insight": {
-      "score": 25,
-      "tier": "CHECK",
-      "label": "추가 확인",
+      "score": 42,
+      "tier": "WATCH",
+      "label": "일정 관찰",
       "components": {
         "schedule": {
           "label": "일정 신뢰도",
@@ -52765,12 +53322,12 @@
         },
         "relation": {
           "label": "관련주 근거",
-          "points": 6,
+          "points": 21,
           "max": 25
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 0,
+          "points": 2,
           "max": 25
         },
         "market": {
@@ -52786,15 +53343,14 @@
       },
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
-        "검증된 개별 관련주 부족",
-        "D+5 완료 사건 0건",
+        "직접 1개 · 경제관계 0개",
+        "D+5 완료 사건 1건 · 소표본",
         "최근 20거래일 20% 이상 상승 · 급등 부담"
       ],
       "missing": [
-        "검증된 개별 관련주",
         "충분한 과거 사건 표본"
       ],
-      "history_confidence": "NONE",
+      "history_confidence": "LIMITED",
       "market": {
         "as_of": "2026-11-13",
         "price": 66400.0,
@@ -52805,18 +53361,18 @@
         "ticker": "181710"
       },
       "coverage": {
-        "eligible_events": 0,
-        "priced_events": 0,
-        "complete_events": 0,
-        "security_samples": 0,
+        "eligible_events": 1,
+        "priced_events": 1,
+        "complete_events": 1,
+        "security_samples": 1,
         "not_calculated_events": 0,
-        "completion_percent": null
+        "completion_percent": 100
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
     "status": "EXPECTED",
     "source_name": "NEWS_FUTURE",
-    "source_url": "http://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A202611100185&t=NN"
+    "source_url": "https://www.bigtanews.co.kr/article/view/big202611140003"
   },
   {
     "event_id": "KR_NEWS_FUTURE_9ab57d6e295f1c3cd314c331c83be94cfffb208d",
@@ -53238,9 +53794,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 49,
+    "event_score": 55,
     "insight": {
-      "score": 49,
+      "score": 55,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -53256,7 +53812,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -53273,12 +53829,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 7110.0,
@@ -53291,10 +53845,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -53989,6 +54543,130 @@
     "status": "EXPECTED",
     "source_name": "NEWS_FUTURE",
     "source_url": "https://www.etoday.co.kr/news/view/2648046"
+  },
+  {
+    "event_id": "KR_NEWS_FUTURE_c706f093a97e28dd1081aa48f974a33516cd240a",
+    "d_day": 413,
+    "d_day_far_future": true,
+    "country": "KR",
+    "ticker": "005930",
+    "primary_ticker": "005930",
+    "anchor_status": "anchored_from_relation",
+    "related_securities": [
+      {
+        "ticker": "005930",
+        "company_name": "삼성전자",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 삼성전자",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.news1.kr/finance/general-stock/6353763",
+        "relation_known_date": "2026-11-14",
+        "ingest_mode": "AUTO",
+        "from_entity": "삼성전자"
+      },
+      {
+        "ticker": "000660",
+        "company_name": "SK하이닉스",
+        "relation_grade": "B",
+        "relation_score": 75,
+        "relation_type": "INDUSTRY_PEER",
+        "evidence_text": "메모리 반도체 대표 경쟁/동조주",
+        "evidence_source": "메모리 반도체 대표 경쟁/동조주",
+        "source_url": "https://dart.fss.or.kr",
+        "relation_known_date": "2020-01-01",
+        "ingest_mode": "AUTO",
+        "from_entity": "005930"
+      },
+      {
+        "ticker": "009150",
+        "company_name": "삼성전기",
+        "relation_grade": "THEME",
+        "relation_score": 35,
+        "relation_type": "CONTEXT_MENTION",
+        "evidence_text": "이벤트 원문에 상장사명 명시: 삼성전기",
+        "evidence_source": "NEWS_FUTURE",
+        "source_url": "https://www.news1.kr/finance/general-stock/6353763",
+        "relation_known_date": "2026-11-14",
+        "ingest_mode": "AUTO",
+        "from_entity": "삼성전기"
+      }
+    ],
+    "company": "삼성전자",
+    "event_type": "PLANT_OPERATION",
+    "event_name": "'18만→20만' 복귀한 삼성전자…외국인 매수 속 엇갈린 전망[종목현미경...",
+    "event_date": "2028-01-01",
+    "date_precision": "YEAR",
+    "window_start": "2028-01-01",
+    "window_end": "2028-12-31",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT_MENTION",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 45,
+    "insight": {
+      "score": 45,
+      "tier": "WATCH",
+      "label": "일정 관찰",
+      "components": {
+        "schedule": {
+          "label": "일정 신뢰도",
+          "points": 11,
+          "max": 30
+        },
+        "relation": {
+          "label": "관련주 근거",
+          "points": 21,
+          "max": 25
+        },
+        "history": {
+          "label": "과거 비교 근거",
+          "points": 0,
+          "max": 25
+        },
+        "market": {
+          "label": "현재 가격 관측",
+          "points": 10,
+          "max": 10
+        },
+        "timing": {
+          "label": "일정 접근·신선도",
+          "points": 3,
+          "max": 10
+        }
+      },
+      "reasons": [
+        "기사 기반 일정 · 기간형 일정",
+        "직접 1개 · 경제관계 1개",
+        "D+5 완료 사건 0건"
+      ],
+      "missing": [
+        "충분한 과거 사건 표본"
+      ],
+      "history_confidence": "NONE",
+      "market": {
+        "as_of": "2026-11-13",
+        "price": 206000.0,
+        "return_20d": -0.044084,
+        "volume_ratio_20d": 0.868,
+        "sessions": 68,
+        "source": "Yahoo Finance",
+        "ticker": "005930"
+      },
+      "coverage": {
+        "eligible_events": 0,
+        "priced_events": 0,
+        "complete_events": 0,
+        "security_samples": 0,
+        "not_calculated_events": 0,
+        "completion_percent": null
+      },
+      "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
+    },
+    "status": "EXPECTED",
+    "source_name": "NEWS_FUTURE",
+    "source_url": "https://www.news1.kr/finance/general-stock/6353763"
   },
   {
     "event_id": "KR_NEWS_FUTURE_fdf7ca73ece1466a5328da5e2b275b5bf2f956f7",
@@ -56669,9 +57347,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 49,
+    "event_score": 55,
     "insight": {
-      "score": 49,
+      "score": 55,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -56687,7 +57365,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -56704,12 +57382,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 7110.0,
@@ -56722,10 +57398,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -57338,11 +58014,11 @@
       ],
       "history_confidence": "LIMITED",
       "market": {
-        "as_of": "2026-11-12",
-        "price": 1339.0,
-        "return_20d": -0.008148,
-        "volume_ratio_20d": 0.457,
-        "sessions": 67,
+        "as_of": "2026-11-13",
+        "price": 1326.0,
+        "return_20d": -0.056899,
+        "volume_ratio_20d": 0.332,
+        "sessions": 68,
         "source": "Yahoo Finance",
         "ticker": "012690"
       },
@@ -58563,9 +59239,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 48,
+    "event_score": 54,
     "insight": {
-      "score": 48,
+      "score": 54,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -58581,7 +59257,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -58598,12 +59274,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 20800.0,
@@ -58616,10 +59290,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -60176,11 +60850,11 @@
       ],
       "history_confidence": "NONE",
       "market": {
-        "as_of": "2026-11-12",
-        "price": 9520.0,
-        "return_20d": -0.132179,
-        "volume_ratio_20d": 3.997,
-        "sessions": 67,
+        "as_of": "2026-11-13",
+        "price": 9990.0,
+        "return_20d": -0.129791,
+        "volume_ratio_20d": 1.161,
+        "sessions": 68,
         "source": "Yahoo Finance",
         "ticker": "456570"
       },
@@ -60833,9 +61507,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 49,
+    "event_score": 55,
     "insight": {
-      "score": 49,
+      "score": 55,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -60851,7 +61525,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -60868,12 +61542,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 7110.0,
@@ -60886,10 +61558,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -61442,9 +62114,9 @@
     "relation_score": 100,
     "relation_type": "DIRECT_MENTION",
     "relation_ingest_mode": "AUTO",
-    "event_score": 49,
+    "event_score": 55,
     "insight": {
-      "score": 49,
+      "score": 55,
       "tier": "WATCH",
       "label": "일정 관찰",
       "components": {
@@ -61460,7 +62132,7 @@
         },
         "history": {
           "label": "과거 비교 근거",
-          "points": 4,
+          "points": 10,
           "max": 25
         },
         "market": {
@@ -61477,12 +62149,10 @@
       "reasons": [
         "기사 기반 일정 · 기간형 일정",
         "직접 1개 · 경제관계 0개",
-        "D+5 완료 사건 2건 · 소표본"
+        "D+5 완료 사건 3건"
       ],
-      "missing": [
-        "충분한 과거 사건 표본"
-      ],
-      "history_confidence": "LIMITED",
+      "missing": [],
+      "history_confidence": "DEVELOPING",
       "market": {
         "as_of": "2026-11-13",
         "price": 7110.0,
@@ -61495,10 +62165,10 @@
       "coverage": {
         "eligible_events": 7,
         "priced_events": 7,
-        "complete_events": 2,
-        "security_samples": 2,
+        "complete_events": 3,
+        "security_samples": 3,
         "not_calculated_events": 0,
-        "completion_percent": 29
+        "completion_percent": 43
       },
       "methodology": "관찰 우선순위이며 매수 추천이나 수익 확률이 아닙니다. 미확인 항목에는 점수를 부여하지 않습니다."
     },
@@ -69638,10 +70308,10 @@
       ],
       "history_confidence": "NONE",
       "market": {
-        "as_of": "2026-11-12",
-        "price": 153.14,
-        "return_20d": 0.022433,
-        "volume_ratio_20d": 0.527,
+        "as_of": "2026-11-13",
+        "price": 149.44,
+        "return_20d": 0.035477,
+        "volume_ratio_20d": 0.509,
         "sessions": 72,
         "source": "Yahoo Finance",
         "ticker": "XBI"
