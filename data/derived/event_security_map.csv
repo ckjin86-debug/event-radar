@@ -4,12 +4,12 @@ KR_KIND_IPO_7a94ec521b66d5a584d72ad5cf9304a8fca23281,420610,B,76,IPO_INVESTOR,�
 KR_KIND_IPO_81bfec927fc30451d4700230ccffeb3194e205e4,126340,B,76,IPO_INVESTOR,"비나텍: 한국투자증권은 전력과 용수 사용을 둘러싼 규제가 확대되는 가운데 블룸에너지의 연료전지 수요 증가에 따라 비나텍, 티앤이코리아 등 국내 기업의 수혜를 예상했다 | https://theviewers.co.kr/View.aspx?No=4298426"
 KR_KIND_IPO_22b1edbb2ea1b2abd5cabf9e7c2316a8b6b2f247,005940,B,76,IPO_INVESTOR,"NH투자증권: 한화투자증권은 올해 페스카로 상장에 NH투자증권과 공동주관사로 참여했고, 한화플러스제6호스팩 의 코스닥 상장을 위한 예비심사를 지난달 청구했다 | https://www.etoday.co.kr/news/view/2535555"
 KR_KIND_IPO_832784cc1f6eb61b3b81a0e156cf38dcfca1b75e,439270,B,76,IPO_INVESTOR,크리에이츠: 지난달 30일 상장한 인텔리빅스 와 크리에이츠의 기관투자자 15일 의무보유확약 물량은 16일부터 매도할 수 | https://news.bizwatch.co.kr/article/market/2026/11/13/0024
-KR_KIND_IPO_5a3452ed7550c9d112a70cb1ad2e8756a6e4b71f,359410,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 영광
+KR_KIND_IPO_5a3452ed7550c9d112a70cb1ad2e8756a6e4b71f,034020,B,64,IPO_BUSINESS_RELATION,두산에너빌리티: 두산에너빌리티는 전남 영광 야월해상풍력 발전단지가 'LEG 2' 조건이 반영된 보험 계약을 체결했다고 20일 | https://www.businesspost.co.kr/BP?command=article_view&num=452490
 KR_KIND_IPO_c36644468a48de410093c57ca68cf92dc10cdd85,017670,B,64,IPO_BUSINESS_RELATION,"SK텔레콤: 엔비디아·SK텔레콤(017670)·리벨리온의 NVLink Fusion 협력, AMD와 모레· 래블업 의 AI 소프트웨어 생태계 구축, 인텔과 딥엑스의 이기종 AI 반도체 협력 등이 대표적인 사례다 | https://www.edaily.co.kr/News/Read?newsId=01141446645646376&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article"
 KR_KIND_IPO_561e48a87092e0fc9bbbb7ded749dfef7c92f18b,037620,B,76,IPO_INVESTOR,미래에셋증권: NH투자증권 아이엠스팩1호 : 10월 26일 ~ 27일 @ 아이엠증권 에이엘로봇 : 10월 26일 ~ 27일 @대신증권 엠비디: 10월 28일 ~ 29일 @하나증권 바로팜 : 11월 2일 ~ 3일 @ 미래에셋증권 하나에어로다이내믹스 : 11월 10일 | http://www.economytalk.kr/news/articleView.html?idxno=424324
 KR_KIND_IPO_6c60d4cd8f1e8f43bb8d389d838e1d66c0f4f357,495910,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 이에스티
 KR_KIND_IPO_36e9f8708575adda2a70afe5d5d3a7c40f4d272f,004000,B,64,IPO_BUSINESS_RELATION,"롯데정밀화학: 장비와 부품 공급망 및 전자재료 분야에서는 미코, 케이씨텍, 뉴파워프라즈마, 유니트론텍, 에스에이엠티, 한솔테크닉스, 시노펙스, 위지트, 와이엠씨, 3S, 국전, 에이치브이엠, 티이엠씨씨엔에스, 동원파츠 , 롯데정밀화학 | https://www.pinpointnews.co.kr/news/articleView.html?idxno=505329"
-KR_KIND_IPO_f720780dcb05cf82442eea023725dcb72a037487,493410,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 넥스아이
+KR_KIND_IPO_f720780dcb05cf82442eea023725dcb72a037487,069620,B,76,IPO_INVESTOR,대웅제약: 대웅제약(069620)과 GC녹십자(006280)도 최근 상장한 넥스아이 에 대한 전략적 투자로 기존 투자금을 웃도는 지분가치를 확보했다 | https://www.sedaily.com/article/20116508?ref=naver
 KR_KIND_IPO_3148cd5fac8929cee30beeb9b427599152f80244,471800,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 에이엘로봇
 KR_NEWS_FUTURE_21eb95e47682ed2945480466048a8fcb0ccc2c1f,207940,A,100,DIRECT_ACQUIRER,삼성바이오로직스 공식 발표에서 PolyPeptide Group 인수 당사자 확인
 KR_NEWS_FUTURE_e14ced3593303b033c128c86fb298f1297df4d25,272210,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 한화시스템
@@ -1100,9 +1100,46 @@ KR_NEWS_FUTURE_0e75655d82cb95a832a8dc2e8be2c5b8960a33be,049770,A,100,DIRECT_MENT
 KR_NEWS_FUTURE_5a9359cf06b8305eee61c2e513f1fee1f55ebe20,272450,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 진에어
 KR_NEWS_FUTURE_3d76a28636cd93e55a8b9c3767a627ba1e2c713f,064350,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 현대로템
 KR_NEWS_FUTURE_d2bac6f2fb991ed02b69363a9816472703c51405,067630,THEME,35,CONTEXT_MENTION,이벤트 원문에 상장사명 명시: HLB생명과학
-KR_NEWS_FUTURE_e8a7b035bd23e89ca71cd9889942b49699c5e27e,067630,THEME,35,CONTEXT_MENTION,이벤트 원문에 상장사명 명시: HLB생명과학
 KR_NEWS_FUTURE_e39655d8c8495070e96c45cf8f2ba7b8624b8d60,067630,THEME,35,CONTEXT_MENTION,이벤트 원문에 상장사명 명시: HLB생명과학
 KR_NEWS_FUTURE_0636b5f33118c7fe9197ab994de5183d686ecc59,037560,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: LG헬로비전
 KR_NEWS_FUTURE_54d80d4f6a0bd6ffdfde00484780737794525f4a,067630,THEME,35,CONTEXT_MENTION,이벤트 원문에 상장사명 명시: HLB생명과학
 KR_NEWS_FUTURE_31c1d4b838573a43170f60a753f0245a62aa8a4b,053000,THEME,35,CONTEXT_MENTION,이벤트 원문에 상장사명 명시: 우리금융지주
 KR_NEWS_FUTURE_5e24bdd69e642605d8558cd18f930f85703c0981,009150,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 삼성전기
+KR_NEWS_FUTURE_3bdf7843aa51003553a0f1e18f40129f7009b26b,000500,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 가온전선
+KR_NEWS_FUTURE_8f08d25a2b568e041deb0ed9aacbc23ff273df12,006400,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 삼성SDI
+KR_NEWS_FUTURE_5e28ffa3b201d24d619f86559723c22ef9f9a204,051900,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: LG생활건강
+KR_NEWS_FUTURE_65bea757380fe676663d73dc254bbaa2373fec23,160550,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: NEW
+KR_NEWS_FUTURE_fd9d6bb4ee530f7671b5b4205ac3e982ae5fcb4c,012330,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 현대모비스
+KR_NEWS_FUTURE_eb739493d191c439308ed35324c7e1f8e23d10f8,079950,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 인베니아
+KR_NEWS_FUTURE_8df6d66165eb63cf82a143cac932698b580d77af,039200,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 오스코텍
+KR_NEWS_FUTURE_4ac48d5fcbe2495950f346835b6a67a2cd196b27,263700,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 케어랩스
+KR_NEWS_FUTURE_94ed77e89677fc4b77f2a2ee3557fea59a38551a,000720,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 현대건설
+KR_NEWS_FUTURE_e12d01090d5bf262c23a98f3656b7e4e6c2d578e,293490,THEME,35,CONTEXT_MENTION,이벤트 원문에 상장사명 명시: 카카오게임즈
+KR_NEWS_FUTURE_b2f3dadbc62ab2ffd6f3bbe80433202dbc448cad,024850,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: HLB이노베이션
+KR_NEWS_FUTURE_72e29088ef50c893ea11c2ba98789c470fec7a69,012170,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 아센디오
+KR_NEWS_FUTURE_2008c697d091ea20ba3eb7e30e373f624eb51860,267250,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: HD현대
+KR_NEWS_FUTURE_acbee12d0faf90cc9d294e20caad0ad6dbfb5250,195940,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: HK이노엔
+KR_NEWS_FUTURE_7e82a82b6a2a738a9e6096e7d45f0484c20ec1c7,195940,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: HK이노엔
+KR_NEWS_FUTURE_ede4230d9042eb5dcf75238889f5736a7b7d932c,068270,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 셀트리온
+KR_NEWS_FUTURE_677c7d21b47e5d2a40036b63dd4fbacfac997a34,105560,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: KB금융
+KR_NEWS_FUTURE_0773adfde1aa2b9121f737edb4ef699f4c8042b1,005930,B,72,INVESTMENT_LINK,NEWS_FUTURE: 삼성전자·SK하이닉스에 2천만원 투자했다면 배당금 얼마
+KR_NEWS_FUTURE_0d0bdfd989a4aa32cddd8ded49b4d50b6d4c8613,192650,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 드림텍
+KR_NEWS_FUTURE_f3c3f225e6c1e3bf344b648fe89c67292dcf8182,272110,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 케이엔제이
+KR_NEWS_FUTURE_b79a66716ea03b7b11d98c3aa14ebac44a79a7e8,267250,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: HD현대
+KR_NEWS_FUTURE_6bf3ec025ff49fb382a78b6f544402cb256f9481,267250,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: HD현대
+KR_NEWS_FUTURE_0d2d90023d8ba6a24c5ef6e0d70a65d249d3d24e,267250,THEME,35,CONTEXT_MENTION,이벤트 원문에 상장사명 명시: HD현대
+KR_NEWS_FUTURE_98b61f90f57f78da3bcd62b284dba849c8b67d38,000500,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 가온전선
+KR_NEWS_FUTURE_a782673778d87ac2110e01d96d00477225ff4c03,068270,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 셀트리온
+KR_NEWS_FUTURE_6c001e14ad497656cf510b985829459cc4587c20,484870,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 엠앤씨솔루션
+KR_NEWS_FUTURE_c916b96986b5f1ce23158f9c8c347cbf687fa823,054950,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 제이브이엠
+KR_NEWS_FUTURE_d92d0cc5660c9ed9ec8e31e0b02fdaf5c8b7e3bb,340450,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 지씨지놈
+KR_NEWS_FUTURE_f32d8fd08b46fcb5fb28f6fe65522edd952ad90c,039490,THEME,35,CONTEXT_MENTION,이벤트 원문에 상장사명 명시: 키움증권
+KR_NEWS_FUTURE_0a1e3444a7e1cd3fa494b923fa503f5a703ad4d7,086280,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 현대글로비스
+KR_NEWS_FUTURE_11fe73c8e53f0946ffa8b18eee9a78a08a81773a,003470,THEME,35,CONTEXT_MENTION,이벤트 원문에 상장사명 명시: 유안타증권
+KR_NEWS_FUTURE_d1bd6a61e85edb13363d218ca14d5c75907be49c,017810,THEME,35,CONTEXT_MENTION,이벤트 원문에 상장사명 명시: 풀무원
+KR_NEWS_FUTURE_cbe3bd6e0a31617ca84cf9e4dfab7b0faecd24d4,005940,THEME,35,CONTEXT_MENTION,이벤트 원문에 상장사명 명시: NH투자증권
+KR_NEWS_FUTURE_08168635e43586a9fb7d7d6abe7851e2dafcdc2e,053000,THEME,35,CONTEXT_MENTION,이벤트 원문에 상장사명 명시: 우리금융지주
+KR_NEWS_FUTURE_f3da00b565037a606ceae657a8f727c7d95a87dd,000720,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 현대건설
+KR_NEWS_FUTURE_977c9a5aae645b74bb41a332a636819ffce01bf4,267250,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: HD현대
+KR_NEWS_FUTURE_7206f77894158dd67b597426ec1b40cdad3cb136,329180,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: HD현대중공업
+KR_NEWS_FUTURE_a2f3a6210cc90e0c54c071b905125b153cd2e5d9,267250,THEME,35,CONTEXT_MENTION,이벤트 원문에 상장사명 명시: HD현대
