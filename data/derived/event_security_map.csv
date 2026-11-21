@@ -4,7 +4,7 @@ KR_KIND_IPO_7a94ec521b66d5a584d72ad5cf9304a8fca23281,420610,B,76,IPO_INVESTOR,�
 KR_KIND_IPO_81bfec927fc30451d4700230ccffeb3194e205e4,126340,B,76,IPO_INVESTOR,"비나텍: 한국투자증권은 전력과 용수 사용을 둘러싼 규제가 확대되는 가운데 블룸에너지의 연료전지 수요 증가에 따라 비나텍, 티앤이코리아 등 국내 기업의 수혜를 예상했다 | https://theviewers.co.kr/View.aspx?No=4298426"
 KR_KIND_IPO_22b1edbb2ea1b2abd5cabf9e7c2316a8b6b2f247,005940,B,76,IPO_INVESTOR,"NH투자증권: 한화투자증권은 올해 페스카로 상장에 NH투자증권과 공동주관사로 참여했고, 한화플러스제6호스팩 의 코스닥 상장을 위한 예비심사를 지난달 청구했다 | https://www.etoday.co.kr/news/view/2535555"
 KR_KIND_IPO_832784cc1f6eb61b3b81a0e156cf38dcfca1b75e,439270,B,76,IPO_INVESTOR,크리에이츠: 지난달 30일 상장한 인텔리빅스 와 크리에이츠의 기관투자자 15일 의무보유확약 물량은 16일부터 매도할 수 | https://news.bizwatch.co.kr/article/market/2026/11/13/0024
-KR_KIND_IPO_5a3452ed7550c9d112a70cb1ad2e8756a6e4b71f,034020,B,64,IPO_BUSINESS_RELATION,두산에너빌리티: 사진 두산에너빌리티 두산에너빌리티는 자체 개발한 8MW급 해상풍력터빈이 공급되는 영광 | https://m.skyedaily.com/news_view.html?ID=314934
+KR_KIND_IPO_5a3452ed7550c9d112a70cb1ad2e8756a6e4b71f,359410,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 영광
 KR_KIND_IPO_c36644468a48de410093c57ca68cf92dc10cdd85,017670,B,64,IPO_BUSINESS_RELATION,"SK텔레콤: 엔비디아·SK텔레콤(017670)·리벨리온의 NVLink Fusion 협력, AMD와 모레· 래블업 의 AI 소프트웨어 생태계 구축, 인텔과 딥엑스의 이기종 AI 반도체 협력 등이 대표적인 사례다 | https://www.edaily.co.kr/News/Read?newsId=01141446645646376&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article"
 KR_KIND_IPO_561e48a87092e0fc9bbbb7ded749dfef7c92f18b,037620,B,76,IPO_INVESTOR,미래에셋증권: NH투자증권 아이엠스팩1호 : 10월 26일 ~ 27일 @ 아이엠증권 에이엘로봇 : 10월 26일 ~ 27일 @대신증권 엠비디: 10월 28일 ~ 29일 @하나증권 바로팜 : 11월 2일 ~ 3일 @ 미래에셋증권 하나에어로다이내믹스 : 11월 10일 | http://www.economytalk.kr/news/articleView.html?idxno=424324
 KR_KIND_IPO_6c60d4cd8f1e8f43bb8d389d838e1d66c0f4f357,495910,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 이에스티
@@ -438,7 +438,6 @@ KR_NEWS_FUTURE_e4f4c1003118a13634c482385289f2770bdf086c,293780,A,100,DIRECT_MENT
 KR_NEWS_FUTURE_756c7153a4c206abd9bc06750e14cde6f948de18,051600,B,84,OFFICIAL_CONSORTIUM,한전KPS: 체코 원전 Team Korea 시운전 유지보수 참여사
 KR_NEWS_FUTURE_049b8de4b70ca040952a4c323de5074849b43873,086450,THEME,35,CONTEXT_MENTION,이벤트 원문에 상장사명 명시: 동국제약
 KR_NEWS_FUTURE_be9b0f84ed4c42ea0b88fe551a7d46aa843cb0df,001720,THEME,35,CONTEXT_MENTION,이벤트 원문에 상장사명 명시: 신영증권
-KR_NEWS_FUTURE_fc5e49c53652f03932540d6f36fde9ac72987c71,051600,THEME,50,NUCLEAR_MARKET_THEME,한전KPS: 공식 원전 프로젝트 시운전 유지보수 참여 이력이 있는 원전 테마 후보
 KR_NEWS_FUTURE_0f391c666e74e93d9372bdd85b2912edc76e8610,039200,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 오스코텍
 KR_NEWS_FUTURE_f53100406e361cab15f26e87df8ef73afca0d29c,181710,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: NHN
 KR_NEWS_FUTURE_f5bde8295a79a826f28f6c418528bcb39e62b53c,405100,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 큐알티
@@ -1173,3 +1172,7 @@ KR_NEWS_FUTURE_c4029f76899eaf489e4b95a5c88702a4ed0028a4,042660,A,100,DIRECT_MENT
 KR_NEWS_FUTURE_db9523d00d655060058359db03cabbed1ce7ee23,051600,THEME,50,NUCLEAR_MARKET_THEME,한전KPS: 공식 원전 프로젝트 시운전 유지보수 참여 이력이 있는 원전 테마 후보
 KR_NEWS_FUTURE_a8826360324dbdd917011bdc34ffd7661402c020,047040,THEME,35,CONTEXT_MENTION,이벤트 원문에 상장사명 명시: 대우건설
 KR_NEWS_FUTURE_33f9e39683594695ce66675339673aeadf407604,051600,B,84,OFFICIAL_CONSORTIUM,한전KPS: 체코 원전 Team Korea 시운전 유지보수 참여사
+KR_NEWS_FUTURE_e61e74e4373999e2f97ad9f37a5d7a2e8b0718ec,112040,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 위메이드
+KR_NEWS_FUTURE_bc9738b0bd21e93413c12398ba1cc77be8bd1119,039200,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 오스코텍
+KR_NEWS_FUTURE_e7a681c911efa87bec2b60334033f30e8592e45d,336260,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 두산퓨얼셀
+KR_NEWS_FUTURE_40b3e74aca1ad3fc8f0c6a2814422882c380615c,039490,THEME,35,CONTEXT_MENTION,이벤트 원문에 상장사명 명시: 키움증권

@@ -1,5 +1,517 @@
 [
   {
+    "event_id": "US_SEC_13DG_0002165627-26-000002",
+    "d_day": -1,
+    "country": "US",
+    "ticker": "RAYA",
+    "primary_ticker": "RAYA",
+    "related_securities": [
+      {
+        "ticker": "RAYA",
+        "company_name": "",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "SEC_13DG",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1825875/000216562726000002/0002165627-26-000002-index.html",
+        "relation_known_date": "2026-11-20",
+        "ingest_mode": "AUTO",
+        "from_entity": "Erayak Power Solution Group Inc.",
+        "name": ""
+      }
+    ],
+    "company": "Erayak Power Solution Group Inc.",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "Erayak Power Solution Group Inc. SCHEDULE 13G/A (Passive Ownership) (대표보고자: Anderson Zachary Arlen)",
+    "event_date": "2026-11-20",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-20",
+    "window_end": "2026-11-20",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 0,
+    "alpha_score": 0,
+    "score_breakdown": [],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "단순투자",
+    "purpose_current": "단순투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "NEUTRAL",
+      "label": "지분공시",
+      "summary": "SCHEDULE 13G/A (Passive Ownership) · 대표보고자 Anderson Zachary Arlen",
+      "score": 0
+    },
+    "status": "CONFIRMED",
+    "source_name": "SEC_13DG",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1825875/000216562726000002/0002165627-26-000002-index.html",
+    "est_avg_price": 0.56,
+    "current_price": 0.6759999990463257,
+    "price_gap_pct": 20.7,
+    "price_source": "VWAP_ESTIMATE: 2026-11-11~2026-11-20 매집기간 일봉 VWAP",
+    "hold_stock_rt": 0.0,
+    "stk_rt_var": 0,
+    "stk_cnt_var": "-",
+    "first_entry_dt": "2026-11-20",
+    "reporter": "Anderson Zachary Arlen",
+    "backtest": {
+      "latest": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 0.6759999990463257,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0
+      },
+      "firstEntry": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 0.6759999990463257,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0,
+        "isSameAsLatest": true
+      }
+    }
+  },
+  {
+    "event_id": "US_SEC_13DG_0002151213-26-000002",
+    "d_day": -1,
+    "country": "US",
+    "ticker": "CIK1924868",
+    "primary_ticker": "CIK1924868",
+    "related_securities": [
+      {
+        "ticker": "CIK1924868",
+        "company_name": "",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "SEC_13DG",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1924868/000215121326000002/0002151213-26-000002-index.html",
+        "relation_known_date": "2026-11-20",
+        "ingest_mode": "AUTO",
+        "from_entity": "Tidal Trust II",
+        "name": ""
+      }
+    ],
+    "company": "Tidal Trust II",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "Tidal Trust II SCHEDULE 13G/A (Passive Ownership) (대표보고자: Vencl William John Jr)",
+    "event_date": "2026-11-20",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-20",
+    "window_end": "2026-11-20",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 0,
+    "alpha_score": 0,
+    "score_breakdown": [
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "미산출(가격 데이터 필요)",
+        "points": 0
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "단순투자",
+    "purpose_current": "단순투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "NEUTRAL",
+      "label": "지분공시",
+      "summary": "SCHEDULE 13G/A (Passive Ownership) · 대표보고자 Vencl William John Jr",
+      "score": 0
+    },
+    "status": "CONFIRMED",
+    "source_name": "SEC_13DG",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1924868/000215121326000002/0002151213-26-000002-index.html",
+    "hold_stock_rt": 0.0,
+    "stk_rt_var": 0,
+    "stk_cnt_var": "-",
+    "first_entry_dt": "2026-11-20",
+    "reporter": "Vencl William John Jr"
+  },
+  {
+    "event_id": "US_SEC_13DG_0001969764-26-000002",
+    "d_day": -1,
+    "country": "US",
+    "ticker": "MIST",
+    "primary_ticker": "MIST",
+    "related_securities": [
+      {
+        "ticker": "MIST",
+        "company_name": "",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "SEC_13DG",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1408443/000196976426000002/0001969764-26-000002-index.html",
+        "relation_known_date": "2026-11-20",
+        "ingest_mode": "AUTO",
+        "from_entity": "Milestone Pharmaceuticals Inc.",
+        "name": ""
+      }
+    ],
+    "company": "Milestone Pharmaceuticals Inc.",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "Milestone Pharmaceuticals Inc. SCHEDULE 13G/A (Passive Ownership) (대표보고자: Propel Bio Management, LLC)",
+    "event_date": "2026-11-20",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-20",
+    "window_end": "2026-11-20",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 2,
+    "alpha_score": 2,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "PEF/투자조합 핵심 주체 (Propel Bio Management, LLC)",
+        "points": 2
+      }
+    ],
+    "investor_class": "PEF/투자조합",
+    "purpose_prev": "단순투자",
+    "purpose_current": "단순투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "POSITIVE",
+      "label": "지분공시",
+      "summary": "PEF/투자조합 핵심 주체 (Propel Bio Management, LLC)",
+      "score": 2
+    },
+    "status": "CONFIRMED",
+    "source_name": "SEC_13DG",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1408443/000196976426000002/0001969764-26-000002-index.html",
+    "est_avg_price": 0.5,
+    "current_price": 0.3709999918937683,
+    "price_gap_pct": -25.8,
+    "price_source": "VWAP_ESTIMATE: 2026-11-11~2026-11-20 매집기간 일봉 VWAP",
+    "hold_stock_rt": 10.1,
+    "stk_rt_var": 0,
+    "stk_cnt_var": "-",
+    "first_entry_dt": "2026-11-20",
+    "reporter": "Propel Bio Management, LLC",
+    "backtest": {
+      "latest": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 0.3709999918937683,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0
+      },
+      "firstEntry": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 0.3709999918937683,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0,
+        "isSameAsLatest": true
+      }
+    }
+  },
+  {
+    "event_id": "US_SEC_13DG_0001834600-26-000043",
+    "d_day": -1,
+    "country": "US",
+    "ticker": "NEXN",
+    "primary_ticker": "NEXN",
+    "related_securities": [
+      {
+        "ticker": "NEXN",
+        "company_name": "",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "SEC_13DG",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1849396/000183460026000043/0001834600-26-000043-index.html",
+        "relation_known_date": "2026-11-20",
+        "ingest_mode": "AUTO",
+        "from_entity": "Nexxen International Ltd.",
+        "name": ""
+      }
+    ],
+    "company": "Nexxen International Ltd.",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "Nexxen International Ltd. SCHEDULE 13D/A (Active Ownership) (대표보고자: Mithaq Capital SPC)",
+    "event_date": "2026-11-20",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-20",
+    "window_end": "2026-11-20",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 3 (경영권 영향)",
+        "reason": "경영권 영향(Schedule 13D) 목적 하 주주권 행사/보유 유지",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "세력 매집단가(9.65) 대비 현재가(8.29)가 -14.1% 할인 구간 [VWAP_ESTIMATE: 2026-11-11~2026-11-20 매집기간 일봉 VWAP]",
+        "points": 2
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "경영권 영향",
+    "purpose_current": "경영권 영향",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "경영권 영향(Schedule 13D) 목적 하 주주권 행사/보유 유지 · 세력 매집단가(9.65) 대비 현재가(8.29)가 -14.1% 할인 구간 [VWAP_ESTIMATE: 2026-11-11~2026-11-20 매집기간 일봉 VWAP]",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "SEC_13DG",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1849396/000183460026000043/0001834600-26-000043-index.html",
+    "est_avg_price": 9.65,
+    "current_price": 8.289999961853027,
+    "price_gap_pct": -14.1,
+    "price_source": "VWAP_ESTIMATE: 2026-11-11~2026-11-20 매집기간 일봉 VWAP",
+    "hold_stock_rt": 26.6,
+    "stk_rt_var": 0,
+    "stk_cnt_var": "-",
+    "first_entry_dt": "2026-11-20",
+    "reporter": "Mithaq Capital SPC",
+    "backtest": {
+      "latest": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 8.289999961853027,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0
+      },
+      "firstEntry": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 8.289999961853027,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0,
+        "isSameAsLatest": true
+      }
+    }
+  },
+  {
+    "event_id": "US_SEC_13DG_0001728689-26-000009",
+    "d_day": -1,
+    "country": "US",
+    "ticker": "SSTI",
+    "primary_ticker": "SSTI",
+    "related_securities": [
+      {
+        "ticker": "SSTI",
+        "company_name": "",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "SEC_13DG",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1351636/000172868926000009/0001728689-26-000009-index.html",
+        "relation_known_date": "2026-11-20",
+        "ingest_mode": "AUTO",
+        "from_entity": "SOUNDTHINKING, INC.",
+        "name": ""
+      }
+    ],
+    "company": "SOUNDTHINKING, INC.",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "SOUNDTHINKING, INC. SCHEDULE 13G/A (Passive Ownership) (대표보고자: Kopion Asset Management, LLC)",
+    "event_date": "2026-11-20",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-20",
+    "window_end": "2026-11-20",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 2,
+    "alpha_score": 2,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "PEF/투자조합 핵심 주체 (Kopion Asset Management, LLC)",
+        "points": 2
+      }
+    ],
+    "investor_class": "PEF/투자조합",
+    "purpose_prev": "단순투자",
+    "purpose_current": "단순투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "POSITIVE",
+      "label": "지분공시",
+      "summary": "PEF/투자조합 핵심 주체 (Kopion Asset Management, LLC)",
+      "score": 2
+    },
+    "status": "CONFIRMED",
+    "source_name": "SEC_13DG",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1351636/000172868926000009/0001728689-26-000009-index.html",
+    "est_avg_price": 8.27,
+    "current_price": 8.239999771118164,
+    "price_gap_pct": -0.4,
+    "price_source": "VWAP_ESTIMATE: 2026-11-09~2026-11-18 매집기간 일봉 VWAP",
+    "hold_stock_rt": 0.0,
+    "stk_rt_var": 0,
+    "stk_cnt_var": "-",
+    "first_entry_dt": "2026-11-20",
+    "reporter": "Kopion Asset Management, LLC"
+  },
+  {
+    "event_id": "US_SEC_13DG_0001683168-26-009020",
+    "d_day": -1,
+    "country": "US",
+    "ticker": "QCLS",
+    "primary_ticker": "QCLS",
+    "related_securities": [
+      {
+        "ticker": "QCLS",
+        "company_name": "",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "SEC_13DG",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1321834/000168316826009020/0001683168-26-009020-index.html",
+        "relation_known_date": "2026-11-20",
+        "ingest_mode": "AUTO",
+        "from_entity": "Q/C TECHNOLOGIES, INC.",
+        "name": ""
+      }
+    ],
+    "company": "Q/C TECHNOLOGIES, INC.",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "Q/C TECHNOLOGIES, INC. SCHEDULE 13D/A (Active Ownership) (대표보고자: PharmaCyte Biotech, Inc.)",
+    "event_date": "2026-11-20",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-20",
+    "window_end": "2026-11-20",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 1,
+    "alpha_score": 1,
+    "score_breakdown": [
+      {
+        "strategy": "전략 3 (경영권 영향)",
+        "reason": "경영권 영향(Schedule 13D) 목적 하 주주권 행사/보유 유지",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (취득원천 검증)",
+        "reason": "보고사유: SCHEDULE 13D (0001683168-26-009020): Item 4 is hereby amended and supplemented as follows: \"Consent and Warrant Exchange Agreement. On November 15, 2026, the Reporting Person en",
+        "points": -2
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "경영권 영향",
+    "purpose_current": "경영권 영향",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "POSITIVE",
+      "label": "지분공시",
+      "summary": "경영권 영향(Schedule 13D) 목적 하 주주권 행사/보유 유지 · 보고사유: SCHEDULE 13D (0001683168-26-009020): Item 4 is hereby amended and supplemented as follows: \"Consent and Warrant Exchange Agreement. On November 15, 2026, the Reporting Person en",
+      "score": 1
+    },
+    "status": "CONFIRMED",
+    "source_name": "SEC_13DG",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1321834/000168316826009020/0001683168-26-009020-index.html",
+    "est_avg_price": 0.33,
+    "current_price": 0.27799999713897705,
+    "price_gap_pct": -15.8,
+    "price_source": "VWAP_ESTIMATE: 2026-11-11~2026-11-20 매집기간 일봉 VWAP",
+    "hold_stock_rt": 49.99,
+    "stk_rt_var": 0,
+    "stk_cnt_var": "-",
+    "first_entry_dt": "2026-11-20",
+    "reporter": "PharmaCyte Biotech, Inc.",
+    "backtest": {
+      "latest": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 0.27799999713897705,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0
+      },
+      "firstEntry": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 0.27799999713897705,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0,
+        "isSameAsLatest": true
+      }
+    }
+  },
+  {
     "event_id": "US_SEC_13DG_0001683168-26-008975",
     "d_day": -1,
     "country": "US",
@@ -100,6 +612,971 @@
     }
   },
   {
+    "event_id": "US_SEC_13DG_0001493152-26-053589",
+    "d_day": -1,
+    "country": "US",
+    "ticker": "CHRN",
+    "primary_ticker": "CHRN",
+    "related_securities": [
+      {
+        "ticker": "CHRN",
+        "company_name": "",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "SEC_13DG",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1549084/000149315226053589/0001493152-26-053589-index.html",
+        "relation_known_date": "2026-11-20",
+        "ingest_mode": "AUTO",
+        "from_entity": "ChronoScale Holdings Corp",
+        "name": ""
+      }
+    ],
+    "company": "ChronoScale Holdings Corp",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "ChronoScale Holdings Corp SCHEDULE 13D/A (Active Ownership) (대표보고자: Applied Digital Corporation)",
+    "event_date": "2026-11-20",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-20",
+    "window_end": "2026-11-20",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 3 (경영권 영향)",
+        "reason": "경영권 영향(Schedule 13D) 목적 하 주주권 행사/보유 유지",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "세력 매집단가(9.53) 대비 현재가(7.95)가 -16.6% 할인 구간 [VWAP_ESTIMATE: 2026-11-11~2026-11-20 매집기간 일봉 VWAP]",
+        "points": 2
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "경영권 영향",
+    "purpose_current": "경영권 영향",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "경영권 영향(Schedule 13D) 목적 하 주주권 행사/보유 유지 · 세력 매집단가(9.53) 대비 현재가(7.95)가 -16.6% 할인 구간 [VWAP_ESTIMATE: 2026-11-11~2026-11-20 매집기간 일봉 VWAP]",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "SEC_13DG",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1549084/000149315226053589/0001493152-26-053589-index.html",
+    "est_avg_price": 9.53,
+    "current_price": 7.949999809265137,
+    "price_gap_pct": -16.6,
+    "price_source": "VWAP_ESTIMATE: 2026-11-11~2026-11-20 매집기간 일봉 VWAP",
+    "hold_stock_rt": 85.6,
+    "stk_rt_var": 0,
+    "stk_cnt_var": "-",
+    "first_entry_dt": "2026-11-20",
+    "reporter": "Applied Digital Corporation",
+    "backtest": {
+      "latest": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 7.949999809265137,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0
+      },
+      "firstEntry": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 7.949999809265137,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0,
+        "isSameAsLatest": true
+      }
+    }
+  },
+  {
+    "event_id": "US_SEC_13DG_0001493152-26-053535",
+    "d_day": -1,
+    "country": "US",
+    "ticker": "SKYX",
+    "primary_ticker": "SKYX",
+    "related_securities": [
+      {
+        "ticker": "SKYX",
+        "company_name": "",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "SEC_13DG",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1598981/000149315226053535/0001493152-26-053535-index.html",
+        "relation_known_date": "2026-11-20",
+        "ingest_mode": "AUTO",
+        "from_entity": "SKYX Platforms Corp.",
+        "name": ""
+      }
+    ],
+    "company": "SKYX Platforms Corp.",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "SKYX Platforms Corp. SCHEDULE 13D/A (Active Ownership) (대표보고자: Rani R. Kohen)",
+    "event_date": "2026-11-20",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-20",
+    "window_end": "2026-11-20",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 3 (경영권 영향)",
+        "reason": "경영권 영향(Schedule 13D) 목적 하 주주권 행사/보유 유지",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (세력 평단 안전마진)",
+        "reason": "세력 매집단가(0.61) 대비 현재가(0.55)가 -10.3% 할인 구간 [VWAP_ESTIMATE: 2026-11-11~2026-11-20 매집기간 일봉 VWAP]",
+        "points": 2
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "경영권 영향",
+    "purpose_current": "경영권 영향",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "경영권 영향(Schedule 13D) 목적 하 주주권 행사/보유 유지 · 세력 매집단가(0.61) 대비 현재가(0.55)가 -10.3% 할인 구간 [VWAP_ESTIMATE: 2026-11-11~2026-11-20 매집기간 일봉 VWAP]",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "SEC_13DG",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1598981/000149315226053535/0001493152-26-053535-index.html",
+    "est_avg_price": 0.61,
+    "current_price": 0.546999990940094,
+    "price_gap_pct": -10.3,
+    "price_source": "VWAP_ESTIMATE: 2026-11-11~2026-11-20 매집기간 일봉 VWAP",
+    "hold_stock_rt": 7.7,
+    "stk_rt_var": 0,
+    "stk_cnt_var": "-",
+    "first_entry_dt": "2026-11-20",
+    "reporter": "Rani R. Kohen",
+    "backtest": {
+      "latest": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 0.546999990940094,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0
+      },
+      "firstEntry": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 0.546999990940094,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0,
+        "isSameAsLatest": true
+      }
+    }
+  },
+  {
+    "event_id": "US_SEC_13DG_0001493152-26-053533",
+    "d_day": -1,
+    "country": "US",
+    "ticker": "HTOO",
+    "primary_ticker": "HTOO",
+    "related_securities": [
+      {
+        "ticker": "HTOO",
+        "company_name": "",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "SEC_13DG",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1819794/000149315226053533/0001493152-26-053533-index.html",
+        "relation_known_date": "2026-11-20",
+        "ingest_mode": "AUTO",
+        "from_entity": "Fusion Fuel Green PLC",
+        "name": ""
+      }
+    ],
+    "company": "Fusion Fuel Green PLC",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "Fusion Fuel Green PLC SCHEDULE 13G/A (Passive Ownership) (대표보고자: Anthony Milewski)",
+    "event_date": "2026-11-20",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-20",
+    "window_end": "2026-11-20",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 0,
+    "alpha_score": 0,
+    "score_breakdown": [],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "단순투자",
+    "purpose_current": "단순투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "NEUTRAL",
+      "label": "지분공시",
+      "summary": "SCHEDULE 13G/A (Passive Ownership) · 대표보고자 Anthony Milewski · 보유비율 6.43% · 보유주식수 483,485주",
+      "score": 0
+    },
+    "status": "CONFIRMED",
+    "source_name": "SEC_13DG",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1819794/000149315226053533/0001493152-26-053533-index.html",
+    "est_avg_price": 0.98,
+    "current_price": 0.6660000085830688,
+    "price_gap_pct": -32.0,
+    "price_source": "VWAP_ESTIMATE: 2026-11-11~2026-11-20 매집기간 일봉 VWAP",
+    "hold_stock_rt": 6.43,
+    "stk_rt_var": 0,
+    "stk_cnt_var": "-",
+    "first_entry_dt": "2026-11-20",
+    "reporter": "Anthony Milewski",
+    "backtest": {
+      "latest": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 0.6660000085830688,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0
+      },
+      "firstEntry": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 0.6660000085830688,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0,
+        "isSameAsLatest": true
+      }
+    }
+  },
+  {
+    "event_id": "US_SEC_13DG_0001493152-26-053510",
+    "d_day": -1,
+    "country": "US",
+    "ticker": "PRMB",
+    "primary_ticker": "PRMB",
+    "related_securities": [
+      {
+        "ticker": "PRMB",
+        "company_name": "",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "SEC_13DG",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/2042694/000149315226053510/0001493152-26-053510-index.html",
+        "relation_known_date": "2026-11-20",
+        "ingest_mode": "AUTO",
+        "from_entity": "Primo Brands Corp",
+        "name": ""
+      }
+    ],
+    "company": "Primo Brands Corp",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "Primo Brands Corp SCHEDULE 13D/A (Active Ownership) (대표보고자: ORCP III DE TopCo GP, LLC)",
+    "event_date": "2026-11-20",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-20",
+    "window_end": "2026-11-20",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "PEF/투자조합 핵심 주체 (ORCP III DE TopCo GP, LLC)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (경영권 영향)",
+        "reason": "경영권 영향(Schedule 13D) 목적 하 주주권 행사/보유 유지",
+        "points": 3
+      }
+    ],
+    "investor_class": "PEF/투자조합",
+    "purpose_prev": "경영권 영향",
+    "purpose_current": "경영권 영향",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "PEF/투자조합 핵심 주체 (ORCP III DE TopCo GP, LLC) · 경영권 영향(Schedule 13D) 목적 하 주주권 행사/보유 유지",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "SEC_13DG",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/2042694/000149315226053510/0001493152-26-053510-index.html",
+    "est_avg_price": 23.23,
+    "current_price": 23.229999542236328,
+    "price_gap_pct": -0.0,
+    "price_source": "VWAP_ESTIMATE: 2026-11-11~2026-11-20 매집기간 일봉 VWAP",
+    "hold_stock_rt": 19.2,
+    "stk_rt_var": 0,
+    "stk_cnt_var": "-",
+    "first_entry_dt": "2026-11-20",
+    "reporter": "ORCP III DE TopCo GP, LLC",
+    "backtest": {
+      "latest": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 23.229999542236328,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0
+      },
+      "firstEntry": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 23.229999542236328,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0,
+        "isSameAsLatest": true
+      }
+    }
+  },
+  {
+    "event_id": "US_SEC_13DG_0001493152-26-053444",
+    "d_day": -1,
+    "country": "US",
+    "ticker": "LVLU",
+    "primary_ticker": "LVLU",
+    "related_securities": [
+      {
+        "ticker": "LVLU",
+        "company_name": "",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "SEC_13DG",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1780201/000149315226053444/0001493152-26-053444-index.html",
+        "relation_known_date": "2026-11-20",
+        "ingest_mode": "AUTO",
+        "from_entity": "Lulu's Fashion Lounge Holdings, Inc.",
+        "name": ""
+      }
+    ],
+    "company": "Lulu's Fashion Lounge Holdings, Inc.",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "Lulu's Fashion Lounge Holdings, Inc. SCHEDULE 13D/A (Active Ownership) (대표보고자: Friedland Enterprises LLC)",
+    "event_date": "2026-11-20",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-20",
+    "window_end": "2026-11-20",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": -4,
+    "alpha_score": -4,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "PEF/투자조합 핵심 주체 (Friedland Enterprises LLC)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 7 (지분 축소)",
+        "reason": "직전 대비 0.00%p (-주) 지분 매도/감소",
+        "points": -2
+      },
+      {
+        "strategy": "전략 7 (5% 이탈 최우선 경보)",
+        "reason": "최신 보유비율 4.70%로 5% 미만 진입 (공시의무 소멸 및 오버행 주의)",
+        "points": -4
+      }
+    ],
+    "investor_class": "PEF/투자조합",
+    "purpose_prev": "경영권 영향",
+    "purpose_current": "경영권 영향",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "RISK",
+      "label": "지분공시",
+      "summary": "PEF/투자조합 핵심 주체 (Friedland Enterprises LLC) · 직전 대비 0.00%p (-주) 지분 매도/감소 · 최신 보유비율 4.70%로 5% 미만 진입 (공시의무 소멸 및 오버행 주의)",
+      "score": -4
+    },
+    "status": "CONFIRMED",
+    "source_name": "SEC_13DG",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1780201/000149315226053444/0001493152-26-053444-index.html",
+    "est_avg_price": 5.31,
+    "current_price": 4.519999980926514,
+    "price_gap_pct": -14.9,
+    "price_source": "DERIVED: SEC 13D Item 3 총취득금액($730,000.00)/취득주식수(137,447주)",
+    "hold_stock_rt": 4.7,
+    "stk_rt_var": 0,
+    "stk_cnt_var": "-",
+    "first_entry_dt": "2026-11-20",
+    "reporter": "Friedland Enterprises LLC",
+    "backtest": {
+      "latest": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 4.519999980926514,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0
+      },
+      "firstEntry": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 4.519999980926514,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0,
+        "isSameAsLatest": true
+      }
+    }
+  },
+  {
+    "event_id": "US_SEC_13DG_0001213900-26-122826",
+    "d_day": -1,
+    "country": "US",
+    "ticker": "DIN",
+    "primary_ticker": "DIN",
+    "related_securities": [
+      {
+        "ticker": "DIN",
+        "company_name": "",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "SEC_13DG",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/49754/000121390026122826/0001213900-26-122826-index.html",
+        "relation_known_date": "2026-11-20",
+        "ingest_mode": "AUTO",
+        "from_entity": "Dine Brands Global, Inc.",
+        "name": ""
+      }
+    ],
+    "company": "Dine Brands Global, Inc.",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "Dine Brands Global, Inc. SCHEDULE 13D/A (Active Ownership) (대표보고자: Arkhouse Management Co. LP)",
+    "event_date": "2026-11-20",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-20",
+    "window_end": "2026-11-20",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": -4,
+    "alpha_score": -4,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "PEF/투자조합 핵심 주체 (Arkhouse Management Co. LP)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 7 (지분 축소)",
+        "reason": "직전 대비 0.00%p (-주) 지분 매도/감소",
+        "points": -2
+      },
+      {
+        "strategy": "전략 7 (5% 이탈 최우선 경보)",
+        "reason": "최신 보유비율 3.70%로 5% 미만 진입 (공시의무 소멸 및 오버행 주의)",
+        "points": -4
+      }
+    ],
+    "investor_class": "PEF/투자조합",
+    "purpose_prev": "경영권 영향",
+    "purpose_current": "경영권 영향",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "RISK",
+      "label": "지분공시",
+      "summary": "PEF/투자조합 핵심 주체 (Arkhouse Management Co. LP) · 직전 대비 0.00%p (-주) 지분 매도/감소 · 최신 보유비율 3.70%로 5% 미만 진입 (공시의무 소멸 및 오버행 주의)",
+      "score": -4
+    },
+    "status": "CONFIRMED",
+    "source_name": "SEC_13DG",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/49754/000121390026122826/0001213900-26-122826-index.html",
+    "est_avg_price": 37.28,
+    "current_price": 35.939998626708984,
+    "price_gap_pct": -3.6,
+    "price_source": "VWAP_ESTIMATE: 2026-11-11~2026-11-20 매집기간 일봉 VWAP",
+    "hold_stock_rt": 3.7,
+    "stk_rt_var": 0,
+    "stk_cnt_var": "-",
+    "first_entry_dt": "2026-11-20",
+    "reporter": "Arkhouse Management Co. LP",
+    "backtest": {
+      "latest": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 35.939998626708984,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0
+      },
+      "firstEntry": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 35.939998626708984,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0,
+        "isSameAsLatest": true
+      }
+    }
+  },
+  {
+    "event_id": "US_SEC_13DG_0001213900-26-122640",
+    "d_day": -1,
+    "country": "US",
+    "ticker": "MED",
+    "primary_ticker": "MED",
+    "related_securities": [
+      {
+        "ticker": "MED",
+        "company_name": "",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "SEC_13DG",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/910329/000121390026122640/0001213900-26-122640-index.html",
+        "relation_known_date": "2026-11-20",
+        "ingest_mode": "AUTO",
+        "from_entity": "MEDIFAST INC",
+        "name": ""
+      }
+    ],
+    "company": "MEDIFAST INC",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "MEDIFAST INC SCHEDULE 13D/A (Active Ownership) (대표보고자: Steamboat Capital Partners, LLC)",
+    "event_date": "2026-11-20",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-20",
+    "window_end": "2026-11-20",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 5,
+    "alpha_score": 5,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "PEF/투자조합 핵심 주체 (Steamboat Capital Partners, LLC)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (경영권 영향)",
+        "reason": "경영권 영향(Schedule 13D) 목적 하 주주권 행사/보유 유지",
+        "points": 3
+      }
+    ],
+    "investor_class": "PEF/투자조합",
+    "purpose_prev": "경영권 영향",
+    "purpose_current": "경영권 영향",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "HIGH",
+      "label": "지분공시",
+      "summary": "PEF/투자조합 핵심 주체 (Steamboat Capital Partners, LLC) · 경영권 영향(Schedule 13D) 목적 하 주주권 행사/보유 유지",
+      "score": 5
+    },
+    "status": "CONFIRMED",
+    "source_name": "SEC_13DG",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/910329/000121390026122640/0001213900-26-122640-index.html",
+    "est_avg_price": 10.86,
+    "current_price": 11.75,
+    "price_gap_pct": 8.2,
+    "price_source": "DERIVED: SEC 13D Item 3 총취득금액($10,463,681)/취득주식수(963,286주)",
+    "hold_stock_rt": 8.6,
+    "stk_rt_var": 0,
+    "stk_cnt_var": "-",
+    "first_entry_dt": "2026-11-20",
+    "reporter": "Steamboat Capital Partners, LLC",
+    "backtest": {
+      "latest": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 11.75,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0
+      },
+      "firstEntry": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 11.75,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0,
+        "isSameAsLatest": true
+      }
+    }
+  },
+  {
+    "event_id": "US_SEC_13DG_0001193125-26-470421",
+    "d_day": -1,
+    "country": "US",
+    "ticker": "SRZN",
+    "primary_ticker": "SRZN",
+    "related_securities": [
+      {
+        "ticker": "SRZN",
+        "company_name": "",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "SEC_13DG",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1824893/000119312526470421/0001193125-26-470421-index.html",
+        "relation_known_date": "2026-11-20",
+        "ingest_mode": "AUTO",
+        "from_entity": "Surrozen, Inc./DE",
+        "name": ""
+      }
+    ],
+    "company": "Surrozen, Inc./DE",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "Surrozen, Inc./DE SCHEDULE 13G/A (Passive Ownership) (대표보고자: AI Biotechnology LLC)",
+    "event_date": "2026-11-20",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-20",
+    "window_end": "2026-11-20",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 2,
+    "alpha_score": 2,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "PEF/투자조합 핵심 주체 (AI Biotechnology LLC)",
+        "points": 2
+      }
+    ],
+    "investor_class": "PEF/투자조합",
+    "purpose_prev": "단순투자",
+    "purpose_current": "단순투자",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "POSITIVE",
+      "label": "지분공시",
+      "summary": "PEF/투자조합 핵심 주체 (AI Biotechnology LLC)",
+      "score": 2
+    },
+    "status": "CONFIRMED",
+    "source_name": "SEC_13DG",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1824893/000119312526470421/0001193125-26-470421-index.html",
+    "est_avg_price": 31.4,
+    "current_price": 28.959999084472656,
+    "price_gap_pct": -7.8,
+    "price_source": "VWAP_ESTIMATE: 2026-11-11~2026-11-20 매집기간 일봉 VWAP",
+    "hold_stock_rt": 9.9,
+    "stk_rt_var": 0,
+    "stk_cnt_var": "-",
+    "first_entry_dt": "2026-11-20",
+    "reporter": "AI Biotechnology LLC",
+    "backtest": {
+      "latest": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 28.959999084472656,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0
+      },
+      "firstEntry": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 28.959999084472656,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0,
+        "isSameAsLatest": true
+      }
+    }
+  },
+  {
+    "event_id": "US_SEC_13DG_0001193125-26-470345",
+    "d_day": -1,
+    "country": "US",
+    "ticker": "ENVX",
+    "primary_ticker": "ENVX",
+    "related_securities": [
+      {
+        "ticker": "ENVX",
+        "company_name": "",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "SEC_13DG",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1828318/000119312526470345/0001193125-26-470345-index.html",
+        "relation_known_date": "2026-11-20",
+        "ingest_mode": "AUTO",
+        "from_entity": "Enovix Corp",
+        "name": ""
+      }
+    ],
+    "company": "Enovix Corp",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "Enovix Corp SCHEDULE 13D/A (Active Ownership) (대표보고자: Thurman J. Rodgers)",
+    "event_date": "2026-11-20",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-20",
+    "window_end": "2026-11-20",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 1,
+    "alpha_score": 1,
+    "score_breakdown": [
+      {
+        "strategy": "전략 3 (경영권 영향)",
+        "reason": "경영권 영향(Schedule 13D) 목적 하 주주권 행사/보유 유지",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (취득원천 검증)",
+        "reason": "보고사유: SCHEDULE 13D (0001193125-26-470345): Reflects the aggregate number of Dividend Warrants distributed on November 18, 2026 to the Issuer's record holders of Common Stock and Conve",
+        "points": -2
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "경영권 영향",
+    "purpose_current": "경영권 영향",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "POSITIVE",
+      "label": "지분공시",
+      "summary": "경영권 영향(Schedule 13D) 목적 하 주주권 행사/보유 유지 · 보고사유: SCHEDULE 13D (0001193125-26-470345): Reflects the aggregate number of Dividend Warrants distributed on November 18, 2026 to the Issuer's record holders of Common Stock and Conve",
+      "score": 1
+    },
+    "status": "CONFIRMED",
+    "source_name": "SEC_13DG",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1828318/000119312526470345/0001193125-26-470345-index.html",
+    "est_avg_price": 1.65,
+    "current_price": 1.1699999570846558,
+    "price_gap_pct": -29.1,
+    "price_source": "VWAP_ESTIMATE: 2026-11-11~2026-11-20 매집기간 일봉 VWAP",
+    "hold_stock_rt": 12.7,
+    "stk_rt_var": 0,
+    "stk_cnt_var": "-",
+    "first_entry_dt": "2026-11-20",
+    "reporter": "Thurman J. Rodgers",
+    "backtest": {
+      "latest": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 1.1699999570846558,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0
+      },
+      "firstEntry": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 1.1699999570846558,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0,
+        "isSameAsLatest": true
+      }
+    }
+  },
+  {
+    "event_id": "US_SEC_13DG_0001140361-26-045075",
+    "d_day": -1,
+    "country": "US",
+    "ticker": "SSTI",
+    "primary_ticker": "SSTI",
+    "related_securities": [
+      {
+        "ticker": "SSTI",
+        "company_name": "",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "SEC_13DG",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1351636/000114036126045075/0001140361-26-045075-index.html",
+        "relation_known_date": "2026-11-20",
+        "ingest_mode": "AUTO",
+        "from_entity": "SOUNDTHINKING, INC.",
+        "name": ""
+      }
+    ],
+    "company": "SOUNDTHINKING, INC.",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "SOUNDTHINKING, INC. SCHEDULE 13D/A (Active Ownership) (대표보고자: Gary M. Lauder)",
+    "event_date": "2026-11-20",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-20",
+    "window_end": "2026-11-20",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 1,
+    "alpha_score": 1,
+    "score_breakdown": [
+      {
+        "strategy": "전략 3 (경영권 영향)",
+        "reason": "경영권 영향(Schedule 13D) 목적 하 주주권 행사/보유 유지",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (취득원천 검증)",
+        "reason": "보고사유: SCHEDULE 13D (0001140361-26-045075): Item 4 is hereby amended and supplemented as follows: As previously disclosed, on October 20, 2026, Merger Sub commenced the Offer to purcha",
+        "points": -2
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "경영권 영향",
+    "purpose_current": "경영권 영향",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "POSITIVE",
+      "label": "지분공시",
+      "summary": "경영권 영향(Schedule 13D) 목적 하 주주권 행사/보유 유지 · 보고사유: SCHEDULE 13D (0001140361-26-045075): Item 4 is hereby amended and supplemented as follows: As previously disclosed, on October 20, 2026, Merger Sub commenced the Offer to purcha",
+      "score": 1
+    },
+    "status": "CONFIRMED",
+    "source_name": "SEC_13DG",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1351636/000114036126045075/0001140361-26-045075-index.html",
+    "est_avg_price": 8.27,
+    "current_price": 8.239999771118164,
+    "price_gap_pct": -0.4,
+    "price_source": "VWAP_ESTIMATE: 2026-11-09~2026-11-18 매집기간 일봉 VWAP",
+    "hold_stock_rt": 0.0,
+    "stk_rt_var": 0,
+    "stk_cnt_var": "-",
+    "first_entry_dt": "2026-11-20",
+    "reporter": "Gary M. Lauder"
+  },
+  {
     "event_id": "US_SEC_13DG_0001140361-26-045045",
     "d_day": -1,
     "country": "US",
@@ -174,6 +1651,206 @@
     "stk_cnt_var": "-",
     "first_entry_dt": "2026-11-20",
     "reporter": "Transom Capital Public Fund, LP"
+  },
+  {
+    "event_id": "US_SEC_13DG_0001104659-26-130728",
+    "d_day": -1,
+    "country": "US",
+    "ticker": "DIN",
+    "primary_ticker": "DIN",
+    "related_securities": [
+      {
+        "ticker": "DIN",
+        "company_name": "",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "SEC_13DG",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/49754/000110465926130728/0001104659-26-130728-index.html",
+        "relation_known_date": "2026-11-20",
+        "ingest_mode": "AUTO",
+        "from_entity": "Dine Brands Global, Inc.",
+        "name": ""
+      }
+    ],
+    "company": "Dine Brands Global, Inc.",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "Dine Brands Global, Inc. SCHEDULE 13D/A (Active Ownership) (대표보고자: Cobblers Cove Capital LP)",
+    "event_date": "2026-11-20",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-20",
+    "window_end": "2026-11-20",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 3,
+    "alpha_score": 3,
+    "score_breakdown": [
+      {
+        "strategy": "전략 1 (주체 가중치)",
+        "reason": "PEF/투자조합 핵심 주체 (Cobblers Cove Capital LP)",
+        "points": 2
+      },
+      {
+        "strategy": "전략 3 (경영권 영향)",
+        "reason": "경영권 영향(Schedule 13D) 목적 하 주주권 행사/보유 유지",
+        "points": 3
+      },
+      {
+        "strategy": "전략 6 (취득원천 검증)",
+        "reason": "보고사유: SCHEDULE 13D (0001104659-26-130728): Item 4 is hereby amended and supplemented by the addition of the following: \"On November 13, 2026, Arkhouse Management Co. LP (\"Arkhouse\") s",
+        "points": -2
+      }
+    ],
+    "investor_class": "PEF/투자조합",
+    "purpose_prev": "경영권 영향",
+    "purpose_current": "경영권 영향",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "POSITIVE",
+      "label": "지분공시",
+      "summary": "PEF/투자조합 핵심 주체 (Cobblers Cove Capital LP) · 경영권 영향(Schedule 13D) 목적 하 주주권 행사/보유 유지 · 보고사유: SCHEDULE 13D (0001104659-26-130728): Item 4 is hereby amended and supplemented by the addition of the following: \"On November 13, 2026, Arkhouse Management Co. LP (\"Arkhouse\") s",
+      "score": 3
+    },
+    "status": "CONFIRMED",
+    "source_name": "SEC_13DG",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/49754/000110465926130728/0001104659-26-130728-index.html",
+    "est_avg_price": 37.28,
+    "current_price": 35.939998626708984,
+    "price_gap_pct": -3.6,
+    "price_source": "VWAP_ESTIMATE: 2026-11-11~2026-11-20 매집기간 일봉 VWAP",
+    "hold_stock_rt": 0.0,
+    "stk_rt_var": 0,
+    "stk_cnt_var": "-",
+    "first_entry_dt": "2026-11-20",
+    "reporter": "Cobblers Cove Capital LP",
+    "backtest": {
+      "latest": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 35.939998626708984,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0
+      },
+      "firstEntry": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 35.939998626708984,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0,
+        "isSameAsLatest": true
+      }
+    }
+  },
+  {
+    "event_id": "US_SEC_13DG_0001104659-26-130660",
+    "d_day": -1,
+    "country": "US",
+    "ticker": "KNOP",
+    "primary_ticker": "KNOP",
+    "related_securities": [
+      {
+        "ticker": "KNOP",
+        "company_name": "",
+        "relation_grade": "A",
+        "relation_score": 100,
+        "relation_type": "DIRECT",
+        "evidence_text": "직접 당사자",
+        "evidence_source": "SEC_13DG",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1564180/000110465926130660/0001104659-26-130660-index.html",
+        "relation_known_date": "2026-11-20",
+        "ingest_mode": "AUTO",
+        "from_entity": "KNOT Offshore Partners LP",
+        "name": ""
+      }
+    ],
+    "company": "KNOT Offshore Partners LP",
+    "event_type": "5PCT_OWNERSHIP",
+    "event_name": "KNOT Offshore Partners LP SCHEDULE 13D/A (Active Ownership) (대표보고자: Knutsen NYK Offshore Tankers AS)",
+    "event_date": "2026-11-20",
+    "date_precision": "EXACT_DATE",
+    "window_start": "2026-11-20",
+    "window_end": "2026-11-20",
+    "relation_grade": "A",
+    "relation_score": 100,
+    "relation_type": "DIRECT",
+    "relation_ingest_mode": "AUTO",
+    "event_score": 3,
+    "alpha_score": 3,
+    "score_breakdown": [
+      {
+        "strategy": "전략 3 (경영권 영향)",
+        "reason": "경영권 영향(Schedule 13D) 목적 하 주주권 행사/보유 유지",
+        "points": 3
+      }
+    ],
+    "investor_class": "일반법인/기타",
+    "purpose_prev": "경영권 영향",
+    "purpose_current": "경영권 영향",
+    "accumulation_count": 0,
+    "freshness": "CURRENT",
+    "insight": {
+      "tier": "POSITIVE",
+      "label": "지분공시",
+      "summary": "경영권 영향(Schedule 13D) 목적 하 주주권 행사/보유 유지",
+      "score": 3
+    },
+    "status": "CONFIRMED",
+    "source_name": "SEC_13DG",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1564180/000110465926130660/0001104659-26-130660-index.html",
+    "est_avg_price": 2.59,
+    "current_price": 7.320000171661377,
+    "price_gap_pct": 182.6,
+    "price_source": "DERIVED: SEC 13D Item 3 총취득금액($43,499,993)/취득주식수(16,789,984주)",
+    "hold_stock_rt": 44.3,
+    "stk_rt_var": 0,
+    "stk_cnt_var": "-",
+    "first_entry_dt": "2026-11-20",
+    "reporter": "Knutsen NYK Offshore Tankers AS",
+    "backtest": {
+      "latest": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 7.320000171661377,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0
+      },
+      "firstEntry": {
+        "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
+        "elapsedDays": 1,
+        "availTradingDays": 0,
+        "basePrice": 7.320000171661377,
+        "cumReturn": 0.0,
+        "d5": null,
+        "d20": null,
+        "d60": null,
+        "maxRunup": 0.0,
+        "mdd": 0.0,
+        "isSameAsLatest": true
+      }
+    }
   },
   {
     "event_id": "KR_DART_5PCT_20261120000629",
@@ -1239,7 +2916,7 @@
     "est_avg_price": 633,
     "current_price": 521.0,
     "price_gap_pct": -17.7,
-    "price_source": "VWAP_ESTIMATE: 2026-11-09~2026-11-19 매집기간 일봉 VWAP",
+    "price_source": "VWAP_ESTIMATE: 2026-11-09~2026-11-20 매집기간 일봉 VWAP",
     "hold_stock_rt": 8.02,
     "stk_rt_var": -2.8,
     "stk_cnt_var": "-1,142,204",
@@ -1248,19 +2925,22 @@
     "backtest": {
       "latest": {
         "baseDate": "2026-11-20",
+        "marketBaseDate": "2026-11-20",
         "elapsedDays": 1,
         "availTradingDays": 0,
-        "cumReturn": 0,
+        "basePrice": 521.0,
+        "cumReturn": 0.0,
         "d5": null,
         "d20": null,
         "d60": null,
-        "maxRunup": null
+        "maxRunup": 0.0,
+        "mdd": 0.0
       },
       "firstEntry": {
         "baseDate": "2024-12-27",
         "marketBaseDate": "2024-12-27",
         "elapsedDays": 694,
-        "availTradingDays": 458,
+        "availTradingDays": 459,
         "basePrice": 1214.0,
         "cumReturn": -57.1,
         "d5": 12.6,
@@ -11534,8 +13214,8 @@
     "source_name": "SEC_13DG",
     "source_url": "https://www.sec.gov/Archives/edgar/data/2012600/000149315226053082/0001493152-26-053082-index.html",
     "est_avg_price": 2.42,
-    "current_price": 2.1649999618530273,
-    "price_gap_pct": -10.5,
+    "current_price": 2.180000066757202,
+    "price_gap_pct": -9.9,
     "price_source": "VWAP_ESTIMATE: 2026-11-09~2026-11-18 매집기간 일봉 VWAP",
     "hold_stock_rt": 75.01,
     "stk_rt_var": 0,
@@ -11547,9 +13227,9 @@
         "baseDate": "2026-11-18",
         "marketBaseDate": "2026-11-18",
         "elapsedDays": 3,
-        "availTradingDays": 1,
+        "availTradingDays": 2,
         "basePrice": 2.25,
-        "cumReturn": -3.8,
+        "cumReturn": -3.1,
         "d5": null,
         "d20": null,
         "d60": null,
@@ -11560,9 +13240,9 @@
         "baseDate": "2026-11-18",
         "marketBaseDate": "2026-11-18",
         "elapsedDays": 3,
-        "availTradingDays": 1,
+        "availTradingDays": 2,
         "basePrice": 2.25,
-        "cumReturn": -3.8,
+        "cumReturn": -3.1,
         "d5": null,
         "d20": null,
         "d60": null,
@@ -15846,7 +17526,7 @@
         "baseDate": "2026-11-18",
         "marketBaseDate": "2026-11-18",
         "elapsedDays": 3,
-        "availTradingDays": 1,
+        "availTradingDays": 2,
         "basePrice": 764.0,
         "cumReturn": 0.0,
         "d5": null,
@@ -15859,7 +17539,7 @@
         "baseDate": "2026-10-22",
         "marketBaseDate": "2026-10-22",
         "elapsedDays": 30,
-        "availTradingDays": 20,
+        "availTradingDays": 21,
         "basePrice": 764.0,
         "cumReturn": 0.0,
         "d5": 0.0,
@@ -17104,7 +18784,7 @@
         "baseDate": "2026-11-18",
         "marketBaseDate": "2026-11-18",
         "elapsedDays": 3,
-        "availTradingDays": 1,
+        "availTradingDays": 2,
         "basePrice": 521.0,
         "cumReturn": 0.0,
         "d5": null,
@@ -17117,7 +18797,7 @@
         "baseDate": "2024-11-26",
         "marketBaseDate": "2024-11-26",
         "elapsedDays": 725,
-        "availTradingDays": 480,
+        "availTradingDays": 481,
         "basePrice": 1535.0,
         "cumReturn": -66.1,
         "d5": -4.1,
@@ -22538,7 +24218,7 @@
       },
       {
         "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "세력 매집단가(1,078) 대비 현재가(853)가 -20.9% 할인 구간 [VWAP_ESTIMATE: 2026-11-06~2026-11-17 매집기간 일봉 VWAP]",
+        "reason": "세력 매집단가(1,078) 대비 현재가(726)가 -32.7% 할인 구간 [VWAP_ESTIMATE: 2026-11-06~2026-11-17 매집기간 일봉 VWAP]",
         "points": 2
       }
     ],
@@ -22550,15 +24230,15 @@
     "insight": {
       "tier": "HIGH",
       "label": "지분공시",
-      "summary": "슈퍼개미/개인 핵심 주체 (이소영) · 실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (5.82%) · 실제 보유주식수 증가(+184,637) 및 지분율 +5.82%p 확대 · 보고사유: 장외매수 · 세력 매집단가(1,078) 대비 현재가(853)가 -20.9% 할인 구간 [VWAP_ESTIMATE: 2026-11-06~2026-11-17 매집기간 일봉 VWAP]",
+      "summary": "슈퍼개미/개인 핵심 주체 (이소영) · 실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (5.82%) · 실제 보유주식수 증가(+184,637) 및 지분율 +5.82%p 확대 · 보고사유: 장외매수 · 세력 매집단가(1,078) 대비 현재가(726)가 -32.7% 할인 구간 [VWAP_ESTIMATE: 2026-11-06~2026-11-17 매집기간 일봉 VWAP]",
       "score": 10
     },
     "status": "CONFIRMED",
     "source_name": "DART_5PCT",
     "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261117000162",
     "est_avg_price": 1078,
-    "current_price": 853.0,
-    "price_gap_pct": -20.9,
+    "current_price": 726.0,
+    "price_gap_pct": -32.7,
     "price_source": "VWAP_ESTIMATE: 2026-11-06~2026-11-17 매집기간 일봉 VWAP",
     "hold_stock_rt": 5.82,
     "stk_rt_var": 5.82,
@@ -22570,26 +24250,26 @@
         "baseDate": "2026-11-17",
         "marketBaseDate": "2026-11-17",
         "elapsedDays": 4,
-        "availTradingDays": 2,
+        "availTradingDays": 3,
         "basePrice": 899.0,
-        "cumReturn": -5.1,
+        "cumReturn": -19.2,
         "d5": null,
         "d20": null,
         "d60": null,
-        "maxRunup": 0.0,
+        "maxRunup": 0.6,
         "mdd": -27.6
       },
       "firstEntry": {
         "baseDate": "2026-11-17",
         "marketBaseDate": "2026-11-17",
         "elapsedDays": 4,
-        "availTradingDays": 2,
+        "availTradingDays": 3,
         "basePrice": 899.0,
-        "cumReturn": -5.1,
+        "cumReturn": -19.2,
         "d5": null,
         "d20": null,
         "d60": null,
-        "maxRunup": 0.0,
+        "maxRunup": 0.6,
         "mdd": -27.6,
         "isSameAsLatest": true
       }
@@ -23171,8 +24851,8 @@
     "source_name": "DART_5PCT",
     "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261117000137",
     "est_avg_price": 1078,
-    "current_price": 853.0,
-    "price_gap_pct": -20.9,
+    "current_price": 726.0,
+    "price_gap_pct": -32.7,
     "price_source": "VWAP_ESTIMATE: 2026-11-06~2026-11-17 매집기간 일봉 VWAP",
     "hold_stock_rt": 7.27,
     "stk_rt_var": -0.18,
@@ -23184,26 +24864,26 @@
         "baseDate": "2026-11-17",
         "marketBaseDate": "2026-11-17",
         "elapsedDays": 4,
-        "availTradingDays": 2,
+        "availTradingDays": 3,
         "basePrice": 899.0,
-        "cumReturn": -5.1,
+        "cumReturn": -19.2,
         "d5": null,
         "d20": null,
         "d60": null,
-        "maxRunup": 0.0,
+        "maxRunup": 0.6,
         "mdd": -27.6
       },
       "firstEntry": {
         "baseDate": "2026-11-17",
         "marketBaseDate": "2026-11-17",
         "elapsedDays": 4,
-        "availTradingDays": 2,
+        "availTradingDays": 3,
         "basePrice": 899.0,
-        "cumReturn": -5.1,
+        "cumReturn": -19.2,
         "d5": null,
         "d20": null,
         "d60": null,
-        "maxRunup": 0.0,
+        "maxRunup": 0.6,
         "mdd": -27.6,
         "isSameAsLatest": true
       }
@@ -30108,1931 +31788,6 @@
         "maxRunup": 26.2,
         "mdd": -2.2,
         "isSameAsLatest": false
-      }
-    }
-  },
-  {
-    "event_id": "KR_DART_5PCT_20261116000570",
-    "d_day": -5,
-    "country": "KR",
-    "ticker": "237750",
-    "primary_ticker": "237750",
-    "related_securities": [
-      {
-        "ticker": "237750",
-        "company_name": "피앤씨테크",
-        "relation_grade": "A",
-        "relation_score": 100,
-        "relation_type": "DIRECT",
-        "evidence_text": "직접 당사자",
-        "evidence_source": "DART_5PCT",
-        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000570",
-        "relation_known_date": "2026-11-16",
-        "ingest_mode": "AUTO",
-        "from_entity": "피앤씨테크",
-        "name": "피앤씨테크"
-      },
-      {
-        "ticker": "017040",
-        "company_name": "광명전기",
-        "relation_grade": "THEME",
-        "relation_score": 35,
-        "relation_type": "CONTEXT_MENTION",
-        "evidence_text": "이벤트 원문에 상장사명 명시: 광명전기",
-        "evidence_source": "DART_5PCT",
-        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000570",
-        "relation_known_date": "2026-11-16",
-        "ingest_mode": "AUTO",
-        "from_entity": "광명전기",
-        "name": "광명전기"
-      }
-    ],
-    "company": "피앤씨테크",
-    "event_type": "5PCT_OWNERSHIP",
-    "event_name": "피앤씨테크 주식등의대량보유상황보고서(일반) (대표보고자: 광명전기)",
-    "event_date": "2026-11-16",
-    "date_precision": "EXACT_DATE",
-    "window_start": "2026-11-16",
-    "window_end": "2026-11-16",
-    "relation_grade": "A",
-    "relation_score": 100,
-    "relation_type": "DIRECT",
-    "relation_ingest_mode": "AUTO",
-    "event_score": 2,
-    "alpha_score": 2,
-    "score_breakdown": [
-      {
-        "strategy": "전략 1 (주체 가중치)",
-        "reason": "슈퍼개미/개인 핵심 주체 (광명전기)",
-        "points": 2
-      },
-      {
-        "strategy": "전략 3 (목적 변경)",
-        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
-        "points": 3
-      },
-      {
-        "strategy": "전략 7 (지분 축소)",
-        "reason": "직전 보고 대비 보유주식수(-656,156주) 및 지분율(-10.10%p) 감소",
-        "points": -3
-      }
-    ],
-    "investor_class": "슈퍼개미/개인",
-    "purpose_prev": "단순투자",
-    "purpose_current": "일반투자",
-    "accumulation_count": 0,
-    "freshness": "CURRENT",
-    "insight": {
-      "tier": "POSITIVE",
-      "label": "지분공시",
-      "summary": "슈퍼개미/개인 핵심 주체 (광명전기) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 직전 보고 대비 보유주식수(-656,156주) 및 지분율(-10.10%p) 감소",
-      "score": 2
-    },
-    "status": "CONFIRMED",
-    "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000570",
-    "est_avg_price": 2823,
-    "current_price": 2940.0,
-    "price_gap_pct": 4.1,
-    "price_source": "VWAP_ESTIMATE: 2026-11-05~2026-11-16 매집기간 일봉 VWAP",
-    "hold_stock_rt": 0.0,
-    "stk_rt_var": -10.1,
-    "stk_cnt_var": "-656,156",
-    "first_entry_dt": "2026-02-11",
-    "reporter": "광명전기",
-    "backtest": {
-      "latest": {
-        "baseDate": "2026-11-16",
-        "marketBaseDate": "2026-11-16",
-        "elapsedDays": 5,
-        "availTradingDays": 4,
-        "basePrice": 2745.0,
-        "cumReturn": 7.1,
-        "d5": null,
-        "d20": null,
-        "d60": null,
-        "maxRunup": 13.3,
-        "mdd": -1.6
-      },
-      "firstEntry": {
-        "baseDate": "2026-02-11",
-        "marketBaseDate": "2026-02-11",
-        "elapsedDays": 283,
-        "availTradingDays": 188,
-        "basePrice": 5160.0,
-        "cumReturn": -43.0,
-        "d5": -5.3,
-        "d20": -7.0,
-        "d60": -1.2,
-        "maxRunup": 44.4,
-        "mdd": -21.9,
-        "isSameAsLatest": false
-      }
-    }
-  },
-  {
-    "event_id": "KR_DART_5PCT_20261116000552",
-    "d_day": -5,
-    "country": "KR",
-    "ticker": "383310",
-    "primary_ticker": "383310",
-    "related_securities": [
-      {
-        "ticker": "383310",
-        "company_name": "에코프로에이치엔",
-        "relation_grade": "A",
-        "relation_score": 100,
-        "relation_type": "DIRECT",
-        "evidence_text": "직접 당사자",
-        "evidence_source": "DART_5PCT",
-        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000552",
-        "relation_known_date": "2026-11-16",
-        "ingest_mode": "AUTO",
-        "from_entity": "에코프로에이치엔",
-        "name": "에코프로에이치엔"
-      },
-      {
-        "ticker": "086520",
-        "company_name": "에코프로",
-        "relation_grade": "THEME",
-        "relation_score": 35,
-        "relation_type": "CONTEXT_MENTION",
-        "evidence_text": "이벤트 원문에 상장사명 명시: 에코프로",
-        "evidence_source": "DART_5PCT",
-        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000552",
-        "relation_known_date": "2026-11-16",
-        "ingest_mode": "AUTO",
-        "from_entity": "에코프로",
-        "name": "에코프로"
-      }
-    ],
-    "company": "에코프로에이치엔",
-    "event_type": "5PCT_OWNERSHIP",
-    "event_name": "에코프로에이치엔 주식등의대량보유상황보고서(일반) (대표보고자: 에코프로)",
-    "event_date": "2026-11-16",
-    "date_precision": "EXACT_DATE",
-    "window_start": "2026-11-16",
-    "window_end": "2026-11-16",
-    "relation_grade": "A",
-    "relation_score": 100,
-    "relation_type": "DIRECT",
-    "relation_ingest_mode": "AUTO",
-    "event_score": 12,
-    "alpha_score": 12,
-    "score_breakdown": [
-      {
-        "strategy": "전략 1 (주체 가중치)",
-        "reason": "슈퍼개미/개인 핵심 주체 (에코프로)",
-        "points": 2
-      },
-      {
-        "strategy": "전략 3 (목적 변경)",
-        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
-        "points": 3
-      },
-      {
-        "strategy": "전략 2 (실제 주식수 확대)",
-        "reason": "실제 보유주식수 증가(+1,250) 및 지분율 +0.00%p 확대",
-        "points": 1
-      },
-      {
-        "strategy": "전략 2 (연속 매집)",
-        "reason": "공식 이력 기준 6회 연속 실제 보유주식수 증가 확인",
-        "points": 4
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "세력 매집단가(24,830) 대비 현재가(20,350)가 -18.0% 할인 구간 [VWAP_ESTIMATE: 2026-10-19~2026-11-16 매집기간 일봉 VWAP]",
-        "points": 2
-      }
-    ],
-    "investor_class": "슈퍼개미/개인",
-    "purpose_prev": "단순투자",
-    "purpose_current": "일반투자",
-    "accumulation_count": 6,
-    "freshness": "CURRENT",
-    "insight": {
-      "tier": "HIGH",
-      "label": "지분공시",
-      "summary": "슈퍼개미/개인 핵심 주체 (에코프로) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 실제 보유주식수 증가(+1,250) 및 지분율 +0.00%p 확대 · 공식 이력 기준 6회 연속 실제 보유주식수 증가 확인 · 세력 매집단가(24,830) 대비 현재가(20,350)가 -18.0% 할인 구간 [VWAP_ESTIMATE: 2026-10-19~2026-11-16 매집기간 일봉 VWAP]",
-      "score": 12
-    },
-    "status": "CONFIRMED",
-    "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000552",
-    "est_avg_price": 24830,
-    "current_price": 20350.0,
-    "price_gap_pct": -18.0,
-    "price_source": "VWAP_ESTIMATE: 2026-10-19~2026-11-16 매집기간 일봉 VWAP",
-    "hold_stock_rt": 31.36,
-    "stk_rt_var": 0.0,
-    "stk_cnt_var": "+1,250",
-    "first_entry_dt": "2024-12-17",
-    "reporter": "에코프로",
-    "backtest": {
-      "latest": {
-        "baseDate": "2026-11-16",
-        "marketBaseDate": "2026-11-16",
-        "elapsedDays": 5,
-        "availTradingDays": 4,
-        "basePrice": 22550.0,
-        "cumReturn": -9.8,
-        "d5": null,
-        "d20": null,
-        "d60": null,
-        "maxRunup": 2.0,
-        "mdd": -10.4
-      },
-      "firstEntry": {
-        "baseDate": "2024-12-17",
-        "marketBaseDate": "2024-12-17",
-        "elapsedDays": 704,
-        "availTradingDays": 466,
-        "basePrice": 32850.0,
-        "cumReturn": -38.1,
-        "d5": -2.7,
-        "d20": -2.3,
-        "d60": -8.7,
-        "maxRunup": 24.2,
-        "mdd": -16.6,
-        "isSameAsLatest": false
-      }
-    }
-  },
-  {
-    "event_id": "KR_DART_5PCT_20261116000540",
-    "d_day": -5,
-    "country": "KR",
-    "ticker": "092600",
-    "primary_ticker": "092600",
-    "related_securities": [
-      {
-        "ticker": "092600",
-        "company_name": "앤씨앤",
-        "relation_grade": "A",
-        "relation_score": 100,
-        "relation_type": "DIRECT",
-        "evidence_text": "직접 당사자",
-        "evidence_source": "DART_5PCT",
-        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000540",
-        "relation_known_date": "2026-11-16",
-        "ingest_mode": "AUTO",
-        "from_entity": "앤씨앤",
-        "name": "앤씨앤"
-      }
-    ],
-    "company": "앤씨앤",
-    "event_type": "5PCT_OWNERSHIP",
-    "event_name": "앤씨앤 주식등의대량보유상황보고서(일반) (대표보고자: 김경수)",
-    "event_date": "2026-11-16",
-    "date_precision": "EXACT_DATE",
-    "window_start": "2026-11-16",
-    "window_end": "2026-11-16",
-    "relation_grade": "A",
-    "relation_score": 100,
-    "relation_type": "DIRECT",
-    "relation_ingest_mode": "AUTO",
-    "event_score": 4,
-    "alpha_score": 4,
-    "score_breakdown": [
-      {
-        "strategy": "전략 1 (주체 가중치)",
-        "reason": "슈퍼개미/개인 핵심 주체 (김경수)",
-        "points": 2
-      },
-      {
-        "strategy": "전략 3 (목적 변경)",
-        "reason": "단순투자 (13G/약식) → 경영권 영향(13D) 공식 상향",
-        "points": 5
-      },
-      {
-        "strategy": "전략 7 (지분 축소)",
-        "reason": "직전 보고 대비 보유주식수(-728,296주) 및 지분율(-23.14%p) 감소",
-        "points": -3
-      }
-    ],
-    "investor_class": "슈퍼개미/개인",
-    "purpose_prev": "단순투자",
-    "purpose_current": "경영권 영향",
-    "accumulation_count": 0,
-    "freshness": "CURRENT",
-    "insight": {
-      "tier": "POSITIVE",
-      "label": "지분공시",
-      "summary": "슈퍼개미/개인 핵심 주체 (김경수) · 단순투자 (13G/약식) → 경영권 영향(13D) 공식 상향 · 직전 보고 대비 보유주식수(-728,296주) 및 지분율(-23.14%p) 감소",
-      "score": 4
-    },
-    "status": "CONFIRMED",
-    "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000540",
-    "est_avg_price": 1642,
-    "current_price": 1460.0,
-    "price_gap_pct": -11.1,
-    "price_source": "VWAP_ESTIMATE: 2026-11-05~2026-11-16 매집기간 일봉 VWAP",
-    "hold_stock_rt": 10.8,
-    "stk_rt_var": -23.14,
-    "stk_cnt_var": "-728,296",
-    "first_entry_dt": "2025-03-24",
-    "reporter": "김경수",
-    "backtest": {
-      "latest": {
-        "baseDate": "2026-11-16",
-        "marketBaseDate": "2026-11-16",
-        "elapsedDays": 5,
-        "availTradingDays": 4,
-        "basePrice": 1545.0,
-        "cumReturn": -5.5,
-        "d5": null,
-        "d20": null,
-        "d60": null,
-        "maxRunup": 3.6,
-        "mdd": -10.9
-      },
-      "firstEntry": {
-        "baseDate": "2025-03-24",
-        "marketBaseDate": "2025-03-24",
-        "elapsedDays": 607,
-        "availTradingDays": 405,
-        "basePrice": 3150.0,
-        "cumReturn": -53.7,
-        "d5": -4.0,
-        "d20": 1.7,
-        "d60": 6.3,
-        "maxRunup": 22.9,
-        "mdd": -9.4,
-        "isSameAsLatest": false
-      }
-    }
-  },
-  {
-    "event_id": "KR_DART_5PCT_20261116000506",
-    "d_day": -5,
-    "country": "KR",
-    "ticker": "314930",
-    "primary_ticker": "314930",
-    "related_securities": [
-      {
-        "ticker": "314930",
-        "company_name": "바이오다인",
-        "relation_grade": "A",
-        "relation_score": 100,
-        "relation_type": "DIRECT",
-        "evidence_text": "직접 당사자",
-        "evidence_source": "DART_5PCT",
-        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000506",
-        "relation_known_date": "2026-11-16",
-        "ingest_mode": "AUTO",
-        "from_entity": "바이오다인",
-        "name": "바이오다인"
-      }
-    ],
-    "company": "바이오다인",
-    "event_type": "5PCT_OWNERSHIP",
-    "event_name": "바이오다인 주식등의대량보유상황보고서(일반) (대표보고자: 임욱빈)",
-    "event_date": "2026-11-16",
-    "date_precision": "EXACT_DATE",
-    "window_start": "2026-11-16",
-    "window_end": "2026-11-16",
-    "relation_grade": "A",
-    "relation_score": 100,
-    "relation_type": "DIRECT",
-    "relation_ingest_mode": "AUTO",
-    "event_score": 6,
-    "alpha_score": 6,
-    "score_breakdown": [
-      {
-        "strategy": "전략 1 (주체 가중치)",
-        "reason": "슈퍼개미/개인 핵심 주체 (임욱빈)",
-        "points": 2
-      },
-      {
-        "strategy": "전략 3 (목적 변경)",
-        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
-        "points": 3
-      },
-      {
-        "strategy": "전략 6 (세력 평단 하회)",
-        "reason": "세력 매집단가 대비 현재가 -8.1% 할인 구간 [VWAP_ESTIMATE: 2026-11-05~2026-11-16 매집기간 일봉 VWAP]",
-        "points": 1
-      }
-    ],
-    "investor_class": "슈퍼개미/개인",
-    "purpose_prev": "단순투자",
-    "purpose_current": "일반투자",
-    "accumulation_count": 0,
-    "freshness": "CURRENT",
-    "insight": {
-      "tier": "HIGH",
-      "label": "지분공시",
-      "summary": "슈퍼개미/개인 핵심 주체 (임욱빈) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 세력 매집단가 대비 현재가 -8.1% 할인 구간 [VWAP_ESTIMATE: 2026-11-05~2026-11-16 매집기간 일봉 VWAP]",
-      "score": 6
-    },
-    "status": "CONFIRMED",
-    "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000506",
-    "est_avg_price": 5590,
-    "current_price": 5140.0,
-    "price_gap_pct": -8.1,
-    "price_source": "VWAP_ESTIMATE: 2026-11-05~2026-11-16 매집기간 일봉 VWAP",
-    "hold_stock_rt": 42.21,
-    "stk_rt_var": 0.0,
-    "stk_cnt_var": "0",
-    "first_entry_dt": "2025-08-08",
-    "reporter": "임욱빈",
-    "backtest": {
-      "latest": {
-        "baseDate": "2026-11-16",
-        "marketBaseDate": "2026-11-16",
-        "elapsedDays": 5,
-        "availTradingDays": 4,
-        "basePrice": 5190.0,
-        "cumReturn": -1.0,
-        "d5": null,
-        "d20": null,
-        "d60": null,
-        "maxRunup": 5.8,
-        "mdd": -3.5
-      },
-      "firstEntry": {
-        "baseDate": "2025-08-08",
-        "marketBaseDate": "2025-08-08",
-        "elapsedDays": 470,
-        "availTradingDays": 311,
-        "basePrice": 15880.0,
-        "cumReturn": -67.6,
-        "d5": -4.6,
-        "d20": -6.9,
-        "d60": -19.5,
-        "maxRunup": 4.1,
-        "mdd": -20.0,
-        "isSameAsLatest": false
-      }
-    }
-  },
-  {
-    "event_id": "KR_DART_5PCT_20261116000504",
-    "d_day": -5,
-    "country": "KR",
-    "ticker": "237750",
-    "primary_ticker": "237750",
-    "related_securities": [
-      {
-        "ticker": "237750",
-        "company_name": "피앤씨테크",
-        "relation_grade": "A",
-        "relation_score": 100,
-        "relation_type": "DIRECT",
-        "evidence_text": "직접 당사자",
-        "evidence_source": "DART_5PCT",
-        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000504",
-        "relation_known_date": "2026-11-16",
-        "ingest_mode": "AUTO",
-        "from_entity": "피앤씨테크",
-        "name": "피앤씨테크"
-      }
-    ],
-    "company": "피앤씨테크",
-    "event_type": "5PCT_OWNERSHIP",
-    "event_name": "피앤씨테크 주식등의대량보유상황보고서 (대표보고자: 조광식)",
-    "event_date": "2026-11-16",
-    "date_precision": "EXACT_DATE",
-    "window_start": "2026-11-16",
-    "window_end": "2026-11-16",
-    "relation_grade": "A",
-    "relation_score": 100,
-    "relation_type": "DIRECT",
-    "relation_ingest_mode": "AUTO",
-    "event_score": 10,
-    "alpha_score": 10,
-    "score_breakdown": [
-      {
-        "strategy": "전략 1 (주체 가중치)",
-        "reason": "슈퍼개미/개인 핵심 주체 (조광식)",
-        "points": 2
-      },
-      {
-        "strategy": "전략 2 (실제 주식수 확대)",
-        "reason": "실제 보유주식수 증가(+592,156) 및 지분율 +9.11%p 확대",
-        "points": 3
-      },
-      {
-        "strategy": "전략 2 (연속 매집)",
-        "reason": "공식 이력 기준 8회 연속 실제 보유주식수 증가 확인",
-        "points": 4
-      },
-      {
-        "strategy": "전략 6 (취득원천 검증)",
-        "reason": "보고사유: 보고자 및 특별관계자 장외매수 및 증여",
-        "points": 1
-      }
-    ],
-    "investor_class": "슈퍼개미/개인",
-    "purpose_prev": "단순투자",
-    "purpose_current": "단순투자",
-    "accumulation_count": 8,
-    "freshness": "CURRENT",
-    "insight": {
-      "tier": "HIGH",
-      "label": "지분공시",
-      "summary": "슈퍼개미/개인 핵심 주체 (조광식) · 실제 보유주식수 증가(+592,156) 및 지분율 +9.11%p 확대 · 공식 이력 기준 8회 연속 실제 보유주식수 증가 확인 · 보고사유: 보고자 및 특별관계자 장외매수 및 증여",
-      "score": 10
-    },
-    "status": "CONFIRMED",
-    "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000504",
-    "est_avg_price": 2823,
-    "current_price": 2940.0,
-    "price_gap_pct": 4.1,
-    "price_source": "VWAP_ESTIMATE: 2026-11-05~2026-11-16 매집기간 일봉 VWAP",
-    "hold_stock_rt": 47.18,
-    "stk_rt_var": 9.11,
-    "stk_cnt_var": "+592,156",
-    "first_entry_dt": "2024-11-22",
-    "reporter": "조광식",
-    "backtest": {
-      "latest": {
-        "baseDate": "2026-11-16",
-        "marketBaseDate": "2026-11-16",
-        "elapsedDays": 5,
-        "availTradingDays": 4,
-        "basePrice": 2745.0,
-        "cumReturn": 7.1,
-        "d5": null,
-        "d20": null,
-        "d60": null,
-        "maxRunup": 13.3,
-        "mdd": -1.6
-      },
-      "firstEntry": {
-        "baseDate": "2024-11-22",
-        "marketBaseDate": "2024-11-22",
-        "elapsedDays": 729,
-        "availTradingDays": 483,
-        "basePrice": 4075.0,
-        "cumReturn": -27.9,
-        "d5": -0.6,
-        "d20": 0.1,
-        "d60": -1.0,
-        "maxRunup": 9.8,
-        "mdd": -19.5,
-        "isSameAsLatest": false
-      }
-    }
-  },
-  {
-    "event_id": "KR_DART_5PCT_20261116000399",
-    "d_day": -5,
-    "country": "KR",
-    "ticker": "026910",
-    "primary_ticker": "026910",
-    "related_securities": [
-      {
-        "ticker": "026910",
-        "company_name": "광진실업",
-        "relation_grade": "A",
-        "relation_score": 100,
-        "relation_type": "DIRECT",
-        "evidence_text": "직접 당사자",
-        "evidence_source": "DART_5PCT",
-        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000399",
-        "relation_known_date": "2026-11-16",
-        "ingest_mode": "AUTO",
-        "from_entity": "광진실업",
-        "name": "광진실업"
-      }
-    ],
-    "company": "광진실업",
-    "event_type": "5PCT_OWNERSHIP",
-    "event_name": "광진실업 주식등의대량보유상황보고서(약식) (대표보고자: 다인투자조합)",
-    "event_date": "2026-11-16",
-    "date_precision": "EXACT_DATE",
-    "window_start": "2026-11-16",
-    "window_end": "2026-11-16",
-    "relation_grade": "A",
-    "relation_score": 100,
-    "relation_type": "DIRECT",
-    "relation_ingest_mode": "AUTO",
-    "event_score": -5,
-    "alpha_score": -5,
-    "score_breakdown": [
-      {
-        "strategy": "전략 1 (주체 가중치)",
-        "reason": "PEF/투자조합 핵심 주체 (다인투자조합)",
-        "points": 2
-      },
-      {
-        "strategy": "전략 7 (지분 축소)",
-        "reason": "직전 대비 -2.30%p (-182,591주) 지분 매도/감소",
-        "points": -3
-      },
-      {
-        "strategy": "전략 7 (5% 이탈 최우선 경보)",
-        "reason": "최신 보유비율 4.90%로 5% 미만 진입 (공시의무 소멸 및 오버행 주의)",
-        "points": -4
-      }
-    ],
-    "investor_class": "PEF/투자조합",
-    "purpose_prev": "단순투자",
-    "purpose_current": "단순투자",
-    "accumulation_count": 0,
-    "freshness": "CURRENT",
-    "insight": {
-      "tier": "RISK",
-      "label": "지분공시",
-      "summary": "PEF/투자조합 핵심 주체 (다인투자조합) · 직전 대비 -2.30%p (-182,591주) 지분 매도/감소 · 최신 보유비율 4.90%로 5% 미만 진입 (공시의무 소멸 및 오버행 주의)",
-      "score": -5
-    },
-    "status": "CONFIRMED",
-    "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000399",
-    "est_avg_price": 1850,
-    "current_price": 1118.0,
-    "price_gap_pct": -39.6,
-    "price_source": "VWAP_ESTIMATE: 2026-11-05~2026-11-16 매집기간 일봉 VWAP",
-    "hold_stock_rt": 4.9,
-    "stk_rt_var": -2.3,
-    "stk_cnt_var": "-182,591",
-    "first_entry_dt": "2026-08-20",
-    "reporter": "다인투자조합",
-    "backtest": {
-      "latest": {
-        "baseDate": "2026-11-16",
-        "marketBaseDate": "2026-11-16",
-        "elapsedDays": 5,
-        "availTradingDays": 4,
-        "basePrice": 1660.0,
-        "cumReturn": -32.7,
-        "d5": null,
-        "d20": null,
-        "d60": null,
-        "maxRunup": 4.8,
-        "mdd": -35.1
-      },
-      "firstEntry": {
-        "baseDate": "2026-08-20",
-        "marketBaseDate": "2026-08-20",
-        "elapsedDays": 93,
-        "availTradingDays": 62,
-        "basePrice": 4010.0,
-        "cumReturn": -72.1,
-        "d5": -11.1,
-        "d20": -18.8,
-        "d60": -67.1,
-        "maxRunup": 8.5,
-        "mdd": -68.0,
-        "isSameAsLatest": false
-      }
-    }
-  },
-  {
-    "event_id": "KR_DART_5PCT_20261116000343",
-    "d_day": -5,
-    "country": "KR",
-    "ticker": "063170",
-    "primary_ticker": "063170",
-    "related_securities": [
-      {
-        "ticker": "063170",
-        "company_name": "서울옥션",
-        "relation_grade": "A",
-        "relation_score": 100,
-        "relation_type": "DIRECT",
-        "evidence_text": "직접 당사자",
-        "evidence_source": "DART_5PCT",
-        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000343",
-        "relation_known_date": "2026-11-16",
-        "ingest_mode": "AUTO",
-        "from_entity": "서울옥션",
-        "name": "서울옥션"
-      }
-    ],
-    "company": "서울옥션",
-    "event_type": "5PCT_OWNERSHIP",
-    "event_name": "서울옥션 주식등의대량보유상황보고서(일반) (대표보고자: 이호재)",
-    "event_date": "2026-11-16",
-    "date_precision": "EXACT_DATE",
-    "window_start": "2026-11-16",
-    "window_end": "2026-11-16",
-    "relation_grade": "A",
-    "relation_score": 100,
-    "relation_type": "DIRECT",
-    "relation_ingest_mode": "AUTO",
-    "event_score": 14,
-    "alpha_score": 14,
-    "score_breakdown": [
-      {
-        "strategy": "전략 1 (주체 가중치)",
-        "reason": "슈퍼개미/개인 핵심 주체 (이호재)",
-        "points": 2
-      },
-      {
-        "strategy": "전략 3 (목적 변경)",
-        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
-        "points": 3
-      },
-      {
-        "strategy": "전략 2 (실제 주식수 확대)",
-        "reason": "실제 보유주식수 증가(+33,000) 및 지분율 +0.19%p 확대",
-        "points": 1
-      },
-      {
-        "strategy": "전략 2 (연속 매집)",
-        "reason": "공식 이력 기준 6회 연속 실제 보유주식수 증가 확인",
-        "points": 4
-      },
-      {
-        "strategy": "전략 6 (취득원천 검증)",
-        "reason": "보고사유: - 보고자 장내매수(1%미만)\n- 특별관계자 주식 담보대출 변경",
-        "points": 2
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "세력 매집단가(5,217) 대비 현재가(4,560)가 -12.6% 할인 구간 [VWAP_ESTIMATE: 2026-09-21~2026-11-16 매집기간 일봉 VWAP]",
-        "points": 2
-      }
-    ],
-    "investor_class": "슈퍼개미/개인",
-    "purpose_prev": "단순투자",
-    "purpose_current": "일반투자",
-    "accumulation_count": 6,
-    "freshness": "CURRENT",
-    "insight": {
-      "tier": "HIGH",
-      "label": "지분공시",
-      "summary": "슈퍼개미/개인 핵심 주체 (이호재) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 실제 보유주식수 증가(+33,000) 및 지분율 +0.19%p 확대 · 공식 이력 기준 6회 연속 실제 보유주식수 증가 확인 · 보고사유: - 보고자 장내매수(1%미만)\n- 특별관계자 주식 담보대출 변경 · 세력 매집단가(5,217) 대비 현재가(4,560)가 -12.6% 할인 구간 [VWAP_ESTIMATE: 2026-09-21~2026-11-16 매집기간 일봉 VWAP]",
-      "score": 14
-    },
-    "status": "CONFIRMED",
-    "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000343",
-    "est_avg_price": 5217,
-    "current_price": 4560.0,
-    "price_gap_pct": -12.6,
-    "price_source": "VWAP_ESTIMATE: 2026-09-21~2026-11-16 매집기간 일봉 VWAP",
-    "hold_stock_rt": 31.09,
-    "stk_rt_var": 0.19,
-    "stk_cnt_var": "+33,000",
-    "first_entry_dt": "2024-12-03",
-    "reporter": "이호재",
-    "backtest": {
-      "latest": {
-        "baseDate": "2026-11-16",
-        "marketBaseDate": "2026-11-16",
-        "elapsedDays": 5,
-        "availTradingDays": 4,
-        "basePrice": 4640.0,
-        "cumReturn": -1.7,
-        "d5": null,
-        "d20": null,
-        "d60": null,
-        "maxRunup": 1.5,
-        "mdd": -4.8
-      },
-      "firstEntry": {
-        "baseDate": "2024-12-03",
-        "marketBaseDate": "2024-12-03",
-        "elapsedDays": 718,
-        "availTradingDays": 476,
-        "basePrice": 7700.0,
-        "cumReturn": -40.8,
-        "d5": -12.2,
-        "d20": -6.5,
-        "d60": -12.1,
-        "maxRunup": 1.3,
-        "mdd": -19.0,
-        "isSameAsLatest": false
-      }
-    }
-  },
-  {
-    "event_id": "KR_DART_5PCT_20261116000342",
-    "d_day": -5,
-    "country": "KR",
-    "ticker": "009320",
-    "primary_ticker": "009320",
-    "related_securities": [
-      {
-        "ticker": "009320",
-        "company_name": "아진전자부품",
-        "relation_grade": "A",
-        "relation_score": 100,
-        "relation_type": "DIRECT",
-        "evidence_text": "직접 당사자",
-        "evidence_source": "DART_5PCT",
-        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000342",
-        "relation_known_date": "2026-11-16",
-        "ingest_mode": "AUTO",
-        "from_entity": "아진전자부품",
-        "name": "아진전자부품"
-      }
-    ],
-    "company": "아진전자부품",
-    "event_type": "5PCT_OWNERSHIP",
-    "event_name": "아진전자부품 주식등의대량보유상황보고서(일반) (대표보고자: 우신산업)",
-    "event_date": "2026-11-16",
-    "date_precision": "EXACT_DATE",
-    "window_start": "2026-11-16",
-    "window_end": "2026-11-16",
-    "relation_grade": "A",
-    "relation_score": 100,
-    "relation_type": "DIRECT",
-    "relation_ingest_mode": "AUTO",
-    "event_score": 12,
-    "alpha_score": 12,
-    "score_breakdown": [
-      {
-        "strategy": "전략 1 (주체 가중치)",
-        "reason": "슈퍼개미/개인 핵심 주체 (우신산업)",
-        "points": 2
-      },
-      {
-        "strategy": "전략 3 (목적 변경)",
-        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
-        "points": 3
-      },
-      {
-        "strategy": "전략 2 (실제 주식수 확대)",
-        "reason": "실제 보유주식수 증가(+448,142) 및 지분율 +0.91%p 확대",
-        "points": 1
-      },
-      {
-        "strategy": "전략 2 (연속 매집)",
-        "reason": "공식 이력 기준 5회 연속 실제 보유주식수 증가 확인",
-        "points": 4
-      },
-      {
-        "strategy": "전략 6 (취득원천 검증)",
-        "reason": "보고사유: 보고자 (주)우신산업 및 특별관계자 성영주 장내매수로 보유주식 추가취득",
-        "points": 2
-      }
-    ],
-    "investor_class": "슈퍼개미/개인",
-    "purpose_prev": "단순투자",
-    "purpose_current": "일반투자",
-    "accumulation_count": 5,
-    "freshness": "CURRENT",
-    "insight": {
-      "tier": "HIGH",
-      "label": "지분공시",
-      "summary": "슈퍼개미/개인 핵심 주체 (우신산업) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 실제 보유주식수 증가(+448,142) 및 지분율 +0.91%p 확대 · 공식 이력 기준 5회 연속 실제 보유주식수 증가 확인 · 보고사유: 보고자 (주)우신산업 및 특별관계자 성영주 장내매수로 보유주식 추가취득",
-      "score": 12
-    },
-    "status": "CONFIRMED",
-    "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000342",
-    "est_avg_price": 963,
-    "current_price": 966.0,
-    "price_gap_pct": 0.3,
-    "price_source": "VWAP_ESTIMATE: 2026-10-15~2026-11-16 매집기간 일봉 VWAP",
-    "hold_stock_rt": 27.19,
-    "stk_rt_var": 0.91,
-    "stk_cnt_var": "+448,142",
-    "first_entry_dt": "2025-06-24",
-    "reporter": "우신산업",
-    "backtest": {
-      "latest": {
-        "baseDate": "2026-11-16",
-        "marketBaseDate": "2026-11-16",
-        "elapsedDays": 5,
-        "availTradingDays": 4,
-        "basePrice": 947.0,
-        "cumReturn": 2.0,
-        "d5": null,
-        "d20": null,
-        "d60": null,
-        "maxRunup": 3.9,
-        "mdd": -1.4
-      },
-      "firstEntry": {
-        "baseDate": "2025-06-24",
-        "marketBaseDate": "2025-06-24",
-        "elapsedDays": 515,
-        "availTradingDays": 344,
-        "basePrice": 1026.0,
-        "cumReturn": -5.8,
-        "d5": -0.9,
-        "d20": -2.5,
-        "d60": 1.1,
-        "maxRunup": 16.9,
-        "mdd": -6.2,
-        "isSameAsLatest": false
-      }
-    }
-  },
-  {
-    "event_id": "KR_DART_5PCT_20261116000328",
-    "d_day": -5,
-    "country": "KR",
-    "ticker": "221800",
-    "primary_ticker": "221800",
-    "related_securities": [
-      {
-        "ticker": "221800",
-        "company_name": "지구홀딩스",
-        "relation_grade": "A",
-        "relation_score": 100,
-        "relation_type": "DIRECT",
-        "evidence_text": "직접 당사자",
-        "evidence_source": "DART_5PCT",
-        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000328",
-        "relation_known_date": "2026-11-16",
-        "ingest_mode": "AUTO",
-        "from_entity": "지구홀딩스",
-        "name": "지구홀딩스"
-      }
-    ],
-    "company": "지구홀딩스",
-    "event_type": "5PCT_OWNERSHIP",
-    "event_name": "지구홀딩스 [기재정정]주식등의대량보유상황보고서(약식) (대표보고자: 전창무)",
-    "event_date": "2026-11-16",
-    "date_precision": "EXACT_DATE",
-    "window_start": "2026-11-16",
-    "window_end": "2026-11-16",
-    "relation_grade": "A",
-    "relation_score": 100,
-    "relation_type": "DIRECT",
-    "relation_ingest_mode": "AUTO",
-    "event_score": 5,
-    "alpha_score": 5,
-    "score_breakdown": [
-      {
-        "strategy": "전략 1 (주체 가중치)",
-        "reason": "슈퍼개미/개인 핵심 주체 (전창무)",
-        "points": 2
-      },
-      {
-        "strategy": "전략 4 (신규 5% 돌파)",
-        "reason": "실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (5.58%)",
-        "points": 2
-      },
-      {
-        "strategy": "전략 2 (실제 주식수 확대)",
-        "reason": "실제 보유주식수 증가(+722,037) 및 지분율 +-4.37%p 확대",
-        "points": 1
-      },
-      {
-        "strategy": "전략 6 (취득원천 검증)",
-        "reason": "보고사유: 장내매수, 장내매도 및 증여에 따른 변동 보고 의무 발생",
-        "points": 2
-      },
-      {
-        "strategy": "전략 6 (세력 평단 하회)",
-        "reason": "세력 매집단가 대비 현재가 -9.8% 할인 구간 [VWAP_ESTIMATE: 2026-11-05~2026-11-16 매집기간 일봉 VWAP]",
-        "points": 1
-      },
-      {
-        "strategy": "전략 7 (지분 축소)",
-        "reason": "직전 보고 대비 보유주식수(+722,037주) 및 지분율(-4.37%p) 감소",
-        "points": -3
-      }
-    ],
-    "investor_class": "슈퍼개미/개인",
-    "purpose_prev": null,
-    "purpose_current": "단순투자",
-    "accumulation_count": 1,
-    "freshness": "CURRENT",
-    "insight": {
-      "tier": "HIGH",
-      "label": "지분공시",
-      "summary": "슈퍼개미/개인 핵심 주체 (전창무) · 실제 주식 취득을 통한 최초 5% 이상 대량보유 진입 (5.58%) · 실제 보유주식수 증가(+722,037) 및 지분율 +-4.37%p 확대 · 보고사유: 장내매수, 장내매도 및 증여에 따른 변동 보고 의무 발생 · 세력 매집단가 대비 현재가 -9.8% 할인 구간 [VWAP_ESTIMATE: 2026-11-05~2026-11-16 매집기간 일봉 VWAP] · 직전 보고 대비 보유주식수(+722,037주) 및 지분율(-4.37%p) 감소",
-      "score": 5
-    },
-    "status": "CONFIRMED",
-    "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000328",
-    "est_avg_price": 3175,
-    "current_price": 2865.0,
-    "price_gap_pct": -9.8,
-    "price_source": "VWAP_ESTIMATE: 2026-11-05~2026-11-16 매집기간 일봉 VWAP",
-    "hold_stock_rt": 5.58,
-    "stk_rt_var": -4.37,
-    "stk_cnt_var": "+722,037",
-    "first_entry_dt": "2026-11-16",
-    "reporter": "전창무",
-    "backtest": {
-      "latest": {
-        "baseDate": "2026-11-16",
-        "marketBaseDate": "2026-11-16",
-        "elapsedDays": 5,
-        "availTradingDays": 4,
-        "basePrice": 3040.0,
-        "cumReturn": -5.8,
-        "d5": null,
-        "d20": null,
-        "d60": null,
-        "maxRunup": 6.7,
-        "mdd": -10.5
-      },
-      "firstEntry": {
-        "baseDate": "2026-11-16",
-        "marketBaseDate": "2026-11-16",
-        "elapsedDays": 5,
-        "availTradingDays": 4,
-        "basePrice": 3040.0,
-        "cumReturn": -5.8,
-        "d5": null,
-        "d20": null,
-        "d60": null,
-        "maxRunup": 6.7,
-        "mdd": -10.5,
-        "isSameAsLatest": true
-      }
-    }
-  },
-  {
-    "event_id": "KR_DART_5PCT_20261116000315",
-    "d_day": -5,
-    "country": "KR",
-    "ticker": "277410",
-    "primary_ticker": "277410",
-    "related_securities": [
-      {
-        "ticker": "277410",
-        "company_name": "",
-        "relation_grade": "A",
-        "relation_score": 100,
-        "relation_type": "DIRECT",
-        "evidence_text": "직접 당사자",
-        "evidence_source": "DART_5PCT",
-        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000315",
-        "relation_known_date": "2026-11-16",
-        "ingest_mode": "AUTO",
-        "from_entity": "인산가",
-        "name": ""
-      },
-      {
-        "ticker": "062580",
-        "company_name": "인산가",
-        "relation_grade": "A",
-        "relation_score": 100,
-        "relation_type": "DIRECT_MENTION",
-        "evidence_text": "이벤트 원문에 상장사명 명시: 인산가",
-        "evidence_source": "DART_5PCT",
-        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000315",
-        "relation_known_date": "2026-11-16",
-        "ingest_mode": "AUTO",
-        "from_entity": "인산가",
-        "name": "인산가"
-      }
-    ],
-    "company": "인산가",
-    "event_type": "5PCT_OWNERSHIP",
-    "event_name": "인산가 주식등의대량보유상황보고서(일반) (대표보고자: 김윤세)",
-    "event_date": "2026-11-16",
-    "date_precision": "EXACT_DATE",
-    "window_start": "2026-11-16",
-    "window_end": "2026-11-16",
-    "relation_grade": "A",
-    "relation_score": 100,
-    "relation_type": "DIRECT",
-    "relation_ingest_mode": "AUTO",
-    "event_score": 5,
-    "alpha_score": 5,
-    "score_breakdown": [
-      {
-        "strategy": "전략 1 (주체 가중치)",
-        "reason": "슈퍼개미/개인 핵심 주체 (김윤세)",
-        "points": 2
-      },
-      {
-        "strategy": "전략 3 (목적 변경)",
-        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
-        "points": 3
-      }
-    ],
-    "investor_class": "슈퍼개미/개인",
-    "purpose_prev": "단순투자",
-    "purpose_current": "일반투자",
-    "accumulation_count": 0,
-    "freshness": "CURRENT",
-    "insight": {
-      "tier": "HIGH",
-      "label": "지분공시",
-      "summary": "슈퍼개미/개인 핵심 주체 (김윤세) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
-      "score": 5
-    },
-    "status": "CONFIRMED",
-    "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000315",
-    "est_avg_price": 4772,
-    "current_price": 4605.0,
-    "price_gap_pct": -3.5,
-    "price_source": "VWAP_ESTIMATE: 2026-11-05~2026-11-16 매집기간 일봉 VWAP",
-    "hold_stock_rt": 25.43,
-    "stk_rt_var": 0.0,
-    "stk_cnt_var": "0",
-    "first_entry_dt": "2024-12-24",
-    "reporter": "김윤세",
-    "backtest": {
-      "latest": {
-        "baseDate": "2026-11-16",
-        "marketBaseDate": "2026-11-16",
-        "elapsedDays": 5,
-        "availTradingDays": 4,
-        "basePrice": 4800.0,
-        "cumReturn": -4.1,
-        "d5": null,
-        "d20": null,
-        "d60": null,
-        "maxRunup": 4.8,
-        "mdd": -6.3
-      },
-      "firstEntry": {
-        "baseDate": "2024-12-24",
-        "marketBaseDate": "2026-04-20",
-        "elapsedDays": 697,
-        "availTradingDays": 144,
-        "basePrice": 11900.0,
-        "cumReturn": -61.3,
-        "d5": -2.9,
-        "d20": -19.3,
-        "d60": -54.1,
-        "maxRunup": 1.7,
-        "mdd": -58.7,
-        "isSameAsLatest": false
-      }
-    }
-  },
-  {
-    "event_id": "KR_DART_5PCT_20261116000306",
-    "d_day": -5,
-    "country": "KR",
-    "ticker": "0009K0",
-    "primary_ticker": "0009K0",
-    "related_securities": [
-      {
-        "ticker": "0009K0",
-        "company_name": "에임드바이오",
-        "relation_grade": "A",
-        "relation_score": 100,
-        "relation_type": "DIRECT",
-        "evidence_text": "직접 당사자",
-        "evidence_source": "DART_5PCT",
-        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000306",
-        "relation_known_date": "2026-11-16",
-        "ingest_mode": "AUTO",
-        "from_entity": "에임드바이오",
-        "name": "에임드바이오"
-      }
-    ],
-    "company": "에임드바이오",
-    "event_type": "5PCT_OWNERSHIP",
-    "event_name": "에임드바이오 주식등의대량보유상황보고서(약식) (대표보고자: 에스엠비투자파트너스)",
-    "event_date": "2026-11-16",
-    "date_precision": "EXACT_DATE",
-    "window_start": "2026-11-16",
-    "window_end": "2026-11-16",
-    "relation_grade": "A",
-    "relation_score": 100,
-    "relation_type": "DIRECT",
-    "relation_ingest_mode": "AUTO",
-    "event_score": -2,
-    "alpha_score": -2,
-    "score_breakdown": [
-      {
-        "strategy": "전략 1 (주체 가중치)",
-        "reason": "PEF/투자조합 핵심 주체 (에스엠비투자파트너스)",
-        "points": 2
-      },
-      {
-        "strategy": "전략 6 (취득원천 검증)",
-        "reason": "보고사유: 조합 해산에 따른 현물배분 및 장내매도",
-        "points": -1
-      },
-      {
-        "strategy": "전략 7 (지분 축소)",
-        "reason": "직전 보고 대비 보유주식수(-3,008,733주) 및 지분율(-4.85%p) 감소",
-        "points": -3
-      }
-    ],
-    "investor_class": "PEF/투자조합",
-    "purpose_prev": "단순투자",
-    "purpose_current": "단순투자",
-    "accumulation_count": 0,
-    "freshness": "CURRENT",
-    "insight": {
-      "tier": "RISK",
-      "label": "지분공시",
-      "summary": "PEF/투자조합 핵심 주체 (에스엠비투자파트너스) · 보고사유: 조합 해산에 따른 현물배분 및 장내매도 · 직전 보고 대비 보유주식수(-3,008,733주) 및 지분율(-4.85%p) 감소",
-      "score": -2
-    },
-    "status": "CONFIRMED",
-    "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000306",
-    "est_avg_price": 18806,
-    "current_price": 15270.0,
-    "price_gap_pct": -18.8,
-    "price_source": "VWAP_ESTIMATE: 2026-11-05~2026-11-16 매집기간 일봉 VWAP",
-    "hold_stock_rt": 10.24,
-    "stk_rt_var": -4.85,
-    "stk_cnt_var": "-3,008,733",
-    "first_entry_dt": "2025-12-08",
-    "reporter": "에스엠비투자파트너스",
-    "backtest": {
-      "latest": {
-        "baseDate": "2026-11-16",
-        "marketBaseDate": "2026-11-16",
-        "elapsedDays": 5,
-        "availTradingDays": 4,
-        "basePrice": 17350.0,
-        "cumReturn": -12.0,
-        "d5": null,
-        "d20": null,
-        "d60": null,
-        "maxRunup": 8.5,
-        "mdd": -12.0
-      },
-      "firstEntry": {
-        "baseDate": "2025-12-08",
-        "marketBaseDate": "2025-12-08",
-        "elapsedDays": 348,
-        "availTradingDays": 232,
-        "basePrice": 48550.0,
-        "cumReturn": -68.5,
-        "d5": 45.2,
-        "d20": 23.8,
-        "d60": 34.1,
-        "maxRunup": 65.2,
-        "mdd": -5.0,
-        "isSameAsLatest": false
-      }
-    }
-  },
-  {
-    "event_id": "KR_DART_5PCT_20261116000283",
-    "d_day": -5,
-    "country": "KR",
-    "ticker": "024740",
-    "primary_ticker": "024740",
-    "related_securities": [
-      {
-        "ticker": "024740",
-        "company_name": "한일단조",
-        "relation_grade": "A",
-        "relation_score": 100,
-        "relation_type": "DIRECT",
-        "evidence_text": "직접 당사자",
-        "evidence_source": "DART_5PCT",
-        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000283",
-        "relation_known_date": "2026-11-16",
-        "ingest_mode": "AUTO",
-        "from_entity": "한일단조",
-        "name": "한일단조"
-      }
-    ],
-    "company": "한일단조",
-    "event_type": "5PCT_OWNERSHIP",
-    "event_name": "한일단조 주식등의대량보유상황보고서(일반) (대표보고자: 홍진산업)",
-    "event_date": "2026-11-16",
-    "date_precision": "EXACT_DATE",
-    "window_start": "2026-11-16",
-    "window_end": "2026-11-16",
-    "relation_grade": "A",
-    "relation_score": 100,
-    "relation_type": "DIRECT",
-    "relation_ingest_mode": "AUTO",
-    "event_score": 7,
-    "alpha_score": 7,
-    "score_breakdown": [
-      {
-        "strategy": "전략 1 (주체 가중치)",
-        "reason": "슈퍼개미/개인 핵심 주체 (홍진산업)",
-        "points": 2
-      },
-      {
-        "strategy": "전략 3 (목적 변경)",
-        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
-        "points": 3
-      },
-      {
-        "strategy": "전략 6 (세력 평단 안전마진)",
-        "reason": "세력 매집단가(2,308) 대비 현재가(1,786)가 -22.6% 할인 구간 [VWAP_ESTIMATE: 2026-09-30~2026-11-16 매집기간 일봉 VWAP]",
-        "points": 2
-      }
-    ],
-    "investor_class": "슈퍼개미/개인",
-    "purpose_prev": "단순투자",
-    "purpose_current": "일반투자",
-    "accumulation_count": 0,
-    "freshness": "CURRENT",
-    "insight": {
-      "tier": "HIGH",
-      "label": "지분공시",
-      "summary": "슈퍼개미/개인 핵심 주체 (홍진산업) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향 · 세력 매집단가(2,308) 대비 현재가(1,786)가 -22.6% 할인 구간 [VWAP_ESTIMATE: 2026-09-30~2026-11-16 매집기간 일봉 VWAP]",
-      "score": 7
-    },
-    "status": "CONFIRMED",
-    "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000283",
-    "est_avg_price": 2308,
-    "current_price": 1786.0,
-    "price_gap_pct": -22.6,
-    "price_source": "VWAP_ESTIMATE: 2026-09-30~2026-11-16 매집기간 일봉 VWAP",
-    "hold_stock_rt": 32.42,
-    "stk_rt_var": 0.0,
-    "stk_cnt_var": "0",
-    "first_entry_dt": "2024-11-18",
-    "reporter": "홍진산업",
-    "backtest": {
-      "latest": {
-        "baseDate": "2026-11-16",
-        "marketBaseDate": "2026-11-16",
-        "elapsedDays": 5,
-        "availTradingDays": 4,
-        "basePrice": 1839.0,
-        "cumReturn": -2.9,
-        "d5": null,
-        "d20": null,
-        "d60": null,
-        "maxRunup": 0.0,
-        "mdd": -4.0
-      },
-      "firstEntry": {
-        "baseDate": "2024-11-18",
-        "marketBaseDate": "2024-11-18",
-        "elapsedDays": 733,
-        "availTradingDays": 487,
-        "basePrice": 2595.0,
-        "cumReturn": -31.2,
-        "d5": 16.2,
-        "d20": -16.6,
-        "d60": -19.7,
-        "maxRunup": 37.8,
-        "mdd": -27.2,
-        "isSameAsLatest": false
-      }
-    }
-  },
-  {
-    "event_id": "KR_DART_5PCT_20261116000281",
-    "d_day": -5,
-    "country": "KR",
-    "ticker": "083450",
-    "primary_ticker": "083450",
-    "related_securities": [
-      {
-        "ticker": "083450",
-        "company_name": "GST",
-        "relation_grade": "A",
-        "relation_score": 100,
-        "relation_type": "DIRECT",
-        "evidence_text": "직접 당사자",
-        "evidence_source": "DART_5PCT",
-        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000281",
-        "relation_known_date": "2026-11-16",
-        "ingest_mode": "AUTO",
-        "from_entity": "GST",
-        "name": "GST"
-      }
-    ],
-    "company": "GST",
-    "event_type": "5PCT_OWNERSHIP",
-    "event_name": "GST 주식등의대량보유상황보고서(일반) (대표보고자: 김덕준)",
-    "event_date": "2026-11-16",
-    "date_precision": "EXACT_DATE",
-    "window_start": "2026-11-16",
-    "window_end": "2026-11-16",
-    "relation_grade": "A",
-    "relation_score": 100,
-    "relation_type": "DIRECT",
-    "relation_ingest_mode": "AUTO",
-    "event_score": 5,
-    "alpha_score": 5,
-    "score_breakdown": [
-      {
-        "strategy": "전략 1 (주체 가중치)",
-        "reason": "슈퍼개미/개인 핵심 주체 (김덕준)",
-        "points": 2
-      },
-      {
-        "strategy": "전략 3 (목적 변경)",
-        "reason": "단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
-        "points": 3
-      }
-    ],
-    "investor_class": "슈퍼개미/개인",
-    "purpose_prev": "단순투자",
-    "purpose_current": "일반투자",
-    "accumulation_count": 0,
-    "freshness": "CURRENT",
-    "insight": {
-      "tier": "HIGH",
-      "label": "지분공시",
-      "summary": "슈퍼개미/개인 핵심 주체 (김덕준) · 단순투자 (13G/약식) → 일반투자(적극주주) 공식 상향",
-      "score": 5
-    },
-    "status": "CONFIRMED",
-    "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000281",
-    "est_avg_price": 38560,
-    "current_price": 47900.0,
-    "price_gap_pct": 24.2,
-    "price_source": "VWAP_ESTIMATE: 2026-11-05~2026-11-16 매집기간 일봉 VWAP",
-    "hold_stock_rt": 23.21,
-    "stk_rt_var": 0.01,
-    "stk_cnt_var": "+2,025",
-    "first_entry_dt": "2024-11-29",
-    "reporter": "김덕준",
-    "backtest": {
-      "latest": {
-        "baseDate": "2026-11-16",
-        "marketBaseDate": "2026-11-16",
-        "elapsedDays": 5,
-        "availTradingDays": 4,
-        "basePrice": 41000.0,
-        "cumReturn": 16.8,
-        "d5": null,
-        "d20": null,
-        "d60": null,
-        "maxRunup": 22.7,
-        "mdd": -3.5
-      },
-      "firstEntry": {
-        "baseDate": "2024-11-29",
-        "marketBaseDate": "2024-11-29",
-        "elapsedDays": 722,
-        "availTradingDays": 478,
-        "basePrice": 14000.0,
-        "cumReturn": 242.1,
-        "d5": 7.8,
-        "d20": 19.6,
-        "d60": 46.1,
-        "maxRunup": 66.8,
-        "mdd": -0.3,
-        "isSameAsLatest": false
-      }
-    }
-  },
-  {
-    "event_id": "KR_DART_5PCT_20261116000152",
-    "d_day": -5,
-    "country": "KR",
-    "ticker": "330860",
-    "primary_ticker": "330860",
-    "related_securities": [
-      {
-        "ticker": "330860",
-        "company_name": "네패스아크",
-        "relation_grade": "A",
-        "relation_score": 100,
-        "relation_type": "DIRECT",
-        "evidence_text": "직접 당사자",
-        "evidence_source": "DART_5PCT",
-        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000152",
-        "relation_known_date": "2026-11-16",
-        "ingest_mode": "AUTO",
-        "from_entity": "네패스아크",
-        "name": "네패스아크"
-      }
-    ],
-    "company": "네패스아크",
-    "event_type": "5PCT_OWNERSHIP",
-    "event_name": "네패스아크 주식등의대량보유상황보고서(약식) (대표보고자: J.P.MORGANSECURITIESPLC)",
-    "event_date": "2026-11-16",
-    "date_precision": "EXACT_DATE",
-    "window_start": "2026-11-16",
-    "window_end": "2026-11-16",
-    "relation_grade": "A",
-    "relation_score": 100,
-    "relation_type": "DIRECT",
-    "relation_ingest_mode": "AUTO",
-    "event_score": -1,
-    "alpha_score": -1,
-    "score_breakdown": [
-      {
-        "strategy": "전략 7 (지분 축소)",
-        "reason": "직전 보고 대비 보유주식수(-24,149주) 및 지분율(-0.20%p) 감소",
-        "points": -1
-      }
-    ],
-    "investor_class": "일반법인/기타",
-    "purpose_prev": "단순투자",
-    "purpose_current": "단순투자",
-    "accumulation_count": 0,
-    "freshness": "CURRENT",
-    "insight": {
-      "tier": "NEUTRAL",
-      "label": "지분공시",
-      "summary": "직전 보고 대비 보유주식수(-24,149주) 및 지분율(-0.20%p) 감소",
-      "score": -1
-    },
-    "status": "CONFIRMED",
-    "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116000152",
-    "est_avg_price": 18595,
-    "current_price": 17430.0,
-    "price_gap_pct": -6.3,
-    "price_source": "VWAP_ESTIMATE: 2026-11-06~2026-11-16 매집기간 일봉 VWAP",
-    "hold_stock_rt": 5.28,
-    "stk_rt_var": -0.2,
-    "stk_cnt_var": "-24,149",
-    "first_entry_dt": "2026-10-21",
-    "reporter": "J.P.MORGANSECURITIESPLC",
-    "backtest": {
-      "latest": {
-        "baseDate": "2026-11-16",
-        "marketBaseDate": "2026-11-16",
-        "elapsedDays": 5,
-        "availTradingDays": 4,
-        "basePrice": 19680.0,
-        "cumReturn": -11.4,
-        "d5": null,
-        "d20": null,
-        "d60": null,
-        "maxRunup": 5.9,
-        "mdd": -13.0
-      },
-      "firstEntry": {
-        "baseDate": "2026-10-21",
-        "marketBaseDate": "2026-10-21",
-        "elapsedDays": 31,
-        "availTradingDays": 22,
-        "basePrice": 25650.0,
-        "cumReturn": -32.0,
-        "d5": -1.0,
-        "d20": -31.0,
-        "d60": null,
-        "maxRunup": 6.8,
-        "mdd": -36.5,
-        "isSameAsLatest": false
-      }
-    }
-  },
-  {
-    "event_id": "KR_DART_5PCT_20261113001703",
-    "d_day": -5,
-    "country": "KR",
-    "ticker": "247660",
-    "primary_ticker": "247660",
-    "related_securities": [
-      {
-        "ticker": "247660",
-        "company_name": "나노씨엠에스",
-        "relation_grade": "A",
-        "relation_score": 100,
-        "relation_type": "DIRECT",
-        "evidence_text": "직접 당사자",
-        "evidence_source": "DART_5PCT",
-        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261113001703",
-        "relation_known_date": "2026-11-16",
-        "ingest_mode": "AUTO",
-        "from_entity": "나노씨엠에스",
-        "name": "나노씨엠에스"
-      }
-    ],
-    "company": "나노씨엠에스",
-    "event_type": "5PCT_OWNERSHIP",
-    "event_name": "나노씨엠에스 주식등의대량보유상황보고서 (대표보고자: 김시석)",
-    "event_date": "2026-11-16",
-    "date_precision": "EXACT_DATE",
-    "window_start": "2026-11-16",
-    "window_end": "2026-11-16",
-    "relation_grade": "A",
-    "relation_score": 100,
-    "relation_type": "DIRECT",
-    "relation_ingest_mode": "AUTO",
-    "event_score": 5,
-    "alpha_score": 5,
-    "score_breakdown": [
-      {
-        "strategy": "전략 1 (주체 가중치)",
-        "reason": "슈퍼개미/개인 핵심 주체 (김시석)",
-        "points": 2
-      },
-      {
-        "strategy": "전략 2 (실제 주식수 확대)",
-        "reason": "실제 보유주식수 증가(+511,279) 및 지분율 +8.25%p 확대",
-        "points": 3
-      }
-    ],
-    "investor_class": "슈퍼개미/개인",
-    "purpose_prev": "단순투자",
-    "purpose_current": "단순투자",
-    "accumulation_count": 0,
-    "freshness": "CURRENT",
-    "insight": {
-      "tier": "HIGH",
-      "label": "지분공시",
-      "summary": "슈퍼개미/개인 핵심 주체 (김시석) · 실제 보유주식수 증가(+511,279) 및 지분율 +8.25%p 확대",
-      "score": 5
-    },
-    "status": "CONFIRMED",
-    "source_name": "DART_5PCT",
-    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261113001703",
-    "est_avg_price": 4345,
-    "current_price": 4555.0,
-    "price_gap_pct": 4.8,
-    "price_source": "VWAP_ESTIMATE: 2026-11-05~2026-11-16 매집기간 일봉 VWAP",
-    "hold_stock_rt": 8.25,
-    "stk_rt_var": 8.25,
-    "stk_cnt_var": "+511,279",
-    "first_entry_dt": "2025-01-07",
-    "reporter": "김시석",
-    "backtest": {
-      "latest": {
-        "baseDate": "2026-11-16",
-        "marketBaseDate": "2026-11-16",
-        "elapsedDays": 5,
-        "availTradingDays": 4,
-        "basePrice": 4465.0,
-        "cumReturn": 2.0,
-        "d5": null,
-        "d20": null,
-        "d60": null,
-        "maxRunup": 8.2,
-        "mdd": -6.9
-      },
-      "firstEntry": {
-        "baseDate": "2025-01-07",
-        "marketBaseDate": "2026-08-24",
-        "elapsedDays": 683,
-        "availTradingDays": 60,
-        "basePrice": 2680.0,
-        "cumReturn": 70.0,
-        "d5": 24.3,
-        "d20": 59.1,
-        "d60": 70.0,
-        "maxRunup": 80.2,
-        "mdd": -8.0,
-        "isSameAsLatest": false
-      }
-    }
-  },
-  {
-    "event_id": "US_SEC_13DG_0002156154-26-000002",
-    "d_day": -8,
-    "country": "US",
-    "ticker": "NUR",
-    "primary_ticker": "NUR",
-    "related_securities": [
-      {
-        "ticker": "NUR",
-        "company_name": "",
-        "relation_grade": "A",
-        "relation_score": 100,
-        "relation_type": "DIRECT",
-        "evidence_text": "직접 당사자",
-        "evidence_source": "SEC_13DG",
-        "source_url": "https://www.sec.gov/Archives/edgar/data/1680637/000215615426000002/0002156154-26-000002-index.html",
-        "relation_known_date": "2026-11-13",
-        "ingest_mode": "AUTO",
-        "from_entity": "Nuran Wireless Inc.",
-        "name": ""
-      }
-    ],
-    "company": "Nuran Wireless Inc.",
-    "event_type": "5PCT_OWNERSHIP",
-    "event_name": "Nuran Wireless Inc. SCHEDULE 13G/A (Passive Ownership) (대표보고자: Posen Joseph Michael)",
-    "event_date": "2026-11-13",
-    "date_precision": "EXACT_DATE",
-    "window_start": "2026-11-13",
-    "window_end": "2026-11-13",
-    "relation_grade": "A",
-    "relation_score": 100,
-    "relation_type": "DIRECT",
-    "relation_ingest_mode": "AUTO",
-    "event_score": 0,
-    "alpha_score": 0,
-    "score_breakdown": [],
-    "investor_class": "일반법인/기타",
-    "purpose_prev": "단순투자",
-    "purpose_current": "단순투자",
-    "accumulation_count": 0,
-    "freshness": "CURRENT",
-    "insight": {
-      "tier": "NEUTRAL",
-      "label": "지분공시",
-      "summary": "SCHEDULE 13G/A (Passive Ownership) · 대표보고자 Posen Joseph Michael · 보유비율 7.4% · 보유주식수 1,055,122주",
-      "score": 0
-    },
-    "status": "CONFIRMED",
-    "source_name": "SEC_13DG",
-    "source_url": "https://www.sec.gov/Archives/edgar/data/1680637/000215615426000002/0002156154-26-000002-index.html",
-    "est_avg_price": 0.42,
-    "current_price": 0.4099999964237213,
-    "price_gap_pct": -2.4,
-    "price_source": "VWAP_ESTIMATE: 2026-11-04~2026-11-13 매집기간 일봉 VWAP",
-    "hold_stock_rt": 7.4,
-    "stk_rt_var": 0,
-    "stk_cnt_var": "-",
-    "first_entry_dt": "2026-11-13",
-    "reporter": "Posen Joseph Michael",
-    "backtest": {
-      "latest": {
-        "baseDate": "2026-11-13",
-        "marketBaseDate": "2026-11-13",
-        "elapsedDays": 8,
-        "availTradingDays": 5,
-        "basePrice": 0.40369999408721924,
-        "cumReturn": 1.6,
-        "d5": 1.6,
-        "d20": null,
-        "d60": null,
-        "maxRunup": 31.3,
-        "mdd": -5.8
-      },
-      "firstEntry": {
-        "baseDate": "2026-11-13",
-        "marketBaseDate": "2026-11-13",
-        "elapsedDays": 8,
-        "availTradingDays": 5,
-        "basePrice": 0.40369999408721924,
-        "cumReturn": 1.6,
-        "d5": 1.6,
-        "d20": null,
-        "d60": null,
-        "maxRunup": 31.3,
-        "mdd": -5.8,
-        "isSameAsLatest": true
-      }
-    }
-  },
-  {
-    "event_id": "US_SEC_13DG_0002124221-26-000002",
-    "d_day": -8,
-    "country": "US",
-    "ticker": "REKR",
-    "primary_ticker": "REKR",
-    "related_securities": [
-      {
-        "ticker": "REKR",
-        "company_name": "",
-        "relation_grade": "A",
-        "relation_score": 100,
-        "relation_type": "DIRECT",
-        "evidence_text": "직접 당사자",
-        "evidence_source": "SEC_13DG",
-        "source_url": "https://www.sec.gov/Archives/edgar/data/1697851/000212422126000002/0002124221-26-000002-index.html",
-        "relation_known_date": "2026-11-13",
-        "ingest_mode": "AUTO",
-        "from_entity": "Rekor Systems, Inc.",
-        "name": ""
-      }
-    ],
-    "company": "Rekor Systems, Inc.",
-    "event_type": "5PCT_OWNERSHIP",
-    "event_name": "Rekor Systems, Inc. SCHEDULE 13G/A (Passive Ownership) (대표보고자: Church Pension Fund)",
-    "event_date": "2026-11-13",
-    "date_precision": "EXACT_DATE",
-    "window_start": "2026-11-13",
-    "window_end": "2026-11-13",
-    "relation_grade": "A",
-    "relation_score": 100,
-    "relation_type": "DIRECT",
-    "relation_ingest_mode": "AUTO",
-    "event_score": -6,
-    "alpha_score": -6,
-    "score_breakdown": [
-      {
-        "strategy": "전략 7 (지분 축소)",
-        "reason": "직전 대비 0.00%p (-주) 지분 매도/감소",
-        "points": -2
-      },
-      {
-        "strategy": "전략 7 (5% 이탈 최우선 경보)",
-        "reason": "최신 보유비율 4.60%로 5% 미만 진입 (공시의무 소멸 및 오버행 주의)",
-        "points": -4
-      }
-    ],
-    "investor_class": "일반법인/기타",
-    "purpose_prev": "단순투자",
-    "purpose_current": "단순투자",
-    "accumulation_count": 0,
-    "freshness": "CURRENT",
-    "insight": {
-      "tier": "RISK",
-      "label": "지분공시",
-      "summary": "직전 대비 0.00%p (-주) 지분 매도/감소 · 최신 보유비율 4.60%로 5% 미만 진입 (공시의무 소멸 및 오버행 주의)",
-      "score": -6
-    },
-    "status": "CONFIRMED",
-    "source_name": "SEC_13DG",
-    "source_url": "https://www.sec.gov/Archives/edgar/data/1697851/000212422126000002/0002124221-26-000002-index.html",
-    "est_avg_price": 0.31,
-    "current_price": 0.19589999318122864,
-    "price_gap_pct": -36.8,
-    "price_source": "VWAP_ESTIMATE: 2026-11-04~2026-11-13 매집기간 일봉 VWAP",
-    "hold_stock_rt": 4.6,
-    "stk_rt_var": 0,
-    "stk_cnt_var": "-",
-    "first_entry_dt": "2026-11-13",
-    "reporter": "Church Pension Fund",
-    "backtest": {
-      "latest": {
-        "baseDate": "2026-11-13",
-        "marketBaseDate": "2026-11-13",
-        "elapsedDays": 8,
-        "availTradingDays": 5,
-        "basePrice": 0.24580000340938568,
-        "cumReturn": -20.3,
-        "d5": -20.3,
-        "d20": null,
-        "d60": null,
-        "maxRunup": 9.8,
-        "mdd": -21.9
-      },
-      "firstEntry": {
-        "baseDate": "2026-11-13",
-        "marketBaseDate": "2026-11-13",
-        "elapsedDays": 8,
-        "availTradingDays": 5,
-        "basePrice": 0.24580000340938568,
-        "cumReturn": -20.3,
-        "d5": -20.3,
-        "d20": null,
-        "d60": null,
-        "maxRunup": 9.8,
-        "mdd": -21.9,
-        "isSameAsLatest": true
-      }
-    }
-  },
-  {
-    "event_id": "US_SEC_13DG_0002090112-26-000003",
-    "d_day": -8,
-    "country": "US",
-    "ticker": "CKX",
-    "primary_ticker": "CKX",
-    "related_securities": [
-      {
-        "ticker": "CKX",
-        "company_name": "",
-        "relation_grade": "A",
-        "relation_score": 100,
-        "relation_type": "DIRECT",
-        "evidence_text": "직접 당사자",
-        "evidence_source": "SEC_13DG",
-        "source_url": "https://www.sec.gov/Archives/edgar/data/352955/000209011226000003/0002090112-26-000003-index.html",
-        "relation_known_date": "2026-11-13",
-        "ingest_mode": "AUTO",
-        "from_entity": "CKX LANDS, INC.",
-        "name": ""
-      }
-    ],
-    "company": "CKX LANDS, INC.",
-    "event_type": "5PCT_OWNERSHIP",
-    "event_name": "CKX LANDS, INC. SCHEDULE 13G/A (Passive Ownership) (대표보고자: Liu Yi Ming)",
-    "event_date": "2026-11-13",
-    "date_precision": "EXACT_DATE",
-    "window_start": "2026-11-13",
-    "window_end": "2026-11-13",
-    "relation_grade": "A",
-    "relation_score": 100,
-    "relation_type": "DIRECT",
-    "relation_ingest_mode": "AUTO",
-    "event_score": 0,
-    "alpha_score": 0,
-    "score_breakdown": [],
-    "investor_class": "일반법인/기타",
-    "purpose_prev": "단순투자",
-    "purpose_current": "단순투자",
-    "accumulation_count": 0,
-    "freshness": "CURRENT",
-    "insight": {
-      "tier": "NEUTRAL",
-      "label": "지분공시",
-      "summary": "SCHEDULE 13G/A (Passive Ownership) · 대표보고자 Liu Yi Ming",
-      "score": 0
-    },
-    "status": "CONFIRMED",
-    "source_name": "SEC_13DG",
-    "source_url": "https://www.sec.gov/Archives/edgar/data/352955/000209011226000003/0002090112-26-000003-index.html",
-    "est_avg_price": 18.52,
-    "current_price": 12.970000267028809,
-    "price_gap_pct": -30.0,
-    "price_source": "VWAP_ESTIMATE: 2026-11-04~2026-11-13 매집기간 일봉 VWAP",
-    "hold_stock_rt": 0.0,
-    "stk_rt_var": 0,
-    "stk_cnt_var": "-",
-    "first_entry_dt": "2026-11-13",
-    "reporter": "Liu Yi Ming",
-    "backtest": {
-      "latest": {
-        "baseDate": "2026-11-13",
-        "marketBaseDate": "2026-11-13",
-        "elapsedDays": 8,
-        "availTradingDays": 5,
-        "basePrice": 15.975000381469727,
-        "cumReturn": -18.8,
-        "d5": -18.8,
-        "d20": null,
-        "d60": null,
-        "maxRunup": 4.2,
-        "mdd": -21.8
-      },
-      "firstEntry": {
-        "baseDate": "2026-11-13",
-        "marketBaseDate": "2026-11-13",
-        "elapsedDays": 8,
-        "availTradingDays": 5,
-        "basePrice": 15.975000381469727,
-        "cumReturn": -18.8,
-        "d5": -18.8,
-        "d20": null,
-        "d60": null,
-        "maxRunup": 4.2,
-        "mdd": -21.8,
-        "isSameAsLatest": true
       }
     }
   }
