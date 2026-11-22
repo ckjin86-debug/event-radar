@@ -7,7 +7,7 @@ KR_KIND_IPO_832784cc1f6eb61b3b81a0e156cf38dcfca1b75e,439270,B,76,IPO_INVESTOR,�
 KR_KIND_IPO_5a3452ed7550c9d112a70cb1ad2e8756a6e4b71f,359410,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 영광
 KR_KIND_IPO_c36644468a48de410093c57ca68cf92dc10cdd85,017670,B,64,IPO_BUSINESS_RELATION,"SK텔레콤: 엔비디아·SK텔레콤(017670)·리벨리온의 NVLink Fusion 협력, AMD와 모레· 래블업 의 AI 소프트웨어 생태계 구축, 인텔과 딥엑스의 이기종 AI 반도체 협력 등이 대표적인 사례다 | https://www.edaily.co.kr/News/Read?newsId=01141446645646376&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article"
 KR_KIND_IPO_561e48a87092e0fc9bbbb7ded749dfef7c92f18b,037620,B,76,IPO_INVESTOR,미래에셋증권: NH투자증권 아이엠스팩1호 : 10월 26일 ~ 27일 @ 아이엠증권 에이엘로봇 : 10월 26일 ~ 27일 @대신증권 엠비디: 10월 28일 ~ 29일 @하나증권 바로팜 : 11월 2일 ~ 3일 @ 미래에셋증권 하나에어로다이내믹스 : 11월 10일 | http://www.economytalk.kr/news/articleView.html?idxno=424324
-KR_KIND_IPO_6c60d4cd8f1e8f43bb8d389d838e1d66c0f4f357,495910,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 이에스티
+KR_KIND_IPO_6c60d4cd8f1e8f43bb8d389d838e1d66c0f4f357,064760,B,76,IPO_INVESTOR,티씨케이: 티씨케이와 이에스티 역시 업종 전반의 투자심리 위축 속에 약세를 나타냈다 | https://www.pinpointnews.co.kr/news/articleView.html?idxno=506673
 KR_KIND_IPO_36e9f8708575adda2a70afe5d5d3a7c40f4d272f,004000,B,64,IPO_BUSINESS_RELATION,"롯데정밀화학: 장비와 부품 공급망 및 전자재료 분야에서는 미코, 케이씨텍, 뉴파워프라즈마, 유니트론텍, 에스에이엠티, 한솔테크닉스, 시노펙스, 위지트, 와이엠씨, 3S, 국전, 에이치브이엠, 티이엠씨씨엔에스, 동원파츠 , 롯데정밀화학 | https://www.pinpointnews.co.kr/news/articleView.html?idxno=505329"
 KR_KIND_IPO_f720780dcb05cf82442eea023725dcb72a037487,069620,B,76,IPO_INVESTOR,대웅제약: 대웅제약(069620)과 GC녹십자(006280)도 최근 상장한 넥스아이 에 대한 전략적 투자로 기존 투자금을 웃도는 지분가치를 확보했다 | https://www.sedaily.com/article/20116508?ref=naver
 KR_KIND_IPO_3148cd5fac8929cee30beeb9b427599152f80244,402340,B,76,IPO_INVESTOR,"SK스퀘어: 21~30위는 에이엘로봇 , 현대엘리베이터, 산일전기, 미래에셋벤처투자, 대주전자재료, 두산테스나, 네오셈, KT, 피에스케이, SK스퀘어 순이다 | http://www.kjdaily.com/article.php?aid=1795273991693032276"
@@ -1141,7 +1141,6 @@ KR_NEWS_FUTURE_f3da00b565037a606ceae657a8f727c7d95a87dd,000720,A,100,DIRECT_MENT
 KR_NEWS_FUTURE_977c9a5aae645b74bb41a332a636819ffce01bf4,267250,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: HD현대
 KR_NEWS_FUTURE_7206f77894158dd67b597426ec1b40cdad3cb136,329180,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: HD현대중공업
 KR_NEWS_FUTURE_a2f3a6210cc90e0c54c071b905125b153cd2e5d9,267250,THEME,35,CONTEXT_MENTION,이벤트 원문에 상장사명 명시: HD현대
-KR_NEWS_FUTURE_6d043703f6906bb0dc779da794759083aa409239,051600,B,84,OFFICIAL_CONSORTIUM,한전KPS: 체코 원전 Team Korea 시운전 유지보수 참여사
 KR_NEWS_FUTURE_3cb7de8fefa324b9a3c3f6517d1aec9db88a1326,373220,THEME,35,CONTEXT_MENTION,이벤트 원문에 상장사명 명시: LG에너지솔루션
 KR_NEWS_FUTURE_10bf247b7c32b7a89338afe9fb515243a3c08308,051600,B,84,OFFICIAL_CONSORTIUM,한전KPS: 체코 원전 Team Korea 시운전 유지보수 참여사
 KR_NEWS_FUTURE_a759ebf53e3d76c5c5d25c630904c49078fa6a45,008930,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 한미사이언스
@@ -1182,3 +1181,12 @@ KR_NEWS_FUTURE_d1fc07333fea7116582f2d8e44132a0280dcec2f,086520,A,100,DIRECT_MENT
 KR_NEWS_FUTURE_5845dc1632c41da37e7bf3f3d78240e2623314ea,035720,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 카카오
 KR_NEWS_FUTURE_221d86c180878e1e7c0633ab65247cfd96907cdc,042660,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 한화오션
 KR_NEWS_FUTURE_c6f02e85f0c1700dc940bb17d23bb4025d38877d,018670,THEME,35,CONTEXT_MENTION,이벤트 원문에 상장사명 명시: SK가스
+KR_NEWS_FUTURE_a40179293915e6931934ee163f21aa143d980f1a,009150,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 삼성전기
+KR_NEWS_FUTURE_434ee19538c42aa0673cd333e09ecb8af4e0bcd4,003490,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 대한항공
+KR_NEWS_FUTURE_3935cacc418c282f3dcf214ef3a0d246886b2a53,251270,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 넷마블
+KR_NEWS_FUTURE_28dbba85865558d918f3ff31ba7e437a3959a653,012330,THEME,35,CONTEXT_MENTION,이벤트 원문에 상장사명 명시: 현대모비스
+KR_NEWS_FUTURE_fdc1239d83ee96fabee8bae4652514d5f108a5bc,025560,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 미래산업
+KR_NEWS_FUTURE_847d65c7e71b26507ccf26b9fa33101a3dff8652,195940,THEME,35,CONTEXT_MENTION,이벤트 원문에 상장사명 명시: HK이노엔
+KR_NEWS_FUTURE_d01969f694ee4f4519bf38c0c6bdf904e92161d4,267250,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: HD현대
+KR_NEWS_FUTURE_39c047c9e9769b1039044f8885faaa4a05c075ef,009150,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: 삼성전기
+KR_NEWS_FUTURE_8684af3722d9488b72012f3fd87266807cb14060,011200,A,100,DIRECT_MENTION,이벤트 원문에 상장사명 명시: HMM

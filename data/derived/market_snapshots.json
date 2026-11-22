@@ -526,6 +526,14 @@
     "sessions": 67,
     "source": "Yahoo Finance"
   },
+  "011200": {
+    "as_of": "2026-11-20",
+    "price": 22150.0,
+    "return_20d": -0.022075,
+    "volume_ratio_20d": 0.652,
+    "sessions": 67,
+    "source": "Yahoo Finance"
+  },
   "011210": {
     "as_of": "2026-11-20",
     "price": 49000.0,
@@ -2514,7 +2522,7 @@
     "price": 142.07,
     "return_20d": -0.049953,
     "volume_ratio_20d": 0.467,
-    "sessions": 72,
+    "sessions": 71,
     "source": "Yahoo Finance"
   },
   "^GSPC": {
@@ -2522,7 +2530,7 @@
     "price": 7017.5601,
     "return_20d": -0.079505,
     "volume_ratio_20d": 0.555,
-    "sessions": 72,
+    "sessions": 71,
     "source": "Yahoo Finance"
   }
 }
